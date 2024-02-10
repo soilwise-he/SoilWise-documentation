@@ -1,0 +1,50 @@
+site_name: Technical Documentation
+# site_description: for SEO
+site_url: https://soilwise-he.github.io/SoilWise-documentation/
+repo_url: https://github.com/soilwise-he/SoilWise-documentation
+edit_uri: edit/main/tech/docs/
+
+plugins:
+  - search
+  - mermaid2
+  - awesome-pages
+  - git-revision-date-localized
+  - render_swagger
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+
+theme:
+  name: material
+
+  palette:
+    - primary: brown
+    - accent: brown
+
+  features:
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.path
+  - navigation.indexes
+  - content.action.edit
+
+  logo: _assets/images/SoilWise_logo.png
+#  favicon: assets/images/favicon.png
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/soilwise-project-eu/
+      name: SoilWise on LinkedIn
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/profile.php?id=61551552876700
+      name: SoilWise on Facebook
+  generator: false
+
+copyright: Copyright &copy; 2023 - 2027 <a href="https://cordis.europa.eu/project/id/101112838">SoilWise Soil Mission Horizon Europe project No. 101112838</a>
+

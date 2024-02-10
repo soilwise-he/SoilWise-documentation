@@ -1,0 +1,33 @@
+name: Deploy MkDocs
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3 ⚙️ 🐍
+        uses: actions/setup-python@v2
+
+      - name: Cache dependencies 💾
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('docs/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
+      - name: Install dependencies 🔧
+        working-directory: docs
+        run: make install
+
+      - name: Build and deploy to GitHub Pages
+        working-directory: docs
+        run: make deploy
