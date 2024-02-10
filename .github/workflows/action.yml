@@ -25,9 +25,9 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install dependencies 🔧
-        working-directory: tech/docs
+        working-directory: tech
         run: make install
 
       - name: Build and deploy to GitHub Pages
-        working-directory: tech/docs
+        working-directory: tech
         run: make deploy
