@@ -35,6 +35,7 @@ theme:
   logo: _assets/images/SoilWise_logo.png
 #  favicon: assets/images/favicon.png
 
+extra_css: [extra.css]
 
 extra:
   social:
