@@ -13,10 +13,14 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - tables
   - attr_list
   - pymdownx.details
-  - pymdownx.superfences
-  - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
 
 theme:
   name: material
