@@ -24,8 +24,22 @@
 ## Technology
 
 To date 2 relevant technologies for catalogue server:
+
 - [pycsw](https://pycsw.org) is a python implementation of OGCAPI Records (and CSW, oai-omh,...) with a tailored html output used in the [ejpsoil project](https://catalogue.ejpsoil.eu). The implementation at EJPSoil has a github backend using the [mcf format](https://geopython.github.io/pygeometa/reference/mcf/) (a subset of iso19115 in YAML encoding) to faciliate participatory content creation. Harvesting is managed via CI-CD pipelines, using the [geodatacrawler](https://pypi.org/project/geodatacrawler/) tool. Content queries and faceted search are managed by a PostGreSQL database. Ranking is not available. No options exist to restrain read access to certain records (except limit by path on the webserver).
 - [GeoNetwork](https://geonetwork-opensource.org) is a catalogue implementation in java. Backend is a PostGreSQL database, queries are managed by an Elastic Search index. Supports ranking and faceting. GeoNetwork contains harvesters which run at intervals, metadata transformations and metadata authoring workflows. JRC INSPIRE has build a number of extensions to GeoNetwork to facilitate the INSPIRE GeoPortal, such as bulk CSW harvesting, metadata validation and link checking. The authoring component can be linked to an LDAP or SAML authorisation to provide read/write access to dedicated members.
+
+The diagram below describes the workflow of metadata editing using a git backend.
+
+``` mermaid
+flowchart LR
+    G[fa:fa-code-compare Git] -->|mcf| CI{{pygeometa}} 
+    CI -->|iso19139| DB[(fa:fa-database Database)]
+    DB --> C(Catalogue)
+    C --> G
+    C --> CSW(fa:fa-gear CSW)
+    C --> OAR(fa:fa-gear OGCAPI Records)
+    C --> OAI(fa:fa-gear OAI-PMH)
+```    
 
 ## Considerations
 
