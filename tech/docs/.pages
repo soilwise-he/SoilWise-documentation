@@ -1,10 +1,6 @@
 nav:
   - Home: index.md
-  - dmc
-  - kmc
+  - technical_components
   - apis
-  - governance
-  - user-management
   - infrastructure
-  - usage-scenarios
   - glossary

@@ -1,5 +1,0 @@
-title: User Management
-order_by: title
-nav:
-    - user-management-intro.md
-    - ...
