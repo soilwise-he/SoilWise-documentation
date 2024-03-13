@@ -1,4 +1,4 @@
-# Certification & governance management
+# Certification & Governance management
 
 - governance
 - interoperability

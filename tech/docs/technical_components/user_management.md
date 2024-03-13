@@ -1,4 +1,4 @@
-# Useeer managment
+# User managment
 
 - user management (CRUD, Roles, Orgs)
 - direct user authentication (simple log-in)
