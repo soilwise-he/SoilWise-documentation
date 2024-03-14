@@ -1,6 +1,6 @@
 #  Ingestion
 
-## Automatic metadata harvesting
+## Automatic metadata harvesting (MU)
 
 - finding metadata
 - capturing metadata
@@ -15,7 +15,7 @@
 - responsible person: Tomas Reznik
 - participating: MU, Paul van Genuchten
 
-## Automatic knowledge ingestion
+## Automatic knowledge ingestion (Rob)
 
 - connect to data source
 - data & knowledge ingestion

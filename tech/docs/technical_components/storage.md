@@ -1,4 +1,4 @@
-# Repository Cloud Storage
+# Repository Cloud Storage (WE)
 
 - asset and feature identification
 - backup
@@ -14,7 +14,7 @@
 - responsible person:
 - participating:
 
-## Data model
+## Data model (MU)
 
 - centrepoint/target model for data interoperability
   - user defines a target model (based on needs) as part of a transformation pattern (Hale Studio, rml.io)
@@ -27,9 +27,9 @@
 - responsible person: Tomas Reznik
 - participating:
 
-## Soil health vocabulary
+## Soil health vocabulary (Paul + Anna + Giovanni)
 
-## Metadata scheme
+## Metadata scheme (Luis)
 
 - developing metadata templates using standards
 
@@ -56,7 +56,7 @@ Various storage options exist, dedicated usage scenario's usually have an optima
 - All collected metadata will be archived once per year
 
 
-### Knowledge
+### Knowledge (Rob)
 
 
 ### Processed data

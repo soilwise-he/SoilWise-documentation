@@ -1,6 +1,6 @@
 # Data processing
 
-## Persistent Identifier Mint
+## Persistent Identifier Mint (Nick)
 
 - consistent identification
 - findability
@@ -11,7 +11,7 @@
 - responsible person:
 - participating: Tomas Reznik
 
-### Data duplicities discovery
+### Data duplicities discovery (Nick)
 
 - two levels inspection (coarse = dataset level, fine = objects/attributes? level)
 - read existing data in terms of size, identical identifiers (data, metadata level)
@@ -21,7 +21,7 @@
 - technologies used:
 - responsible person:
 
-### Link persistence validator
+### Link persistence validator (MU)
 
 ## Interoperability (ETL)
 
@@ -45,9 +45,9 @@
 
 ### INSPIRE interoperability aligner
 
-### Codelist mapping
+### Codelist mapping (WE + Paul)
 
-## Data quality assurance
+## Data quality assurance (MU + ISRIC)
 
 - Automated validations on datasets to check if statements in metadata on resolution, projection, spatial/temporal bounds, accuracy, classification, uncertainty are correct.
 - If a metadata record has no statements on these aspects, findings fom the validation will be used instead
@@ -69,13 +69,9 @@ Impact on search engine:
 
 - [GeoHealthCheck](https://geohealthcheck.org) could be an interesting platform to monitor quality of data. 
 
-### Metadata completeness
+### Metadata completeness (MU)
 
-## Metadata indexing
-
-## Coorinates transformation
-
-## UNits of measurements transformation
+## Metadata indexing (MU)
 
 ## Metadata validation (ETS/ATS)
 

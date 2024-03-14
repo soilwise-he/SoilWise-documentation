@@ -1,4 +1,4 @@
-# User managment
+# User managment (WE)
 
 - user management (CRUD, Roles, Orgs)
 - direct user authentication (simple log-in)

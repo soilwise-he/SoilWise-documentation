@@ -1,4 +1,4 @@
-# User Interface: Dashboard
+# User Interface: Dashboard (WE)
 
 
 - implement UCs
@@ -15,11 +15,11 @@
 
 ## Metadata & data search & advanced filtering
 
-## Chatbot
+## Chatbot (Rob)
 
 A personified and easy to use interface to the knowledge gathered by the SWR. Based on the LLM component.
 
-## Map viewer
+## Map viewer (MU + ISRIC)
 
 - technologies used: Leaflet
 
@@ -33,7 +33,7 @@ A personified and easy to use interface to the knowledge gathered by the SWR. Ba
 - responsible person: Tomas Reznik
 - participating:
 
-## Manual data & metadata upload
+## Manual data & metadata upload (MU)
 
 - GUI and backend for online form
 - validation of inserted values
@@ -44,7 +44,7 @@ A personified and easy to use interface to the knowledge gathered by the SWR. Ba
 - responsible person: Tomas Reznik
 - participating:
 
-## Data download & export
+## Data download & export (MU)
 
 Considerations
 

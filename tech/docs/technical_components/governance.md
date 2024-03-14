@@ -1,4 +1,4 @@
-# Certification & Governance management
+# Certification & Governance management (EV ILVO)
 
 - governance
 - interoperability
@@ -10,7 +10,7 @@
 - responsible person:
 - participating:
 
-## SoilWise Data Spaces
+## SoilWise Data Spaces (EV ILVO + WE)
 
 CONNECTOR:
 - config and control of data access
