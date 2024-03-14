@@ -2,24 +2,49 @@
 
 ## Persistent Identifier Mint (Nick)
 
+Persistent Identifiers (PIDs) are unique and long-lasting codes refering to digital objects like  document, file, 
+web page, or other objects. They act as permanent name tags for digital information, ensuring it can be reliably found 
+and accessed over time, even if the original location or format changes. An example of a PID frequently used in 
+academic publishing to identify journal articles, research reports and data sets is DOI (Digital Object Identifier).
+Key characteristics of PIDs are persistance (unchanged over time), resolvability (retrieving the identified object), 
+uniqueness (identifying a single, unique resource) and actionability (a way to directly access or interact with the resource)
+They are used in the soilewise repositiry in respect to:
+
 - consistent identification
 - findability
 - versioning / derivates linking
 
 - connections with: metadata in the catalogue, validation, data input
-- technologies used: ePIC (pidconsortium.net)
+- technologies used: ePIC (pidconsortium.net, ePIC API providing a software stack for a PID service)
 - responsible person:
 - participating: Tomas Reznik
 
 ### Data duplicities discovery (Nick)
 
+In the context of Persistent Identifiers (PIDs), duplication refers to the occurrence of multiple identifiers 
+pointing to the same digital object or resource. As SWR will be ingesting datafiles from multiple data sources 
+this is an aspect that has to be taken into account. 
+
+We have no knowledge of existing technologies we can integrate as a component in the platform. This functionality will be 
+setup within the platform using automated scripts running within the data processing environment of the platform. 
+The methodology applied to identify duplicates will be by comparing (meta)data attributes like 
+File Name, File Size, File Type, Owner, Description, Date Created/Modified. 
+NLP techniques like Bag-of-words or Word/Sentence Embedding algorithms can be used to convert textual attributes into vectors, 
+capturing semantic similarity and relationships between words. Each datafile will be characterized by their attributes 
+and be represented in a continuous vector space together with the other datafiles. Similarity algorithms 
+(e.g. cosine similarity, euclidean distance, etc.) are then applied 
+to identify datafiles with a similarity above a certain threshold, which are then considered to be duplicates.
+If necessary a business rule will be integrated taking the "completeness" of the datafile into account as to be able 
+to determine which PID and datafile to keep and which to discard.
+
 - two levels inspection (coarse = dataset level, fine = objects/attributes? level)
 - read existing data in terms of size, identical identifiers (data, metadata level)
-- identify duplicit values
+- identify duplicite values
 
 - connections with: catalogue, (meta)data input, validation + monitoring + ets, scheme and structure, storage, workflows?
 - technologies used:
 - responsible person:
+- participating:
 
 ### Link persistence validator (MU)
 
