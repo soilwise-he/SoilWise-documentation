@@ -26,16 +26,24 @@ pointing to the same digital object or resource. As SWR will be ingesting datafi
 this is an aspect that has to be taken into account. 
 
 We have no knowledge of existing technologies we can integrate as a component in the platform. This functionality will be 
-setup within the platform using automated scripts running within the data processing environment of the platform. 
-The methodology applied to identify duplicates will be by comparing (meta)data attributes like 
+setup within the platform. 
+The methodology applied to identify duplicates will be by comparing multiple (meta)data attributes like 
 File Name, File Size, File Type, Owner, Description, Date Created/Modified. 
 NLP techniques like Bag-of-words or Word/Sentence Embedding algorithms can be used to convert textual attributes into vectors, 
 capturing semantic similarity and relationships between words. Each datafile will be characterized by their attributes 
-and be represented in a continuous vector space together with the other datafiles. Similarity algorithms 
+and represented in a continuous vector space together with the other datafiles. Similarity algorithms 
 (e.g. cosine similarity, euclidean distance, etc.) are then applied 
 to identify datafiles with a similarity above a certain threshold, which are then considered to be duplicates.
 If necessary a business rule will be integrated taking the "completeness" of the datafile into account as to be able 
 to determine which PID and datafile to keep and which to discard.
+
+This proces can be automated in the platform using automated (Python) scripts running within the data processing environment 
+of the platform. A second approach is to use data processing functionalities and AI algorithms integrated in a database, 
+e.g. the Neo4J Graph Database and Neo4J Graph Data Science Similarity algorithms (Node Similarity, K-Nearest Neighbours, 
+... https://neo4j.com/docs/graph-data-science/current/algorithms/similarity/). This requires the data to exist in
+the graph database as linked data, either importing from the SWR knowledge graphs or using such a graph database 
+technology (e.g. Neo4J) as the SWR knowledge graph technology.
+
 
 - two levels inspection (coarse = dataset level, fine = objects/attributes? level)
 - read existing data in terms of size, identical identifiers (data, metadata level)
