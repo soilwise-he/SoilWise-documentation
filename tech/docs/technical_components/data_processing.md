@@ -54,7 +54,7 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 - responsible person:
 - participating:
 
-### Link persistence validator (MU)
+### Link persistence validator (Luis)
 
 ## Interoperability (ETL)
 
