@@ -47,9 +47,25 @@ The DCMI Metadata Terms are organised within four modules, digested below:
   themsleves and general not expected to be applied by end users.
 
 
-### DCAT
-
 ### VCard
+
+In 2014 the W3C developed an ontology mapping elements of the [vCard business
+card standard](https://www.rfc-editor.org/rfc/rfc6350) to OWL, abstracting
+persons, organisations and contacts. The [vCard web
+ontology](https://www.w3.org/TR/vcard-rdf/) specifies a set of classes and
+properties, but without limiting ranges and domains on the latter. vCard is
+meant to be used together with other meta-data ontologies, particularly Friend
+of a Friend (FOAF).
+
+The main classes in vCard representing contactable entities are `Individual`,
+`Organisation` and `Group`. Within contact means classes are found `Address`,
+`EMail`, `Location` and `Phone` (the later specialised in various sub-classes).
+A collection of object properties relates this two kinds of classes together,
+with a further set of data-type properties providing for the concrete
+definition of each contact instance. 
+
+
+### DCAT
 
 ### PROV
 
