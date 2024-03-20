@@ -71,7 +71,10 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 
 [Geocat](https://geocat.iucnredlist.org/){target=_blank} has developed a linkage checker for iso19139:2007 metadata for INSPIRE geoportal, available at [icat](https://github.com/GeoCat/icat){target=_blank}, which includes link checks in OWS capabilities.
 
-### Metadata completeness (MU)
+### Metadata completeness 
+
+The completeness of the metadata will be evaluated according to an ISO19157 Geographic Information – Data quality and the official ISO19115 and ISO19119 XML schema definitions, including compliance with specified international standards.
+Rule-based validation languages such as Schematron are foreseen to be used for pattern-matching validation, i.e., allowing the definition of patterns to match specific structures or data within the XML document. These patterns can be used to check for the presence or absence of certain elements, attributes, or values.
 
 ## Data quality assurance (MU + ISRIC)
 
