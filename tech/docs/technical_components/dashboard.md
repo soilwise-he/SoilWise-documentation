@@ -1,41 +1,87 @@
-# User Interface: Dashboard (WE)
+# User Interface: Dashboard (WE, ISRIC)
 
-- implement UCs
-- deliver useful and usable apps for various stakeholders
-- user friedly testing
-- present data / knowledge in useable way
-- show value, graphs, maps, tables, text
+The term dashboard is used with various meanings, in the scope of Soilwise the following uses are relevant:
 
-- connections with: processing, storage, structure & scheme, catalogue, APIs (all needs to be accessed and visualized), user
-- technologies used:
-- responsible person:
-- participating:
+- A [search interface on metadata](#search-interface-on-metadata), search results are typically displayed in a paginated set of web pages. But alternatives, such as a map or chatbot, could be interesting.
+- A set of [diagrams showing an overview of the contents of the catalogue](#overview-of-catalogue-content); for example a diagram of the percentage of records by topiccategory, usage constraints or organisation.
+- A dashboard showing [indicators of soil health](#soil-health-indicators), soil potential as reported by memberstates
 
 
-## Metadata & data search & advanced filtering
 
-## Chatbot (Rob)
+## Search interface on metadata
 
-A personified and easy to use interface to the knowledge gathered by the SWR. Based on the LLM component.
+A typical example of such a search is the current [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data).
 
-## Map viewer (MU + ISRIC)
+### Ranking, relations, full text search, and filtering (Paul)
+
+Optimal search capabilities are provided by the catalogue backend, this component leverages these capabilities to provide users with an optimal user interface to effectively use those capabilities.
+
+The EJPSoil prototype uses a tailored frontend, focussing on:
+- Paginated search result, sort alphabetically, by date
+- Minimalistic User Interface, to prevent a technical feel
+- Option to filter by facets
+- Option to provide feedback to publisher/author
+- Readable link in the browser bar, to facilitate link sharing
+- Preview of the dataset (if a OGC:Service is available), else display of its spatial extent
+
+What can be improved:
+- Show relations to other records
+- Better distinguish link types; service/api, download, records, documentation, etc.
+- Indication of remote link availability/conformance
+- If a record originates from (multiple) catalogues, add a link to the origin
+- Ranking (backend)
+- Preview novel formats such as Vector tiles, [COG](https://www.cogeo.org/), [GeoZarr](https://github.com/zarr-developers/geozarr-spec), GeoParquet directly on a map
+
+#### Technology
+
+- Jinja2 templates (html, css) as a tailored skin on pycsw/pygeoapi, or dedicated frontend (vuejs, react)
+- Leaflet/OpenLayers/MapLibre
+
+### Chatbot (Rob)
+
+Large Language models enriched with Soilwise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer, but also provides references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in how to access the source, using which software for example.
+
+#### Technology
+
+- Various LLM's to be tested, most are python based.
+
+### Map viewer (MU + ISRIC)
 
 A light-weight client map viewer component will be employed:
 - as a frontend of [Map Server](publication.md#map-server) component to visualize provided WMS, WFS, WCS layers
 - as a integrated part of the [Catalogue Server](publication.md#catalogue-server) to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
 - full preview of data is currently a subject of discussions
 
-### Technology
+A dedicated mapviewer, such as [TerriaJS](https://terria.io), can support users in accessing relevant data which has been prepared for optimal consumption in a typical GIS Desktop environment. For example maps of spatial distribution of soil properties or health indicators over Europe. A typical example is [Soilgrids](https://soilgrids.org).
 
-- Data in the soil domain is mainly gridded formats such as geotiff. Advances in the EO domain are quick these days. The use of STAC in combination with [COG](https://www.cogeo.org/){target=_blank} or even [GeoZarr](https://github.com/zarr-developers/geozarr-spec){target=_blank} are getting more common. 
-- **Leaflet** is that it is limited with the newer formats. **OpenLayers** could be an interesting alternative for the novel formats.
-- At ISRIC, similar to FAO,the use of [**terriajs**](https://terria.io/){target=_blank} is being investigating as a viewer. Terria has some support for OGC standards, such as WMS and CSW. It offers an interesting full featured starting point for web mapping.
-- Alternative view options should be considered other than maps, for example diagram visualisation of a dataset. [**Apache superset**](https://superset.apache.org/){target=_blank} is an interesting tool to create generic visualisations from average datasets.
+An interesting aspect for a community like EUSO is the ability to prepare and share a map with stakholders to trigger some discussion on a phenomena at a location.
+
+#### Technology
+
+[TerriaJS](https://terria.io) is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.
+
+## Overview of catalogue content
+
+### Traditional dashboards 
+
+The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/overview?view=themeOverview&theme=tn) increased its usage with their new dashboard like interface, for each memberstate the number of published datasets per topic is upfront in the application. Dashboards on catalogue content provide mechanisms to generate overviews of that content to provide such insight.
+
+#### Technology
+
+The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostGreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
+
+Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding.
+
+## Soil health indicators
+
+The [EUSO dashboard on soil health](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/) presents soil health indicators from memberstates. This dashboard is not directly in scope of Soilwise, but it is important to effectively distinguish it from the Soilwise dashboards. 
 
 
-## Manual data & metadata upload
 
-The SWR provides two major ways of data & metadata upload:
+
+## Manual data & metadata authoring
+
+The SWR provides two major ways of data & metadata authoring
 
 1.	in an automatized manner, as described in the components [Automatic metadata harvesting](ingestion.md#automatic-metadata-harvesting) and [Automatic knowledge ingestion components](ingestion.md#automatic-knowledge-ingestion);
 2.	in a manual mode, as described within this **Manual data & metadata component**.
@@ -60,7 +106,19 @@ The above-described mechanisms showed the “as is” manual metadata upload. Ne
 - storing inserted metadata record
 
 ### Technology
-- GeoNetwork, pycsw
+
+- GeoNetwork includes an authoring environment with web forms and a dashboard to create and monitor harvesters.
+- pycsw includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters
+- A Git based participatory metadata workflow as introduced in EJP Soil
+    - Users should be endorsed to register their metadata via known repositories, such as zenodo, cordis, inspire, ... at most register the identifier (DOI, CSW) of the record at EUSO, metadata will be mirrored from those locations at intervals
+    - Data can be maintained in a Git Repository, such as the [EJP Soil repository](https://github.com/ejpsoil/ejpsoildatahub/tree/main/datasets), preferably using a readably serialisation, such as YML
+    - In EJP Soil we experiment with the [metadata control file](https://geopython.github.io/pygeometa/reference/mcf/) format (MCF), a subset of iso19139
+    - A web editor for MCF is available at [osgeo.github.io](https://osgeo.github.io/mdme)
+    - Users can also submit metadata using a CSV (excel) format, which is converted to MCF in a CI-CD 
+    - A web based frontend can be developed to guide the users in submitting records (generate a pull request in their name)
+    - Validation of inserted values
+    - A CI-CD script which runs as part of a pull request triggers a validation, and reject (or optimise) a record if it does not match our quality criteria
+
 
 ### Integration opportunities
 The Manual data & metadata upload component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](publication.md#catalogue-server), (2) [metadata validation](data_processing.md#metadata-validation-etsats) and (3) [metadata scheme & structure](storage.md#metadata-scheme).
