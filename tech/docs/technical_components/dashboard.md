@@ -6,17 +6,23 @@ The term dashboard is used with various meanings, in the scope of Soilwise the f
 - A set of [diagrams showing an overview of the contents of the catalogue](#overview-of-catalogue-content); for example a diagram of the percentage of records by topiccategory, usage constraints or organisation.
 - A dashboard showing [indicators of soil health](#soil-health-indicators), soil potential as reported by memberstates
 
+Other parts of the user interface are:
+
+- [Metadata authoring and Harvesting configuration](#manual-data-metadata-authoring)
+- [Data download & export](#data-download-export) options
+
 
 
 ## Search interface on metadata
 
 A typical example of such a search is the current [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data).
 
-### Ranking, relations, full text search, and filtering (Paul)
+### Ranking, relations, full text search, and filtering (ISRIC)
 
 Optimal search capabilities are provided by the catalogue backend, this component leverages these capabilities to provide users with an optimal user interface to effectively use those capabilities.
 
 The EJPSoil prototype uses a tailored frontend, focussing on:
+
 - Paginated search result, sort alphabetically, by date
 - Minimalistic User Interface, to prevent a technical feel
 - Option to filter by facets
@@ -25,19 +31,19 @@ The EJPSoil prototype uses a tailored frontend, focussing on:
 - Preview of the dataset (if a OGC:Service is available), else display of its spatial extent
 
 What can be improved:
+
 - Show relations to other records
 - Better distinguish link types; service/api, download, records, documentation, etc.
 - Indication of remote link availability/conformance
 - If a record originates from (multiple) catalogues, add a link to the origin
 - Ranking (backend)
-- Preview novel formats such as Vector tiles, [COG](https://www.cogeo.org/), [GeoZarr](https://github.com/zarr-developers/geozarr-spec), GeoParquet directly on a map
 
 #### Technology
 
 - Jinja2 templates (html, css) as a tailored skin on pycsw/pygeoapi, or dedicated frontend (vuejs, react)
 - Leaflet/OpenLayers/MapLibre
 
-### Chatbot (Rob)
+### Chatbot (WENR, WR)
 
 Large Language models enriched with Soilwise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer, but also provides references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in how to access the source, using which software for example.
 
@@ -56,11 +62,14 @@ A dedicated mapviewer, such as [TerriaJS](https://terria.io), can support users 
 
 An interesting aspect for a community like EUSO is the ability to prepare and share a map with stakholders to trigger some discussion on a phenomena at a location.
 
+Examine the need of viewing novel formats such as Vector tiles, [COG](https://www.cogeo.org/), [GeoZarr](https://github.com/zarr-developers/geozarr-spec), [GeoParquet](https://geoparquet.org/) directly on a map background. Benefit of these formats is that no (OGC) service is required to facilitate data vizualisation.
+
 #### Technology
 
 [TerriaJS](https://terria.io) is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.
 
-## Overview of catalogue content
+
+## Overview of catalogue content (ISRIC, WR)
 
 ### Traditional dashboards 
 
@@ -71,6 +80,8 @@ The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.s
 The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostGreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
 
 Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding.
+
+The source data for the dashboards is very likely enriched with AI generated indicators. LLM's seem also able to provide overviews of sets of content.
 
 ## Soil health indicators
 
@@ -123,11 +134,17 @@ The above-described mechanisms showed the “as is” manual metadata upload. Ne
 ### Integration opportunities
 The Manual data & metadata upload component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](publication.md#catalogue-server), (2) [metadata validation](data_processing.md#metadata-validation-etsats) and (3) [metadata scheme & structure](storage.md#metadata-scheme).
 
+- Requires authentication and autorisation
+
 ### Open issues
 The Manual data & metadata upload component shall be technologically aligned with the [SWR Catalogue](publication.md#catalogue-server) and [Automatic metadata harvesting component](ingestion.md#automatic-metadata-harvesting). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.
 
 ## Data download & export (MU)
 
-- The FAIR principle endorses the use of persistent identification for the data download, which would result in a full download of the data/knowledge resource.
-- An API to data enables partial/filtered results from a dataset, data download API's are available trough [**Mapserver**](publication.md#map-server) via WFS, WCS and OGCAPI-Features.
-- Novel formats such as GeoParquet, COG, GeoZarr allow range (subset) requests to a single endpoint, and could combine FAIR identification and subset-requests.
+A UI component could be made available as part of the catalogue application which facilitates access to subsets of data from a data download or API. A user selects the relevant featuretype/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download.
+
+- The FAIR principle endorses the use of persistent identification for data downloads.
+- An API to data enables partial/filtered results from a dataset, data download API's are described as part of [API'S](../apis/apis-intro.md). 
+
+
+
