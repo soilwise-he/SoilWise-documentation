@@ -62,6 +62,8 @@ components adhering the governance requirements will be integrated in further it
 
 ## SoilWise Data Spaces (EV ILVO + WE)
 
+_T1.4 will produce detailed technical specifications, including information on components to be (re)used, interfaces between them and explaining the data flows and processing schemes, **considering AgriDataSpace project** conceptual reference architecture, AI/ML architecture patterns and the Ethics by Design in AI._
+
 CONNECTOR:
 
 - config and control of data access
@@ -72,3 +74,4 @@ CONNECTOR:
 - technologies used: Eclipse Dataspace Components Connector
 - responsible person: Thorsten Reitz
 - participating:
+

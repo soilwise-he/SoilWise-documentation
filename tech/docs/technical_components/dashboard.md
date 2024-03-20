@@ -1,6 +1,5 @@
 # User Interface: Dashboard (WE)
 
-
 - implement UCs
 - deliver useful and usable apps for various stakeholders
 - user friedly testing
@@ -21,17 +20,18 @@ A personified and easy to use interface to the knowledge gathered by the SWR. Ba
 
 ## Map viewer (MU + ISRIC)
 
-- technologies used: Leaflet
+A light-weight client map viewer component will be employed:
+- as a frontend of [Map Server](publication.md#map-server) component to visualize provided WMS, WFS, WCS layers
+- as a integrated part of the [Catalogue Server](publication.md#catalogue-server) to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
+- full preview of data is currently a subject of discussions
 
-### Considerations
+### Technology
 
-- Data in the soil domain is mainly gridded formats such as geotiff. Advances in the EO domain are quick these days. The use of STAC in combination with [COG](https://www.cogeo.org/) or even [GeoZarr](https://github.com/zarr-developers/geozarr-spec) are getting more common. Our findings with leaflet is that it is limited with the newer formats. OpenLayers could be an interesting alternative for the novel formats.
-- At ISRIC, similar to FAO, we're investigating the use of [terriajs](https://terria.io/) as a viewer. Terria has some support for OGC standards, such as WMS and CSW. It offers an interesting full featured starting point for web mapping.
-- Alternative view options should be considered other than maps, for example diagram visualisation of a dataset. [Apache superset](https://superset.apache.org/) is an interesting tool to create generic visualisations from average datasets.
+- Data in the soil domain is mainly gridded formats such as geotiff. Advances in the EO domain are quick these days. The use of STAC in combination with [COG](https://www.cogeo.org/){target=_blank} or even [GeoZarr](https://github.com/zarr-developers/geozarr-spec){target=_blank} are getting more common. 
+- **Leaflet** is that it is limited with the newer formats. **OpenLayers** could be an interesting alternative for the novel formats.
+- At ISRIC, similar to FAO,the use of [**terriajs**](https://terria.io/){target=_blank} is being investigating as a viewer. Terria has some support for OGC standards, such as WMS and CSW. It offers an interesting full featured starting point for web mapping.
+- Alternative view options should be considered other than maps, for example diagram visualisation of a dataset. [**Apache superset**](https://superset.apache.org/){target=_blank} is an interesting tool to create generic visualisations from average datasets.
 
-
-- responsible person: Tomas Reznik
-- participating:
 
 ## Manual data & metadata upload (MU)
 
@@ -40,14 +40,12 @@ A personified and easy to use interface to the knowledge gathered by the SWR. Ba
 - storing inserted metadata record
 
 - connections with: catalogue, validation, scheme & structure
-- technologies used: GeoNetwork, pycsw
-- responsible person: Tomas Reznik
-- participating:
+
+### Technology
+- GeoNetwork, pycsw
 
 ## Data download & export (MU)
 
-Considerations
-
-- The FAIR principle endorses the use of persistent identification for the data download, which would result in a full download of the data/knowledge resource
-- An api to data enables partial/filtered results from a dataset, data download api's are available trough [mapserver](./publication.md#map-server) via WFS, WCS and OGCAPI-Features
-- Novel formats such as GeoParquet, COG, GeoZarr allow range (subset) requests to a single endpoint, and could combine FAIR identification and subset-requests
+- The FAIR principle endorses the use of persistent identification for the data download, which would result in a full download of the data/knowledge resource.
+- An API to data enables partial/filtered results from a dataset, data download API's are available trough [**Mapserver**](publication.md#map-server) via WFS, WCS and OGCAPI-Features.
+- Novel formats such as GeoParquet, COG, GeoZarr allow range (subset) requests to a single endpoint, and could combine FAIR identification and subset-requests.
