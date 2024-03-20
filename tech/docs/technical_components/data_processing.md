@@ -171,7 +171,7 @@ Rule-based validation languages such as Schematron are foreseen to be used for p
 
 ### Technology
 
-- Hale, FME, gdal, rml.io/yarrrml, tarql, stetl
+- Hale, gdal, tarql, stetl
 
 
 ### INSPIRE interoperability aligner

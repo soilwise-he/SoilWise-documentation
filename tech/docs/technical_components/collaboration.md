@@ -2,7 +2,7 @@
 
 ## Feedback on data quality
 
-## Codelists updates
+## Code lists updates
 
 ## Soil Events
 
