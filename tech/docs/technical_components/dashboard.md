@@ -20,7 +20,10 @@ A personified and easy to use interface to the knowledge gathered by the SWR. Ba
 
 ## Map viewer (MU + ISRIC)
 
--
+A light-weight client map viewer component will be employed:
+- as a frontend of [Map Server](publication.md#map-server) component to visualize provided WMS, WFS, WCS layers
+- as a integrated part of the [Catalogue Server](publication.md#catalogue-server) to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
+- full preview of data is currently a subject of discussions
 
 ### Technology
 
