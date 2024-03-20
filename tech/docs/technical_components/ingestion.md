@@ -1,6 +1,6 @@
 #  Ingestion
 
-## Automatic metadata harvesting (MU)
+## Automatic metadata harvesting
 
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned.  Metadata harvesting is a default feature of all the most common geospatial catalogue servers.
 Two open-source cataloguing options were evaluated: **GeoNetwork** and **pycsw.** pycsw was selected primarily because of the two following reasons:
