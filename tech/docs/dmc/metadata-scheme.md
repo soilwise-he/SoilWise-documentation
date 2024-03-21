@@ -47,6 +47,10 @@ The DCMI Metadata Terms are organised within four modules, digested below:
   themsleves and general not expected to be applied by end users.
 
 
+### FOAF
+
+
+
 ### VCard
 
 In 2014 the W3C developed an ontology mapping elements of the [vCard business
@@ -66,6 +70,42 @@ definition of each contact instance.
 
 
 ### DCAT
+
+The [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-2/) (DCAT) is
+the *de facto* Semantic Web standard for meta-data, maintained by the W3C. Its main
+purpose is to catalogue and identify data resources, re-using various concepts
+from other ontologies. In particular, terms from Dublin Core and classes from
+FOAF and VCard are part of the specification. DCAT is not restricted to
+represent meta-data of knowledge graphs, it even encompasses the concept of
+multiple representations for the same data. Among the most relevant classes
+specified by DCAT are:
+
+- `Resource`: any concrete thing on the Web, in principle identifiable by a
+  URI. `Dataset`, `DataService` and `Catalog` are sub-classes of `Resource`. 
+
+- `Dataset`: a collection of data, published or curated by a single entity. In
+  general represents a knowledge graph that may be encoded and/or presented in
+  different ways, and even be available from different locations.
+
+- `DataService`: an operation providing data access and/or data
+  processing. Expected to correspond to a service location on the internet
+  (i.e. an endpoint).
+
+- `Distribution`: a particular representation of a `Dataset` instance. More
+  than one distribution may exist for the same dataset (e.g. Turtle and XML for
+  the same knowledge graph).
+
+- `Catalog`: a collection of meta-data on related resources, e.g. available at
+  the same location, or published by the same entity. A catalogue should
+  represent a single location on the Web.
+
+- `CatalogRecord`: a document or internet resource providing meta-data for a
+  single dataset (or other type of resource). It corresponds to the
+  registration of a dataset with a catalogue. 
+
+- `Relationship`: specifies the association between two resources. It is a
+  sub-class of the `EntityInfluence` class in the PROV ontology.
+
 
 ### PROV
 
