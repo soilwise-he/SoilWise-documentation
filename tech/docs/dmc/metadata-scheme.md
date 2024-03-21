@@ -50,6 +50,20 @@ The DCMI Metadata Terms are organised within four modules, digested below:
 ### FOAF
 
 
+[Friend of a Friend](http://xmlns.com/foaf/0.1/) (FOAF) was the first web
+ontology expressing personal relationships in OWL. It specifies axioms
+describing persons, how they relate to each other and to resources on the
+internet. From a personal profile described with FOAF it is possible to
+automatically derive information such as the set of people known to two
+different individuals. As an early meta-data specification, FOAF has been
+popular to relate and describe people associated to web
+resources. The [ActivityPub](https://www.w3.org/TR/activitypub/) specification,
+basis of the Fediverse, was influenced by FOAF.
+
+Among the concepts specified by FOAF feature `Person`, `Agent`, `Organization`,
+`Group`, `Document`, `PersonalProfileDocument`, `Image`, `OnlineAccount` and
+`Project`. These are related by a comprehensive collection of data and object
+properties whose meaning is mostly straightforward to understand.   
 
 ### VCard
 
