@@ -37,14 +37,9 @@ It should be connected to:
 - Knowledge graph (read/write)
 - Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
 
-- Identify project scope of a resource from CORDIS
-- Identify type of a remote resources, if linked from a metadata (download, api, record, document)
-- Research item: Rank relevance of a resource by evaluating usage logs
-
 ## Metadata ranking
 
 - Research item: Rank relevance of a resource by evaluating usage logs
-
 
 ## Sophisticated Large Language Model
 
@@ -65,5 +60,11 @@ This model will be trained on the knowledge graph. It aims to provide an easy to
 ## Generating soil health maps
 
 - **To be decided on** - This seems not in scope for SoilWise, although an effort to create such a map will certainly be a user story, Soilwise to provide input for such an effort (both on data and covariates, as well as how to do it)
+
+
+Remaining notes:
+- Identify project scope of a resource from CORDIS
+- Identify type of a remote resources, if linked from a metadata (download, api, record, document)
+
 
 _T1.4 will produce detailed technical specifications, including information on components to be (re)used, interfaces between them and explaining the data flows and processing schemes, considering AgriDataSpace project conceptual reference architecture, **AI/ML architecture patterns and the Ethics by Design in AI.**_
