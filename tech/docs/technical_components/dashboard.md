@@ -141,10 +141,4 @@ The Manual data & metadata upload component shall be technologically aligned wit
 
 ## Data download & export (MU)
 
-A UI component could be made available as part of the catalogue application which facilitates access to subsets of data from a data download or API. A user selects the relevant featuretype/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download.
-
-- The FAIR principle endorses the use of persistent identification for data downloads.
-- An API to data enables partial/filtered results from a dataset, data download API's are described as part of [API'S](../apis/apis-intro.md). 
-
-
-
+A UI component could be made available as part of the [SWR Catalogue](publication.md#catalogue-server) application which facilitates access to subsets of data from a data download or API. A user selects the relevant featuretype/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download. The API-based data publication is described as part of [API'S](../apis/data-publication.md#data-preview--download-apis).

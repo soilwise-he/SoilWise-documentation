@@ -9,7 +9,7 @@ Contents:
 
 ## Persistent identification
 
-### Persistent Identifier Mint (Nick)
+### Persistent Identifier Mint
 
 Persistent Identifiers (PIDs) are unique and long-lasting codes refering to digital objects like  document, file, 
 web page, or other objects. They act as permanent name tags for digital information, ensuring it can be reliably found 
@@ -27,7 +27,7 @@ They are used in the SoilWise Repository in respect to:
 - findability
 - versioning / derivates linking
 
-### Data duplicities discovery (Nick)
+### Data duplicities discovery
 
 In the context of Persistent Identifiers (PIDs), duplication refers to the occurrence of multiple identifiers 
 pointing to the same digital object or resource. As SWR will be ingesting datafiles from multiple data sources 
@@ -66,7 +66,7 @@ Assess if resources use proper identifiers to reference external items
 
 #### Technology
 
-- [ePIC](pidconsortium.net) ePIC API providing a software stack for a PID service
+- [ePIC](https://pidconsortium.net){target=_blank}  ePIC API providing a software stack for a PID service
 
 ### Resource availability monitoring 
 
@@ -74,8 +74,8 @@ Metadata (and data and knowledge sources) tend to contain links which over time 
 
 #### Technology
 
-- [GeoHealthCheck](https://GeoHealthCheck.org) or
-- [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat) or
+- [GeoHealthCheck](https://GeoHealthCheck.org){target=_blank}  or
+- [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat){target=_blank}  or
 - ...
 
 
@@ -98,7 +98,7 @@ For some endpoints a metadata transformation may be required, before the documen
 
 #### Technology
 
-- [GeoDataCrawler](https://pypi.org/project/geodatacrawler/) Harvest configuration to be persisted on GIT or
+- [GeoDataCrawler](https://pypi.org/project/geodatacrawler/){target=_blank}  Harvest configuration to be persisted on GIT or
 - Harvest dashboard similar to GeoNetwork or
 - python (OAI-PMH library) 
 
@@ -116,7 +116,7 @@ Important aspect of harvesters is the capability to finetune filters, resources 
 - linkage evaluation
   - linkage to other metadata records
   - linkage to data/services. [Geohealthcheck](https://geohealthcheck.org){target=_blank} is an interesting tool to monitor availability of spatial services/resources.
-  - linkage failure is a common problem on the web, first aspect is to tag a link as broken, so users can filter broken links, later it can be considered to remove/disable the link (other links on the same record may still be operational, the content behind the link may be recoverable via https://web.archive.org (so don't remove it).
+  - linkage failure is a common problem on the web, first aspect is to tag a link as broken, so users can filter broken links, later it can be considered to remove/disable the link (other links on the same record may still be operational, the content behind the link may be recoverable via <https://web.archive.org> (so don't remove it).
 - metadata quality evaluation
   - identify a level of completeness for a metadata file (match against a set of expectations from a SoilWise perspective)
   - governance is of interest, what do you do if a record scores low? notify the owner, try to auto-improve, tag with low score, exclude from the catalogue 
