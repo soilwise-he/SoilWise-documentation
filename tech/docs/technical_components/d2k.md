@@ -24,21 +24,25 @@ Powered by AI
 
 ## Alignment with existing data
 
-## Exitraction of KPIs from data
+## Extraction of KPIs from data
 
-## Automatic metadata interlinking
+## Metadata interlinkage and metadata ranking
 
-- assess livelyhood of a link (see Link persistence validator)
-- vice versa linkage
-- derive links
-- linking to CORDIS
+- Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
+- Vice versa linkage (if resource A links to B, a vice versa link can be added to B)
+- Derive links (links may be derived by spatial or temporal extent, keyword usage, shared author/publisher)
+- Identify project scope of a resource from CORDIS
+- Identify type of a remote resources, if linked from a metadata (download, api, record, document)
+- Research item: Rank relevance of a resource by evaluating usage logs
 
-- connections with: retrieve from metadata catalog, write to SPARQL, notify user?
-- technologies used:
-- responsible person: Paul van Genuchten
-- participating: Luís de Sousa, Anna Fensel, We Transform, Nick Berkvens, Rob Lokers
+- Connections with: retrieve from metadata catalog, write to SPARQL, notify user?
+- Technologies used: Triple Store, pygeometa
+- Responsible person: Paul van Genuchten
+- Participating: ISRIC, WR, WE, ILVO, WENR
 
 ## Generating soil health maps
+
+This seems not in scope for SoilWise, although an effort to create such a map will certainly be a user story, Soilwise to provide input for such an effort (both on data and covariates, as well as how to do it)
 
 ## Sophisticated Large Language Model
 

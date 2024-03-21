@@ -1,6 +1,15 @@
 # Data processing
 
-## Persistent Identifier Mint (Nick)
+Contents:
+
+- [Persistent identification](#persistent-identification)
+- [Metadata indexing](#metadata-indexing)
+- [Metadata validation](#metadata-validation)
+- [Interoperability](#interoperability)
+
+## Persistent identification
+
+### Persistent Identifier Mint (Nick)
 
 Persistent Identifiers (PIDs) are unique and long-lasting codes refering to digital objects like  document, file, 
 web page, or other objects. They act as permanent name tags for digital information, ensuring it can be reliably found 
@@ -37,6 +46,7 @@ If necessary a business rule will be integrated taking the "completeness" of the
 to determine which PID and datafile to keep and which to discard.
 
 #### Technology
+
 This proces can be automated in the platform using automated (Python) scripts running within the data processing environment 
 of the platform. A second approach is to use data processing functionalities and AI algorithms integrated in a database, 
 e.g. the Neo4J Graph Database and Neo4J Graph Data Science [Similarity algorithms](https://neo4j.com/docs/graph-data-science/current/algorithms/similarity/){target=_blank} 
@@ -50,12 +60,56 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 - identify duplicite values
 
 
-## Link persistence validator (Luis)
-- technologies used: ePIC (pidconsortium.net, ePIC API providing a software stack for a PID service)
+### Link persistence validator
 
-## Metadata indexing (MU)
+Assess if resources use proper identifiers to reference external items
 
-## Metadata validation (ETS/ATS)
+#### Technology
+
+- [ePIC](pidconsortium.net) ePIC API providing a software stack for a PID service
+
+### Resource availability monitoring 
+
+Metadata (and data and knowledge sources) tend to contain links which over time degrade and result in `File not found` experiences. By running availability checks on links mentioned in (meta)data, for each link an availability indicator (available, requires authentication, intermittent, unavailable) can be calculated. Alternatively a link check can be performed at the moment a user tries to open a resource.
+
+#### Technology
+
+- [GeoHealthCheck](https://GeoHealthCheck.org) or
+- [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat) or
+- ...
+
+
+## Metadata indexing (MU, ISRIC)
+
+The process of harvesting external resources.
+
+### Harvest configuration
+
+A range of interfaces need to be supported to extract resources from:
+
+- Cordis (SPARQL)
+- Zenodo, Dataverse, OpenAire (OAI-PMH / Datacite)
+- INSPIRE (CSW)
+- ESDAC (HTML scraping??)
+- Web pages (Schema.org)
+- ...
+
+For some endpoints a metadata transformation may be required, before the document can be stored in SWR
+
+#### Technology
+
+- [GeoDataCrawler](https://pypi.org/project/geodatacrawler/) Harvest configuration to be persisted on GIT or
+- Harvest dashboard similar to GeoNetwork or
+- python (OAI-PMH library) 
+
+Important aspect of harvesters is the capability to finetune filters, resources such as INSPIRE, Cordis, Zenodo need proper filters in order to preselect relevant sources.
+
+### Harvest running/monitoring
+
+- Git CI-CD to run harvests, provides options to review CI-CD logs to check errors
+- GeoNetwork or GeoNetwork INSPIRE GeoPortal harvest microservice
+
+## Metadata validation
 
 - metadata conformance evaluation
   - conformance is a indicator of quality?
@@ -71,9 +125,12 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 
 [Geocat](https://geocat.iucnredlist.org/){target=_blank} has developed a linkage checker for iso19139:2007 metadata for INSPIRE geoportal, available at [icat](https://github.com/GeoCat/icat){target=_blank}, which includes link checks in OWS capabilities.
 
-### Metadata completeness (MU)
+### Metadata completeness 
 
-## Data quality assurance (MU + ISRIC)
+The completeness of the metadata will be evaluated according to an ISO19157 Geographic Information – Data quality and the official ISO19115 and ISO19119 XML schema definitions, including compliance with specified international standards.
+Rule-based validation languages such as Schematron are foreseen to be used for pattern-matching validation, i.e., allowing the definition of patterns to match specific structures or data within the XML document. These patterns can be used to check for the presence or absence of certain elements, attributes, or values.
+
+### Data quality assurance (MU + ISRIC)
 
 - Automated validations on datasets to check if statements in metadata on resolution, projection, spatial/temporal bounds, accuracy, classification, uncertainty are correct.
 - If a metadata record has no statements on these aspects, findings fom the validation will be used instead.
@@ -97,7 +154,7 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 
 - [GeoHealthCheck](https://geohealthcheck.org) could be an interesting platform to monitor quality of data. 
 
-## Interoperability (ETL)
+## Interoperability
 
 - Describe the source dataset model in detail so ETL is facilitated (for example iso19110 or XSD or OWL).
 - Prepare & share a transformation pattern so any potential user can trigger/adjust the transformation (also helps to understand the source model), allow feedback/contributions to the transformation pattern (Hale Studio, rml.io/yarrrml, csv-ld).
@@ -113,9 +170,13 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 - Only for priority (meta)data, majority will be linked, stored elsewhere
 
 ### Technology
-- Hale, FME, gdal, rml.io/yarrrml, tarql, stetl
+
+- Hale, gdal, tarql, stetl
 
 
 ### INSPIRE interoperability aligner
 
-### Codelist mapping (WE + Paul)
+### Codelist mapping (WE, ISRIC, WR)
+
+- Hale Studio has a codelist mapping tool
+- The skos ontology allows to map terms between code lists using SameAs relations (as part of Triple store)
