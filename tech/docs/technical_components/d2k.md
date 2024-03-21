@@ -1,6 +1,6 @@
 # Data2Knowledge processing (Rob)
 
-# - understands what is in any soil repository & how to use it
+<!-- - understands what is in any soil repository & how to use it
 - gives output to interlinker
 - AI used for labelling information, interlinking metadata (linked with the box below),
 documents
@@ -12,7 +12,7 @@ structures
 - responsible person: Rob Lokers
 - participating: Luís de Sousa, Anna Fensel, We Transform, Nick Berkvens, Giovanni
 L'Abate
-
+-->
 
 ## Enhancing metadata items
 
