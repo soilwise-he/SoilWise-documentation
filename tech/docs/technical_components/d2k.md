@@ -16,6 +16,7 @@ L'Abate
 
 ## Enhancing metadata items
 
+
 Powered by AI
 
 - finding citations and usage of data, methodologies
@@ -23,6 +24,8 @@ Powered by AI
 - enable user input??
 
 ## Alignment with existing data
+
+RLO: not sure what this component is intended to do...
 
 ## Automatic metadata interlinking
 
@@ -43,7 +46,7 @@ It should be connected to:
 
 ## Sophisticated Large Language Model
 
-This model will be trained on the knowledge graph. It aims to provide an easy to use and personified interaction mechanism with the knowledge harnessed at the SWR. It is the main pillar supporting the Chatbot component of the user interface.
+This model will be trained on the knowledge graph. It aims to provide an easy to use and personified interaction mechanism with the knowledge harnessed at the SWR. It is the main comp supporting the Chatbot component of the user interface.
 
 ## High-value data & knowledge identification
 
