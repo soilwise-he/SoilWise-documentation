@@ -29,7 +29,9 @@ and the Blueprint (https://confluence.external-share.com/content/80889/dssc_blue
 a consistent and comprehensive set of guidelines to support the development cycle of data spaces). 
 Additionally, the DSSC proposes the utilization of the Building Blocks Taxonomy, which serves as a classification scheme. 
 This taxonomy aids in describing, analyzing, and organizing data space initiatives based on predefined characteristics, 
-thus promoting a structured approach to governance implementation (Figure 1)
+thus promoting a structured approach to governance implementation (Figure 1). We will equally consider  the openDEI 
+design principles for data spaces, the requirements of ISO 30401 for KM and rely on the results of the preparatory 
+action for the data space for Agriculture (AgriDataSpace)
 
 <br>
 
