@@ -42,6 +42,4 @@ Releases of the components and infrastructure are managed from Git a repository,
 ## Organizational
 
 - connections with: CI-CD, kubernetes, catalog, ETL, QA QC, role definitions
-- technologies used: Git
-- responsible person: WE
-- participating: ISRIC
+
