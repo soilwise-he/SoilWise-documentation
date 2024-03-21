@@ -1,6 +1,6 @@
 # Data2Knowledge processing (Rob)
 
-- understands what is in any soil repository & how to use it
+# - understands what is in any soil repository & how to use it
 - gives output to interlinker
 - AI used for labelling information, interlinking metadata (linked with the box below),
 documents
@@ -33,9 +33,9 @@ To be able to provide interlinked data and knowledge assets (e.g. a dataset, the
 
 It should be connected to: 
 - Automatic metadata harvesting (initiate)
-- - Metadata store (read)
-  - Knowledge graph (read/write)
-  - Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
+- Metadata store (read)
+- Knowledge graph (read/write)
+- Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
 
 ## Metadata ranking
 
