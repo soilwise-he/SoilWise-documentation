@@ -33,9 +33,9 @@ To be able to provide interlinked data and knowledge assets (e.g. a dataset, the
 
 It should be connected to: 
 - Automatic metadata harvesting (initiate)
-- Metadata store (read)
-- Knowledge graph (read/write)
-- Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
+- - Metadata store (read)
+  - Knowledge graph (read/write)
+  - Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
 
 ## Metadata ranking
 
