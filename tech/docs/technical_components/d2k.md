@@ -26,19 +26,22 @@ The following applications can be thought of
 ## Alignment with existing data
 
 RLO: not sure what this component is intended to do...
+DSN: I put it in the architecture based on the UC01-US01 need for benchmarking... probably we should remove it
 
 ## Automatic metadata interlinking
 
-To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered as part of the SWR knowledge graph
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered as part of the [SWR knowledge graph](publication.md#knowledge-graph)
 
-- Explicit links can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
+- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
 For those linkages, the harvesting process needs to be extended, calling this component to store the relation in the knowledge graph. It should accomodate "vice versa linkage" (if resource A links to B, a vice versa link can be added to B)
-- Implicit links can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, shared author/publisher. In this case, AI/ML can support the discovery of potential links, including somekind of probability indicator
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, shared author/publisher. In this case, AI/ML can support the discovery of potential links, including somekind of probability indicator
 
-It should be connected to: 
-- Automatic metadata harvesting (initiate)
-- Metadata store (read)
-- Knowledge graph (read/write)
+## Integration opportunities
+
+The Automatic metadata interlinking component should be connected to: 
+- [Automated igestion of metadata on knowledge sources](ingestion.md#automated-ingestion-of-metadata-on-knowledge-sources) (initiate)
+- [Metadata store](storage.md#metadata) (read)
+- [Knowledge graph](publication.md#knowledge-graph) (read/write)
 - Assess livelyhood of a link (see [Link persistence validator](./data_processing.md#link-persistence-validator))
 
 ## Metadata ranking
@@ -48,6 +51,8 @@ It should be connected to:
 ## High-value data & knowledge identification
 
 Is this somehow related to metadata ranking?
+DSN: It was meant as a component which taggs metadata records as "high-value" based on given criteria (see UC03-US-22, UC02-US13 lead me to thinking that high-value tag could apply to knowledge as well)
+
 
 ## Sophisticated Large Language Model
 
