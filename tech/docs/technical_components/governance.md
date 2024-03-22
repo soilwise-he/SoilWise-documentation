@@ -20,7 +20,8 @@ any conflicts that may arise.
 
 The governance framework will be designed by integrating relevant EU legislation concerning governance within data 
 ecosystems, alongside insights from ongoing Digital Europe CSA projects focused on constructing the Common European 
-Data Spaces. The formulation of this governance framework will rely mainly on the Data Spaces Support Centre (DSSC) 
+Data Spaces. The formulation of this governance framework will rely mainly on the Data Spaces Support Centre 
+([DSSC](https://dssc.eu/){target=_blank}) 
 results which are:
 
 1. [Starter Kit](https://dssc.eu/space/SK/29523973/Starter+Kit+for+Data+Space+Designers+%7C+Version+1.0+%7C+March+2023){target=_blank}, 
@@ -33,9 +34,9 @@ a consistent and comprehensive set of guidelines to support the development cycl
  
 Additionally, the DSSC proposes the utilization of the Building Blocks Taxonomy, which serves as a classification scheme. 
 This taxonomy aids in describing, analyzing, and organizing data space initiatives based on predefined characteristics, 
-thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider  the openDEI 
-design principles for data spaces, the requirements of ISO 30401 for KM and rely on the results of the preparatory 
-action for the data space for Agriculture (AgriDataSpace).
+thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider the [openDEI](https://design-principles-for-data-spaces.org/){target=_blank}
+design principles for data spaces](){target=_blank}, the requirements of [ISO 30401 for KM](https://iso-docs.com/blogs/iso-concepts/knowledge-management-system-iso-30401){target=_blank} and rely on the results of the preparatory 
+action for the data space for Agriculture ([AgriDataSpace](https://agridataspace-csa.eu/){target=_blank}).
 
 <br>
 
@@ -44,7 +45,8 @@ action for the data space for Agriculture (AgriDataSpace).
 
 Following the introduction of the GDPR, the European Commission has put forward several legislative proposals, 
 such as the Digital Services Act, the Digital Markets Act, the Data Act, and the Data Governance Act. 
-Soilwise places particular emphasis on the Data Governance Act and the Data Act, as their primary goals 
+Soilwise places particular emphasis on the [Data Governance Act](https://www.european-data-governance-act.com/){target=_blank} 
+and the [Data Act](https://www.eu-data-act.com/){target=_blank}, as their primary goals 
 align closely with the project's aims to enhance data sharing and facilitate product development. 
 These legislations are designed to:
 
