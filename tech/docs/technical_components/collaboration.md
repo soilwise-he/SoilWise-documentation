@@ -1,5 +1,11 @@
 # Collaboration & Networking (WE + EV ILVO)
 
+``` mermaid
+flowchart LR
+    UM(User Management) --> CN("`**Collaboration & Networking**`")
+    I(Ingestion) --> CN
+```
+
 ## Feedback on data quality
 
 ## Code lists updates

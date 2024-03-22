@@ -1,5 +1,11 @@
 # Certification & Governance management (EV ILVO)
 
+``` mermaid
+flowchart LR
+    UM(User Management) --> CG("`**Certification & Governance management**`")
+    DPU(Data & Knowledge publication) --> CG
+```
+
 ??? question to allign on: is this governance related to:
 
 * connecting with a data space, 
