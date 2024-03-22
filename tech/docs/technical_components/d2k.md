@@ -19,7 +19,7 @@ L'Abate
 AI/ML and other analytics will be used to enrich metadata
 
 The following applications can be thought of
-- using a soil (health) ontology to label data and knowledge, based on
+- using a soil (health) ontology to label data and knowledge, based on e.g. NLP methods
 - interlinking different sources: data - data, knowledge - knowledge and data - knowledge, see automatic metadata interlinking
 - finding associated data & knowledge, e.g. citations, usage of data, methodologies
 
