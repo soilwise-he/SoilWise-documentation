@@ -101,11 +101,29 @@ Important aspect of harvesters is the capability to finetune filters, resources 
 
 The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](publication.md#catalogue-server), (2) [data download](dashboard.md#data-download--export-mu) & [upload pipelines](dashboard.md#manual-data--metadata-upload-mu) and (3) [ETS/ATS](data_processing.md#metadata-validation-etsats), i.e. test suites.
 
-## Automated ingestion of metadata on knowledge sources (WENR)
+## Automated extraction and ingestion of metadata on knowledge sources (WENR)
 
-- harvest from catalogue (Zenodo, OpenAire, Cordis, ...)
-- metadata ingestion, it can also be of interest to ingest the knowledge source itself for training LLM's and full text search
+For knowlege resouces it is less usual to provide metadata according to standardized metadata schemas, and to expose metadata through harvesting protocols. Therefore, a dedicated strategy and procedures are needed to be able to harmonize and index knowledge as part of the SWR.
 
-- connections with: data source and validation
-- responsible person: Rob Lokers
-- participating: Anna Fensel, Paul van Genuchten, Tomas Reznik
+In cases where no metadata service is available:
+- Access and download data via the (most feasible) available endpoint
+- Process data
+  - mapping the content to a SWR schema for knowledge metadata (Dublin Core)
+  - Derive missing metadata fields if possible
+  - Label metadata
+- Store metadata
+
+In cases where no a metadata service and/or harvesting protocol is available:
+- Follow harvesting process for datasets
+- Process data
+  - Derive missing metadata fields if possible
+  - Label metadata
+- Store metadata
+
+For use wit AI/ML (e.g. LLMs), addiotnally it might become useful to store the knowledge content (training ML models), or relevant fragments (explainnable AI) 
+
+List of knowledge repositories
+- CORDIS: SparQL / REST endpoints / no metadata
+- Zenodo: REST / OAI/PMH /
+- OpenAIRE: REST / OAI/PMH /
+- to be extended...
