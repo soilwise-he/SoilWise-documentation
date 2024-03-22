@@ -1,6 +1,23 @@
 #  Ingestion
 
-## Automatic metadata harvesting
+The Ingestion component is dedicated to automatically harvest sources to populate [SWR Catalogue](publication.md#catalogue-server). It comprises of the following components:
+
+1. [Automated metadata harvesting](#automated-metadata-harvesting)
+2. [Automated ingestion of metadata on knowledge sources](#automated-ingestion-of-metadata-on-knowledge-sources)
+
+``` mermaid
+flowchart LR
+    DBD[(fa:fa-database Data & knowledge providers)] --> I
+    AID --> MC(Metadata cache)
+    AIK --> KL(Knowledge sources log)
+    I --> CGM(Certification & governance management)
+subgraph I [Ingestion]
+    AID("`**Automated metadata harvesting**`") ~~~ AIK("`**Automated ingestion of metadata on knowledge sources**`")
+
+end
+```
+
+## Automated metadata harvesting
 
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned.  Metadata harvesting is a default feature of all the most common geospatial catalogue servers.
 Two open-source cataloguing options were evaluated: **GeoNetwork** and **pycsw.** pycsw was selected primarily because of the two following reasons:
@@ -55,6 +72,7 @@ This scenario will fit to Mission Soil Horizon Europe projects that have catalog
 ### Technology
 
 [**geodatacrawler**](https://pypi.org/project/geodatacrawler/){target=_blank}, written in python, extracts metadata from various sources. 
+
 - Local file repository (metadata and various data formats)
 - CSV of metadata records (each column represents a metadata property)
 - remote identifiers (DOI, CSW)
