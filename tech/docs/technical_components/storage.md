@@ -1,5 +1,8 @@
 # Repository Cloud Storage (WE)
 
+??? open question: probably not all components below should be part of cloud storage, we can restructure chapters and components based on what's the real expectation
+
+
 - asset and feature identification
 - backup
 - versioning
@@ -11,8 +14,27 @@
 
 - connections with: catalog, ETL, SPARQL, QA, Identifier Mint
 - technologies used: KV stores, Relational databases, Graph/Document databases, Vector databases (Knowledge component)
-- responsible person:
-- participating:
+
+``` mermaid
+flowchart LR
+    I(Ingestion) --> S
+    S --> DPR(Data processing)
+    S --> DPU(Data & Knowledge publication)
+    KL --> KG(Knowledge graph)
+    MS --> CS(Catalogue Server)
+    
+subgraph S [Repository Cloud Storage]
+    DM("`**Data model**`") ~~~ MS("`**Metadata scheme**`")
+    KL("`**Knowledge sources log**`") ~~~ SHV("`**Soil Health Vocabulary**`")
+    MC("`**Metadata cache**`") --> MS("`**Metadata store**`")
+    DBUP[("`**Temporary store for uploaded data**`")] ~~~ DBPR[("`**Database for processed and high-value data**`")]
+end
+
+subgraph DPU [Data & Knowledge publication]
+    KG ~~~ CS
+end
+```
+
 
 ## Data model
 

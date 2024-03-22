@@ -94,7 +94,7 @@ The [EUSO dashboard on soil health](https://esdac.jrc.ec.europa.eu/esdacviewer/e
 
 The SWR provides two major ways of data & metadata authoring
 
-1.	in an automatized manner, as described in the components [Automatic metadata harvesting](ingestion.md#automatic-metadata-harvesting) and [Automatic knowledge ingestion components](ingestion.md#automatic-knowledge-ingestion);
+1.	in an automatized manner, as described in the components [Automatic metadata harvesting](ingestion.md#automated-metadata-harvesting) and [Automatic knowledge ingestion components](ingestion.md#automated-ingestion-of-metadata-on-knowledge-sources);
 2.	in a manual mode, as described within this **Manual data & metadata component**.
 
 Note that option (1) is the preferred one from the SWR point of view as it allows to massively tackle metadata and knowledge of remotely available resources, including Catalogue servers of Mission Soil projects, Zenodo, Cordis, INSPIRE Geoportal and others.
@@ -137,7 +137,7 @@ The Manual data & metadata upload component will show its full potential when be
 - Requires authentication and autorisation
 
 ### Open issues
-The Manual data & metadata upload component shall be technologically aligned with the [SWR Catalogue](publication.md#catalogue-server) and [Automatic metadata harvesting component](ingestion.md#automatic-metadata-harvesting). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.
+The Manual data & metadata upload component shall be technologically aligned with the [SWR Catalogue](publication.md#catalogue-server) and [Automatic metadata harvesting component](ingestion.md#automated-metadata-harvesting). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.
 
 ## Data download & export (MU)
 
