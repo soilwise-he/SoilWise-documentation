@@ -8,8 +8,30 @@ The term dashboard is used with various meanings, in the scope of Soilwise the f
 
 Other parts of the user interface are:
 
-- [Metadata authoring and Harvesting configuration](#manual-data-metadata-authoring)
+- [Metadata authoring and harvesting configuration](#manual-data-metadata-authoring)
 - [Data download & export](#data-download-export) options
+
+``` mermaid
+flowchart LR
+    UM(User Management) --> UI("`**Dashboard**`")
+    DPU(Data & Knowledge publication) --> UI
+
+subgraph UI [Dashboard]
+    S("`**Search interface on metadata**
+        - Ranking, relations, full text search, and filtering
+        - Chatbot
+        - Map viewer`") ~~~ O("`**Overview of Catalogue content**`")
+    DD("`**Data download & export**`") ~~~ U("`**Manual data & metadata authoring**`")
+end
+```
+
+SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present present data and knowledge in useable way. It comprises of the following components (functions):
+
+1. [Search interface on metadata](#search-interface-on-metadata)
+2. [Overview of Catalogue content](#overview-of-catalogue-content)
+3. [Manual data & metadata authoring](#manual-data--metadata-authoring)
+4. [Data download & export](#data-download--export)
+
 
 ## Search interface on metadata
 
