@@ -1,6 +1,6 @@
 # Data processing
 
-Contents:
+The data processing component comprises of the following components:
 
 - [Persistent identification](#persistent-identification)
 - [Metadata indexing](#metadata-indexing)
@@ -16,6 +16,7 @@ web page, or other objects. They act as permanent name tags for digital informat
 and accessed over time, even if the original location or format changes. An example of a PID frequently used in 
 academic publishing to identify journal articles, research reports and data sets is DOI (Digital Object Identifier).
 Key characteristics of PIDs are:
+
 - persistance (unchanged over time),
 - resolvability (retrieving the identified object), 
 - uniqueness (identifying a single, unique resource)
@@ -36,8 +37,8 @@ this is an aspect that has to be taken into account.
 We have no knowledge of existing technologies we can integrate as a component in the platform. This functionality will be 
 setup within the platform. 
 The methodology applied to identify duplicates will be by comparing multiple (meta)data attributes like 
-File Name, File Size, File Type, Owner, Description, Date Created/Modified. 
-Natural Language Processing techniques like Bag-of-words or Word/Sentence Embedding algorithms can be used to convert textual attributes into vectors, 
+_File Name, File Size, File Type, Owner, Description, Date Created/Modified_. 
+**Natural Language Processing techniques** like Bag-of-words or Word/Sentence Embedding algorithms can be used to convert textual attributes into vectors, 
 capturing semantic similarity and relationships between words. Each datafile will be characterized by their attributes 
 and represented in a continuous vector space together with the other datafiles. Similarity algorithms 
 (e.g. cosine similarity, euclidean distance, etc.) are then applied 
@@ -62,52 +63,21 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 
 ### Link persistence validator
 
-Assess if resources use proper identifiers to reference external items
+**Persistent content** is considered to be stored in a trustworthy, persistent repository. We expect those storages to store the asset compliant with the applicable legally and scientifically required terms and periods for storage of the content, and to use a DOI or other persistent URI for persistent identification. These can be safely referred to from the SoilWise catalogue. For long-term preservation and availability of data and knowledge assets, SWR relies on the repository holders and their responsibility to keep it available.
 
-#### Technology
+**Non-persistent** data and knowledge are the ones that are not guaranteed to persist by the repository or data and knowledge holder and/or does not guarantee a persistent URI for reference for at least 10 years. In practice many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, at computers of researchers, etc. Due to their heterogeneity in structure and underlying implementing technologies etc., it is not possible nor desirable to store those in the SWR, with exception of high value data/knowledge assets.  
 
-- [ePIC](https://pidconsortium.net){target=_blank}  ePIC API providing a software stack for a PID service
+#### Foreseen functionality
 
-### Resource availability monitoring 
-
+Assess if resources use proper identifiers to reference external items.
 Metadata (and data and knowledge sources) tend to contain links which over time degrade and result in `File not found` experiences. By running availability checks on links mentioned in (meta)data, for each link an availability indicator (available, requires authentication, intermittent, unavailable) can be calculated. Alternatively a link check can be performed at the moment a user tries to open a resource.
 
 #### Technology
 
+- [ePIC](https://pidconsortium.net){target=_blank}  ePIC API providing a software stack for a PID service
 - [GeoHealthCheck](https://GeoHealthCheck.org){target=_blank}  or
 - [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat){target=_blank}  or
 - ...
-
-
-## Metadata indexing (MU, ISRIC)
-
-The process of harvesting external resources.
-
-### Harvest configuration
-
-A range of interfaces need to be supported to extract resources from:
-
-- Cordis (SPARQL)
-- Zenodo, Dataverse, OpenAire (OAI-PMH / Datacite)
-- INSPIRE (CSW)
-- ESDAC (HTML scraping??)
-- Web pages (Schema.org)
-- ...
-
-For some endpoints a metadata transformation may be required, before the document can be stored in SWR
-
-#### Technology
-
-- [GeoDataCrawler](https://pypi.org/project/geodatacrawler/){target=_blank}  Harvest configuration to be persisted on GIT or
-- Harvest dashboard similar to GeoNetwork or
-- python (OAI-PMH library) 
-
-Important aspect of harvesters is the capability to finetune filters, resources such as INSPIRE, Cordis, Zenodo need proper filters in order to preselect relevant sources.
-
-### Harvest running/monitoring
-
-- Git CI-CD to run harvests, provides options to review CI-CD logs to check errors
-- GeoNetwork or GeoNetwork INSPIRE GeoPortal harvest microservice
 
 ## Metadata validation
 

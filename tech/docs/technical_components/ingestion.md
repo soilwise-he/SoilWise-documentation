@@ -69,9 +69,20 @@ This scenario will fit to Mission Soil Horizon Europe projects that have catalog
 - understand success of a harvest
 - options to trigger monitor running harvestors
 
+A range of **interfaces** need to be supported to extract resources from:
+
+- Cordis (SPARQL)
+- Zenodo, Dataverse, OpenAire (OAI-PMH / Datacite)
+- INSPIRE (CSW)
+- ESDAC (HTML scraping??)
+- Web pages (Schema.org)
+- ...
+
+For some endpoints a metadata transformation may be required, before the document can be stored in SWR.
+
 ### Technology
 
-[**geodatacrawler**](https://pypi.org/project/geodatacrawler/){target=_blank}, written in python, extracts metadata from various sources. 
+[**geodatacrawler**](https://pypi.org/project/geodatacrawler/){target=_blank}, written in python, extracts metadata from various sources:
 
 - Local file repository (metadata and various data formats)
 - CSV of metadata records (each column represents a metadata property)
@@ -79,6 +90,12 @@ This scenario will fit to Mission Soil Horizon Europe projects that have catalog
 - remote endpoints (CSW)
 
 **pycsw**, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OpenSearch](https://opensearch.org/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, [SRU](https://developers.exlibrisgroup.com/rosetta/integrations/standards/sru/){target=_blank}), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
+
+**GeoNetwork** or **GeoNetwork INSPIRE GeoPortal harvest microservice**
+
+Important aspect of harvesters is the capability to finetune filters, resources such as INSPIRE, Cordis, Zenodo need proper filters in order to preselect relevant sources.
+
+**Git CI-CD** to run harvests, provides options to review CI-CD logs to check errors
 
 ### Integration opportunities
 

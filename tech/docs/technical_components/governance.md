@@ -34,8 +34,7 @@ a consistent and comprehensive set of guidelines to support the development cycl
  
 Additionally, the DSSC proposes the utilization of the Building Blocks Taxonomy, which serves as a classification scheme. 
 This taxonomy aids in describing, analyzing, and organizing data space initiatives based on predefined characteristics, 
-thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider the 
-[openDEI design principles for data spaces]((https://design-principles-for-data-spaces.org){target=_blank}){target=_blank}, the requirements of [ISO 30401 for KM](https://iso-docs.com/blogs/iso-concepts/knowledge-management-system-iso-30401){target=_blank} and rely on the results of the preparatory 
+thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider the [openDEI design principles for data spaces](https://design-principles-for-data-spaces.org/){target=_blank}, the requirements of [ISO 30401 for KM](https://iso-docs.com/blogs/iso-concepts/knowledge-management-system-iso-30401){target=_blank} and rely on the results of the preparatory 
 action for the data space for Agriculture ([AgriDataSpace](https://agridataspace-csa.eu/){target=_blank}).
 
 <br>
