@@ -24,7 +24,7 @@ Data Spaces. The formulation of this governance framework will rely mainly on th
 results which are:
 
 1. [Starter Kit](https://dssc.eu/space/SK/29523973/Starter+Kit+for+Data+Space+Designers+%7C+Version+1.0+%7C+March+2023){target=_blank}, 
-a document that helps organizations and individuals understand the requirements for creating a data space by providing 
+a document that helps organizations and individuals understand the requirements for creating a data space by providing. 
 a multifaceted view of data spaces, highlighting business, legal and governance, operational, functional, 
 and technical aspects to consider
 2. [Glossary](https://dssc.eu/space/Glossary/55443460/DSSC+Glossary+%7C+Version+1.0+%7C+March+2023){target=_blank} 
@@ -33,7 +33,7 @@ a consistent and comprehensive set of guidelines to support the development cycl
  
 Additionally, the DSSC proposes the utilization of the Building Blocks Taxonomy, which serves as a classification scheme. 
 This taxonomy aids in describing, analyzing, and organizing data space initiatives based on predefined characteristics, 
-thus promoting a structured approach to governance implementation (Figure 1). We will equally consider  the openDEI 
+thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider  the openDEI 
 design principles for data spaces, the requirements of ISO 30401 for KM and rely on the results of the preparatory 
 action for the data space for Agriculture (AgriDataSpace).
 
@@ -62,9 +62,6 @@ components adhering the governance requirements will be integrated in further it
 - vocabulary provider (connects to knowledge graph)
 
 - connections with: external repo, identity providers, connectors, UI/UX
-- technologies used:
-- responsible person:
-- participating:
 
 ## SoilWise Data Spaces (EV ILVO + WE)
 
