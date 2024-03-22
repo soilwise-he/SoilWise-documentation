@@ -1,4 +1,4 @@
-# Containerization
+# Containerization (WE)
 
 - Deployment configuration
 - Orchestration, e.g. scalability, restarting & recovery
