@@ -120,10 +120,10 @@ In cases where no a metadata service and/or harvesting protocol is available:
   - Label metadata
 - Store metadata
 
-For use wit AI/ML (e.g. LLMs), additionally it might be interesting to ingest and store the knowledge content itself (training ML models), or relevant fragments (explainnable AI). This is subject of the 2nd and 3rd interation and the development of LLM/Chatbot functionality on the SWR. 
+For use with AI/ML (e.g. LLMs), additionally it might be interesting to ingest and store the knowledge content itself (training ML models), or relevant fragments (explainnable AI). This is subject of the 2nd and 3rd interation and the development of LLM/Chatbot functionality on the SWR. 
 
 List of knowledge repositories
 - CORDIS: SparQL / REST endpoints / no metadata
 - Zenodo: REST / OAI/PMH /
 - OpenAIRE: REST / OAI/PMH /
-- to be extended...
+- list to be extended...
