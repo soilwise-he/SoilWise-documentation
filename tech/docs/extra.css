@@ -2,3 +2,12 @@
     --md-primary-fg-color: #713824;
     --md-accent-fg-color: #755848;
 }
+
+p {
+    text-align: justify;
+    font-size: .7rem;
+}
+
+li {
+    font-size: .7rem;
+}

@@ -1,19 +1,40 @@
-# Data preview & publication APIs
+# Data preview & download APIs
 
-- queries of geodata (WFS, OGC API-F, STA, STAC, WCS ...)
-- next iteration also sensor data (OGC Sensorthings API, OGCS SOS, ...)
-- visualization of geodata (WMS)
+The API-based (soil) data publication has been chosen as a key channel of the SWR to satisfy user needs in terms of data download & export. So far, the following APIs were selected to be verified in terms of their implementation and usability to SoilWise stakeholders.
 
-- connections with: data registry, ETL config, catalogue
-- technologies used:
-- responsible person:
-- participating:
+## Foreseen functionality
 
-SPARQL ENDPOINT
-- development aid
-- technical query interface behind APIs
+- Dataset download, no matter its geometry or data model.
+- Export of a subset of a dataset in various forms, including, e.g. feature collection, tiles or a zone in a gridded coverage.
+- Export a collection of datasets or their parts, the most typically a mosaic combining several satellite images.
 
-- connections with: APIs
-- technologies used: It is provided by the same technology hosting the meta-data catalogue.
-- responsible person: should be the same of the Catalogue.
-- participating:
+## Technology
+
+As described within the Data & Knowledge publication component, MapServer is intended for data publication in the SWR. [MapServer](../technical_components/publication.md#map-server) is an open-source platform for publishing spatial data to the web using standardised APIs defined by the Open Geospatial Consortium, such as WMS, WFS, WCS, and OGC API-Features. Initially developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
+
+## Integration opportunities
+
+SWR fully stands behind the [FAIR principles](https://www.nature.com/articles/sdata201618){target=_blank}, including persistent identification for the data download, which would result in a full download of the data/knowledge resource. As such, the [Persistent Identifier Mint](../technical_components/data_processing.md#persistent-identifier-mint) component is crucial to enhance the full potential of the Data download & export component.
+
+## Open issues
+
+Novel formats such as GeoParquet, COG, and GeoZarr allow range (subset) requests to a single endpoint and could combine FAIR identification and subset requests. Exploration of their potential for the SWR data download and export remains an open question.
+
+## Data preview APIs
+
+Support the discovery and query operations of an API that provides access to electronic maps in a manner independent of the underlying data store:
+
+- The [OGC Web Map Service (WMS aka ISO 19123)](https://portal.ogc.org/files/?artifact_id=14416https://ogcapi.ogc.org/maps/){target=_blank} supports requests for map images (and other formats) generated from geographical data,
+- The [OGC API - Maps](https://ogcapi.ogc.org/maps/){target=_blank} supports a REST API that can serve spatially referenced electronic maps, whether static or dynamically rendered, independently of the underlying data store. Note that this standard has not been approved yet; further development may still occur.
+- The [OGC Web Map Tile Service (WMTS)](https://portal.ogc.org/files/?artifact_id=35326){target=_blank} supports serving map tiles of spatially referenced data using tile images with predefined content, extent, and resolution.
+- The [OGC API - Tiles](https://ogcapi.ogc.org/tiles/){target=_blank} supports in the form of a REST API that defines building blocks for creating Web APIs that support retrieving geospatial information as tiles. Different forms of geospatial information are supported, such as tiles of vector features (“vector tiles”), coverages, maps (or imagery) and other types of geospatial information.
+
+## Data download APIs
+
+- for vector data
+ - the [OGC Web Feature Service (WFS aka ISO 19142)](https://portal.ogc.org/files/?artifact_id=39967){target=_blank} supports requests for geographical feature data (with vector geometry and attributes)s,
+ - the [OGC API – Features](https://ogcapi.ogc.org/features/){target=_blank} supports in the form of a REST API the capability to create, modify, and query spatial data on the Web and specifies requirements and recommendations for APIs that want to follow a standard way of sharing feature data.
+
+- for raster data
+ - the [OGC Web Coverage Service (WCS)](https://portal.ogc.org/files/09-110r4){target=_blank} supports requests for coverage data (rasters),
+ - the [OGC API – Coverages](https://ogcapi.ogc.org/coverages/){target=_blank} supports the download of coverages represented by some binary or ASCII serialisation, specified by some data (encoding) format. Arguably, the most popular type of coverage is a gridded one. Satellite imagery is typically modelled as a gridded coverage, for example. Note that this standard has not been approved yet; further development may still occur.

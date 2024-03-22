@@ -21,28 +21,30 @@ any conflicts that may arise.
 The governance framework will be designed by integrating relevant EU legislation concerning governance within data 
 ecosystems, alongside insights from ongoing Digital Europe CSA projects focused on constructing the Common European 
 Data Spaces. The formulation of this governance framework will rely mainly on the Data Spaces Support Centre (DSSC) 
-results which are the Starter Kit ([link](https://dssc.eu/space/SK/29523973/Starter+Kit+for+Data+Space+Designers+%7C+Version+1.0+%7C+March+2023), 
-a document that helps organizations and individuals understand the requirements for creating a data space by providing 
+results which are:
+
+1. [Starter Kit](https://dssc.eu/space/SK/29523973/Starter+Kit+for+Data+Space+Designers+%7C+Version+1.0+%7C+March+2023){target=_blank}, 
+a document that helps organizations and individuals understand the requirements for creating a data space by providing. 
 a multifaceted view of data spaces, highlighting business, legal and governance, operational, functional, 
-and technical aspects to consider), the Glossary ([link](https://dssc.eu/space/Glossary/55443460/DSSC+Glossary+%7C+Version+1.0+%7C+March+2023)) 
-and the Blueprint ([link](https://confluence.external-share.com/content/80889/dssc_blueprintv05_public_consultation?sortChildren=tree), 
-a consistent and comprehensive set of guidelines to support the development cycle of data spaces). 
+and technical aspects to consider
+2. [Glossary](https://dssc.eu/space/Glossary/55443460/DSSC+Glossary+%7C+Version+1.0+%7C+March+2023){target=_blank} 
+3. [Blueprint](https://confluence.external-share.com/content/80889/dssc_blueprintv05_public_consultation?sortChildren=tree){target=_blank}, 
+a consistent and comprehensive set of guidelines to support the development cycle of data spaces.
+ 
 Additionally, the DSSC proposes the utilization of the Building Blocks Taxonomy, which serves as a classification scheme. 
 This taxonomy aids in describing, analyzing, and organizing data space initiatives based on predefined characteristics, 
-thus promoting a structured approach to governance implementation (Figure 1). We will equally consider the openDEI 
-design principles for data spaces([link](https://design-principles-for-data-spaces.org/)), the requirements of ISO 30401 
-for KM ([link](https://iso-docs.com/blogs/iso-concepts/knowledge-management-system-iso-30401)) and rely on the results of the preparatory 
-action for the data space for Agriculture (AgriDataSpace ([link](https://agridataspace-csa.eu/)))
+thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider  the openDEI 
+design principles for data spaces, the requirements of ISO 30401 for KM and rely on the results of the preparatory 
+action for the data space for Agriculture (AgriDataSpace).
 
 <br>
 
-![img_governance.png](img_governance.png)![
+![img_governance.png](img_governance.png)
 
 
 Following the introduction of the GDPR, the European Commission has put forward several legislative proposals, 
 such as the Digital Services Act, the Digital Markets Act, the Data Act, and the Data Governance Act. 
-Soilwise places particular emphasis on the Data Governance Act ([link](https://www.european-data-governance-act.com/)) 
-and the Data Act([link](https://www.eu-data-act.com/)), as their primary goals 
+Soilwise places particular emphasis on the Data Governance Act and the Data Act, as their primary goals 
 align closely with the project's aims to enhance data sharing and facilitate product development. 
 These legislations are designed to:
 
@@ -60,9 +62,6 @@ components adhering the governance requirements will be integrated in further it
 - vocabulary provider (connects to knowledge graph)
 
 - connections with: external repo, identity providers, connectors, UI/UX
-- technologies used:
-- responsible person:
-- participating:
 
 ## SoilWise Data Spaces (EV ILVO + WE)
 
