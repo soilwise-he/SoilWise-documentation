@@ -74,7 +74,7 @@ components adhering the governance requirements will be integrated in further it
 
 _T1.4 will produce detailed technical specifications, including information on components to be (re)used, interfaces between them and explaining the data flows and processing schemes, **considering AgriDataSpace project** conceptual reference architecture, AI/ML architecture patterns and the Ethics by Design in AI._
 
-## --- WE ---
+### --- WE ---
 
 A Data Space is a type of collaboration model defined as a decentralized infrastructure (where data is not stored centrally, but at the source) for trusted data sharing and exchange in data ecosystems, based on commonly agreed principles. There is no central repository into which data providers supply their data and from which consumers can access and retrieve data. Instead, data is exchanged directly between appropriate parties.
 
@@ -87,33 +87,34 @@ Data Space facilitates the secure exchange, linkage, and interoperability of dat
 Image credited to IDSA: The Reference Architecture Model
 
 
-## Components/ Design of a data space (based on the IDSA)
+### Components/ Design of a data space (based on the IDSA)
 
 Thereare different approaches to designing data spaces, but the IDS-RAM (reference architecturemodel) of IDSA the International Data Space Association, which is characterizedby an open, reliable and federated architecture for cross-sectoral dataexchange, can be taken as a benchmark, containing at least a basic set ofcomponents necessary to build a robust data space.
 
 The mostimportant components of Data Spaces are briefly described below.
 
-## Connectors:
+### Connectors:
 The Connector is the central technical component for secureand trusted data exchange, through which participants access data in a Data Space. It is handling the data according to policies defined by the data owner interms of access and usage rights, thus ensuring its sovereignty. IDSconnectors for instance can publish the description of their data endpoints atan IDS meta-data broker. This allows potential data consumers to look upavailable data sources and data in terms of content, structure quality, actuality and other attributes (source: IDSA).
 
 Connectors can be certified in order to prevent malfunctionand to guarantee their integrity and compliance. 
 
-## Intermediaries:
+### Intermediaries:
 Intermediaries are services provided by third parties thatare necessary for publishing, searching and registering transactions. 
 
 Some of the intermediaries are: 
 
-- Vocabulary providers:
+- ### Vocabulary providers:
 Vocabulary providers manage andoffer vocabularies and ontologies, reference data models and metadata toannotate and classify data sets, describe the datasets’relationships and define possibleconstraints. This allows data to be systematically organized, categorized andlabelled, thus improving interoperability.
 
-- Metadata broker:
+- ### Metadata broker:
 According to IDSA, the MetadataBroker forms the referenceimplementation for registration and search functionality compliantwith International Data Spaces. As such, it follows the generic connectorarchitecture described in the reference architecture model. (https://www.dataspaces.fraunhofer.de/en/software/broker.html#:~:text=The%20Metadata%20Broker%20constitutes%20the,in%20the%20reference%20architecture%20model)
 
-- Identity providers:
+- ### Identity providers:
 An identity provider is a system entity that creates, maintains, manages and validates identityinformation for clients and also provides authentication services for trustedapplications within a federated or distributed network. (Source: wiki).
 
-- Clearing house:
+- ### Clearing house:
 Clearing house allows to keepcontrol of the operationscarried out. The IDS clearing house for instance providesdecentralized and auditable traceability of all transactions if needed.
+
 
 CONNECTOR:
 
