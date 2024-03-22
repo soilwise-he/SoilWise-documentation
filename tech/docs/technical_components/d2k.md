@@ -16,12 +16,12 @@ L'Abate
 
 ## Enhancing metadata items
 
+AI/ML and other analytics will be used to enrich metadata
 
-Powered by AI
-
-- finding citations and usage of data, methodologies
-- provide data labelling
-- enable user input??
+The following applications can be thought of
+- using a soil (health) ontology to label data and knowledge, based on
+- interlinking different sources: data - data, knowledge - knowledge and data - knowledge, see automatic metadata interlinking
+- finding associated data & knowledge, e.g. citations, usage of data, methodologies
 
 ## Alignment with existing data
 
@@ -44,17 +44,19 @@ It should be connected to:
 
 - Research item: Rank relevance of a resource by evaluating usage logs
 
-## Sophisticated Large Language Model
-
-This model will be trained on the knowledge graph. It aims to provide an easy to use and personified interaction mechanism with the knowledge harnessed at the SWR. It is the main comp supporting the Chatbot component of the user interface.
-
 ## High-value data & knowledge identification
 
-- Is this somehow related to metadata ranking?
+Is this somehow related to metadata ranking?
+
+## Sophisticated Large Language Model
+
+<!-- 
+This model will be trained on the knowledge graph. It aims to provide an easy to use and personified interaction mechanism with the knowledge harnessed at the SWR. It is the main comp supporting the Chatbot component of the user interface.
+-->
 
 ## AI, ML
 
-- Questionable if this should be a separate component, maybe integrated part of other components?
+- **To be decided on** - Questionable if this should be a separate component, maybe integrated part of other components?
 
 ## Extraction of KPIs from data
 
@@ -64,10 +66,10 @@ This model will be trained on the knowledge graph. It aims to provide an easy to
 
 - **To be decided on** - This seems not in scope for SoilWise, although an effort to create such a map will certainly be a user story, Soilwise to provide input for such an effort (both on data and covariates, as well as how to do it)
 
-
+<!--
 Remaining notes:
 - Identify project scope of a resource from CORDIS
 - Identify type of a remote resources, if linked from a metadata (download, api, record, document)
-
+-->
 
 _T1.4 will produce detailed technical specifications, including information on components to be (re)used, interfaces between them and explaining the data flows and processing schemes, considering AgriDataSpace project conceptual reference architecture, **AI/ML architecture patterns and the Ethics by Design in AI.**_
