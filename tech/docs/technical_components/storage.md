@@ -34,7 +34,20 @@ subgraph DPU [Data & Knowledge publication]
     KG ~~~ CS
 end
 ```
+The Storage component comprises of the following components:
 
+**Storage of artifacts**
+
+ - [Data model](#data-model)
+ - [Metadata scheme](#metadata-scheme)
+ - [Soil Health vocabulary](#soil-health-vocabulary)
+
+**Storage of sources**
+
+ - [Knowledge sources log](#knowledge)
+ - [Metadata cache & store](#metadata)
+ - [Database for processed and high-value data](#processed-data)
+ - [Temporary store for uploaded data](#temporary-store-for-uploaded-data)  
 
 ## Data model
 
