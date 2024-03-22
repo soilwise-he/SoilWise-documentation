@@ -1,10 +1,5 @@
 #  Ingestion
 
-The Ingestion component is dedicated to automatically harvest sources to populate [SWR Catalogue](publication.md#catalogue-server). It comprises of the following components:
-
-1. [Automated metadata harvesting](#automated-metadata-harvesting)
-2. [Automated ingestion of metadata on knowledge sources](#automated-ingestion-of-metadata-on-knowledge-sources)
-
 ``` mermaid
 flowchart LR
     DBD[(fa:fa-database Data & knowledge providers)] --> I
@@ -16,6 +11,11 @@ subgraph I [Ingestion]
 
 end
 ```
+
+The Ingestion component is dedicated to automatically harvest sources to populate [SWR Catalogue](publication.md#catalogue-server). It comprises of the following components:
+
+1. [Automated metadata harvesting](#automated-metadata-harvesting)
+2. [Automated ingestion of metadata on knowledge sources](#automated-ingestion-of-metadata-on-knowledge-sources)
 
 ## Automated metadata harvesting
 

@@ -1,11 +1,32 @@
 # Data processing
 
+``` mermaid
+flowchart LR
+    DPR("`**Data processing**`") --> D2K(Data2Knowledge processing)
+    D2K --> DPR
+    DPR --> S(Repository Storage)
+    S --> DPR
+
+subgraph DPR [Data processing]
+    PI("`**Persistence identification
+          - Persistent Identifier Mint**
+          - Data duplicities discovery
+          - Link persistence validator`") ~~~ 
+    MV("`**Metadata validation**
+          - Metadatacompleteness
+          - Data quality assurance`")
+    I("`**Interoperability**
+          - INSPIRE interoperability
+          - Codelist mapping`") ~~~ MV
+end
+```
+
 The data processing component comprises of the following components:
 
-- [Persistent identification](#persistent-identification)
-- [Metadata indexing](#metadata-indexing)
-- [Metadata validation](#metadata-validation)
-- [Interoperability](#interoperability)
+1. [Persistent identification](#persistent-identification)
+2. [Metadata indexing](#metadata-indexing)
+3. [Metadata validation](#metadata-validation)
+4. [Interoperability](#interoperability)
 
 ## Persistent identification
 
