@@ -1,4 +1,4 @@
-# User Interface: Dashboard (WE, ISRIC)
+# User Interface: Dashboard
 
 The term dashboard is used with various meanings, in the scope of Soilwise the following uses are relevant:
 
@@ -11,13 +11,11 @@ Other parts of the user interface are:
 - [Metadata authoring and Harvesting configuration](#manual-data-metadata-authoring)
 - [Data download & export](#data-download-export) options
 
-
-
 ## Search interface on metadata
 
 A typical example of such a search is the current [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data).
 
-### Ranking, relations, full text search, and filtering (ISRIC)
+### Ranking, relations, full text search, and filtering
 
 Optimal search capabilities are provided by the catalogue backend, this component leverages these capabilities to provide users with an optimal user interface to effectively use those capabilities.
 
@@ -43,7 +41,7 @@ What can be improved:
 - Jinja2 templates (html, css) as a tailored skin on pycsw/pygeoapi, or dedicated frontend (vuejs, react)
 - Leaflet/OpenLayers/MapLibre
 
-### Chatbot (WENR, WR)
+### Chatbot
 
 Large Language models enriched with Soilwise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer, but also provides references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in how to access the source, using which software for example.
 
@@ -51,9 +49,10 @@ Large Language models enriched with Soilwise content can offer an alternative in
 
 - Various LLM's to be tested, most are python based.
 
-### Map viewer (MU + ISRIC)
+### Map viewer
 
 A light-weight client map viewer component will be employed:
+
 - as a frontend of [Map Server](publication.md#map-server) component to visualize provided WMS, WFS, WCS layers
 - as a integrated part of the [Catalogue Server](publication.md#catalogue-server) to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
 - full preview of data is currently a subject of discussions
@@ -69,7 +68,7 @@ Examine the need of viewing novel formats such as Vector tiles, [COG](https://ww
 [TerriaJS](https://terria.io) is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.
 
 
-## Overview of catalogue content (ISRIC, WR)
+## Overview of catalogue content
 
 ### Traditional dashboards 
 
@@ -86,9 +85,6 @@ The source data for the dashboards is very likely enriched with AI generated ind
 ## Soil health indicators
 
 The [EUSO dashboard on soil health](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/) presents soil health indicators from memberstates. This dashboard is not directly in scope of Soilwise, but it is important to effectively distinguish it from the Soilwise dashboards. 
-
-
-
 
 ## Manual data & metadata authoring
 
@@ -118,10 +114,10 @@ The above-described mechanisms showed the “as is” manual metadata upload. Ne
 
 ### Technology
 
-- GeoNetwork includes an authoring environment with web forms and a dashboard to create and monitor harvesters.
-- pycsw includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters
-- A Git based participatory metadata workflow as introduced in EJP Soil
-    - Users should be endorsed to register their metadata via known repositories, such as zenodo, cordis, inspire, ... at most register the identifier (DOI, CSW) of the record at EUSO, metadata will be mirrored from those locations at intervals
+- **GeoNetwork** includes an authoring environment with web forms and a dashboard to create and monitor harvesters.
+- **pycsw** includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters
+- A **Git** based participatory metadata workflow as introduced in EJP Soil
+    - Users should be endorsed to register their metadata via known repositories, such as Zenodo, CORDIS, INSPIRE, ... at most register the identifier (DOI, CSW) of the record at EUSO, metadata will be mirrored from those locations at intervals
     - Data can be maintained in a Git Repository, such as the [EJP Soil repository](https://github.com/ejpsoil/ejpsoildatahub/tree/main/datasets), preferably using a readably serialisation, such as YML
     - In EJP Soil we experiment with the [metadata control file](https://geopython.github.io/pygeometa/reference/mcf/) format (MCF), a subset of iso19139
     - A web editor for MCF is available at [osgeo.github.io](https://osgeo.github.io/mdme)
@@ -139,6 +135,6 @@ The Manual data & metadata upload component will show its full potential when be
 ### Open issues
 The Manual data & metadata upload component shall be technologically aligned with the [SWR Catalogue](publication.md#catalogue-server) and [Automatic metadata harvesting component](ingestion.md#automated-metadata-harvesting). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.
 
-## Data download & export (MU)
+## Data download & export
 
 A UI component could be made available as part of the [SWR Catalogue](publication.md#catalogue-server) application which facilitates access to subsets of data from a data download or API. A user selects the relevant featuretype/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download. The API-based data publication is described as part of [API'S](../apis/data-publication.md#data-preview--download-apis).
