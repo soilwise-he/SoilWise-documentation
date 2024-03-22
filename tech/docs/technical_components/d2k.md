@@ -14,11 +14,32 @@ structures
 L'Abate
 -->
 
+``` mermaid
+flowchart LR
+    DPR(Data processing) --> D2K("`**Data2Knowledge processing**`")
+    D2K --> DPR
+    D2K --> DPU(Data & Knowledge publication)
+
+subgraph D2K [Data2Knowledge processing]
+    EM("`**Enhancing metadata items**`") ~~~ AM("`**Automatic metadata interlinking**`")
+    MR("`**Metadata ranking**`") ~~~ SLM("`**Sophisticated large language model**`")
+end
+```
+
+Data2Knowledge processing component comprises of the following components:
+
+1. [Enhancing metadata items](#enhancing-metadata-items)
+2. [Automatic metadata interlinking](#automatic-metadata-interlinking)
+3. [Metadata ranking](#metadata-ranking)
+4. [Sophisticated large language model](#sophisticated-large-language-model)
+5. Additional components will be assessed in the next development iterations
+
 ## Enhancing metadata items
 
 AI/ML and other analytics will be used to enrich metadata
 
-The following applications can be thought of
+The following applications can be thought of:
+
 - using a soil (health) ontology to label data and knowledge, based on e.g. NLP methods
 - interlinking different sources: data - data, knowledge - knowledge and data - knowledge, see automatic metadata interlinking
 - finding associated data & knowledge, e.g. citations, usage of data, methodologies
@@ -36,9 +57,10 @@ To be able to provide interlinked data and knowledge assets (e.g. a dataset, the
 For those linkages, the harvesting process needs to be extended, calling this component to store the relation in the knowledge graph. It should accomodate "vice versa linkage" (if resource A links to B, a vice versa link can be added to B)
 - **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, shared author/publisher. In this case, AI/ML can support the discovery of potential links, including somekind of probability indicator
 
-## Integration opportunities
+### Integration opportunities
 
-The Automatic metadata interlinking component should be connected to: 
+The Automatic metadata interlinking component should be connected to:
+
 - [Automated igestion of metadata on knowledge sources](ingestion.md#automated-ingestion-of-metadata-on-knowledge-sources) (initiate)
 - [Metadata store](storage.md#metadata) (read)
 - [Knowledge graph](publication.md#knowledge-graph) (read/write)
