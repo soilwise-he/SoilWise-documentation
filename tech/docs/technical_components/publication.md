@@ -74,6 +74,8 @@ Both technologies are oriented to the geospatial governmental domain and have li
 
 ## Knowledge graph
 
+??? open question: put it in the Storage?
+
 The knowledge graph is meant to add a formal semantics layer to the meta-data collected at the SWR. It mirrors the XML-based meta-data harnessed in the Catalogue Server, but using Semantic Web standards such as DCAT, Dublin Core, VCard or PROV. This meta-data is augmented with links to domain web ontologies, in particular GloSIS. This semantically augmented meta-data is the main pilar of knowledge extraction activities and components.
 
 Besides meta-data the knowledge graph is also expected to host the results of knowledge extration activities. This assumes that knowledge to be semantically laden, i.e. linking to relevant domain ontologies. The identification of appropriate ontologies, and ontology mappinds thus becomes an essential aspect of this project, bridging together various activities and assets.

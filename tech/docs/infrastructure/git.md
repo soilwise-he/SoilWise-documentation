@@ -1,19 +1,21 @@
 # GIT versioning system
 
-All aspects of the SoilWise repository can be managed through the SoilWise GIT repository. 
+All aspects of the SoilWise repository can be managed through the [SoilWise GIT](https://github.com/soilwise-he){target=_blank} repository. 
 This allows all members of the Soil mission and EUSO community to provide feedback or contribute to any of the aspects.
 
 ## Documentation
 
-Documentation is maintained in the markdown format and deployed as html or pdf.
+Documentation is maintained in the markdown format using [McDocs](https://www.mkdocs.org/){target=_blank} and deployed as html or pdf using GitHub Pages.
 
+An interactive preview of architecture diagrams is also maintained and published using GitHub Pages.
+e
 ## Source code
 
 Software libraries tailored or developed in the scope of SoilWise are maintained through the GIT repository.
 
 ## Container build scripts/deployments
 
-SoilWis is based on an orchestrated set of container deployments. Both the definitions of the containers as well as the orchestration of those containers are maintained through Git.
+SoilWise is based on an orchestrated set of container deployments. Both the definitions of the containers as well as the orchestration of those containers are maintained through Git.
 
 ## Harvester definitions
 
@@ -38,8 +40,4 @@ Roadmap discussion, backlog and issue management are part of the Git repository.
 ## Release management
 
 Releases of the components and infrastructure are managed from Git a repository, so users understand the status of a version and can download the packages. The release process is managed in an automated way through CI-CD pipelines.
-
-## Organizational
-
-- connections with: CI-CD, kubernetes, catalog, ETL, QA QC, role definitions
 
