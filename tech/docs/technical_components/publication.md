@@ -1,5 +1,39 @@
 # Data & Knowledge publication
 
+``` mermaid
+flowchart
+    S(Repository Storage) --> DPU(Data & Knowledge publication)
+    DPR(Data processing) --> DPU
+    D2K(Data2Knowledge processing) --> DPU
+    DPU --> APIP(Preview APIs)
+    DPU --> APID(Download APIs)
+    DPU --> APIPM(Metadata publication APIs)
+    DPU --> UI(Dashboard)
+    MS --> MW
+    MS --> DD
+    CS --> SF
+    KG --> CH
+    DPU --> CN(Collaboration & Networking)
+    
+subgraph DPU [Data & Knowledge publication]
+    MS("`**Map Server**`") ~~~ CS("`**Catalogue Server**`")
+    CS ~~~ KG("`**Knowledge Graph**`")
+end
+
+subgraph UI [Dashboard]
+    MW(Map viewer) ~~~ DD(Data download & export)
+    SF(Ranking, relations, full text search, filtering) ~~~ CH(Chatbot)
+end
+```
+
+Data & Knowledge publication component is foreseen to provide access to harvested and processed SWR resources. It comprises of the following components:
+
+1. [Map Server](#map-server)
+2. [Catalogue Server](#catalogue-server)
+3. [Knowledge graph](#knowledge-graph)
+
+APIs for preview, download, publication and search are described in [separate](../apis/apis-intro.md) section.
+
 ## Map Server
 
 [MapServer](https://mapserver.org){target=_blank} is an Open Source platform for publishing spatial data to the web using standardised API's defined by Open Geospatial Consortium, such as WMS, WFS, WCS, OGC API-Features. Originally developed in the mid-1990’s at the University of Minnesota, MapServer is released under an MIT-style license, and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
