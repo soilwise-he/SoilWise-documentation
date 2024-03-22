@@ -106,23 +106,26 @@ The Automatic metadata harvesting component will show its full potential when be
 For knowlege resouces it is less usual to provide metadata according to standardized metadata schemas, and to expose metadata through harvesting protocols. Therefore, a dedicated strategy and procedures are needed to be able to harmonize and index knowledge as part of the SWR.
 
 In cases where no metadata service is available:
+
 - Access and download data via the (most feasible) available endpoint
 - Process data
-  - mapping the content to a SWR schema for knowledge metadata (Dublin Core)
-  - Derive missing metadata fields if possible
-  - Label metadata
+    * mapping the content to a SWR schema for knowledge metadata (Dublin Core)
+    * Derive missing metadata fields if possible
+    * Label metadata
 - Store metadata
 
 In cases where no a metadata service and/or harvesting protocol is available:
+
 - Follow harvesting process for datasets
 - Process data
-  - Derive missing metadata fields if possible
-  - Label metadata
+    * Derive missing metadata fields if possible
+    * Label metadata
 - Store metadata
 
 For use with AI/ML (e.g. LLMs), additionally it might be interesting to ingest and store the knowledge content itself (training ML models), or relevant fragments (explainnable AI). This is subject of the 2nd and 3rd interation and the development of LLM/Chatbot functionality on the SWR. 
 
 List of knowledge repositories
+
 - CORDIS: SparQL / REST endpoints / no metadata
 - Zenodo: REST / OAI/PMH /
 - OpenAIRE: REST / OAI/PMH /

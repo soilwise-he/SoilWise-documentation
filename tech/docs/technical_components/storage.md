@@ -38,16 +38,16 @@ The Storage component comprises of the following components:
 
 **Storage of artifacts**
 
- - [Data model](#data-model)
- - [Metadata scheme](#metadata-scheme)
- - [Soil Health vocabulary](#soil-health-vocabulary)
+ 1. [Data model](#data-model)
+ 2. [Metadata scheme](#metadata-scheme)
+ 3. [Soil Health vocabulary](#soil-health-vocabulary)
 
 **Storage of sources**
 
- - [Knowledge sources log](#knowledge)
- - [Metadata cache & store](#metadata)
- - [Database for processed and high-value data](#processed-data)
- - [Temporary store for uploaded data](#temporary-store-for-uploaded-data)  
+ 1. [Knowledge sources log](#knowledge)
+ 2. [Metadata cache & store](#metadata)
+ 3. [Database for processed and high-value data](#processed-data)
+ 4. [Temporary store for uploaded data](#temporary-store-for-uploaded-data)  
 
 ## Data model
 
