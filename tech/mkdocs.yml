@@ -42,7 +42,9 @@ theme:
   logo: _assets/images/SoilWise_logo.png
 #  favicon: assets/images/favicon.png
 
-extra_css: [extra.css]
+extra_css: 
+    - extra.css
+    - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 extra:
   social:
