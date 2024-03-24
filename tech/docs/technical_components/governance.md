@@ -87,33 +87,35 @@ Data Space facilitates the secure exchange, linkage, and interoperability of dat
 Image credited to IDSA: The Reference Architecture Model
 
 
-### Components/ Design of a data space (based on the IDSA)
+## Components/ Design of a data space (based on the IDSA)
 
-Thereare different approaches to designing data spaces, but the IDS-RAM (reference architecturemodel) of IDSA the International Data Space Association, which is characterizedby an open, reliable and federated architecture for cross-sectoral dataexchange, can be taken as a benchmark, containing at least a basic set ofcomponents necessary to build a robust data space.
+There are different approaches to designing data spaces, but the IDS-RAM (reference architecture model) of IDSA the International Data Space Association, which is characterized by an open, reliable and federated architecture for cross-sectoral data exchange, can be taken as a benchmark, containing at least a basic set of components necessary to build a robust data space.
 
-The mostimportant components of Data Spaces are briefly described below.
+The most important components of Data Spaces are briefly described below.
 
-### Connectors:
-The Connector is the central technical component for secureand trusted data exchange, through which participants access data in a Data Space. It is handling the data according to policies defined by the data owner interms of access and usage rights, thus ensuring its sovereignty. IDSconnectors for instance can publish the description of their data endpoints atan IDS meta-data broker. This allows potential data consumers to look upavailable data sources and data in terms of content, structure quality, actuality and other attributes (source: IDSA).
+### Connectors
+The Connector is the central technical component for secure and trusted data exchange, through which participants access data in a Data Space. It is handling the data according to policies defined by the data owner interms of access and usage rights, thus ensuring its sovereignty. IDS connectors for instance can publish the description of their data endpoints atan IDS meta-data broker. This allows potential data consumers to look up available data sources and data in terms of content, structure quality, actuality and other attributes (source: IDSA).
 
 Connectors can be certified in order to prevent malfunctionand to guarantee their integrity and compliance. 
 
-### Intermediaries:
-Intermediaries are services provided by third parties thatare necessary for publishing, searching and registering transactions. 
+### Intermediaries
+Intermediaries are services provided by third parties that are necessary for publishing, searching and registering transactions. Some of the intermediaries are: 
 
-Some of the intermediaries are: 
+**Vocabulary providers**
 
-- ### Vocabulary providers:
-Vocabulary providers manage andoffer vocabularies and ontologies, reference data models and metadata toannotate and classify data sets, describe the datasets’relationships and define possibleconstraints. This allows data to be systematically organized, categorized andlabelled, thus improving interoperability.
+Vocabulary providers manage and offer vocabularies and ontologies, reference data models and metadata to annotate and classify data sets, describe the datasets’ relationships and define possible constraints. This allows data to be systematically organized, categorized and labelled, thus improving interoperability.
 
-- ### Metadata broker:
-According to IDSA, the MetadataBroker forms the referenceimplementation for registration and search functionality compliantwith International Data Spaces. As such, it follows the generic connectorarchitecture described in the reference architecture model. (https://www.dataspaces.fraunhofer.de/en/software/broker.html#:~:text=The%20Metadata%20Broker%20constitutes%20the,in%20the%20reference%20architecture%20model)
+**Metadata broker**
 
-- ### Identity providers:
-An identity provider is a system entity that creates, maintains, manages and validates identityinformation for clients and also provides authentication services for trustedapplications within a federated or distributed network. (Source: wiki).
+According to IDSA, the Metadata Broker forms the reference implementation for registration and search functionality compliant with International Data Spaces. As such, it follows the generic connector architecture described in the reference [architecture model](https://www.dataspaces.fraunhofer.de/en/software/broker.html#:~:text=The%20Metadata%20Broker%20constitutes%20the,in%20the%20reference%20architecture%20model){target=_blank}.
 
-- ### Clearing house:
-Clearing house allows to keepcontrol of the operationscarried out. The IDS clearing house for instance providesdecentralized and auditable traceability of all transactions if needed.
+**Identity providers**
+
+An identity provider is a system entity that creates, maintains, manages and validates identity information for clients and also provides authentication services for trusted applications within a federated or distributed network. (Source: wiki).
+
+**Clearing house**
+
+Clearing house allows to keep control of the operations carried out. The IDS clearing house for instance provides decentralized and auditable traceability of all transactions if needed.
 
 
 CONNECTOR:
