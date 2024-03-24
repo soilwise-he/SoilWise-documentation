@@ -10,6 +10,9 @@ plugins:
   - awesome-pages
   - git-revision-date-localized
   - render_swagger
+  - print-site:
+      add_to_navigation: true
+      print_page_title: 'Printable version'
 
 markdown_extensions:
   - admonition

@@ -16,6 +16,7 @@ pip install mkdocs-mermaid2-plugin
 pip install mkdocs-git-revision-date-localized-plugin
 pip install mkdocs-awesome-pages-plugin
 pip install mkdocs-render-swagger-plugin
+pip3 install mkdocs-print-site-plugin
 ```
 
 3. clone git repository
