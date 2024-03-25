@@ -2,6 +2,17 @@
 
 ## Semantic Web specifications for meta-data
 
+This section briefly reviews the specifications issued by the World Wide Web
+Consortium (W3C) for the encoding of meta-data. The most relevant of these is
+DCAT, however, as is paramount in the Semantic Web, this ontology is meant to be
+used together with other specifications. 
+
+The web ontologies review here not only complement each other, but in many cases
+even overlap. Such is the nature of the Semantic Web, a single instance can be
+simultaneously be declared as a `foaf:Person`, a `vcard:Individual` and a
+`prov:Agent`, in doing so creating semantic links to multiple ontologies,
+greatly boosting its meaning and effectiveness.   
+
 ### Dublin Core
 
 The Dublin Core Metadata Element Set (DCMES), better known simply as [Dublin
