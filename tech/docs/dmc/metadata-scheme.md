@@ -123,6 +123,43 @@ specified by DCAT are:
 
 ### PROV
 
+[PROV](http://www.w3.org/TR/2013/REC-prov-o-20130430/) defines a core domain
+model for provenance, to build representations of the entities, people and
+processes involved in producing a piece of data or thing in the world. This
+specification is meant to express provenance records, containing descriptions of
+the entities and activities involved in producing, delivering or otherwise
+influencing a given object. Provenance can be used for many purposes, such as
+understanding how data was collected so it can be meaningfully used, determining
+ownership and rights over an object, making judgements about information to
+determine whether to trust it, verifying that the process and steps used to
+obtain a result complies with given requirements, and reproducing how something
+was generated. 
+
+PROV defines classes at a high level of abstraction. In most cases these classes
+must be specialised to a specific in order to be useful. The most relevant
+classes are:
+
+- `Entity`: physical, digital, conceptual, or other kind of thing. Examples of
+  such entities are a web page, a chart, or a spellchecker. Provenance records
+  can describe the provenance of entities.
+
+- `Activity`: explains how entities come into existence and how their attributes
+  change to become new entities. It is a dynamic aspect of the world, such as
+  actions, processes, etc. Activities often create new entities. 
+
+- `Agent`: takes a role in an activity such that the agent can be assigned some
+  degree of responsibility for the activity taking place. An agent can be a
+  person, a piece of software, an inanimate object, an organisation, or other
+  entities that may be ascribed responsibility.
+
+- `Role`: a description of the function or the part that an entity played in an
+  activity. It specifies the relationship between an entity and an activity,
+  i.e. how the activity used or generated the entity. Roles also specify how
+  agents are involved in an activity, qualifying their participation in the
+  activity or specifying for which aspect each agent was responsible.
+
+
+
 ## Soil Semantics
 
 
