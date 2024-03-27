@@ -1,29 +1,50 @@
-#  Ingestion
+#  Harvester
 
-The Ingestion component is dedicated to automatically harvest sources to populate [SWR Triple Store](./storage.md). It comprises the following components:
+The Harvester component is dedicated to automatically harvest sources to populate [SWR Triple Store](./storage.md) with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
 
-1. [Automated ingestion of metadata on datasets](#datasets)
-2. [Automated ingestion of metadata on knowledge sources](#knowledge-sources)
+## Automated metadata harvesting concept
 
-## Automated metadata harvesting
+Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components were available.
 
-Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. Aim is to use existing components were available.
-
-In case of the SoilWise Repository, the primary aim is to retrieve metadata on data and knowledge resources. The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. Soilwise can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes.
+The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes.
 
 All metadata with an update date newer then <last-identified successfull harvester run> are extracted from remote location. 
 
-## Datasets
+## Resource Types
 
-Datasets are to be imported from the INSPIRE GeoPortal, Bonares as well as Cordis. In later iterations we aim to also include other portals, such as national or thematic portals.
+Metadata for following resource types to be harvested:
 
-## Knowledge sources
+- Data & Knowledge Resources (Articles/Datasets/Videos/Software/Services)
+- Projects/LTE/Living labs
+- Funding schemes (Mission-soil)
+- Organisations
+- Repositories/Catalogues
 
-The soilwise group is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Horizon Europe projects. These resources are accessible from Cordis, Zenodo and OpenAire. Extracting content from Cordis, OpenAire and Zenodo can be achieved using a harvesting task (using the cordis schema, extended with post processing). For the first itereation we aim for this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
+These entities relate to each other as:
 
-## Catalogue API's and models
+``` mermaid
+flowchart LR
+    people -->|memberOf| o[organisations] 
+    o -->|partnerIn| p[projects]
+    p -->|produce| d[data & knowledge resources]
+    o -->|publish| d
+    d -->|describedIn| c[catalogues]
+    p -->|part-of| fs[Fundingscheme]
+```
 
-Catalogues typically offer standardised API's as well as tailored API's to extract resources. Typically the tailored API's offer extra capabilities which may be relevant to Soilwise. However in general we should adopt the standardised interfaces, because it allows us to use of the shelf components with high TRL.
+## Origin of harvested resources
+
+### Datasets
+
+Datasets are to be imported from the **INSPIRE GeoPortal**, **BonaRes** as well as **Cordis**. In later iterations SoilWise aims to also include other portals, such as **national** or **thematic portals**.
+
+### Knowledge sources
+
+The SoilWise group is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Horizon Europe projects. These resources are accessible from **Cordis**, **Zenodo** and **OpenAire**. Extracting content from Cordis, OpenAire and Zenodo can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first itereation SoilWise aims for this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
+
+### Catalogue API's and models
+
+Catalogues typically offer standardised API's as well as tailored API's to extract resources. Typically the tailored API's offer extra capabilities which may be relevant to SoilWise. However in general we should adopt the standardised interfaces, because it allows us to use of the shelf components with high TRL.
 
 Standardised API's are available for harvesting records from:
 
@@ -32,13 +53,13 @@ Standardised API's are available for harvesting records from:
 - SPARQL
 - Sitemap.xml 
 
-Dedicated communities made efforts to standardise metadata in their domain. This resulted in a large number of standardised metadata models. Most of them (but not all) are oriented on the Dublin Core model, which provides a common entry point to these models. In that scenario we should be able to at least extract the dublin core elements from various schema's. If we identify that additional properties need to be extracted, extraction extensions will be added to the metadata cleaning component per origin metadata schema.
+Dedicated communities made efforts to standardise metadata in their domain. This resulted in a large number of standardised metadata models. Most of them (but not all) are oriented on the Dublin Core model, which provides a common entry point to these models. In that scenario we should be able to at least extract the Dublin Core elements from various schema's. If we identify that additional properties need to be extracted, extraction extensions will be added to the metadata cleaning component per origin metadata schema.
 
-For now we identified the following general metadata models from which the dublin core elementa can be extracted:
+For now we identified the following general metadata models from which the Dublin Core elements can be extracted:
 
-- iso19139:2007 / iso19115:2012 (xml)
-- Dublic core (xml)
-- Datacite (json/xml)
+- ISO 19139:2007 / ISO 19115:2012 (xml)
+- Dublic Core (xml)
+- DataCite (json/xml)
 - DCAT (RDF)
 
 Potentially of interest are:
@@ -47,39 +68,17 @@ Potentially of interest are:
 - [Schema.org](https://schema.org/Dataset) (json-ld)
 - [OpenGraph](https://ogp.me/)
 
-Because of its relevance we aim to also support:
+Because of their relevance we aim to also support:
 
 - Cordis data model
 - ESDAC (HTML scraping??)
 
 ![Cordis data model](https://blog.sparna.fr/wp-content/uploads/2024/01/EURIO_v2.4-1024x812.png)
 
-## Types
-
-Metadata for following resource types to be harvested:
-
-- Resources (Articles/Datasets/Videos/Software/Services)
-- Projects/LTE/Living labs
-- Funding schemes (Mission-soil)
-- Organisations
-- Repositories/Catalogues
-
-These entities relate to eachother as:
-
-``` mermaid
-flowchart LR
-    people -->|memberOf| o[organisations] 
-    o -->|partnerIn| p[projects]
-    p -->|produce| d[resources]
-    o -->|publish| d
-    d -->|describedIn| c[catalogues]
-    p -->|part-of| fs[Fundingscheme]
-```
 
 ## Architecture
 
-Below are described 3 options for a harvest infrastructure. The main difference is the scalability of the solution, 
-which is mainly dependent on the frequency and volume of the harvesting. 
+Below are described 3 options for a harvesting infrastructure. The main difference is the scalability of the solution, which is mainly dependent on the frequency and volume of the harvesting. 
 
 ### Traditional approach
 
@@ -125,17 +124,11 @@ flowchart LR
     AID --> RS[(Remote sources)]
 ```
 
-For this iteration, we will focus on the second approach.
-
-## Duplicities / Conflicts
-
-A resource can be described in multiple catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. We aim to persist a copy of the harvested content (also to identify if the remote source has changed). The harvester components itself will not evaluate duplicities/conflicts between records. 
-
-An aim of this exersice is also to understand in which repoitories a certain resource is advertised.
+For this iteration, SoilWise will focus on the second approach.
 
 ## Foreseen functionality
 
-A harvesting task typically extract records with update-date later then the last successfull harvester run.
+A harvesting task typically extract records with update-date later then the last successfull Harvester run.
 
 Harvested content is (by default) not editable for the following reasons:
 
@@ -148,18 +141,24 @@ To be discussed is if harvested content is removed, as soon as a harvester confi
 
 Typical functionalities of a harvester:
 
-- Define a harvester
+- **Define a harvester job**
     - Schedule (on request, weekly, daily, hourly)
     - Endpoint / Endpoint type (eample.com/csw -> OGC:CSW)
     - Apply a filter (only records with keyword='soil-mission')
-- Understand success of a harvest 
+- **Understand success of a harvest job** 
     - overview of harvested content (120 records)
     - which runs failed, why? (today failed -> log, yesterday successfull -> log)
     - Monitor running harvestors (20% done -> cancel)
-- Define behaviors on harvested content
+- **Define behaviors on harvested content**
     - skip records with low quality (if test xxx fails)
     - mint identifier if missing ( https://example.com/data/{uuid} )
     - a model transformation before ingestion ( example-transform.xsl / do-something.py )
+
+### Duplicities / Conflicts
+
+A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). The Harvester component itself will not evaluate duplicities/conflicts between records. 
+
+An aim of this exersice is also to understand in which repoitories a certain resource is advertised.
 
 ## Technology options
 
