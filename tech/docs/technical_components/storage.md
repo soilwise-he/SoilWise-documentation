@@ -1,7 +1,6 @@
-# Repository Cloud Storage (WE)
+# Repository Storage (WE)
 
-??? open question: probably not all components below should be part of cloud storage, we can restructure chapters and components based on what's the real expectation
-
+??? open question: probably not all components below should be part of storage, we can restructure chapters and components based on what's the real expectation
 
 - asset and feature identification
 - backup
@@ -51,25 +50,34 @@ The Storage component comprises of the following components:
 
 ## Data model
 
-‘To which data model shall I align?’ is the central question of data harmonisation efforts and data interoperability in general. SoilWise is aware of the fragmentation of soil data and the lack of harmonisation. As such, the SWR will, in the first development phase, focus on two major pan-European/global data modelling efforts within the soil domain:
+‘To which data model shall I align?’ is the central question of data harmonisation efforts and data interoperability in general. SoilWise is aware of the fragmentation of soil data and the lack of harmonisation. As such, the SWR will, in the first development phase, focus on two major pan-European/global data modelling efforts within the soil domain. 
 
 -  **GloSIS** (Global Soil Information System) is the name for the system and the soil data model, also named the GloSIS domain model. The GloSIS domain model published as a UML class diagram is not publicly available, being in the FAO repositories under the CC <by-nc-sa/3.0/igo> license. Nevertheless, the [GloSIS web ontology](https://www.semantic-web-journal.net/system/files/swj3589.pdf){target=_blank} is publicly available implementation with the Web Ontology Language (OWL). The GloSIS web ontology employs a host of Semantic Web standards (SOSA, SKOS, GeoSPARQL, QUDT); GloSIS lays out not only a soil data ontology but also an extensive set of ready-to-use code lists for soil description and physio-chemical analysis. Various examples are provided on the provision and use of GloSIS-compliant linked data, showcasing the contribution of this ontology to the discovery, exploration, integration and access of soil data.
 - **INSPIRE** (INfrastructure for SPatial InfoRmation in Europe) aiming to create a spatial environmental data infrastructure for the European union. A detailed [data specification for the soil theme](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so){target=_blank} was published by the European Commission in 2013, supported by a detailed domain model documented as a [UML class diagram](https://inspire-mif.github.io/uml-models/approved/ea+xmi/EAXMI.zip){target=_blank}.
 
-### Foreseen functionality
 
-- centrepoint/target model for data interoperability
-- user defines a target model (based on needs) as part of a transformation pattern (a part of the [Interoperability ETL](data_processing.md#interoperability-etl) component)
+Other (potentially) relevant data models are:
 
-### Technology
+- [World Reference base (WRB)](https://wrb.isric.org/) maintains the code lists, which are the source of GLOSIS codelists, but the WRB online presence is currently limited.
+- [Landuse](https://inspire.ec.europa.eu/theme/lu)
+- [Land management practices](https://qcat.wocat.net/en/wocat/)
+- [monitoring facilities](https://inspire.ec.europa.eu/theme/ef)
+- [Landcover](https://inspire.ec.europa.eu/theme/lc)
+
+## Foreseen functionality
+
+- Centerpoint/target model for data interoperability
+- User defines a target model (based on needs) as part of a transformation pattern (a part of the [Interoperability ETL](data_processing.md#interoperability-etl) component)
+
+## Technology
 
 - any software capable of UML/Archi/OWL notations. For instance: [Enterprise Architect](https://sparxsystems.com/products/ea/){target=_blank}, [Archi](https://www.archimatetool.com/){target=_blank}, [ShapeChange](https://www.interactive-instruments.de/en/shapechange/){target=_blank}, [protégé](https://protege.stanford.edu/){target=_blank}.
 
-### Integration options
+## Integration options
 
 The Data model component is the centrepoint/target model towards data interoperability. However, this component has a low impact when being used alone. As such, tight integration to the [Interoperability ETL](data_processing.md#interoperability-etl) component, [Data & Knowledge publication](publication.md#data--knowledge-publication) and [Manual data & metadata upload](dashboard.md#) components is necessary for the SWR.
 
-### Open issues
+## Open issues
 
 Many data models are used for data harmonisation and interoperability within the soil domain. The following data models may also be potentially relevant for the SWR:
 
@@ -84,11 +92,28 @@ Moreover, GloSIS and INSPIRE data models fully support only vector data. GloSIS 
 - SoilWise can provide a set of prepared target models to select from (INSPIRE xsd, INSPIRE gpkg, WRB owl, GLOSIS owl, eSOTER mdb, LUCAS csv, ...)
 - capable of being mapped (ideally to all) external data models
 
-## Soil health vocabulary (Paul + Anna + Giovanni)
+Glosis and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples object in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/). Soilwise can probably contribute to the migration of the soil models to the new OMS version.
 
-## Metadata scheme (Luis)
+## Soil health vocabulary 
 
-- developing metadata templates using standards
+Understand if Soil health codelists as developed in the Envasso and Landmark projects, can be adopted by the online soil community, for example as part of the Glosis ontology, inspire registry or EUSO. Research is needed to evaluate if a legislative body is available to confirm the definitions of the terms.
+
+## SWR Data model 
+
+Develop a data model for SWR using standards 
+
+A starting point of a Soilwise data model is suggested below:
+
+``` mermaid
+flowchart LR
+    people -->|memberOf| o[organisations] 
+    o -->|partnerIn| p[projects]
+    p -->|produce| d[resources]
+    o -->|publish| d
+    d -->|describedIn| c[catalogues]
+    p -->|part-of| fs[Fundingscheme]
+```
+
 
 - connections with: data input and structure
 - technologies used: DCAT; VCard; Dublin Core; PROV; plus GloSIS for Soil Semantics

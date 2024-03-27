@@ -4,18 +4,19 @@ This is the primary access point to the knowledge graph, both for humans, as wel
 
 Consider that this component relates to the [knowledge extraction](./knowledge-extraction.md) component, which describes alternative mechanisms to access selected parts of the knowledge graph.
 
-## SPARQL ENDPOINT
+See also [SWR data model](../technical_components/storage.md#swr-data-model)
 
-- development aid
-- technical query interface behind APIs
+## Rules and reasoning
+
+Since we're importing resources from various sources, we expect many duplicities, blank nodes and conflicting statements. Implementation of rules should be permissive, not preventing inclusion, only flag potential inconsistencies.
 
 ## Technology
 
-A number of proven open source triple store implementation exist. In the next iteration we will use the virtuoso software as a starting point.
+A number of proven open source triple store implementations exist. In the next iteration we will use the virtuoso software as a starting point.
 
 ## Metadata
 
 - connections with: APIs
-- technologies used: It is provided by the same technology hosting the meta-data catalogue.
-- responsible person: should be the same of the Catalogue.
+- technologies used: Virtuoso
+- responsible person: Anne Fensel
 - participating: Luís de Sousa, Anne Fensel, Paul van Genuchten, Hugo de Groot
