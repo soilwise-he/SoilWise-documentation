@@ -3,12 +3,15 @@ order_by: title
 nav:
     - technical_components.md
     - ingestion.md
-    - governance.md
+    - completeness.md
     - storage.md
-    - data_processing.md
-    - d2k.md
-    - publication.md
+    - pycsw.md
+    - metadata_validation.md
+    - transformation.md
+    - interlinker.md
+    - llm.md
+    - mapserver.md
     - dashboard.md
     - user_management.md
-    - collaboration.md
+    - monitoring.md
     - ...

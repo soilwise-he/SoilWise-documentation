@@ -13,4 +13,5 @@ SoilWise Technical Documentation currently consists of the following sections:
 |Date|Action|
 |----|-----------|
 |30. 4. 2024|First version published.|
+|27. 3. 2024|Technical Components restructured according to the architecture from Brugges Technical Meeting|
 |10. 2. 2024|Technical Documentation was initialized|

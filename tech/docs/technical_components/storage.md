@@ -67,15 +67,11 @@ Other (potentially) relevant data models are:
 ## Foreseen functionality
 
 - Centerpoint/target model for data interoperability
-- User defines a target model (based on needs) as part of a transformation pattern (a part of the [Interoperability ETL](data_processing.md#interoperability-etl) component)
+- User defines a target model (based on needs) as part of the [transformation process](transformation.md)
 
 ## Technology
 
 - any software capable of UML/Archi/OWL notations. For instance: [Enterprise Architect](https://sparxsystems.com/products/ea/){target=_blank}, [Archi](https://www.archimatetool.com/){target=_blank}, [ShapeChange](https://www.interactive-instruments.de/en/shapechange/){target=_blank}, [protégé](https://protege.stanford.edu/){target=_blank}.
-
-## Integration options
-
-The Data model component is the centrepoint/target model towards data interoperability. However, this component has a low impact when being used alone. As such, tight integration to the [Interoperability ETL](data_processing.md#interoperability-etl) component, [Data & Knowledge publication](publication.md#data--knowledge-publication) and [Manual data & metadata upload](dashboard.md#) components is necessary for the SWR.
 
 ## Open issues
 
@@ -147,6 +143,23 @@ Various storage options exist, dedicated usage scenario's usually have an optima
 -	Knowledge that expresses semantics is best stored as RDF in an RDF DB, to be able to reason over semantic relationships
 -	When knowledge needs to be reasoned over using LLMs, it is preferably processed and stored in a vector DB, potentially linked to relevant text fragments (for explainable AI). 
 -	Querying knowledge is best done from an indexed DB or search engine (see section metadata) or from a vector DB (through chatbot / LLM applications) 
+
+
+### Knowledge graph - Triple Store
+
+??? open question: put it in the Storage?
+
+The knowledge graph is meant to add a formal semantics layer to the meta-data collected at the SWR. It mirrors the XML-based meta-data harnessed in the Catalogue Server, but using Semantic Web standards such as DCAT, Dublin Core, VCard or PROV. This meta-data is augmented with links to domain web ontologies, in particular GloSIS. This semantically augmented meta-data is the main pilar of knowledge extraction activities and components.
+
+Besides meta-data the knowledge graph is also expected to host the results of knowledge extration activities. This assumes that knowledge to be semantically laden, i.e. linking to relevant domain ontologies. The identification of appropriate ontologies, and ontology mappinds thus becomes an essential aspect of this project, bridging together various activities and assets.
+
+It is important to recognise the knowledge graph as an immaterial asset that cannot exist by itself. In order to be usable the knowledge graph must be stored in a triple store, thus highlighting the role of that component in the architecture. In its turn the triple store provides another important architectural component, the SPARQL end-point. That will be the main access gateway to the knowledge graph, particularly by other techonological components and software.
+
+The [Large Language Model](llm.md) foreseen in this project will be trained on the knowledge graph, thus forming the basis for the Chatbot component of the user interface. The knowledge graph will further feed the facilites for machine-based access to the SWR: a knowledge extration API and a SPARQL end-point.
+
+#### Technology
+- DCAT, Dublin Core, VCard, PROV, GloSIS, ...
+
 
 ### Processed data
 

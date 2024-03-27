@@ -10,6 +10,26 @@ The harvesting mechanism relies on the concept of a _universally unique identifi
 
 All metadata with an update date newer then <last-identified successfull harvester run> are extracted from remote location. 
 
+## Persistence identification
+
+
+Persistent Identifiers (PIDs) are unique and long-lasting codes refering to digital objects like  document, file, 
+web page, or other objects. They act as permanent name tags for digital information, ensuring it can be reliably found 
+and accessed over time, even if the original location or format changes. An example of a PID frequently used in 
+academic publishing to identify journal articles, research reports and data sets is DOI (Digital Object Identifier).
+Key characteristics of PIDs are:
+
+- persistance (unchanged over time),
+- resolvability (retrieving the identified object), 
+- uniqueness (identifying a single, unique resource)
+ and actionability (a way to directly access or interact with the resource)
+
+They are used in the SoilWise Repository in respect to:
+
+- consistent identification
+- findability
+- versioning / derivates linking
+
 ## Resource Types
 
 Metadata for following resource types to be harvested:
@@ -177,7 +197,7 @@ An aim of this exersice is also to understand in which repoitories a certain res
 
 ## Integration opportunities
 
-The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](publication.md#catalogue-server), (2) [data download](dashboard.md#data-download--export-mu) & [upload pipelines](dashboard.md#manual-data--metadata-upload-mu) and (3) [ETS/ATS](data_processing.md#metadata-validation-etsats), i.e. test suites.
+The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [data download](dashboard.md#data-download--export-mu) & [upload pipelines](dashboard.md#manual-data--metadata-upload-mu) and (3) [ETS/ATS](metadata_validation.md), i.e. test suites.
 
 
 

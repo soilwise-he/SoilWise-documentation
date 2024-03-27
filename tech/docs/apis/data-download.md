@@ -60,11 +60,11 @@ Research is needed to understand available technology to provide preview options
 
 ### Geographic data
 
-As described within the Data & Knowledge publication component, MapServer is intended for data publication in the SWR. [MapServer](../technical_components/publication.md#map-server) is an open-source platform for publishing spatial data to the web using standardised APIs defined by the Open Geospatial Consortium, such as WMS, WFS, WCS, and OGC API-Features. Initially developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
+As described within the Data & Knowledge publication component, MapServer is intended for data publication in the SWR. [MapServer](../technical_components/mapserver.md) is an open-source platform for publishing spatial data to the web using standardised APIs defined by the Open Geospatial Consortium, such as WMS, WFS, WCS, and OGC API-Features. Initially developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
 
 Mapserver is not an optimal solution for providing rich data in hierarchical structure. For that type of data Sensorthings API (frost server), WFS (deegree), graphql (postgraphile) and SPARQL (virtuoso) are more relevant.
 
 ## Integration opportunities
 
-SWR fully stands behind the [FAIR principles](https://www.nature.com/articles/sdata201618){target=_blank}, including persistent identification for the data download, which would result in a full download of the data/knowledge resource. As such, the [Persistent Identifier Mint](../technical_components/data_processing.md#persistent-identifier-mint) component is crucial to enhance the full potential of the Data download & export component.
+SWR fully stands behind the [FAIR principles](https://www.nature.com/articles/sdata201618){target=_blank}, including persistent identification for the data download, which would result in a full download of the data/knowledge resource.
 
