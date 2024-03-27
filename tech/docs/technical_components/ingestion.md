@@ -1,86 +1,167 @@
 #  Ingestion
 
-``` mermaid
-flowchart LR
-    DBD[(fa:fa-database Data & knowledge providers)] --> I
-    AID --> MC(Metadata cache)
-    AIK --> KL(Knowledge sources log)
-    I --> CGM(Certification & governance management)
-subgraph I [Ingestion]
-    AID("`**Automated metadata harvesting**`") ~~~ AIK("`**Automated ingestion of metadata on knowledge sources**`")
+The Ingestion component is dedicated to automatically harvest sources to populate [SWR Triple Store](./storage.md). It comprises the following components:
 
-end
-```
-
-The Ingestion component is dedicated to automatically harvest sources to populate [SWR Catalogue](publication.md#catalogue-server). It comprises of the following components:
-
-1. [Automated metadata harvesting](#automated-metadata-harvesting)
-2. [Automated ingestion of metadata on knowledge sources](#automated-ingestion-of-metadata-on-knowledge-sources)
+1. [Automated ingestion of metadata on datasets](#datasets)
+2. [Automated ingestion of metadata on knowledge sources](#knowledge-sources)
 
 ## Automated metadata harvesting
 
-Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned.  Metadata harvesting is a default feature of all the most common geospatial catalogue servers.
-Two open-source cataloguing options were evaluated: **GeoNetwork** and **pycsw.** pycsw was selected primarily because of the two following reasons:
+Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. Aim is to use existing components were available.
 
-1.	we foresee that the [SWR Catalogue](publication.md#catalogue-server) will contain at least dozens of thousands or more probably even hundreds of thousands of metadata records. Based on our previous experience, GeoNetwork (Elastic Search) is a stable backend when working with thousands of metadata records. A known issue is harvesting large number of records, for this reason INSPIRE Geoportal started an initiative to implement [csw-harvesting](https://github.com/GeoCat/csw-harvester) using a dedicated microservice.
-2. significant achievements in catalogue management were achieved within the [EJP Soil project](https://ejpsoil.eu/){target=_blank}. SoilWise will adopt these developments to re-use this good practice and use the resources efficiently.
+In case of the SoilWise Repository, the primary aim is to retrieve metadata on data and knowledge resources. The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. Soilwise can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes.
 
-In case of the SoilWise Repository, the primary aim is to retrieve metadata on data and knowledge resources. The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update.
+All metadata with an update date newer then <last-identified successfull harvester run> are extracted from remote location. 
 
-These two concepts allow catalogues to fetch remote metadata, check if it has been updated and remove it locally if it has been removed remotely. UUIDs also allowed cross catalogue harvesting in case B harvests from C and A harvests from B, as described in detail below.
+## Datasets
 
-### Harvesting life cycle
+Datasets are to be imported from the INSPIRE GeoPortal, Bonares as well as Cordis. In later iterations we aim to also include other portals, such as national or thematic portals.
 
-When a harvesting job is created, there is no harvested metadata. During the first run, all remote matching metadata are retrieved and stored locally. For some harvesters, after the first run, only metadata that has changed will be retrieved.
+## Knowledge sources
 
-Harvested metadata are (by default) not editable for the following reasons:
+The soilwise group is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Horizon Europe projects. These resources are accessible from Cordis, Zenodo and OpenAire. Extracting content from Cordis, OpenAire and Zenodo can be achieved using a harvesting task (using the cordis schema, extended with post processing). For the first itereation we aim for this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
+
+## Catalogue API's and models
+
+Catalogues typically offer standardised API's as well as tailored API's to extract resources. Typically the tailored API's offer extra capabilities which may be relevant to Soilwise. However in general we should adopt the standardised interfaces, because it allows us to use of the shelf components with high TRL.
+
+Standardised API's are available for harvesting records from:
+
+- Catalogue Service for the Web (OGC:CSW)
+- Protocol metadata harvesting (OAI-PMH)
+- SPARQL
+- Sitemap.xml 
+
+Dedicated communities made efforts to standardise metadata in their domain. This resulted in a large number of standardised metadata models. Most of them (but not all) are oriented on the Dublin Core model, which provides a common entry point to these models. In that scenario we should be able to at least extract the dublin core elements from various schema's. If we identify that additional properties need to be extracted, extraction extensions will be added to the metadata cleaning component per origin metadata schema.
+
+For now we identified the following general metadata models from which the dublin core elementa can be extracted:
+
+- iso19139:2007 / iso19115:2012 (xml)
+- Dublic core (xml)
+- Datacite (json/xml)
+- DCAT (RDF)
+
+Potentially of interest are:
+
+- [EML/Darwin Core](https://www.gbif.org/standards)
+- [Schema.org](https://schema.org/Dataset) (json-ld)
+- [OpenGraph](https://ogp.me/)
+
+Because of its relevance we aim to also support:
+
+- Cordis data model
+- ESDAC (HTML scraping??)
+
+![Cordis data model](https://blog.sparna.fr/wp-content/uploads/2024/01/EURIO_v2.4-1024x812.png)
+
+## Types
+
+Metadata for following resource types to be harvested:
+
+- Resources (Articles/Datasets/Videos/Software/Services)
+- Projects/LTE/Living labs
+- Funding schemes (Mission-soil)
+- Organisations
+- Repositories/Catalogues
+
+These entities relate to eachother as:
+
+``` mermaid
+flowchart LR
+    people -->|memberOf| o[organisations] 
+    o -->|partnerIn| p[projects]
+    p -->|produce| d[resources]
+    o -->|publish| d
+    d -->|describedIn| c[catalogues]
+    p -->|part-of| fs[Fundingscheme]
+```
+
+## Architecture
+
+Below are described 3 options for a harvest infrastructure. The main difference is the scalability of the solution, 
+which is mainly dependent on the frequency and volume of the harvesting. 
+
+### Traditional approach
+
+Traditionally a harvesting script is triggered by a cron job.
+
+``` mermaid
+flowchart LR
+    HC(Harvest configuration) --> AID
+    AID(Harvest component)
+    RW[RDFwriter] --> MC[(Triple Store)]
+    AID --> RS[(Remote sources)]
+    AID --> RW
+    RS --> AID
+```
+
+### Containerised appraoch
+
+In this approach each harvester runs in a dedicated container. The result of the harvester is ingested into a (temporary) storage, where follow up processes pick up the results. Typically these processes are using existing containerised workflows such as GIT CI-CD, Google cloud run, etc.
+
+``` mermaid
+flowchart LR
+    c[CI-CD] -->|task| q[/Queue\]
+    r[Runner] --> q
+    r -->|deploys| hc[Harvest container]
+    hc -->|harvests| db[(temporary storage)]
+    hc -->|data cleaning| db[(temporary storage)]
+```
+
+### Microservices approach
+
+The microservices approach uses a dedicated message queue where dedicated runners pick up harvesting tasks, validation tasks and cleaning tasks as soon as they are scheduled. Runners write their results back to the message queue, resulting in subsequent tasks to be picked up by runners.
+
+``` mermaid
+flowchart LR
+    HC(Harvest configuration) -->|trigger| MQ[/MessageQueue\]
+    MQ -->|task| AID
+    AID --> MQ
+    MQ -->|task| DC
+    DC --> MQ
+    MQ -->|write| RW[RDFwriter]
+    AID(Harvest component)
+    RW --> MC[(Triple Store)]
+    AID --> RS[(Remote sources)]
+```
+
+For this iteration, we will focus on the second approach.
+
+## Duplicities / Conflicts
+
+A resource can be described in multiple catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. We aim to persist a copy of the harvested content (also to identify if the remote source has changed). The harvester components itself will not evaluate duplicities/conflicts between records. 
+
+An aim of this exersice is also to understand in which repoitories a certain resource is advertised.
+
+## Foreseen functionality
+
+A harvesting task typically extract records with update-date later then the last successfull harvester run.
+
+Harvested content is (by default) not editable for the following reasons:
 
 1. The harvesting is periodic so any local change to harvested metadata will be lost during the next run.
 2. The change date may be used to keep track of changes so if the metadata gets changed, the harvesting mechanism may be compromised.
 
-The harvesting process goes on until one of the following situations arises:
+If inconsitencies with imported metadata are identified, we can add a statement to the graph of such inconsistencies. We can also notify the author of the inconsistency, so they can fix the inconsistency on their side.
 
-1.	An administrator stops (deactivates) the harvester.
-2.	An exception arises. In this case the harvester is automatically stopped.
+To be discussed is if harvested content is removed, as soon as a harvester configuration is removed, or records are removed from the remote endpoint. The risk of removing content is that relations within the graph are breached. Instead, we can indicate a record has been archived by the provider.
 
-When a harvester is removed, all metadata records associated with that harvester are removed.
+Typical functionalities of a harvester:
 
-### Multiple harvesting and hierarchies
+- Define a harvester
+    - Schedule (on request, weekly, daily, hourly)
+    - Endpoint / Endpoint type (eample.com/csw -> OGC:CSW)
+    - Apply a filter (only records with keyword='soil-mission')
+- Understand success of a harvest 
+    - overview of harvested content (120 records)
+    - which runs failed, why? (today failed -> log, yesterday successfull -> log)
+    - Monitor running harvestors (20% done -> cancel)
+- Define behaviors on harvested content
+    - skip records with low quality (if test xxx fails)
+    - mint identifier if missing ( https://example.com/data/{uuid} )
+    - a model transformation before ingestion ( example-transform.xsl / do-something.py )
 
-Catalogues that use UUIDs to identify metadata records (e.g. pycsw) can be harvested several times without having to take care about metadata overlap.
-
-As an example, consider the pycsw harvesting type which allows one pycsw node to harvest metadata records from another pycsw node and the following scenario:
-
-1.	Node (A) has created metadata (a)
-2.	Node (B) harvests (a) from (A)
-3.	Node (C) harvests (a) from (B)
-4.	Node (D) harvests from both (A), (B) and (C)
-
-In this scenario, Node (D) will get the same metadata (a) from all 3 nodes (A), (B), (C). The metadata will flow to (D) following 3 different paths but thanks to its UUID only one copy will be stored. When (a) is changed in (A), a new version will flow to (D) but, thanks to the change date, the copy in (D) will be updated with the most recent version.
-
-This scenario will fit to Mission Soil Horizon Europe projects that have catalogues on the pilot level and a central catalogue at the same time.
-
-### Foreseen functionality
-
-- finding metadata
-- capturing metadata
-- connecting source platform
-- ingest remote records
-- understand success of a harvest
-- options to trigger monitor running harvestors
-
-A range of **interfaces** need to be supported to extract resources from:
-
-- Cordis (SPARQL)
-- Zenodo, Dataverse, OpenAire (OAI-PMH / Datacite)
-- INSPIRE (CSW)
-- ESDAC (HTML scraping??)
-- Web pages (Schema.org)
-- ...
-
-For some endpoints a metadata transformation may be required, before the document can be stored in SWR.
-
-### Technology
+## Technology options
 
 [**geodatacrawler**](https://pypi.org/project/geodatacrawler/){target=_blank}, written in python, extracts metadata from various sources:
 
@@ -89,44 +170,16 @@ For some endpoints a metadata transformation may be required, before the documen
 - remote identifiers (DOI, CSW)
 - remote endpoints (CSW)
 
-**pycsw**, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OpenSearch](https://opensearch.org/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, [SRU](https://developers.exlibrisgroup.com/rosetta/integrations/standards/sru/){target=_blank}), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
+[**Google cloud run**](https://cloud.google.com/run){target=_blank} is a cloud environment to run scheduled tasks in containers on the google platform, the results of tasks are captured in logs
 
-**GeoNetwork** or **GeoNetwork INSPIRE GeoPortal harvest microservice**
+[**Git CI-CD**](https://github.com/features/actions){target=_blank} to run harvests, provides options to review CI-CD logs to check errors
 
-Important aspect of harvesters is the capability to finetune filters, resources such as INSPIRE, Cordis, Zenodo need proper filters in order to preselect relevant sources.
+[**RabbitMQ**](https://www.rabbitmq.com/){target=_blank} a common message queue software
 
-**Git CI-CD** to run harvests, provides options to review CI-CD logs to check errors
-
-### Integration opportunities
+## Integration opportunities
 
 The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](publication.md#catalogue-server), (2) [data download](dashboard.md#data-download--export-mu) & [upload pipelines](dashboard.md#manual-data--metadata-upload-mu) and (3) [ETS/ATS](data_processing.md#metadata-validation-etsats), i.e. test suites.
 
-## Automated extraction and ingestion of metadata on knowledge sources (WENR)
 
-For knowlege resouces it is less usual to provide metadata according to standardized metadata schemas, and to expose metadata through harvesting protocols. Therefore, a dedicated strategy and procedures are needed to be able to harmonize and index knowledge as part of the SWR.
 
-In cases where no metadata service is available:
 
-- Access and download data via the (most feasible) available endpoint
-- Process data
-    * mapping the content to a SWR schema for knowledge metadata (Dublin Core)
-    * Derive missing metadata fields if possible
-    * Label metadata
-- Store metadata
-
-In cases where no a metadata service and/or harvesting protocol is available:
-
-- Follow harvesting process for datasets
-- Process data
-    * Derive missing metadata fields if possible
-    * Label metadata
-- Store metadata
-
-For use with AI/ML (e.g. LLMs), additionally it might be interesting to ingest and store the knowledge content itself (training ML models), or relevant fragments (explainnable AI). This is subject of the 2nd and 3rd interation and the development of LLM/Chatbot functionality on the SWR. 
-
-List of knowledge repositories
-
-- CORDIS: SparQL / REST endpoints / no metadata
-- Zenodo: REST / OAI/PMH /
-- OpenAIRE: REST / OAI/PMH /
-- list to be extended...
