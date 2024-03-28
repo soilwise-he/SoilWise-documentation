@@ -7,7 +7,7 @@ The term dashboard is used with various meanings, in the scope of Soilwise the f
 
 Other parts of the user interface are:
 
-- [Metadata authoring and harvesting configuration](#manual-data-metadata-authoring)
+- [Metadata authoring](metadata-authoring.md) component
 - [Data download & export](#data-download-export) options
 
 

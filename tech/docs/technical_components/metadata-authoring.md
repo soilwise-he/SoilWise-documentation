@@ -16,7 +16,7 @@ The authoring workflow uses a GIT backend, additions to the catalogue are entere
 Records are stored in iso19139:2007 xml or MCF. MCF is a subset of iso19139:2007 in a YAML encoding, defined by the pygeometa community. This library is used to 
 convert the MCF to any requested metadata format.
 
-A [webbased form](https://osgeo.github.io/mdme) is available for users uncomfortable in editing a MCF file directly.
+A [webbased form](https://osgeo.github.io/mdme){target=_blank} is available for users uncomfortable in editing a MCF file directly.
 
-With every change on the git repository an export of the metadata is made to a PostGres Database (or the triple store)
+With every change on the git repository an export of the metadata is made to a PostGres Database (or the triple store).
 

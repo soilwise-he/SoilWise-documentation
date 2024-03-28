@@ -7,6 +7,7 @@ nav:
     - storage.md
     - pycsw.md
     - metadata_validation.md
+    - metadata-authoring.md
     - transformation.md
     - interlinker.md
     - llm.md
