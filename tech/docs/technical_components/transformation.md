@@ -1,4 +1,4 @@
-# Transformation Component - Hale Studio
+# Transformation Component - Hale Studio (WE)
 
 
 ## Interoperability

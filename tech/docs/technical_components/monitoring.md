@@ -6,8 +6,7 @@
 
 - connections with: all modules
 - technologies used: Grafana, e.g. PagerDuty
-- responsible person: Thorsten Reitz
-- participating:
+
 
 ## System Health & Status Monitoring
 
@@ -16,8 +15,7 @@
 
 - connections with: all modules
 - technologies used: Grafana, e.g. PagerDuty
-- responsible person: Thorsten Reitz
-- participating:
+
 
 ## Usage statistics
 
@@ -30,5 +28,3 @@ Statistics on 404 and 500 errors provides guidance for content owners (potential
 
 - connections with: all components
 - technologies used: Keycloak/JWT
-- responsible person: Thorsten Reitz
-- participating:

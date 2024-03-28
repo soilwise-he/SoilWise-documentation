@@ -47,17 +47,13 @@ What can be improved:
 
 Large Language models enriched with Soilwise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer, but also provides references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in how to access the source, using which software for example.
 
-#### Technology
-
-- Various LLM's to be tested, most are python based.
-
 ### Map viewer
 
 A light-weight client map viewer component will be employed:
 
 - as a frontend of [Map Server](mapserver.md) component to visualize provided WMS, WFS, WCS layers
 - as a integrated part of the Catalogue to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
-- full preview of data is currently a subject of discussions
+- full preview of data, when link to web service or data preview image is available
 
 A dedicated mapviewer, such as [TerriaJS](https://terria.io){target=_blank}, can support users in accessing relevant data which has been prepared for optimal consumption in a typical GIS Desktop environment. For example maps of spatial distribution of soil properties or health indicators over Europe. A typical example is [Soilgrids](https://soilgrids.org){target=_blank}.
 
@@ -83,8 +79,6 @@ The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboa
 Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding.
 
 The source data for the dashboards is very likely enriched with AI generated indicators. LLM's seem also able to provide overviews of sets of content.
-
-
 
 ## Manual data & metadata authoring
 

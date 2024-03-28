@@ -1,5 +1,4 @@
-# Metadata & data & knowledge validation
-
+# Metadata & data & knowledge validation (MU)
 
 - metadata conformance evaluation
   - conformance is a indicator of quality?

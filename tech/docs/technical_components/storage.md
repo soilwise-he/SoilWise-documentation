@@ -46,11 +46,11 @@ Various storage options exist, dedicated usage scenario's usually have an optima
 
 Other (potentially) relevant data models are:
 
-- [World Reference base (WRB)](https://wrb.isric.org/) maintains the code lists, which are the source of GLOSIS codelists, but the WRB online presence is currently limited.
-- [Landuse](https://inspire.ec.europa.eu/theme/lu)
-- [Land management practices](https://qcat.wocat.net/en/wocat/)
-- [monitoring facilities](https://inspire.ec.europa.eu/theme/ef)
-- [Landcover](https://inspire.ec.europa.eu/theme/lc)
+- [World Reference base (WRB)](https://wrb.isric.org/){target=_blank} maintains the code lists, which are the source of GLOSIS codelists, but the WRB online presence is currently limited.
+- [Landuse](https://inspire.ec.europa.eu/theme/lu){target=_blank}
+- [Land management practices](https://qcat.wocat.net/en/wocat/){target=_blank}
+- [monitoring facilities](https://inspire.ec.europa.eu/theme/ef){target=_blank}
+- [Landcover](https://inspire.ec.europa.eu/theme/lc){target=_blank}
 
 #### Open issues
 
