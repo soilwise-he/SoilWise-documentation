@@ -1,4 +1,4 @@
-# Metadata validation
+# Metadata & data & knowledge validation
 
 
 - metadata conformance evaluation

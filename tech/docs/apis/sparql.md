@@ -13,10 +13,3 @@ Since we're importing resources from various sources, we expect many duplicities
 ## Technology
 
 A number of proven open source triple store implementations exist. In the next iteration we will use the virtuoso software as a starting point.
-
-## Metadata
-
-- connections with: APIs
-- technologies used: Virtuoso
-- responsible person: Anne Fensel
-- participating: Luís de Sousa, Anne Fensel, Paul van Genuchten, Hugo de Groot

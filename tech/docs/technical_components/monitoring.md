@@ -19,7 +19,7 @@
 - responsible person: Thorsten Reitz
 - participating:
 
-## Usage & Monitoring statistics
+## Usage statistics
 
 - request and UI element authorisation
 - usage statistics monitoring

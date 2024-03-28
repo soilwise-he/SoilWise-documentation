@@ -174,7 +174,7 @@ Typical functionalities of a harvester:
     - mint identifier if missing ( https://example.com/data/{uuid} )
     - a model transformation before ingestion ( example-transform.xsl / do-something.py )
 
-### Duplicities / Conflicts
+### Duplicates / Conflicts
 
 A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). The Harvester component itself will not evaluate duplicities/conflicts between records. 
 
