@@ -54,12 +54,22 @@ technology (e.g. Neo4J) as the SWR knowledge graph technology.
 
 ### Foreseen functionality
 
-Assess if resources use proper identifiers to reference external items.
-Metadata (and data and knowledge sources) tend to contain links which over time degrade and result in `File not found` experiences. By running availability checks on links mentioned in (meta)data, for each link an availability indicator (available, requires authentication, intermittent, unavailable) can be calculated. Alternatively a link check can be performed at the moment a user tries to open a resource.
+- Assess if resources use proper identifiers to reference external items.
+Metadata (and data and knowledge sources) tend to contain links which over time degrade and result in `File not found` experiences. 
+- By running availability checks on links mentioned in (meta)data, for each link an availability indicator (available, requires authentication, intermittent, unavailable) can be calculated. 
+- Alternatively a availability check can be performed at the moment a user tries to open a resource.
 
 ### Technology
 
+Provider of Identifiers
+
 - [ePIC](https://pidconsortium.net){target=_blank}  ePIC API providing a software stack for a PID service
-- [GeoHealthCheck](https://GeoHealthCheck.org){target=_blank}  or
-- [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat){target=_blank}  or
+- [DOI](https://doi.org) 
+- [w3id.org](https://w3id.org) persistent indentification at namespace/domain level
+- [R3gistry Germany](https://www.gdi-de.org/en/SDI/components/GDI-DE%20Registry) for nemspaces, codelists, identifiers. Similar exist for [Austria](https://registry.inspire.gv.at/registry), [Italy](https://registry.geodati.gov.it/registry), [Spain](https://registro.idee.es/registry), [Slovakia](https://registry.stage.geocloud.sk/enipi/), [Netherlands](https://standaarden.overheid.nl/tooi)
+
+Liveliness checks
+- [GeoHealthCheck](https://GeoHealthCheck.org){target=_blank} a library which checks at intervals availability of OGC API's up to collection/item level, should be extended to drill down from CSW endpoint to record level and check links in individual records 
+- [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat){target=_blank} java service developed in scope of INSPIRE geoportal, validates links in metadata records
+- [Python link checker](https://pypi.org/project/LinkChecker/) checks (broken) links in html
 - ...
