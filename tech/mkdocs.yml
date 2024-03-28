@@ -6,6 +6,8 @@ edit_uri: edit/main/tech/docs/
 
 plugins:
   - search
+  - ezglossary:
+      tooltips: [heading]
   - mermaid2
   - awesome-pages
   - git-revision-date-localized
@@ -16,6 +18,7 @@ plugins:
       print_page_title: 'Printable version'
 
 markdown_extensions:
+  - def_list
   - admonition
   - tables
   - attr_list

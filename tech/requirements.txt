@@ -9,3 +9,4 @@ mkdocs-awesome-pages-plugin>=2.9.2
 mkdocs-render-swagger-plugin>=0.1.1
 mkdocs-glightbox>=0.3.7
 mkdocs-print-site-plugin>=2.3.6
+mkdocs-ezglossary-plugin>=1.5.8
