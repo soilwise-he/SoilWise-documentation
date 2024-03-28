@@ -12,10 +12,10 @@ The API-based (soil) data publication has been chosen as a key channel of the SW
 
 ## Data preview APIs
 
-Support the discovery and query operations of an API that provides access to electronic maps in a manner independent of the underlying data store:
+Support the discovery and query operations of an <documentation:API> that provides access to electronic maps in a manner independent of the underlying data store:
 
 - Non geographical resources
-    - Resources such as PDF, SQlite, Excel, CSV would benefit from an API which will read the remote file and return a section of the file in a common format, for the user interface to display it (or a summary provided by a LLM).
+    - Resources such as PDF, SQlite, Excel, CSV would benefit from an <documentation:API> which will read the remote file and return a section of the file in a common format, for the user interface to display it (or a summary provided by a LLM).
 - Geographical resources (benefitting from a map view)
     - The [OGC Web Map Service (WMS aka ISO 19123)](https://portal.ogc.org/files/?artifact_id=14416https://ogcapi.ogc.org/maps/){target=_blank} supports requests for map images (and other formats) generated from geographical data,
     - The [OGC API - Maps](https://ogcapi.ogc.org/maps/){target=_blank} supports a REST API that can serve spatially referenced electronic maps, whether static or dynamically rendered, independently of the underlying data store. Note that this standard has not been approved yet; further development may still occur.
@@ -25,7 +25,7 @@ Support the discovery and query operations of an API that provides access to ele
 
 ## Data download APIs
 
-In order to monitor the usage of datasets downloaded from federated sources, it could be relevant to introduce a reverse proxy for those remote sources. This api would count the download and then forward the user to that resource.
+In order to monitor the usage of datasets downloaded from federated sources, it could be relevant to introduce a reverse proxy for those remote sources. This <documentation:API> would count the download and then forward the user to that resource.
 
 Also see the section on [Knowledge extraction](./knowledge-extraction.md)
 

@@ -6,7 +6,7 @@ SoilWise Technical Documentation currently consists of the following sections:
 2. [APIs](apis/apis-intro.md)
 3. [Infrastructure](infrastructure/infrastructure-intro.md)
 4. [Governance](governance.md)
-5. [Glossary](glossary/glossary-intro.md) - under preparation
+5. [Glossary](glossary.md)
 6. [Printable version](print_page) - where you find all sections composed in one page, that can be easily printed using Web Browser options
 
 
