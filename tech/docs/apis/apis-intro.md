@@ -11,7 +11,7 @@ Soilwise will use standardised API's if possible, such as:
 API's in Soilwise can be classified in following categories:
 
 - [Discovery API's](./metadata-apis.md)
-- [Download API's](./data-download.md)
+- [Download & preview API's](./data-download.md)
 - [API's for knowledge extraction](./knowledge-extraction.md)
 - [Processing API's](./processing-apis.md)
 - [Transactional/Publication API's](publication-apis.md)
