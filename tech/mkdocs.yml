@@ -6,13 +6,12 @@ edit_uri: edit/main/tech/docs/
 
 plugins:
   - search
-  - ezglossary:
-      tooltips: [heading]
   - mermaid2
   - awesome-pages
   - git-revision-date-localized
   - render_swagger
   - glightbox
+  - ezglossary
   - print-site:
       add_to_navigation: true
       print_page_title: 'Printable version'
