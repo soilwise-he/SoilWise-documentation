@@ -108,7 +108,7 @@ The above-described mechanisms showed the “as is” manual metadata upload. Ne
 
 ### Technology
 
-- **GeoNetwork** includes an authoring environment with web forms and a dashboard to create and monitor harvesters.
+
 - **pycsw** includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters
 - A **Git** based participatory metadata workflow as introduced in EJP Soil
     - Users should be endorsed to register their metadata via known repositories, such as Zenodo, CORDIS, INSPIRE, ... at most register the identifier (DOI, CSW) of the record at EUSO, metadata will be mirrored from those locations at intervals

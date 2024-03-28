@@ -1,5 +1,7 @@
 #  Harvester
 
+Project: [Metadata ingestion](https://github.com/orgs/soilwise-he/projects/6)
+
 The Harvester component is dedicated to automatically harvest sources to populate [SWR Triple Store](./storage.md) with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
 
 ## Automated metadata harvesting concept
@@ -11,7 +13,6 @@ The harvesting mechanism relies on the concept of a _universally unique identifi
 All metadata with an update date newer then <last-identified successfull harvester run> are extracted from remote location. 
 
 ## Persistence identification
-
 
 Persistent Identifiers (PIDs) are unique and long-lasting codes refering to digital objects like  document, file, 
 web page, or other objects. They act as permanent name tags for digital information, ensuring it can be reliably found 

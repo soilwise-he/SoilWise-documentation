@@ -1,5 +1,7 @@
 # Metadata & data & knowledge validation (MU)
 
+Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
+
 - metadata conformance evaluation
   - conformance is a indicator of quality?
 - linkage evaluation

@@ -1,5 +1,7 @@
 # Publication APIs
 
+Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
+
 **Currently under discussion if a publication API will be supported, because the primary mechanism to add (meta)data to SWR is via harvesting remote sources.**
 
 An API can be developed to publish (or update existing) data and/or metadata. 

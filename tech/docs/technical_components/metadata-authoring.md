@@ -1,5 +1,7 @@
 # Metadata authoring
 
+Project: [Metadata authoring](https://github.com/orgs/soilwise-he/projects/7)
+
 The prefered approach to add (meta)data to SWR is via harvesting. However in case metadata needs to be added directly to the SWR the following workflow is suggested.
 
 The diagram below provides an overview of the workflow of metadata authoring

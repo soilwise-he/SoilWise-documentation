@@ -1,4 +1,6 @@
-# Metadata validation at ingestion and after conflation
+# Metadata validation
+
+Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
 
 ## Definition
 
