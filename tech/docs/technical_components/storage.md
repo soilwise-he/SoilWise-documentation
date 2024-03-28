@@ -1,7 +1,6 @@
-# Repository Storage (WE)
+# Repository Storage
 
-??? open question: probably not all components below should be part of storage, we can restructure chapters and components based on what's the real expectation
-
+<!--
 - asset and feature identification
 - backup
 - versioning
@@ -14,41 +13,30 @@
 - connections with: catalog, ETL, SPARQL, QA, Identifier Mint
 - technologies used: KV stores, Relational databases, Graph/Document databases, Vector databases (Knowledge component)
 
-``` mermaid
-flowchart LR
-    I(Ingestion) --> S
-    S --> DPR(Data processing)
-    S --> DPU(Data & Knowledge publication)
-    KL --> KG(Knowledge graph)
-    MS --> CS(Catalogue Server)
-    
-subgraph S [Repository Cloud Storage]
-    DM("`**Data model**`") ~~~ MS("`**Metadata scheme**`")
-    KL("`**Knowledge sources log**`") ~~~ SHV("`**Soil Health Vocabulary**`")
-    MC("`**Metadata cache**`") --> MS("`**Metadata store**`")
-    DBUP[("`**Temporary store for uploaded data**`")] ~~~ DBPR[("`**Database for processed and high-value data**`")]
-end
+-->
 
-subgraph DPU [Data & Knowledge publication]
-    KG ~~~ CS
-end
-```
-The Storage component comprises of the following components:
+The SoilWise Repository is expected to fulfill the following functions:
 
-**Storage of artifacts**
+1. [Storage of artifacts](#storage-of-artifacts)
+2. [Storage of metadata](#storage-of-metadata)
+3. [Storage of data](#storage-of-data)
+4. [Storage of knowledge](#storage-of-knowledge)
+5. [Backup and versioning](#backup-and-versioning)
 
- 1. [Data model](#data-model)
- 2. [Metadata scheme](#metadata-scheme)
- 3. [Soil Health vocabulary](#soil-health-vocabulary)
+## Technology
 
-**Storage of sources**
+Various storage options exist, dedicated usage scenario's usually have an optimal storage option. Maintenance should be also considered as part of the choice.
 
- 1. [Knowledge sources log](#knowledge)
- 2. [Metadata cache & store](#metadata)
- 3. [Database for processed and high-value data](#processed-data)
- 4. [Temporary store for uploaded data](#temporary-store-for-uploaded-data)  
+- **Relational databases** provide performant filtering and aggregation options which facilitate performance of data API's. Relational databases have a fixed datamodel. 
+- **Search engines**, such as SOLR/Elastic search. Search engines provide even higher performance and introduce faceted search (aggregations) and ranking customisation
+- **File (& bucket) repositories**, which are slow and non queryable, but very flexible in data model, scalable and persistent
+- **Graph and triple stores**, which are very fitted to store relations between random entities and can reason over data in multiple domain models
+- **Versioning systems** (such as git) which are very slow and not queryable, but ultimately persistent/traceable. Less optimal for binary files.
 
-## Data model
+
+## Storage of artifacts
+
+### Data model
 
 ‘To which data model shall I align?’ is the central question of data harmonisation efforts and data interoperability in general. SoilWise is aware of the fragmentation of soil data and the lack of harmonisation. As such, the SWR will, in the first development phase, focus on two major pan-European/global data modelling efforts within the soil domain. 
 
@@ -64,16 +52,7 @@ Other (potentially) relevant data models are:
 - [monitoring facilities](https://inspire.ec.europa.eu/theme/ef)
 - [Landcover](https://inspire.ec.europa.eu/theme/lc)
 
-## Foreseen functionality
-
-- Centerpoint/target model for data interoperability
-- User defines a target model (based on needs) as part of the [transformation process](transformation.md)
-
-## Technology
-
-- any software capable of UML/Archi/OWL notations. For instance: [Enterprise Architect](https://sparxsystems.com/products/ea/){target=_blank}, [Archi](https://www.archimatetool.com/){target=_blank}, [ShapeChange](https://www.interactive-instruments.de/en/shapechange/){target=_blank}, [protégé](https://protege.stanford.edu/){target=_blank}.
-
-## Open issues
+#### Open issues
 
 Many data models are used for data harmonisation and interoperability within the soil domain. The following data models may also be potentially relevant for the SWR:
 
@@ -90,43 +69,11 @@ Moreover, GloSIS and INSPIRE data models fully support only vector data. GloSIS 
 
 Glosis and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples object in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/). Soilwise can probably contribute to the migration of the soil models to the new OMS version.
 
-## Soil health vocabulary 
+### Soil health vocabulary 
 
 Understand if Soil health codelists as developed in the Envasso and Landmark projects, can be adopted by the online soil community, for example as part of the Glosis ontology, inspire registry or EUSO. Research is needed to evaluate if a legislative body is available to confirm the definitions of the terms.
 
-## SWR Data model 
-
-Develop a data model for SWR using standards 
-
-A starting point of a Soilwise data model is suggested below:
-
-``` mermaid
-flowchart LR
-    people -->|memberOf| o[organisations] 
-    o -->|partnerIn| p[projects]
-    p -->|produce| d[resources]
-    o -->|publish| d
-    d -->|describedIn| c[catalogues]
-    p -->|part-of| fs[Fundingscheme]
-```
-
-
-- connections with: data input and structure
-- technologies used: DCAT; VCard; Dublin Core; PROV; plus GloSIS for Soil Semantics
-- responsible person: Luís de Sousa
-- participating: Tomas Reznik
-
-## Storage
-
-Various storage options exist, dedicated usage scenario's usually have an optimal storage option. Maintenance should be also considered as part of the choice.
-
-- **Relational databases** provide performant filtering and aggregation options which facilitate performance of data API's. Relational databases have a fixed datamodel. 
-- **Search engines**, such as SOLR/Elastic search. Search engines provide even higher performance and introduce faceted search (aggregations) and ranking customisation
-- **File (& bucket) repositories**, which are slow and non queryable, but very flexible in data model, scalable and persistent
-- **Graph and triple stores**, which are very fitted to store relations between random entities and can reason over data in multiple domain models
-- **Versioning systems** (such as git) which are very slow and not queryable, but ultimately persistent/traceable. Less optimal for binary files.
-
-### Metadata
+## Storage of metadata
 
 - Metadata is best stored on a git versioning system to trace its history and facilitate community contributions.
 - Metadata is best stored in a graph database or triple store to validate interlinkage and facilitate harmonisation.
@@ -134,8 +81,7 @@ Various storage options exist, dedicated usage scenario's usually have an optima
 - All collected metadata will be archived once per year.
 - Besides raw metadata, results of metadata validation process will be stored along with override values.
 
-
-### Knowledge
+## Storage of knowledge (Rob)
 
 -	Storage (or non-storage) of knowledge is highly dependent on the type of knowledge, how it is to be used and on the available resources for storage. 
 -	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section metadata
@@ -146,8 +92,6 @@ Various storage options exist, dedicated usage scenario's usually have an optima
 
 
 ### Knowledge graph - Triple Store
-
-??? open question: put it in the Storage?
 
 The knowledge graph is meant to add a formal semantics layer to the meta-data collected at the SWR. It mirrors the XML-based meta-data harnessed in the Catalogue Server, but using Semantic Web standards such as DCAT, Dublin Core, VCard or PROV. This meta-data is augmented with links to domain web ontologies, in particular GloSIS. This semantically augmented meta-data is the main pilar of knowledge extraction activities and components.
 
@@ -160,6 +104,8 @@ The [Large Language Model](llm.md) foreseen in this project will be trained on t
 #### Technology
 - DCAT, Dublin Core, VCard, PROV, GloSIS, ...
 
+
+## Storage of data
 
 ### Processed data
 
@@ -181,3 +127,5 @@ The [Large Language Model](llm.md) foreseen in this project will be trained on t
 - File repositories range from Amazon/Google to a local NFS with Webdav access.
 - Graph database **Neo4J**, **Triple store**, **Jena Fuseki** (Java) or **Virtuoso** (C) both have spatial support.
 - **GIT** is most used versioning system these days, option to go for SAAS (Github, Bitbucket) or on premise (Gitlab). Github seems the most suitable option,as other groups such as OGC, INSPIRE are already there, which means users already have an account and we can cross link issues between projects.
+
+## Backup and versioning (WE)

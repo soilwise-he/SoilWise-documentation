@@ -17,6 +17,7 @@ The **configuration** of mapserver is managed via a config file. The config file
 Read more about Mapserver at [EJPSoil wiki](https://ejpsoil.github.io/soildata-assimilation-guidance/cookbook/mapserver.html){target=_blank}.
 
 Alternatives to Mapserver are:
+
 - Geoserver
 - Qgis server
 - pygeoapi (pygeoapi uses Mapserver internally to provide map rendering)

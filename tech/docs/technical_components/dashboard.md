@@ -10,21 +10,6 @@ Other parts of the user interface are:
 - [Metadata authoring](metadata-authoring.md) component
 - [Data download & export](#data-download-export) options
 
-
-``` mermaid
-flowchart LR
-    UM(User Management) --> UI("`**Dashboard**`")
-    DPU(Data & Knowledge publication) --> UI
-
-subgraph UI [Dashboard]
-    S("`**Search interface on metadata**
-        - Ranking, relations, full text search, and filtering
-        - Chatbot
-        - Map viewer`") ~~~ O("`**Overview of Catalogue content**`")
-    DD("`**Data download & export**`") ~~~ U("`**Manual data & metadata authoring**`")
-end
-```
-
 SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present present data and knowledge in useable way.
 
 
