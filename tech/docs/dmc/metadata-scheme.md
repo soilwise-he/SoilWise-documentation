@@ -220,9 +220,9 @@ The [INSPIRE registry](https://inspire.ec.europa.eu/registry) provides a central
 
 [GLOSIS codelists](http://w3id.org/glosis/model/codelists) is a community initiative originating from the GSP GLOSIS initiative, including soil properties, soil description codelists, soil analysis procedures
 
-### Darwin Core
+### GBIF
 
-[Darwin Core](https://dwc.tdwg.org/) is a glossary of terms intended to facilitate the sharing of information about biological diversity. Darwin Core is primarily based on taxa, their occurrence in nature as documented by observations, specimens, samples, and related information.
+[GBIF](https://gbif.org) maintains thesauri for ecological phenomena such as [species](https://www.gbif.org/species)
 
 
 ## Metadata
