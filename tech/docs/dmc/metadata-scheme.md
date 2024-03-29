@@ -4,7 +4,7 @@ This article is split in
 
 - [Semantic Web specifications for meta-data](#semantic-web-specifications-for-meta-data)
 - [Domain models for meta-data](#domain-models-for-meta-data)
-- [Soil code lists](#soil-code-lists)
+- [Thesauri](#thesauri)
 
 ## Semantic Web specifications for meta-data
 
@@ -200,7 +200,9 @@ An XML serialisation of the models is available in [ISO19139:2007](https://www.i
 [EML](https://eml.ecoinformatics.org/) defines a comprehensive vocabulary and a readable XML markup syntax for documenting research data. It is in widespread use in the earth and environmental sciences, and increasingly in other research disciplines as well. EML is a community-maintained specification, and evolves to meet the data documentation needs of researchers who want to openly document, preserve, and share data and outputs. EML includes modules for identifying and citing data packages, for describing the spatial, temporal, taxonomic, and thematic extent of data, for describing research methods and protocols, for describing the structure and content of data within sometimes complex packages of data, and for precisely annotating data with semantic vocabularies. EML includes metadata fields to fully detail data papers that are published in journals specializing in scientific data sharing and preservation.
 
 
-## Code Lists
+## Thesauri
+
+Keywords referenced from meta-data preferably originate from common thesauri. The section below provides a listing of revelant thesauri in the soil domain.
 
 ### INSPIRE registry
 
