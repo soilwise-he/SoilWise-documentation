@@ -1,5 +1,11 @@
 # Metadata scheme
 
+This article is split in
+
+- [Semantic Web specifications for meta-data](#semantic-web-specifications-for-meta-data)
+- [Domain models for meta-data](#domain-models-for-meta-data)
+- [Soil code lists](#soil-code-lists)
+
 ## Semantic Web specifications for meta-data
 
 This section briefly reviews the specifications issued by the World Wide Web
@@ -169,16 +175,56 @@ classes are:
   agents are involved in an activity, qualifying their participation in the
   activity or specifying for which aspect each agent was responsible.
 
+### Schema.org
+
+[schema.org](https://en.wikipedia.org/wiki/Schema.org) is an ontology developed by the main search engines to enrich websites with structured content about the topics described on that page (microdata). schema.org annotations (microdata) are typically added using an embedded json-ld document, but can als be added as RDF-a.
+
+The relevant entities in the schem.org ontology are [DataCatalog](https://schema.org/DataCatalog) and [Dataset](https://schema.org/Dataset) 
+
+Schema.org is used in repositories such as [dataone.org](https://dataone.org) and [Google Dataset Search](https://datasetsearch.research.google.com/).
+
+## Domain models for meta-data
+
+### Datacite
+
+[Datacite](https://schema.datacite.org) is a list of core metadata properties chosen for an accurate and consistent identification of a resource for citation and retrieval purposes, along with recommended use instructions. Datacite is common in academic tools such as Datacite, Dataverse, Zenodo, OSF.
+
+### ISO19115
+
+TC211 developed the initial version of ISO19115 in [2003](https://www.iso.org/standard/26020.html), and a followup in [2014](https://www.iso.org/standard/53798.html). A working group is currently preparing a new version. It is a meta-data model to describe spatial resources, such as datasets, services and features. Part of and related to this work are the models for data quality ISO19157, services ISO19119 and data models ISO19110.
+
+An XML serialisation of the models is available in [ISO19139:2007](https://www.iso.org/standard/32557.html). Although withdrawn, iso19139:2007 is still the de-facto meta-data standard in the geospatial domain in Europe.
+
+### Ecological Metadata Language (EML)
+
+[EML](https://eml.ecoinformatics.org/) defines a comprehensive vocabulary and a readable XML markup syntax for documenting research data. It is in widespread use in the earth and environmental sciences, and increasingly in other research disciplines as well. EML is a community-maintained specification, and evolves to meet the data documentation needs of researchers who want to openly document, preserve, and share data and outputs. EML includes modules for identifying and citing data packages, for describing the spatial, temporal, taxonomic, and thematic extent of data, for describing research methods and protocols, for describing the structure and content of data within sometimes complex packages of data, and for precisely annotating data with semantic vocabularies. EML includes metadata fields to fully detail data papers that are published in journals specializing in scientific data sharing and preservation.
 
 
-## Soil Semantics
+## Code Lists
+
+### INSPIRE registry
+
+The [INSPIRE registry](https://inspire.ec.europa.eu/registry) provides a central access point to a number of centrally managed INSPIRE registers. The content of these registers are based on the INSPIRE Directive, Implementing Rules and Technical Guidelines.
+
+### GEneral Multilingual Environmental Thesaurus (GEMET)
+
+[GEMET](https://www.eionet.europa.eu/gemet/en/about/) is a source of common and relevant terminology used under the ever-growing environmental agenda.
+
+### Agrovoc
+
+[AGROVOC Multilingual Thesaurus](https://agrovoc.fao.org/browse/agrovoc/en/), including definitions from the [World Reference Base on Soil description](https://agrovoc.fao.org/browse/agrovoc/en/page/?clang=da&uri=c_89f35c33)
+
+### GLOSIS web ontology
+
+[GLOSIS codelists](http://w3id.org/glosis/model/codelists) is a community initiative originating from the GSP GLOSIS initiative, including soil properties, soil description codelists, soil analysis procedures
+
+### Darwin Core
+
+[Darwin Core](https://dwc.tdwg.org/) is a glossary of terms intended to facilitate the sharing of information about biological diversity. Darwin Core is primarily based on taxa, their occurrence in nature as documented by observations, specimens, samples, and related information.
 
 
-## Notes (outdated)
-
-- developing metadata templates using standards
+## Metadata
 
 - connections with: data input and structure
-- technologies used: DCAT; VCard; Dublin Core; PROV; plus GloSIS for Soil Semantics
 - responsible person: Luís de Sousa
-- participating: Tomas Reznik
+- participating: Tomas Reznik, Paul van Genuchten
