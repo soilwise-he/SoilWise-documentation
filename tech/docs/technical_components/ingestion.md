@@ -94,9 +94,6 @@ Because of their relevance we aim to also support:
 - Cordis data model
 - ESDAC (HTML scraping??)
 
-![Cordis data model](https://blog.sparna.fr/wp-content/uploads/2024/01/EURIO_v2.4-1024x812.png)
-
-
 ## Architecture
 
 Below are described 3 options for a harvesting infrastructure. The main difference is the scalability of the solution, which is mainly dependent on the frequency and volume of the harvesting. 
