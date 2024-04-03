@@ -1,5 +1,8 @@
 # Interlinker (Rob)
 
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Metadata ingestion](https://github.com/orgs/soilwise-he/projects/3)
+
 Interlinker component comprises of the following functions:
 
 1. [Automatic metadata interlinking](#automatic-metadata-interlinking)

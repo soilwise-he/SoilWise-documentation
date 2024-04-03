@@ -1,13 +1,16 @@
 # User Interface: Dashboard
 
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Dashboard](https://github.com/orgs/soilwise-he/projects/10)
+
 The term dashboard is used with various meanings, in the scope of Soilwise the following uses are relevant:
 
 - A [search interface on metadata](#search-interface-on-metadata), search results are typically displayed in a paginated set of web pages. But alternatives, such as a map or chatbot, could be interesting.
-- A set of [diagrams showing an overview of the contents of the catalogue](#overview-of-catalogue-content); for example a diagram of the percentage of records by topiccategory, usage constraints or organisation.
+- A set of [diagrams showing an overview of the contents and usage of the catalogue](#overview-of-catalogue-content); for example a diagram of the percentage of records by topiccategory, number of visits by member state.
 
-Other parts of the user interface are:
+Other parts of the dashboard are:
 
-- [Metadata authoring](metadata-authoring.md) component
+- [Metadata authoring](metadata-authoring.md) and [harvest configuration](../technical_components/ingestion.md) components
 - [Data download & export](#data-download-export) options
 
 SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present present data and knowledge in useable way.
@@ -15,7 +18,7 @@ SoilWise Dashboard is intended to support the implementation of User stories, de
 
 ## Search interface on metadata
 
-A typical example of such a search is the current [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data).
+Typical example of a catalogue search interface is the current [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data).
 
 ### Ranking, relations, full text search, and filtering
 

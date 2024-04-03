@@ -54,7 +54,7 @@ documentation:Datacite
 documentation:Datacite metadata scheme
 :   [Datacite metadata schema](https://schema.datacite.org/){target=_blank} a datamodel for metadata for scientific resources
 
-documentation:Digital exchange of soil-related data (ISO 28258:2013)
+documentation:Digital exchange of soil-related data
 :   Digital exchange of soil-related data (ISO 28258:2013) presents a conceptual model of a common understanding of what soil profile data are
 
 documentation:Digital soil mapping
@@ -78,8 +78,8 @@ documentation:ESDAC
 documentation:EUSO
 :   [EUSO](https://joint-research-centre.ec.europa.eu/eu-soil-observatory-euso_en){target=_blank} European Soil Observatory
 
-documentation:GDAL/OGR
-:   [GDAL/OGR](https://gdal.org){target=_blank} software package widely used to interact with a variety of spatial data formats
+documentation:GDAL OGR
+:   [GDAL and OGR](https://gdal.org){target=_blank} are software packages widely used to interact with a variety of spatial data formats
 
 documentation:GML
 :   Geography Markup Language (GML) is an xml based standardised encoding for spatial data.
@@ -144,7 +144,7 @@ documentation:Relational model
 documentation:RDF
 :   [Resource Description Framework](https://www.w3.org/RDF/){target=_blank} (RDF) a standard model for data interchange on the Web
 
-documentation:Representational state transfer (REST)
+documentation:Representational state transfer
 :   Representational state transfer (REST) a set of guidelines for creating stateless, reliable web APIs (source: [wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer){target=_blank})
 
 documentation:Requirements
