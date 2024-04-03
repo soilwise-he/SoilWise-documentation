@@ -1,6 +1,7 @@
 # API for knowledge extraction
 
-Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
 
 An API providing machine-based access to the SWR knowledge graph. This API is most likely to conform to an existing meta-data standard, such as the OGC API Records, OpenAPI or GraphQL. However, its responses are RDF documents, for instance encoded with JSON-LD syntax. Other components of the SWR performing knowledge extraction and/or augmentation may also use this API to interact with the knowledge graph.
 

@@ -1,6 +1,7 @@
 # Discovery API's
 
-Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
 
 In order to enable resource discovery from Soilwise to a variety of communities. SWR aims to support a wide range of standardised or de-facto discovery api's
 

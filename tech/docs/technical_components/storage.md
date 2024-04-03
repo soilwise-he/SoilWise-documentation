@@ -1,6 +1,9 @@
 # Repository Storage
 
-Project: [Storage](https://github.com/orgs/soilwise-he/projects/8)
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Storage](https://github.com/orgs/soilwise-he/projects/8)
+
+
 
 <!--
 - asset and feature identification

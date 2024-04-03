@@ -1,6 +1,8 @@
-# Metadata & data & knowledge validation (MU)
+# Metadata validation (MU)
 
-Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
+
 
 - metadata conformance evaluation
   - conformance is a indicator of quality?

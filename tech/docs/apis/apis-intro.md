@@ -1,6 +1,7 @@
 # Introduction
 
-Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
 
 Soilwise will use <documentation:API|API's> to interact between components as well as enable remote users to interact with Soilwise components.
 Soilwise will use standardised <documentation:API|API's> if possible, such as:

@@ -1,6 +1,7 @@
 #  Harvester
 
-Project: [Metadata ingestion](https://github.com/orgs/soilwise-he/projects/6)
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Metadata ingestion](https://github.com/orgs/soilwise-he/projects/6)
 
 The Harvester component is dedicated to automatically harvest sources to populate [SWR Triple Store](./storage.md) with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
 
