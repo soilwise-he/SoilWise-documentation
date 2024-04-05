@@ -1,4 +1,4 @@
-# Metadata validation (MU)
+# Metadata validation
 
 !!! component-header "Important Links"
     :fontawesome-brands-github: Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)

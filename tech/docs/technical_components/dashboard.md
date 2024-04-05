@@ -48,7 +48,7 @@ What can be improved:
 
 ### Chatbot
 
-Large Language models enriched with Soilwise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer, but also provides references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in how to access the source, using which software for example.
+[Large Language models](llm.md) (LLM) enriched with Soilwise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer, but also provides references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in how to access the source, using which software for example.
 
 ### Map viewer
 
@@ -75,7 +75,7 @@ Examine the need of viewing novel formats such as Vector tiles, [COG](https://ww
 
 The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/overview?view=themeOverview&theme=tn) increased its usage with their new dashboard like interface, for each memberstate the number of published datasets per topic is upfront in the application. Dashboards on catalogue content provide mechanisms to generate overviews of that content to provide such insight.
 
-#### Technology
+### Technology
 
 The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostGreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
 

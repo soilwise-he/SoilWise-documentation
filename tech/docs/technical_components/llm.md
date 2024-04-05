@@ -1,4 +1,4 @@
-# NLP and Large Language Models (RobK, Nick) --> Iteration II
+# NLP and Large Language Models
 
 LLM (and less complex Natural Language Processing (NLP) approaches) can be used to perform tasks in [metadata optimisation](#metadata-optimization) (e.g. identify similarities, resolve conflicts, populate gaps, classify or summarize resources). 
 

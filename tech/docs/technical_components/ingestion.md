@@ -9,9 +9,7 @@ The Harvester component is dedicated to automatically harvest sources to populat
 
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components were available.
 
-The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes.
-
-All metadata with an update date newer then <last-identified successfull harvester run> are extracted from remote location. 
+The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
 
 ## Persistence identification
 
@@ -34,7 +32,7 @@ They are used in the SoilWise Repository in respect to:
 
 ## Resource Types
 
-Metadata for following resource types to be harvested:
+Metadata for following resource types are forseen to be harvested:
 
 - Data & Knowledge Resources (Articles/Datasets/Videos/Software/Services)
 - Projects/LTE/Living labs
@@ -147,7 +145,7 @@ For this iteration, SoilWise will focus on the second approach.
 
 ## Foreseen functionality
 
-A harvesting task typically extract records with update-date later then the last successfull Harvester run.
+A harvesting task typically extracts records with update-date later then the _last-identified successfull harvester run_.
 
 Harvested content is (by default) not editable for the following reasons:
 
@@ -175,7 +173,7 @@ Typical functionalities of a harvester:
 
 ### Duplicates / Conflicts
 
-A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). The Harvester component itself will not evaluate duplicities/conflicts between records. 
+A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). The Harvester component itself will not evaluate duplicities/conflicts between records, this will be resolved by the [Interlinker component](interlinker.md). 
 
 An aim of this exersice is also to understand in which repoitories a certain resource is advertised.
 
@@ -196,7 +194,7 @@ An aim of this exersice is also to understand in which repoitories a certain res
 
 ## Integration opportunities
 
-The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [data download](dashboard.md#data-download--export-mu) & [upload pipelines](dashboard.md#manual-data--metadata-upload-mu) and (3) [ETS/ATS](metadata_validation.md), i.e. test suites.
+The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [data download](dashboard.md#data-download-export) & [upload pipelines](dashboard.md#manual-data-metadata-authoring) and (3) [ETS/ATS](metadata_validation.md), i.e. test suites.
 
 
 

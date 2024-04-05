@@ -5,5 +5,3 @@
 
 - connections with: all modules
 - technologies used: Docker, Kubernetes
-- responsible person: Thorsten Reitz
-- participating:
