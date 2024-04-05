@@ -175,6 +175,9 @@ classes are:
   agents are involved in an activity, qualifying their participation in the
   activity or specifying for which aspect each agent was responsible.
 
+
+## Other domain models for meta-data
+
 ### Schema.org
 
 [schema.org](https://en.wikipedia.org/wiki/Schema.org) is an ontology developed by the main search engines to enrich websites with structured content about the topics described on that page (microdata). schema.org annotations (microdata) are typically added using an embedded json-ld document, but can als be added as RDF-a.
@@ -183,7 +186,6 @@ The relevant entities in the schem.org ontology are [DataCatalog](https://schema
 
 Schema.org is used in repositories such as [dataone.org](https://dataone.org) and [Google Dataset Search](https://datasetsearch.research.google.com/).
 
-## Domain models for meta-data
 
 ### Datacite
 
