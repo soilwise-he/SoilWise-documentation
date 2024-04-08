@@ -30,7 +30,7 @@ The SoilWise Repository is expected to fulfill the following functions:
 
 ## Technology
 
-Various storage options exist, dedicated usage scenario's usually have an optimal storage option. Maintenance should be also considered as part of the choice.
+Various storage options exist, dedicated usage scenario's usually have an optimal storage option. Maintenance will be also considered as part of the choice.
 
 - **Relational databases** provide performant filtering and aggregation options which facilitate performance of data API's. Relational databases have a fixed datamodel. 
 - **Search engines**, such as SOLR/Elastic search. Search engines provide even higher performance and introduce faceted search (aggregations) and ranking customisation
@@ -68,11 +68,7 @@ the institutional soil survey handbooks used in Australia and New Zealand. ANZSo
 
 Moreover, GloSIS and INSPIRE data models fully support only vector data. GloSIS has not developed a data model for gridded data yet, and several issues were reported to the INSPIRE data model for gridded data.
 
-
-- SoilWise can provide a set of prepared target models to select from (INSPIRE xsd, INSPIRE gpkg, WRB owl, GLOSIS owl, eSOTER mdb, LUCAS csv, ...)
-- capable of being mapped (ideally to all) external data models
-
-Glosis and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples object in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/). Soilwise can probably contribute to the migration of the soil models to the new OMS version.
+Glosis and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples object in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/){target=_blank}. Soilwise can probably contribute to the migration of the soil models to the new OMS version.
 
 ### Soil health vocabulary 
 
@@ -86,7 +82,7 @@ Understand if Soil health codelists as developed in the Envasso and Landmark pro
 - All collected metadata will be archived once per year.
 - Besides raw metadata, results of metadata validation process will be stored along with override values.
 
-## Storage of knowledge (Rob)
+## Storage of knowledge
 
 -	Storage (or non-storage) of knowledge is highly dependent on the type of knowledge, how it is to be used and on the available resources for storage. 
 -	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section metadata
@@ -123,7 +119,7 @@ The [Large Language Model](llm.md) foreseen in this project will be trained on t
 - Full dataset download or Single band data (access by bbox, not by property) is best stored as files on a scalable file infrastructure using cloud native formats, where the file location provides the identification.
 - Data which is frequently filtered or aggregated on attribute value is best stored on a relational database or search engine.
 
-### Temporary store for uploaded data
+### Temporary store for uploaded data (WE)
 
 ### Technology
 

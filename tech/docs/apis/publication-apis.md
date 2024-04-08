@@ -12,8 +12,3 @@ Requires a user to be logged in and have publication permission.
 A review step may have to be required before allowing the suggested changes?
 
 A suggestion for development could be to let the API prepare a Pull request to Git, for the record to be merged into the (meta)data collection.
-
-Interaction with:
-
-- Login and authorisation module
-- Git repository
