@@ -60,7 +60,9 @@ Datasets are to be imported from the **INSPIRE GeoPortal**, **BonaRes** as well 
 
 ### Knowledge sources
 
-The SoilWise group is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Horizon Europe projects. These resources are accessible from **Cordis**, **Zenodo** and **OpenAire**. Extracting content from Cordis, OpenAire and Zenodo can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first itereation SoilWise aims for this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
+The SoilWise group is still exploring which knowledge resources to include. With respect to harvesting, it is important to note that knowledge assets will be heterogeneous, and that (compared to data), metadata standards and particularly access / harvesting protocols are not generally adopted. This can make it necessary to develop customized harvesting and metadata extraction processes. It also means that informed decisions need to be made on which resources to include, based on priority, required efforts and available capacity.
+
+An important cluster of knowledge sources are academic articles and report deliverables from Horizon Europe projects. These resources are accessible from **Cordis**, **Zenodo** and **OpenAire**. Extracting content from Cordis, OpenAire and Zenodo can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first itereation SoilWise aims for this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
 
 ### Catalogue API's and models
 
