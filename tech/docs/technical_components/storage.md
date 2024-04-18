@@ -85,7 +85,7 @@ Understand if Soil health codelists as developed in the Envasso and Landmark pro
 ## Storage of knowledge
 
 -	Storage (or non-storage) of knowledge is highly dependent on the type of knowledge, how it is to be used and on the available resources for storage. 
--	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section metadata
+-	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section [Storage of metadata](#storage-of-metadata)
 -	Knowledge that expresses links between data and knowledge assets is best stored in a graph DB or an RDF DB, depending also on the application requirements
 -	Knowledge that expresses semantics is best stored as RDF in an RDF DB, to be able to reason over semantic relationships
 -	When knowledge needs to be reasoned over using LLMs, it is preferably processed and stored in a vector DB, potentially linked to relevant text fragments (for explainable AI). 
@@ -96,7 +96,7 @@ Understand if Soil health codelists as developed in the Envasso and Landmark pro
 
 The knowledge graph is meant to add a formal semantics layer to the meta-data collected at the SWR. It mirrors the XML-based meta-data harnessed in the Catalogue Server, but using Semantic Web standards such as DCAT, Dublin Core, VCard or PROV. This meta-data is augmented with links to domain web ontologies, in particular GloSIS. This semantically augmented meta-data is the main pilar of knowledge extraction activities and components.
 
-Besides meta-data the knowledge graph is also expected to host the results of knowledge extration activities. This assumes that knowledge to be semantically laden, i.e. linking to relevant domain ontologies. The identification of appropriate ontologies, and ontology mappinds thus becomes an essential aspect of this project, bridging together various activities and assets.
+Besides meta-data on knowledge assets, the knowledge graph is also expected to host the results of knowledge extration activities. This assumes knowledge to be semantically loaden, i.e. linking to relevant domain ontologies. The identification of appropriate ontologies, and ontology mappinds thus becomes an essential aspect of this project, bridging together various activities and assets.
 
 It is important to recognise the knowledge graph as an immaterial asset that cannot exist by itself. In order to be usable the knowledge graph must be stored in a triple store, thus highlighting the role of that component in the architecture. In its turn the triple store provides another important architectural component, the SPARQL end-point. That will be the main access gateway to the knowledge graph, particularly by other techonological components and software.
 
