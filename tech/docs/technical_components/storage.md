@@ -85,7 +85,7 @@ Understand if Soil health codelists as developed in the Envasso and Landmark pro
 ## Storage of knowledge
 
 -	Storage (or non-storage) of knowledge is highly dependent on the type of knowledge, how it is to be used and on the available resources for storage. 
--	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section [Storage of metadata](#storage-of-metadata)
+-	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section [storage of metadata](#storage-of-metadata)
 -	Knowledge that expresses links between data and knowledge assets is best stored in a graph DB or an RDF DB, depending also on the application requirements
 -	Knowledge that expresses semantics is best stored as RDF in an RDF DB, to be able to reason over semantic relationships
 -	When knowledge needs to be reasoned over using LLMs, it is preferably processed and stored in a vector DB, potentially linked to relevant text fragments (for explainable AI). 
