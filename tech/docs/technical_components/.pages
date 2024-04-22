@@ -3,7 +3,6 @@ order_by: title
 nav:
     - technical_components.md
     - ingestion.md
-    - metadata-scheme.md
     - completeness.md
     - storage.md
     - pycsw.md
