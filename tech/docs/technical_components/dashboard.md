@@ -85,6 +85,9 @@ The source data for the dashboards is very likely enriched with AI generated ind
 
 ## Manual data & metadata authoring
 
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Metadata authoring](https://github.com/orgs/soilwise-he/projects/7)
+
 The SWR provides two major ways of data & metadata authoring
 
 1.	in an automatized manner, as described in the [Harvester component](ingestion.md);
@@ -101,7 +104,23 @@ A **manual mode** comprises four levels of data and metadata upload (note that t
  - file type, e.g. XML, JSON (note that the full list of supported file types need to be elaborated yet);
 4.	Manual connection to a Web service and semi-automatic extraction of available metadata: a user types in a publicly available URL pointing to a service metadata document, e.g. GetCapabilities response of OGC Web service. The Manual data & metadata upload component extracts metadata that can be copied in line with the desired metadata structure, i.e. a metadata profile. The Manual data & metadata upload component assigns a UUID if needed, and stores the metadata in the [Storage](storage.md#metadata) component. Most likely, the metadata extracted from a service metadata document (e.g. GetCapabilities) would not be sufficient to address all the mandatory metadata elements defined by the desired metadata structure, i.e. a metadata profile. In such a case, manual fill in would be needed
 
-The above-described mechanisms showed the “as is” manual metadata upload. Nevertheless, it is foreseen that the SWR will also support “on-the-fly transformation towards interoperability”. Such functionality is currently under discussion. The desired functionality aims assist data producers and publishers with a pipeline that allows them to map their source data & metadata structures into a target interoperable data & metadata structures. An example of this is an example of an upload of interpreted soil data and their on-the-fly transformation into a structure defined by the INSPIRE Directive, application schema from data specification on Soil respectively. A data & metadata upload pipeline supporting “on-the-fly transformation towards interoperability” will be described in greater detail later in line with SoilWise developments.
+The diagram below provides an overview of the workflow of metadata authoring
+
+``` mermaid
+flowchart LR
+    G[fa:fa-code-compare Git] -->|mcf| CI{{pygeometa}} 
+    CI -->|iso19139| DB[(fa:fa-database Database)]
+    DB --> C(Catalogue)
+    C --> G
+```
+
+The authoring workflow uses a GIT backend, additions to the catalogue are entered by members of the GIT repository directly or via pull request (review).
+Records are stored in iso19139:2007 xml or MCF. MCF is a subset of iso19139:2007 in a YAML encoding, defined by the pygeometa community. This library is used to 
+convert the MCF to any requested metadata format.
+
+A [webbased form](https://osgeo.github.io/mdme){target=_blank} is available for users uncomfortable in editing a MCF file directly.
+
+With every change on the git repository an export of the metadata is made to a PostGres Database (or the triple store).
 
 ### Foreseen functionality
 
@@ -131,6 +150,8 @@ The Manual data & metadata upload component will show its full potential when be
 
 ### Open issues
 The Manual data & metadata upload component shall be technologically aligned with the SWR Catalogue and [Harvester](ingestion.md). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.
+
+The above-described mechanisms showed the “as is” manual metadata upload. Nevertheless, it is foreseen that the SWR will also support “on-the-fly transformation towards interoperability”. Such functionality is currently under discussion. The desired functionality aims assist data producers and publishers with a pipeline that allows them to map their source data & metadata structures into a target interoperable data & metadata structures. An example of this is an example of an upload of interpreted soil data and their on-the-fly transformation into a structure defined by the INSPIRE Directive, application schema from data specification on Soil respectively. A data & metadata upload pipeline supporting “on-the-fly transformation towards interoperability” will be described in greater detail later in line with SoilWise developments.
 
 ## Data download & export
 
