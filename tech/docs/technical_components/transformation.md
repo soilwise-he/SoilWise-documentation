@@ -11,13 +11,13 @@ The specific requirements these coomponents have to fulfill are:
 - There shall be an option to read and write data from relational databases.
 - The services should be exposed as [OGC API Processes](https://ogcapi.ogc.org/processes/){target=_blank}
 - Transformation processes shall include the following capabilities:
-  - Rename types & attributes
-  - Convert between units of measurement
-  - Restructure data, e.g. through, joining, merging, splitting
-  - Map codelists and other coded values
-  - Harmonise observations as if they were measured using a common procedure using [PTF](https://en.wikipedia.org/wiki/Pedotransfer_function){target=_blank}.
-  - Reproject data
-  - Change data from one format to another
+    - Rename types & attributes
+    - Convert between units of measurement
+    - Restructure data, e.g. through, joining, merging, splitting
+    - Map codelists and other coded values
+    - Harmonise observations as if they were measured using a common procedure using [PTF](https://en.wikipedia.org/wiki/Pedotransfer_function){target=_blank}.
+    - Reproject data
+    - Change data from one format to another
 - There should be an interactive editor to create the specific transformation processes required for the SWR.
 - It should be possible to share transformation processes.
 - Transformaiton processes should be fully documented or should be self-documenting.
@@ -26,7 +26,7 @@ The specific requirements these coomponents have to fulfill are:
 
 We plan to deploy the needed capabilities to the SWR using two technologies:
 
-- [GDAL](https://gdal.org/index.html) is a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
-- [hale studio](https://github.com/halestudio/hale/) is a proven ETL tool optimised for working with complex strucutred data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While hale studio exists as a multi-platform interactive application, its capabilities can be provided through a webservice with an OpenAPI.
+- [GDAL](https://gdal.org/index.html){target=_blank} is a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+- [hale studio](https://github.com/halestudio/hale/){target=_blank} is a proven ETL tool optimised for working with complex strucutred data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While hale studio exists as a multi-platform interactive application, its capabilities can be provided through a webservice with an OpenAPI.
 
 The two services may be chained in a single workflow in some cases.
