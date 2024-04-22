@@ -10,7 +10,7 @@ The term dashboard is used with various meanings, in the scope of Soilwise the f
 
 Other parts of the dashboard are:
 
-- [Metadata authoring](metadata-authoring.md) and [harvest configuration](../technical_components/ingestion.md) components
+- [Metadata authoring](#manual-data--metadata-authoring) and [harvest configuration](../technical_components/ingestion.md) components
 - [Data download & export](#data-download-export) options
 
 SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present present data and knowledge in useable way.
