@@ -3,22 +3,34 @@
 !!! component-header "Important Links"
     :fontawesome-brands-github: Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
 
+<!--
+Metadata is validated at ingestion against a set of rules. This allows SWR to log the completeness of ingested metadata during the processing of the record through Soilwise. Catalogues which capture metadata authored by data custodians typically have a wide range in metadata completion and accuracy. During processing SWR aims to extend the metadata of a resource by analysing the content, combine the metadata with information from other sources. After metadata processing this validation process can be repeated, to understand the value which has been added by SWR. To identify the individual ingested records which together form the final metadata, SWR needs to uniquely identify each ingested record by its identifier and the source from which it was imported.
+-->
 
-- metadata conformance evaluation
-  - conformance is a indicator of quality?
-- linkage evaluation
-  - linkage to other metadata records
-  - linkage to data/services. [Geohealthcheck](https://geohealthcheck.org){target=_blank} is an interesting tool to monitor availability of spatial services/resources.
-  - linkage failure is a common problem on the web, first aspect is to tag a link as broken, so users can filter broken links, later it can be considered to remove/disable the link (other links on the same record may still be operational, the content behind the link may be recoverable via <https://web.archive.org> (so don't remove it).
-- metadata quality evaluation
-  - identify a level of completeness for a metadata file (match against a set of expectations from a SoilWise perspective)
-  - governance is of interest, what do you do if a record scores low? notify the owner, try to auto-improve, tag with low score, exclude from the catalogue 
-- data quality evaluation
-- suggest improvements on metadata to users
+## Metadata completeness validation
 
-[Geocat](https://geocat.iucnredlist.org/){target=_blank} has developed a linkage checker for iso19139:2007 metadata for INSPIRE geoportal, available at [icat](https://github.com/GeoCat/icat){target=_blank}, which includes link checks in OWS capabilities.
+Completeness of records can be evaluated by:
 
-### Data quality assurance (MU + ISRIC)
+- contains the required and/or advised metadata elements of SWR
+- contains the required elements endorsed by the adopted metadata standard itself 
+
+### Metodology
+
+Various technologies use dedicated mechanisms to validate inputs on type matching and completeness
+
+- XML (Dublin core, iso19115, Datacite) validation - XSD schema, potentially extended with Schematron rules
+- json (OGC API - Records/STAC) - json schema
+- RDF (schema.org, dcat) - SHACL
+
+[ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) offers a model to express the quality of (meta)data. 
+
+### Goal
+
+Completeness accorging to SWR and completeness according to adopted model result in quality indicators of a resource description.
+
+## Metadata conformance evaluation
+
+## Data quality assurance
 
 - Automated validations on datasets to check if statements in metadata on resolution, projection, spatial/temporal bounds, accuracy, classification, uncertainty are correct.
 - If a metadata record has no statements on these aspects, findings fom the validation will be used instead.

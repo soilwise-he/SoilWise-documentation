@@ -74,6 +74,6 @@ Metadata (and data and knowledge sources) tend to contain links which over time 
 **Liveliness checks**:
 
 - [GeoHealthCheck](https://GeoHealthCheck.org){target=_blank} a library which checks at intervals availability of OGC API's up to collection/item level, should be extended to drill down from CSW endpoint to record level and check links in individual records 
-- [INSPIRE Geoportal Link checker](https://github.com/GeoCat/icat){target=_blank} java service developed in scope of INSPIRE geoportal, validates links in metadata records
+- [Geocat](https://geocat.iucnredlist.org/){target=_blank} has developed a linkage checker for iso19139:2007 metadata for INSPIRE geoportal, available at [icat](https://github.com/GeoCat/icat){target=_blank}, which includes link checks in OWS capabilities.
 - [Python link checker](https://pypi.org/project/LinkChecker/) checks (broken) links in html
 - ...
