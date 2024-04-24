@@ -1,4 +1,4 @@
-# User Managment and Access Control
+# User Management and Access Control
 
 User and organisation management, authorisation and authentication are complex, cross-cutting aspects of a system such as the SoilWise repository. Back-end and front-end components need to perform access control for authenticated users. Many organisations already have infrastructures in place, such as an Active Directory or a Single Sign On based on OAuth.
 
