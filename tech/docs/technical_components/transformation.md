@@ -1,27 +1,32 @@
-# Transformation Component - Hale Studio (WE)
+# Transformation and Harmonisation Components
 
+These components make sure that data is interoperable, i.e. provided to agreed upon formats, structures and semantics. They are used to ingest data and transform it to common standard data, e.g. in the central SWR format for soil health.
 
-## Interoperability
+The specific requirements these coomponents have to fulfill are:
 
-- Describe the source dataset model in detail so ETL is facilitated (for example iso19110 or XSD or OWL).
-- Prepare & share a transformation pattern so any potential user can trigger/adjust the transformation (also helps to understand the source model), allow feedback/contributions to the transformation pattern (Hale Studio, rml.io/yarrrml, csv-ld).
-- Extract data from a dedicated format (many) to a selected format (GDAL) for example as [OGCAPI Processes](https://ogcapi.ogc.org/processes/){target=_blank}, Nice to have: enable subsetting the dataset to a region of interest.
-- Transform from source to target model using transformation pattern. 
-  - Standardise object & attribute names/types/units.
-  - Map attribute values to codelist values from selected taxonomies.
-  - Harmonise observations as if they were measured using a common procedure using [PTF](https://en.wikipedia.org/wiki/Pedotransfer_function){target=_blank}.
-- Load transformed data to a shared database.
+- The services shall be able to work with data that is described explicitly or implicitly with a schema. The services shall be able to load schemas expressed as XML Schemas, GML Application Schemas, RDF-S and JSON Schema.
+- The services shall support GML, GeoPackage, GeoJSON, CSV, RDF and XSL formats for data sources.
+- The services shall be able to connect with external download services such as WFS or OGC API, Features.
+- The services shall be able to write out data in GML, GeoPackage, GeoJSON, CSV, RDF and XSL formats.
+- There shall be an option to read and write data from relational databases.
+- The services should be exposed as [OGC API Processes](https://ogcapi.ogc.org/processes/){target=_blank}
+- Transformation processes shall include the following capabilities:
+    - Rename types & attributes
+    - Convert between units of measurement
+    - Restructure data, e.g. through, joining, merging, splitting
+    - Map codelists and other coded values
+    - Harmonise observations as if they were measured using a common procedure using [PTF](https://en.wikipedia.org/wiki/Pedotransfer_function){target=_blank}.
+    - Reproject data
+    - Change data from one format to another
+- There should be an interactive editor to create the specific transformation processes required for the SWR.
+- It should be possible to share transformation processes.
+- Transformaiton processes should be fully documented or should be self-documenting.
 
-- Restructure data to common repo structures + semantics
-- Write out in common repo format
-- Only for priority (meta)data, majority will be linked, stored elsewhere
+## Implementation Technologies
 
-### Technology
+We plan to deploy the needed capabilities to the SWR using two technologies:
 
-- Hale, gdal, tarql, stetl
+- [GDAL](https://gdal.org/index.html){target=_blank} is a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+- [hale studio](https://github.com/halestudio/hale/){target=_blank} is a proven ETL tool optimised for working with complex strucutred data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While hale studio exists as a multi-platform interactive application, its capabilities can be provided through a webservice with an OpenAPI.
 
-
-### Codelist mapping (WE, ISRIC, WR)
-
-- Hale Studio has a codelist mapping tool
-- The skos ontology allows to map terms between code lists using SameAs relations (as part of Triple store)
+The two services may be chained in a single workflow in some cases.

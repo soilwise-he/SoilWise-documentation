@@ -3,11 +3,9 @@ order_by: title
 nav:
     - technical_components.md
     - ingestion.md
-    - completeness.md
     - storage.md
     - pycsw.md
     - metadata_validation.md
-    - metadata-authoring.md
     - transformation.md
     - interlinker.md
     - llm.md
