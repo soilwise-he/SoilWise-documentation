@@ -4,7 +4,7 @@ This section lists technical components for building the SoilWise Repository as 
 
 1. [Harvester](ingestion.md)
 2. [Repository storage](storage.md)
-3. [pycsw](pycsw.md)
+3. [Meta-data Catalogue](catalogue.md)
 4. [Metadata validation](metadata_validation.md)
 5. [Transformation and Harmonistation Components](transformation.md)
 6. [Interlinker](interlinker.md)
