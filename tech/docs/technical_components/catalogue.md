@@ -16,7 +16,7 @@ meta-data catalogues: GeoNetwork and pycsw.
 
 ## GeoNetwork
 
-This web-based software is centered on meta-data management, provinding rich
+This web-based software is centred on meta-data management, providing rich
 edition forms. The editor supports the ISO19115/119/110 standards used for
 spatial resources and also Dublin Core. The user can upload data, graphics,
 documents, pdf files and any other content type to augment meta-data records.
@@ -50,7 +50,7 @@ available to the system administrator.
 
 ### Use cases
 
-The GeoNetwork project started out year 2001 as a [Spatial Data Catalogue
+The GeoNetwork project started out in 2001 as a [Spatial Data Catalogue
 System for the Food and Agriculture
 organisation](https://www.fao.org/land-water/databases-and-software/geonetwork/en/)
 of the United Nations (FAO), the United Nations World Food Programme (WFP) and
