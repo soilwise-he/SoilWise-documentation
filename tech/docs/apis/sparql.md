@@ -7,7 +7,7 @@ This is the primary access point to the [knowledge graph](../technical_component
 
 Consider that this component relates to the [knowledge extraction](./knowledge-extraction.md) component, which describes alternative mechanisms to access selected parts of the knowledge graph.
 
-See also [SWR data model](../technical_components/storage.md#swr-data-model)
+See also [SWR data model](../technical_components/storage.md#knowledge-graph-triple-store)
 
 ## Rules and reasoning
 

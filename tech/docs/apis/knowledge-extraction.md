@@ -11,6 +11,6 @@ A point of discussion is if the SPARQL engine offers enough performance to facil
 
 Various technology options exist, we will validate these in the upcoming iteration
 
-- [pycsw](https://pycsw.org) and [pygeoapi](https://pygeoapi.org) could be extended to support SPARQL as a backend, which would enable OGC API Records on the SPARQL backend
-- The [GRLC](https://grlc.io/) tool enables an Open Rest API on any SPARQL endpoint
-- [Various tools](https://github.com/dbcls/grasp) exist offering Graphql interface to wrap a SPARQL endpoint, to facilitate the growing [GraphQL community](https://graphql.com/)
+- [pycsw](https://pycsw.org){target=_blank} and [pygeoapi](https://pygeoapi.org){target=_blank} could be extended to support SPARQL as a backend, which would enable OGC API Records on the SPARQL backend
+- The [GRLC](https://grlc.io/){target=_blank} tool enables an Open Rest API on any SPARQL endpoint
+- [Various tools](https://github.com/dbcls/grasp){target=_blank} exist offering Graphql interface to wrap a SPARQL endpoint, to facilitate the growing [GraphQL community](https://graphql.com/){target=_blank}

@@ -7,10 +7,10 @@ Soilwise will use <documentation:API|API's> to interact between components as we
 Soilwise will use standardised <documentation:API|API's> if possible, such as:
 
 
-- [Open API](https://www.openapis.org/)
-- [GraphQL](https://graphql.com)
-- [SPARQL](https://www.w3.org/TR/sparql11-query/)
-- OGC webservices (preferably [OGC API generation](https://ogcapi.ogc.org/) based on Open API)
+- [Open API](https://www.openapis.org/){target=_blank}
+- [GraphQL](https://graphql.com){target=_blank}
+- [SPARQL](https://www.w3.org/TR/sparql11-query/){target=_blank}
+- OGC webservices (preferably [OGC API generation](https://ogcapi.ogc.org/){target=_blank} based on Open API)
 
 <documentation:API|API's> in Soilwise can be classified in following categories:
 

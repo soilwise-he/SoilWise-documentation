@@ -4,7 +4,7 @@ nav:
     - technical_components.md
     - ingestion.md
     - storage.md
-    - pycsw.md
+    - catalogue.md
     - metadata_validation.md
     - transformation.md
     - interlinker.md
