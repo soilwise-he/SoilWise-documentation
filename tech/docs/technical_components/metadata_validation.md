@@ -42,9 +42,11 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 
 ## Metadata ETS/AETS checking
 
-**Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behavior of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation, provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. AETS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviors of the metadata under various conditions.
+**Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behavior of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation, provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviors of the metadata under various conditions.
 
-**Executable Test Suites (ETS)** are sets of tests designed according to AETS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata. These checks can include:
+**Example:** [INSPIRE ATS for Soil](https://inspire-mif.github.io/technical-guidelines/data/so/dataspecification_so.pdf){target=_blank} (see Annex A) 
+
+**Executable Test Suites (ETS)** are sets of tests designed according to ATS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata. These checks can include:
 
 1. **Data Integrity:** Checking for inconsistencies or errors within the metadata. This includes identifying missing values, conflicting information, or data that does not align with predefined constraints.
 2. **Standard Compliance:** Assessing whether the metadata complies with relevant industry standards, such as Dublin Core, MARC, or specific domain standards like those for scientific data or library cataloging.
@@ -53,6 +55,9 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
+
+**Example:** [INSPIRE ETS validator](https://inspire.ec.europa.eu/validator/home/index.html){target=_blank}
+
 ### Open issues
 
 - ETS for GloSIS are not existing and need to be configured
@@ -60,7 +65,7 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 ## Technology
 
 - [Schematron](https://schematron.com/){target=_blank}
-- [ETS]
+- [INSPIRE ETS validator](https://inspire.ec.europa.eu/validator/home/index.html){target=_blank}
 - [Shacl](https://www.w3.org/TR/shacl/){target=_blank}
 - [Hale Connect](https://wetransform.to/haleconnect/){target=_blank}
 
