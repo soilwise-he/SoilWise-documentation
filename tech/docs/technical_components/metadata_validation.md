@@ -4,19 +4,19 @@
     :fontawesome-brands-github: Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
 
 
-In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible, see more information in the [Harvester Component](ingestion.md). Catalogues which capture metadata authored by data custodians typically have a wide range in metadata completion and accuracy. Therefore the SoilWise Repository aims to employ metadata validation mechanisms after metadata ingestion to provide additional information about metadata completeness, conformance and integrity. The validation process will be performed only on a subset of harvested metadata, that was previously identified as of interest. Informations resulting from the validation process will be stored together with each metadata record in a relation database and updated after registering new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md)) this validation process can be repeated, to understand the value which has been added by SWR.
+In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository aims to employ metadata validation mechanisms after metadata ingestion to provide additional information about metadata completeness, conformance and integrity. The validation process will be performed only on a subset of harvested metadata, that was previously identified as of interest. Information resulting from the validation process will be stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md)), this validation process can be repeated to understand the value which has been added by SWR.
 
-Metadata validation component comprises of the following functions:
+The metadata validation component comprises the following functions:
 
 - [Data structure validation](#data-structure-validation)
 - [Metadata completeness check](#metadata-completeness-validation)
 - [Metadata ETS checking](#metadata-ets-checking)
 
-In the next iterations SoilWise will explore the utilization of on demand metadata validation which would generate report for user uploaded metadata.
+In the next iterations, SoilWise will explore the utilization of on-demand metadata validation, which would generate reports for user-uploaded metadata.
 
 ## Metadata structure validation
 
-The initial steps of metadata validation comprises:
+The initial steps of metadata validation comprise:
 
 1. **Markup (Syntax) Check:** Verifying that the metadata adheres to the specified syntax rules. This includes checking for allowed tags, correct data types, character encoding, and adherence to naming conventions.
 2. **Schema (DTD) Validation:** Ensuring that the metadata conforms to the defined schema or metadata model. This involves verifying that all required elements are present, and relationships between different metadata components are correctly established.
@@ -28,7 +28,7 @@ Completeness of records can be evaluated by:
 - contains the required and/or advised metadata elements of SWR
 - contains the required elements endorsed by the adopted metadata standard itself 
 
-Completeness accorging to SWR and completeness according to adopted model result in quality indicators of a resource description.
+Completeness according to SWR and completeness according to the adopted model results in quality indicators of a resource description.
 
 ### Methodology
 
@@ -42,14 +42,14 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 
 ## Metadata ETS/AETS checking
 
-**Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behavior of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation, provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviors of the metadata under various conditions.
+**Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behaviour of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation and provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviours of the metadata under various conditions.
 
 **Example:** [INSPIRE ATS for Soil](https://inspire-mif.github.io/technical-guidelines/data/so/dataspecification_so.pdf){target=_blank} (see Annex A) 
 
 **Executable Test Suites (ETS)** are sets of tests designed according to ATS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata. These checks can include:
 
 1. **Data Integrity:** Checking for inconsistencies or errors within the metadata. This includes identifying missing values, conflicting information, or data that does not align with predefined constraints.
-2. **Standard Compliance:** Assessing whether the metadata complies with relevant industry standards, such as Dublin Core, MARC, or specific domain standards like those for scientific data or library cataloging.
+2. **Standard Compliance:** Assessing whether the metadata complies with relevant industry standards, such as Dublin Core, MARC, or specific domain standards like those for scientific data or library cataloguing.
 3. **Interoperability:** Evaluating the metadata's ability to interoperate with other systems or datasets. This involves ensuring that metadata elements are mapped correctly to facilitate data exchange and integration across different platforms.
 4. **Versioning and Evolution:** Considering the evolution of metadata over time and ensuring that the validation process accommodates versioning requirements. This may involve tracking changes, backward compatibility, and migration strategies.
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
