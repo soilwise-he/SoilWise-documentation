@@ -1,7 +1,7 @@
 # Metadata Catalogue
 
-The metadata catalogue is a centre piece of the architecture, collecting and
-giving access to individual metadata records. In the geo-spatial domain
+The metadata catalogue is a central piece of the architecture, collecting and
+giving access to individual metadata records. In the geo-spatial domain,
 effective metadata catalogues are developed around the standards issued by the
 OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank}
 (CSW) and the [OGC API Records](https://ogcapi.ogc.org/records/){target=_blank}.
@@ -11,7 +11,7 @@ catalogues usually provide other important management functionalities: (i)
 metadata record edition, (ii) access control, (iii) records search, (iv)
 resource preview, (v) records harvesting, etc. More sophisticated metadata
 catalogues approach the functionalities of a Content Management System (CMS).
-The remainder of this section reviews two popular open source geo-spatial
+The remainder of this section reviews two popular open-source geo-spatial
 metadata catalogues: [GeoNetwork](#geonetwork) and [pycsw](#pycsw).
 
 ## GeoNetwork
@@ -19,13 +19,13 @@ metadata catalogues: [GeoNetwork](#geonetwork) and [pycsw](#pycsw).
 This web-based software is centred on metadata management, providing rich
 edition forms. The editor supports the ISO19115/119/110 standards used for
 spatial resources and also Dublin Core. The user can upload data, graphics,
-documents, pdf files and any other content type to augment metadata records.
+documents, PDF files and any other content type to augment metadata records.
 Among others, GeoNetwork supports:
 
 - multilingual metadata record edition,
 - validation system,
 - automated suggestions for quality improvement,
-- publication of geo-spatial layers to software compliant with OGC services (eg. GeoServer).
+- publication of geo-spatial layers to software compliant with OGC services (e.g. GeoServer).
 
 GeoNetwork implements the following protocols:
 
@@ -70,7 +70,7 @@ of the United States (FGDC)
 
 ## pycsw
 
-[pycsw](https://pycsw.org){target=_blank} is a catalogue component offering a html frontend and query a interface using various standardised catalogue API's to serve multiple communities. 
+[pycsw](https://pycsw.org){target=_blank} is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. 
 
 - Technology: python
 - License: MIT
