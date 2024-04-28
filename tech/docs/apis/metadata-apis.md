@@ -1,9 +1,9 @@
-# Discovery API's
+# Discovery APIs
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
+    :fontawesome-brands-github: Project: [APIs](https://github.com/orgs/soilwise-he/projects/9)
 
-In order to enable resource discovery from Soilwise to a variety of communities. SWR aims to support a wide range of standardised or de-facto discovery api's
+In order to enable resource discovery from Soilwise to a variety of communities. SWR aims to support a wide range of standardised or de-facto discovery APIs
 
 - For GraphQL and sparql, read the article on [knowledge extraction](./knowledge-extraction.md)
 - OAI-PMH + Datacite
@@ -12,7 +12,7 @@ In order to enable resource discovery from Soilwise to a variety of communities.
 
 ## OAI-PMH + Datacite
 
-With this endpoint we aim to enable the academia and open data community to interact with the SWR. Records from SWR can be harvested from CKAN and Dataverse software using this interface.
+With this endpoint, we aim to enable academia and the open data community to interact with the SWR. Records from SWR can be harvested from CKAN and Dataverse software using this interface.
 
 ## Sitemap.xml + schema.org
 
