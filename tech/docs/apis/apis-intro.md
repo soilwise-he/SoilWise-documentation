@@ -16,7 +16,7 @@ Soilwise will use standardised <documentation:API|APIs> if possible, such as:
 
 - [Discovery APIs](./metadata-apis.md)
 - [Download & preview APIs](./data-download.md)
-- [API's for knowledge extraction](./knowledge-extraction.md)
+- [APIs for knowledge extraction](./knowledge-extraction.md)
 - [Processing APIs](./processing-apis.md)
 - [Transactional/Publication APIs](publication-apis.md)
 - [SPARQL endpoint](./sparql.md)
