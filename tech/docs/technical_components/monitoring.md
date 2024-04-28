@@ -15,7 +15,8 @@ In particular, monitoring needs to fulfill the following requirements:
 - The monitoring system shall collect warning and error logs to provide guidance for system administrators.
 - The monitoring system shall offer the possibility to filter logged interactions based on the https status code, e.g. to identify 404's or 500's.
 
-System context and implementation hints for monitoring:
+## System context and implementation hints for monitoring
+
 - Monitoring connects with: all modules
 - Technologies used: Grafana, Portainer, Prometheus
 - External intgrations: Jira, Slack, PagerDuty, ... 

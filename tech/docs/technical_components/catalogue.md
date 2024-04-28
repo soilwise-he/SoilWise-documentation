@@ -8,7 +8,7 @@ OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/){targ
 
 Besides this essential compliance with international standards, metadata
 catalogues usually provide other important management functionalities: (i)
-metadata record edition, (ii) access control, (iii) records search, (iv)
+metadata record editing, (ii) access control, (iii) records search, (iv)
 resource preview, (v) records harvesting, etc. More sophisticated metadata
 catalogues approach the functionalities of a Content Management System (CMS).
 The remainder of this section reviews two popular open-source geo-spatial
