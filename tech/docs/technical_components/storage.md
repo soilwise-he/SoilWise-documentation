@@ -119,7 +119,9 @@ The [Large Language Model](llm.md) foreseen in this project will be trained on t
 - Full dataset download or Single band data (access by bbox, not by property) is best stored as files on a scalable file infrastructure using cloud native formats, where the file location provides the identification.
 - Data that is frequently filtered or aggregated on attribute value is best stored on a relational database or search engine.
 
-### Temporary store for uploaded data (WE)
+### Temporary store for uploaded data
+
+Temporary data storage may be necessary as a caching mechanism to achieve acceptable performance (e.g. response time and throughput), e.g. for derived and harmonised data sets. For any data that is supposed to be stored temporarily, there shall be a flag that indicates its validity until it shall be cleaned up. The monitoring system shall check whether any such flags are present that should have been cleaned up already.
 
 ### Technology
 
@@ -129,4 +131,12 @@ The [Large Language Model](llm.md) foreseen in this project will be trained on t
 - Graph database **Neo4J**, **Triple store**, **Jena Fuseki** (Java) or **Virtuoso** (C) both have spatial support.
 - **GIT** is the most used versioning system these days, with the option to go for SAAS (Github, Bitbucket) or on-premise (Gitlab). GitHub seems the most suitable option, as other groups such as OGC and INSPIRE are already there, which means users already have an account, and we can cross-link issues between projects.
 
-## Backup and versioning (WE)
+## Backup and versioning
+
+For any data, there shall be at least two levels of backups. Volume snapshots shall be the preferred mode of backups. These volume snapshots should be stored in a different location and should enable fast recovery (i.e. in less than 4 hours duing business hours) even if the location where the SWR is operated is entirely unavilable. These volume snapshots should be configured in such a way that at no point in time, more than 1 hour of new data/changed data would be lost. Volume backups should be retained for 30 days.
+
+A second level of backups can be more granular, e.g. storing all data and metadata assets, configuration and system data as enyrpted files in an object store such as AWS S3. This type of backup allows for a more specific or partial recovery for cases where data integrity was damaged, where there was a partial data loss or another incident which does not necessitate restoring the system. This could also include explicit backups (dumps) of the database systems that are part of the SWR. For these backups it is tolerable if they are updated once per day.
+
+If there is data that requires full versioning or historisation, it is recommended to store it in a version control system.
+
+Finally, there should be a restore exercise at least once per year, where a fresh system is set up from both types of backups.
