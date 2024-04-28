@@ -1,7 +1,7 @@
 # Data preview & download APIs
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [API's](https://github.com/orgs/soilwise-he/projects/9)
+    :fontawesome-brands-github: Project: [APIs](https://github.com/orgs/soilwise-he/projects/9)
 
 The API-based (soil) data publication has been chosen as a key channel of the SWR to satisfy user needs in terms of data download & export. So far, the following APIs were selected to be verified in terms of their implementation and usability to SoilWise stakeholders.
 
@@ -30,9 +30,9 @@ In order to monitor the usage of datasets downloaded from federated sources, it 
 
 Also see the section on [Knowledge extraction](./knowledge-extraction.md)
 
-In some cases it is relevant not to guide the user to the remote source but let Soilwise do some preprocessing (filtering, reformatting, reprojection) and provide a more tailored answer to the user question. Similar needs may exist for resources which are hosted from within the SWR.
+In some cases, it is relevant not to guide the user to the remote source but to let Soilwise do some preprocessing (filtering, reformatting, reprojection) and provide a more tailored answer to the user question. Similar needs may exist for resources hosted within the SWR.
 
-Various tools exist which provide standardised APIs on various data sources. The following API's offer the functionality described above.
+Various tools exist which provide standardised APIs on various data sources. The following APIs offer the functionality described above.
 
 - For non geographical data
     - GraphQL
@@ -49,7 +49,7 @@ Various tools exist which provide standardised APIs on various data sources. The
 
 ## Open issues
 
-Persistent identification of records within a dataset is not guaranteed on (remote) sources which are disseminated using various API's, such as OGC OWS services, GraphQL and OpenAPI. Novel formats such as GeoParquet and COG allow range (subset) requests to a single endpoint and could combine FAIR identification and subset requests. Exploration of their potential for the SWR data download and export remains an open question.
+The persistent identification of records within a dataset is not guaranteed on (remote) sources that are disseminated using various APIs, such as OGC OWS services, GraphQL, and OpenAPI. Novel formats such as GeoParquet and COG allow range (subset) requests to a single endpoint and could combine FAIR identification and subset requests. Exploration of their potential for the SWR data download and export remains an open question.
 
 
 ## Technology
@@ -65,7 +65,7 @@ Research is needed to understand available technology to provide preview options
 
 As described within the Data & Knowledge publication component, MapServer is intended for data publication in the SWR. [MapServer](../technical_components/mapserver.md) is an open-source platform for publishing spatial data to the web using standardised APIs defined by the Open Geospatial Consortium, such as WMS, WFS, WCS, and OGC API-Features. Initially developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
 
-Mapserver is not an optimal solution for providing rich data in hierarchical structure. For that type of data Sensorthings API (frost server), WFS (deegree), graphql (postgraphile) and SPARQL (virtuoso) are more relevant.
+MapServer is not an optimal solution for providing rich data in a hierarchical structure. For that type of data Sensorthings API (frost server), WFS (deegree), graphql (postgraphile) and SPARQL (virtuoso) are more relevant.
 
 ## Integration opportunities
 
