@@ -1,30 +1,21 @@
-# Monitoring (WE)
+# Monitoring
 
-- container monitoring/health checks
-- reports and alerts
-    - availability statistics and error logs provide guidance for system administrators (and funders)
+All components and services of the SWR are monitored at different levels to ensure robust operations and security of the system. There will be a central monitoring service for all components that are part of the SWR.
 
-- connections with: all modules
-- technologies used: Grafana, e.g. PagerDuty
+In particular, monitoring needs to fulfill the following requirements:
 
+- For each node, its general state and resource utilisation (RAM, CPU, Volumes) shall be monitored.
+- For each container, its general state, e.g. resource consumption (RAM, CPU, Volumes, Transfer, Uptime) shall be monitored.
+- For each service, there shall be a health check that can be used to test if the service is responsive and functional, e.g. after a restart.
+- If issues that cannot be recovered from automatically occur or which lead to a longer-term degradation of services, messages shall be sent to the operators via channels such as Slack, PagerDuty, or Jira.
+- The monitoring system shall provide availability statistics.
+- The monitoring system should provide usage statistics.
+- The monitoring system may provide a UI element that can be embedded into other components to make usage transparent.
+- The monitoring system should provide a dashboard to help system operators with understanding the state of the SWR and to debug incidents, including possible security incidents.
+- The monitoring system shall collect warning and error logs to provide guidance for system administrators.
+- The monitoring system shall offer the possibility to filter logged interactions based on the https status code, e.g. to identify 404's or 500's.
 
-## System Health & Status Monitoring
-
-- container monitoring/health checks
-- reports and alerts
-
-- connections with: all modules
-- technologies used: Grafana, e.g. PagerDuty
-
-
-## Usage statistics
-
-- request and UI element authorisation
-- usage statistics monitoring
-
-Research item: can usage statistics be used to calculate the popularity of a resource, to increase the ranking of that resource in the search index.
-
-Statistics on 404 and 500 errors provides guidance for content owners (potentially indicating the need to set up forward rules for missing sources).   
-
-- connections with: all components
-- technologies used: Keycloak/JWT
+System context and implementation hints for monitoring:
+- Monitoring connects with: all modules
+- Technologies used: Grafana, Portainer, Prometheus
+- External intgrations: Jira, Slack, PagerDuty, ... 
