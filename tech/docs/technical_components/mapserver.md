@@ -4,11 +4,11 @@
 
 ## Technology
 
-A [docker image for mapserver](https://github.com/camptocamp/docker-mapserver){target=_blank} is maintained by Camp2Camp. The important aspect here is that the image uses a minimal build of GDAL, which defines the source formats consumable by the MapServer. If formats such as Geoparquet or Geozarr are relevant, building a tailored image is relevant.
+A [docker image for mapserver](https://github.com/camptocamp/docker-mapserver){target=_blank} is maintained by Camp2Camp. The important aspect here is that the image uses a minimal build of GDAL, which defines the source formats consumable by the MapServer (in line with section [Transformation and Harmonistation Components](transformation.md). If formats such as Geoparquet or Geozarr are relevant, building a tailored image is relevant.
 
 The **configuration** of the MapServer is managed via a config file. The config files reference metadata, data and styling rules. Various tools exist to create MapServer config files:
 
-- [geocat bridge](https://www.geocat.net/docs/bridge/qgis/latest/){target=_blank} is a QGis plugin to create mapfiles from QGis projects
+- [geocat bridge](https://www.geocat.net/docs/bridge/qgis/latest/){target=_blank} is a QGIS plugin to create mapfiles from QGis projects
 - [Mappyfile](https://github.com/geographika/mappyfile){target=_blank} is a python library to generate mapfiles by code
 - [mapserver studio](https://mapserverstudio.net/){target=_blank} a saas solution to edit mapfiles
 - [mapscript](https://www.mapserver.org/mapscript/){target=_blank} is a python library to interact with the MapServer binary 
@@ -20,5 +20,5 @@ Read more about MapServer at [EJPSoil wiki](https://ejpsoil.github.io/soildata-a
 Alternatives to Mapserver are:
 
 - Geoserver
-- Qgis server
+- QGIS server
 - pygeoapi (pygeoapi uses MapServer internally to provide map rendering)
