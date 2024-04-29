@@ -40,9 +40,9 @@ Various tools exist which provide standardised APIs on various data sources. The
     - OpenAPI
 - For geograpical data
     - For vector data
-        - the [OGC Web Feature Service (WFS aka ISO 19142)](https://portal.ogc.org/files/?artifact_id=39967){target=_blank} supports requests for geographical feature data (with vector geometry and attributes)s,
+        - the [OGC Web Feature Service (WFS aka ISO 19142)](https://portal.ogc.org/files/?artifact_id=39967){target=_blank} supports requests for geographical feature data (with vector geometry and attributes),
         - the [OGC API – Features](https://ogcapi.ogc.org/features/){target=_blank} supports in the form of a REST API the capability to create, modify, and query spatial data on the Web and specifies requirements and recommendations for APIs that want to follow a standard way of sharing feature data.
-        - [Sensorthings API]() is a good fit for harmonised soil data 
+        - [Sensorthings API]() is a good fit for harmonised soil data.
     - For raster data
         - the [OGC Web Coverage Service (WCS)](https://portal.ogc.org/files/09-110r4){target=_blank} supports requests for coverage data (rasters),
         - the [OGC API – Coverages](https://ogcapi.ogc.org/coverages/){target=_blank} supports the download of coverages represented by some binary or ASCII serialisation, specified by some data (encoding) format. Arguably, the most popular type of coverage is a gridded one. Satellite imagery is typically modelled as a gridded coverage, for example. Note that this standard has not been approved yet; further development may still occur.
@@ -56,14 +56,14 @@ The persistent identification of records within a dataset is not guaranteed on (
 
 ### Non geographic
 
-Reverse proxy can probably be set up at the ingress/firewall level
+Reverse proxy can probably be set up at the ingress/firewall level.
 
-Research is needed to understand available technology to provide preview options on various types of resource types
+Research is needed to understand available technology to provide preview options on various types of resource types.
 
 
 ### Geographic data
 
-As described within the Data & Knowledge publication component, MapServer is intended for data publication in the SWR. [MapServer](../technical_components/mapserver.md) is an open-source platform for publishing spatial data to the web using standardised APIs defined by the Open Geospatial Consortium, such as WMS, WFS, WCS, and OGC API-Features. Initially developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
+As described within the Data & Knowledge publication component, MapServer is intended for data publication in the SWR. [MapServer](../technical_components/mapserver.md) is an open-source platform for publishing spatial data to the web using standardised APIs defined by the Open Geospatial Consortium, such as WMS, WFS, WCS, and OGC API-Features.
 
 MapServer is not an optimal solution for providing rich data in a hierarchical structure. For that type of data Sensorthings API (frost server), WFS (deegree), graphql (postgraphile) and SPARQL (virtuoso) are more relevant.
 
