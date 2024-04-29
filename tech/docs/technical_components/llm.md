@@ -17,7 +17,7 @@ A component which uses NLP/LLM to improve metadata
     - very high similarity; indication that the record (despite the different identifier) is likely the same resource
     - high similarity; suggest it as a `similar` resource (linkage)
 - resolve conflicts
-    - if 2 records contain conflicting statements about a resource, try to derive from context which statement is correct
+    - if two records contain conflicting statements about a resource, try to derive from context which statement is correct
 - populate gaps
     - if important properties are not populated (contact, title), try to derive it from context (with e.g. [Named-Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition))
 - classify resources (add thematic keywords/tags)
