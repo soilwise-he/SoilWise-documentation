@@ -4,19 +4,20 @@
     :fontawesome-brands-github: Project: [Metadata validation](https://github.com/orgs/soilwise-he/projects/5)
 
 
-In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository aims to employ metadata validation mechanisms after metadata ingestion to provide additional information about metadata completeness, conformance and integrity. The validation process will be performed only on a subset of harvested metadata, that was previously identified as of interest. Information resulting from the validation process will be stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md)), this validation process can be repeated to understand the value which has been added by SWR.
+In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository aims to employ metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are aimed to be stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md)), this validation process can be repeated to understand the value which has been added by SWR.
 
 The metadata validation component comprises the following functions:
 
 - [Data structure validation](#data-structure-validation)
 - [Metadata completeness check](#metadata-completeness-validation)
 - [Metadata ETS checking](#metadata-ets-checking)
+- [Shacl](#shacl)
 
 In the next iterations, SoilWise will explore the utilization of on-demand metadata validation, which would generate reports for user-uploaded metadata.
 
 ## Metadata structure validation
 
-The initial steps of metadata validation comprise:
+The initial steps of metadata validation, foreseen so far, comprise:
 
 1. **Markup (Syntax) Check:** Verifying that the metadata adheres to the specified syntax rules. This includes checking for allowed tags, correct data types, character encoding, and adherence to naming conventions.
 2. **Schema (DTD) Validation:** Ensuring that the metadata conforms to the defined schema or metadata model. This involves verifying that all required elements are present, and relationships between different metadata components are correctly established.
@@ -38,9 +39,9 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 - json (OGC API - Records/STAC) - json schema
 - RDF (schema.org, dcat) - SHACL
 
-[ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) offers a model to express the quality of (meta)data. 
+We will explore applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports.
 
-## Metadata ETS/AETS checking
+## Metadata ETS/ATS checking
 
 **Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behaviour of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation and provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviours of the metadata under various conditions.
 
@@ -61,6 +62,10 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 ### Open issues
 
 - ETS for GloSIS are not existing and need to be configured
+
+## Shacl
+
+[Shacl](https://www.w3.org/TR/shacl/){target=_blank} is is in general intended for semantic web related validations; however, it's exact scope will be determined during the SoilWise developments. 
 
 ## Technology
 

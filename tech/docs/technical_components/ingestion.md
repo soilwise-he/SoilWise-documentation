@@ -3,17 +3,17 @@
 !!! component-header "Important Links"
     :fontawesome-brands-github: Project: [Metadata ingestion](https://github.com/orgs/soilwise-he/projects/6)
 
-The Harvester component is dedicated to automatically harvest sources to populate [SWR Triple Store](./storage.md) with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
+The Harvester component is dedicated to automatically harvest sources to populate SWR with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
 
 ## Automated metadata harvesting concept
 
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components where available.
 
-The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time you change a metadata record, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
+The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
 
 ## Resource Types
 
-Metadata for following resource types are forseen to be harvested:
+Metadata for following resource types are foreseen to be harvested:
 
 - Data & Knowledge Resources (Articles/Datasets/Videos/Software/Services)
 - Projects/LTE/Living labs
@@ -37,13 +37,13 @@ flowchart LR
 
 ### Datasets
 
-Datasets are to be imported from the **INSPIRE GeoPortal**, **BonaRes** as well as **Cordis**. In later iterations SoilWise aims to also include other portals, such as **national** or **thematic portals**.
+Datasets are to be primarily imported from the **ZENODO**, **INSPIRE GeoPortal**, **BonaRes** as well as **Cordis**. In later iterations SoilWise aims to also include other projects and portals, such as **national** or **thematic portals**. These repositories contain a huge number of datasets. Selection of key datasets concerning the SoilWise scope is a subject of know-how to be developed within SoilWise.
 
 ### Knowledge sources
 
 With respect to harvesting, it is important to note that knowledge assets are heterogeneous, and that (compared to data), metadata standards and particularly access / harvesting protocols are not generally adopted. Available metadata might be implemented using a proprietary schema, and basic assumptions for harvesting, e.g. providing a "date of last change" might not be offered. This will, in some cases, make it necessary to develop customized harvesting and metadata extraction processes. It also means that informed decisions need to be made on which resources to include, based on priority, required efforts and available capacity.
 
-The SoilWise group is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Mission Soil Horizon Europe projects. These resources are accessible from **Cordis**, **Zenodo** and **OpenAire**. Extracting content from Cordis, OpenAire, and Zenodo can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first iteration, SoilWise aims to achieve this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
+The SoilWise project team is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Mission Soil Horizon Europe projects. These resources are accessible from **Cordis**, **Zenodo** and **OpenAire**. Extracting content from Cordis, OpenAire, and Zenodo can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first iteration, SoilWise aims to achieve this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
 
 ### Catalogue APIs and models
 
@@ -240,7 +240,7 @@ Schema.org is used in repositories such as [dataone.org](https://dataone.org){ta
 
 TC211 developed the initial version of ISO19115 in [2003](https://www.iso.org/standard/26020.html){target=_blank}, and a followup in [2014](https://www.iso.org/standard/53798.html){target=_blank}. A working group is currently preparing a new version. It is a metadata model to describe spatial resources, such as datasets, services and features. Part of and related to this work are the models for data quality ISO19157, services ISO19119 and data models ISO19110.
 
-An XML serialisation of the models is available in [ISO19139:2007](https://www.iso.org/standard/32557.html){target=_blank}. Although withdrawn, iso19139:2007 is still the de-facto metadata standard in the geospatial domain in Europe.
+An XML serialisation of the models is available in [ISO19139:2007](https://www.iso.org/standard/32557.html){target=_blank}. Although withdrawn, iso19139:2007 is still the de-facto metadata standard in the geospatial domain in Europe, being used by the INSPIRE Directive as a harmonisation mean for all geospatial environmental evidence.
 
 #### Ecological Metadata Language (EML)
 
@@ -261,7 +261,7 @@ The [INSPIRE registry](https://inspire.ec.europa.eu/registry){target=_blank} pro
 
 #### Agrovoc
 
-[AGROVOC Multilingual Thesaurus](https://agrovoc.fao.org/browse/agrovoc/en/){target=_blank}, including definitions from the [World Reference Base on Soil description](https://agrovoc.fao.org/browse/agrovoc/en/page/?clang=da&uri=c_89f35c33){target=_blank}
+[AGROVOC Multilingual Thesaurus](https://agrovoc.fao.org/browse/agrovoc/en/){target=_blank}, including definitions from the [World Reference Base on Soil description](https://agrovoc.fao.org/browse/agrovoc/en/page/?clang=da&uri=c_89f35c33){target=_blank}.
 
 #### GLOSIS web ontology
 
@@ -269,7 +269,7 @@ The [INSPIRE registry](https://inspire.ec.europa.eu/registry){target=_blank} pro
 
 #### GBIF
 
-[GBIF](https://gbif.org){target=_blank} maintains thesauri for ecological phenomena such as [species](https://www.gbif.org/species){target=_blank}
+[GBIF](https://gbif.org){target=_blank} maintains thesauri for ecological phenomena such as [species](https://www.gbif.org/species){target=_blank}.
 
 ## Persistence identification
 
@@ -397,7 +397,7 @@ flowchart LR
     AID --> RS[(Remote sources)]
 ```
 
-For this iteration, SoilWise will focus on the second approach.
+In the beginning of the SoilWise development process, SoilWise will focus on the second approach.
 
 ## Foreseen functionality
 
@@ -416,7 +416,7 @@ Typical functionalities of a harvester:
 
 - **Define a harvester job**
     - Schedule (on request, weekly, daily, hourly)
-    - Endpoint / Endpoint type (eample.com/csw -> OGC:CSW)
+    - Endpoint / Endpoint type (example.com/csw -> OGC:CSW)
     - Apply a filter (only records with keyword='soil-mission')
 - **Understand success of a harvest job** 
     - overview of harvested content (120 records)
@@ -450,7 +450,7 @@ An aim of this exercise is also to understand in which repositories a certain re
 
 ## Integration opportunities
 
-The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [data download](dashboard.md#data-download-export) & [upload pipelines](dashboard.md#manual-data-metadata-authoring) and (3) [ETS/ATS](metadata_validation.md), i.e. test suites.
+The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](catalogue.md), (2) [Data download](dashboard.md#data-download-export) & [Upload pipelines](dashboard.md#manual-data-metadata-authoring) and (3) [ETS/ATS](metadata_validation.md#metadata-etsaets-checking), i.e. test suites.
 
 
 

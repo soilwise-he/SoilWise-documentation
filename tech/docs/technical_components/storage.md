@@ -33,9 +33,9 @@ The SoilWise Repository is expected to fulfil the following functions:
 Various storage options exist, dedicated usage scenarios usually have an optimal storage option. Maintenance will also be considered as part of the choice.
 
 - **Relational databases** provide performant filtering and aggregation options that facilitate the performance of data APIs. Relational databases have a fixed data model. 
-- **Search engines**, such as SOLR/Elastic search. Search engines provide even higher performance and introduce faceted search (aggregations) and ranking customisation
-- **File (& bucket) repositories**, which are slow and non-queryable but very flexible in the data model, scalable and persistent
-- **Graph and triple stores**, which are very fitted to store relations between random entities and can reason over data in multiple domain models
+- **Search engines**, such as SOLR/Elastic search. Search engines provide even higher performance and introduce faceted search (aggregations) and ranking customisation.
+- **File (& bucket) repositories**, which are slow and non-queryable but very flexible in the data model, scalable and persistent.
+- **Graph and triple stores**, which are very fitted to store relations between random entities and can reason over data in multiple domain models.
 - **Versioning systems** (such as git), which are very slow and not queryable but ultimately persistent/traceable. Less optimal for binary files.
 
 
@@ -68,11 +68,11 @@ the institutional soil survey handbooks used in Australia and New Zealand. ANZSo
 
 Moreover, GloSIS and INSPIRE data models fully support only vector data. GloSIS has not developed a data model for gridded data yet, and several issues were reported to the INSPIRE data model for gridded data.
 
-Glosis and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples objects in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/){target=_blank}. Soilwise can probably contribute to the migration of the soil models to the new OMS version.
+GloSIS and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples objects in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/){target=_blank}. Soilwise can probably contribute to the migration of the soil models to the new OMS version.
 
 ### Soil health vocabulary 
 
-Understand if Soil health codelists as developed in the Envasso and Landmark projects, can be adopted by the online soil community, for example, as part of the Glosis ontology, inspire registry or EUSO. Research is needed to evaluate if a legislative body is available to confirm the definitions of the terms.
+Understand if Soil health codelists as developed in the Envasso and Landmark projects, can be adopted by the online soil community, for example, as part of the Glosis ontology, INSPIRE registry or EUSO. Research is needed to evaluate if a legislative body is available to confirm the definitions of the terms.
 
 ## Storage of metadata
 
@@ -85,11 +85,11 @@ Understand if Soil health codelists as developed in the Envasso and Landmark pro
 ## Storage of knowledge
 
 -	Storage (or non-storage) of knowledge is highly dependent on the type of knowledge, how it is to be used and the available resources for storage. 
--	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section [storage of metadata](#storage-of-metadata)
--	Knowledge that expresses links between data and knowledge assets is best stored in a graph DB or an RDF DB, depending also on the application requirements
--	Knowledge that expresses semantics is best stored as RDF in an RDF DB, to be able to reason over semantic relationships
+-	As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section [storage of metadata](#storage-of-metadata).
+-	Knowledge that expresses links between data and knowledge assets is best stored in a graph DB or an RDF DB, depending also on the application requirements.
+-	Knowledge that expresses semantics is best stored as RDF in an RDF DB, to be able to reason over semantic relationships.
 -	When knowledge needs to be reasoned over using LLMs, it is preferably processed and stored in a vector DB, potentially linked to relevant text fragments (for explainable AI). 
--	Querying knowledge is best done from an indexed DB or search engine (see section metadata) or from a vector DB (through chatbot / LLM applications) 
+-	Querying knowledge is best done from an indexed DB or search engine (see section metadata) or from a vector DB (through chatbot / LLM applications).
 
 
 ### Knowledge graph - Triple Store
@@ -103,7 +103,7 @@ It is important to recognise the knowledge graph as an immaterial asset that can
 The [Large Language Model](llm.md) foreseen in this project will be trained on the knowledge graph, thus forming the basis for the Chatbot component of the user interface. The knowledge graph will further feed the facilities for machine-based access to the SWR: a knowledge extraction API and a SPARQL end-point.
 
 #### Technology
-- DCAT, Dublin Core, VCard, PROV, GloSIS, ...
+- DCAT, Dublin Core, VCard, PROV, GloSIS, see chapter [Semantic Web specifications for metadata](ingestion.md#semantic-web-specifications-for-metadata) and [Data model](#data-model)
 
 
 ## Storage of data
@@ -125,15 +125,15 @@ Temporary data storage may be necessary as a caching mechanism to achieve accept
 
 ### Technology
 
-- **PostGreSQL** is a common open source database platform with spatial support. A database dump of a postgres database, as a backup or to publish FAIR versions at intervals, is not very user friendly. A conversion to **SQLite/GeoPackage** (using GDAL/Hale) facilitates this case.
-- The most popular search engine is **Elastic Search** (also used in JRC INSPIRE), but has some challenges in its license. Alternative is **SOLR**.
+- **PostgreSQL** is a common open source database platform with spatial support. A database dump of a postgres database, as a backup or to publish FAIR versions at intervals, is not very user friendly. A conversion to **SQLite/GeoPackage** (using GDAL/Hale) facilitates this case.
+- The most popular search engine is **Elastic Search** (also used by JRC in INSPIRE), but has some challenges in its license. Alternative is **SOLR**.
 - File repositories range from Amazon/Google to a local NFS with Webdav access.
 - Graph database **Neo4J**, **Triple store**, **Jena Fuseki** (Java) or **Virtuoso** (C) both have spatial support.
 - **GIT** is the most used versioning system these days, with the option to go for SAAS (Github, Bitbucket) or on-premise (Gitlab). GitHub seems the most suitable option, as other groups such as OGC and INSPIRE are already there, which means users already have an account, and we can cross-link issues between projects.
 
 ## Backup and versioning
 
-For any data, there shall be at least two levels of backups. Volume snapshots shall be the preferred mode of backups. These volume snapshots should be stored in a different location and should enable fast recovery (i.e. in less than 4 hours duing business hours) even if the location where the SWR is operated is entirely unavilable. These volume snapshots should be configured in such a way that at no point in time, more than 1 hour of new data/changed data would be lost. Volume backups should be retained for 30 days.
+For any data, there shall be at least two levels of backups. Volume snapshots shall be the preferred mode of backups. These volume snapshots should be stored in a different location and should enable fast recovery (i.e. in less than 4 hours during business hours) even if the location where the SWR is operated is entirely unavilable. These volume snapshots should be configured in such a way that at no point in time, more than 1 hour of new data/changed data would be lost. Volume backups should be retained for 30 days.
 
 A second level of backups can be more granular, e.g. storing all data and metadata assets, configuration and system data as enyrpted files in an object store such as AWS S3. This type of backup allows for a more specific or partial recovery for cases where data integrity was damaged, where there was a partial data loss or another incident which does not necessitate restoring the system. This could also include explicit backups (dumps) of the database systems that are part of the SWR. For these backups it is tolerable if they are updated once per day.
 

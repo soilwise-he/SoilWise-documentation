@@ -70,13 +70,15 @@ of the United States (FGDC)
 
 ## pycsw
 
-[pycsw](https://pycsw.org){target=_blank} is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. 
+[pycsw](https://pycsw.org){target=_blank}  is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OpenSearch](https://opensearch.org/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, [SRU](https://developers.exlibrisgroup.com/rosetta/integrations/standards/sru/){target=_blank}), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
 
 - Technology: python
 - License: MIT
 - OSGeo project
 
 ### Functionality
+
+Functionality of the pycsw is from the SoilWise perspective identical to GeoNetwork's functionality.
 
 - query metadata
   - M: filter by (configurable set of) properties (AND/OR/NOT, FullTextSearch, by geography)

@@ -77,7 +77,7 @@ The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.s
 
 ### Technology
 
-The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostGreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
+The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostgreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
 
 Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding.
 
