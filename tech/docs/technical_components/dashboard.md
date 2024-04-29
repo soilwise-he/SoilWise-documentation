@@ -56,7 +56,7 @@ A light-weight client map viewer component will be employed:
 
 - as a frontend of [Map Server](mapserver.md) component to visualize provided WMS, WFS, WCS layers
 - as an integrated part of the Catalogue to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
-- a full preview of data, when a link to web service or data browse graphics (preview image) is available
+- to provide the full preview of data, when a link to web service or data browse graphics (preview image) is available
 
 A dedicated mapviewer, such as [TerriaJS](https://terria.io){target=_blank}, can support users in accessing relevant data which has been prepared for optimal consumption in a typical GIS Desktop environment. For example maps of spatial distribution of soil properties or health indicators over Europe. A typical example is [Soilgrids](https://soilgrids.org){target=_blank}.
 
@@ -73,13 +73,13 @@ Examine the need for viewing novel formats such as Vector tiles, [COG](https://w
 
 ### Traditional dashboards 
 
-The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/overview?view=themeOverview&theme=tn) increased its usage with their new dashboard like interface, for each memberstate the number of published datasets per topic is upfront in the application. Dashboards on catalogue content provide mechanisms to generate overviews of that content to provide such insight.
+The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/overview?view=themeOverview&theme=tn) increased its usage with their new dashboard-like interface for each EU Member State the number of published datasets per topic is upfront in the application. Dashboards on catalogue content provide mechanisms to generate overviews of that content to provide such insight.
 
 ### Technology
 
 The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostgreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
 
-Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding.
+Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding. Similar functionality for the pycsw needs to be investigated, verified respectively. 
 
 The source data for the dashboards is very likely enriched with AI-generated indicators. LLMs also seem able to provide overviews of sets of content.
 
@@ -91,7 +91,7 @@ The source data for the dashboards is very likely enriched with AI-generated ind
 The SWR provides two major ways of data & metadata authoring
 
 1.	in an automatized manner, as described in the [Harvester component](ingestion.md);
-2.	in a manual mode, as described within this **Manual data & metadata component**.
+2.	in a manual mode, as described within this **Manual data & metadata authoring component**.
 
 Note that option (1) is the preferred one from the SWR point of view as it allows to massively tackle metadata and knowledge of remotely available resources, including Catalogue servers of Mission Soil projects, Zenodo, Cordis, INSPIRE Geoportal and others.
 
@@ -131,8 +131,8 @@ With every change on the git repository, an export of the metadata is made to a 
 ### Technology
 
 
-- **pycsw** includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters
-- A **Git** based participatory metadata workflow as introduced in EJP Soil
+- **pycsw** and **GeoNetwork** includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters
+- A **Git** based participatory metadata workflow as introduced in EJP Soil and foreseen for SoilWise as a follow-up
     - Users should be endorsed to register their metadata via known repositories, such as Zenodo, CORDIS, INSPIRE, ... at most register the identifier (DOI, CSW) of the record at EUSO, metadata will be mirrored from those locations at intervals
     - Data can be maintained in a Git Repository, such as the [EJP Soil repository](https://github.com/ejpsoil/ejpsoildatahub/tree/main/datasets){target=_blank}, preferably using a readably serialisation, such as YML
     - In EJP Soil we experiment with the [metadata control file](https://geopython.github.io/pygeometa/reference/mcf/){target=_blank} format (MCF), a subset of iso19139
@@ -144,9 +144,7 @@ With every change on the git repository, an export of the metadata is made to a 
 
 
 ### Integration opportunities
-The Manual data & metadata upload component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [metadata validation](metadata_validation.md) and (3) [metadata scheme & structure](storage.md#metadata-scheme).
-
-- Requires authentication and authorisation
+The Manual data & metadata upload component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [metadata validation](metadata_validation.md), (3) [metadata scheme & structure](storage.md#metadata-scheme), and (4) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
 ### Open issues
 The Manual data & metadata upload component shall be technologically aligned with the SWR Catalogue and [Harvester](ingestion.md). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.
@@ -155,4 +153,4 @@ The above-described mechanisms showed the “as is” manual metadata upload. Ne
 
 ## Data download & export
 
-A UI component could be made available as part of the SWR Catalogue application which facilitates access to subsets of data from a data download or API. A user selects the relevant featuretype/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download. The API-based data publication is described as part of [API'S](../apis/publication-apis.md).
+A UI component could be made available as part of the SWR Catalogue application which facilitates access to subsets of data from a data download or API. A user selects the relevant feature type/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download. The API-based data publication is described as part of [APIs](../apis/publication-apis.md).
