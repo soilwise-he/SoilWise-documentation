@@ -10,7 +10,7 @@ The term dashboard is used with various meanings, in the scope of Soilwise the f
 
 Other parts of the dashboard are:
 
-- [Metadata authoring](#manual-data--metadata-authoring) and [harvest configuration](../technical_components/ingestion.md) components
+- [Metadata authoring](#manual-data-metadata-authoring) and [harvest configuration](../technical_components/ingestion.md) components
 - [Data download & export](#data-download-export) options
 
 SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present data and knowledge in useable way.
@@ -144,7 +144,7 @@ With every change on the git repository, an export of the metadata is made to a 
 
 
 ### Integration opportunities
-The Manual data & metadata upload component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [metadata validation](metadata_validation.md), (3) [metadata scheme & structure](storage.md#metadata-scheme), and (4) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
+The Manual data & metadata upload component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) [metadata validation](metadata_validation.md), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
 ### Open issues
 The Manual data & metadata upload component shall be technologically aligned with the SWR Catalogue and [Harvester](ingestion.md). Both considered software solutions, i.e. **GeoNetwork** and **pycsw** support the core desired functionality all these three SWR components.

@@ -8,9 +8,9 @@ In terms of metadata, SoilWise Repository aims for the approach to harvest and r
 
 The metadata validation component comprises the following functions:
 
-- [Data structure validation](#data-structure-validation)
+- [Metadata structure validation](metadata-structure-validation)
 - [Metadata completeness check](#metadata-completeness-validation)
-- [Metadata ETS checking](#metadata-ets-checking)
+- [Metadata ETS checking](#metadata-etsats-checking)
 - [Shacl](#shacl)
 
 In the next iterations, SoilWise will explore the utilization of on-demand metadata validation, which would generate reports for user-uploaded metadata.

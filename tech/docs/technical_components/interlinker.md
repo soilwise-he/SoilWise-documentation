@@ -11,7 +11,7 @@ Interlinker component comprises of the following functions:
 
 ## Automatic metadata interlinking
 
-To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#triple-store).
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
 
 - **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
 For those linkages, the harvesting process needs to be extended, calling this component to store the relation in the knowledge graph. It should accommodate "vice versa linkage" (if resource A links to B, a vice versa link can be added to B).

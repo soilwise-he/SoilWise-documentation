@@ -22,7 +22,7 @@
 
 The SoilWise Repository is expected to fulfil the following functions:
 
-1. [Storage of artifacts](#storage-of-artifacts)
+1. [Storage of artefacts](#storage-of-artefacts)
 2. [Storage of metadata](#storage-of-metadata)
 3. [Storage of data](#storage-of-data)
 4. [Storage of knowledge](#storage-of-knowledge)
