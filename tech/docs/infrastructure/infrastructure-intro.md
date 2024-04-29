@@ -9,7 +9,7 @@ During the development of **First project iteration cycle**, the assumption is:
 - The central staging environment is deployed on a single hardware node of sufficient capacity. This hardware node will be provided by project partner _weTransform_.
 - In addition to the hardware node, the staging environment also includes an offsite backup capacity, such as a storage box, that is operated in a different physical location.
 - There is no central dev/test environment. Each organisation is responsible for its own dev/test environments.
-- The deployment and orchestration configuration for this iteration should be stored as YAML in a GitHub repository and shall use docker swarm mode.
+- The deployment and orchestration configuration for this iteration should be stored as YAML in a GitHub repository.
 - Deployments to the central staging environment are done through GitHub Actions (or through a Jenkins or GitLab instance provided by weTransform or other partners). This still has to be decided.
 - For each component, there shall be separate build processes managed by the responsible partners that result in the built images being made accessible through a hub (e.g. dockerhub)
 
