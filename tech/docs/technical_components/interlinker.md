@@ -11,11 +11,11 @@ Interlinker component comprises of the following functions:
 
 ## Automatic metadata interlinking
 
-To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered as part of the [SWR Triple Store](storage.md#triple-store)
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#triple-store).
 
 - **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
-For those linkages, the harvesting process needs to be extended, calling this component to store the relation in the knowledge graph. It should accommodate "vice versa linkage" (if resource A links to B, a vice versa link can be added to B)
-- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. In this case, AI/ML can support the discovery of potential links, including some kind of probability indicator
+For those linkages, the harvesting process needs to be extended, calling this component to store the relation in the knowledge graph. It should accommodate "vice versa linkage" (if resource A links to B, a vice versa link can be added to B).
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. In this case, AI/ML can support the discovery of potential links, including some kind of probability indicator.
 
 ## Duplicates identification
 
@@ -29,7 +29,7 @@ If necessary, a business rule will be integrated, taking the "completeness" of t
 ### Technology
 
 This process can be automated in the platform using automated (Python) scripts running within the platform's data processing environment. A second approach is to use data processing functionalities and AI algorithms integrated into a database, e.g. the Neo4J Graph Database and Neo4J Graph Data Science [Similarity algorithms](https://neo4j.com/docs/graph-data-science/current/algorithms/similarity/){target=_blank} 
-(Node Similarity, K-Nearest Neighbours, ...). This requires the data to exist inthe graph database as linked data, either importing from the SWR knowledge graphs or using such a graph database technology (e.g. Neo4J) as the SWR knowledge graph technology.
+(Node Similarity, K-Nearest Neighbours, ...). This requires the data to exist in the graph database as linked data, either importing from the SWR knowledge graphs or using such a graph database technology (e.g. Neo4J) as the SWR knowledge graph technology.
 
 - two levels inspection (coarse = dataset level, fine = objects/attributes? level)
 - read existing data in terms of size, identical identifiers (data, metadata level)
@@ -56,7 +56,7 @@ Metadata (and data and knowledge sources) tend to contain links which, over time
 - [ePIC](https://pidconsortium.net){target=_blank}  ePIC API providing a software stack for a PID service
 - [DOI](https://doi.org) 
 - [w3id.org](https://w3id.org) persistent identification at namespace/domain level
-- [R3gistry Germany](https://www.gdi-de.org/en/SDI/components/GDI-DE%20Registry) for nemspaces, codelists, identifiers. Similar exist for [Austria](https://registry.inspire.gv.at/registry), [Italy](https://registry.geodati.gov.it/registry), [Spain](https://registro.idee.es/registry), [Slovakia](https://registry.stage.geocloud.sk/enipi/), [Netherlands](https://standaarden.overheid.nl/tooi)
+- [R3gistry Germany](https://www.gdi-de.org/en/SDI/components/GDI-DE%20Registry) for namespaces, codelists, identifiers. Similar exist for [Austria](https://registry.inspire.gv.at/registry), [Italy](https://registry.geodati.gov.it/registry), [Spain](https://registro.idee.es/registry), [Slovakia](https://registry.stage.geocloud.sk/enipi/), [Netherlands](https://standaarden.overheid.nl/tooi)
 
 **Liveliness checks**:
 
