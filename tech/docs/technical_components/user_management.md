@@ -40,43 +40,7 @@ Every component has to check whether an authenticated user may invoke a desired 
 
 Roles are generally defined using Privileges: A certain role may, for example, `read` certain resources, they may `edit` or even `delete` them. Here is an example of such a definition:
 
-``` json
-  "user": {
-    "label": {
-      "en": "Registered user",
-      "de": "Standardnutzer"
-    },
-    "resources": {
-      "User": {
-        "read": true,
-        "edit": ["self"]
-      },
-      "Organisation": {
-        "read": true
-      }
-    }
-  },
-  "dataManager": {
-    "extends": "user",
-    "label": {
-      "en": "Data manager",
-      "de": "Daten-Manager"
-    },
-    "resources": {
-      "Data": {
-        "create": ["organisation"],
-        "read": ["organisation"],
-        "edit": ["organisation"],
-        "delete": ["organisation"]
-      },
-      "Theme": {
-        "read": ["organisation", "parentOrg"]
-      }
-    }
-  }
-```
-
-Here, a standard `user` may only `read` and `edit` their own `User` profile, and read the information from their organisation. Once a user has been given the role `dataManager`, they may perform any CRUD operation on any `Data` that is in the scope of their `organisation`. They are also granted `read` access to publication `Theme` configurations on their own and in any parent organisations.
+A standard `user` may only `read` and `edit` their own `User` profile, and read the information from their organisation. Once a user has been given the role `dataManager`, they may perform any CRUD operation on any `Data` that is in the scope of their `organisation`. They are also granted `read` access to publication `Theme` configurations on their own and in any parent organisations.
 
 ## Further implementation hints and Technologies
 
