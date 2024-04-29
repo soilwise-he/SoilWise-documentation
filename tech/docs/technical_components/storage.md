@@ -125,7 +125,7 @@ Temporary data storage may be necessary as a caching mechanism to achieve accept
 
 ### Technology
 
-- **PostgreSQL** is a common open source database platform with spatial support. A database dump of a postgres database, as a backup or to publish FAIR versions at intervals, is not very user friendly. A conversion to **SQLite/GeoPackage** (using GDAL/Hale) facilitates this case.
+- **PostgreSQL** is a common open-source database platform with spatial support. A database dump of a Postgres database, as a backup or to publish FAIR versions at intervals, is not very user-friendly. A conversion to **SQLite/GeoPackage** (using GDAL/Hale) facilitates this case.
 - The most popular search engine is **Elastic Search** (also used by JRC in INSPIRE), but has some challenges in its license. Alternative is **SOLR**.
 - File repositories range from Amazon/Google to a local NFS with Webdav access.
 - Graph database **Neo4J**, **Triple store**, **Jena Fuseki** (Java) or **Virtuoso** (C) both have spatial support.
@@ -133,9 +133,9 @@ Temporary data storage may be necessary as a caching mechanism to achieve accept
 
 ## Backup and versioning
 
-For any data, there shall be at least two levels of backups. Volume snapshots shall be the preferred mode of backups. These volume snapshots should be stored in a different location and should enable fast recovery (i.e. in less than 4 hours during business hours) even if the location where the SWR is operated is entirely unavilable. These volume snapshots should be configured in such a way that at no point in time, more than 1 hour of new data/changed data would be lost. Volume backups should be retained for 30 days.
+For any data, there shall be at least two levels of backups. Volume snapshots shall be the preferred mode of backups. These volume snapshots should be stored in a different location and should enable fast recovery (i.e. in less than 4 hours during business hours) even if the location where the SWR is operated is entirely unavailable. These volume snapshots should be configured in such a way that at no point in time, more than 1 hour of new data/changed data would be lost. Volume backups should be retained for 30 days.
 
-A second level of backups can be more granular, e.g. storing all data and metadata assets, configuration and system data as enyrpted files in an object store such as AWS S3. This type of backup allows for a more specific or partial recovery for cases where data integrity was damaged, where there was a partial data loss or another incident which does not necessitate restoring the system. This could also include explicit backups (dumps) of the database systems that are part of the SWR. For these backups it is tolerable if they are updated once per day.
+A second level of backups can be more granular, e.g., storing all data and metadata assets, as well as configuration and system data as encrypted files in an object store such as AWS S3. This type of backup allows for a more specific or partial recovery for cases where data integrity was damaged, where there was a partial data loss or another incident which does not necessitate restoring the system. This could also include explicit backups (dumps) of the database systems that are part of the SWR. It is tolerable for these backups to be updated once per day.
 
 If there is data that requires full versioning or historisation, it is recommended to store it in a version control system.
 
