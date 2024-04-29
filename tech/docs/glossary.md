@@ -1,28 +1,22 @@
 # Glossary
 
 documentation:Acceptance Criteria
-:   Acceptance Criteria can be used to judge if the resulting software satisfies the user needs. A single user story/requirement can have multiple acceptance criteria.
+:   Acceptance Criteria can be used to judge if the resulting software satisfies the user's needs. A single user story/requirement can have multiple acceptance criteria.
 
 documentation:API
 :   Application programming interface (API) is a way for two or more computer programs to communicate with each other (source [wikipedia](https://en.wikipedia.org/wiki/API){target=_blank})
 
 documentation:Application profile
-:   Application profile is a specification for data exchange for applications that fulfil a certain use case. In addition to a shared semantics, it also allows for the imposition of additional restrictions, such as the definition of cardinalities or the use of certain code lists (source: [purl.eu](https://purl.eu){target=_blank}).
+:   Application profile is a specification for data exchange for applications that fulfil a certain use case. In addition to shared semantics, it also allows for the imposition of additional restrictions, such as the definition of cardinalities or the use of certain code lists (source: [purl.eu](https://purl.eu){target=_blank}).
 
 documentation:Artificial Intelligence
 :   Artificial Intelligence (AI) is a field of study that develops and studies intelligent machines. It includes the fields rule based reasoning, machine learning and natural language processing (NLP). (source: [wikipedia](https://en.wikipedia.org/wiki/Artificial_intelligence){target=_blank})
 
 documentation:Assimilation
-:   Assimilation is a catchy term indicating the processes involved to combine multiple datasets with different origin into a common dataset, the term is somewhat similarly used in psychology as `incorporation of new concepts into existing schemes` (source: [wikipedia](https://en.wikipedia.org/wiki/Assimilation){target=_blank}). But is not well aligned with its usage in the data science community: ` updating a numerical model with observed data` (source: [wikipedia](https://en.wikipedia.org/wiki/Assimilation){target=_blank})
+:   Assimilation is a term indicating the processes involved to combine multiple datasets with different origin into a common dataset, the term is somewhat similarly used in psychology as `incorporation of new concepts into existing schemes` (source: [wikipedia](https://en.wikipedia.org/wiki/Assimilation){target=_blank}). But is not well aligned with its usage in the data science community: ` updating a numerical model with observed data` (source: [wikipedia](https://en.wikipedia.org/wiki/Assimilation){target=_blank})
 
 documentation:ATOM
 :   ATOM is a standardised interface to exchange news feeds over the internet. It has been adopted by INSPIRE as a basic alternative to download services via WFS or WCS.
-
-documentation:Carbon sequestration
-:   Carbon sequestration the process of storing carbon (source: [wikipedia](https://en.wikipedia.org/wiki/Carbon_sequestration){target=_blank})
-
-documentation:Carbon stock
-:   Carbon stock the (predicted) amount of carbon stored in a soil
 
 documentation:Catalogue
 :   Catalogue or *metadata registry* is a central location in an organization where metadata definitions are stored and maintained (source: [wikipedia](https://en.wikipedia.org/wiki/Metadata_registry){target=_blank})
@@ -109,19 +103,19 @@ documentation:HALE
 :   [Humboldt Alignment Editor](https://github.com/halestudio/hale){target=_blank} (HALE) java based desktop software to compose and apply a data transformation to data
 
 documentation:Harmonization
-:   Harmonization is the process of transforming 2 datasets to a common model, a common projection, usage of common domain values and align their geometries
+:   Harmonization is the process of transforming two datasets to a common model, a common projection, usage of common domain values and align their geometries
 
 documentation:Iteration
-:   An iteration is each development cycle (3 in this project) in the project. Each iteration can have phases. There are four phases per iteration focussing on co-design, development, integration and validation, demonstration.
+:   An iteration is each development cycle (three foreseen within the SoilWise project) in the project. Each iteration can have phases. There are four phases per iteration focussing on co-design, development, integration and validation, demonstration.
 
 documentation:JRC
-:   JRC Joint Research Centre. The JRC provides independent, evidence-based science and knowledge, supporting EU policies to positively impact society. Relevant policy areas within JRC are [JRC Soil](https://joint-research-centre.ec.europa.eu/scientific-activities-z/soil_en){target=_blank} and [JRC INSPIRE](https://inspire.ec.europa.eu/whos-who-inspire/57734){target=_blank}
+:   JRC Joint Research Centre of the European Commission, its Directorate General. The JRC provides independent, evidence-based science and knowledge, supporting EU policies to positively impact society. Relevant policy areas within JRC are [JRC Soil](https://joint-research-centre.ec.europa.eu/scientific-activities-z/soil_en){target=_blank} and [JRC INSPIRE](https://inspire.ec.europa.eu/whos-who-inspire/57734){target=_blank}
 
 documentation:Mapserver
 :   [Mapserver](https://mapserver.org){target=_blank} C based software package providing access to remote data through OGC services
 
 documentation:Observations and Measurements
-:   [Observations and Measurements](https://www.ogc.org/standard/om/){target=_blank} (O&M)
+:   A conceptual model for [Observations and Measurements](https://www.ogc.org/standard/om/){target=_blank} (O&M), also known as ISO19156
 
 documentation:OGC API
 :   [OGC API](https://ogcapi.ogc.org/){target=_blank} building blocks that can be used to assemble novel APIs for web access to geospatial content
@@ -153,8 +147,8 @@ documentation:Requirements
 documentation:Rolling plan
 :   Rolling plan is a methodology for considering the internal and external developments that may generate changes to the SoilWise Repository design and development. It keeps track of any developments and changes on a technical, stakeholder group level or at EUSO/JRC.
 
-documentation:SensorthingsAPI
-:   [SensorthingsAPI](https://www.ogc.org/standard/sensorthings/){target=_blank} (STA) is a formalised protocol to exchange sensor data and tasks between IoT devices, maintained at Open Geospatial Consortium.
+documentation:SensorThings API
+:   [SensorThingsAPI](https://www.ogc.org/standard/sensorthings/){target=_blank} (STA) is a formalised protocol to exchange sensor data and tasks between IoT devices, maintained at Open Geospatial Consortium.
 
 documentation:Sensor Observation Service
 :   [Sensor Observation Service](https://www.ogc.org/standard/sos/){target=_blank} (SOS) is a formalised protocol to exchange sensor data between entities, maintained at Open Geospatial Consortium.
@@ -170,9 +164,6 @@ documentation:Soil classification
 
 documentation:Soilgrids
 :   [Soilgrids](https://www.isric.org/explore/soilgrids){target=_blank} a system for global digital soil mapping that uses many profile data and machine learning methods to predict the spatial distribution of soil properties across the globe
-
-documentation:Soil spectroscopy
-:   Soil spectroscopy (source: [soilspectroscopy.org](https://soilspectroscopy.org/){target=_blank}) is the measurement of light absorption. The proportion of the incident radiation reflected by soil is sensed through reflectance spectroscopy.
 
 documentation: SoilWise Use cases
 :   The SoilWise use cases are described in the Grant Agreement to understand the needs from the stakeholder groups (users). Each use case provides user stories epics.
