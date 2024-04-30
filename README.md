@@ -1,6 +1,8 @@
 # SoilWise-documentation
 
-A preview version is published at: https://soilwise-he.github.io/SoilWise-documentation/
+A fixed production version (for delivery) is published at: https://soilwise-documentation.pages.dev/
+
+A living preview version is published at: https://delivery.soilwise-documentation.pages.dev/
 
 # Mkdocs
 
