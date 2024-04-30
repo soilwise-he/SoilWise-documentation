@@ -27,5 +27,3 @@ pip3 install mkdocs-ezglossary-plugin
 4. run `mkdocs serve` from .\tech\ to run a local (127.0.0.1:8000) instance of documentation
 5. push changes to main branch
 6. changes will be promoted after automatic deploy
-
-Hello
