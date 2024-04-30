@@ -2,7 +2,7 @@
 
 A fixed production version (for delivery) is published at: https://soilwise-documentation.pages.dev/
 
-A living preview version is published at: https://delivery.soilwise-documentation.pages.dev/
+A living preview version is published at: https://main.soilwise-documentation.pages.dev/
 
 # Mkdocs
 
