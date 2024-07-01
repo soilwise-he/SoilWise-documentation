@@ -8,6 +8,7 @@ nav:
     - metadata_validation.md
     - transformation.md
     - interlinker.md
+    - metadata_augmentation.md
     - llm.md
     - mapserver.md
     - dashboard.md
