@@ -1,7 +1,7 @@
 # Interlinker
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [Metadata ingestion](https://github.com/orgs/soilwise-he/projects/3)
+    :fontawesome-brands-github: Projects: [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment), [Similarity finder](https://github.com/soilwise-he/similarity-finder)
 
 Interlinker component comprises of the following functions:
 

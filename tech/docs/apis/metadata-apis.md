@@ -1,8 +1,5 @@
 # Discovery APIs
 
-!!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [APIs](https://github.com/orgs/soilwise-he/projects/9)
-
 In order to enable resource discovery from SoilWise to a variety of communities. SWR aims to evaluate a wide range of standardised or de-facto discovery APIs
 
 - For GraphQL and sparql, read the article on [knowledge extraction](./knowledge-extraction.md)

@@ -1,5 +1,8 @@
 # NLP and Large Language Models
 
+!!! component-header "Important Links"
+    :fontawesome-brands-github: Project: [Natural language querying](https://github.com/soilwise-he/natural-language-querying)
+
 LLM (and less complex Natural Language Processing (NLP) approaches) can be used to perform tasks in [metadata optimisation](#metadata-optimization) (e.g. identify similarities, resolve conflicts, populate gaps, classify or summarize resources). 
 
 LLM can also power a chatbot interface in which a user asks questions to the bot on what type of resources they are looking for and the bot suggests options that can lead to improved search results (finding more relevant resources).
