@@ -1,6 +1,6 @@
 # Metadata validation
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)

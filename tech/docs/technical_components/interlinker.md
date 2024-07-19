@@ -1,6 +1,6 @@
 # Interlinker
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:** v0.1
 
 
@@ -39,7 +39,7 @@ This process can be automated in the platform using automated (Python) scripts r
 
 ## Link liveliness assessment
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
 
     **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
@@ -74,7 +74,7 @@ Metadata (and data and knowledge sources) tend to contain links which, over time
 
 ## Similarity finder
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
     
     **Projects:** [Similarity finder](https://github.com/soilwise-he/similarity-finder)

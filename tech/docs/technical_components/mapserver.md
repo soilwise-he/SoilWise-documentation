@@ -1,6 +1,6 @@
 # Map Server
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
 
     **Project:** [MapServer](https://github.com/soilwise-he/MapServer)

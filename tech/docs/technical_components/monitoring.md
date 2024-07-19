@@ -1,6 +1,6 @@
 # Monitoring
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
 
     **Project:** [Usasge statistics](https://github.com/soilwise-he/usage-statistics)

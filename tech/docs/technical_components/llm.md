@@ -1,6 +1,6 @@
 # Natural language Querying (NLQ)
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
 
     **Project:** [Natural language querying](https://github.com/soilwise-he/natural-language-querying)

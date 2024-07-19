@@ -1,6 +1,6 @@
 # Transformation and Harmonisation Components
 
-!!! component-header "Important Links"
+!!! component-header "Info"
 
     **Current version:**
 

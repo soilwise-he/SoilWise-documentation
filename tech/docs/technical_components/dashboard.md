@@ -82,7 +82,7 @@ The source data for the dashboards is very likely enriched with AI-generated ind
 
 ## Manual data & metadata authoring
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:**
 
     **Project:** [Metadata authoring](https://github.com/soilwise-he/soilinfohub)

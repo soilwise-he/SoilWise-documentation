@@ -18,7 +18,7 @@ and what extra governance policies do we need?
 <br>
 
 
-Soilwise plans to implement a governance framework to tackle the challenge of ensuring equitable access to and 
+SoilWise plans to implement a governance framework to tackle the challenge of ensuring equitable access to and 
 utilization of data and knowledge. This framework aims to foster data sharing and enable the generation of value 
 from these resources. A governance framework encompasses a set of principles, standards, policies (rules/regulations), 
 and practices. Additionally, the framework addresses the enforcement of these measures and the resolution of 
@@ -50,7 +50,7 @@ action for the data space for Agriculture ([AgriDataSpace](https://agridataspace
 
 Following the introduction of the GDPR, the European Commission has put forward several legislative proposals, 
 such as the Digital Services Act, the Digital Markets Act, the Data Act, and the Data Governance Act. 
-Soilwise places particular emphasis on the [Data Governance Act](https://www.european-data-governance-act.com/){target=_blank} 
+SoilWise places particular emphasis on the [Data Governance Act](https://www.european-data-governance-act.com/){target=_blank} 
 and the [Data Act](https://www.eu-data-act.com/){target=_blank}, as their primary goals 
 align closely with the project's aims to enhance data sharing and facilitate product development. 
 These legislations are designed to:

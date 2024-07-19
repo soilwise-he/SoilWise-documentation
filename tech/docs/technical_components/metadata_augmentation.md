@@ -1,6 +1,6 @@
 # Metadata Augmentation
 
-!!! component-header "Important Links"
+!!! component-header "Info"
 
     **Current version:**
     

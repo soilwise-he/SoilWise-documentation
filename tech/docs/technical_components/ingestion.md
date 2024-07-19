@@ -1,6 +1,6 @@
 #  Harvester
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:** v0.1
 
     **Project:** [Harvesters](https://github.com/soilwise-he/harvesters)

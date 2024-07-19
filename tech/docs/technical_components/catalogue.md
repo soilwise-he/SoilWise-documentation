@@ -1,6 +1,6 @@
 # Metadata Catalogue
 
-!!! component-header "Important Links"
+!!! component-header "Info"
     **Current version:** 
 
     **Project:** [Dashboard](https://github.com/soilwise-he/pycsw)

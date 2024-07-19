@@ -26,6 +26,6 @@ li {
   .md-typeset .component-header > .admonition-title::before,
   .md-typeset .component-header > summary::before {
     background-color: #537636;
-    -webkit-mask-image: var(--md-admonition-icon--link);
-            mask-image: var(--md-admonition-icon--link);
+    -webkit-mask-image: var(--md-admonition-icon--info);
+            mask-image: var(--md-admonition-icon--info);
   }
