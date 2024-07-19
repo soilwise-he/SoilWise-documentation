@@ -10,8 +10,6 @@ nav:
     - interlinker.md
     - metadata_augmentation.md
     - llm.md
-    - mapserver.md
     - dashboard.md
     - user_management.md
     - monitoring.md
-    - ...

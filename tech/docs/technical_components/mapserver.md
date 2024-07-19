@@ -9,7 +9,7 @@
 
 ## Technology
 
-A [docker image for mapserver](https://github.com/camptocamp/docker-mapserver){target=_blank} is maintained by Camp2Camp. The important aspect here is that the image uses a minimal build of GDAL, which defines the source formats consumable by the MapServer (in line with section [Transformation and Harmonistation Components](transformation.md). If formats such as Geoparquet or Geozarr are relevant, building a tailored image is relevant.
+A [docker image for mapserver](https://github.com/camptocamp/docker-mapserver){target=_blank} is maintained by Camp2Camp. The important aspect here is that the image uses a minimal build of GDAL, which defines the source formats consumable by the MapServer (in line with section [Transformation and Harmonistation Components](transformation.md)). If formats such as Geoparquet or Geozarr are relevant, building a tailored image is relevant.
 
 The **configuration** of the MapServer is managed via a config file. The config files reference metadata, data and styling rules. Various tools exist to create MapServer config files:
 
