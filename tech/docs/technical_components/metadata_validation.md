@@ -8,9 +8,22 @@
 
 In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md) and [Metadata augmentation](metadata_augmentation.md)), this validation process can be repeated to understand the value which has been added by SWR.
 
+``` mermaid
+flowchart LR
+    HC(Harvest component)
+    HC --> db[(Relation DB)]
+    HC --> TS[(Triple Store)]
+    MV[Run Metadata validation] --> |read| db
+    db --> |write| MV
+    MV --> |display validation results| MC(Metadata Catalogue)
+    MV --> |display validation results| HA(Hale Connect Admin Console)
+    MP[Metadata profile configuration] --> HA
+    HA --> MV
+```
+
 ## Metadata profile
 
-Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, Dublin Core, ANZLIC Metadata Profile, USDA NRSC Metadata Profile, FAO Global Soil Partnership Metadata Profile, ISO 19139, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:
+Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, ISO 19119, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:
 
 ### Minimal metadata elements
 
