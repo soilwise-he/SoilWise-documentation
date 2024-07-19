@@ -1,7 +1,9 @@
 # Map Server
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [MapServer](https://github.com/soilwise-he/MapServer)
+    **Current version:**
+
+    **Project:** [MapServer](https://github.com/soilwise-he/MapServer)
 
 [MapServer](https://mapserver.org){target=_blank} is an Open Source platform for publishing spatial data to the web using standardised APIs defined by Open Geospatial Consortium, such as WMS, WFS, WCS, OGC API-Features. Originally developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
 

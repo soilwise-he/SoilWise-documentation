@@ -1,7 +1,8 @@
 # Interlinker
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Projects: [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment), [Similarity finder](https://github.com/soilwise-he/similarity-finder)
+    **Current version:** v0.1
+
 
 Interlinker component comprises of the following functions:
 
@@ -38,6 +39,11 @@ This process can be automated in the platform using automated (Python) scripts r
 
 ## Link liveliness assessment
 
+!!! component-header "Important Links"
+    **Current version:**
+
+    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
+
 **Persistent content** is considered to be stored in a trustworthy, persistent repository. We expect those storages to store the asset compliant with the applicable legally and scientifically required terms and periods for storage of the content, and to use a DOI or other persistent URI for persistent identification. These can be safely referred to from the SoilWise catalogue. For long-term preservation and availability of data and knowledge assets, SWR relies on the repository holders and their responsibility to keep it available.
 
 **Non-persistent** data and knowledge are the ones that are not guaranteed to persist by the repository or data and knowledge holder and/or do not guarantee a persistent URI for reference for at least 10 years. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Due to their heterogeneity in structure and underlying implementing technologies, etc., it is not possible nor desirable to store those in the SWR, with the exception of high-value data/knowledge assets.  
@@ -64,3 +70,11 @@ Metadata (and data and knowledge sources) tend to contain links which, over time
 - [Geocat](https://geocat.iucnredlist.org/){target=_blank} has developed a linkage checker for iso19139:2007 metadata for INSPIRE geoportal, available at [icat](https://github.com/GeoCat/icat){target=_blank}, which includes link checks in OWS capabilities.
 - [Python link checker](https://pypi.org/project/LinkChecker/) checks (broken) links in html
 - ...
+
+
+## Similarity finder
+
+!!! component-header "Important Links"
+    **Current version:**
+    
+    **Projects:** [Similarity finder](https://github.com/soilwise-he/similarity-finder)

@@ -1,7 +1,9 @@
 #  Harvester
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [Harvesters](https://github.com/soilwise-he/harvesters)
+    **Current version:** v0.1
+
+    **Project:** [Harvesters](https://github.com/soilwise-he/harvesters)
 
 The Harvester component is dedicated to automatically harvest sources to populate SWR with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
 
@@ -398,6 +400,10 @@ flowchart LR
 ```
 
 In the beginning of the SoilWise development process, SoilWise will focus on the second approach.
+
+## Functionality
+
+## Future work
 
 ## Foreseen functionality
 

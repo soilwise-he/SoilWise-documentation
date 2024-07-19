@@ -1,7 +1,9 @@
 # Monitoring
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [Usasge statistics](https://github.com/soilwise-he/usage-statistics)
+    **Current version:**
+
+    **Project:** [Usasge statistics](https://github.com/soilwise-he/usage-statistics)
 
 All components and services of the SWR are monitored at different levels to ensure robust operations and security of the system. There will be a central monitoring service for all components that are part of the SWR.
 

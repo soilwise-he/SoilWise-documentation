@@ -1,8 +1,5 @@
 # User Interface: Dashboard
 
-!!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [Dashboard](https://github.com/orgs/soilwise-he/projects/10)
-
 The term dashboard is used with various meanings, in the scope of Soilwise the following uses are relevant:
 
 - A [search interface on metadata](#search-interface-on-metadata), search results are typically displayed in a paginated set of web pages. But alternatives, such as a map or chatbot, could be interesting.
@@ -86,7 +83,9 @@ The source data for the dashboards is very likely enriched with AI-generated ind
 ## Manual data & metadata authoring
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [Metadata authoring](https://github.com/orgs/soilwise-he/projects/7)
+    **Current version:**
+
+    **Project:** [Metadata authoring](https://github.com/soilwise-he/soilinfohub)
 
 The SWR provides two major ways of data & metadata authoring
 

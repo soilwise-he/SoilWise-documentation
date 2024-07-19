@@ -1,5 +1,10 @@
 # Metadata Catalogue
 
+!!! component-header "Important Links"
+    **Current version:** 
+
+    **Project:** [Dashboard](https://github.com/soilwise-he/pycsw)
+    
 The metadata catalogue is a central piece of the architecture, collecting and
 giving access to individual metadata records. In the geo-spatial domain,
 effective metadata catalogues are developed around the standards issued by the

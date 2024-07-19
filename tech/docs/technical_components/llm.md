@@ -1,7 +1,9 @@
-# NLP and Large Language Models
+# Natural language Querying (NLQ)
 
 !!! component-header "Important Links"
-    :fontawesome-brands-github: Project: [Natural language querying](https://github.com/soilwise-he/natural-language-querying)
+    **Current version:**
+
+    **Project:** [Natural language querying](https://github.com/soilwise-he/natural-language-querying)
 
 LLM (and less complex Natural Language Processing (NLP) approaches) can be used to perform tasks in [metadata optimisation](#metadata-optimization) (e.g. identify similarities, resolve conflicts, populate gaps, classify or summarize resources). 
 
