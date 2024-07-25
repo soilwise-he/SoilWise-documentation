@@ -39,15 +39,11 @@ SWR-1 implements the interlinking of data and knowledge assets based on explicit
     **Projects:** [Similarity finder](https://github.com/soilwise-he/similarity-finder)
 
 
-The Similarity Finder implements the functionality to compare the metadata of different data and knowledge assets. 
+The Similarity Finder implements the functionality to compare the metadata of different data and knowledge assets. This can reveal information on duplicities (the assets are the same) or similarities (the assets are similar with regard to specific aspects)
 
-In SWR-1, this subcomponent implements 
-In the context of Persistent Identifiers (PIDs), duplication refers to the occurrence of multiple identifiers pointing to the same digital object or resource. As SWR will be ingesting datafiles from multiple data sources, this is an aspect that has to be taken into account. 
+In SWR-1, this subcomponent implements the functionality to detect duplicates. This is performed based on the comparision of Persistent Identifiers (PIDs) as well as on the comparison of a set of key metadata elements (to detect situations where multiple identifiers point to the same digital object or resource). The process is curently performed at metadata harvesting, but can also be run independently for quality checks.
 
-We have no knowledge of existing technologies we can integrate as a component of the platform. This functionality will be setup within the platform. 
-The methodology applied to identify duplicates will be by comparing multiple (meta)data attributes like _File Name, File Size, File Type, Owner, Description, Date Created/Modified_. 
-**Natural Language Processing techniques** like Bag-of-words or Word/Sentence Embedding algorithms can be used to convert textual attributes into vectors, capturing semantic similarity and relationships between words. Each datafile will be characterized by its attributes and represented in a continuous vector space together with the other datafiles. Similarity algorithms (e.g. cosine similarity, euclidean distance, etc.) are then applied to identify datafiles with a similarity above a certain threshold, which is then considered to be duplicated.
-If necessary, a business rule will be integrated, taking the "completeness" of the datafile into account as to be able to determine which PID and datafile to keep and which to discard.
+!! @Paul, @Hugo to add relevant details
 
 
 ## Link liveliness assessment
