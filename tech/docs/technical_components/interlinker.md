@@ -3,6 +3,7 @@
 !!! component-header "Info"
     **Current version:** v0.1
 
+Assuming that data and knowledge assets and their metadata can potentially exist in multiple repositories, their harvesting might yield multiple results that represent the same asset.
 
 Interlinker component comprises of the following functions:
 
