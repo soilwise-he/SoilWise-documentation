@@ -18,7 +18,7 @@ Examples are:
 Interlinker component comprises of the following functions:
 
 1. [Automatic metadata interlinking](#automatic-metadata-interlinking)
-2. [Similarity Finder (formerly Duplicates identification)](#duplicates-identification)
+2. [Similarity Finder (formerly Duplicates identification)](#similarity-finder)
 3. [Link liveliness assessment](#link-liveliness-assessment)
 
 ## Automatic metadata interlinking
@@ -29,7 +29,8 @@ Interlinker component comprises of the following functions:
 
 To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
 
-We distinguish between explicit and implicit links
+We distinguish between explicit and implicit links:
+
 - **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
 - **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
 
@@ -62,11 +63,15 @@ In SWR-1, this subcomponent implements the functionality to detect duplicates. T
 Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
 
 The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness checker privides:
+
 - up to date health status of every assessed link
 - health status history
 - analytics functions, e.g. aggregating health status history to generate health indicators for UI visualisation. 
 
 !! @Vassilis to add relevant details
+
+
+
 
 
 
