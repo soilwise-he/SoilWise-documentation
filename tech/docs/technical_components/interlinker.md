@@ -8,6 +8,8 @@ Harvesting metadata from data and knowledge assets from a multitude of repositor
 
 Examples are:
 
+- Assets that direclty refer to other assets as part of their metadata (e.g. a dataset refering to a document describing the data collection and processing)
+- Assets that indirectly refer to other assets (e.g. a dataset being mentioned in the text of a document)
 - Assets with the same DOI and metadata coming from different repositories
 - Assets with the same DOI, but different metadata fields
 - Assets without DOI that have identical metadata
@@ -23,27 +25,29 @@ Interlinker component comprises of the following functions:
 
 To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
 
+We distinguish between explicit and implicit links
 - **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
-For those linkages, the harvesting process needs to be extended, calling this component to store the relation in the knowledge graph. It should accommodate "vice versa linkage" (if resource A links to B, a vice versa link can be added to B).
-- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. In this case, AI/ML can support the discovery of potential links, including some kind of probability indicator.
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
 
-## Duplicates identification
+SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
 
+## Similarity Finder
+
+!!! component-header "Info"
+    **Current version:**
+    
+    **Projects:** [Similarity finder](https://github.com/soilwise-he/similarity-finder)
+
+
+The Similarity Finder implements the functionality to compare the metadata of different data and knowledge assets. 
+
+In SWR-1, this subcomponent implements 
 In the context of Persistent Identifiers (PIDs), duplication refers to the occurrence of multiple identifiers pointing to the same digital object or resource. As SWR will be ingesting datafiles from multiple data sources, this is an aspect that has to be taken into account. 
 
 We have no knowledge of existing technologies we can integrate as a component of the platform. This functionality will be setup within the platform. 
 The methodology applied to identify duplicates will be by comparing multiple (meta)data attributes like _File Name, File Size, File Type, Owner, Description, Date Created/Modified_. 
 **Natural Language Processing techniques** like Bag-of-words or Word/Sentence Embedding algorithms can be used to convert textual attributes into vectors, capturing semantic similarity and relationships between words. Each datafile will be characterized by its attributes and represented in a continuous vector space together with the other datafiles. Similarity algorithms (e.g. cosine similarity, euclidean distance, etc.) are then applied to identify datafiles with a similarity above a certain threshold, which is then considered to be duplicated.
 If necessary, a business rule will be integrated, taking the "completeness" of the datafile into account as to be able to determine which PID and datafile to keep and which to discard.
-
-### Technology
-
-This process can be automated in the platform using automated (Python) scripts running within the platform's data processing environment. A second approach is to use data processing functionalities and AI algorithms integrated into a database, e.g. the Neo4J Graph Database and Neo4J Graph Data Science [Similarity algorithms](https://neo4j.com/docs/graph-data-science/current/algorithms/similarity/){target=_blank} 
-(Node Similarity, K-Nearest Neighbours, ...). This requires the data to exist in the graph database as linked data, either importing from the SWR knowledge graphs or using such a graph database technology (e.g. Neo4J) as the SWR knowledge graph technology.
-
-- two levels inspection (coarse = dataset level, fine = objects/attributes? level)
-- read existing data in terms of size, identical identifiers (data, metadata level)
-- identify duplicite values
 
 
 ## Link liveliness assessment
