@@ -4,10 +4,17 @@
     **Current version:** v0.1
 
 
+Harvesting metadata from data and knowledge assets from a multitude of repositories will result in a large and diverse collection of metadata. Some of these assets will be related, which will sometimes be explicitly expressed in the (meta)data. In many cases, such relationships are implicit and can only be discovered by further analysing the (meta)data and content. The interlinker component provides the functions to find such relationships and add them as links to the SoilWise knowledge graph.
+Examples are:
+- Assets with the same DOI and metadata coming from different repositories
+- Assets with the same DOI, but different metadata fields
+- Assets without DOI that have identical metadata
+- Assets without DOI that have similar, but not identical metadata
+
 Interlinker component comprises of the following functions:
 
 1. [Automatic metadata interlinking](#automatic-metadata-interlinking)
-2. [Duplicates identification](#duplicates-identification)
+2. [Similarity Finder (formerly Duplicates identification](#duplicates-identification)
 3. [Link liveliness assessment](#link-liveliness-assessment)
 
 ## Automatic metadata interlinking
