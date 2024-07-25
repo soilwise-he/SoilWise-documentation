@@ -69,6 +69,7 @@ Analyses existing keywords to find a relevant geography for the record, it then 
 ### EUSO-high-value dataset tagging
 
 The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/). This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu) metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
+
 The EUSO soil degradation indicators employ specific [methodologies and thresholds](https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources) to determine soil health status. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.
 
 ``` mermaid
