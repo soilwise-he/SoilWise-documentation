@@ -68,37 +68,9 @@ Analyses existing keywords to find a relevant geography for the record, it then 
 
 ### EUSO-high-value dataset tagging
 
-The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/). This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu) metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
+The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/){target=_blank}. This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu){target=_blank} metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
 
-The EUSO soil degradation indicators employ specific [methodologies and thresholds](https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources) to determine soil health status. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.
-
-``` mermaid
-flowchart RL
-    subgraph ic[Indicators Search]
-        ti([Title Check]) ~~~ ai([Abstract Check])
-        ai ~~~ ki([Keywords Check])
-    end
-    subgraph kl[Links check]
-        lp([Check links to projects]) ~~~ lm([Check links for Methodology Scientific Paper])
-    end
-    subgraph s[Semantic and context check]
-        kc([Find synonyms]) ~~~ en([Exclude negations])
-    end
-    subgraph i[ ]
-        subgraph Codelists
-            sd[Soil Degradation Codelist] ~~~ si[Soil Indicator Codelist]
-        end
-        sd ~~~ em[EUSO Methodology]
-        Codelists --> es{{Soil Degradation Indicator Tag}}
-    end
-    m[(Metadata Record)] --> ic
-    i --> ic
-    kl --> Codelists
-    s --> Codelists
-    i --> et{{EUSO High-Value Dataset Tag}}
-    o[(Ontologies)] --> s
-    th[(Thesauri)] --> s
-```
+The EUSO soil degradation indicators employ specific [methodologies and thresholds](https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources){target=_blank} to determine soil health status, see also the Table below. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.
 
 <table>
   <tr>
@@ -192,3 +164,34 @@ flowchart RL
     <td>Raster remote sense data</td>
   </tr>
 </table>
+
+Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific indicator. In later phase we assume search for references to Scientific Methodology papers in metadata record's links.
+
+
+``` mermaid
+flowchart RL
+    subgraph ic[Indicators Search]
+        ti([Title Check]) ~~~ ai([Abstract Check])
+        ai ~~~ ki([Keywords Check])
+    end
+    subgraph kl[Links check]
+        lp([Check links to projects]) ~~~ lm([Check links for Methodology Scientific Paper])
+    end
+    subgraph s[Semantic and context check]
+        kc([Find synonyms]) ~~~ en([Exclude negations])
+    end
+    subgraph i[ ]
+        subgraph Codelists
+            sd[Soil Degradation Codelist] ~~~ si[Soil Indicator Codelist]
+        end
+        sd ~~~ em[EUSO Methodology]
+        Codelists --> es{{Soil Degradation Indicator Tag}}
+    end
+    m[(Metadata Record)] --> ic
+    i --> ic
+    kl --> Codelists
+    s --> Codelists
+    i --> et{{EUSO High-Value Dataset Tag}}
+    o[(Ontologies)] --> s
+    th[(Thesauri)] --> s
+```
