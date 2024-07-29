@@ -188,6 +188,8 @@ flowchart TD
     si[(Soil Indicator Codelist)] --> ic
     em[(EUSO Soil Methodologies list)] --> M
     M --> et{{EUSO High-Value Dataset Tag}}
+    et --> m
     ic --> es{{Soil Degradation Indicator Tag}}
+    es --> m
     th[(Thesauri)]-- synonyms ---Codelists
 ```
