@@ -74,8 +74,8 @@ The EUSO soil degradation indicators employ specific [methodologies and threshol
 
 <table>
   <tr>
-    <th>Soil degradation</th>
-    <th>Indicator</th>
+    <th>Soil Degradation</th>
+    <th>Soil Indicator</th>
     <th>Type of methodic for threshold</th>
   </tr>
   <tr>
@@ -165,33 +165,29 @@ The EUSO soil degradation indicators employ specific [methodologies and threshol
   </tr>
 </table>
 
-Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific indicator. In later phase we assume search for references to Scientific Methodology papers in metadata record's links.
+Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific **values from the Soil Indicator and Soil Degradation Codelists**, such as `Water erosion` or `Soil erosion` (see the Table above). If found, the `Soil Degradation Indicator Tag` (corresponding value from the Soil Degradation Codelist) will be displayed to indicate suitability of given dataset for soil indicator related analyses. Additionally, a search for corresponding **methodology** will be conducted to see if the dataset is compliant with the EUSO Soil Health indicators presented in the [EUSO Dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/){target=_blank}. If found, the tag `EUSO High-value dataset` will be added. In later phase we assume search for references to Scientific Methodology papers in metadata record's links. Next, the possibility of involving a more complex search using soil thesauri will also be explored.
 
 
 ``` mermaid
-flowchart RL
+flowchart TD
     subgraph ic[Indicators Search]
         ti([Title Check]) ~~~ ai([Abstract Check])
         ai ~~~ ki([Keywords Check])
     end
-    subgraph kl[Links check]
-        lp([Check links to projects]) ~~~ lm([Check links for Methodology Scientific Paper])
+    subgraph Codelists
+        sd ~~~ si
     end
-    subgraph s[Semantic and context check]
-        kc([Find synonyms]) ~~~ en([Exclude negations])
-    end
-    subgraph i[ ]
-        subgraph Codelists
-            sd[Soil Degradation Codelist] ~~~ si[Soil Indicator Codelist]
-        end
-        sd ~~~ em[EUSO Methodology]
-        Codelists --> es{{Soil Degradation Indicator Tag}}
+    subgraph M[Methodologies Search]
+        tiM([Title Check]) ~~~ aiM([Abstract Check])
+        kl([Links check]) ~~~ kM([Keywords Check])
     end
     m[(Metadata Record)] --> ic
-    i --> ic
-    kl --> Codelists
-    s --> Codelists
-    i --> et{{EUSO High-Value Dataset Tag}}
-    o[(Ontologies)] --> s
-    th[(Thesauri)] --> s
+    m --> M
+    ic-- + ---M
+    sd[(Soil Degradation Codelist)] --> ic
+    si[(Soil Indicator Codelist)] --> ic
+    em[(EUSO Soil Methodologies list)] --> M
+    M --> et{{EUSO High-Value Dataset Tag}}
+    ic --> es{{Soil Degradation Indicator Tag}}
+    th[(Thesauri)]-- synonyms ---Codelists
 ```
