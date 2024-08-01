@@ -25,6 +25,8 @@ Interlinker component comprises of the following functions:
 
 !!! component-header "Info"
     **Current version:** v0.1
+    
+    **Projects:** [Automatic metadata interlinking (missing repo)](https://github.com/soilwise-he)
 
 
 To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
@@ -37,6 +39,7 @@ We distinguish between explicit and implicit links:
 SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
 
 !! @Paul, @Hugo to add relevant details
+!! Do we link to the harvester component for now?
 
 ## Similarity Finder
 
@@ -46,9 +49,9 @@ SWR-1 implements the interlinking of data and knowledge assets based on explicit
     **Projects:** [Similarity finder](https://github.com/soilwise-he/similarity-finder)
 
 
-The Similarity Finder implements the functionality to compare the metadata of different data and knowledge assets. This can reveal information on duplicities (the assets are the same) or similarities (the assets are similar with regard to specific aspects)
+The Similarity Finder identifies similarities over different data and knowledge assets by implementing functionality to compare their metadata. This reveals information on duplicities (the assets are the same) or similarities (the assets are similar with regard to specific aspects) and captures it as part of the knowledge graph.
 
-In SWR-1, this subcomponent implements the functionality to detect duplicates. This is performed based on the comparision of Persistent Identifiers (PIDs) as well as on the comparison of a set of key metadata elements (to detect situations where multiple identifiers point to the same digital object or resource). The process is curently performed at metadata harvesting, but can also be run independently for quality checks.
+In SWR-1, this subcomponent implements the functionality to detect duplicates. This is performed based on the comparision of Persistent Identifiers (PIDs) as well as on the comparison of a set of key metadata elements (to detect situations where multiple identifiers point to the same digital object or resource). The process is currently performed at metadata harvesting, but can also be run independently for quality checks.
 
 !! @Paul, @Hugo to add relevant details
 
@@ -69,6 +72,7 @@ The link liveliness assessment subcomponent runs over the available links stored
 - analytics functions, e.g. aggregating health status history to generate health indicators for UI visualisation. 
 
 !! @Vassilis to add relevant details
+!! Proposal from @Rob to move this component to metadata augmentation
 
 
 
