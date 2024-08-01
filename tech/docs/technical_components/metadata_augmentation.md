@@ -8,7 +8,7 @@
 
 ## Functionality
 
-In this component scripting / NLP / LLM are used on a metadata record to augment metadata statements about the resource. Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.
+In this component a variety of scripting / NLP / LLM methods and algorithms are used on a metadata record to augment metadata statements about the resource. Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.
 
 | metadata-uri | metadata-element | source | value | proces | date |
 | --- | --- | --- | --- | --- | --- |
