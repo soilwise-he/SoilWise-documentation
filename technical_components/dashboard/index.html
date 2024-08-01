@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://soilwise-he.github.io/SoilWise-documentation/technical_components/dashboard/" rel="canonical"/>
+<link href="../llm/" rel="prev"/>
+<link href="../user_management/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.30" name="generator"/>
+<title>User Interface: Dashboard - Technical Documentation</title>
+<link href="../../assets/stylesheets/main.3cba04c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../../css/print-site.css" rel="stylesheet"/>
+<link href="../../css/print-site-material.css" rel="stylesheet"/>
+<link href="../../extra.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="indigo" data-md-color-primary="brown" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#user-interface-dashboard">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Technical Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Technical Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              User Interface: Dashboard
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="brown" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="brown" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../technical_components/">
+          
+  
+    
+  
+  Technical Components
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/apis-intro/">
+          
+  
+    
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../infrastructure/infrastructure-intro/">
+          
+  
+    
+  
+  Infrastructure
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../governance/">
+        
+  
+    
+  
+  Governance
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../glossary/">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../print_page/">
+        
+  
+    
+  
+  Printable version
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Technical Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+    Technical Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Technical Components
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Technical Components
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technical_components/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ingestion/">
+<span class="md-ellipsis">
+    Harvester
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../storage/">
+<span class="md-ellipsis">
+    Repository Storage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../catalogue/">
+<span class="md-ellipsis">
+    Metadata Catalogue
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_validation/">
+<span class="md-ellipsis">
+    Metadata validation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transformation/">
+<span class="md-ellipsis">
+    Transformation and Harmonisation Components
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../interlinker/">
+<span class="md-ellipsis">
+    Interlinker
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_augmentation/">
+<span class="md-ellipsis">
+    Metadata Augmentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../llm/">
+<span class="md-ellipsis">
+    Natural language Querying (NLQ)
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    User Interface: Dashboard
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    User Interface: Dashboard
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#search-interface-on-metadata">
+<span class="md-ellipsis">
+      Search interface on metadata
+    </span>
+</a>
+<nav aria-label="Search interface on metadata" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ranking-relations-full-text-search-and-filtering">
+<span class="md-ellipsis">
+      Ranking, relations, full-text search, and filtering
+    </span>
+</a>
+<nav aria-label="Ranking, relations, full-text search, and filtering" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chatbot">
+<span class="md-ellipsis">
+      Chatbot
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#map-viewer">
+<span class="md-ellipsis">
+      Map viewer
+    </span>
+</a>
+<nav aria-label="Map viewer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology_1">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview-of-catalogue-content">
+<span class="md-ellipsis">
+      Overview of catalogue content
+    </span>
+</a>
+<nav aria-label="Overview of catalogue content" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traditional-dashboards">
+<span class="md-ellipsis">
+      Traditional dashboards
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology_2">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manual-data-metadata-authoring">
+<span class="md-ellipsis">
+      Manual data &amp; metadata authoring
+    </span>
+</a>
+<nav aria-label="Manual data &amp; metadata authoring" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foreseen-functionality">
+<span class="md-ellipsis">
+      Foreseen functionality
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology_3">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integration-opportunities">
+<span class="md-ellipsis">
+      Integration opportunities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-issues">
+<span class="md-ellipsis">
+      Open issues
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-download-export">
+<span class="md-ellipsis">
+      Data download &amp; export
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_management/">
+<span class="md-ellipsis">
+    User Management and Access Control
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../monitoring/">
+<span class="md-ellipsis">
+    Monitoring
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/apis-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/knowledge-extraction/">
+<span class="md-ellipsis">
+    API for knowledge extraction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/data-download/">
+<span class="md-ellipsis">
+    Data preview &amp; download APIs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/metadata-apis/">
+<span class="md-ellipsis">
+    Discovery APIs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/processing-apis/">
+<span class="md-ellipsis">
+    Processing APIs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/sparql/">
+<span class="md-ellipsis">
+    SPARQL API
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/infrastructure-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/containerization/">
+<span class="md-ellipsis">
+    Containerization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/git/">
+<span class="md-ellipsis">
+    GIT versioning system
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../print_page/">
+<span class="md-ellipsis">
+    Printable version
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#search-interface-on-metadata">
+<span class="md-ellipsis">
+      Search interface on metadata
+    </span>
+</a>
+<nav aria-label="Search interface on metadata" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ranking-relations-full-text-search-and-filtering">
+<span class="md-ellipsis">
+      Ranking, relations, full-text search, and filtering
+    </span>
+</a>
+<nav aria-label="Ranking, relations, full-text search, and filtering" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chatbot">
+<span class="md-ellipsis">
+      Chatbot
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#map-viewer">
+<span class="md-ellipsis">
+      Map viewer
+    </span>
+</a>
+<nav aria-label="Map viewer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology_1">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview-of-catalogue-content">
+<span class="md-ellipsis">
+      Overview of catalogue content
+    </span>
+</a>
+<nav aria-label="Overview of catalogue content" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traditional-dashboards">
+<span class="md-ellipsis">
+      Traditional dashboards
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology_2">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manual-data-metadata-authoring">
+<span class="md-ellipsis">
+      Manual data &amp; metadata authoring
+    </span>
+</a>
+<nav aria-label="Manual data &amp; metadata authoring" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foreseen-functionality">
+<span class="md-ellipsis">
+      Foreseen functionality
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology_3">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integration-opportunities">
+<span class="md-ellipsis">
+      Integration opportunities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-issues">
+<span class="md-ellipsis">
+      Open issues
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-download-export">
+<span class="md-ellipsis">
+      Data download &amp; export
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/soilwise-he/SoilWise-documentation/edit/main/tech/docs/technical_components/dashboard.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+</a>
+<h1 id="user-interface-dashboard">User Interface: Dashboard</h1>
+<p>The term dashboard is used with various meanings, in the scope of Soilwise the following uses are relevant:</p>
+<ul>
+<li>A <a href="#search-interface-on-metadata">search interface on metadata</a>, search results are typically displayed in a paginated set of web pages. But alternatives, such as a map or chatbot, could be interesting.</li>
+<li>A set of <a href="#overview-of-catalogue-content">diagrams showing an overview of the contents and usage of the catalogue</a>; for example a diagram of the percentage of records by topiccategory, number of visits by an EU Member State.</li>
+</ul>
+<p>Other parts of the dashboard are:</p>
+<ul>
+<li><a href="#manual-data-metadata-authoring">Metadata authoring</a> and <a href="../ingestion/">harvest configuration</a> components</li>
+<li><a href="#data-download-export">Data download &amp; export</a> options</li>
+</ul>
+<p>SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present data and knowledge in useable way.</p>
+<h2 id="search-interface-on-metadata">Search interface on metadata</h2>
+<p>A typical example of a catalogue search interface is the current <a href="https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data">ESDAC catalogue</a>.</p>
+<h3 id="ranking-relations-full-text-search-and-filtering">Ranking, relations, full-text search, and filtering</h3>
+<p>Optimal search capabilities are provided by the catalogue backend, this component leverages these capabilities to provide users with an optimal user interface to effectively use those capabilities.</p>
+<p>The EJPSoil prototype, foreseen to be re-used within SoilWise, uses a tailored frontend, focusing on:</p>
+<ul>
+<li>Paginated search results, sorted alphabetically, by date</li>
+<li>Minimalistic User Interface, to prevent a technical feel</li>
+<li>Option to filter by facets</li>
+<li>Option to provide feedback to publisher/author</li>
+<li>Readable link in the browser bar, to facilitate link sharing</li>
+<li>Preview of the dataset (if a OGC:Service is available), else display of its spatial extent</li>
+</ul>
+<p>What can be improved:</p>
+<ul>
+<li>Show relations to other records</li>
+<li>Better distinguish link types; service/api, download, records, documentation, etc.</li>
+<li>Indication of remote link availability/conformance</li>
+<li>If a record originates from (multiple) catalogues, add a link to the origin</li>
+<li>Ranking (backend)</li>
+</ul>
+<h4 id="technology">Technology</h4>
+<ul>
+<li>Jinja2 templates (html, css) as a tailored skin on pycsw/pygeoapi, or dedicated frontend (vuejs, react)</li>
+<li>Leaflet/OpenLayers/MapLibre</li>
+</ul>
+<h3 id="chatbot">Chatbot</h3>
+<p><a href="../llm/">Large Language models</a> (LLM) enriched with SoilWise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer but also provide references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in gaining access to the source, using which software, for example.</p>
+<h3 id="map-viewer">Map viewer</h3>
+<p>A light-weight client map viewer component will be employed:</p>
+<ul>
+<li>as a frontend of <a href="../mapserver/">Map Server</a> component to visualize provided WMS, WFS, WCS layers</li>
+<li>as an integrated part of the Catalogue to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data</li>
+<li>to provide the full preview of data, when a link to web service or data browse graphics (preview image) is available</li>
+</ul>
+<p>A dedicated mapviewer, such as <a href="https://terria.io" target="_blank">TerriaJS</a>, can support users in accessing relevant data which has been prepared for optimal consumption in a typical GIS Desktop environment. For example maps of spatial distribution of soil properties or health indicators over Europe. A typical example is <a href="https://soilgrids.org" target="_blank">Soilgrids</a>.</p>
+<p>An interesting aspect of a community like EUSO is the ability to prepare and share a map with stakeholders to trigger some discussion on phenomena at a location.</p>
+<p>Examine the need for viewing novel formats such as Vector tiles, <a href="https://www.cogeo.org/" target="_blank">COG</a>, <a href="https://github.com/zarr-developers/geozarr-spec" target="_blank">GeoZarr</a>, <a href="https://geoparquet.org/" target="_blank">GeoParquet</a> directly on a map background. The benefit of these formats is that no (OGC) service is required to facilitate data visualisation.</p>
+<h4 id="technology_1">Technology</h4>
+<p><a href="https://terria.io" target="_blank">TerriaJS</a> is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.</p>
+<h2 id="overview-of-catalogue-content">Overview of catalogue content</h2>
+<h3 id="traditional-dashboards">Traditional dashboards</h3>
+<p>The <a href="https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/overview?view=themeOverview&amp;theme=tn">INSPIRE Geoportal</a> increased its usage with their new dashboard-like interface for each EU Member State the number of published datasets per topic is upfront in the application. Dashboards on catalogue content provide mechanisms to generate overviews of that content to provide such insight.</p>
+<h3 id="technology_2">Technology</h3>
+<p>The <a href="https://dashboards.isric.org/superset/dashboard/29">EJP Soil Catalogue Dashboard</a> is based on Apache Superset, with direct access to the PostgreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).</p>
+<p>Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding. Similar functionality for the pycsw needs to be investigated, verified respectively. </p>
+<p>The source data for the dashboards is very likely enriched with AI-generated indicators. LLMs also seem able to provide overviews of sets of content.</p>
+<h2 id="manual-data-metadata-authoring">Manual data &amp; metadata authoring</h2>
+<div class="admonition component-header">
+<p class="admonition-title">Info</p>
+<p><strong>Current version:</strong></p>
+<p><strong>Project:</strong> <a href="https://github.com/soilwise-he/soilinfohub">Metadata authoring</a></p>
+</div>
+<p>The SWR provides two major ways of data &amp; metadata authoring</p>
+<ol>
+<li>in an automatized manner, as described in the <a href="../ingestion/">Harvester component</a>;</li>
+<li>in a manual mode, as described within this <strong>Manual data &amp; metadata authoring component</strong>.</li>
+</ol>
+<p>Note that option (1) is the preferred one from the SWR point of view as it allows to massively tackle metadata and knowledge of remotely available resources, including Catalogue servers of Mission Soil projects, Zenodo, Cordis, INSPIRE Geoportal and others.</p>
+<p>A <strong>manual mode</strong> comprises four levels of data and metadata upload (note that the following points 1 and 3 work for both data and metadata, while points 2 and 4 work solely for metadata):</p>
+<ol>
+<li>Manual upload of one data file and/or metadata record as a file: a user selects a file from the local drive or types in a publicly available URL and defines the (meta)data structure (for more details, see <a href="../storage/#data-model">Data model component</a>) and optionally other relevant information like target user group, open/restrict publication of this new data/metadata record etc. The Manual data &amp; metadata upload component imports the file, assigns a UUID if needed, and stores the data in Zenodo, while metadata are stored in the <a href="../storage/#storage-of-metadata">Storage</a> component.</li>
+<li>Manual upload of one metadata record as a source code: the functionality of the Manual data &amp; metadata upload component is almost identical to the previous option (file upload). The only difference is that a user is copying a source code rather than a file upload.</li>
+<li>Manual batch upload: this option allows a user to import a set of data files and/or metadata records in the form of e.g. XML or JSON files. The following parameters need to be defined:</li>
+<li>directory, full path on the server’s file system of the directory to scan and try to import all the available files;</li>
+<li>file type, e.g. XML, JSON (note that the full list of supported file types needs to be elaborated yet);</li>
+<li>Manual connection to a Web service and semi-automatic extraction of available metadata: a user types in a publicly available URL pointing to a service metadata document, e.g. GetCapabilities response of OGC Web service. The Manual data &amp; metadata upload component extracts metadata that can be copied in line with the desired metadata structure, i.e. a metadata profile. The Manual data &amp; metadata upload component assigns a UUID if needed, and stores the metadata in the <a href="../storage/#storage-of-metadata">Storage</a> component. Most likely, the metadata extracted from a service metadata document (e.g. GetCapabilities) would not be sufficient to address all the mandatory metadata elements defined by the desired metadata structure, i.e. a metadata profile. In such a case, a manual fill in would be needed</li>
+</ol>
+<p>The diagram below provides an overview of the workflow of metadata authoring</p>
+<pre class="mermaid"><code>flowchart LR
+    G[fa:fa-code-compare Git] --&gt;|mcf| CI{{pygeometa}} 
+    CI --&gt;|iso19139| DB[(fa:fa-database Database)]
+    DB --&gt; C(Catalogue)
+    C --&gt; G
+</code></pre>
+<p>The authoring workflow uses a GIT backend, additions to the catalogue are entered by members of the GIT repository directly or via pull request (review).
+Records are stored in iso19139:2007 XML or MCF. MCF is a subset of iso19139:2007 in a YAML encoding, defined by the pygeometa community. This library is used to 
+convert the MCF to any requested metadata format.</p>
+<p>A <a href="https://osgeo.github.io/mdme" target="_blank">webbased form</a> is available for users uncomfortable with editing an MCF file directly.</p>
+<p>With every change on the git repository, an export of the metadata is made to a Postgres Database (or the triple store).</p>
+<h3 id="foreseen-functionality">Foreseen functionality</h3>
+<ul>
+<li>GUI and backend for online form</li>
+<li>validation of inserted values</li>
+<li>storing inserted metadata record</li>
+</ul>
+<h3 id="technology_3">Technology</h3>
+<ul>
+<li><strong>pycsw</strong> and <strong>GeoNetwork</strong> includes capabilities to harvest remote sources, it does not include a dashboard to create and monitor harvesters</li>
+<li>A <strong>Git</strong> based participatory metadata workflow as introduced in EJP Soil and foreseen for SoilWise as a follow-up<ul>
+<li>Users should be endorsed to register their metadata via known repositories, such as Zenodo, CORDIS, INSPIRE, ... at most register the identifier (DOI, CSW) of the record at EUSO, metadata will be mirrored from those locations at intervals</li>
+<li>Data can be maintained in a Git Repository, such as the <a href="https://github.com/ejpsoil/ejpsoildatahub/tree/main/datasets" target="_blank">EJP Soil repository</a>, preferably using a readably serialisation, such as YML</li>
+<li>In EJP Soil we experiment with the <a href="https://geopython.github.io/pygeometa/reference/mcf/" target="_blank">metadata control file</a> format (MCF), a subset of iso19139</li>
+<li>A web editor for MCF is available at <a href="https://osgeo.github.io/mdme" target="_blank">osgeo.github.io</a></li>
+<li>Users can also submit metadata using a CSV (excel) format, which is converted to MCF in a CI-CD </li>
+<li>A web based frontend can be developed to guide the users in submitting records (generate a pull request in their name)</li>
+<li>Validation of inserted values</li>
+<li>A CI-CD script which runs as part of a pull request triggers a validation and rejects (or optimises) a record if it does not match our quality criteria</li>
+</ul>
+</li>
+</ul>
+<h3 id="integration-opportunities">Integration opportunities</h3>
+<p>The Manual data &amp; metadata upload component will show its full potential when being in the SWR tightly connected to (1) SWR Catalogue, (2) <a href="../metadata_validation/">metadata validation</a>, and (3) Requires <a href="../user_management/#authentication">authentication</a> and <a href="../user_management/#authorisation">authorisation</a>.</p>
+<h3 id="open-issues">Open issues</h3>
+<p>The Manual data &amp; metadata upload component shall be technologically aligned with the SWR Catalogue and <a href="../ingestion/">Harvester</a>. Both considered software solutions, i.e. <strong>GeoNetwork</strong> and <strong>pycsw</strong> support the core desired functionality all these three SWR components.</p>
+<p>The above-described mechanisms showed the “as is” manual metadata upload. Nevertheless, it is foreseen that the SWR will also support “on-the-fly transformation towards interoperability”. Such functionality is currently under discussion. The desired functionality aims to assist data producers and publishers with a pipeline that allows them to map their source data &amp; metadata structures into target interoperable data &amp; metadata structures. An example of this is an example of an upload of interpreted soil data and their on-the-fly transformation into a structure defined by the INSPIRE Directive, application schema from data specification on Soil respectively. A data &amp; metadata upload pipeline supporting “on-the-fly transformation towards interoperability” will be described in greater detail later in line with SoilWise developments.</p>
+<h2 id="data-download-export">Data download &amp; export</h2>
+<p>A UI component could be made available as part of the SWR Catalogue application which facilitates access to subsets of data from a data download or API. A user selects the relevant feature type/band, defines a spatial or attribute filter and selects an output format (or harmonised model). The component will process the data and notify the user when the result is available for download. The API-based data publication is described as part of <a href="../../apis/apis-intro/">APIs</a>.</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 1, 2024</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - 2027 <a href="https://cordis.europa.eu/project/id/101112838">SoilWise Soil Mission Horizon Europe project No. 101112838</a>
+</div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/soilwise-project-eu/" rel="noopener" target="_blank" title="SoilWise on LinkedIn">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/profile.php?id=61551552876700" rel="noopener" target="_blank" title="SoilWise on Facebook">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+<script src="../../js/print-site.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

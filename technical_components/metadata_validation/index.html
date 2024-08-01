@@ -1,0 +1,1106 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://soilwise-he.github.io/SoilWise-documentation/technical_components/metadata_validation/" rel="canonical"/>
+<link href="../catalogue/" rel="prev"/>
+<link href="../transformation/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.30" name="generator"/>
+<title>Metadata validation - Technical Documentation</title>
+<link href="../../assets/stylesheets/main.3cba04c6.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../../css/print-site.css" rel="stylesheet"/>
+<link href="../../css/print-site-material.css" rel="stylesheet"/>
+<link href="../../extra.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="indigo" data-md-color-primary="brown" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#metadata-validation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Technical Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Technical Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Metadata validation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="brown" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="brown" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../technical_components/">
+          
+  
+    
+  
+  Technical Components
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/apis-intro/">
+          
+  
+    
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../infrastructure/infrastructure-intro/">
+          
+  
+    
+  
+  Infrastructure
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../governance/">
+        
+  
+    
+  
+  Governance
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../glossary/">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../print_page/">
+        
+  
+    
+  
+  Printable version
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Technical Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+    Technical Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Technical Components
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Technical Components
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technical_components/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ingestion/">
+<span class="md-ellipsis">
+    Harvester
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../storage/">
+<span class="md-ellipsis">
+    Repository Storage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../catalogue/">
+<span class="md-ellipsis">
+    Metadata Catalogue
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Metadata validation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Metadata validation
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-profile">
+<span class="md-ellipsis">
+      Metadata profile
+    </span>
+</a>
+<nav aria-label="Metadata profile" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#minimal-metadata-elements">
+<span class="md-ellipsis">
+      Minimal metadata elements
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejpeuso-metadata-profile">
+<span class="md-ellipsis">
+      EJP/EUSO Metadata profile
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#future-work">
+<span class="md-ellipsis">
+      Future work
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+<span class="md-ellipsis">
+      Functionality
+    </span>
+</a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-structure-validation">
+<span class="md-ellipsis">
+      Metadata structure validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-completeness-validation">
+<span class="md-ellipsis">
+      Metadata completeness validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-etsats-checking">
+<span class="md-ellipsis">
+      Metadata ETS/ATS checking
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#display-validation-results">
+<span class="md-ellipsis">
+      Display validation results
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#future-work_1">
+<span class="md-ellipsis">
+      Future work
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transformation/">
+<span class="md-ellipsis">
+    Transformation and Harmonisation Components
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../interlinker/">
+<span class="md-ellipsis">
+    Interlinker
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_augmentation/">
+<span class="md-ellipsis">
+    Metadata Augmentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../llm/">
+<span class="md-ellipsis">
+    Natural language Querying (NLQ)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dashboard/">
+<span class="md-ellipsis">
+    User Interface: Dashboard
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_management/">
+<span class="md-ellipsis">
+    User Management and Access Control
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../monitoring/">
+<span class="md-ellipsis">
+    Monitoring
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/apis-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/knowledge-extraction/">
+<span class="md-ellipsis">
+    API for knowledge extraction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/data-download/">
+<span class="md-ellipsis">
+    Data preview &amp; download APIs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/metadata-apis/">
+<span class="md-ellipsis">
+    Discovery APIs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/processing-apis/">
+<span class="md-ellipsis">
+    Processing APIs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/sparql/">
+<span class="md-ellipsis">
+    SPARQL API
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/infrastructure-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/containerization/">
+<span class="md-ellipsis">
+    Containerization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/git/">
+<span class="md-ellipsis">
+    GIT versioning system
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../print_page/">
+<span class="md-ellipsis">
+    Printable version
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-profile">
+<span class="md-ellipsis">
+      Metadata profile
+    </span>
+</a>
+<nav aria-label="Metadata profile" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#minimal-metadata-elements">
+<span class="md-ellipsis">
+      Minimal metadata elements
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejpeuso-metadata-profile">
+<span class="md-ellipsis">
+      EJP/EUSO Metadata profile
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#future-work">
+<span class="md-ellipsis">
+      Future work
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+<span class="md-ellipsis">
+      Functionality
+    </span>
+</a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-structure-validation">
+<span class="md-ellipsis">
+      Metadata structure validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-completeness-validation">
+<span class="md-ellipsis">
+      Metadata completeness validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-etsats-checking">
+<span class="md-ellipsis">
+      Metadata ETS/ATS checking
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#display-validation-results">
+<span class="md-ellipsis">
+      Display validation results
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#future-work_1">
+<span class="md-ellipsis">
+      Future work
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/soilwise-he/SoilWise-documentation/edit/main/tech/docs/technical_components/metadata_validation.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+</a>
+<h1 id="metadata-validation">Metadata validation</h1>
+<div class="admonition component-header">
+<p class="admonition-title">Info</p>
+<p><strong>Current version:</strong></p>
+<p><strong>Project:</strong> <a href="https://github.com/soilwise-he/metadata-validator">Metadata validator</a></p>
+</div>
+<p>In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the <a href="../ingestion/">Harvester Component</a>). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the <a href="../interlinker/">Interlinker component</a> and <a href="../metadata_augmentation/">Metadata augmentation</a>), this validation process can be repeated to understand the value which has been added by SWR.</p>
+<pre class="mermaid"><code>flowchart LR
+    HC(Harvest component)
+    HC --&gt; db[(Relation DB)]
+    HC --&gt; TS[(Triple Store)]
+    MV[Run Metadata validation] --&gt; |read| db
+    db --&gt; |write| MV
+    MV --&gt; |display validation results| MC(Metadata Catalogue)
+    MV --&gt; |display validation results| HA(Hale Connect Admin Console)
+    MP[Metadata profile configuration] --&gt; HA
+    HA --&gt; MV
+</code></pre>
+<h2 id="metadata-profile">Metadata profile</h2>
+<p>Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, ISO 19119, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:</p>
+<h3 id="minimal-metadata-elements">Minimal metadata elements</h3>
+<p>A minimal set of metadata elements was defined to validate which records can be displayed in the <a href="../catalogue/">Metadata Catalogue</a> so that basic search functions are enabled.</p>
+<p>TBD</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Cardinality</th>
+<th>Codelist</th>
+<th>DataCite</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>1-1</td>
+<td></td>
+<td>yes</td>
+<td>Short meaningful title</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejpeuso-metadata-profile">EJP/EUSO Metadata profile</h3>
+<p>This metadata profile was developed through EJP Soil project efforts and modified and approved by the EUSO Working Group.</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Cardinality</th>
+<th>Codelist</th>
+<th>DataCite</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identification</td>
+<td>1-1</td>
+<td></td>
+<td>yes</td>
+<td>Unique identification of the dataset (A UUID, URN, or URI, such as DOI)</td>
+</tr>
+<tr>
+<td>EUSO Data WG subgroup</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>The EUSO subgroups which contributed to this record</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Context: (e.g. EU-Project SOILCARE, EJP-Soil, Literature, ESDAC, etc.)</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>1-1</td>
+<td></td>
+<td>yes</td>
+<td>Short meaningful title</td>
+</tr>
+<tr>
+<td>Abstract</td>
+<td>1-1</td>
+<td></td>
+<td>yes</td>
+<td>Short description or abstract (1/2 page), can include (multiple) scientific/technical references</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>0-1</td>
+<td>yes</td>
+<td>yes</td>
+<td>File Format in which the data is maintained or published</td>
+</tr>
+<tr>
+<td>Extent (geographic)</td>
+<td>0-1</td>
+<td></td>
+<td>yes</td>
+<td>Geographical coverage (e.g. EU, EU &amp; Balkan, …)</td>
+</tr>
+<tr>
+<td>Reference period - Start</td>
+<td>0-1</td>
+<td></td>
+<td></td>
+<td>Reference period for the data - Start</td>
+</tr>
+<tr>
+<td>Reference period - End</td>
+<td>0-1</td>
+<td></td>
+<td></td>
+<td>Reference period - End; empty if ongoing</td>
+</tr>
+<tr>
+<td>Access constraints</td>
+<td>1-1</td>
+<td>yes</td>
+<td></td>
+<td>Indicates if the data is publicly accessible or the reason to apply access constaints</td>
+</tr>
+<tr>
+<td>Usage constraints</td>
+<td>1-1</td>
+<td>yes</td>
+<td>yes</td>
+<td>Indicates if there are legal usage constraints (license)</td>
+</tr>
+<tr>
+<td>Keywords</td>
+<td>0-1</td>
+<td></td>
+<td>yes</td>
+<td>Keywords; separated by ';'</td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>1-n</td>
+<td></td>
+<td>yes</td>
+<td>One Contact per line; name; organisation; email; role, where role is one of distributor, owner, pointOfContact, processor, publisher, metadata-contact</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>Source is a reference to another dataset which is used as a source for this dataset. Reference a single dataset per line; Title; Date; or provide a DOI;</td>
+</tr>
+<tr>
+<td>BackLinks</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>Other datasets that the current dataset is used as input source.</td>
+</tr>
+<tr>
+<td>Lineage</td>
+<td>1-1</td>
+<td></td>
+<td></td>
+<td>Statement on the origin and processing of the data</td>
+</tr>
+<tr>
+<td>Processing steps</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>Methods applied in data acquisition and processing: preferably reference a method from a standard (national, LUCAS, FAO, etc.). One processing step per line; Method; Date; Processor; Method reference; Comment</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>1-n</td>
+<td>yes</td>
+<td>yes</td>
+<td>Language, of the data and metadata, if metadata is multilingual multiple languages can be provided</td>
+</tr>
+<tr>
+<td>Reference system</td>
+<td>0-1</td>
+<td></td>
+<td></td>
+<td>Spatial Projection: drop down list of options, including ‘unknown’  (you can also leave out the field if it is unknown)</td>
+</tr>
+<tr>
+<td>Citation</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>Citations are references to articles which reference this dataset; one citation on each line; Title; Authors; Date; or provide a DOI</td>
+</tr>
+<tr>
+<td>Spatial resolution</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>Resolution (grid) or scale (vector)</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>0-1</td>
+<td>yes</td>
+<td></td>
+<td>Geometry for vector data</td>
+</tr>
+<tr>
+<td>Categorical Data</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Lookup tables for categorical data in raster data or in columns of vector data</td>
+</tr>
+<tr>
+<td>File / service Location</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>Url or path to the data file or service</td>
+</tr>
+<tr>
+<td>Maintenenance frequency</td>
+<td>0-1</td>
+<td>yes</td>
+<td></td>
+<td>Indication of the frequency of data updates</td>
+</tr>
+<tr>
+<td>Modification date</td>
+<td>0-1</td>
+<td></td>
+<td>yes</td>
+<td>Date of last modification</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>0-1</td>
+<td>yes</td>
+<td></td>
+<td>Status of the dataset</td>
+</tr>
+<tr>
+<td>Soil properties</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Soil properties described in this dataset</td>
+</tr>
+<tr>
+<td>Soil function</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Soil funtions described in this dataset</td>
+</tr>
+<tr>
+<td>Soil threats</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Soil threats described in this dataset</td>
+</tr>
+<tr>
+<td>Soil Indicators</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Soil indicators  described in this dataset</td>
+</tr>
+<tr>
+<td>Quality statement</td>
+<td>0-1</td>
+<td></td>
+<td></td>
+<td>A statement of quality or any other supplemental information</td>
+</tr>
+<tr>
+<td>Units of measure</td>
+<td>0-1</td>
+<td>yes</td>
+<td></td>
+<td>List of UoM from International System of Units</td>
+</tr>
+<tr>
+<td>Error descriptor</td>
+<td>0-n</td>
+<td></td>
+<td></td>
+<td>One or more measurements to describe the error and uncertainties in the dataset</td>
+</tr>
+<tr>
+<td>Percent Complete</td>
+<td>0-1</td>
+<td></td>
+<td></td>
+<td>The % of completeness</td>
+</tr>
+<tr>
+<td>Delivery</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>The  way the dataset is available (ie digital: download, viewer OR physical way: Shipping or in situ access)</td>
+</tr>
+<tr>
+<td>Theme/Category</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>One or more thematic categories of the dataset</td>
+</tr>
+<tr>
+<td>Possible End-users</td>
+<td>0-n</td>
+<td>yes</td>
+<td></td>
+<td>Possible end-users: citizens, scientific community, private sector, EU, member states, academia</td>
+</tr>
+</tbody>
+</table>
+<h3 id="future-work">Future work</h3>
+<p>In the following iterations, INSPIRE metadata profiles, ISO, and compliance with GloSIS will be inspected</p>
+<h2 id="functionality">Functionality</h2>
+<p>The metadata validation component currently comprises the following functions:</p>
+<ul>
+<li><a href="#metadata-structure-validation">Metadata structure validation</a></li>
+<li><a href="#metadata-completeness-validation">Metadata completeness check</a></li>
+<li><a href="#metadata-etsats-checking">Metadata ETS checking</a></li>
+<li><a href="#display-validation-results">Display validation results</a></li>
+</ul>
+<h3 id="metadata-structure-validation">Metadata structure validation</h3>
+<p>The initial steps of metadata validation comprise:</p>
+<ol>
+<li><strong>Markup (Syntax) Check:</strong> Verifying that the metadata adheres to the specified syntax rules. This includes checking for allowed tags, correct data types, character encoding, and adherence to naming conventions.</li>
+<li><strong>Schema (DTD) Validation:</strong> Ensuring that the metadata conforms to the defined schema or metadata model. This involves verifying that all required elements are present, and relationships between different metadata components are correctly established.</li>
+</ol>
+<h3 id="metadata-completeness-validation">Metadata completeness validation</h3>
+<p>Completeness of records is evaluated by:</p>
+<ul>
+<li>contains the required Minimal metadata elements (completeness according to SWR)</li>
+<li>contains the required elements endorsed by the adopted metadata standard itself </li>
+</ul>
+<p>Completeness according to SWR and completeness according to the adopted model results in quality indicators of a resource description.</p>
+<h3 id="metadata-etsats-checking">Metadata ETS/ATS checking</h3>
+<p><strong>Abstract Executable Test Suites (ATS)</strong> define a set of abstract test cases or scenarios that describe the expected behaviour of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation and provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviours of the metadata under various conditions.</p>
+<p><strong>Executable Test Suites (ETS)</strong> are sets of tests designed according to ATS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata. These checks can include:</p>
+<ol>
+<li><strong>Data Integrity:</strong> Checking for inconsistencies or errors within the metadata. This includes identifying missing values, conflicting information, or data that does not align with predefined constraints.</li>
+<li><strong>Standard Compliance:</strong> Assessing whether the metadata complies with relevant industry standards, such as Dublin Core, MARC, or specific domain standards like those for scientific data or library cataloguing.</li>
+<li><strong>Interoperability:</strong> Evaluating the metadata's ability to interoperate with other systems or datasets. This involves ensuring that metadata elements are mapped correctly to facilitate data exchange and integration across different platforms.</li>
+<li><strong>Versioning and Evolution:</strong> Considering the evolution of metadata over time and ensuring that the validation process accommodates versioning requirements. This may involve tracking changes, backward compatibility, and migration strategies.</li>
+<li><strong>Quality Assurance:</strong> Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.</li>
+<li><strong>Documentation:</strong> Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.</li>
+</ol>
+<h3 id="display-validation-results">Display validation results</h3>
+<p>TBD</p>
+<h2 id="technology">Technology</h2>
+<p><a href="https://wetransform.to/haleconnect/" target="_blank">Hale Connect</a></p>
+<ul>
+<li><strong>User Guide:</strong>: <a href="https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start">https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start</a></li>
+</ul>
+<!--
+Various technologies use dedicated mechanisms to validate inputs on type matching and completeness
+
+- XML (Dublin core, iso19115, Datacite) validation - XSD schema, potentially extended with Schematron rules
+- json (OGC API - Records/STAC) - json schema
+- RDF (schema.org, dcat) - SHACL
+-->
+<h2 id="future-work_1">Future work</h2>
+<ul>
+<li>on-demand metadata validation, which would generate reports for user-uploaded metadata</li>
+<li>applicability of <a href="https://www.iso.org/standard/78900.html">ISO19157 Geographic Information – Data quality</a> (i.e. the standard intended for data validations) for metadata-based validation reports.</li>
+<li>ETS for GloSIS are not existing and need to be configured</li>
+<li><a href="https://www.w3.org/TR/shacl/" target="_blank">Shacl</a> is is in general intended for semantic web related validations; however, it's exact scope will be determined during the SoilWise developments. </li>
+</ul>
+<!--
+## Data quality assurance
+
+- Automated validations on datasets to check if statements in metadata on resolution, projection, spatial/temporal bounds, accuracy, classification, uncertainty are correct.
+- If a metadata record has no statements on these aspects, findings fom the validation will be used instead.
+- understand the history of a data file is of interest, with every download save the hash of the file, to know if it was changed since last download and if this change was properly documented.
+
+- Impact of validation? Tag the record with the actual value, notify the owner of our findings, On the UI show only the updated values, decrease the record quality score (impacting search ranking).
+
+- Prevent to download data for every validation by checking against modification date.
+- Run a full check at monthly intervals in case files are changed without updating the modification date.
+- If data is provided as a service (or cloud optimised) a subset of the data may be extracted for the validation.
+
+**Requirements to storage component:**
+
+- For any data link in a metadata record, keep a registry of its validation result (keep a copy of (or reference to) the metadata record at that moment)
+- A registry to keep record overrides introduced by validations
+- A registry to track conversation with the data owner on validation results
+
+**Impact on search engine:**
+
+- decrease ranking in case metadata has many inconsistencies related to data quality
+
+- [GeoHealthCheck](https://geohealthcheck.org) could be an interesting platform to monitor quality of data. 
+-->
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 1, 2024</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - 2027 <a href="https://cordis.europa.eu/project/id/101112838">SoilWise Soil Mission Horizon Europe project No. 101112838</a>
+</div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/soilwise-project-eu/" rel="noopener" target="_blank" title="SoilWise on LinkedIn">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/profile.php?id=61551552876700" rel="noopener" target="_blank" title="SoilWise on Facebook">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+<script src="../../js/print-site.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
