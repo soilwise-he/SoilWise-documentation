@@ -108,25 +108,8 @@ For metadata harmonization some supporting modules are used, [owslib](https://ow
 
 ## Architecture
 
-Below are described 3 options for a harvesting infrastructure. The main difference is the scalability of the solution, which is mainly dependent on the frequency and volume of the harvesting. 
-
-### Traditional approach
-
-Traditionally, a harvesting script is triggered by a cron job.
-
-``` mermaid
-flowchart LR
-    HC(Harvest configuration) --> AID
-    AID(Harvest component)
-    RW[RDFwriter] --> MC[(Triple Store)]
-    AID --> RS[(Remote sources)]
-    AID --> RW
-    RS --> AID
-```
-
-### Containerised approach
-
-In this approach, each harvester runs in a dedicated container. The result of the harvester is ingested into a (temporary) storage, where follow up processes pick up the results. Typically, these processes use existing containerised workflows such as GIT CI-CD, Google Cloud run, etc.
+Each harvester runs in a dedicated container. The result of the harvester is ingested into a (temporary) storage.
+Follow up processes (harmonization, augmentation, validation) pick up the results from the temporary storage. 
 
 ``` mermaid
 flowchart LR
@@ -136,25 +119,7 @@ flowchart LR
     hc -->|harvests| db[(temporary storage)]
     hc -->|data cleaning| db[(temporary storage)]
 ```
-
-### Microservices approach
-
-The microservices approach uses a dedicated message queue where dedicated runners pick up harvesting tasks, validation tasks and cleaning tasks as soon as they are scheduled. Runners write their results back to the message queue, resulting in subsequent tasks to be picked up by runners.
-
-``` mermaid
-flowchart LR
-    HC(Harvest configuration) -->|trigger| MQ[/MessageQueue\]
-    MQ -->|task| AID
-    AID --> MQ
-    MQ -->|task| DC
-    DC --> MQ
-    MQ -->|write| RW[RDFwriter]
-    AID(Harvest component)
-    RW --> MC[(Triple Store)]
-    AID --> RS[(Remote sources)]
-```
-
-In the beginning of the SoilWise development process, SoilWise will focus on the second approach. Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/actions){target=_blank}, Git subsequently provides options to cancel and trigger tasks and review CI-CD logs to check errors
+Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/actions){target=_blank}, Git provides options to cancel and trigger tasks and review CI-CD logs to check errors
 
 ### Duplicates / Conflicts
 
