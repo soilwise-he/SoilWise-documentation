@@ -1,4 +1,4 @@
-# Metadata validation
+# Metadata Validation
 
 !!! component-header "Info"
     **Current version:**
@@ -10,7 +10,7 @@ In terms of metadata, SoilWise Repository aims for the approach to harvest and r
 
 ``` mermaid
 flowchart LR
-    HC(Harvest component)
+    HC(Harvester)
     HC --> db[(Relation DB)]
     HC --> TS[(Triple Store)]
     MV[Run Metadata validation] --> |read| db
@@ -126,13 +126,13 @@ Completeness according to SWR and completeness according to the adopted model re
 
 ### Display validation results
 
-TBD
+Currently, validation results are available only in the Hale Administration Console for authorised user. A tag indicating `EUSO compliance` assigned to metadata records and visible in the [SWR Catalogue](catalogue.md) is envisioned in the future. `INSPIRE compliance` will be displayed to authorised users.
 
-## Technology
+## Technology & Integration opportunities
 
-[Hale Connect](https://wetransform.to/haleconnect/){target=_blank}
+[Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
 
-- **User Guide:**: <https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start>
+The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
 <!--
 Various technologies use dedicated mechanisms to validate inputs on type matching and completeness
@@ -144,6 +144,7 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 
 ## Future work
 
+- display validation results in the SoilWise Catalogue
 - on-demand metadata validation, which would generate reports for user-uploaded metadata
 - applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports.
 - ETS for GloSIS are not existing and need to be configured
