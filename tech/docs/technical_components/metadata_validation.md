@@ -1,9 +1,11 @@
 # Metadata Validation
 
 !!! component-header "Info"
-    **Current version:**
+    **Current version:** 
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
+    
+    **Access point:** <https://data.soilwise.wetransform.eu/#/home> (authorization needed)
 
 
 In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md) and [Metadata augmentation](metadata_augmentation.md)), this validation process can be repeated to understand the value which has been added by SWR.
