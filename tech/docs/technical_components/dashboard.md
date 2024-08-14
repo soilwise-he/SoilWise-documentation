@@ -12,73 +12,14 @@ Other parts of the dashboard are:
 
 SoilWise Dashboard is intended to support the implementation of User stories, deliver useful and usable apps for various stakeholders, provide interface for user testing and present data and knowledge in useable way.
 
-
-## Search interface on metadata
-
-A typical example of a catalogue search interface is the current [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/resource-type/soil-functions-data).
-
-### Ranking, relations, full-text search, and filtering
-
-Optimal search capabilities are provided by the catalogue backend, this component leverages these capabilities to provide users with an optimal user interface to effectively use those capabilities.
-
-The EJPSoil prototype, foreseen to be re-used within SoilWise, uses a tailored frontend, focusing on:
-
-- Paginated search results, sorted alphabetically, by date
-- Minimalistic User Interface, to prevent a technical feel
-- Option to filter by facets
-- Option to provide feedback to publisher/author
-- Readable link in the browser bar, to facilitate link sharing
-- Preview of the dataset (if a OGC:Service is available), else display of its spatial extent
-
-What can be improved:
-
-- Show relations to other records
-- Better distinguish link types; service/api, download, records, documentation, etc.
-- Indication of remote link availability/conformance
-- If a record originates from (multiple) catalogues, add a link to the origin
-- Ranking (backend)
-
-#### Technology
-
-- Jinja2 templates (html, css) as a tailored skin on pycsw/pygeoapi, or dedicated frontend (vuejs, react)
-- Leaflet/OpenLayers/MapLibre
-
 ### Chatbot
 
 [Large Language models](llm.md) (LLM) enriched with SoilWise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer but also provide references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in gaining access to the source, using which software, for example.
-
-### Map viewer
-
-A light-weight client map viewer component will be employed:
-
-- as a frontend of [Map Server](mapserver.md) component to visualize provided WMS, WFS, WCS layers
-- as an integrated part of the Catalogue to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
-- to provide the full preview of data, when a link to web service or data browse graphics (preview image) is available
-
-A dedicated mapviewer, such as [TerriaJS](https://terria.io){target=_blank}, can support users in accessing relevant data which has been prepared for optimal consumption in a typical GIS Desktop environment. For example maps of spatial distribution of soil properties or health indicators over Europe. A typical example is [Soilgrids](https://soilgrids.org){target=_blank}.
-
-An interesting aspect of a community like EUSO is the ability to prepare and share a map with stakeholders to trigger some discussion on phenomena at a location.
-
-Examine the need for viewing novel formats such as Vector tiles, [COG](https://www.cogeo.org/){target=_blank}, [GeoZarr](https://github.com/zarr-developers/geozarr-spec){target=_blank}, [GeoParquet](https://geoparquet.org/){target=_blank} directly on a map background. The benefit of these formats is that no (OGC) service is required to facilitate data visualisation.
 
 #### Technology
 
 [TerriaJS](https://terria.io){target=_blank} is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.
 
-
-## Overview of catalogue content
-
-### Traditional dashboards 
-
-The [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/overview?view=themeOverview&theme=tn) increased its usage with their new dashboard-like interface for each EU Member State the number of published datasets per topic is upfront in the application. Dashboards on catalogue content provide mechanisms to generate overviews of that content to provide such insight.
-
-### Technology
-
-The [EJP Soil Catalogue Dashboard](https://dashboards.isric.org/superset/dashboard/29) is based on Apache Superset, with direct access to the PostgreSQL database containing the catalogue records. GeoNode recently implemented Superset, enabling users to define their diagrams on relevant data from the catalogue (as an alternative to a map viewer).
-
-Dashboarding functionality is available in Geonetwork, using the Elastic Search Kibana dashboarding. Similar functionality for the pycsw needs to be investigated, verified respectively. 
-
-The source data for the dashboards is very likely enriched with AI-generated indicators. LLMs also seem able to provide overviews of sets of content.
 
 ## Manual data & metadata authoring
 

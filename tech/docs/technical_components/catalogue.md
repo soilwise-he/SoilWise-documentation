@@ -1,9 +1,11 @@
 # Metadata Catalogue
 
 !!! component-header "Info"
-    **Current version:** 
+    **Current version:** v3.0b.2024-july
 
-    **Project:** [Dashboard](https://github.com/soilwise-he/pycsw)
+    **Project:** [pycsw](https://github.com/soilwise-he/pycsw)
+
+    **Access point:** <https://soilwise-he.containers.wur.nl/cat/>
     
 The metadata catalogue is a central piece of the architecture, collecting and
 giving access to individual metadata records. In the geo-spatial domain,
@@ -19,92 +21,95 @@ catalogues approach the functionalities of a Content Management System (CMS).
 The remainder of this section reviews two popular open-source geo-spatial
 metadata catalogues: [GeoNetwork](#geonetwork) and [pycsw](#pycsw).
 
-## GeoNetwork
+## Functionality
 
-This web-based software is centred on metadata management, providing rich
-edition forms. The editor supports the ISO19115/119/110 standards used for
-spatial resources and also Dublin Core. The user can upload data, graphics,
-documents, PDF files and any other content type to augment metadata records.
-Among others, GeoNetwork supports:
+The SoilWise prototype uses a tailored frontend, focusing on:
 
-- multilingual metadata record edition,
-- validation system,
-- automated suggestions for quality improvement,
-- publication of geo-spatial layers to software compliant with OGC services (e.g. GeoServer).
+- Minimalistic User Interface, to prevent a technical feel
+- Paginated search results, sorted alphabetically, by date, see more information in Chapter [Query Catalogue](#query-catalogue)
+- Option to filter by facets, see more information in Chapter [Query Catalogue](#query-catalogue)
+- Preview of the dataset (if a OGC:Service is available), else display of its spatial extent, see more information in Chapter [Display record's detail](#display-records-detail)
+- Option to provide feedback to publisher/author, , see more information in Chapter [User Engagement](#user-engagement)
+- Readable link in the browser bar, to facilitate link sharing
 
-GeoNetwork implements the following protocols:
+### Query Catalogue
 
-- OGC CSW
-- OAI-PMH
-- OpenSearch
-- Z39.50
+The SoilWise Catalogue currently enables the following search options:
 
+- [fulltext search](#fulltext-search)
+- [faceted search](#faceted-search)
 
-The metadata harvesting feature is quite broad, able to interact with the following resources:
+50 results are displayed per page in alphabetical order, in the form of overview table comprising preview of title, abstract, contributor, type and date. Search items set through user interface is also reflected in the URL to facilitate sharing.
 
-- OGC-CSW 2.0.2 ISO Profile
-- OAI-PMH
-- Z39.50 protocols
-- Thredds
-- Webdav
-- Web Accessible Folders
-- ESRI GeoPortal
-- Other GeoNetwork node
+#### Fulltext search
 
-Besides the core metadata management functions, GeoNetwork also provides
-useful monitoring and reporting tools. It is able to easily synthesise the
-content of the catalogue with statistics and graphics. A system status is also
-available to the system administrator.
+Fulltext search is currently enabled through certain attributes: title, keywords, abstract, contributor. Full list of queryables can be found at: <https://soilwise-he.containers.wur.nl/cat/collections/metadata:main/queryables>.
 
-### Use cases
+Fulltext search currently supports only nesting words with AND operator.
 
-The GeoNetwork project started out in 2001 as a [Spatial Data Catalogue
-System for the Food and Agriculture
-organisation](https://www.fao.org/land-water/databases-and-software/geonetwork/en/){target=_blank}
-of the United Nations (FAO), the United Nations World Food Programme (WFP) and
-the United Nations Environmental Programme (UNEP). Other relevant projects and
-institutions using GeoNetwork include:
+_TBD - describe OGC Record's API, CQL_
 
-- [European Marine Observation and Data Network](https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/home){target=_blank} (EMODnet)
-- [Federal Geographic Data
-  Committee](https://www.fgdc.gov/organization/working-groups-subcommittees/mwg/iso-metadata-editors-registry/geonetwork-opensource){target=_blank}
-of the United States (FGDC)
-- [Scotland’s catalogue of spatial
-  data](https://www.spatialdata.gov.scot/geonetwork/srv/eng/catalog.search#/home){target=_blank}
-- [National Centers for Coastal Ocean Science](https://coastalscience.noaa.gov/products/geonetwork/){target=_blank} of the United States (NCCOS)
+#### Faceted search
 
-## pycsw
+- search by record's type (dataset, service, software, text, knowledge source)
+- search by source repository
+- search by country
+
+#### Future work
+
+- extend fulltext search; allow complex queries using exact match, OR,...
+
+### Display record's detail
+
+After clicking result's table item, a record's detail is displayed at unique URL address to facilitate sharing. Record's detail currently comprises:
+
+- record's type tag
+- Full title
+- Full abstract
+- keywords' tags
+- preview of record's geographical extent, see [Map preview](#map-preview)
+- record's preview image, if available
+- Links section with links to original repository, _TBD_...
+- all other record's items
+- section enabling [User Engagement](#user-engagement)
+- Last update date
+
+### Map preview
+
+SoilWise Catalogue currently supports only simple map preview of record's geographical extent, which is available in the record's detail and also on the search results page (aggregated for current search results). Map preview uses [Leaflet](https://leafletjs.com/){target=_blank} and enables standard simple user interaction (zoom, changing backdrop layers).
+
+### Data download (AS IS)
+
+Download of data "as is" is currently supported through Links section from the harvested repository.
+
+### Display link to knowledge
+
+_TBD_
+
+### CSW API
+
+_TBD_
+
+### OGC API Catalogue
+
+_TBD_
+
+### User Engagement
+
+_TBD_
+
+### Future work
+
+- display metadata augmentation results
+- display metadata validation results
+- Show relations to other records
+- Better distinguish link types; service/api, download, records, documentation, etc.
+- Indication of remote link availability/conformance
+- If a record originates from (multiple) catalogues, add a link to the origin
+- Ranking (backend)
+
+## Technology & Integration
 
 [pycsw](https://pycsw.org){target=_blank}  is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OpenSearch](https://opensearch.org/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, [SRU](https://developers.exlibrisgroup.com/rosetta/integrations/standards/sru/){target=_blank}), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
 
-- Technology: python
-- License: MIT
-- OSGeo project
-
-### Functionality
-
-Functionality of the pycsw is from the SoilWise perspective identical to GeoNetwork's functionality.
-
-- query metadata
-  - M: filter by (configurable set of) properties (AND/OR/NOT, FullTextSearch, by geography)
-  - M: Sorting and pagination
-  - S: aggregate results (faceted search)
-  - W: customise ranking of the results
-- OGC:CSW, OGCAPI:Records, OAI-PMH
-- Search engine discoverability / Schema.org
-- Link to data download / data preview
-
-#### Use cases
-
-pycsw is a core component of [GeoNode](https://geonode.org){target=_blank} and is the core of the [CKAN spatial extension](https://extensions.ckan.org/extension/spatial/){target=_blank}, used for example by FAO. pycsw is used in various projects:
-
-- [EJPSoil](https://catalogue.ejpsoil.eu){target=_blank}
-- [Land Soil Crop hubs, Kenya, Ethiopia and Rwanda](https://kenya.lsc-hubs.org/cat/){target=_blank}
-
-In preparation:
-
-- Soils for Africa
-
-
-
-
+The SWR catalogue component will show its full potential when integrated to (1) [Harvester](ingestion.md), (2) [Storage of metadata](storage.md#storage-of-metadata),  (3) [Metadata Augmentation](metadata_augmentation.md) and [Metadata Validation](metadata_validation.md).

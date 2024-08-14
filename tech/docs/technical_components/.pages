@@ -10,6 +10,5 @@ nav:
     - interlinker.md
     - metadata_augmentation.md
     - llm.md
-    - dashboard.md
     - user_management.md
     - monitoring.md
