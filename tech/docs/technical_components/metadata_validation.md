@@ -4,7 +4,7 @@
     **Current version:** 
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
-    
+
     **Access point:** <https://data.soilwise.wetransform.eu/#/home> (authorization needed)
 
 
@@ -27,6 +27,7 @@ flowchart LR
 
 Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, ISO 19119, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:
 
+<!--
 ### Minimal metadata elements
 
 A minimal set of metadata elements was defined to validate which records can be displayed in the [Metadata Catalogue](catalogue.md) so that basic search functions are enabled.
@@ -36,52 +37,58 @@ TBD
 | Label                       | Cardinality | Codelist | DataCite | Description                                                                                               |
 |-----------------------------|-------------|----------|----------|-----------------------------------------------------------------------------------------------------------|
 | Title                       | 1-1         |          | yes      | Short meaningful title                                                                                    |
+-->
 
 
 ### EJP/EUSO Metadata profile 
 
 This metadata profile was developed through EJP Soil project efforts and modified and approved by the EUSO Working Group.
 
-| Label                       | Cardinality | Codelist | DataCite | Description                                                                                               |
-|-----------------------------|-------------|----------|----------|-----------------------------------------------------------------------------------------------------------|
-| Identification              | 1-1         |          | yes      | Unique identification of the dataset (A UUID, URN, or URI, such as DOI)                                   |
-| EUSO Data WG subgroup       | 0-n         | yes      |          | The EUSO subgroups which contributed to this record                                                       |
-| Context                     | 0-n         | yes      |          | Context: (e.g. EU-Project SOILCARE, EJP-Soil, Literature, ESDAC, etc.)                                    |
-| Title                       | 1-1         |          | yes      | Short meaningful title                                                                                    |
-| Abstract                    | 1-1         |          | yes      | Short description or abstract (1/2 page), can include (multiple) scientific/technical references          |
-| Format                      | 0-1         | yes      | yes      | File Format in which the data is maintained or published                                                  |
-| Extent (geographic)         | 0-1         |          | yes      | Geographical coverage (e.g. EU, EU & Balkan, …)                                                           |
-| Reference period - Start    | 0-1         |          |          | Reference period for the data - Start                                                                     |
-| Reference period - End      | 0-1         |          |          | Reference period - End; empty if ongoing                                                                  |
-| Access constraints          | 1-1         | yes      |          | Indicates if the data is publicly accessible or the reason to apply access constaints                     |
-| Usage constraints           | 1-1         | yes      | yes      | Indicates if there are legal usage constraints (license)                                                  |
-| Keywords                    | 0-1         |          | yes      | Keywords; separated by ';'                                                                                |
-| Contact                     | 1-n         |          | yes      | One Contact per line; name; organisation; email; role, where role is one of distributor, owner, pointOfContact, processor, publisher, metadata-contact |
-| Source                      | 0-n         |          |          | Source is a reference to another dataset which is used as a source for this dataset. Reference a single dataset per line; Title; Date; or provide a DOI; |
-| BackLinks                   | 0-n         |          |          | Other datasets that the current dataset is used as input source.                                          |
-| Lineage                     | 1-1         |          |          | Statement on the origin and processing of the data                                                        |
-| Processing steps            | 0-n         |          |          | Methods applied in data acquisition and processing: preferably reference a method from a standard (national, LUCAS, FAO, etc.). One processing step per line; Method; Date; Processor; Method reference; Comment |
-| Language                    | 1-n         | yes      | yes      | Language, of the data and metadata, if metadata is multilingual multiple languages can be provided        |
-| Reference system            | 0-1         |          |          | Spatial Projection: drop down list of options, including ‘unknown’  (you can also leave out the field if it is unknown) |
-| Citation                    | 0-n         |          |          | Citations are references to articles which reference this dataset; one citation on each line; Title; Authors; Date; or provide a DOI |
-| Spatial resolution          | 0-n         |          |          | Resolution (grid) or scale (vector)                                                                       |
-| Geometry                    | 0-1         | yes      |          | Geometry for vector data                                                                                  |
-| Categorical Data            | 0-n         | yes      |          | Lookup tables for categorical data in raster data or in columns of vector data                            |
-| File / service Location     | 0-n         |          |          | Url or path to the data file or service                                                                   |
-| Maintenenance frequency     | 0-1         | yes      |          | Indication of the frequency of data updates                                                               |
-| Modification date           | 0-1         |          | yes      | Date of last modification                                                                                 |
-| Status                      | 0-1         | yes      |          | Status of the dataset                                                                                     |
-| Soil properties             | 0-n         | yes      |          | Soil properties described in this dataset                                                                 |
-| Soil function               | 0-n         | yes      |          | Soil funtions described in this dataset                                                                   |
-| Soil threats                | 0-n         | yes      |          | Soil threats described in this dataset                                                                    |
-| Soil Indicators             | 0-n         | yes      |          | Soil indicators  described in this dataset                                                                |
-| Quality statement           | 0-1         |          |          | A statement of quality or any other supplemental information                                              |
-| Units of measure            | 0-1         | yes      |          | List of UoM from International System of Units                                                            |
-| Error descriptor            | 0-n         |          |          | One or more measurements to describe the error and uncertainties in the dataset                           |
-| Percent Complete            | 0-1         |          |          | The % of completeness                                                                                     |
-| Delivery                    | 0-n         | yes      |          | The  way the dataset is available (ie digital: download, viewer OR physical way: Shipping or in situ access) |
-| Theme/Category              | 0-n         | yes      |          | One or more thematic categories of the dataset                                                            |
-| Possible End-users          | 0-n         | yes      |          | Possible end-users: citizens, scientific community, private sector, EU, member states, academia           |
+
+| Label | Cardinality | Codelist | Description |
+| ---   | ---         | ---      | ---         |
+| Identification | 1-n | | Unique identification of the dataset (A UUID, URN, or URI, such as DOI) |
+| Title | 1-1 | | Short meaningful title |
+| Abstract | 1-1 | | Short description or abstract (1/2 page), can include (multiple) scientific/technical references |
+| Extent (geographic) | 0-1 | BBOX or Geonames | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) |
+| Reference period - Start | 0-1 | | Reference period for the data - Start |
+| Reference period - End | 0-1 | | Reference period - End; empty if ongoing |
+| Access constraints | 1-1 | INSPIRE | Indicates if the data is publicly accessible or the reason to apply access constaints |
+| Usage constraints | 1-1 | INSPIRE | Indicates if there are legal usage constraints (license) |
+| Keywords | 0-n |  | Keywords |
+| Contact  | 1-n |  | name; organisation; email; role, where role is one of distributor, owner, pointOfContact, processor, publisher, metadata-contact |
+| Source   | 0-n |  | Source is a reference to another dataset which is used as a source for this dataset. Reference a single dataset per line; Title; Date; or provide a DOI; |
+| isSourceOf | 0-n |  | Other datasets that the current dataset is used as input source |
+| Lineage  | 1-1 |  | Statement on the origin and processing of the data |
+| Processing steps | 0-n |  | Methods applied in data acquisition and processing: preferably reference a method from a standard (national, LUCAS, FAO, etc.). One processing step per line; Method; Date; Processor; Method reference; Comment |
+| Language | 1-n | ISO | Language, of the data and metadata, if metadata is multilingual multiple languages can be provided |
+| Reference system | 0-1 | CRS | Spatial Projection: drop down list of options, including ‘unknown’  (you can also leave out the field if it is unknown) |
+| Citation | 0-n |  | Citations are references to articles which reference this dataset; one citation on each line; Title; Authors; Date; or provide a DOI |
+| Spatial resolution | 0-n |  | Resolution (grid) or scale (vector) |
+| Data type | 0-1 | table, vector, grid | The type of data |
+| Geometry type | 0-1 | point, line, polygon, ... | Geometry type for vector data |
+| File / service Location | 0-n |   | Url or path to the data file or service |
+| Format | 0-n | IANA | File Format in which the data is maintained or published |
+| Delivery | 0-n |  | The  way the dataset is available (ie digital: download, viewer OR physical way: Shipping or in situ access )  |
+| Maintenenance frequency | 0-1 | ISO | Indication of the frequency of data updates |
+| Modification date | 0-1 |  | Date of last modification |
+| Status | 0-1 | ISO | Status of the dataset |
+| Subject - Spatial scope | 0-n | INSPIRE | The scope of the dataset, e.g. regional, national, continental |
+| Subject - Soil properties | 0-n | INSPIRE | Soil properties described in this dataset |
+| Subject - Soil function | 0-n | INSPIRE  | Soil funtions described in this dataset |
+| Subject - Soil threats | 0-n | INSPIRE | Soil threats described in this dataset |
+| Subject - Soil Indicators | 0-n | INSPIRE | Soil indicators  described in this dataset |
+| Subject - EUSO Data WG subgroup | 0-n | EUSO | The EUSO subgroups which contributed to this record |
+| Subject - Context | 0-n | EUSO | Context: (e.g. EU-Project SOILCARE, EJP-Soil, Literature, ESDAC, etc.) |
+| Subject - Possible End-users | 0-n | EUSO | Possible end-users: citizens, scientific community, private sector, EU, member states, academia |
+| Subject - Category | 0-n | EUSO | One or more thematic categories of the dataset |
+| Quality statement | 0-1 | | A statement of quality or any other supplemental information |
+| Datamodel/dimensions | 0-1 | | The datamodel (table) or dimensions (grid) of the dataset |
+| Units of measure | 0-n | ISU | List of UoM from International System of Units, at attribute/dimension level |
+| Attribute type | 0-n | string, number, date | The type of attribute |
+| Categorical Data | 0-n |  | Lookup tables for categorical data, at attribute/dimension level |
+| Uncertainty | 0-n |  | Method used to assess uncertainty and its result. For example: One or more measurements to describe the error and uncertainties in the dataset |
+| Completeness | 0-1 |  | The % of completeness |
 
 
 ### Future work
@@ -108,10 +115,10 @@ The initial steps of metadata validation comprise:
 
 Completeness of records is evaluated by:
 
-- contains the required Minimal metadata elements (completeness according to SWR)
+<!-- - contains the required Minimal metadata elements (completeness according to SWR-->
 - contains the required elements endorsed by the adopted metadata standard itself 
 
-Completeness according to SWR and completeness according to the adopted model results in quality indicators of a resource description.
+Completeness according <!--to SWR and completeness according--> to the adopted model results in quality indicators of a resource description.
 
 ### Metadata ETS/ATS checking
 
@@ -130,7 +137,7 @@ Completeness according to SWR and completeness according to the adopted model re
 
 Currently, validation results are available only in the Hale Administration Console for authorised user. A tag indicating `EUSO compliance` assigned to metadata records and visible in the [SWR Catalogue](catalogue.md) is envisioned in the future. `INSPIRE compliance` will be displayed to authorised users.
 
-## Technology & Integration opportunities
+## Technology & Integration
 
 [Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
 
