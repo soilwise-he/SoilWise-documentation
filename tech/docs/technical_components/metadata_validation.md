@@ -31,13 +31,17 @@ Metadata profile specifies the required metadata elements that must be included 
 
 A minimal set of metadata elements was defined to validate completeness of metadata record against the optimal performace prerequisites of SWR platform.
 
-| Label | Cardinality | Codelist | Description |
-| ---   | ---         | ---      | ---         |
-| Title | 1-1         |          | Short meaningful title |
-| Abstract | 1-1      |          | Short description or abstract (1/2 page), can include (multiple) scientific/technical references |
-| Contributor | 1-n   |          | name; organisation; email; role, where role is one of distributor, owner, pointOfContact, processor, publisher, metadata-contact |
-| Date | 1-1          |          | last update date | 
-| Extent (geographic) | 0-1 | BBOX or Geonames | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) |
+| Label | Description |
+| ---   | ---         |
+| Identification | Unique identification of the dataset (A UUID, URN, or URI, such as DOI) |
+| Title | Short meaningful title |
+| Abstract | Short description or abstract (1/2 page), can include (multiple) scientific/technical references |
+| Contributor | An entity responsible for making contributions to the content of the resource (e.g. person or organisation name) |
+| Date | Last update date | 
+| Type | The nature or genre of the content of the resource |
+| Rights | Information about rights and licences |
+| Extent (geographic) | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) |
+| Online source | Location (address) for online access from which the resource can be obtained |
 
 ### EJP/EUSO Metadata profile 
 
