@@ -16,11 +16,6 @@ SoilWise Dashboard is intended to support the implementation of User stories, de
 
 [Large Language models](llm.md) (LLM) enriched with SoilWise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer but also provide references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in gaining access to the source, using which software, for example.
 
-#### Technology
-
-[TerriaJS](https://terria.io){target=_blank} is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.
-
-
 ## Manual data & metadata authoring
 
 !!! component-header "Info"
