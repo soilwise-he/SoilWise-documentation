@@ -1,9 +1,9 @@
-# Natural language Querying (NLQ)
+# Natural Language Querying (NLQ)
 
 !!! component-header "Info"
     **Current version:**
 
-    **Project:** [Natural language querying](https://github.com/soilwise-he/natural-language-querying)
+    **Project:** [Natural Language querying](https://github.com/soilwise-he/natural-language-querying)
 
 LLM (and less complex Natural Language Processing (NLP) approaches) can be used to perform tasks in [metadata optimisation](#metadata-optimization) (e.g. identify similarities, resolve conflicts, populate gaps, classify or summarize resources). 
 

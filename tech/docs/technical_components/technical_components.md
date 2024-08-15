@@ -7,15 +7,14 @@ The presented architecture represents an outlook and a framework for ongoing Soi
 This section lists technical components for building the SoilWise Repository as forseen in the architecture design. As for now, the following components are foreseen:
 
 1. [Harvester](ingestion.md)
-2. [Repository storage](storage.md)
+2. [Repository Storage](storage.md)
 3. [Catalogue](catalogue.md)
 4. [Metadata Validation](metadata_validation.md)
 5. [Transformation and Harmonistation](transformation.md)
-6. [Metadata Augmentation](metadata_augmentation.md)
-7. [Interlinker](interlinker.md)
+6. [Metadata Authoring](metadata_authoring.md)
+7. [Metadata Augmentation](metadata_augmentation.md)
 8. [Knowledge Graph](knowledge_graph.md)
-9. [Natural language querying](llm.md)
-10. [User interface: Dashboard](dashboard.md)
+9. [Natural Language Querying](llm.md)
 11. [User Management and Access Control](user_management.md)
 12. [System Usage & Monitoring](monitoring.md)
 

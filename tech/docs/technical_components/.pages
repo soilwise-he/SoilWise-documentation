@@ -6,9 +6,9 @@ nav:
     - storage.md
     - catalogue.md
     - metadata_validation.md
+    - metadata_authoring.md
     - transformation.md
     - metadata_augmentation.md
-    - interlinker.md
     - knowledge_graph.md
     - llm.md
     - user_management.md

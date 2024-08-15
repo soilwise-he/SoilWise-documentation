@@ -136,6 +136,24 @@ Completeness according to SWR and completeness according to the adopted model re
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
+### Link liveliness assessment 
+
+!!! component-header "Info"
+    **Current version:**
+
+    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
+
+Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
+
+The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness checker privides:
+
+- up to date health status of every assessed link
+- health status history
+- analytics functions, e.g. aggregating health status history to generate health indicators for UI visualisation. 
+
+!! @Vassilis to add relevant details
+
+
 ### Display validation results
 
 Currently, validation results are available only in the Hale Administration Console for authorised user. 
