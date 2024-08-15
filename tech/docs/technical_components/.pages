@@ -7,8 +7,9 @@ nav:
     - catalogue.md
     - metadata_validation.md
     - transformation.md
-    - interlinker.md
     - metadata_augmentation.md
+    - interlinker.md
+    - knowledge_graph.md
     - llm.md
     - user_management.md
     - monitoring.md

@@ -1,4 +1,4 @@
-# Transformation and Harmonisation Components
+# Transformation and Harmonisation
 
 !!! component-header "Info"
 

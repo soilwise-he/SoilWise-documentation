@@ -10,13 +10,14 @@ This section lists technical components for building the SoilWise Repository as 
 2. [Repository storage](storage.md)
 3. [Metadata Catalogue](catalogue.md)
 4. [Metadata Validation](metadata_validation.md)
-5. [Transformation and Harmonistation Components](transformation.md)
-6. [Interlinker](interlinker.md)
-7. [Metadata Augmentation](metadata_augmentation.md)
-8. [Natural language querying](llm.md)
-9. [User interface: Dashboard](dashboard.md)
-10. [User Management and Access Control](user_management.md)
-11. [Monitoring](monitoring.md)
+5. [Transformation and Harmonistation](transformation.md)
+6. [Metadata Augmentation](metadata_augmentation.md)
+7. [Interlinker](interlinker.md)
+8. [Knowledge Graph](knowledge_graph.md)
+9. [Natural language querying](llm.md)
+10. [User interface: Dashboard](dashboard.md)
+11. [User Management and Access Control](user_management.md)
+12. [Monitoring](monitoring.md)
 
 <iframe style="width:100%; height:800px"src="https://soilwise-he.github.io/soilwise-architecture/?view=id-e3ae52bba4fb42dfa0b3900e7d37bdab"></iframe>
 
