@@ -1,4 +1,4 @@
-# Metadata Catalogue
+# Catalogue
 
 !!! component-header "Info"
     **Current version:** v3.0b.2024-july

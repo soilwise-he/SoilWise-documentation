@@ -1,4 +1,4 @@
-# Monitoring
+# System Usage & Monitoring
 
 !!! component-header "Info"
     **Current version:**
