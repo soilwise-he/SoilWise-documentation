@@ -31,3 +31,7 @@ The SPARQL endpoint, deployed on top of the SWR triple store, allows end users t
 
 
 ## Technology & Integration
+
+The first interation of the SWR Knowledge Graph is a graph representation of the (harmonized) metadata that is currently harvested, validated and augmented as part of the SWR catalogue database. It's RDF representation and the SPARQL endpoint access allow users alternate access to the metadata, exploiting semantics and relations between different assets. 
+
+In future iterations, through integration with a dedicated soil health knowledge graph and external resources will evolve into a knowledge network allow much more powerful and impactful queries, e.g. supporting decision support and natural language quering.
