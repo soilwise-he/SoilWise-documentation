@@ -18,6 +18,6 @@ This section lists technical components for building the SoilWise Repository as 
 11. [User Management and Access Control](user_management.md)
 12. [System Usage & Monitoring](monitoring.md)
 
-<iframe style="width:100%; height:800px"src="https://soilwise-he.github.io/soilwise-architecture/?view=id-e3ae52bba4fb42dfa0b3900e7d37bdab"></iframe>
+<iframe style="width:100%; height:800px"src="https://prototype-1-0.soilwise-architecture.pages.dev/?view=id-e3ae52bba4fb42dfa0b3900e7d3"></iframe>
 
 A full version of architecture diagram is available at: <https://soilwise-he.github.io/soilwise-architecture/>{:target="_blank"}.
