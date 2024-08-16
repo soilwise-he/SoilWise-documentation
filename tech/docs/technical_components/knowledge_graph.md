@@ -33,6 +33,7 @@ The SPARQL endpoint, deployed on top of the SWR triple store, allows end users t
 ## Technology & Integration
 
 Components used:
+
 - Virtuoso (version 07.20.3239)
 - @hugo to add tech info for RDF transformation
 
