@@ -7,12 +7,21 @@ APIs in SoilWise can be classified in the following categories:
 - [Download & preview APIs](./data-download.md)
 - [APIs for knowledge extraction](./knowledge-extraction.md)
 - [Processing APIs](./processing-apis.md)
-- [SPARQL endpoint](./sparql.md)
+
 
 Currently the following APIs are employed in the SoilWise repository:
 
-- [SPARQL](https://www.w3.org/TR/sparql11-query/){target=_blank}
-
+- Discovery APIs
+    - [SPARQL](https://www.w3.org/TR/sparql11-query/){target=_blank}
+    - [OGC API - Records](#)
+    - [Spatio Temporal Asset Catalog (STAC)](#)
+    - [Catalog service for the Web (CSW)](#)
+    - [Protocol for Metadata Harvesting (OAI-PMH)](#)
+    - [OpenSearch](#)
+- Processing API's
+    - [Translate API](#)
+    - [Link Liveness Assessment API](#)
+    - [RDF to triplestore API](#)
 
 ## Future work
 

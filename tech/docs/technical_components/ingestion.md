@@ -89,7 +89,7 @@ Standardised APIs are available for harvesting records:
 
 ## Metadata Harmonization
 
-Platforms have adopted various metadata models to store information. Imported metadata should be harmonized to a common model to facilitate searches over these resources.
+Platforms have adopted various metadata models to store information. Imported metadata is harmonized to a common model to facilitate searches over these resources.
 In Soilwise metadata is harmonized after the harvesting step is finished. 
 
 Table below indicates the various source models supported
@@ -104,6 +104,14 @@ Table below indicates the various source models supported
 Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/) RDF representation.
 
 For metadata harmonization some supporting modules are used, [owslib](https://owslib.readthedocs.io/en/latest/) is a module to parse various source metadata models, including iso19115:2005. [pygeometa](https://github.com/geopython/pygeometa) is a module which can export owslib parsed metadata to various outputs, including DCAT.
+
+### Harmonised metadata to Catalogue 
+
+The pycsw catalogue software is able to ingest a number of metadata formats. Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software using an automated process running at intervals.
+
+### Harmonised metadata to RDF transformation 
+
+Harmonized metadata is transformed to RDF in preparation of being loaded into the triple store (see also [Knowledge Graph](./knowledge_graph.md)).
 
 
 ## Architecture

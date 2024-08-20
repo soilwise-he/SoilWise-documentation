@@ -39,7 +39,6 @@ To understand if the dataset has a global, continental, national or regional sco
 | <https://geo.fi/data/ee44-aa22-33> | spatial-scope | 16.7,62.2,18,81.5 | <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national> | spatial-scope-analyser | 2024-07-04 |
 | <https://geo.fi/data/abc1-ba27-67> | spatial-scope | 17.4,68.2,17.6,71,2 | <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/regional> | spatial-scope-analyser | 2024-07-04 |
 
-## Foreseen functionality
 
 ### Translation module
 
@@ -54,12 +53,9 @@ API documentation: <https://language-tools.ec.europa.eu/>
 
 ### Keywords matcher
 
-Analyses existing keywords on a metadata record, it matches an existing keyword to a list of predefined keywords, augmenting the keyword to include a thesaurus and uri reference (potentially a translation to English).
+Analyses existing keywords on a metadata record. The script matches an existing keyword to a list of predefined keywords, augmenting the keyword to include a thesaurus and uri reference. 
 
-It requires a database (relational or RDF) with common thesauri.
-
-### Metadata cleaning
-
+LLM/NLP can be used to extract keywords, if none are available.
 
 ### Spatial Locator
 

@@ -22,7 +22,9 @@ The SoilWise Repository is expected to fulfil the following functions:
 2. [Storage of metadata](#storage-of-metadata)
 3. [Storage of data](#storage-of-data)
 4. [Storage of knowledge](#storage-of-knowledge)
-5. [Backup and versioning](#backup-and-versioning)
+5. [Storage of configuration](#storage-of-configuration)
+6. [Backup and versioning](#backup-and-versioning)
+
 
 ## Technology
 
@@ -126,6 +128,15 @@ Temporary data storage may be necessary as a caching mechanism to achieve accept
 - File repositories range from Amazon/Google to a local NFS with Webdav access.
 - Graph database **Neo4J**, **Triple store**, **Jena Fuseki** (Java) or **Virtuoso** (C) both have spatial support.
 - **GIT** is the most used versioning system these days, with the option to go for SAAS (Github, Bitbucket) or on-premise (Gitlab). GitHub seems the most suitable option, as other groups such as OGC and INSPIRE are already there, which means users already have an account, and we can cross-link issues between projects.
+
+## Storage of configuration
+
+Many configurations are maintained as part of the Soilwise infrastructure. The storage of types of configuration may differ, but is always documented, for reproducabillity.
+
+1. Which version of a component is used in which environment (CMDB)
+2. Connection details to API's, databases (Secrets)
+3. Scheduling of scheduled tasks, such as harvesters, backups, synchronisation, validation
+4. Authorisation, which users are authorised for which roles.
 
 ## Backup and versioning
 

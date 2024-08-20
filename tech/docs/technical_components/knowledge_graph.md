@@ -10,15 +10,9 @@
 
 ## Functionality
 
-### Augmented metadata to RDF transformation 
+### RDF to triple store
 
-!!! component-header "Info"
-    **Current version:**
-
-    **Projects:** [Augmented metadata to RDF transformation](https://github.com/soilwise-he)
-
-This function converts SWR metadata records to RDF and then stores the results in the SWR triple store. This process runs on the SWR catalogue datastore with harmonized metadata after validation, transformation to a common metadata model and metadata augmentation.
-
+A service is available which exposes the contents of the metadata database to the triple store. Loading rdf data from the service to the triple store is currently a manual operation at intervals.
 
 ### Knowledge Graph querying (SPARQL endpoint) 
 
