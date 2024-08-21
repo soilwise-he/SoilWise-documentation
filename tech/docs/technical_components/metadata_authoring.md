@@ -19,4 +19,4 @@ A [webbased form](https://osgeo.github.io/mdme){target=_blank} is available for 
 
 ## Integration
 
-The Manual metadata authoring component will show its full potential when being in the SWR tightly connected to (1) GIT,  and the[Ingest component](./ingestion.md). It requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
+The Manual metadata authoring component will show its full potential when being in the SWR tightly connected to (1) GIT, (2) [Harvester component](./ingestion.md). It requires (3) [authentication](user_management.md#authentication) and (4) [authorisation](user_management.md#authorisation).
