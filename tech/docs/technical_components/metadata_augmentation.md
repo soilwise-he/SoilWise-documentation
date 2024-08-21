@@ -193,3 +193,22 @@ flowchart TD
     es --> m
     th[(Thesauri)]-- synonyms ---Codelists
 ```
+
+## Automatic metadata interlinking
+
+!!! component-header "Info"
+    **Current version:** v0.1
+    
+    **Projects:** [Automatic metadata interlinking (missing repo)](https://github.com/soilwise-he)
+
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
+
+We distinguish between explicit and implicit links:
+
+- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
+
+SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
+
+!! @Paul, @Hugo to add relevant details
+!! Do we link to the harvester component for now?
