@@ -194,6 +194,22 @@ flowchart TD
     th[(Thesauri)]-- synonyms ---Codelists
 ```
 
+## Similarity Finder
+
+!!! component-header "Info"
+    **Current version:**
+    
+    **Projects:** [Similarity finder](https://github.com/soilwise-he/similarity-finder)
+
+
+The Similarity Finder identifies similarities over different data and knowledge assets by implementing functionality to compare their metadata. This reveals information on duplicities (the assets are the same) or similarities (the assets are similar with regard to specific aspects) and captures it as part of the knowledge graph.
+
+In SWR-1, this subcomponent implements the functionality to detect duplicates. This is performed based on the comparision of Persistent Identifiers (PIDs) as well as on the comparison of a set of key metadata elements (to detect situations where multiple identifiers point to the same digital object or resource). The process is currently performed at metadata harvesting, but can also be run independently for quality checks.
+
+!! @Paul, @Hugo to add relevant details
+
+
+
 ## Automatic metadata interlinking
 
 !!! component-header "Info"
