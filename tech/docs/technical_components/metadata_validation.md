@@ -164,23 +164,17 @@ Completeness according to SWR and completeness according to the adopted model re
 
 Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
 
-The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness checker privides:
+The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness  privides the following functions:
 
-- up to date health status of every assessed link
-- health status history
-- analytics functions, e.g. aggregating health status history to generate health indicators for UI visualisation. 
-
-!! @Vassilis to add relevant details
-
-### Functionalities
+#### Functionality
 1. **OGC API Catalogue Integration**
-    - Designed to work specifically with OGC API - Records System
+    - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank} System
     - Extracts and evaluates URLs from catalogue items 
 2. **Link Validation**
     - Evaluates the validity of links to external sources and within the repository
     - Checks if metadata accurately represents the source
 3. **Support for OGC service links**
-    - Identifies and properly handles OGC service links (WMS, WFS, CSW, WCS etc.) before assessing them
+    - Identifies and properly handles OGC service links ([WMS](https://www.ogc.org/standard/wms/){target=_blank}, [WFS](https://www.ogc.org/standard/wfs/){target=_blank}, [CSW](https://www.ogc.org/standard/cat/){target=_blank}, [WCS](https://www.ogc.org/standard/wcs/){target=_blank} etc.) before assessing them
 4. **Health Status Tracking**
     - Provides up-to-date status history for every assessed link
     - Maintains a history of link health over time
@@ -188,17 +182,17 @@ The link liveliness assessment subcomponent runs over the available links stored
     - Supports single resource evaluation on demand
     - Performs periodic tests to provide availability history
 4. **Broken link management**
-    - Identifies and categorizes broken links based on their status code ( 401 Unauthorized, 404 Not Found, 500 Server Error)
+    - Identifies and categorizes broken links based on their status code ( `401 Unauthorized`, `404 Not Found`, `500 Server Error`)
     - Flags deprecated links after consecutive failed tests and excludes them from future check
 5. **Timeout management**
     - Identifies resources exceeding specified timeout thresholds
 
-### Technological Stack
+#### Technology
    * **Python**
         Used for the linkchecker integration, API development, and database interactions
-   * **PostgreSQL**
+   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
         Primary database for storing and managing link information
-   * **FastAPI**
+   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
         Employed to create and expose REST API endpoints. 
         Utilizes FastAPI's efficiency and auto-generated Swagger documentation
    * **Docker** 
