@@ -6,7 +6,8 @@
     
     **Access:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
 
-The SPARQL endpoint, deployed on top of the SWR triple store, allows end users to query the SWR knoledge graph using the SPARQL query language. See [SWR Storage - Triple Store](../technical_components/storage.md#knowledge-graph-triple-store) for further details. 
+The SPARQL endpoint, deployed on top of the SWR triple store, allows end users to query the SWR knoledge graph using the SPARQL query language. See [SWR Storage - Triple Store](../technical_components/knowledge-graph.md#Knowledge-Graph-querying-(SPARQL-endpoint)
+) for further details. 
 
 
 
