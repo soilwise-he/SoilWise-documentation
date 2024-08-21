@@ -172,6 +172,39 @@ The link liveliness assessment subcomponent runs over the available links stored
 
 !! @Vassilis to add relevant details
 
+### Functionalities
+1. **OGC API Catalogue Integration**
+    - Designed to work specifically with OGC API - Records System
+    - Extracts and evaluates URLs from catalogue items 
+2. **Link Validation**
+    - Evaluates the validity of links to external sources and within the repository
+    - Checks if metadata accurately represents the source
+3. **Support for OGC service links**
+    - Identifies and properly handles OGC service links (WMS, WFS, CSW, WCS etc.) before assessing them
+4. **Health Status Tracking**
+    - Provides up-to-date status history for every assessed link
+    - Maintains a history of link health over time
+4. **Flexible Evaluation**
+    - Supports single resource evaluation on demand
+    - Performs periodic tests to provide availability history
+4. **Broken link management**
+    - Identifies and categorizes broken links based on their status code ( 401 Unauthorized, 404 Not Found, 500 Server Error)
+    - Flags deprecated links after consecutive failed tests and excludes them from future check
+5. **Timeout management**
+    - Identifies resources exceeding specified timeout thresholds
+
+### Technological Stack
+   * **Python**
+        Used for the linkchecker integration, API development, and database interactions
+   * **PostgreSQL**
+        Primary database for storing and managing link information
+   * **FastAPI**
+        Employed to create and expose REST API endpoints. 
+        Utilizes FastAPI's efficiency and auto-generated Swagger documentation
+   * **Docker** 
+        Used for containerizing the application, ensuring consistent deployment across environments
+   * **CI/CD**
+        Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
 
 ### Display validation results
 
