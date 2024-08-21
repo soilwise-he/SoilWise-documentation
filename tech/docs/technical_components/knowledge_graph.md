@@ -35,7 +35,7 @@ The SPARQL endpoint, deployed on top of the SWR triple store, allows end users t
 !!! component-header "Info"
     **Current version:**
 
-    **Projects:** [Knowledge Graph querying]([https://github.com/soilwise-he](https://github.com/soilwise-he/soil-health-knowledge-graph))
+    **Projects:** [Knowledge Graph enrichment and linking]([https://github.com/soilwise-he](https://github.com/soilwise-he/soil-health-knowledge-graph))
 
 The basic (metadata) Knowledge Graph that is generated from the augmented metadata will be enriched with additional knowledge in various manners:
 
