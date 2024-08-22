@@ -15,19 +15,9 @@ In future iterations the metadata graph will be linked/merged with a dedicated s
 
 ### Augmented metadata to RDF transformation 
 
-!!! component-header "Info"
-    **Current version:**
-
-    **Projects:** [Augmented metadata to RDF transformation](https://github.com/soilwise-he)
-
 This function converts SWR metadata records to RDF and then stores the results in the SWR triple store. This process runs on the SWR catalogue datastore with harmonized metadata after validation, transformation to a common metadata model and metadata augmentation.
 
 ### Knowledge Graph querying (SPARQL endpoint) 
-
-!!! component-header "Info"
-    **Current version:**
-
-    **Projects:** [Knowledge Graph querying](https://github.com/soilwise-he)
 
 The SPARQL endpoint, deployed on top of the SWR triple store, allows end users to query the SWR knoledge graph using the SPARQL query language. It is the primary access point to the [knowledge graph](../technical_components/storage.md#knowledge-graph-triple-store), both for humans, as well as for machines. Many applications and end users will instead interact with specialised assets that use the SPARQL end-point, such as the Chatbot or the API. However, the SPARQL end-point is the main source for the development of further knowledge applications and provides bespoke search to humans.
 
@@ -38,11 +28,6 @@ Since we're importing resources from various data and knowledge repositories, we
 ## Foreseen functionality
 
 ### Knowledge Graph enrichment and linking 
-
-!!! component-header "Info"
-    **Current version:**
-
-    **Projects:** [Knowledge Graph enrichment and linking]([https://github.com/soilwise-he](https://github.com/soilwise-he/soil-health-knowledge-graph))
 
 The basic (metadata) Knowledge Graph that is generated from the augmented metadata will be enriched with additional knowledge in various manners:
 
