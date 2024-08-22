@@ -40,3 +40,10 @@ For each AI derived property, indicate that it has been derived by AI. (Need to 
 ## Empower a chatbot for user support in defining (and answering) a relevant catalogue question 
 
 A chatbot is a natural language user interface to engage users in identifying what they are looking for and even provide a suggestion for an answer. Advanced LLMs provide improved text processing capabilities that can serve more usable human-machine interfaces.
+
+<!-- alternative text from former dashboard description
+### Chatbot
+
+[Large Language models](llm.md) (LLM) enriched with SoilWise content can offer an alternative interface to assist the user in finding and accessing the relevant knowledge or data source. Users interact with the chatbot interactively to define the relevant question and have it answered. The LLM will provide an answer but also provide references to sources on which the answer was based, in which the user can extend the search. The LLM can also support the user in gaining access to the source, using which software, for example.
+
+-->

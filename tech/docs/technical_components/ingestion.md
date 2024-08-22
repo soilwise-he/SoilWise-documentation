@@ -129,7 +129,7 @@ An aim of this exercise is also to understand in which repositories a certain re
 
 ## Integration opportunities
 
-The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](catalogue.md), (2) [Data download](dashboard.md#data-download-export) & [Metadata authoring](metadata_authoring.md) and (3) [ETS/ATS](metadata_validation.md#metadata-etsats-checking), i.e. test suites.
+The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](catalogue.md), (2) [Metadata authoring](metadata_authoring.md) and (3) [ETS/ATS](metadata_validation.md#metadata-etsats-checking), i.e. test suites.
 
 
 
