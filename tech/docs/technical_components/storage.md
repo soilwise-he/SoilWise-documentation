@@ -99,7 +99,7 @@ It is important to recognise the knowledge graph as an immaterial asset that can
 The [Large Language Model](llm.md) foreseen in this project will be trained on the knowledge graph, thus forming the basis for the Chatbot component of the user interface. The knowledge graph will further feed the facilities for machine-based access to the SWR: a knowledge extraction API and a SPARQL end-point.
 
 #### Technology
-- DCAT, Dublin Core, VCard, PROV, GloSIS, see chapter [Semantic Web specifications for metadata](ingestion.md#semantic-web-specifications-for-metadata) and [Data model](#data-model)
+- DCAT, Dublin Core, VCard, PROV, GloSIS
 
 
 ## Storage of data
