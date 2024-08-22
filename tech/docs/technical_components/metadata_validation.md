@@ -194,7 +194,7 @@ The link liveliness assessment subcomponent runs over the available links stored
         Primary database for storing and managing link information
    * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
         Employed to create and expose REST API endpoints. 
-        Utilizes FastAPI's efficiency and auto-generated Swagger documentation
+        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
    * **Docker** 
         Used for containerizing the application, ensuring consistent deployment across environments
    * **CI/CD**
