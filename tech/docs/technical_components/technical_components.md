@@ -14,7 +14,7 @@ This section lists technical components for building the SoilWise Repository as 
 6. [Metadata Authoring](metadata_authoring.md)
 7. [Metadata Augmentation](metadata_augmentation.md)
 8. [Knowledge Graph](knowledge_graph.md)
-9. [Natural Language Querying](llm.md)
+9. [Natural Language Querying](natural_language_querying.md)
 11. [User Management and Access Control](user_management.md)
 12. [System Usage & Monitoring](monitoring.md)
 
