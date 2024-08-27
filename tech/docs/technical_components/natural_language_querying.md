@@ -11,6 +11,11 @@
 
 Still in research phase, no implementations yet.
 
+Core topics:
+- AI/LLM based (semantic)KG generation from unstructured content (leveraging existing search technology)
+- chatbot - Natural Language Interface (using advanced NLP methodologies, such as LLMs)
+- LLM operationalisation (ingestion pipeline, generation pipeline, embedding store, models)
+
 ## Foreseen functionality
 
 Leverage existing search technology (e.g. Solr) combined with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. Moving from basic keyword based search (tf-idf, bm25), via the use of taxonomies and entity extraction, to using (natural language) query intent (semantic query parsing, semantic knowledge graphs, personalisation, virtual assistants (chatbots)). The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. One step towards personalisation could be the use of (user) signals boosting and collaborative filtering. But this would require tracking and logging (user) actions.
