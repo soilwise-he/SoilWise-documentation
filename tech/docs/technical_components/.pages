@@ -10,6 +10,6 @@ nav:
     - transformation.md
     - metadata_augmentation.md
     - knowledge_graph.md
-    - llm.md
+    - natural_language_querying.md
     - user_management.md
     - monitoring.md
