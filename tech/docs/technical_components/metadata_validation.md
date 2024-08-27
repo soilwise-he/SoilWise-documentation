@@ -23,27 +23,6 @@ flowchart LR
     HA --> MV
 ```
 
-
-## Link liveliness assessment
-
-!!! component-header "Info"
-    **Current version:**
-
-    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
-
-    **Access point:** <https://api.soilwise-he.containers.wur.nl/linky/docs>
-
-Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
-
-The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness checker privides:
-
-- up to date health status of every assessed link
-- health status history
-- analytics functions, e.g. aggregating health status history to generate health indicators for UI visualisation. 
-
-!! @Vassilis to add relevant details
-
-
 ## Metadata profile
 
 Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, ISO 19119, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:
