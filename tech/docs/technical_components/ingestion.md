@@ -127,7 +127,7 @@ Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/a
 
 #### CORDIS
 
-European Research projects typically advertise their research outputs via Cordis. This makes Cordis the most likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a DOI, additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion.
+European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/). This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/), additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion.
 
 #### OpenAire
 
@@ -139,27 +139,31 @@ Not all DOI's registered in Cordis are available in OpenAire. OpenAire only list
 
 #### OGC-CSW
 
-Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](#) standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
+Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/) standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
 
 #### INSPIRE
 
-Although INSPIRE Geoportal does offer a CSW endpoint, due to a technical reason, we have not been able to harvest from it. Instead we have developed a dedicated harvester via the Elastic Search API endpoint of the Geoportal. If at some point the technical issue has been resolved, use of the CSW harvest endpoint is favourable.
+Although [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/) does offer a CSW endpoint, due to a technical reason, we have not been able to harvest from it. Instead we have developed a dedicated harvester via the Elastic Search API endpoint of the Geoportal. If at some point the technical issue has been resolved, use of the CSW harvest endpoint is favourable.
 
 #### ESDAC
 
-The ESDAC catalogue is a tailored Drupal CMS. The site does offers some RDFa annotations. We have developed a dedicated harvester to scrape html elements and RDFa to extract records from ESDAC.
+The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/) is an instance of Drupal CMS. The site does offers some RDFa annotations. We have developed a dedicated harvester to scrape html elements and RDFa to extract records from ESDAC.
 
 ### Metadata Harmonization
 
 Once stored in the harvest sources database, a second process is triggered which harmonizes the sources to the soilwise metadata profile. These processes are split by design, to prevent that any failure in metadata processing would require to fetch remote content again.
 
-For those cases where is is relevant the [owslib](https://owslib.readthedocs.io/en/latest/) and [pygeometa](https://geopython.github.io/pygeometa/) libraries are used to import metadata. These libraries natively support a range of metadata models. 
+For those cases where it is relevant the [owslib](https://owslib.readthedocs.io/en/latest/) and [pygeometa](https://geopython.github.io/pygeometa/) libraries are used to import metadata. These libraries natively support a range of metadata models. 
+
+### Duplicates Identification
+
+Many resources are listed in multiple catalogues. When harvesting a numer of catalogues, one likely stumbles upon these duplicates. Some challenges exist around duplicates, especcially if the harvested sources include conflicts. For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. 
 
 ### Metadata Augmentation
 
 The metadata augmentatio processes are described elsewhere, what is relevant here is that the output of these processes is integrated in the harmonised metadata database.
 
-### Metadata RDF turtle serialisation
+### Metadata RDF turtle serialization
 
 The harmonised metadata model is based on the DCAT ontology. In this step the content of the database is written to RDF.
 
