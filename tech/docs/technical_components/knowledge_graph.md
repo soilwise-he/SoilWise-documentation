@@ -27,6 +27,9 @@ Since we're importing resources from various data and knowledge repositories, we
 
 ### Knowledge Graph enrichment and linking 
 
+!!! component-header "Info"
+    **Access point:** <https://voc.soilwise-he.containers.wur.nl/concept/>
+
 The basic (metadata) Knowledge Graph that is generated from the augmented metadata will be enriched with additional knowledge in various manners:
 
 - linking with "external" ontologies and taxonomies (linked data) to extend the knowledge base and allow more meaningful semantic querying

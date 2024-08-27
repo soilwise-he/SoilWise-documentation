@@ -31,6 +31,8 @@ flowchart LR
 
     **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 
+    **Access point:** <https://api.soilwise-he.containers.wur.nl/linky/docs>
+
 Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
 
 The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness checker privides:
