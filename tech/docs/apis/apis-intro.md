@@ -11,7 +11,7 @@ Currently the following APIs are employed in the SoilWise repository:
     - **OpenSearch:** <>
 - Processing API's
     - **Translate API:** <>
-    - **Link Liveness Assessment API:** <>
+    - [Link Liveness Assessment API](link_liveliness.md)
     - **RDF to triplestore API:** <>
 
 
