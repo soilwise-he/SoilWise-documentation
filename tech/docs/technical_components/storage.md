@@ -96,7 +96,7 @@ Besides metadata on knowledge assets, the knowledge graph is also expected to ho
 
 It is important to recognise the knowledge graph as an immaterial asset that cannot exist by itself. In order to be usable the knowledge graph must be stored in a triple store, thus highlighting the role of that component in the architecture. In its turn the triple store provides another important architectural component, the SPARQL end-point. That will be the main access gateway to the knowledge graph, particularly through other technological components and software.
 
-The [Large Language Model](llm.md) foreseen in this project will be trained on the knowledge graph, thus forming the basis for the Chatbot component of the user interface. The knowledge graph will further feed the facilities for machine-based access to the SWR: a knowledge extraction API and a SPARQL end-point.
+The [Natural Language Querying](natural_language_querying.md) functionality foreseen in this project will, amongst others, use the formal knowledge graph, e.g. as part of a Chatbot component of the user interface. The knowledge graph will further feed the facilities for machine-based access to the SWR: a knowledge extraction API and a SPARQL end-point.
 
 #### Technology
 - DCAT, Dublin Core, VCard, PROV, GloSIS
