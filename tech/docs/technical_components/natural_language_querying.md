@@ -1,9 +1,40 @@
-# Natural Language Querying (NLQ)
+# Natural Language Querying
+
+**Making open ___knowledge___ findable and accessible for SoilWise users**
 
 !!! component-header "Info"
     **Current version:**
 
     **Project:** [Natural Language querying](https://github.com/soilwise-he/natural-language-querying)
+
+## Functionality
+
+Still in research phase, no implementations yet.
+
+## Foreseen functionality
+
+Leverage existing search technology (e.g. Solr) combined with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. Moving from basic keyword based search (tf-idf, bm25), via the use of taxonomies and entity extraction, to using (natural language) query intent (semantic query parsing, semantic knowledge graphs, personalisation, virtual assistants (chatbots)). The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. One step towards personalisation could be the use of (user) signals boosting and collaborative filtering. But this would require tracking and logging (user) actions.
+
+Optionally the functionality can be extended from text processing to also include multi-modal data such as photos (e.g. of soil profiles). Effort needed for this has to be carefully considered.
+
+Along the way natural language processing (NLP) methods and approaches can also be applied for various metadata handling and augmentation.
+
+## Foreseen technology
+
+- Search engine, e.g. Apache Solr
+- Graph database (if needed)
+- (Scalable) vector database (if needed)
+- Java and/or Python based NLP libraries
+- Small to large foundation LLMs
+- LLM development framework
+- Front end toolkit 
+- LLM deployment and/or hosted API access
+- Authentication and authorisation layer
+- Computation and storage infrastructure
+- Hardware acceleration, e.g. GPU (if needed)
+
+
+<!-- previous text for reference:
 
 LLM (and less complex Natural Language Processing (NLP) approaches) can be used to perform tasks in [metadata optimisation](#metadata-optimization) (e.g. identify similarities, resolve conflicts, populate gaps, classify or summarize resources). 
 
@@ -40,6 +71,7 @@ For each AI derived property, indicate that it has been derived by AI. (Need to 
 ## Empower a chatbot for user support in defining (and answering) a relevant catalogue question 
 
 A chatbot is a natural language user interface to engage users in identifying what they are looking for and even provide a suggestion for an answer. Advanced LLMs provide improved text processing capabilities that can serve more usable human-machine interfaces.
+-->
 
 <!-- alternative text from former dashboard description
 ### Chatbot
