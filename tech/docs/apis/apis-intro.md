@@ -6,7 +6,7 @@ Currently the following APIs are employed in the SoilWise repository:
     - **SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
     - **OGC API- Records:** <>
     - **Spatio Temporal Asset Catalog (STAC):** <>
-    - [Catalog service for the Web (CSW)](catalouge_csw.md)
+    - [Catalog service for the Web (CSW)](catalogue_csw.md)
     - **Protocol for Metadata Harvesting (OAI-PMH):** <>
     - **OpenSearch:** <>
 - Processing API's
