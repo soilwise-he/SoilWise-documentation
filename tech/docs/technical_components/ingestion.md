@@ -73,9 +73,11 @@ The SoilWise project team is still exploring which knowledge resources to includ
 
 The Harvester component currently comprises of the following functions:
 
-- [Harvest records from metadata and knowledge resources]()
-- [Metadata harmonization]()
-- [Duplication identification]()
+- [Harvest records from metadata and knowledge resources](#harvest-records-from-metadata-and-knowledge-resources)
+- [Metadata harmonization](#metadata-harmonization)
+- [Netadata RDF turtle serialization](#metadata-rdf-turtle-serialization)
+- [RDF to Triple Store](#rdf-to-triple-store)
+- [Duplication identification](#duplication-indentification)
 - [Logging, versioning]()
 
 ### Harvest records from metadata and knowledge resources
