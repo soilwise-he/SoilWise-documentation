@@ -12,9 +12,9 @@
 Still in research phase, no implementations yet.
 
 Core topics:
-- AI/LLM based (semantic)KG generation from unstructured content (leveraging existing search technology)
-- chatbot - Natural Language Interface (using advanced NLP methodologies, such as LLMs)
-- LLM operationalisation (ingestion pipeline, generation pipeline, embedding store, models)
+ - LLM[^1] based (semantic)KG generation from unstructured content (leveraging existing search technology)
+ - chatbot - Natural Language Interface (using advanced NLP[^2] methodologies, such as LLMs)
+ - LLM operationalisation (RAG[^3] ingestion pipeline(s), generation pipeline, embedding store, models)
 
 ## Foreseen functionality
 
@@ -37,6 +37,11 @@ Along the way natural language processing (NLP) methods and approaches can also 
 - Authentication and authorisation layer
 - Computation and storage infrastructure
 - Hardware acceleration, e.g. GPU (if needed)
+
+
+[^1]: Large Language Model. Typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from know collections scraped from the Internet.
+[^2]: Natural Language Processing. An interdisciplinary subfield of computer science and artificial intelligence, primarily concerned with providing computers with the ability to process data encoded in natural language. It is closely related to information retrieval, knowledge representation and computational linguistics.
+[^3]: Retrieval Augmented Generation. A framework for retrieving facts from an external knowledge base to ground large language models on the most accurate, up-to-date information and enhancing the (pre)trained parameteric (semantic) knowledge with non-parameteric knowledge to avoid hallucinations and get better responses.
 
 
 <!-- previous text for reference:
