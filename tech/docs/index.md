@@ -15,7 +15,10 @@ SoilWise Technical Documentation currently consists of the following sections:
 |----|-----------|
 |30. 9. 2024|**v2.0 Released:** For _D2.1 Developed & Integrated DM components, v1 D3.1 Developed & Integrated KM components, v1_ and _D4.1 Repository infrastructure, components and APIs, v1_ purposes|
 |30. 9. 2024|Technical Components functionality updated according to first SoilWise repository prototype|
-|1. 7. 2024|Metadata augmentation component added|
+|27. 8. 2024|APIs section restructured|
+|20. 8. 2024|Knowledge Graph component added|
+|13. 8. 2024|Metadata Authoring component added| 
+|1. 7. 2024|Metadata Augmentation component added|
 |30. 4. 2024|**v1.0 Released:** For _D1.3 Architecture Repository v1_ purposes|
 |27. 3. 2024|Technical Components restructured according to the architecture from Brugges Technical Meeting|
 |27. 3. 2024|**v0.1 Released:** Technical documentation based on the Consolidated architecture|
