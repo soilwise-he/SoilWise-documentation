@@ -111,8 +111,14 @@ documentation:Iteration
 documentation:JRC
 :   JRC Joint Research Centre of the European Commission, its Directorate General. The JRC provides independent, evidence-based science and knowledge, supporting EU policies to positively impact society. Relevant policy areas within JRC are [JRC Soil](https://joint-research-centre.ec.europa.eu/scientific-activities-z/soil_en){target=_blank} and [JRC INSPIRE](https://inspire.ec.europa.eu/whos-who-inspire/57734){target=_blank}
 
+documentation:LLM
+:   Large Language Model is typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from know collections scraped from the Internet.
+
 documentation:Mapserver
 :   [Mapserver](https://mapserver.org){target=_blank} C based software package providing access to remote data through OGC services
+
+documentation:NLP
+:   Natural Language Processing is an interdisciplinary subfield of computer science and artificial intelligence, primarily concerned with providing computers with the ability to process data encoded in natural language. It is closely related to information retrieval, knowledge representation and computational linguistics.
 
 documentation:Observations and Measurements
 :   A conceptual model for [Observations and Measurements](https://www.ogc.org/standard/om/){target=_blank} (O&M), also known as ISO19156
@@ -128,6 +134,9 @@ documentation:Product backlog
 
 documentation:QGIS
 :   [QGIS](https://qgis.org){target=_blank} desktop software package to create spatial vizualisations of various types of data
+
+documentation:RAG
+:   Retrieval Augmented Generation is a framework for retrieving facts from an external knowledge base to ground large language models on the most accurate, up-to-date information and enhancing the (pre)trained parameteric (semantic) knowledge with non-parameteric knowledge to avoid hallucinations and get better responses.
 
 documentation:REA
 :   REA is the European Research Executive Agency, it's mandate is to manage several EU programmes and support services.
