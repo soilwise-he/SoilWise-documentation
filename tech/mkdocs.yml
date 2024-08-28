@@ -22,6 +22,7 @@ markdown_extensions:
   - tables
   - attr_list
   - pymdownx.details
+  - footnotes
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -44,6 +45,7 @@ theme:
   - navigation.path
   - navigation.indexes
   - content.action.edit
+  - content.footnote.tooltips
 
   logo: _assets/images/SoilWise_logo.png
 #  favicon: assets/images/favicon.png
