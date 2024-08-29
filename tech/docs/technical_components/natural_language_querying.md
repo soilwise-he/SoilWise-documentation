@@ -22,11 +22,12 @@ Core topics:
 Leverage existing search technology (e.g. the Apache Solr open source search engine) combined with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. 
 
 General steps towards an AI based self-learning search system, from less to more complex: 
-- basic keyword based search (**tf-idf**[^4], **bm25**[^5])
-- use of taxonomies and entity extraction
-- understanding query intent (semantic query parsing, semantic knowledge graphs, virtual assistants)
-- automated relevance tuning (signals boosting, collaborative filtering, learning to rank)
-- Self-learning search system
+
+ - basic keyword based search (**tf-idf**[^4], **bm25**[^5])
+ - use of taxonomies and entity extraction
+ - understanding query intent (semantic query parsing, semantic knowledge graphs, virtual assistants)
+ - automated relevance tuning (signals boosting, collaborative filtering, learning to rank)
+ - Self-learning search system
 
 The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. Later steps depend more on the use of complex language models.
 
@@ -40,17 +41,17 @@ Along the way natural language processing (NLP) methods and approaches can also 
 
 ## Foreseen technology
 
-- Search engine, e.g. [Apache Solr](https://solr.apache.org)
-- Graph database (if needed)
-- (Scalable) vector database (if needed)
-- Java and/or Python based NLP libraries, e.g. [OpenNLP](https://opennlp.apache.org), [spaCy](https://spacy.io)
-- Small to large foundation LLMs
-- LLM development framework (such as [langChain](https://www.langchain.com) or [LlamaIndex](https://www.llamaindex.ai))
-- Front end toolkit 
-- LLM deployment and/or hosted API access
-- Authentication and authorisation layer
-- Computation and storage infrastructure
-- Hardware acceleration, e.g. GPU (if needed)
+ - Search engine, e.g. [Apache Solr](https://solr.apache.org)
+ - Graph database (if needed)
+ - (Scalable) vector database (if needed)
+ - Java and/or Python based NLP libraries, e.g. [OpenNLP](https://opennlp.apache.org), [spaCy](https://spacy.io)
+ - Small to large foundation LLMs
+ - LLM development framework (such as [langChain](https://www.langchain.com) or [LlamaIndex](https://www.llamaindex.ai))
+ - Front end toolkit 
+ - LLM deployment and/or hosted API access
+ - Authentication and authorisation layer
+ - Computation and storage infrastructure
+ - Hardware acceleration, e.g. GPU (if needed)
 
 
 [^1]: **Large Language Model**. Typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from known collections scraped from the Internet.
