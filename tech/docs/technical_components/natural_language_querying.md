@@ -19,7 +19,20 @@ Core topics:
 
 ## Foreseen functionality
 
-Leverage existing search technology (e.g. Solr) combined with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. Moving from basic keyword based search (tf-idf, bm25), via the use of taxonomies and entity extraction, to using (natural language) query intent (semantic query parsing, semantic knowledge graphs, personalisation, virtual assistants (chatbots)). The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. One step towards personalisation could be the use of (user) signals boosting and collaborative filtering. But this would require tracking and logging (user) actions.
+Leverage existing search technology (e.g. the Apache Solr open source search engine) combined with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. 
+
+General steps towards an AI based self-learning search system, from less to more complex: 
+- basic keyword based search (**tf-idf**[^4], **bm25**[^5])
+- use of taxonomies and entity extraction
+- understanding query intent (semantic query parsing, semantic knowledge graphs, virtual assistants)
+- automated relevance tuning (signals boosting, collaborative filtering, learning to rank)
+- Self-learning search system
+
+The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. Later steps depend more on the use of complex language models.
+
+One step towards personalisation could be the use of (user) signals boosting and collaborative filtering. But this would require tracking and logging (user) actions.
+
+A seperate development could be a chatbot based on selected key soil knowledge documents ingested into a vector database (as a fixed resource), or even a fine-tuned LLM that is more soil science specific than a plain foundation LLM.
 
 Optionally the functionality can be extended from text processing to also include multi-modal data such as photos (e.g. of soil profiles). Effort needed for this has to be carefully considered.
 
@@ -27,12 +40,12 @@ Along the way natural language processing (NLP) methods and approaches can also 
 
 ## Foreseen technology
 
-- Search engine, e.g. Apache Solr
+- Search engine, e.g. [Apache Solr](https://solr.apache.org)
 - Graph database (if needed)
 - (Scalable) vector database (if needed)
-- Java and/or Python based NLP libraries
+- Java and/or Python based NLP libraries, e.g. [OpenNLP](https://opennlp.apache.org), [spaCy](https://spacy.io)
 - Small to large foundation LLMs
-- LLM development framework
+- LLM development framework (such as [langChain](https://www.langchain.com) or [LlamaIndex](https://www.llamaindex.ai))
 - Front end toolkit 
 - LLM deployment and/or hosted API access
 - Authentication and authorisation layer
@@ -40,9 +53,11 @@ Along the way natural language processing (NLP) methods and approaches can also 
 - Hardware acceleration, e.g. GPU (if needed)
 
 
-[^1]: ***Large Language Model**. Typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from know collections scraped from the Internet.
+[^1]: **Large Language Model**. Typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from known collections scraped from the Internet.
 [^2]: **Natural Language Processing**. An interdisciplinary subfield of computer science and artificial intelligence, primarily concerned with providing computers with the ability to process data encoded in natural language. It is closely related to information retrieval, knowledge representation and computational linguistics.
 [^3]: **Retrieval Augmented Generation**. A framework for retrieving facts from an external knowledge base to ground large language models on the most accurate, up-to-date information and enhancing the (pre)trained parameteric (semantic) knowledge with non-parameteric knowledge to avoid hallucinations and get better responses.
+[^4]: **tf-idf**. Term Frequency - Inverse Document Frequency, a statistical method in NLP and information retrieval that measures how important a term is within a document relative to a collection of documents (called a corpus).
+[^5]: **bm25**. Okapi Best Match 25, a well-known ranking function used by search engines to estimate the relevance of documents to a given search query. It is based on tf-idf, but considered an improvement and adding some tunable parameters.
 
 
 <!-- previous text for reference:
