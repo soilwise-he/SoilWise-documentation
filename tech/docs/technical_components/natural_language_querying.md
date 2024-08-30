@@ -41,7 +41,7 @@ Along the way natural language processing (NLP) methods and approaches can also 
 
 ## Foreseen technology
 
- - Search engine, e.g. [Apache Solr](https://solr.apache.org)
+ - (Semantic) search engine, e.g. [Apache Solr](https://solr.apache.org) or [Elasticsearch](https://www.elastic.co/elasticsearch)
  - Graph database (if needed)
  - (Scalable) vector database (if needed)
  - Java and/or Python based NLP libraries, e.g. [OpenNLP](https://opennlp.apache.org), [spaCy](https://spacy.io)
