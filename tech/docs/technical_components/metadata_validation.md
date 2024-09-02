@@ -93,10 +93,56 @@ This metadata profile was developed through EJP Soil project efforts and modifie
 | Uncertainty | 0-n |  | Method used to assess uncertainty and its result. For example: One or more measurements to describe the error and uncertainties in the dataset |
 | Completeness | 0-1 |  | The % of completeness |
 
+### INSPIRE metadata profile
+
+The validation against the INSPIRE metadata profile checks whether the metadata records are in accordance with the technical requirements of INSPIRE, specifically according to the [INSPIRE data specification on Soil – Technical Guidelines](https://inspire-mif.github.io/technical-guidelines/data/so/dataspecification_so.pdf) version 3.0. The Soil-specific metadata elements are: 
+
+| Type                                  | Package Stereotypes |
+|---------------------------------------|---------------------|
+| DerivedProfilePresenceInSoilBody      | «associationType»   |
+| DerivedSoilProfile                    | «featureType»       |
+| FAOHorizonMasterValue                 | «codelist»          |
+| FAOHorizonNotationType                | «dataType»          |
+| FAOHorizonSubordinateValue            | «codelist»          |
+| FAOPrimeValue                         | «codelist»          |
+| LayerGenesisProcessStateValue         | «codelist»          |
+| LayerTypeValue                        | «codelist»          |
+| ObservedSoilProfile                   | «featureType»       |
+| OtherHorizonNotationType              | «dataType»          |
+| OtherHorizonNotationTypeValue         | «codelist»          |
+| OtherSoilNameType                     | «dataType»          |
+| OtherSoilNameTypeValue                | «codelist»          |
+| ParticleSizeFractionType              | «dataType»          |
+| ProfileElement                        | «featureType»       |
+| ProfileElementParameterNameValue      | «codelist»          |
+| RangeType                             | «dataType»          |
+| SoilBody                              | «featureType»       |
+| SoilDerivedObject                     | «featureType»       |
+| SoilDerivedObjectParameterNameValue   | «codelist»          |
+| SoilHorizon                           | «featureType»       |
+| SoilInvestigationPurposeValue         | «codelist»          |
+| SoilLayer                             | «featureType»       |
+| SoilPlot                              | «featureType»       |
+| SoilPlotTypeValue                     | «codelist»          |
+| SoilProfile                           | «featureType»       |
+| SoilProfileParameterNameValue         | «codelist»          |
+| SoilSite                              | «featureType»       |
+| SoilSiteParameterNameValue            | «codelist»          |
+| SoilThemeCoverage                     | «featureType»       |
+| SoilThemeDescriptiveCoverage          | «featureType»       |
+| SoilThemeDescriptiveParameterType     | «dataType»          |
+| SoilThemeParameterType                | «dataType»          |
+| WRBQualifierGroupType                 | «dataType»          |
+| WRBQualifierPlaceValue                | «codelist»          |
+| WRBQualifierValue                     | «codelist»          |
+| WRBReferenceSoilGroupValue            | «codelist»          |
+| WRBSoilNameType                       | «dataType»          |
+| WRBSpecifierValue                     | «codelist»          |
+
 
 ### Future work
 
-In the following iterations, INSPIRE metadata profiles, ISO, and compliance with GloSIS will be inspected
+In the following iterations, ISO, and compliance with GloSIS will be inspected
 
 ## Functionality
 
