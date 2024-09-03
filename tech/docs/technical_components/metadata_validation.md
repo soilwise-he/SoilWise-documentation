@@ -27,6 +27,7 @@ flowchart LR
 
 Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, ISO 19119, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:
 
+<!--
 ### Minimal metadata elements
 
 A minimal set of metadata elements was defined to validate completeness of metadata record against the optimal performace prerequisites of SWR platform.
@@ -42,6 +43,7 @@ A minimal set of metadata elements was defined to validate completeness of metad
 | Rights | Information about rights and licences |
 | Extent (geographic) | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) |
 | Online source | Location (address) for online access from which the resource can be obtained |
+-->
 
 ### EJP/EUSO Metadata profile 
 
@@ -162,12 +164,16 @@ The initial steps of metadata validation comprise:
 
 ### Metadata completeness validation
 
-Completeness of records is evaluated by:
+Requirement of record's completeness is fullfilled if:
 
-- contains the required Minimal metadata elements (completeness according to SWR)
-- contains the required elements endorsed by the adopted metadata standard itself 
+<!-- - it contains the required Minimal metadata elements (completeness according to SWR)-->
+- it contains the required elements endorsed by the adopted metadata standard itself 
 
+Completeness according to the adopted model results in quality indicators of a resource description.
+
+<!--
 Completeness according to SWR and completeness according to the adopted model results in quality indicators of a resource description. The completeness acording to the SWR additionaly predetermines performance within SWR platform.
+-->
 
 ### Metadata ETS/ATS checking
 
