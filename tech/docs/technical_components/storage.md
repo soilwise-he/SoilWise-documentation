@@ -31,7 +31,7 @@ The SoilWise repository aims at merging and seamlessly providing different types
 
 ## Functionality
 
-### Postgress RDBMS
+### Postgress RDBMS - storage of augmented metadata
 
 A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
 The catalogue also queries the Postgress database **** 
@@ -42,7 +42,7 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 - An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid
 - Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users 
 
-### Virtuoso Triple Store
+### Virtuoso Triple Store - storage of SWR knowledge graph
 
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
