@@ -7,15 +7,13 @@
 
     **Access point:** [SWR SPARQL endpoint](https://sparql.soilwise-he.containers.wur.nl/sparql)
 
+SoilWise develops and implements a Knowledge Graph linking the knowledge captured in harvested and augmented metadata with various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are also implemented as RDF graphs. Linking such graphs into a harmonized SWR knoledge graph allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
+
 The first iteration of the SWR Knowledge Graph is a graph representation of the (harmonized) metadata that is currently harvested, validated and augmented as part of the SWR catalogue database. It's RDF representation, stored in a triple store, and the SPARQL endpoint deployed on top of the triple store, allow users alternate access to the metadata, exploiting semantics and relations between different assets. 
 
-In future iterations the metadata graph will be linked/merged with a dedicated soil health knowledge graph also linking to external resources. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries, e.g. supporting decision support and natural language quering.
+At the same time, experiments have been performed to prepare for the linkage of this RDF metadata graph and exisiting and AI/ML generated graphs. In future iterations the metadata graph will be linked/merged with a dedicated soil health knowledge graph also linking to external resources, establishing a broader interconnected soil health knowledge graph. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries and reasoning, e.g. supporting decision support and natural language quering.
 
 ## Functionality
-
-### Augmented metadata to RDF transformation 
-
-This function converts SWR metadata records to RDF and then stores the results in the SWR triple store. This process runs on the SWR catalogue datastore with harmonized metadata after validation, transformation to a common metadata model and metadata augmentation.
 
 ### Knowledge Graph querying (SPARQL endpoint) 
 
@@ -23,29 +21,34 @@ The SPARQL endpoint, deployed on top of the SWR triple store, allows end users t
 
 Since we're importing resources from various data and knowledge repositories, we expect many duplicities, blank nodes and conflicting statements. Implementation of rules should be permissive, not preventing inclusion, only flag potential inconsistencies.
 
-## Foreseen functionality
+## Ongoing Developments
 
 ### Knowledge Graph enrichment and linking 
 
 !!! component-header "Info"
     **Access point:** <https://voc.soilwise-he.containers.wur.nl/concept/>
 
-The basic (metadata) Knowledge Graph that is generated from the augmented metadata will be enriched with additional knowledge in various manners:
+As a preparation to extend the currently deployed metadata knowledge graph with broader domain knowledge, experimental work has been performed to enricht the KG en to link it with other knowledge graphs. 
 
-- linking with "external" ontologies and taxonomies (linked data) to extend the knowledge base and allow more meaningful semantic querying
-- using AI/ML to derive a knowledge graph specifically for the soil health domain
-- using AI/ML to derive additional context (e.g. keywords, geography) for data and knowledge assets
+The following aspects have been worked on and will  be furhter developed and integrated into future iterations of the SoilWise KG:
 
-Currently this work still has an explorative character, with the repository containing several experiments that will be further developed over the project's lifetime.
-
-
-
-
+- Applying various methods using AI/ML to derive a (soil health) knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report "Soil monitoring in Europe - Indicators and thresholds for soil quality assessments". It tests the effectiveness of various methods to generate knowledge in the form of KGs from documents, which could also benefit other AI/ML functions foreseen.
+- Establishing links between the SoilWise KG and external taxonomies and ontologies (linked data). Concepts in the SoilWise KG that (closely) match with concepts in the AGROVOC thesaurus are linked. The implemented method is exemplary for the foreseen wider linking required to establish a soil health KG.
+- Testing AI/ML based methods to derive additional knowledge (e.g. keywords, geography) for data and knowledge assets. Such methods could for instance be used to further augment metadata or fill exisiting metadata gaps. Besides testing such methods, this includes establishing a model that allows to distinguish between genuine and generated metadata.
 
 ## Technology & Integration
 
 Components used:
 
 - Virtuoso (version 07.20.3239)
-- @hugo to add tech info for RDF transformation
+- Python notebooks
+
+Ontologies/Vocabularies/Schemas:
+
+- [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html)
+- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/)
+- [AGROVOC](https://aims.fao.org/aos/agrovoc)
+- [GloSIS](https://glosis-ld.github.io/glosis/)
+- [Agrontology](https://aims.fao.org/aos/agrontology)
+- [QUDT](https://qudt.org/)
 

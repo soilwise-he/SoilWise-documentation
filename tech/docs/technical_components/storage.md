@@ -16,9 +16,71 @@
 
 -->
 
+!!! component-header "Info"
+    **Current version:** 1.0 
+
+    **Project:** N/A
+
+    **Access point:** Triple Store: [SWR SPARQL endpoint](https://sparql.soilwise-he.containers.wur.nl/sparql)
+
+The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
+
+1. A relational database management system for the storage of the core metadata of both data and knowledge assets
+2. A Triple Store to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph
+3. Git for storage of user-enhanced metadata
+
+## Functionality
+
+### Postgress RDBMS - storage of raw and augmented metadata
+
+A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
+The catalogue also queries the Postgress database **** 
+
+There are several reasons for choosing an RDBMS as the main source for metadata storage and metadata querying
+
+- An RDBMS provides good options to efficiently structure and index its contents, thus allowing performant access for both internal processes and end user interface querying
+- An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid
+- Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users 
+
+### Virtuoso Triple Store - storage of SWR knowledge graph
+
+A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
+
+A Triple Store is selected as a parallel storage because it offers several capabilites 
+
+- It allows the linking of different knowledge models, e.g. to connect the SWR metadata model with existing and new knowledge structures on soil health and related domains
+- It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains
+- Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge
+
+### Git - User enhanced metadata
+
+The current setup of SWR, using the pycsw infrastructure, allows users to propose metadat enhancements. Such enhancements are managed in Git
+@Paul: please add/update where needed
+
+## Ongoing Developments
+
+In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed, but is not yet integrated into the deployment of iteration 1 include:
+
+### Establishing a vector database 
+
+A vector database is foreseen as a foundation to use Large Language Models (LLM) and implement Natural Language Querying (NLQ), e.g. to allow chatbot functionality for end users. A vector DB allows stoarge of text embeddings that are a the basis for such NLQ functions.
+
+### Selecting a search engine
+
+A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It can also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. Additionally, search engines are also implementing the indexation of unstructured content and are moving to supporting text embeddings. Thus, they might be a starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software and offering easier migration pathways towards NLQ-like functions. 
 
 
-<!--
+## Technology & Integration
+
+Components used:
+
+- Virtuoso (version 07.20.3239)
+- Postgres (release 12.13)
+
+
+
+
+<!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
 
 The SoilWise Repository is expected to fulfil the following functions:
 

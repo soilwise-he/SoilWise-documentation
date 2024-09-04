@@ -84,7 +84,7 @@ The Harvester component currently comprises of the following functions:
 
 #### CORDIS
 
-European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion.
+European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion. 
 
 #### OpenAire
 
@@ -93,10 +93,6 @@ For those resources, discovered via Cordis, and identified by a DOI, a harvester
 A second mechanism is available to link from Cordis to OpenAire, the RCN number. The OpenAire catalogue can be queried using an RCN filter to retrieve only resources relevant to a project. This work is still in preparation.
 
 Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
-
-#### OGC-CSW
-
-Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank} standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
 
 #### INSPIRE
 
@@ -162,6 +158,24 @@ flowchart LR
     hc -->|data cleaning| db[(temporary storage)]
 ```
 Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/actions){target=_blank}, Git provides options to cancel and trigger tasks and review CI-CD logs to check errors
+
+#### OGC-CSW
+
+Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank} standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
+
+#### CORDIS - OpenAire
+
+Cordis does not capture many metadata properties. We harvest the title of a project publication and - if available - the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
+
+A second mechanism is available to link from Cordis to OpenAire, the RCN number. The OpenAire catalogue can be queried using an RCN filter to retrieve only resources relevant to a project. This work is still in preparation.
+
+Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
+Detailed technical information can be found in the [technical description](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme)
+
+#### OpenAire and other sources
+
+The software used to query OpenAire by DOI or by RCN is not limited to be used by DOIs or RCNs that come from Cordis. Any list of DOIs or list of RCNs can be handled by the software.
+
 
 ## Integration opportunities
 

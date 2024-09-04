@@ -1,11 +1,17 @@
 # Map Server
 
 !!! component-header "Info"
-    **Current version:**
+    **Current version:** 8.2.2
 
     **Project:** [MapServer](https://github.com/soilwise-he/MapServer)
 
-[MapServer](https://mapserver.org){target=_blank} is an Open Source platform for publishing spatial data to the web using standardised APIs defined by Open Geospatial Consortium, such as WMS, WFS, WCS, OGC API-Features. Originally developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
+## Functionality
+
+[MapServer](https://mapserver.org){target=_blank} is an Open Source platform for publishing spatial data to the web with standardised APIs defined by Open Geospatial Consortium, such as WMS, WFS, WCS, OGC API-Features. Originally developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
+
+In Soilwise mapserver will be used to share spatial data in a conveniant way to clients such as QGIS, ArcGIS, OpenLayers, Leaflet.
+
+Read more about MapServer at [EJPSoil wiki](https://ejpsoil.github.io/soildata-assimilation-guidance/cookbook/mapserver.html){target=_blank}.
 
 ## Technology
 
@@ -20,29 +26,8 @@ The **configuration** of the MapServer is managed via a config file. The config 
 - [pygeodatacrawler](https://pypi.org/project/geodatacrawler/){target=_blank} is a tool by ISRIC generating mapfiles from various resources
 - [vs code mapfile plugin](https://marketplace.visualstudio.com/items?itemName=chicoff.mapfile){target=_blank}
 
-Read more about MapServer at [EJPSoil wiki](https://ejpsoil.github.io/soildata-assimilation-guidance/cookbook/mapserver.html){target=_blank}.
-
-Alternatives to Mapserver are:
-
-- Geoserver
-- QGIS server
-- pygeoapi (pygeoapi uses MapServer internally to provide map rendering)
+Mapfiles produced in the project are maintained in a git repository and mounted into the mapserver container in a deployment phase.
 
 
-### Map viewer
 
-A light-weight client map viewer component will be employed:
 
-- as a frontend of [Map Server](mapserver.md) component to visualize provided WMS, WFS, WCS layers
-- as an integrated part of the Catalogue to visualize primarily the geographical extent of data described in the metadata record and a snapshot visualization of the data
-- to provide the full preview of data, when a link to web service or data browse graphics (preview image) is available
-
-A dedicated mapviewer, such as [TerriaJS](https://terria.io){target=_blank}, can support users in accessing relevant data which has been prepared for optimal consumption in a typical GIS Desktop environment. For example maps of spatial distribution of soil properties or health indicators over Europe. A typical example is [Soilgrids](https://soilgrids.org){target=_blank}.
-
-An interesting aspect of a community like EUSO is the ability to prepare and share a map with stakeholders to trigger some discussion on phenomena at a location.
-
-Examine the need for viewing novel formats such as Vector tiles, [COG](https://www.cogeo.org/){target=_blank}, [GeoZarr](https://github.com/zarr-developers/geozarr-spec){target=_blank}, [GeoParquet](https://geoparquet.org/){target=_blank} directly on a map background. The benefit of these formats is that no (OGC) service is required to facilitate data visualisation.
-
-#### Technology
-
-[TerriaJS](https://terria.io){target=_blank} is an environment to share maps (react+leaflet+cesium), but also create maps and share them with stakeholders.

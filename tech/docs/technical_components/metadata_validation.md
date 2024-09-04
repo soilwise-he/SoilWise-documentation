@@ -1,5 +1,20 @@
 # Metadata Validation
 
+## Functionality
+
+For users to understand the quality and completeness of a metadata record, the SWR implements a number of validations, the generated indicators are displayed in the catalogue frontend.
+
+In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md) and [Metadata augmentation](metadata_augmentation.md)), this validation process can be repeated to understand the variability of metadata and value which has been added by SWR.
+
+
+Validations:
+
+- [Metadata validation](#metadata-validation)
+- [Link liveliness assessment](#link-liveliness-assessment )
+
+
+## Metadata validation
+
 !!! component-header "Info"
     **Current version:** 
 
@@ -7,25 +22,7 @@
 
     **Access point:** <https://data.soilwise.wetransform.eu/#/home> (authorization needed)
 
-
-In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md) and [Metadata augmentation](metadata_augmentation.md)), this validation process can be repeated to understand the value which has been added by SWR.
-
-``` mermaid
-flowchart LR
-    HC(Harvester)
-    HC --> db[(Relation DB)]
-    HC --> TS[(Triple Store)]
-    MV[Run Metadata validation] --> |read| db
-    db --> |write| MV
-    MV --> |display validation results| MC(Metadata Catalogue)
-    MV --> |display validation results| HA(Hale Connect Admin Console)
-    MP[Metadata profile configuration] --> HA
-    HA --> MV
-```
-
-## Metadata profile
-
-Metadata profile specifies the required metadata elements that must be included to describe spatial data sets and services, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example INSPIRE Metadata Profile, ISO 19115, ISO 19119, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validation according to the following metadata profiles:
+Metadata profiles specify the required metadata elements that must be included to describe resources, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example Datacite, GBIF-EML, Geo-DCAT-AP, INSPIRE Metadata Profile, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validations according to the following metadata profiles:
 
 <!--
 ### Minimal metadata elements
@@ -48,7 +45,6 @@ A minimal set of metadata elements was defined to validate completeness of metad
 ### EJP/EUSO Metadata profile 
 
 This metadata profile was developed through EJP Soil project efforts and modified and approved by the EUSO Working Group.
-
 
 | Label | Cardinality | Codelist | Description |
 | ---   | ---         | ---      | ---         |
@@ -141,41 +137,22 @@ The validation against the INSPIRE metadata profile checks whether the metadata 
 | WRBSoilNameType                       | «dataType»          |
 | WRBSpecifierValue                     | «codelist»          |
 
+### Technology
 
-### Future work
-
-In the following iterations, ISO, and compliance with GloSIS will be inspected
-
-## Functionality
-
-The metadata validation component currently comprises the following functions:
-
-- [Metadata structure validation](#metadata-structure-validation)
-- [Metadata completeness check](#metadata-completeness-validation)
-- [Metadata ETS checking](#metadata-etsats-checking)
-- [Display validation results](#display-validation-results)
-
-### Metadata structure validation
+#### Metadata structure validation
 
 The initial steps of metadata validation comprise:
 
-1. **Markup (Syntax) Check:** Verifying that the metadata adheres to the specified syntax rules. This includes checking for allowed tags, correct data types, character encoding, and adherence to naming conventions.
-2. **Schema (DTD) Validation:** Ensuring that the metadata conforms to the defined schema or metadata model. This involves verifying that all required elements are present, and relationships between different metadata components are correctly established.
+1. **Syntax Check:** Verifying that the metadata adheres to the specified syntax rules. This includes checking for allowed tags, correct data types, character encoding, and adherence to naming conventions.
+2. **Schema (DTD/xsd/shacl/json-schema) Validation:** Ensuring that the metadata conforms to the defined schema or metadata model. This involves verifying that all required elements are present, and relationships between different metadata components are correctly established.
 
-### Metadata completeness validation
+#### Metadata completeness indication
 
-Requirement of record's completeness is fullfilled if:
+The indication calculates a level of completeness of a record, indicated in % of 100 for endorsed properties of the EUSO soil profile, considering that some properties are conditional based on selected values in other properties.
 
-<!-- - it contains the required Minimal metadata elements (completeness according to SWR)-->
-- it contains the required elements endorsed by the adopted metadata standard itself 
+#### Metadata ETS/ATS checking
 
-Completeness according to the adopted model results in quality indicators of a resource description.
-
-<!--
-Completeness according to SWR and completeness according to the adopted model results in quality indicators of a resource description. The completeness acording to the SWR additionaly predetermines performance within SWR platform.
--->
-
-### Metadata ETS/ATS checking
+The methodology of ETS/ATS has been suggested to develop validation tests.
 
 **Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behaviour of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation and provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviours of the metadata under various conditions.
 
@@ -188,7 +165,31 @@ Completeness according to SWR and completeness according to the adopted model re
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
-### Link liveliness assessment 
+### Technology & Integration
+
+[Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
+
+The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
+
+<!--
+Various technologies use dedicated mechanisms to validate inputs on type matching and completeness
+
+- XML (Dublin core, iso19115, Datacite) validation - XSD schema, potentially extended with Schematron rules
+- json (OGC API - Records/STAC) - json schema
+- RDF (schema.org, dcat) - SHACL
+-->
+
+### Future work
+
+- display validation results in the SoilWise Catalogue
+- on-demand metadata validation, which would generate reports for user-uploaded metadata
+- applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports.
+- [Shacl](https://www.w3.org/TR/shacl/){target=_blank} is is in general intended for semantic web related validations; however, it's exact scope will be determined during the SoilWise developments. 
+
+
+<hr>
+
+## Link liveliness assessment 
 
 !!! component-header "Info"
     **Current version:**
@@ -199,7 +200,8 @@ Metadata (and data and knowledge sources) tend to contain links to other resourc
 
 The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness  privides the following functions:
 
-#### Functionality
+### Functionality
+
 1. **OGC API Catalogue Integration**
     - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank} System
     - Extracts and evaluates URLs from catalogue items 
@@ -220,7 +222,7 @@ The link liveliness assessment subcomponent runs over the available links stored
 5. **Timeout management**
     - Identifies resources exceeding specified timeout thresholds
 
-#### Technology
+### Technology
    * **Python**
         Used for the linkchecker integration, API development, and database interactions
    * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
@@ -235,55 +237,6 @@ The link liveliness assessment subcomponent runs over the available links stored
 
 ### Display validation results
 
-Currently, validation results are available only in the Hale Administration Console for authorised user. 
+Currently, validation results are available only in the API
 
-#### Future work
-A tag indicating `EUSO compliance` assigned to metadata records and visible in the [SWR Catalogue](catalogue.md) is envisioned in the future. `INSPIRE compliance` will be displayed to authorised users.
 
-## Technology & Integration
-
-[Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
-
-The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
-
-<!--
-Various technologies use dedicated mechanisms to validate inputs on type matching and completeness
-
-- XML (Dublin core, iso19115, Datacite) validation - XSD schema, potentially extended with Schematron rules
-- json (OGC API - Records/STAC) - json schema
-- RDF (schema.org, dcat) - SHACL
--->
-
-## Future work
-
-- display validation results in the SoilWise Catalogue
-- on-demand metadata validation, which would generate reports for user-uploaded metadata
-- applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports.
-- ETS for GloSIS are not existing and need to be configured
-- [Shacl](https://www.w3.org/TR/shacl/){target=_blank} is is in general intended for semantic web related validations; however, it's exact scope will be determined during the SoilWise developments. 
-
-<!--
-## Data quality assurance
-
-- Automated validations on datasets to check if statements in metadata on resolution, projection, spatial/temporal bounds, accuracy, classification, uncertainty are correct.
-- If a metadata record has no statements on these aspects, findings fom the validation will be used instead.
-- understand the history of a data file is of interest, with every download save the hash of the file, to know if it was changed since last download and if this change was properly documented.
-
-- Impact of validation? Tag the record with the actual value, notify the owner of our findings, On the UI show only the updated values, decrease the record quality score (impacting search ranking).
-
-- Prevent to download data for every validation by checking against modification date.
-- Run a full check at monthly intervals in case files are changed without updating the modification date.
-- If data is provided as a service (or cloud optimised) a subset of the data may be extracted for the validation.
-
-**Requirements to storage component:**
-
-- For any data link in a metadata record, keep a registry of its validation result (keep a copy of (or reference to) the metadata record at that moment)
-- A registry to keep record overrides introduced by validations
-- A registry to track conversation with the data owner on validation results
-
-**Impact on search engine:**
-
-- decrease ranking in case metadata has many inconsistencies related to data quality
-
-- [GeoHealthCheck](https://geohealthcheck.org) could be an interesting platform to monitor quality of data. 
--->
