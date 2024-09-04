@@ -4,7 +4,7 @@
 
     **Current version:**
     
-    **Project:** [Metadata augmentation](https://github.com/soilwise-he/metadata-augmentation)
+    **Project:** 
 
 ### Functionality
 
