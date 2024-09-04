@@ -1,6 +1,4 @@
-# Metadata Validation
-
-## Functionality
+# Validations
 
 For users to understand the quality and completeness of a metadata record, the SWR implements a number of validations, the generated indicators are displayed in the catalogue frontend.
 
@@ -9,11 +7,11 @@ In terms of metadata, SoilWise Repository aims for the approach to harvest and r
 
 Validations:
 
-- [Metadata validation](#metadata-validation)
+- [Metadata profile validation](#metadata-profile-validation)
 - [Link liveliness assessment](#link-liveliness-assessment )
 
 
-## Metadata validation
+## Metadata profiles
 
 !!! component-header "Info"
     **Current version:** 
@@ -137,7 +135,9 @@ The validation against the INSPIRE metadata profile checks whether the metadata 
 | WRBSoilNameType                       | «dataType»          |
 | WRBSpecifierValue                     | «codelist»          |
 
-### Technology
+## Functionality
+
+### Metadata profile validation
 
 #### Metadata structure validation
 
@@ -165,7 +165,7 @@ The methodology of ETS/ATS has been suggested to develop validation tests.
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
-### Technology & Integration
+#### Technology & Integration
 
 [Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
 
@@ -179,7 +179,7 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 - RDF (schema.org, dcat) - SHACL
 -->
 
-### Future work
+#### Future work
 
 - display validation results in the SoilWise Catalogue
 - on-demand metadata validation, which would generate reports for user-uploaded metadata
@@ -187,9 +187,7 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 - [Shacl](https://www.w3.org/TR/shacl/){target=_blank} is is in general intended for semantic web related validations; however, it's exact scope will be determined during the SoilWise developments. 
 
 
-<hr>
-
-## Link liveliness assessment 
+### Link liveliness assessment 
 
 !!! component-header "Info"
     **Current version:**
@@ -199,8 +197,6 @@ Various technologies use dedicated mechanisms to validate inputs on type matchin
 Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
 
 The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. The link liveliness  privides the following functions:
-
-### Functionality
 
 1. **OGC API Catalogue Integration**
     - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank} System
@@ -222,7 +218,7 @@ The link liveliness assessment subcomponent runs over the available links stored
 5. **Timeout management**
     - Identifies resources exceeding specified timeout thresholds
 
-### Technology
+#### Technology
    * **Python**
         Used for the linkchecker integration, API development, and database interactions
    * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
@@ -234,9 +230,3 @@ The link liveliness assessment subcomponent runs over the available links stored
         Used for containerizing the application, ensuring consistent deployment across environments
    * **CI/CD**
         Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
-
-### Display validation results
-
-Currently, validation results are available only in the API
-
-
