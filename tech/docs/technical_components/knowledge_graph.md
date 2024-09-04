@@ -47,5 +47,6 @@ Currently this work still has an explorative character, with the repository cont
 Components used:
 
 - Virtuoso (version 07.20.3239)
-- @hugo to add tech info for RDF transformation
+- Postgres (release 12.13)
+- Java (OpenJDK 17)
 
