@@ -5,7 +5,7 @@
 
     **Project:** [Soil Health Knowledge graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
 
-    **Access point:** [SWR SPARQL endpoint](https://sparql.soilwise-he.containers.wur.nl/sparql)
+    **Access point:** SWR SPARQL endpoint: <https://sparql.soilwise-he.containers.wur.nl/sparql>
 
 SoilWise develops and implements a Knowledge Graph linking the knowledge captured in harvested and augmented metadata with various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are also implemented as RDF graphs. Linking such graphs into a harmonized SWR knoledge graph allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
 
@@ -28,7 +28,7 @@ Since we're importing resources from various data and knowledge repositories, we
 !!! component-header "Info"
     **Access point:** <https://voc.soilwise-he.containers.wur.nl/concept/>
 
-As a preparation to extend the currently deployed metadata knowledge graph with broader domain knowledge, experimental work has been performed to enricht the KG en to link it with other knowledge graphs. 
+As a preparation to extend the currently deployed metadata knowledge graph (KG) with broader domain knowledge, experimental work has been performed to enricht the KG en to link it with other knowledge graphs. 
 
 The following aspects have been worked on and will  be furhter developed and integrated into future iterations of the SoilWise KG:
 
@@ -45,10 +45,10 @@ Components used:
 
 Ontologies/Vocabularies/Schemas:
 
-- [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html)
-- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/)
-- [AGROVOC](https://aims.fao.org/aos/agrovoc)
-- [GloSIS](https://glosis-ld.github.io/glosis/)
-- [Agrontology](https://aims.fao.org/aos/agrontology)
-- [QUDT](https://qudt.org/)
+- [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html){target=_blank}
+- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/){target=_blank}
+- [AGROVOC](https://aims.fao.org/aos/agrovoc){target=_blank}
+- [GloSIS](https://glosis-ld.github.io/glosis/){target=_blank}
+- [Agrontology](https://aims.fao.org/aos/agrontology){target=_blank}
+- [QUDT](https://qudt.org/){target=_blank}
 
