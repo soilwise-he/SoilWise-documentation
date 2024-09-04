@@ -31,7 +31,7 @@ The SoilWise repository aims at merging and seamlessly providing different types
 
 ## Functionality
 
-### Postgress RDBMS - storage of augmented metadata
+### Postgress RDBMS - storage of raw and augmented metadata
 
 A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
 The catalogue also queries the Postgress database **** 
