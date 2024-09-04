@@ -165,12 +165,12 @@ Many (spatial) catalogues advertise their metadata via the [catalogue Service fo
 
 #### CORDIS - OpenAire
 
-Cordis does not capture many metadata properties. We harvest the title of a project publication and - if available - the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
+Cordis does not capture many metadata properties. We harvest the title of a project publication and, if available, the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
 
 A second mechanism is available to link from Cordis to OpenAire, the RCN number. The OpenAire catalogue can be queried using an RCN filter to retrieve only resources relevant to a project. This work is still in preparation.
 
 Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
-Detailed technical information can be found in the [technical description](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme)
+Detailed technical information can be found in the [technical description](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme){target=_blank}.
 
 #### OpenAire and other sources
 
