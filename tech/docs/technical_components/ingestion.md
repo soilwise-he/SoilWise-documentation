@@ -84,7 +84,7 @@ The Harvester component currently comprises of the following functions:
 
 #### CORDIS
 
-European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion.
+European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion. Technical information can be found [here](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme)
 
 #### OpenAire
 
