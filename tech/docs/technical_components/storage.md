@@ -1,37 +1,19 @@
 # Repository Storage
 
-
-<!--
-- asset and feature identification
-- backup
-- versioning
-- store
-- query
-
-- structured folders
-- user permissions (who can commit, who reviews code)
-
-- connections with: catalog, ETL, SPARQL, QA, Identifier Mint
-- technologies used: KV stores, Relational databases, Graph/Document databases, Vector databases (Knowledge component)
-
--->
-
 !!! component-header "Info"
     **Current version:** 1.0 
 
-    **Project:** N/A
-
-    **Access point:** Triple Store: [SWR SPARQL endpoint](https://sparql.soilwise-he.containers.wur.nl/sparql)
+    **Access point:** Triple Store (SWR SPARQL endpoint) <https://sparql.soilwise-he.containers.wur.nl/sparql>
 
 The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 
-1. A relational database management system for the storage of the core metadata of both data and knowledge assets
-2. A Triple Store to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph
-3. Git for storage of user-enhanced metadata
+1. [A relational database management system](#postgress-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core metadata of both data and knowledge assets
+2. [A Triple Store](#virtuoso-triple-store-storage-of-swr-knowledge-graph) to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph
+3. [Git](#git-user-enhanced-metadata) for storage of user-enhanced metadata
 
 ## Functionality
 
-### Postgress RDBMS - storage of raw and augmented metadata
+### Postgress RDBMS: storage of raw and augmented metadata
 
 A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
 The catalogue also queries the Postgress database **** 
@@ -42,7 +24,7 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 - An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid
 - Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users 
 
-### Virtuoso Triple Store - storage of SWR knowledge graph
+### Virtuoso Triple Store: storage of SWR knowledge graph
 
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
@@ -52,7 +34,7 @@ A Triple Store is selected as a parallel storage because it offers several capab
 - It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains
 - Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge
 
-### Git - User enhanced metadata
+### Git: User enhanced metadata
 
 The current setup of SWR, using the pycsw infrastructure, allows users to propose metadat enhancements. Such enhancements are managed in Git
 @Paul: please add/update where needed
