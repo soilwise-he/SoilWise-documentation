@@ -1,4 +1,4 @@
-# Validations
+# Metadata Validation
 
 For users to understand the quality and completeness of a metadata record, the SWR implements a number of validations, the generated indicators are displayed in the catalogue frontend.
 

@@ -78,7 +78,6 @@ The Harvester component currently comprises of the following functions:
 - [Metadata RDF turtle serialization](#metadata-rdf-turtle-serialization)
 - [RDF to Triple Store](#rdf-to-triple-store)
 - [Duplication identification](#duplication-indentification)
-- [Logging, versioning]()
 
 ### Harvest records from metadata and knowledge resources
 
