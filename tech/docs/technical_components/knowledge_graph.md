@@ -28,23 +28,27 @@ Since we're importing resources from various data and knowledge repositories, we
 !!! component-header "Info"
     **Access point:** <https://voc.soilwise-he.containers.wur.nl/concept/>
 
-The basic (metadata) Knowledge Graph that is generated from the augmented metadata will be enriched with additional knowledge in various manners:
+As a preparation to extend the currently deployed metadata knowledge graph with broader domain knowledge, experimental work has been performed to enricht the KG en to link it with other knowledge graphs. 
 
-- linking with "external" ontologies and taxonomies (linked data) to extend the knowledge base and allow more meaningful semantic querying
-- using AI/ML to derive a knowledge graph specifically for the soil health domain
-- using AI/ML to derive additional context (e.g. keywords, geography) for data and knowledge assets
+The following aspects have been worked on and will  be furhter developed and integrated into future iterations of the SoilWise KG:
 
-Currently this work still has an explorative character, with the repository containing several experiments that will be further developed over the project's lifetime.
-
-
-
-
+- Applying various methods using AI/ML to derive a (soil health) knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report "Soil monitoring in Europe - Indicators and thresholds for soil quality assessments". It tests the effectiveness of various methods to generate knowledge in the form of KGs from documents, which could also benefit other AI/ML functions foreseen.
+- Establishing links between the SoilWise KG and external taxonomies and ontologies (linked data). Concepts in the SoilWise KG that (closely) match with concepts in the AGROVOC thesaurus are linked. The implemented method is exemplary for the foreseen wider linking required to establish a soil health KG.
+- Testing AI/ML based methods to derive additional knowledge (e.g. keywords, geography) for data and knowledge assets. Such methods could for instance be used to further augment metadata or fill exisiting metadata gaps. Besides testing such methods, this includes establishing a model that allows to distinguish between genuine and generated metadata.
 
 ## Technology & Integration
 
 Components used:
 
 - Virtuoso (version 07.20.3239)
-- Postgres (release 12.13)
-- Java (OpenJDK 17)
+- Python notebooks
+
+Ontologies/Vocabularies/Schemas:
+
+- [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html)
+- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/)
+- [AGROVOC](https://aims.fao.org/aos/agrovoc)
+- [GloSIS](https://glosis-ld.github.io/glosis/)
+- [Agrontology](https://aims.fao.org/aos/agrontology)
+- [QUDT](https://qudt.org/)
 
