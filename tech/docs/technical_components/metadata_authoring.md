@@ -1,12 +1,11 @@
 # Metadata Authoring
 
 !!! component-header "Info"
-    **Current version:** 
-      0.1
-    **Project:** 
-      https://github.com/soilwise-he/soilinfohub
-    **Access point:** 
-      https://github.com/soilwise-he/soilinfohub
+    **Current version:** 0.1
+    
+    **Project:** https://github.com/soilwise-he/soilinfohub
+    
+    **Access point:** https://github.com/soilwise-he/soilinfohub
 
 ## Functionality
 
