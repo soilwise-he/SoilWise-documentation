@@ -17,9 +17,9 @@
 -->
 
 !!! component-header "Info"
-    **Current version: ** 1.0 
+    **Current version:** 1.0 
 
-    **Project: ** N/A
+    **Project:** N/A
 
     **Access point:** Triple Store: [SWR SPARQL endpoint](https://sparql.soilwise-he.containers.wur.nl/sparql)
 
@@ -47,6 +47,7 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
 A Triple Store is selected as a parallel storage because it offers several capabilites 
+
 - It allows the linking of different knowledge models, e.g. to connect the SWR metadata model with existing and new knowledge structures on soil health and related domains
 - It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains
 - Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge  
