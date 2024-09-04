@@ -64,6 +64,17 @@ A vector database is foreseen as a foundation to use Large Language Models (LLM)
 
 A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It can also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. Additionally, search engines are also implementing the indexation of unstructured content and are moving to supporting text embeddings. Thus, they might be a starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software and offering easier migration pathways towards NLQ-like functions. 
 
+
+## Technology & Integration
+
+Components used:
+
+- Virtuoso (version 07.20.3239)
+- Postgres (release 12.13)
+
+
+
+
 <!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
 
 The SoilWise Repository is expected to fulfil the following functions:
