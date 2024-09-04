@@ -15,6 +15,15 @@ In this component a variety of scripting / NLP / LLM methods and algorithms are 
 | <https://geo.fi/data/ee44-aa22-33> | spatial-scope | 16.7,62.2,18,81.5 |  <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national> | spatial-scope-analyser | 2024-07-04 |
 | <https://geo.fi/data/abc1-ba27-67> | soil-thread | This dataset is used to evaluate Soil Compaction in Nuohous Sundström | <http://aims.fao.org/aos/agrovoc/c_7163> | keyword-analyser | 2024-06-28 |
 
+### Translation module
+
+Many records arrive in a local language, SWR translates the main properties for the record: title and abstract into english, to offer a single language user experience to users. The translations are used in filtering and display of records.
+
+The translation module builds on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). Translations are stored in a database for reuse by the SWR.
+The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
+
+Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
+
 ### Spatial scope analyser
 
 A script that analyses the spatial scope of a resource
@@ -41,25 +50,15 @@ To understand if the dataset has a global, continental, national or regional sco
 
 ## Foreseen functionality
 
-### Translation module
+### Keyword matcher
 
-Many records arrive in a local language, we aim to capture at least english main properties for the record: title, abstract, keywords, lineage, usage constraints
+Keywords are an important mechanism to filter and cluster records. But similar keywords need to be equal to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
 
-- has a db backend, every translation is captured in a database
-- the EU translation service is used, this service returns a asynchronous response to an API endpoint (callback)
-- the callback populates the database, next time the translation is available
-- make sure that frontend indicates if a string has been machine translated, with option to flag as inappropriate
+Analyses existing keywords on a metadata record. Two cases can be identified.
+- If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. 
+- If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). Consider the risk of false positives.
 
-API documentation: <https://language-tools.ec.europa.eu/>
-
-### Keywords matcher
-
-Analyses existing keywords on a metadata record, it matches an existing keyword to a list of predefined keywords, augmenting the keyword to include a thesaurus and uri reference (potentially a translation to English).
-
-It requires a database (relational or RDF) with common thesauri.
-
-### Metadata cleaning
-
+To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain with relations to alternative keywords, such as agrovoc, gemet, dpedia, iso. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. Agrovoc is multilingual, facilitating the translation case.
 
 ### Spatial Locator
 
