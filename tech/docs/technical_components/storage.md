@@ -27,7 +27,7 @@ The SoilWise repository aims at merging and seamlessly providing different types
 
 1. A relational database management system for the storage of the core metadata of both data and knowledge assets
 2. A Triple Store to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph
-3. ***
+3. Git for storage of user-enhanced metadata
 
 ## Functionality
 
@@ -50,7 +50,12 @@ A Triple Store is selected as a parallel storage because it offers several capab
 
 - It allows the linking of different knowledge models, e.g. to connect the SWR metadata model with existing and new knowledge structures on soil health and related domains
 - It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains
-- Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge  
+- Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge
+
+### Git - User enhanced metadata
+
+The current setup of SWR, using the pycsw infrastructure, allows users to propose metadat enhancements. Such enhancements are managed in Git
+@Paul: please add/update where needed
 
 ## Ongoing Developments
 
