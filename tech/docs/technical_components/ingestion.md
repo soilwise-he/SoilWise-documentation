@@ -165,7 +165,7 @@ Many (spatial) catalogues advertise their metadata via the [catalogue Service fo
 
 #### CORDIS - OpenAire
 
-Cordis does not capture many metadata properties. We harvest the title of a project publication and - if available - the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources, discovered via Cordis, and identified by a DOI, a harvester fetches additional metadata from OpenAire. OpenAire is a catalogue initiative which harvests metadata from popular scientific repositories, such as Zenodo, Dataverse, etc.
+Cordis does not capture many metadata properties. We harvest the title of a project publication and - if available - the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
 
 A second mechanism is available to link from Cordis to OpenAire, the RCN number. The OpenAire catalogue can be queried using an RCN filter to retrieve only resources relevant to a project. This work is still in preparation.
 
