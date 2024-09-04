@@ -16,6 +16,10 @@
 
 -->
 
+
+
+<!--
+
 The SoilWise Repository is expected to fulfil the following functions:
 
 1. [Storage of artefacts](#storage-of-artefacts)
@@ -136,3 +140,6 @@ A second level of backups can be more granular, e.g., storing all data and metad
 If there is data that requires full versioning or historisation, it is recommended to store it in a version control system.
 
 Finally, there should be a restore exercise at least once per year, where a fresh system is set up from both types of backups.
+
+-->
+
