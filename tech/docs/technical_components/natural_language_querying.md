@@ -9,17 +9,13 @@
 
 ## Functionality
 
-Still in research phase, no implementations yet.
+The aplication of Natural Language Querying for SoilWise and the integration into the SoilWise repository is currently still in the research phase. No implementations are yet part of the SWR delivery.
 
-Core topics:
+## Ongoing Research
 
- - **LLM**[^1] based (semantic)KG generation from unstructured content (leveraging existing search technology)
- - chatbot - Natural Language Interface (using advanced **NLP**[^2] methodologies, such as LLMs)
- - LLM operationalisation (**RAG**[^3] ingestion pipeline(s), generation pipeline, embedding store, models)
+A strategy for development and implementation of NLQ to support SoilWise users is currently being developed. It considers various ways to make knowledge available through NLQ, possibly including options to migrate to different "levels" of complexity and innovation.
 
-## Foreseen functionality
-
-Leverage existing search technology (e.g. the Apache Solr open source search engine) combined with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. 
+Such a "leveled approach" could start from leveraging existing/proven search technology (e.g. the Apache Solr open source search engine), and gradually combining this with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. 
 
 General steps towards an AI based self-learning search system, from less to more complex: 
 
@@ -28,6 +24,12 @@ General steps towards an AI based self-learning search system, from less to more
  - understanding query intent (semantic query parsing, semantic knowledge graphs, virtual assistants)
  - automated relevance tuning (signals boosting, collaborative filtering, learning to rank)
  - Self-learning search system
+
+Core topics are:
+
+ - **LLM**[^1] based (semantic)KG generation from unstructured content (leveraging existing search technology)
+ - chatbot - Natural Language Interface (using advanced **NLP**[^2] methodologies, such as LLMs)
+ - LLM operationalisation (**RAG**[^3] ingestion pipeline(s), generation pipeline, embedding store, models)
 
 The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. Later steps depend more on the use of complex language models.
 
