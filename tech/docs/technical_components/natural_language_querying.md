@@ -9,9 +9,9 @@
 
 ## Functionality
 
-The aplication of Natural Language Querying for SoilWise and the integration into the SoilWise repository is currently still in the research phase. No implementations are yet part of the SWR delivery.
+The aplication of Natural Language Querying for SoilWise and the integration into the SoilWise repository is currently still in the research phase. No implementations are yet an integrated part of the SWR delivery.
 
-## Ongoing Research
+## Ongoing Research and Developments
 
 A strategy for development and implementation of NLQ to support SoilWise users is currently being developed. It considers various ways to make knowledge available through NLQ, possibly including options to migrate to different "levels" of complexity and innovation.
 
