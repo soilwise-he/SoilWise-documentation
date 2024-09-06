@@ -17,13 +17,15 @@ A strategy for development and implementation of NLQ to support SoilWise users i
 
 Such a "leveled approach" could start from leveraging existing/proven search technology (e.g. the Apache Solr open source search engine), and gradually combining this with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. 
 
-General steps towards an AI based self-learning search system, from less to more complex: 
+Typical general steps towards an AI-powered self-learning search system, are listed below from less to more complex. Note that to fully benefit from later steps it will be necessary to process knowledge (documents) themselves ("look inside the documents") instead of only working with the metadata about them. 
 
  - basic keyword based search (**tf-idf**[^4], **bm25**[^5])
  - use of taxonomies and entity extraction
  - understanding query intent (semantic query parsing, semantic knowledge graphs, virtual assistants)
  - automated relevance tuning (signals boosting, collaborative filtering, learning to rank)
- - Self-learning search system
+ - Self-learning search system (full feedback loop using all user and content data)
+
+[<img src="https://github.com/user-attachments/assets/59bdbcf4-bbb2-4b61-89db-6c665604223d" width="600" alt="Search capabilities evolution">](https://github.com/user-attachments/assets/59bdbcf4-bbb2-4b61-89db-6c665604223d "Search capabilities evolution")
 
 Core topics are:
 
@@ -31,7 +33,9 @@ Core topics are:
  - chatbot - Natural Language Interface (using advanced **NLP**[^2] methodologies, such as LLMs)
  - LLM operationalisation (**RAG**[^3] ingestion pipeline(s), generation pipeline, embedding store, models)
 
-The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. Later steps depend more on the use of complex language models.
+The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. Later steps (marked in yellow in the following image) depend more on the use of complex language models.
+
+[<img src="https://github.com/user-attachments/assets/65b862a0-b1d7-49f2-9007-de6dd56ee652" width="600" alt="Search LLM capabilities">](https://github.com/user-attachments/assets/65b862a0-b1d7-49f2-9007-de6dd56ee652 "Search LLM capabilities")
 
 One step towards personalisation could be the use of (user) signals boosting and collaborative filtering. But this would require tracking and logging (user) actions.
 
@@ -39,7 +43,7 @@ A seperate development could be a chatbot based on selected key soil knowledge d
 
 Optionally the functionality can be extended from text processing to also include multi-modal data such as photos (e.g. of soil profiles). Effort needed for this has to be carefully considered.
 
-Along the way natural language processing (NLP) methods and approaches can also be applied for various metadata handling and augmentation.
+Along the way natural language processing (NLP) methods and approaches can (and are) also be applied for various metadata handling and augmentation.
 
 ## Foreseen technology
 
