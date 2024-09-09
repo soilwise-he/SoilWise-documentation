@@ -4,15 +4,15 @@ Currently the following APIs are employed in the SoilWise repository:
 
 - Discovery APIs
     - **SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
-    - **OGC API- Records:** <>
-    - **Spatio Temporal Asset Catalog (STAC):** <>
+    - **OGC API- Records:** <https://soilwise-he.containers.wur.nl/cat/openapi>
+    - **Spatio Temporal Asset Catalog (STAC):** <https://soilwise-he.containers.wur.nl/cat/stac/openapi>
     - **Catalog service for the Web (CSW):** <https://soilwise-he.containers.wur.nl/cat/openapi>
-    - **Protocol for Metadata Harvesting (OAI-PMH):** <>
-    - **OpenSearch:** <>
+    - **Protocol for Metadata Harvesting (OAI-PMH):** <https://soilwise-he.containers.wur.nl/cat/oaipmh>
+    - **OpenSearch:** <https://soilwise-he.containers.wur.nl/cat/opensearch>
 - Processing API's
-    - **Translate API:** <>
+    - **Translate API:** <https://api.soilwise-he.containers.wur.nl/tolk/docs>
     - **Link Liveness Assessment API:** <https://api.soilwise-he.containers.wur.nl/linky/docs>
-    - **RDF to triplestore API:** <>
+    - **RDF to triplestore API:** <https://repo.soilwise-he.containers.wur.nl/docs>
 
 
 ## Future work
@@ -22,3 +22,4 @@ SoilWise will in the future use more APIs to interact between components as well
 - [Open API](https://www.openapis.org/){target=_blank}
 - [GraphQL](https://graphql.com){target=_blank}
 - OGC webservices (preferably [OGC API generation](https://ogcapi.ogc.org/){target=_blank} based on Open API)
+- [SPARQL](https://graphql.com](https://www.w3.org/TR/sparql12-query/){target=_blank}
