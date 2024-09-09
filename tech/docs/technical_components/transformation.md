@@ -28,7 +28,7 @@ The specific requirements these components have to fulfil are:
 - It should be possible to share transformation processes.
 - Transformation processes should be fully documented or self-documented.
 
-## Implementation Technologies
+## Technology & Integration
 
 We plan to deploy the needed capabilities to the SWR using two technologies:
 

@@ -1,13 +1,16 @@
 # Metadata Authoring
 
 !!! component-header "Info"
-    **Current version:** 0.1
     
     **Project:** https://github.com/soilwise-he/soilinfohub
     
     **Access point:** https://github.com/soilwise-he/soilinfohub
 
 ## Functionality
+
+**No implementations are yet an integrated part of the SWR delivery.**
+
+## Foreseen functionality
 
 Users are enabled to create and maintain metadata records within the SWR, in case these records can not be imported from a remote source. Note that importing records from remote is the preferred approach from the SWR point of view because the ownership and persistence of the record is facilitated by the remote platform. 
 
