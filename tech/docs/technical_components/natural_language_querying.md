@@ -15,7 +15,7 @@ The aplication of Natural Language Querying for SoilWise and the integration int
 
 A strategy for development and implementation of NLQ to support SoilWise users is currently being developed. It considers various ways to make knowledge available through NLQ, possibly including options to migrate to different "levels" of complexity and innovation.
 
-Such a "leveled approach" could start from leveraging existing/proven search technology (e.g. the Apache Solr open source search engine), and gradually combining this with new developments in NLP (such as transformer based language models) to make harvested knowledge (documents and formal knowledge graphs) accessible to SoilWise users. 
+Such a "leveled approach" could start from leveraging existing/proven search technology (e.g. the Apache Solr open source search engine), and gradually combining this with new developments in NLP (such as transformer based language models) to make harvested knowledge metadata and harmonized knowledge graphs accessible to SoilWise users. 
 
 Typical general steps towards an AI-powered self-learning search system, are listed below from less to more complex. Note that to fully benefit from later steps it will be necessary to process knowledge (documents) themselves ("look inside the documents") instead of only working with the metadata about them. 
 
@@ -53,7 +53,7 @@ Along the way natural language processing (NLP) methods and approaches can (and 
  - Java and/or Python based NLP libraries, e.g. [OpenNLP](https://opennlp.apache.org), [spaCy](https://spacy.io)
  - Small to large foundation LLMs
  - LLM development framework (such as [langChain](https://www.langchain.com) or [LlamaIndex](https://www.llamaindex.ai))
- - Front end toolkit 
+ - Frontend toolkit 
  - LLM deployment and/or hosted API access
  - Authentication and authorisation layer
  - Computation and storage infrastructure
