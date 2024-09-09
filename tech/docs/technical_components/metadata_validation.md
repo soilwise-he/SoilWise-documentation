@@ -13,13 +13,6 @@ Validations:
 
 ## Metadata profiles
 
-!!! component-header "Info"
-    **Current version:** 
-
-    **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
-
-    **Access point:** <https://data.soilwise.wetransform.eu/#/home> (authorization needed)
-
 Metadata profiles specify the required metadata elements that must be included to describe resources, ensuring they are discoverable, accessible, and usable. Metadata validation is inherently linked to the specific metadata profile it is intended to follow. This linkage ensures that metadata records are consistent, meet the necessary standards, and are fit for their intended purpose, thereby supporting effective data management, discovery, and use. In the soil domain, several metadata profiles are commonly used to ensure the effective documentation, discovery, and utilization of soil data, for example Datacite, GBIF-EML, Geo-DCAT-AP, INSPIRE Metadata Profile, Dublin Core, ANZLIC Metadata Profile, FAO Global Soil Partnership Metadata Profile, EJP/EUSO Metadata Profile. SoilWise Repository is currently able to perform validations according to the following metadata profiles:
 
 <!--
@@ -138,6 +131,13 @@ The validation against the INSPIRE metadata profile checks whether the metadata 
 ## Functionality
 
 ### Metadata profile validation
+
+!!! component-header "Info"
+    **Current version:** 
+
+    **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
+
+    **Access point:** <https://data.soilwise.wetransform.eu/#/home> (authorization needed)
 
 #### Metadata structure validation
 
