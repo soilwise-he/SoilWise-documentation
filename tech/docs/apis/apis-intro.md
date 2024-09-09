@@ -6,12 +6,12 @@ Currently the following APIs are employed in the SoilWise repository:
     - **SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
     - **OGC API- Records:** <>
     - **Spatio Temporal Asset Catalog (STAC):** <>
-    - [Catalog service for the Web (CSW)](catalogue_csw.md)
+    - **Catalog service for the Web (CSW):** <https://soilwise-he.containers.wur.nl/cat/openapi>
     - **Protocol for Metadata Harvesting (OAI-PMH):** <>
     - **OpenSearch:** <>
 - Processing API's
     - **Translate API:** <>
-    - [Link Liveness Assessment API](link_liveliness.md)
+    - **Link Liveness Assessment API:** <https://api.soilwise-he.containers.wur.nl/linky/docs>
     - **RDF to triplestore API:** <>
 
 
