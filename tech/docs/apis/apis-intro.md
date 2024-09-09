@@ -22,4 +22,4 @@ SoilWise will in the future use more APIs to interact between components as well
 - [Open API](https://www.openapis.org/){target=_blank}
 - [GraphQL](https://graphql.com){target=_blank}
 - OGC webservices (preferably [OGC API generation](https://ogcapi.ogc.org/){target=_blank} based on Open API)
-- [SPARQL](https://graphql.com](https://www.w3.org/TR/sparql12-query/){target=_blank}
+- [SPARQL](https://www.w3.org/TR/sparql12-query/){target=_blank}
