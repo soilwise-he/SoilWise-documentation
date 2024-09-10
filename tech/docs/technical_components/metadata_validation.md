@@ -173,18 +173,18 @@ The methodology of ETS/ATS has been suggested to develop validation tests.
 
 Complete the following steps to set up soil data transformation, validation and publication processes:
 
-1) Log in to hale>>connect
-2) Create a new transformation project (or upload it)
-3) Specify source and target schemas
-4) Create a theme (this is a process that describes what  should happen with the data)
-5) Add a new transformation configuration. Note: Metadata generation can be configured in this step
-6) A validation process can be set up to check against conformance classes
+1. Log in to hale>>connect
+2. Create a new transformation project (or upload it)
+3. Specify source and target schemas
+4. Create a theme (this is a process that describes what  should happen with the data)
+5. Add a new transformation configuration. Note: Metadata generation can be configured in this step
+6. A validation process can be set up to check against conformance classes
 
 #### Executing a transformation process
 
-1) Create a new dataset and select the theme of the current source data, and provide the source data file
-2) Execute the conversion process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
-3) View and download services will be created if required
+1. Create a new dataset and select the theme of the current source data, and provide the source data file
+2. Execute the conversion process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
+3. View and download services will be created if required
 
 To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process.
 
