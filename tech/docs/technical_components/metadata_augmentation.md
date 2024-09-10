@@ -25,6 +25,8 @@ For the first SoilWise prototype, the functionality of the Metadata Augmentation
 
 @WE to add content
 
+To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process. The steps are described [here](https://main.soilwise-documentation.pages.dev/technical_components/metadata_validation/#setting-up-a-transformation-process-in-haleconnect)
+
 ### Spatial scope analyser
 
 A script that analyses the spatial scope of a resource
