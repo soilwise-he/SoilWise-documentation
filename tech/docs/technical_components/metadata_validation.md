@@ -165,9 +165,35 @@ The methodology of ETS/ATS has been suggested to develop validation tests.
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
-#### Technology & Integration
+### Technology & Integration
 
 [Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
+
+#### Setting up a transformation process in hale>>connect
+
+Complete the following steps to set up soil data transformation, validation and publication processes:
+
+1) Log in to hale>>connect
+2) Create a new transformation project (or upload it)
+3) Specify source and target schemas
+4) Create a theme (this is a process that describes what  should happen with the data)
+5) Add a new transformation configuration. Note: Metadata generation can be configured in this step
+6) A validation process can be set up to check against conformance classes
+
+#### Executing a transformation process
+
+1) Create a new dataset and select the theme of the current source data, and provide the source data file
+2) Execute the conversion process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
+3) View and download services will be created if required
+
+To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process.
+
+#### Validating metadata only
+
+When using the ‘Metadata only’ workflow, the metadata profile can be validated with hale>>connect.
+To do this, after logging in to hale>>connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
+
+A comprehensive tutorial video on setting up and executing transformation workflows can be found here: [https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3]
 
 The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
