@@ -32,12 +32,12 @@ The specific requirements these components have to fulfil are:
 
 We have deployed to SWR:
 
-- [hale studio](https://github.com/halestudio/hale/){target=_blank} is a proven ETL tool optimised for working with complex structured data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While Hale Studio exists as a multi-platform interactive application, its capabilities can be provided through a web service with an OpenAPI.
+- [hale studio](https://github.com/halestudio/hale/){target=_blank}, a proven ETL tool optimised for working with complex structured data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While Hale Studio exists as a multi-platform interactive application, its capabilities can be provided through a web service with an OpenAPI.
 - A comprehensive tutorial video on [Soil Data harmonisation with hale studio can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
 
 Furthermore, we plan to deploy:
 
-- [GDAL](https://gdal.org/index.html){target=_blank} is a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+- [GDAL](https://gdal.org/index.html){target=_blank}, a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
 
 In some cases, the two services may be chained in a single workflow.
 
