@@ -169,6 +169,8 @@ The methodology of ETS/ATS has been suggested to develop validation tests.
 
 [Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
 
+Furthermore, [GDAL](https://gdal.org/index.html){target=_blank}, a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+
 #### Setting up a transformation process in hale>>connect
 
 Complete the following steps to set up soil data transformation, validation and publication processes:
