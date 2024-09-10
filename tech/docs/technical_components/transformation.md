@@ -2,7 +2,7 @@
 
 !!! component-header "Info"
 
-    **Current version:**
+    **Current version:** 5.3
 
     **Project:** [Hale Studio](https://github.com/halestudio/hale)
 
@@ -30,9 +30,10 @@ The specific requirements these components have to fulfil are:
 
 ## Technology & Integration
 
-We plan to deploy the needed capabilities to the SWR using two technologies:
-
-- [GDAL](https://gdal.org/index.html){target=_blank} is a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+We have deployed to SWR
 - [hale studio](https://github.com/halestudio/hale/){target=_blank} is a proven ETL tool optimised for working with complex structured data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While Hale Studio exists as a multi-platform interactive application, its capabilities can be provided through a web service with an OpenAPI.
+
+Furthermore, we plan to deploy
+- [GDAL](https://gdal.org/index.html){target=_blank} is a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
 
 In some cases, the two services may be chained in a single workflow.
