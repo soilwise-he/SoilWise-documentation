@@ -185,7 +185,7 @@ Complete the following steps to set up soil data transformation, validation and 
 #### Executing a transformation process
 
 1. Create a new dataset and select the theme of the current source data, and provide the source data file
-2. Execute the conversion process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
+2. Execute the transformation process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
 3. View and download services will be created if required
 
 To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process.
