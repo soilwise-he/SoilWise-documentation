@@ -193,7 +193,7 @@ To create metadata (data set and service metadata), activate the corresponding b
 When using the ‘Metadata only’ workflow, the metadata profile can be validated with hale>>connect.
 To do this, after logging in to hale>>connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
 
-[A comprehensive tutorial video on setting up and executing transformation workflows can be found here]([https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
+[A comprehensive tutorial video on setting up and executing transformation workflows can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
 
 The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
