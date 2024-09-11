@@ -8,7 +8,7 @@
 
 ## Functionality
 
-**No implementations are yet an integrated part of the SWR delivery.**
+**No implementations are yet an integrated part of the SWR delivery. Metadata authoring and generation is, however, possible using the hale»connect workflows.**
 
 ## Foreseen functionality
 
