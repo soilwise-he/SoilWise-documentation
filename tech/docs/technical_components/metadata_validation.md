@@ -164,20 +164,21 @@ The methodology of ETS/ATS has been suggested to develop validation tests.
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
-### Technology & Integration
+#### Technology & Integration
 
 [hale»connect](https://wetransform.to/haleconnect/){target=_blank} has been deployed. This platform includes the European Testing Framework ETF and can execute Metadata and Data validation usign the ETS approach outlined above. The User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. The administration console of the platform can be accessed upon login at: <https://data.soilwise.wetransform.eu/#/home>.
 
-#### Validating metadata
+The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
+
+#### User Guide
 
 When using the ‘Metadata only’ workflow, the metadata profile can be validated with hale»connect.
 To do this, after logging in to hale»connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
 
 [A comprehensive tutorial video on setting up and executing transformation workflows can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
 
-The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
-### Future work
+#### Future work
 
 - full development of the ETS, using populated codelists
 - display validation results in the SoilWise Catalogue

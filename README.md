@@ -3,6 +3,7 @@
 A **living preview** version is published at: https://main.soilwise-documentation.pages.dev/
 
 A fixed production version (for delivery) is published at: https://soilwise-documentation.pages.dev/
+
 A fixed **1st prototype version** (for delivery) is published at: https://prototype-1-0.soilwise-documentation.pages.dev/
 
 # Mkdocs
