@@ -1,9 +1,8 @@
 # Metadata Validation
 
-For users to understand the quality and completeness of a metadata record, the SWR implements a number of validations, the generated indicators are displayed in the catalogue frontend.
+Metadata should help users assess the usability of a data set for their own purposes. To ensure that re-users can understand the quality and completeness of a dataset, the SWR uses metadata records that are validated. The generated indicators are displayed in the catalogue frontend.
 
 In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md) and [Metadata augmentation](metadata_augmentation.md)), this validation process can be repeated to understand the variability of metadata and value which has been added by SWR.
-
 
 Validations:
 
@@ -167,48 +166,20 @@ The methodology of ETS/ATS has been suggested to develop validation tests.
 
 ### Technology & Integration
 
-[Hale Connect](https://wetransform.to/haleconnect/){target=_blank} currently employed at WE premises is used for metadata validation. User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. Administration console can be access upon login at: <https://data.soilwise.wetransform.eu/#/home>.
+[hale»connect](https://wetransform.to/haleconnect/){target=_blank} has been deployed. This platform includes the European Testing Framework ETF and can execute Metadata and Data validation usign the ETS approach outlined above. The User Guide is available [here](https://help.wetransform.to/docs/getting-started/2018-04-28-quick-start){target=_blank}. The administration console of the platform can be accessed upon login at: <https://data.soilwise.wetransform.eu/#/home>.
 
-Furthermore, [GDAL](https://gdal.org/index.html){target=_blank}, a very robust conversion library used in most FOSS and commercial GIS software. It provides a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+#### Validating metadata
 
-#### Setting up a transformation process in hale>>connect
-
-Complete the following steps to set up soil data transformation, validation and publication processes:
-
-1. Log in to hale>>connect
-2. Create a new transformation project (or upload it)
-3. Specify source and target schemas
-4. Create a theme (this is a process that describes what  should happen with the data)
-5. Add a new transformation configuration. Note: Metadata generation can be configured in this step
-6. A validation process can be set up to check against conformance classes
-
-#### Executing a transformation process
-
-1. Create a new dataset and select the theme of the current source data, and provide the source data file
-2. Execute the transformation process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
-3. View and download services will be created if required
-
-To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process.
-
-#### Validating metadata only
-
-When using the ‘Metadata only’ workflow, the metadata profile can be validated with hale>>connect.
-To do this, after logging in to hale>>connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
+When using the ‘Metadata only’ workflow, the metadata profile can be validated with hale»connect.
+To do this, after logging in to hale»connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
 
 [A comprehensive tutorial video on setting up and executing transformation workflows can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
 
 The metadata validation component will show its full potential when integrated to (1) [SWR Catalogue](catalogue.md), (2) [Storage of metadata](storage.md#storage-of-metadata), and (3) Requires [authentication](user_management.md#authentication) and [authorisation](user_management.md#authorisation).
 
-<!--
-Various technologies use dedicated mechanisms to validate inputs on type matching and completeness
+### Future work
 
-- XML (Dublin core, iso19115, Datacite) validation - XSD schema, potentially extended with Schematron rules
-- json (OGC API - Records/STAC) - json schema
-- RDF (schema.org, dcat) - SHACL
--->
-
-#### Future work
-
+- full development of the ETS, using populated codelists
 - display validation results in the SoilWise Catalogue
 - on-demand metadata validation, which would generate reports for user-uploaded metadata
 - applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports.
