@@ -30,10 +30,31 @@ The specific requirements these components have to fulfil are:
 
 ## Technology & Integration
 
-We have deployed to SWR:
+We have deployed the following components to the SWR infrastructure:
 
 - [hale studio](https://github.com/halestudio/hale/){target=_blank}, a proven ETL tool optimised for working with complex structured data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While Hale Studio exists as a multi-platform interactive application, its capabilities can be provided through a web service with an OpenAPI.
 - A comprehensive tutorial video on [soil data harmonisation with hale studio can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
+
+Another part of the deployed system, [GDAL](https://gdal.org/index.html){target=_blank}, a very robust conversion library used in most FOSS and commercial GIS software, can be used for  a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
+
+#### Setting up a transformation process in hale»connect
+
+Complete the following steps to set up soil data transformation, validation and publication processes:
+
+1. Log in to hale»connect
+2. Create a new transformation project (or upload it)
+3. Specify source and target schemas
+4. Create a theme (this is a process that describes what  should happen with the data)
+5. Add a new transformation configuration. Note: Metadata generation can be configured in this step
+6. A validation process can be set up to check against conformance classes
+
+#### Executing a transformation process
+
+1. Create a new dataset and select the theme of the current source data, and provide the source data file
+2. Execute the transformation process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created
+3. View and download services will be created if required
+
+To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process.
 
 
 
