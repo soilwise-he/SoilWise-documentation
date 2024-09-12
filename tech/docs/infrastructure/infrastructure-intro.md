@@ -15,7 +15,7 @@ For the development of **First project iteration cycle**, we defined the followi
 ## Work completed - Iteration 1
 
 During the iteration, the following components have been deployed:
-- on WeTransform cloud infrastructure, a k8s deployment of the hale connect stack as been installed and configured. This instance can provide user management and has been integrated with the GitHub repository https://github.com/soilwise-he/Soilwise-credentials. The stack provides [Transformation](../technical_components/transformation.md), [Metadata Generation](../technical_components/metadata_authoring.md)  and [Validation](../technical_components/transformation.md) capabilities.
+- on WeTransform cloud infrastructure, a k8s deployment of the hale connect stack as been installed and configured. This instance can provide user management and has been integrated with the GitHub repository <https://github.com/soilwise-he/Soilwise-credentials>. The stack provides [Transformation](../technical_components/transformation.md), [Metadata Generation](../technical_components/metadata_augmentation.md#automatic-metadata-generation) and [Validation](../technical_components/metadata_validation.md) capabilities.
 - on ...
 - on ...
 
