@@ -15,10 +15,10 @@ For the development of **First project iteration cycle**, we defined the followi
 ## Work completed - Iteration 1
 
 During the iteration, the following components have been deployed:
-- on WeTransform cloud infrastructure, a k8s deployment of the hale connect stack as been installed and configured. This instance can provide user management and has been integrated with the GitHub repository https://github.com/soilwise-he/Soilwise-credentials. The stack provides [Transformation](../technical_components/transformation.md), [Metadata Generation](../technical_components/metadata_authoring.md)  and [Validation](../metadata_validation/transformation.md) capabilities.
+- on WeTransform cloud infrastructure, a k8s deployment of the hale connect stack as been installed and configured. This instance can provide user management and has been integrated with the GitHub repository https://github.com/soilwise-he/Soilwise-credentials. The stack provides [Transformation](../technical_components/transformation.md), [Metadata Generation](../technical_components/metadata_authoring.md)  and [Validation](../technical_components/transformation.md) capabilities.
 - on ...
 - on ...
 
-## Planned work - Iteration 2
+## Future work - Iteration 2
 
 The main objective of iteration 2 is to integrate the different components that have been deployed so far, as well as additional ones. The integrations will, whereever feasible, build on open APIs. We intend to retain the distributed architecture, though the staging and production environments may switch to an overall kubernetes-based orchestration mode if it is deemed necessary and advantageous at that point in time.
