@@ -132,7 +132,7 @@ The validation against the INSPIRE metadata profile checks whether the metadata 
 ### Metadata profile validation
 
 !!! component-header "Info"
-    **Current version:** 
+    **Current version:** 1.0
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
 
