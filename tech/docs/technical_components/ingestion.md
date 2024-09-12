@@ -1,7 +1,7 @@
 #  Harvester
 
 !!! component-header "Info"
-    **Current version:** v0.2
+    **Current version:** 1.0
 
     **Project:** [Harvesters](https://github.com/soilwise-he/harvesters)
 

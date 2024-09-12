@@ -190,7 +190,7 @@ To do this, after logging in to hale»connect, go directly to the setup of a new
 ### Link liveliness assessment 
 
 !!! component-header "Info"
-    **Current version:**
+    **Current version:** 1.0
 
     **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 

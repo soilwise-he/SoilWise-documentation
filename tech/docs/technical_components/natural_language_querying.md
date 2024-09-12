@@ -3,7 +3,7 @@
 > Making open ___knowledge___ findable and accessible for SoilWise users
 
 !!! component-header "Info"
-    **Current version:**
+    **Current version:** 1.0
 
     **Project:** [Natural Language querying](https://github.com/soilwise-he/natural-language-querying)
 

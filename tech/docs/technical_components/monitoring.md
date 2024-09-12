@@ -1,7 +1,7 @@
 # System Usage & Monitoring
 
 !!! component-header "Info"
-    **Current version:**
+    **Current version:** 1.0
 
     **Project:** [Usasge statistics](https://github.com/soilwise-he/usage-statistics)
 

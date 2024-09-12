@@ -2,7 +2,7 @@
 
 !!! component-header "Info"
 
-    **Current version:**
+    **Current version:** 1.0
     
     **Project:** [Metadata augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
