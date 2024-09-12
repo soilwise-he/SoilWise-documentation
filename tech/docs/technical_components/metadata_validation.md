@@ -218,6 +218,10 @@ The link liveliness assessment subcomponent runs over the available links stored
 5. **Timeout management**
     - Identifies resources exceeding specified timeout thresholds
 
+A javascript widget is further used to display the link status directly in the [SWR Catalogue](catalogue.md) record.
+
+![Link liveliness indication](../_assets/images/link_liveliness.png)
+
 #### Technology
    * **Python**
         Used for the linkchecker integration, API development, and database interactions

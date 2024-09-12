@@ -73,7 +73,8 @@ Initial translation is triggered by a running harvester. The translations will t
 
 Keywords are an important mechanism to filter and cluster records. But similar keywords need to be equal to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
 
-Analyses existing keywords on a metadata record. Two cases can be identified.
+Analyses existing keywords on a metadata record. Two cases can be identified:
+
 - If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. 
 - If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). Consider the risk of false positives.
 

@@ -12,7 +12,7 @@ Currently the following APIs are employed in the SoilWise repository:
 - Processing API's
     - **Translate API:** <https://api.soilwise-he.containers.wur.nl/tolk/docs>
     - **Link Liveness Assessment API:** <https://api.soilwise-he.containers.wur.nl/linky/docs>
-    - **RDF to triplestore API:** <https://repo.soilwise-he.containers.wur.nl/docs>
+    - **RDF to triplestore API:** <https://repo.soilwise-he.containers.wur.nl/swagger-ui/index.html>
 
 
 ## Future work
