@@ -25,7 +25,7 @@ Typical general steps towards an AI-powered self-learning search system, are lis
  - automated relevance tuning (signals boosting, collaborative filtering, learning to rank)
  - Self-learning search system (full feedback loop using all user and content data)
 
-[<img src="https://github.com/user-attachments/assets/59bdbcf4-bbb2-4b61-89db-6c665604223d" width="600" alt="Search capabilities evolution">](https://github.com/user-attachments/assets/59bdbcf4-bbb2-4b61-89db-6c665604223d "Search capabilities evolution")
+![Search capabilities evolution](../_assets/images/search-cap-evolution.jpg)
 
 Core topics are:
 
@@ -35,7 +35,7 @@ Core topics are:
 
 The final aim is towards extractive question answering (extract answers from sources in real-time), result summarization (summarize search results for easy review), and abstractive question answering (generate answers to questions from search results). Not all these aims might be achievable within the project though. Later steps (marked in yellow in the following image) depend more on the use of complex language models.
 
-[<img src="https://github.com/user-attachments/assets/65b862a0-b1d7-49f2-9007-de6dd56ee652" width="600" alt="Search LLM capabilities">](https://github.com/user-attachments/assets/65b862a0-b1d7-49f2-9007-de6dd56ee652 "Search LLM capabilities")
+![Search LLM capabilities](../_assets/images/search-llm-cap.jpg)
 
 One step towards personalisation could be the use of (user) signals boosting and collaborative filtering. But this would require tracking and logging (user) actions.
 
