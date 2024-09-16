@@ -67,7 +67,7 @@ Datasets are to be primarily imported from the **ESDAC**, **INSPIRE GeoPortal**,
 
 With respect to harvesting, it is important to note that knowledge assets are heterogeneous, and that (compared to data), metadata standards and particularly access / harvesting protocols are not generally adopted. Available metadata might be implemented using a proprietary schema, and basic assumptions for harvesting, e.g. providing a "date of last change" might not be offered. This will, in some cases, make it necessary to develop customized harvesting and metadata extraction processes. It also means that informed decisions need to be made on which resources to include, based on priority, required efforts and available capacity.
 
-The SoilWise project team is still exploring which knowledge resources to include. An important cluster of knowledge sources are academic articles and report deliverables from Mission Soil Horizon Europe projects. These resources are accessible from **ESDAC**, **Cordis** and **OpenAire**. Extracting content from Cordis, OpenAire can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first iteration, SoilWise aims to achieve this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
+The SoilWise project team is still exploring which knowledge resources to include. As an example, an important cluster of knowledge sources may be seen academic articles and report deliverables from Mission Soil Horizon Europe projects. These resources are accessible from **ESDAC**, **Cordis** and **OpenAire**. Extracting content from Cordis, OpenAire can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first iteration, SoilWise aims to achieve this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
 
 ## Functionality
 
@@ -80,6 +80,8 @@ The Harvester component currently comprises of the following functions:
 - [Duplication identification](#duplication-indentification)
 
 ### Harvest records from metadata and knowledge resources
+
+Note, the first SoilWise Repository development iteration resulted in **9,0444** harvested metadata records (to date 12.09.20241).
 
 #### CORDIS
 
@@ -103,7 +105,7 @@ The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/){target=_blank} is an inst
 
 ### Metadata Harmonization
 
-Once stored in the harvest sources database, a second process is triggered which harmonizes the sources to the soilwise metadata profile. These processes are split by design, to prevent that any failure in metadata processing would require to fetch remote content again.
+Once stored in the harvest sources database, a second process is triggered which harmonizes the sources to the desired metadata profile. These processes are split by design, to prevent that any failure in metadata processing would require to fetch remote content again.
 
 Table below indicates the various source models supported
 
@@ -118,11 +120,11 @@ Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/){target=_
 
 For metadata harmonization some supporting modules are used, [owslib](https://owslib.readthedocs.io/en/latest/){target=_blank} is a module to parse various source metadata models, including iso19115:2005. [pygeometa](https://github.com/geopython/pygeometa){target=_blank} is a module which can export owslib parsed metadata to various outputs, including DCAT.
 
-Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.
+Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software, used to power the [SoilWise Catalogue](catalogue.md), using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.
 
 #### Metadata Augmentation
 
-The metadata augmentation processes are described [elsewhere](metadata_augmentation.md), what is relevant here is that the output of these processes is integrated in the harmonised metadata database.
+The metadata [augmentation processes](metadata_augmentation.md) are used to add relevant statements to the metadata description. What is relevant within the Harvester is that the output of these processes is integrated in the harmonised metadata database.
 
 ### Metadata RDF turtle serialization
 

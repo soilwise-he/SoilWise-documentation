@@ -44,12 +44,6 @@ To understand if the dataset has a global, continental, national or regional sco
     - if smaller > regional
 - result is written to as an augmentation in a dedicated table
 
-| metadata-uri | metadata-element | source | value | proces | date |
-| --- | --- | --- | --- | --- | ---|
-| <https://geo.fi/data/ee44-aa22-33> | spatial-scope | 16.7,62.2,18,81.5 | <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national> | spatial-scope-analyser | 2024-07-04 |
-| <https://geo.fi/data/abc1-ba27-67> | spatial-scope | 17.4,68.2,17.6,71,2 | <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/regional> | spatial-scope-analyser | 2024-07-04 |
-
-
 ## Foreseen functionality
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
@@ -61,7 +55,7 @@ In the next iterations, Metadata augmentation component is foreseen to include t
 
 ### Translation module
 
-Many records arrive in a local language, SWR translates the main properties for the record: title and abstract into english, to offer a single language user experience to users. The translations are used in filtering and display of records.
+Many records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.
 
 The translation module builds on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). Translations are stored in a database for reuse by the SWR.
 The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
@@ -89,7 +83,7 @@ Analyses existing keywords to find a relevant geography for the record, it then 
 
 ### EUSO-high-value dataset tagging
 
-The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/){target=_blank}. This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu){target=_blank} metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
+The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/){target=_blank}. This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu){target=_blank} metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope - under discussion) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
 
 The EUSO soil degradation indicators employ specific [methodologies and thresholds](https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources){target=_blank} to determine soil health status, see also the Table below. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.
 

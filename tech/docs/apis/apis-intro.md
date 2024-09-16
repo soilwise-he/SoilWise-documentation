@@ -1,6 +1,6 @@
 # Introduction
 
-Currently the following APIs are employed in the SoilWise repository:
+Within the first development iteration, the following APIs are employed in the SoilWise repository:
 
 - Discovery APIs
     - **SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>

@@ -9,7 +9,7 @@ For the development of **First project iteration cycle**, we defined the followi
 - All of the hardware nodes used in the staging environment include an offsite backup capacity, such as a storage box, that is operated in a different physical location.
 - There is no central dev/test environment. Each organisation is responsible for its own dev/test environments.
 - The deployment and orchestration configuration for this iteration should be stored as YAML in a GitHub repository.
-- Deployments to the distributed staging environment are done preferavly through GitHub Actions or through alternative pipelines, such as a Jenkins or GitLab instance provided by weTransform or other partners.
+- Deployments to the distributed staging environment are done preferably through GitHub Actions or through alternative pipelines, such as a Jenkins or GitLab instance provided by weTransform or other partners.
 - For each component, there shall be separate build processes managed by the responsible partners that result in the built images being made accessible through a hub (e.g. dockerhub)
 
 ## Work completed - Iteration 1

@@ -8,7 +8,7 @@
 
 ## Functionality
 
-**No implementations are yet an integrated part of the SWR delivery.** Metadata authoring and generation is, however, possible using the hale»connect workflows.
+**No implementations are yet an integrated part of the SWR delivery**, as they were intentionally out of the first development itertation. Metadata authoring and generation is, however, possible using the hale»connect workflows.
 
 ## Foreseen functionality
 
@@ -17,6 +17,7 @@ Users are enabled to create and maintain metadata records within the SWR, in cas
 - Users login to the system and are enabled to upload a metadata record. 
 - A form is available for users to create or manage an existing record. The form has select options for those fields which are linked to a codelist. 
 - Users can also upload a spreadsheet of records which are converted to the MCF format.
+- Users will see metadata validation results.
 
 ## Technology
 

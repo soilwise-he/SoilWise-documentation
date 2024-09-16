@@ -7,11 +7,11 @@
 
     **Access point:** SWR SPARQL endpoint: <https://sparql.soilwise-he.containers.wur.nl/sparql>
 
-SoilWise develops and implements a Knowledge Graph linking the knowledge captured in harvested and augmented metadata with various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are also implemented as RDF graphs. Linking such graphs into a harmonized SWR knoledge graph allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
+SoilWise develops and implements a Knowledge Graph linking the knowledge captured in harvested and augmented metadata with various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are also implemented as RDF graphs. Linking such graphs into a harmonized SWR Knowledge Graph allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
 
 The first iteration of the SWR Knowledge Graph is a graph representation of the (harmonized) metadata that is currently harvested, validated and augmented as part of the SWR catalogue database. It's RDF representation, stored in a triple store, and the SPARQL endpoint deployed on top of the triple store, allow users alternate access to the metadata, exploiting semantics and relations between different assets. 
 
-At the same time, experiments have been performed to prepare for the linkage of this RDF metadata graph and exisiting and AI/ML generated graphs. In future iterations the metadata graph will be linked/merged with a dedicated soil health knowledge graph also linking to external resources, establishing a broader interconnected soil health knowledge graph. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries and reasoning, e.g. supporting decision support and natural language quering.
+At the same time, experiments have been performed to prepare for the linkage of this RDF metadata graph and existing and AI/ML generated graphs. In future iterations, the metadata graph will be linked/merged with a dedicated soil health knowledge graph also linking to external resources, establishing a broader interconnected soil health knowledge graph. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries and reasoning, e.g. supporting decision support and natural language quering.
 
 ## Functionality
 
@@ -28,7 +28,7 @@ Since we're importing resources from various data and knowledge repositories, we
 !!! component-header "Info"
     **Access point:** <https://voc.soilwise-he.containers.wur.nl/concept/>
 
-As a preparation to extend the currently deployed metadata knowledge graph (KG) with broader domain knowledge, experimental work has been performed to enricht the KG en to link it with other knowledge graphs. 
+As a preparation to extend the currently deployed metadata knowledge graph (KG) with broader domain knowledge, experimental work has been performed to enrich the KG to link it with other knowledge graphs. 
 
 The following aspects have been worked on and will  be furhter developed and integrated into future iterations of the SoilWise KG:
 

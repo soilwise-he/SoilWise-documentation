@@ -9,7 +9,7 @@
 
 ## Functionality
 
-The aplication of Natural Language Querying for SoilWise and the integration into the SoilWise repository is currently still in the research phase. **No implementations are yet an integrated part of the SWR delivery**.
+The aplication of Natural Language Querying (NLQ) for SoilWise and the integration into the SoilWise repository is currently still in the research phase. **No implementations are yet an integrated part of the SWR delivery**, in line with the plan for the first development iteration.
 
 ## Ongoing Developments
 
@@ -29,7 +29,7 @@ Typical general steps towards an AI-powered self-learning search system, are lis
 
 Core topics are:
 
- - **LLM**[^1] based (semantic)KG generation from unstructured content (leveraging existing search technology)
+ - **LLM**[^1] based (semantic) KG generation from unstructured content (leveraging existing search technology)
  - chatbot - Natural Language Interface (using advanced **NLP**[^2] methodologies, such as LLMs)
  - LLM operationalisation (**RAG**[^3] ingestion pipeline(s), generation pipeline, embedding store, models)
 

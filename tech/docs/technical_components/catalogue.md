@@ -17,12 +17,12 @@ OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/){targ
 
 The SoilWise prototype adopts a frontend, focusing on:
 
-- Minimalistic User Interface, to prevent a technical feel
-- Paginated search results, sorted alphabetically, by date, see more information in Chapter [Query Catalogue](#query-catalogue)
-- Option to filter by facets, see more information in Chapter [Query Catalogue](#query-catalogue)
-- Preview of the dataset (if a thumbnail or OGC:Service is available), else display of its spatial extent, see more information in Chapter [Display record's detail](#display-records-detail)
-- Option to provide feedback to publisher/author, see more information in Chapter [User Engagement](#user-engagement)
-- Readable link in the browser bar, to facilitate link sharing
+- minimalistic User Interface, to prevent a technical feel,
+- paginated search results, sorted alphabetically, by date, see more information in Chapter [Query Catalogue](#query-catalogue),
+- option to filter by facets, see more information in Chapter [Query Catalogue](#query-catalogue),
+- preview of the dataset (if a thumbnail or OGC:Service is available), else display of its spatial extent, see more information in Chapter [Display record's detail](#display-records-detail),
+- option to provide feedback to publisher/author, see more information in Chapter [User Engagement](#user-engagement),
+- readable link in the browser bar, to facilitate link sharing.
 
 ### Query Catalogue
 
@@ -47,44 +47,44 @@ Fulltext search currently supports only nesting words with AND operator.
 
 #### Future work
 
-- Extend fulltext search; allow complex queries using exact match, OR,... 
-- Use Full Text Search ranking to sort by relevance.
-- Filter by source repository
+- extend fulltext search; allow complex queries using exact match, OR,...
+- use Full Text Search ranking to sort by relevance.
+- filter by source repository.
 
 ### Display record's detail
 
 After clicking result's table item, a record's detail is displayed at unique URL address to facilitate sharing. Record's detail currently comprises:
 
-- record's type tag
-- Full title
-- Full abstract
-- keywords' tags
-- preview of record's geographical extent, see [Map preview](#map-preview)
-- record's preview image, if available
-
-- all other record's items
-- section enabling [User Engagement](#user-engagement)
-- Last update date
+- record's type tag,
+- full title,
+- full abstract,
+- keywords' tags,
+- preview of record's geographical extent, see [Map preview](#map-preview),
+- record's preview image, if available,
+- all other record's items,
+- section enabling [User Engagement](#user-engagement),
+- last update date.
 
 #### Future work
 
-- Links section with links to original repository, _TBD_...
-- Indication of metadata augmentation, such as link liveliness assessment
-- display metadata augmentation results
-- display metadata validation results
-- Show relations to other records
-- Better distinguish link types; service/api, download, records, documentation, etc.
+- links section with links to original repository, _TBD_...,
+- indication of metadata augmentation, such as link liveliness assessment,
+- display metadata augmentation results,
+- display metadata validation results,
+- show relations to other records,
+- better distinguish link types; service/api, download, records, documentation, etc.
 
 ### Resource preview
 
-SoilWise Catalogue currently supports 3 types of preview
-- Display resource geographical extent, which is available in the record's detail, as well in the search results list
-- Display of a graphic preview (thumbnail) in case it is advertised in metadata
+SoilWise Catalogue currently supports 3 types of preview:
+
+- Display resource geographical extent, which is available in the record's detail, as well in the search results list.
+- Display of a graphic preview (thumbnail) in case it is advertised in metadata.
 - Map preview of OGC:WMS services advertised in metadata enables standard simple user interaction (zoom, changing layers).
 
 ### Data download (AS IS)
 
-Download of data "as is" is currently supported through the links section from the harvested repository.
+Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue.
 
 ### Display link to knowledge
 

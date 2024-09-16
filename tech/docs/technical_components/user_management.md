@@ -2,6 +2,8 @@
 
 User and organisation management, authorisation and authentication are complex, cross-cutting aspects of a system such as the SoilWise repository. Back-end and front-end components need to perform access control for authenticated users. Many organisations already have infrastructures in place, such as an Active Directory or a Single Sign On based on OAuth.
 
+**No implementations are yet an integrated part of the SWR delivery**, in line with the plan for the first development iteration.
+
 The **general model** we apply is that:
 
 - a user shall be a member of at least one organisation.
@@ -30,7 +32,7 @@ For every registered user of SWR components, an account is needed. This account 
 
 ## Authentication
 
-Certain functionalities of the SWR will be available to anonymous users, but functions that edit any of the state of the system (data, configuration, metadata) require an authenticated user. The easiest form of authentication is to use the login provided by the SWR itself. This log-in is username-password based. A second factor, e.g. through an authenticator app, may be added after the first iteration.
+Certain functionalities of the SWR will be available to anonymous users, but functions that edit any of the state of the system (data, configuration, metadata) require an authenticated user. The easiest form of authentication is to use the login provided by the SWR itself. This log-in is username-password based. A second factor, e.g. through an authenticator app, may be added in the upcoming iteration.
 
 Other forms of authentication include using an existing token.
 
@@ -48,7 +50,7 @@ The public cloud [hale connect user service](https://haleconnect.com/swagger/){t
 
 ## Completed work - Iteration 1
 
-- User/Role and Organisation management has been deployed and configured as part of weTransform's hale conenct installation.
+- User/Role and Organisation management has been deployed and configured as part of weTransform's hale connect installation.
 - As of now, there are three Identity providers deployed as part of that infrastructure:
   - The integrated user service in hale connect,
   - a Keycloak/OpenID-connect based one using GoPass via Github

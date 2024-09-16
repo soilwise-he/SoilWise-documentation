@@ -1,8 +1,10 @@
 # Metadata Validation
 
-Metadata should help users assess the usability of a data set for their own purposes. To ensure that re-users can understand the quality and completeness of a dataset, the SWR uses metadata records that are validated. The generated indicators are displayed in the catalogue frontend.
+> Metadata should help users assess the usability of a data set for their own purposes and help users to understand their quality.
 
-In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. After metadata processing and extension (see the [Interlinker component](interlinker.md) and [Metadata augmentation](metadata_augmentation.md)), this validation process can be repeated to understand the variability of metadata and value which has been added by SWR.
+In terms of metadata, SoilWise Repository aims for the approach to harvest and register as much as possible (see more information in the [Harvester Component](ingestion.md)). Catalogues which capture metadata authored by data custodians typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. Within the first iteration, they are not displayed in the [SoilWise Catalogue](catalogue.md), except of the results of the [Link liveliness assessment](#link-liveliness-assessment) component. For the following iterations, we forsee the validation results to be available only to data / knowledge owners / managers and the SWR admins, as SoilWise is not in an arbiter's role.
+
+After [Metadata augmentation](metadata_augmentation.md), the whole validation process can be repeated to understand the variability of metadata and value which has been added by SWR.
 
 Validations:
 
@@ -32,9 +34,11 @@ A minimal set of metadata elements was defined to validate completeness of metad
 | Online source | Location (address) for online access from which the resource can be obtained |
 -->
 
-### EJP/EUSO Metadata profile 
+### EUSO Metadata profile 
 
 This metadata profile was developed through EJP Soil project efforts and modified and approved by the EUSO Working Group.
+
+This metadata profile has been used within the first development iteration phase. Its further modification are under discussions among all the stakeholders.
 
 | Label | Cardinality | Codelist | Description |
 | ---   | ---         | ---      | ---         |
@@ -173,18 +177,18 @@ The metadata validation component will show its full potential when integrated t
 #### User Guide
 
 When using the ‘Metadata only’ workflow, the metadata profile can be validated with hale»connect.
-To do this, after logging in to hale»connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
+To do this, after logging into hale»connect, go directly to the setup of a new Theme (transformation project and Schema are therefore not required) and activate ‘Publish metadata only’ and specify where the metadata should come from. To validate the metadata file, upload the metadata and select ‘Metadata only’. Once validation is complete, a report can be called up.
 
-[A comprehensive tutorial video on setting up and executing transformation workflows can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}
+A comprehensive tutorial video on setting up and executing transformation workflows can be found [here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3){target=_blank}.
 
 
 #### Future work
 
-- full development of the ETS, using populated codelists
-- display validation results in the SoilWise Catalogue
-- on-demand metadata validation, which would generate reports for user-uploaded metadata
-- applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports.
-- [Shacl](https://www.w3.org/TR/shacl/){target=_blank} is is in general intended for semantic web related validations; however, it's exact scope will be determined during the SoilWise developments. 
+- full development of the ETS, using populated codelists,
+- display validation results in the SoilWise Catalogue,
+- on-demand metadata validation, which would generate reports for user-uploaded metadata,
+- applicability of [ISO19157 Geographic Information – Data quality](https://www.iso.org/standard/78900.html) (i.e. the standard intended for data validations) for metadata-based validation reports,
+- [Shacl](https://www.w3.org/TR/shacl/){target=_blank} is is in general intended for semantic web related validations; however, it's exact scope will be determined during the upcoming SoilWise developments. 
 
 
 ### Link liveliness assessment 
