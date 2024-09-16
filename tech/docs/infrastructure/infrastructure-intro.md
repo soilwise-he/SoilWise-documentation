@@ -35,6 +35,6 @@ During the iteration, the following components have been deployed:
 
 The main objective of iteration 2 is to reorganise the orchestration of the different components, so all components can be centrally accessed and monitored.  
  
-The integrations will, whereever feasible, build on API's which are standardised by W3C, OGC or de facto, such as Open API or GraphQL. 
+The integrations will, whereever feasible, build on API's which are standardised by W3C, OGC or de facto standards, such as Open API or GraphQL. 
 
-The intention is to set up a distributed architecture, with the staging and production environment to switch to an overall kubernetes-based orchestration mode if it is deemed necessary and advantageous at that point in time.
+The intent of the consortium is to set up a distributed architecture, with the staging and production environment in an overall kubernetes-based orchestration mode if it is deemed necessary and advantageous at that point in time.
