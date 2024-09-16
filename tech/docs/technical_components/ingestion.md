@@ -138,8 +138,11 @@ This is a component which on request can dump the content of the harmonised data
 
 ### Duplication indentification
 
-A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. 
-An aim of this exercise is also to understand in which repositories a certain resource is advertised.
+A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. An aim of this exercise is also to understand in which repositories a certain resource is advertised.
+
+Visualization of source repositories is in the first development iteration available as a dedicated section in the [SoilWise Catalogue](catalogue.md).
+
+![Sources section](../_assets/images/sources-section-catalogue.png)
 
 ## Technology
 
