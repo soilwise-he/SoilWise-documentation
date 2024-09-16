@@ -41,9 +41,15 @@ Fulltext search currently supports only nesting words with AND operator.
 
 ### Faceted search
 
-- filter by record's type (dataset, service, software, text, knowledge source)
-- filter by country
-- filter by keyword
+- filter by **physical soil parameters** (soil texture, WRB, soil structure, bulk density, porosity, water holding capacity, soil moisture),
+- filter by **chemical soil parameters** (ph, organic matter, cation exchange capacity, electrical conductivity, nutrient content, soil carbon, soil nitrogen, soil phosporus, heavy metals concentration),
+- filter by **biological soil parameters** (microbial biomass, soil enzyme activities, soil fauna, soil respiration),
+- filter by **soil functions** (soil fertility, water regulation, soil erosion control, carbon sequestration, soil health, supporting plant growth, contaminant filtration),
+- filter by **soil degradation indicators** (soil erosion, soil compaction, soil salinization, soil acidification, soil contamination),
+- filter by **environmental soil functions** (habitat for organisms, climate regulation, water filtration),
+- fitler by **long-term field experiments** (experimental treatments, temporal data, environmental covariates, soil productivity, soil management),
+- filter by **record's type** (dataset, document, publication, software, services, series).
+
 
 #### Future work
 
