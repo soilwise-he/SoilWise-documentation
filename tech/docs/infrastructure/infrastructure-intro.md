@@ -17,8 +17,19 @@ For the development of **First project iteration cycle**, we defined the followi
 During the iteration, the following components have been deployed:
 
 - on WeTransform cloud infrastructure, a k8s deployment of the hale connect stack as been installed and configured. This instance can provide user management and has been integrated with the GitHub repository <https://github.com/soilwise-he/Soilwise-credentials>. The stack provides [Transformation](../technical_components/transformation.md), [Metadata Generation](../technical_components/metadata_augmentation.md#automatic-metadata-generation) and [Validation](../technical_components/metadata_validation.md) capabilities.
-- on ...
-- on ...
+- The Soilwise infrastructure uses components provided by Github. Github components are used to
+  - Administer and assign to roles the different Soilwise users
+  - Register, prioritise and assign tasks
+  - Store source code of software artifacts
+  - Author documentation
+  - Run CI/CD pipelines
+  - Collect user feedback
+- on infrastructure provided by Wageningen University
+  - A PostGres database on the PostGres cluster
+  - A number of repositories at the university Gitlab instance, including CI/CD pipelines to run metadata harvesters
+  - A range of services deployed on the univerity k8s cluster, with their configuration stored on Gitlab. Container images are stored on the university Harbor repository
+  - Usage logs monitored through the university instance of Splunk
+  - Availability monitoring provided by Uptimerobot.com
 
 ## Future work - Iteration 2
 
