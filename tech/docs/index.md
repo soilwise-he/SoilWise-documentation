@@ -8,6 +8,20 @@ SoilWise Technical Documentation currently consists of the following sections:
 4. [Glossary](glossary.md)
 5. [Printable version](print_page) - where you find all sections composed in one page, that can be easily printed using Web Browser options
 
+## Terminology
+
+Within the SoilWise Technical Documentation, we use the terms belov as follows:
+
+- **catalogue:**
+- **data:**
+- **data management:**
+- **knowledge graph:**
+- **knowledge management:**
+- **knowledge resource:**
+- **knowledge source:**
+- **metadata:**
+- **repository:**
+
 
 ## Release notes
 
