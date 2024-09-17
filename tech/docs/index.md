@@ -27,8 +27,8 @@ Within the SoilWise Technical Documentation, we use the terms below as follows:
   - **Knowledge:**  Facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) nor tacit knowledge (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
     - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
     - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
-  - **Knowledge item:** (Also: Document) A metadata record about a knowledge resource.
-  - **Knowledge resource:** An object, such as a document, a web page, or a database, that holds relevant explicit knowledge.
+  - **Knowledge item:** A metadata record about a knowledge resource.
+  - **Knowledge resource:** A digital object, such as a document, a web page, or a database, that holds relevant explicit knowledge.
   - **Knowledge source:** A provider of knowledge resources.
   - **Corpus:** (plural: Corpora) A repository of text documents (knowledge resources); a body of works. Typically the input for information retrieval.
   - **Knowledge management:** The practice of collecting, organising, managing, and accessing knowledge (for some purpose, such as as decision-making).
