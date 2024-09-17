@@ -13,19 +13,19 @@ SoilWise Technical Documentation currently consists of the following sections:
 Within the SoilWise Technical Documentation, we use the terms belov as follows:
 
 - **Generic (digital library)**
-  - **(descriptive) metadata:**  Descriptive data about resources such as data(sets) and knowledge items (from D7.2).
-  - **Metadata record:**
-  - **Metadata repository:**
-  - **persistent identifier:**
-  - **Metadata catalogue:**
-  - **Metadata index:**
-  - **Information retrieval:**
+  - **(descriptive) metadata:**  Summary information describing digital objects such as datasets and knowledge resources.
+  - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object. 
+  - **Metadata repository:** A type of centrally located or distributed storage of metadata records.
+  - **persistent identifier:** A long-lasting reference to a digital object.
+  - **Metadata catalogue:** A collection of metadata records that have a consistent structure and are organised according to systematic rules.
+  - **Abstracting and indexing service:** A service, e.g. a search engine, that abstracts and indexes digital objects or metadata records, and provides matching and ranking functionality in support of information retrieval.
+  - **Information retrieval (IR):** The task of identifying and retrieving information system resources (such as digital objects or metadata records) that are relevant to a search query. It includes searching for the information in a document, searching for the documents themselves, as well as searching for metadata describing the documents.
 
   
 - **Data focussed**
-  - **data:**
-  - **dataset:**
-  - **data management:**
+  - **data:** A collection of discrete or continuous values that convey information, describing the quantity, quality, fact, statistics, other basic units of meaning, or simply sequences of symbols that may be further interpreted formally ([Wikipedia](https://en.wikipedia.org/wiki/Data)).
+  - **dataset:** (Also: data set) A collection of data ([Wikipedia](https://en.wikipedia.org/wiki/Data_set)).
+  - **data management:** The practice of collecting, organising, managing, and accessing data (for some purpose, such as decision-making).
 
     
 - **Knowledge focussed**
@@ -35,7 +35,7 @@ Within the SoilWise Technical Documentation, we use the terms belov as follows:
   - **knowledge item:** A metadata record about a knowledge resource.
   - **knowledge resource:** An object, such as a document, a web page, a database, that holds relevant explicit knowledge.
   - **knowledge source:** A provider of knowledge resources.
-  - **knowledge management:**
+  - **knowledge management:** The practice of collecting, organising, managing, and accessing knowledge (for some purpose, such as as decision-making).
   - **knowledge graph:** A representation of a network of real-world entities--such as objects, events, situations or concepts-- and the relationships between them. Typically the network is made up of nodes, edges, and labels. 
   - **ontology:** A formal representation of the entities in a knowledge graph. Ontologies and knowledge graphs can be expressed in a similar manner and they are closely related. Ontologies can be seen as the (semantic) data model defining classes, relationships and attributes, while knowledge graphs contain the real data according to the (semantic) data model.
 
