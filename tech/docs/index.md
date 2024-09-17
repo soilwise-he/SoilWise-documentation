@@ -21,10 +21,12 @@ Within the SoilWise Technical Documentation, we use the terms belov as follows:
   - **Metadata index:**
   - **Information retrieval:**
     
+    
 **Data focussed**
   - **data:**
   - **dataset:**
   - **data management:**
+
     
 **Knowledge focussed**
   - **Knowledge:**  Facts, information, and skills acquireed through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge--Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) and tacit knowledge (gained via personal experiences and indivudual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
