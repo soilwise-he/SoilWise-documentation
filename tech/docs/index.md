@@ -12,25 +12,24 @@ SoilWise Technical Documentation currently consists of the following sections:
 
 Within the SoilWise Technical Documentation, we use the terms belov as follows:
 
- - Generic
-   - **(descriptive) metadata:**  Descriptive data about resources such as data(sets) and knowledge items (from D7.2).
-   - **(metadata) record:**
-   - **(metadata) repository:**
-   - **(metadata) catalogue:**
-   - **persistent identifier:**
- - Data
-   - **data:**
-   - **data management:**
- - Knowledge
-   - **knowledge:**  Facts, information, and skills acquireed through experience or education; the theoretical or practical understanding of a subject. SoilWise considers explicit knowledge, semantic knowledge, and structural knowledge (from D7.2).
-     - **Explicit knowledge:** Information that is easily articulated, codified, stored, and accessed. It is the type of knowledge that can be readily communicated to others through written or spoken words, symbols, diagrams, or other formal methods. 
-     - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
-     - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
-   - **knowledge item:**
-   - **knowledge resource:**
-   - **knowledge source:**
-   - **knowledge management:**
-   - **knowledge graph:**
+- Generic
+  - **(descriptive) metadata:**  Descriptive data about resources such as data(sets) and knowledge items (from D7.2).
+  - **(metadata) record:**
+  - **(metadata) repository:**
+  - **(metadata) catalogue:**
+  - **persistent identifier:**
+- Data
+  - **data:**
+  - **data management:**
+- Knowledge
+  - **Knowledge:**  Facts, information, and skills acquireed through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge--Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) and tacit knowledge (gained via personal experiences and indivudual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
+    - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
+    - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
+  - **knowledge item:**
+  - **knowledge resource:**
+  - **knowledge source:**
+  - **knowledge management:**
+  - **knowledge graph:**
 
 
 ## Release notes
