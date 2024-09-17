@@ -25,11 +25,12 @@ Within the SoilWise Technical Documentation, we use the terms belov as follows:
   - **Knowledge:**  Facts, information, and skills acquireed through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge--Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) and tacit knowledge (gained via personal experiences and indivudual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
     - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
     - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
-  - **knowledge item:**
-  - **knowledge resource:**
-  - **knowledge source:**
+  - **knowledge item:** A metadata record about a knowledge resource.
+  - **knowledge resource:** An object, such as a document, a web page, a database, that holds relevant explicit knowledge.
+  - **knowledge source:** A provider of knowledge resources.
   - **knowledge management:**
-  - **knowledge graph:**
+  - **knowledge graph:** A representation of a network of real-world entities--such as objects, events, situations or concepts-- and the relationships between them. Typically the network is made up of nodes, edges, and labels. 
+  - **ontology:** A formal representation of the entities in a knowledge graph. Ontologies and knowledge graphs can be expressed in a similar manner and they are closely related. Ontologies can be seen as the (semantic) data model defining classes, relationships and attributes, while knowledge graphs contain the real data according to the (semantic) data model.
 
 
 ## Release notes
