@@ -13,7 +13,8 @@ SoilWise Technical Documentation currently consists of the following sections:
 Within the SoilWise Technical Documentation, we use the terms below as follows:
 
   - **(Descriptive) metadata:**  Summary information describing digital objects such as datasets and knowledge resources.
-  - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object. 
+  - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object.
+  - **Metadata source:** A provider of metadata.
   - **Metadata repository:** A type of centrally located or distributed storage of metadata records.
   - **Persistent identifier:** A long-lasting reference to a digital object.
   - **Metadata catalogue:** A collection of metadata records that have a consistent structure and are organised according to systematic rules.
@@ -23,7 +24,7 @@ Within the SoilWise Technical Documentation, we use the terms below as follows:
   - **Data:** A collection of discrete or continuous values that convey information, describing the quantity, quality, fact, statistics, other basic units of meaning, or simply sequences of symbols that may be further interpreted formally ([Wikipedia](https://en.wikipedia.org/wiki/Data)).
   - **Dataset:** (Also: Data set) A collection of data ([Wikipedia](https://en.wikipedia.org/wiki/Data_set)).
   - **Data resource:** A (non-empty) dataset.
-  - **Data source:** A provider of data.
+  - **Data source:** A provider of data resources.
   - **Data management:** The practice of collecting, organising, managing, and accessing data (for some purpose, such as decision-making).
     
   - **Knowledge:**  Facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) nor tacit knowledge (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
