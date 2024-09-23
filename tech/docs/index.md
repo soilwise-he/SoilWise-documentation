@@ -14,10 +14,10 @@ A full list of terms used within this Technical Documentation can be found in se
 
   - **(Descriptive) metadata:**  Summary information describing digital objects such as datasets and knowledge resources.
   - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object.
-  - **Metadata source:** A provider of metadata.
+  - **Metadata source/provider :** A provider of metadata.
   - **Metadata repository:** A type of centrally located or distributed storage of metadata records.
   - **Persistent identifier:** A long-lasting reference to a digital object.
-  - **Metadata catalogue:** A collection of metadata records that have a consistent structure and are organised according to systematic rules.
+  - **(Metadata) Catalogue:** A collection of metadata records that have a consistent structure and are organised according to systematic rules.
   - **Abstracting and indexing service:** A service, e.g. a search engine, that abstracts and indexes digital objects or metadata records, and provides matching and ranking functionality in support of information retrieval.
   - **Information retrieval (IR):** The task of identifying and retrieving information system resources (e.g. digital objects or metadata records) that are relevant to a search query. It includes searching for the information in a document, searching for the documents themselves, as well as searching for metadata describing the documents.
   
@@ -33,7 +33,7 @@ A full list of terms used within this Technical Documentation can be found in se
   - ~~**Knowledge item:**~~ **Ambiguous term. Use either (knowledge) metadata record, or knowledge resource. Depending on what is referred to.**
   - **Knowledge resource:** A digital object, such as a document, a web page, or a database, that holds relevant explicit knowledge.
   - **Corpus:** (plural: Corpora) A repository of text documents (knowledge resources); a body of works. Typically the input for information retrieval.
-  - **Knowledge source:** A provider of knowledge resources.
+  - **Knowledge source/provider :** A provider of knowledge resources.
   - **Knowledge management:** The practice of collecting, organising, managing, and accessing knowledge (for some purpose, such as as decision-making).
   - **Knowledge graph:** A representation of a network of real-world entities -- such as objects, events, situations or concepts -- and the relationships between them. Typically the network is made up of nodes, edges, and labels. Both semantic and structural knowledge can be expressed, stored, searched, visualised, and explored as knowledge graphs.
   - **Ontology:** A formal representation of the entities in a knowledge graph. Ontologies and knowledge graphs can be expressed in a similar manner and they are closely related. Ontologies can be seen as the (semantic) data model defining classes, relationships and attributes, while knowledge graphs contain the real data according to the (semantic) data model.
