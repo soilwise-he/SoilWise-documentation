@@ -10,33 +10,21 @@ SoilWise Technical Documentation currently consists of the following sections:
 
 ## Terminology
 
-A full list of terms used within this Technical Documentation can be found in section [Glossary](glossary.md). The most frequent terms are following:
+A full list of terms used within this Technical Documentation can be found in section [Glossary](glossary.md). The most essential terms are following:
 
   - **(Descriptive) metadata:**  Summary information describing digital objects such as datasets and knowledge resources.
   - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object.
-  - **Metadata source/provider :** A provider of metadata.
-  - **Metadata repository:** A type of centrally located or distributed storage of metadata records.
-  - **Persistent identifier:** A long-lasting reference to a digital object.
-  - **(Metadata) Catalogue:** A collection of metadata records that have a consistent structure and are organised according to systematic rules.
-  - **Abstracting and indexing service:** A service, e.g. a search engine, that abstracts and indexes digital objects or metadata records, and provides matching and ranking functionality in support of information retrieval.
-  - **Information retrieval (IR):** The task of identifying and retrieving information system resources (e.g. digital objects or metadata records) that are relevant to a search query. It includes searching for the information in a document, searching for the documents themselves, as well as searching for metadata describing the documents.
+
   
   - **Data:** A collection of discrete or continuous values that convey information, describing the quantity, quality, fact, statistics, other basic units of meaning, or simply sequences of symbols that may be further interpreted formally ([Wikipedia](https://en.wikipedia.org/wiki/Data)).
   - **Dataset:** (Also: Data set) A collection of data ([Wikipedia](https://en.wikipedia.org/wiki/Data_set)).
-  - **Data resource:** A (non-empty) dataset.
-  - **Data source:** A provider of data resources.
-  - **Data management:** The practice of collecting, organising, managing, and accessing data (for some purpose, such as decision-making).
+
     
   - **Knowledge:**  Facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) nor tacit knowledge (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
     - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
     - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
   - ~~**Knowledge item:**~~ **Ambiguous term. Use either (knowledge) metadata record, or knowledge resource. Depending on what is referred to.**
   - **Knowledge resource:** A digital object, such as a document, a web page, or a database, that holds relevant explicit knowledge.
-  - **Corpus:** (plural: Corpora) A repository of text documents (knowledge resources); a body of works. Typically the input for information retrieval.
-  - **Knowledge source/provider :** A provider of knowledge resources.
-  - **Knowledge management:** The practice of collecting, organising, managing, and accessing knowledge (for some purpose, such as as decision-making).
-  - **Knowledge graph:** A representation of a network of real-world entities -- such as objects, events, situations or concepts -- and the relationships between them. Typically the network is made up of nodes, edges, and labels. Both semantic and structural knowledge can be expressed, stored, searched, visualised, and explored as knowledge graphs.
-  - **Ontology:** A formal representation of the entities in a knowledge graph. Ontologies and knowledge graphs can be expressed in a similar manner and they are closely related. Ontologies can be seen as the (semantic) data model defining classes, relationships and attributes, while knowledge graphs contain the real data according to the (semantic) data model.
 
 
 ## Release notes

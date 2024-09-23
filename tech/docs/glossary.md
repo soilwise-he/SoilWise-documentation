@@ -1,5 +1,8 @@
 # Glossary
 
+documentation:Abstracting and indexing service
+:   Abstracting and indexing service is a service, e.g. a search engine, that abstracts and indexes digital objects or metadata records, and provides matching and ranking functionality in support of information retrieval.
+
 documentation:Acceptance Criteria
 :   Acceptance Criteria can be used to judge if the resulting software satisfies the user's needs. A single user story/requirement can have multiple acceptance criteria.
 
@@ -36,8 +39,23 @@ documentation:Controlled vocabulary
 documentation:Cordis
 :   Cordis is the primary source of [results from EU-funded projects](https://cordis.europa.eu/){target=_blank} since 1990
 
+documentation:Corpus
+:   Corpus (plural: Corpora) is a repository of text documents (knowledge resources); a body of works. Typically the input for information retrieval.
+
 documentation:CSW
 :   [CSW](https://www.ogc.org/standard/csw){target=_blank} Catalogue Service for the Web
+
+documentation:Data
+:   Data is a collection of discrete or continuous values that convey information, describing the quantity, quality, fact, statistics, other basic units of meaning, or simply sequences of symbols that may be further interpreted formally ([Wikipedia](https://en.wikipedia.org/wiki/Data)).
+
+documentation:Data source
+:   Data source/provider is a provider of data resources.
+
+documentation:Data management
+:   Data management is the practice of collecting, organising, managing, and accessing data (for some purpose, such as decision-making).
+
+documentation:Dataset
+:   Dataset (Also: Data set) A collection of data ([Wikipedia](https://en.wikipedia.org/wiki/Data_set)).
 
 documentation:Dataverse
 :   [Dataverse](https://dataverse.org/){target=_blank} is open source research data repository software
@@ -105,17 +123,47 @@ documentation:HALE
 documentation:Harmonization
 :   Harmonization is the process of transforming two datasets to a common model, a common projection, usage of common domain values and align their geometries
 
+documentation:Information retreival
+:   Information retreival (IR) is the task of identifying and retrieving information system resources (e.g. digital objects or metadata records) that are relevant to a search query. It includes searching for the information in a document, searching for the documents themselves, as well as searching for metadata describing the documents.
+
 documentation:Iteration
 :   An iteration is each development cycle (three foreseen within the SoilWise project) in the project. Each iteration can have phases. There are four phases per iteration focussing on co-design, development, integration and validation, demonstration.
 
 documentation:JRC
 :   JRC Joint Research Centre of the European Commission, its Directorate General. The JRC provides independent, evidence-based science and knowledge, supporting EU policies to positively impact society. Relevant policy areas within JRC are [JRC Soil](https://joint-research-centre.ec.europa.eu/scientific-activities-z/soil_en){target=_blank} and [JRC INSPIRE](https://inspire.ec.europa.eu/whos-who-inspire/57734){target=_blank}
 
+documentation:Knowledge
+:   Knowledge is facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) nor tacit knowledge (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
+
+    - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
+    - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
+
+documentation:Knowledge graph
+:   Knowledge graph is a representation of a network of real-world entities -- such as objects, events, situations or concepts -- and the relationships between them. Typically the network is made up of nodes, edges, and labels. Both semantic and structural knowledge can be expressed, stored, searched, visualised, and explored as knowledge graphs.
+
+documentation:Knowledge resource
+:   Knowledge resource is a digital object, such as a document, a web page, or a database, that holds relevant explicit knowledge.
+
+documentation:Knowledge source
+:   Knowledge source/provider is a provider of knowledge resources.
+
+documentation:Knowledge management
+:   Knowledge managmenet is the practice of collecting, organising, managing, and accessing knowledge (for some purpose, such as as decision-making).
+
 documentation:LLM
 :   Large Language Model is typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from know collections scraped from the Internet.
 
 documentation:Mapserver
 :   [Mapserver](https://mapserver.org){target=_blank} C based software package providing access to remote data through OGC services
+
+documentation:Metadata
+:  (Descriptive) metadata is a summary information describing digital objects such as datasets and knowledge resources.
+
+documentation:Metadata record
+:   Metadata record is an entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object.
+
+documentation:Metadata source
+:   Metadata source/provider is a provider of metadata.
 
 documentation:NLP
 :   Natural Language Processing is an interdisciplinary subfield of computer science and artificial intelligence, primarily concerned with providing computers with the ability to process data encoded in natural language. It is closely related to information retrieval, knowledge representation and computational linguistics.
@@ -127,7 +175,10 @@ documentation:OGC API
 :   [OGC API](https://ogcapi.ogc.org/){target=_blank} building blocks that can be used to assemble novel APIs for web access to geospatial content
 
 documentation:Ontology
-:   Ontology a way of showing the properties of a subject area and how they are related, by defining a set of concepts and categories that represent the subject. (source: [wikipedia](https://en.wikipedia.org/wiki/Ontology_(computer_science)){target=_blank})
+:   Ontology is a formal representation of the entities in a knowledge graph. Ontologies and knowledge graphs can be expressed in a similar manner and they are closely related. Ontologies can be seen as the (semantic) data model defining classes, relationships and attributes, while knowledge graphs contain the real data according to the (semantic) data model.
+
+documentation:Persistent identifier
+:   Persistent identifier is a long-lasting reference to a digital object.
 
 documentation:Product backlog
 :   Product backlog is the document where user stories/requirements are gathered with their acceptance criteria, and prioritized.
