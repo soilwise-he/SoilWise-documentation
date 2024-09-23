@@ -10,7 +10,7 @@ SoilWise Technical Documentation currently consists of the following sections:
 
 ## Terminology
 
-Within the SoilWise Technical Documentation, we use the terms below as follows:
+A full list of terms used within this Technical Documentation can be found in section [Glossary](glossary.md). The most frequent terms are following:
 
   - **(Descriptive) metadata:**  Summary information describing digital objects such as datasets and knowledge resources.
   - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object.

@@ -11,7 +11,7 @@ The Harvester component is dedicated to automatically harvest sources to populat
 
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components where available.
 
-The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Disucssion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
+The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Discussion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
 
 A harvesting task typically extracts records with update-date later then the _last-identified successfull harvester run_.
 
@@ -61,7 +61,7 @@ flowchart LR
 
 ### Datasets
 
-Datasets are to be primarily imported from the **ESDAC**, **INSPIRE GeoPortal**, **BonaRes** and **Cordis**/**OpenAire**. In later iterations SoilWise aims to include other projects and portals, such as **national** or **thematic portals**. These repositories contain large number of datasets. Selection of key datasets concerning the SoilWise scope is a subject of know-how to be developed within SoilWise.
+Metadata records of datasets are, for the first iteration, primarily imported from the **ESDAC**, **INSPIRE GeoPortal**, **BonaRes** and **Cordis**/**OpenAire**. In later iterations SoilWise aims to include other projects and portals, such as **national** or **thematic portals**. These repositories contain large number of datasets. Selection of key datasets concerning the SoilWise scope is a subject of know-how to be developed within SoilWise.
 
 ### Knowledge sources
 
@@ -85,7 +85,7 @@ Note, the first SoilWise Repository development iteration resulted in **9,0444**
 
 #### CORDIS
 
-European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The deliverables from which projects to be included is still under discussion. 
+European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The scope of projects, from which to include project deliverables is still under discussion. 
 
 #### OpenAire
 
@@ -121,10 +121,6 @@ Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/){target=_
 For metadata harmonization some supporting modules are used, [owslib](https://owslib.readthedocs.io/en/latest/){target=_blank} is a module to parse various source metadata models, including iso19115:2005. [pygeometa](https://github.com/geopython/pygeometa){target=_blank} is a module which can export owslib parsed metadata to various outputs, including DCAT.
 
 Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software, used to power the [SoilWise Catalogue](catalogue.md), using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.
-
-#### Metadata Augmentation
-
-The metadata [augmentation processes](metadata_augmentation.md) are used to add relevant statements to the metadata description. What is relevant within the Harvester is that the output of these processes is integrated in the harmonised metadata database.
 
 ### Metadata RDF turtle serialization
 

@@ -2,9 +2,9 @@
 
 !!! component-header "Info"
     
-    **Project:** https://github.com/soilwise-he/soilinfohub
+    **Project:** [Soilinfohub](https://github.com/soilwise-he/soilinfohub)
     
-    **Access point:** https://github.com/soilwise-he/soilinfohub
+    **Access point:** <https://github.com/soilwise-he/soilinfohub>
 
 ## Functionality
 

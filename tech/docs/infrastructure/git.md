@@ -1,6 +1,6 @@
 # GIT versioning system
 
-All aspects of the SoilWise repository can be managed through the [SoilWise GIT](https://github.com/soilwise-he){target=_blank} repository. 
+All aspects of the SoilWise repository can be managed through the [SoilWise GitHub](https://github.com/soilwise-he){target=_blank} repository. 
 This allows all members of the Mission Soil and EUSO community to provide feedback or contribute to any of the aspects.
 
 ## Documentation
@@ -11,7 +11,7 @@ An interactive preview of architecture diagrams is also maintained and published
 
 ## Source code
 
-Software libraries tailored or developed in the scope of SoilWise are maintained through the GIT repository.
+Software libraries tailored or developed in the scope of SoilWise are maintained through the GitHub repository.
 
 ## Container build scripts/deployments
 
@@ -19,11 +19,11 @@ SoilWise is based on an orchestrated set of container deployments. Both the defi
 
 ## Harvester definitions
 
-The configuration of the endpoint to be harvested, filters to apply and the interval is stored in a Git repository. If the process runs as a CI-CD pipeline, then the logs of each run are also available in Git.
+The configuration of the endpoint to be harvested, filters to apply and the interval is stored in a GitHub repository. If the process runs as a CI-CD pipeline, then the logs of each run are also available in Git.
 
 ## Authored and harvested metadata
 
-Metadata created in SWR, as well as metadata imported from external sources, are stored in Git, so a full history of each record is available, and users can suggest changes to existing metadata.
+Metadata created in SWR, as well as metadata imported from external sources, are stored in GitHub, so a full history of each record is available, and users can suggest changes to existing metadata.
 
 ## Validation rules
 
@@ -35,9 +35,9 @@ Alignments to be applied to the source to be standardised and/or harmonised are 
 
 ## Backlog / discussions
 
-Roadmap discussion, backlog and issue management are part of the Git repository. Users can flag issues on existing components, documentation or data, which can then be followed up by the participants.
+Roadmap discussion, backlog and issue management are part of the GitHub repository. Users can flag issues on existing components, documentation or data, which can then be followed up by the participants.
 
 ## Release management
 
-Releases of the components and infrastructure are managed from a Git repository, so users understand the status of a version and can download the packages. The release process is managed in an automated way through CI-CD pipelines.
+Releases of the components and infrastructure are managed from a GitHub repository, so users understand the status of a version and can download the packages. The release process is managed in an automated way through CI-CD pipelines.
 

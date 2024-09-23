@@ -52,9 +52,9 @@ The public cloud [hale connect user service](https://haleconnect.com/swagger/){t
 
 - User/Role and Organisation management has been deployed and configured as part of weTransform's hale connect installation.
 - As of now, there are three Identity providers deployed as part of that infrastructure:
-  - The integrated user service in hale connect,
-  - a Keycloak/OpenID-connect based one using GoPass via Github
-  - a Data Spaces connector.
+    - The integrated user service in hale connect,
+    - a Keycloak/OpenID-connect based one using GoPass via Github
+    - a Data Spaces connector.
 
 ## Planned work - Iteration 2
 

@@ -36,7 +36,7 @@ A Triple Store is selected as a parallel storage because it offers several capab
 
 ### Git: User enhanced metadata
 
-The current setup of SWR, using the pycsw infrastructure, allows users to propose metadat enhancements. Such enhancements are managed in Git at: <https://github.com/soilwise-he/soilinfohub/discussions>.
+The current setup of SWR, using the pycsw infrastructure, allows users to propose metadata enhancements. Such enhancements are managed in Git at: <https://github.com/soilwise-he/soilinfohub/discussions>.
 
 ## Ongoing Developments
 
