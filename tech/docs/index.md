@@ -8,9 +8,9 @@ SoilWise Technical Documentation currently consists of the following sections:
 4. [Glossary](glossary.md)
 5. [Printable version](print_page) - where you find all sections composed in one page, that can be easily printed using Web Browser options
 
-## Terminology
+## Essential Terminology
 
-A full list of terms used within this Technical Documentation can be found in section [Glossary](glossary.md). The most essential terms are following:
+A full list of terms used within this Technical Documentation can be found in the [Glossary](glossary.md). The most essential ones are defined as follows:
 
   - **(Descriptive) metadata:**  Summary information describing digital objects such as datasets and knowledge resources.
   - **Metadata record:** An entry in e.g. a catalogue or abstracting and indexing service with summary information about a digital object.
@@ -20,11 +20,10 @@ A full list of terms used within this Technical Documentation can be found in se
   - **Dataset:** (Also: Data set) A collection of data ([Wikipedia](https://en.wikipedia.org/wiki/Data_set)).
 
     
-  - **Knowledge:**  Facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) nor tacit knowledge (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
-    - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the "What?" question about facts and concepts.
-    - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the "How?" and "Why?" regarding the organisation and relationships among facts and concepts.
-  - ~~**Knowledge item:**~~ **Ambiguous term. Use either (knowledge) metadata record, or knowledge resource. Depending on what is referred to.**
-  - **Knowledge resource:** A digital object, such as a document, a web page, or a database, that holds relevant explicit knowledge.
+  - **Knowledge:**  Facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers _explicit knowledge_ -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include _implicit knowledge_ (information transferable via skills) nor _tacit knowledge_ (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge:
+    - **Semantic knowledge:** Also known as declarative knowledge, refers to knowledge about facts, meanings, concepts, and relationships. It is the understanding of the world around us, conveyed through language. Semantic knowledge answers the _"What?"_ question about facts and concepts.
+    - **Structural knowledge:** Knowledge about the organisation and interrelationships among pieces of information. It is about understanding how different pieces of information are interconnected. Structural knowledge explains the _"How?" and "Why?"_ regarding the organisation and relationships among facts and concepts.
+  - **Knowledge resource:** A digital object, such as a document, a web page, or a database, that holds relevant _explicit knowledge_.
 
 
 ## Release notes
