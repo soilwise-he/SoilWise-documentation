@@ -1,7 +1,7 @@
 # Knowledge Graph
 
 !!! component-header "Info"
-    **Current version:** 1.0 
+    **Current version:** 0.1.0 
 
     **Project:** [Soil Health Knowledge graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
 

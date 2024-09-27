@@ -1,7 +1,7 @@
 # Repository Storage
 
 !!! component-header "Info"
-    **Current version:** 1.0 
+    **Current version:** 0.1.0 
 
     **Access point:** Triple Store (SWR SPARQL endpoint) <https://sparql.soilwise-he.containers.wur.nl/sparql>
 

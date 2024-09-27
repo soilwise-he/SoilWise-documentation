@@ -136,7 +136,7 @@ The validation against the INSPIRE metadata profile checks whether the metadata 
 ### Metadata profile validation
 
 !!! component-header "Info"
-    **Current version:** 1.0
+    **Current version:** 0.1.0
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
 
@@ -194,7 +194,7 @@ A comprehensive tutorial video on setting up and executing transformation workfl
 ### Link liveliness assessment 
 
 !!! component-header "Info"
-    **Current version:** 1.0
+    **Current version:** 0.1.0
 
     **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 
