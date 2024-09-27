@@ -1,7 +1,7 @@
 # Catalogue
 
 !!! component-header "Info"
-    **Current version:** v3.0b.2024-july
+    **Current version:** 0.1.0
 
     **Project:** [pycsw](https://github.com/soilwise-he/pycsw)
 
