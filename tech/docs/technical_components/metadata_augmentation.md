@@ -19,39 +19,13 @@ In this component scripting / NLP / LLM are used on a metadata record to augment
 For the first SoilWise prototype, the functionality of the Metadata Augmentation component comprises:
 
 - [Automatic metadata generation](#automatic-metadata-generation)
-- [Spatial scope analyser](#spatial-scope-analyser)
+- [Translation module](#translation-module)
+
 
 ### Automatic metadata generation
 
 To generate metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process. The steps are described [here](https://main.soilwise-documentation.pages.dev/technical_components/metadata_validation/#setting-up-a-transformation-process-in-haleconnect)
 
-### Spatial scope analyser
-
-A script that analyses the spatial scope of a resource
-
-The bounding box is matched to country bounding boxes
-
-To understand if the dataset has a global, continental, national or regional scope
-
-- Retrieves all datasets (as iso19139 xml) from database (records table joined with augmentations) which:
-    - have a bounding box 
-    - no spatial scope
-    - in iso19139 format
-- For each record it compares the boundingbox to country bounding boxes: 
-    - if bigger then continents > global
-    - If matches a continent > continental
-    - if matches a country > national
-    - if smaller > regional
-- result is written to as an augmentation in a dedicated table
-
-## Foreseen functionality
-
-In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
-
-- [Translation module](#translation-module)
-- [Keyword matcher](#keyword-matcher)
-- [Spatial Locator](#spatial-locator)
-- [EUSO-high-value dataset tagging](#euso-high-value-dataset-tagging)
 
 ### Translation module
 
@@ -61,6 +35,15 @@ The translation module builds on the EU translation service (API documentation a
 The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
 
 Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
+
+## Foreseen functionality
+
+In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
+
+- [Keyword matcher](#keyword-matcher)
+- [Spatial Locator](#spatial-locator)
+- [Spatial scope analyser](#spatial-scope-analyser)
+- [EUSO-high-value dataset tagging](#euso-high-value-dataset-tagging)
 
 
 ### Keyword matcher
@@ -80,6 +63,25 @@ For metadata records which have not been analysed yet (in that iteration), the m
 
 Analyses existing keywords to find a relevant geography for the record, it then uses the [GeoNames](https://www.geonames.org/about.html){target=_blank} API to find spatial coordinates for the geography, which are inserted into the metadata record.
 
+
+### Spatial scope analyser
+
+A script that analyses the spatial scope of a resource
+
+The bounding box is matched to country bounding boxes
+
+To understand if the dataset has a global, continental, national or regional scope
+
+- Retrieves all datasets (as iso19139 xml) from database (records table joined with augmentations) which:
+    - have a bounding box 
+    - no spatial scope
+    - in iso19139 format
+- For each record it compares the boundingbox to country bounding boxes: 
+    - if bigger then continents > global
+    - If matches a continent > continental
+    - if matches a country > national
+    - if smaller > regional
+- result is written to as an augmentation in a dedicated table
 
 ### EUSO-high-value dataset tagging
 
