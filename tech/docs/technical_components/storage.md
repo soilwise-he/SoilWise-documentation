@@ -1,7 +1,7 @@
 # Repository Storage
 
 !!! component-header "Info"
-    **Current version:** 0.1.0 
+    **Current version:** Postgres release 12.2; Virtuoso release 07.20.3239; Gitlab release v17.4.1
 
     **Access point:** Triple Store (SWR SPARQL endpoint) <https://sparql.soilwise-he.containers.wur.nl/sparql>
 
