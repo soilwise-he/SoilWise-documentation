@@ -1,0 +1,1019 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://soilwise-he.github.io/SoilWise-documentation/technical_components/ingestion/" rel="canonical"/>
+<link href="../technical_components/" rel="prev"/>
+<link href="../storage/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.46" name="generator"/>
+<title>Harvester - Living Technical Documentation</title>
+<link href="../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../../css/print-site.css" rel="stylesheet"/>
+<link href="../../css/print-site-material.css" rel="stylesheet"/>
+<link href="../../extra.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="indigo" data-md-color-primary="brown" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#harvester">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Living Technical Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Living Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Living Technical Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Harvester
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="brown" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="brown" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../technical_components/">
+          
+  
+    
+  
+  Technical Components
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/apis-intro/">
+          
+  
+    
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../infrastructure/infrastructure-intro/">
+          
+  
+    
+  
+  Infrastructure
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../glossary/">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../print_page/">
+        
+  
+    
+  
+  Printable version
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Living Technical Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Living Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+    Living Technical Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Technical Components
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Technical Components
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technical_components/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Harvester
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Harvester
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-harvesting-concept">
+<span class="md-ellipsis">
+      Metadata harvesting concept
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-types">
+<span class="md-ellipsis">
+      Resource Types
+    </span>
+</a>
+<nav aria-label="Resource Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#datasets">
+<span class="md-ellipsis">
+      Datasets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#knowledge-sources">
+<span class="md-ellipsis">
+      Knowledge sources
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+<span class="md-ellipsis">
+      Functionality
+    </span>
+</a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#harvest-records-from-metadata-and-knowledge-resources">
+<span class="md-ellipsis">
+      Harvest records from metadata and knowledge resources
+    </span>
+</a>
+<nav aria-label="Harvest records from metadata and knowledge resources" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cordis">
+<span class="md-ellipsis">
+      CORDIS
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openaire">
+<span class="md-ellipsis">
+      OpenAire
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ogc-csw">
+<span class="md-ellipsis">
+      OGC-CSW
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inspire">
+<span class="md-ellipsis">
+      INSPIRE
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esdac">
+<span class="md-ellipsis">
+      ESDAC
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#impact4soil">
+<span class="md-ellipsis">
+      Impact4Soil
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prepsoil-portal">
+<span class="md-ellipsis">
+      Prepsoil portal
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-harmonization">
+<span class="md-ellipsis">
+      Metadata Harmonization
+    </span>
+</a>
+<nav aria-label="Metadata Harmonization" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-augmentation">
+<span class="md-ellipsis">
+      Metadata Augmentation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-rdf-turtle-serialization">
+<span class="md-ellipsis">
+      Metadata RDF turtle serialization
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rdf-to-triple-store">
+<span class="md-ellipsis">
+      RDF to Triple store
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duplication-indentification">
+<span class="md-ellipsis">
+      Duplication indentification
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+<nav aria-label="Technology" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#git-actionspipelines-to-run-harvest-tasks">
+<span class="md-ellipsis">
+      Git actions/pipelines to run harvest tasks
+    </span>
+</a>
+<nav aria-label="Git actions/pipelines to run harvest tasks" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ogc-csw_1">
+<span class="md-ellipsis">
+      OGC-CSW
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cordis-openaire">
+<span class="md-ellipsis">
+      CORDIS - OpenAire
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openaire-and-other-sources">
+<span class="md-ellipsis">
+      OpenAire and other sources
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integration-opportunities">
+<span class="md-ellipsis">
+      Integration opportunities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../storage/">
+<span class="md-ellipsis">
+    Repository Storage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../catalogue/">
+<span class="md-ellipsis">
+    Catalogue
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_validation/">
+<span class="md-ellipsis">
+    Metadata Validation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_authoring/">
+<span class="md-ellipsis">
+    Metadata Authoring
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transformation/">
+<span class="md-ellipsis">
+    Transformation and Harmonisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_augmentation/">
+<span class="md-ellipsis">
+    Metadata Augmentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../knowledge_graph/">
+<span class="md-ellipsis">
+    Knowledge Graph
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../natural_language_querying/">
+<span class="md-ellipsis">
+    Natural Language Querying
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_management/">
+<span class="md-ellipsis">
+    User Management and Access Control
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/apis-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/infrastructure-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/containerization/">
+<span class="md-ellipsis">
+    Containerization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/git/">
+<span class="md-ellipsis">
+    GIT versioning system
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../print_page/">
+<span class="md-ellipsis">
+    Printable version
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-harvesting-concept">
+<span class="md-ellipsis">
+      Metadata harvesting concept
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resource-types">
+<span class="md-ellipsis">
+      Resource Types
+    </span>
+</a>
+<nav aria-label="Resource Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#datasets">
+<span class="md-ellipsis">
+      Datasets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#knowledge-sources">
+<span class="md-ellipsis">
+      Knowledge sources
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+<span class="md-ellipsis">
+      Functionality
+    </span>
+</a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#harvest-records-from-metadata-and-knowledge-resources">
+<span class="md-ellipsis">
+      Harvest records from metadata and knowledge resources
+    </span>
+</a>
+<nav aria-label="Harvest records from metadata and knowledge resources" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cordis">
+<span class="md-ellipsis">
+      CORDIS
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openaire">
+<span class="md-ellipsis">
+      OpenAire
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ogc-csw">
+<span class="md-ellipsis">
+      OGC-CSW
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inspire">
+<span class="md-ellipsis">
+      INSPIRE
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esdac">
+<span class="md-ellipsis">
+      ESDAC
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#impact4soil">
+<span class="md-ellipsis">
+      Impact4Soil
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prepsoil-portal">
+<span class="md-ellipsis">
+      Prepsoil portal
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-harmonization">
+<span class="md-ellipsis">
+      Metadata Harmonization
+    </span>
+</a>
+<nav aria-label="Metadata Harmonization" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-augmentation">
+<span class="md-ellipsis">
+      Metadata Augmentation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metadata-rdf-turtle-serialization">
+<span class="md-ellipsis">
+      Metadata RDF turtle serialization
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rdf-to-triple-store">
+<span class="md-ellipsis">
+      RDF to Triple store
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duplication-indentification">
+<span class="md-ellipsis">
+      Duplication indentification
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technology">
+<span class="md-ellipsis">
+      Technology
+    </span>
+</a>
+<nav aria-label="Technology" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#git-actionspipelines-to-run-harvest-tasks">
+<span class="md-ellipsis">
+      Git actions/pipelines to run harvest tasks
+    </span>
+</a>
+<nav aria-label="Git actions/pipelines to run harvest tasks" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ogc-csw_1">
+<span class="md-ellipsis">
+      OGC-CSW
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cordis-openaire">
+<span class="md-ellipsis">
+      CORDIS - OpenAire
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openaire-and-other-sources">
+<span class="md-ellipsis">
+      OpenAire and other sources
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integration-opportunities">
+<span class="md-ellipsis">
+      Integration opportunities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/soilwise-he/SoilWise-documentation/edit/main/tech/docs/technical_components/ingestion.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<h1 id="harvester">Harvester</h1>
+<div class="admonition component-header">
+<p class="admonition-title">Info</p>
+<p><strong>Current version:</strong> 0.1.0</p>
+<p><strong>Project:</strong> <a href="https://github.com/soilwise-he/harvesters">Harvesters</a></p>
+</div>
+<p>The Harvester component is dedicated to automatically harvest sources to populate SWR with metadata on <a href="#datasets">datasets</a> and <a href="#knowledge-sources">knowledge sources</a>.</p>
+<h2 id="metadata-harvesting-concept">Metadata harvesting concept</h2>
+<p>Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components where available.</p>
+<p>The harvesting mechanism relies on the concept of a <em>universally unique identifier (UUID)</em> or <em>unique resource identifier (URI)</em> that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the <em>last change date</em>. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Discussion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then <em>last-identified successfull harvester run</em> are extracted from remote location. </p>
+<p>A harvesting task typically extracts records with update-date later then the <em>last-identified successfull harvester run</em>.</p>
+<p>Harvested content is (by default) not editable for the following reasons:</p>
+<ol>
+<li>The harvesting is periodic so any local change to harvested metadata will be lost during the next run.</li>
+<li>The change date may be used to keep track of changes so if the metadata gets changed, the harvesting mechanism may be compromised.</li>
+</ol>
+<p>If inconsistencies with imported metadata are identified, we can add a statement to the graph of such inconsistencies. We can also notify the author of the inconsistency so they can fix the inconsistency on their side.</p>
+<p>A governance aspect still under discussion is if harvested content is removed as soon as a harvester configuration is removed, or when records are removed from the remote endpoint. The risk of removing content is that relations within the graph are breached. An alternative is to indicate the record has been archived by the provider.</p>
+<p>Typical tasks of a harvester:</p>
+<ul>
+<li><strong>Define a harvester job</strong><ul>
+<li>Schedule (on request, weekly, daily, hourly)</li>
+<li>Endpoint / Endpoint type (example.com/csw -&gt; OGC:CSW)</li>
+<li>Apply a filter (only records with keyword='soil-mission')</li>
+</ul>
+</li>
+<li><strong>Understand success of a harvest job</strong> <ul>
+<li>overview of harvested content (120 records)</li>
+<li>which runs failed, why? (today failed -&gt; log, yesterday successfull -&gt; log)</li>
+<li>Monitor running harvestors (20% done -&gt; cancel)</li>
+</ul>
+</li>
+<li><strong>Define behaviours on harvested content</strong><ul>
+<li>skip records with low quality (if test xxx fails)</li>
+<li>mint identifier if missing ( https://example.com/data/{uuid} )</li>
+<li>a model transformation before ingestion ( example-transform.xsl / do-something.py )</li>
+</ul>
+</li>
+</ul>
+<h2 id="resource-types">Resource Types</h2>
+<p>Metadata for following resource types are foreseen to be harvested:</p>
+<ul>
+<li>Data &amp; Knowledge Resources </li>
+<li>Organisations, Projects, LTE, Living labs initiatives</li>
+<li>Repositories/Catalogues</li>
+</ul>
+<p>These entities relate to each other as:</p>
+<pre class="mermaid"><code>flowchart LR
+    people --&gt;|memberOf| o[organisations] 
+    o --&gt;|partnerIn| p[projects]
+    p --&gt;|produce| d[data &amp; knowledge resources]
+    o --&gt;|publish| d
+    d --&gt;|describedIn| c[catalogues]
+    p --&gt;|part-of| fs[Fundingscheme]
+</code></pre>
+<h3 id="datasets">Datasets</h3>
+<p>Metadata records of datasets are, for the first iteration, primarily imported from the <strong>ESDAC</strong>, <strong>INSPIRE GeoPortal</strong>, <strong>BonaRes</strong> and <strong>Cordis</strong>/<strong>OpenAire</strong>. In later iterations SoilWise aims to include other projects and portals, such as <strong>national</strong> or <strong>thematic portals</strong>. These repositories contain large number of datasets. Selection of key datasets concerning the SoilWise scope is a subject of know-how to be developed within SoilWise.</p>
+<h3 id="knowledge-sources">Knowledge sources</h3>
+<p>With respect to harvesting, it is important to note that knowledge assets are heterogeneous, and that (compared to data), metadata standards and particularly access / harvesting protocols are not generally adopted. Available metadata might be implemented using a proprietary schema, and basic assumptions for harvesting, e.g. providing a "date of last change" might not be offered. This will, in some cases, make it necessary to develop customized harvesting and metadata extraction processes. It also means that informed decisions need to be made on which resources to include, based on priority, required efforts and available capacity.</p>
+<p>The SoilWise project team is still exploring which knowledge resources to include. As an example, an important cluster of knowledge sources may be seen academic articles and report deliverables from Mission Soil Horizon Europe projects. These resources are accessible from <strong>ESDAC</strong>, <strong>Cordis</strong> and <strong>OpenAire</strong>. Extracting content from Cordis, OpenAire can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first iteration, SoilWise aims to achieve this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.</p>
+<h2 id="functionality">Functionality</h2>
+<p>The Harvester component currently comprises of the following functions:</p>
+<ul>
+<li><a href="#harvest-records-from-metadata-and-knowledge-resources">Harvest records from metadata and knowledge resources</a></li>
+<li><a href="#metadata-harmonization">Metadata harmonization</a></li>
+<li><a href="#metadata-rdf-turtle-serialization">Metadata RDF turtle serialization</a></li>
+<li><a href="#rdf-to-triple-store">RDF to Triple Store</a></li>
+<li><a href="#duplication-indentification">Duplication identification</a></li>
+</ul>
+<h3 id="harvest-records-from-metadata-and-knowledge-resources">Harvest records from metadata and knowledge resources</h3>
+<p>Note, the first SoilWise Repository development iteration resulted in <strong>9,0444</strong> harvested metadata records (to date 12.09.20241).</p>
+<h4 id="cordis">CORDIS</h4>
+<p>European Research projects typically advertise their research outputs via <a href="https://cordis.europa.eu/" target="_blank">Cordis</a>. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a <a href="https://www.doi.org/the-identifier/what-is-a-doi/" target="_blank">DOI</a>, additional metadata can be found in OpenAire via the DOI. The scope of projects, from which to include project deliverables is still under discussion. </p>
+<p>Which projects to include is derived from 2 sources:</p>
+<ul>
+<li><a href="https://esdac.jrc.ec.europa.eu/projects/Eufunded/Eufunded.html" target="_blank">ESDAC</a> maintains a list of historic EU funded research projects</li>
+<li><a href="https://mission-soil-platform.ec.europa.eu/project-hub/funded-projects-under-mission-soil" target="_blank">Mission soil platform</a> maintains a list of current Mission soil projects</li>
+</ul>
+<p>A script fetches the content from these 2 sources and prepares for the CORDIS and OpenAire harvested to understand which content is relevant. The content in these pages is unstructured html. The content is scraped using a python library. This is not optimal, because the scraper expects a dedicated html structure, which is fragile.</p>
+<p>Results of the scrape activity are stored in table <code>harvest.projects</code>. For each project a Record control number(<a href="https://www.wikidata.org/wiki/Property:P5755" target="_blank">RCN</a>) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. </p>
+<p>At this moment in time we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. </p>
+<h4 id="openaire">OpenAire</h4>
+<p>For those resources, discovered via Cordis/ESDAC, and identified by a DOI, a harvester fetches additional metadata from OpenAire. OpenAire is a catalogue initiative which harvests metadata from popular scientific repositories, such as Zenodo, Dataverse, etc.</p>
+<p>Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.</p>
+<p>Records in OpenAire are stored in the Open Aire Research Graph (<a href="https://www.openaire.eu/schema/1.0/doc/oaf-1.0.html" target="_blank">OAF</a>) format, which is transformed to a metadata set based on Dublin Core.</p>
+<h4 id="ogc-csw">OGC-CSW</h4>
+<p>Many (spatial) catalogues advertise their metadata via the <a href="https://www.ogc.org/standard/cat/" target="_blank">catalogue Service for the Web</a> standard, such as INSPIRE GeoPortal, Bonares, ISRIC. The <a href="https://github.com/geopython/owslib" target="_blank">OWSLib</a> library is used to query records from CSW endpoints. A filter can be configured to retrieve subsets of the catalogue.</p>
+<p>Incidentally, records advertised as CSW also include a DOI reference (Bonares/ISRIC). Additional metadata for these DOI's is extracted from OpenAire/Crossref.</p>
+<h4 id="inspire">INSPIRE</h4>
+<p>Although <a href="https://inspire-geoportal.ec.europa.eu/" target="_blank">INSPIRE Geoportal</a> does offer a CSW endpoint, due to a technical reasons, we have not been able to harvest from it. Instead we have developed a dedicated harvester via the Elastic Search API endpoint of the Geoportal. If at some point the technical issue has been resolved, use of the CSW harvest endpoint is favourable.</p>
+<h4 id="esdac">ESDAC</h4>
+<p>The <a href="https://esdac.jrc.ec.europa.eu/" target="_blank">ESDAC catalogue</a> is an instance of Drupal CMS. We have developed a dedicated harvester to scrape html elements to extract Dublin Core metadata from ESDAC html elements. Metadata is extracted for datasets, maps (EUDASM) and documents. Incidentally a DOI is mentioned as part of the HTML, this DOI is then used as identifier for the resource, else the resource url is used as identifier. If the DOI is not known to the system yet, OpenAire will be queried to capture additional metadata on the resource.</p>
+<h4 id="impact4soil">Impact4Soil</h4>
+<p>Impact4soil is build on a Strapi.io headless CMS. The CMS provides an API to retrieve datasets and scientific articles. The API provides minimal metadata, but fortunately in most cases a DOI is included. DOI is used to capture additional metadata from OpenAire.</p>
+<h4 id="prepsoil-portal">Prepsoil portal</h4>
+<p>Prep4soil is build on a headless CMS. The CMS at times provides an API to retrieve datasets, knowledge items, living labs, lighthouses and communities of practice. The API provides minimal metadata, incidentally a DOI is included. DOI is used to capture additional metadata from OpenAire.</p>
+<h3 id="metadata-harmonization">Metadata Harmonization</h3>
+<p>Once stored in the harvest sources database, a second process is triggered which harmonizes the sources to the desired metadata profile. These processes are split by design, to prevent that any failure in metadata processing would require to fetch remote content again.</p>
+<p>Table below indicates the various source models supported</p>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dublin Core</td>
+<td>Cordis</td>
+</tr>
+<tr>
+<td>Extended Dublin core</td>
+<td>ESDAC</td>
+</tr>
+<tr>
+<td>Datacite</td>
+<td>OpenAire, Zenodo, DOI</td>
+</tr>
+<tr>
+<td>ISO19115:2005</td>
+<td>Bonares, INSPIRE</td>
+</tr>
+</tbody>
+</table>
+<p>Metadata is harmonised to a <a href="https://www.w3.org/TR/vocab-dcat-3/" target="_blank">DCAT</a> RDF representation.</p>
+<p>For metadata harmonization some supporting modules are used, <a href="https://owslib.readthedocs.io/en/latest/" target="_blank">owslib</a> is a module to parse various source metadata models, including iso19139:2007. A transformation script from (semic-eu/iso19139-to-dcat-ap.xslt)[https://github.com/semic-eu/iso19139-to-dcat-ap/] in combination with lxml and rdflib is used to convert iso19139:2007 metadata to RDF, serialised as turtle.</p>
+<p>Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software, used to power the <a href="../catalogue/">SoilWise Catalogue</a>, using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.</p>
+<h4 id="metadata-augmentation">Metadata Augmentation</h4>
+<p>The metadata augmentation processes are described <a href="../metadata_augmentation/">elsewhere</a>, what is relevant here is that the output of these processes is integrated in the harmonised metadata database.</p>
+<h3 id="metadata-rdf-turtle-serialization">Metadata RDF turtle serialization</h3>
+<p>The harmonised metadata model is based on the DCAT ontology. In this step the content of the database is written to RDF.</p>
+<p>Harmonized metadata is transformed to RDF in preparation of being loaded into the triple store (see also <a href="../knowledge_graph/">Knowledge Graph</a>).</p>
+<h3 id="rdf-to-triple-store">RDF to Triple store</h3>
+<p>This is a component which on request can dump the content of the harmonised database as an RDF quad store. This service is requested at intervals by the triple store component. In a next iteration we aim to push the content to the triple store at intervals.</p>
+<h3 id="duplication-indentification">Duplication indentification</h3>
+<p>A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. An aim of this exercise is also to understand in which repositories a certain resource is advertised.</p>
+<p>Visualization of source repositories is in the first development iteration available as a dedicated section in the <a href="../catalogue/">SoilWise Catalogue</a>.</p>
+<h2 id="technology">Technology</h2>
+<h3 id="git-actionspipelines-to-run-harvest-tasks">Git actions/pipelines to run harvest tasks</h3>
+<p>Git actions (github) or pipelines (gitlab) are automated processes which run at intervals or events. Git platforms typically offer this functionality including extended logging, queueing, and manual job monitoring and interaction (start/stop).</p>
+<p>Each harvester runs in a dedicated container. The result of the harvester is ingested into a (temporary) storage.
+Follow up processes (harmonization, augmentation, validation) pick up the results from the temporary storage. </p>
+<p><pre class="mermaid"><code>flowchart LR
+    c[CI-CD] --&gt;|task| q[/Queue\]
+    r[Runner] --&gt; q
+    r --&gt;|deploys| hc[Harvest container]
+    hc --&gt;|harvests| db[(temporary storage)]
+    hc --&gt;|data cleaning| db[(temporary storage)]
+</code></pre>
+Harvester tasks are triggered from <a href="https://github.com/features/actions" target="_blank"><strong>Git CI-CD</strong></a>, Git provides options to cancel and trigger tasks and review CI-CD logs to check errors</p>
+<h4 id="ogc-csw_1">OGC-CSW</h4>
+<p>Many (spatial) catalogues advertise their metadata via the <a href="https://www.ogc.org/standard/cat/" target="_blank">catalogue Service for the Web</a> standard, such as INSPIRE GeoPortal, Bonares, ISRIC.</p>
+<h4 id="cordis-openaire">CORDIS - OpenAire</h4>
+<p>Cordis does not capture many metadata properties. We harvest the title of a project publication and, if available, the DOI. In those cases where a resource is identified by a <a href="https://www.doi.org/the-identifier/what-is-a-doi/" target="_blank">DOI</a>, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. </p>
+<p>A second mechanism is available to link from Cordis to OpenAire, the RCN number. The OpenAire catalogue can be queried using an RCN filter to retrieve only resources relevant to a project. This work is still in preparation.</p>
+<p>Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
+Detailed technical information can be found in the <a href="https://github.com/soilwise-he/harvesters/tree/main/cordis#readme" target="_blank">technical description</a>.</p>
+<h4 id="openaire-and-other-sources">OpenAire and other sources</h4>
+<p>The software used to query OpenAire by DOI or by RCN is not limited to be used by DOIs or RCNs that come from Cordis. Any list of DOIs or list of RCNs can be handled by the software.</p>
+<h2 id="integration-opportunities">Integration opportunities</h2>
+<p>The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) <a href="../catalogue/">SWR Catalogue</a>, (2) <a href="../metadata_authoring/">Metadata authoring</a> and (3) <a href="../metadata_validation/#metadata-etsats-checking">ETS/ATS</a>, i.e. test suites.</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2024</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - 2027 <a href="https://cordis.europa.eu/project/id/101112838">SoilWise Soil Mission Horizon Europe project No. 101112838</a>
+</div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/soilwise-project-eu/" rel="noopener" target="_blank" title="SoilWise on LinkedIn">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/profile.php?id=61551552876700" rel="noopener" target="_blank" title="SoilWise on Facebook">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "content.action.edit", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="../../js/print-site.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

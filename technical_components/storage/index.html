@@ -1,0 +1,1465 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://soilwise-he.github.io/SoilWise-documentation/technical_components/storage/">
+      
+      
+        <link rel="prev" href="../ingestion/">
+      
+      
+        <link rel="next" href="../catalogue/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>Repository Storage - Living Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#repository-storage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Living Technical Documentation" class="md-header__button md-logo" aria-label="Living Technical Documentation" data-md-component="logo">
+      
+  <img src="../../_assets/images/SoilWise_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Living Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Repository Storage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="brown"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../technical_components/" class="md-tabs__link">
+          
+  
+    
+  
+  Technical Components
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../apis/apis-intro/" class="md-tabs__link">
+          
+  
+    
+  
+  APIs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/infrastructure-intro/" class="md-tabs__link">
+          
+  
+    
+  
+  Infrastructure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../print_page/" class="md-tabs__link">
+        
+  
+    
+  
+  Printable version
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Living Technical Documentation" class="md-nav__button md-logo" aria-label="Living Technical Documentation" data-md-component="logo">
+      
+  <img src="../../_assets/images/SoilWise_logo.png" alt="logo">
+
+    </a>
+    Living Technical Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Technical Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical_components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingestion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Harvester
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Repository Storage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Repository Storage
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgress-rdbms-storage-of-raw-and-augmented-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postgress RDBMS: storage of raw and augmented metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtuoso-triple-store-storage-of-swr-knowledge-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtuoso Triple Store: storage of SWR knowledge graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-user-enhanced-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git: User enhanced metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ongoing-developments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ongoing Developments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ongoing Developments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#establishing-a-vector-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Establishing a vector database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-a-search-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting a search engine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technology &amp; Integration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalogue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Catalogue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_validation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Validation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_authoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Authoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformation and Harmonisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_augmentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Augmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../knowledge_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Knowledge Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natural_language_querying/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Natural Language Querying
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Management and Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    APIs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/apis-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/infrastructure-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/containerization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containerization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GIT versioning system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable version
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgress-rdbms-storage-of-raw-and-augmented-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postgress RDBMS: storage of raw and augmented metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtuoso-triple-store-storage-of-swr-knowledge-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtuoso Triple Store: storage of SWR knowledge graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-user-enhanced-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git: User enhanced metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ongoing-developments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ongoing Developments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ongoing Developments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#establishing-a-vector-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Establishing a vector database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-a-search-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting a search engine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technology &amp; Integration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/soilwise-he/SoilWise-documentation/edit/main/tech/docs/technical_components/storage.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="repository-storage">Repository Storage</h1>
+<div class="admonition component-header">
+<p class="admonition-title">Info</p>
+<p><strong>Current version:</strong> Postgres release 12.2; Virtuoso release 07.20.3239</p>
+<p><strong>Access point:</strong> Triple Store (SWR SPARQL endpoint) <a href="https://sparql.soilwise-he.containers.wur.nl/sparql">https://sparql.soilwise-he.containers.wur.nl/sparql</a></p>
+</div>
+<p>The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.</p>
+<ol>
+<li><a href="#postgress-rdbms-storage-of-raw-and-augmented-metadata">A relational database management system</a> for the storage of the core metadata of both data and knowledge assets.</li>
+<li><a href="#virtuoso-triple-store-storage-of-swr-knowledge-graph">A Triple Store</a> to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph.</li>
+<li><a href="#git-user-enhanced-metadata">Git</a> for storage of user-enhanced metadata.</li>
+</ol>
+<h2 id="functionality">Functionality</h2>
+<h3 id="postgress-rdbms-storage-of-raw-and-augmented-metadata">Postgress RDBMS: storage of raw and augmented metadata</h3>
+<p>A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
+The catalogue also queries the Postgress database. </p>
+<p>There are several reasons for choosing an RDBMS as the main source for metadata storage and metadata querying</p>
+<ul>
+<li>An RDBMS provides good options to efficiently structure and index its contents, thus allowing performant access for both internal processes and end user interface querying.</li>
+<li>An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid.</li>
+<li>Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users.</li>
+</ul>
+<h3 id="virtuoso-triple-store-storage-of-swr-knowledge-graph">Virtuoso Triple Store: storage of SWR knowledge graph</h3>
+<p>A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. </p>
+<p>A Triple Store is selected as a parallel storage because it offers several capabilites </p>
+<ul>
+<li>It allows the linking of different knowledge models, e.g. to connect the SWR metadata model with existing and new knowledge structures on soil health and related domains.</li>
+<li>It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.</li>
+<li>Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge.</li>
+</ul>
+<h3 id="git-user-enhanced-metadata">Git: User enhanced metadata</h3>
+<p>The current setup of SWR, using the pycsw infrastructure, allows users to propose metadata enhancements. Such enhancements are managed in Git at: <a href="https://github.com/soilwise-he/soilinfohub/discussions">https://github.com/soilwise-he/soilinfohub/discussions</a>.</p>
+<h2 id="ongoing-developments">Ongoing Developments</h2>
+<p>In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed, but is not yet integrated into the deployment of iteration 1 include:</p>
+<h3 id="establishing-a-vector-database">Establishing a vector database</h3>
+<p>A vector database is foreseen as a foundation to use Large Language Models (LLM) and implement Natural Language Querying (NLQ), e.g. to allow chatbot functionality for end users. A vector DB allows storage of text embeddings that are a the basis for such NLQ functions.</p>
+<h3 id="selecting-a-search-engine">Selecting a search engine</h3>
+<p>A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It can also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. Additionally, search engines are also implementing the indexation of unstructured content and are moving to supporting text embeddings. Thus, they might be a starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software and offering easier migration pathways towards NLQ-like functions. </p>
+<h2 id="technology-integration">Technology &amp; Integration</h2>
+<p>Components used:</p>
+<ul>
+<li>Virtuoso (version 07.20.3239)</li>
+<li>PostgreSQL (release 12.13)</li>
+</ul>
+<!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
+
+The SoilWise Repository is expected to fulfil the following functions:
+
+1. [Storage of artefacts](#storage-of-artefacts)
+2. [Storage of metadata](#storage-of-metadata)
+3. [Storage of data](#storage-of-data)
+4. [Storage of knowledge](#storage-of-knowledge)
+5. [Backup and versioning](#backup-and-versioning)
+
+## Technology
+
+Various storage options exist, dedicated usage scenarios usually have an optimal storage option. Maintenance will also be considered as part of the choice.
+
+- **Relational databases** provide performant filtering and aggregation options that facilitate the performance of data APIs. Relational databases have a fixed data model. 
+- **Search engines**, such as SOLR/Elastic search. Search engines provide even higher performance and introduce faceted search (aggregations) and ranking customisation.
+- **File (& bucket) repositories**, which are slow and non-queryable but very flexible in the data model, scalable and persistent.
+- **Graph and triple stores**, which are very fitted to store relations between random entities and can reason over data in multiple domain models.
+- **Versioning systems** (such as git), which are very slow and not queryable but ultimately persistent/traceable. Less optimal for binary files.
+
+
+## Storage of artefacts
+
+### Data model
+
+‘To which data model shall I align?’ is the central question of data harmonisation efforts and data interoperability in general. SoilWise is aware of the fragmentation of soil data and the lack of harmonisation. As such, the SWR will, in the first project iteration cycle, focus on two major pan-European/global data modelling efforts within the soil domain. 
+
+-  **GloSIS** (Global Soil Information System) is the name for the system and the soil data model, also named the GloSIS domain model. The GloSIS domain model published as a UML class diagram is not publicly available, being in the FAO repositories under the CC <by-nc-sa/3.0/igo> license. Nevertheless, the [GloSIS web ontology](https://www.semantic-web-journal.net/system/files/swj3589.pdf){target=_blank} is publicly available implementation with the Web Ontology Language (OWL). The GloSIS web ontology employs a host of Semantic Web standards (SOSA, SKOS, GeoSPARQL, QUDT); GloSIS lays out not only a soil data ontology but also an extensive set of ready-to-use code lists for soil description and physio-chemical analysis. Various examples are provided on the provision and use of GloSIS-compliant linked data, showcasing the contribution of this ontology to the discovery, exploration, integration and access of soil data.
+- **INSPIRE** (INfrastructure for SPatial InfoRmation in Europe) aiming to create a spatial environmental data infrastructure for the European Union. A detailed [data specification for the soil theme](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so){target=_blank} was published by the European Commission in 2013, supported by a detailed domain model documented as a [UML class diagram](https://inspire-mif.github.io/uml-models/approved/ea+xmi/EAXMI.zip){target=_blank}.
+
+
+Other (potentially) relevant data models are:
+
+- [World Reference base (WRB)](https://wrb.isric.org/){target=_blank} maintains the code lists, which are the source of GLOSIS codelists, but the WRB online presence is currently limited.
+- [Landuse](https://inspire.ec.europa.eu/theme/lu){target=_blank}
+- [Land management practices](https://qcat.wocat.net/en/wocat/){target=_blank}
+- [monitoring facilities](https://inspire.ec.europa.eu/theme/ef){target=_blank}
+- [Landcover](https://inspire.ec.europa.eu/theme/lc){target=_blank}
+
+#### Open issues
+
+Many data models are used for data harmonisation and interoperability within the soil domain. The following data models may also be potentially relevant for the SWR:
+
+- **SOTER**: the Global and National Soils and Terrain Digital Databases (SOTER) was chronologically the first global soil spatial data harmonisation/interoperability initiative of the International Society of Soil Science (ISSS), in cooperation with the United Nations Environment Programme, the International Soil Reference and Information Centre (ISRIC) and the FAO. Albeit lacking an abstract formalisation (SOTER pre-dates both UML and OWL), the ancient SOTER databases remained a reference for developing subsequent soil information models.
+- **ISO 28258**, “Soil quality — Digital exchange of soil-related data” as one of the key achievements of the GS Soil project. This standard produced a general framework for exchanging soil data, recognising a need to combine soil with other kinds of data. ISO 28258 is documented with a UML domain model, applying the O&M framework to the soil domain. An XML exchange schema is derived from this domain model, adopting the Geography Markup Language (GML) to encode geospatial information. The standard was conceived as an empty container, lacking any kind of controlled content. It is meant to be further specialised for actual use (possibly at a regional or national scale).
+- **ANZSoilML**, the Australian and New Zealand Soil Mark-up Language (ANZSoilML), results from a joint effort by CSIRO in Australia and New Zealand’s Manaaki Whenua to support the exchange of soil and landscape data. Its domain model was possibly the first application of O&M to the soil domain, targeting the soil properties and related landscape features specified by
+the institutional soil survey handbooks used in Australia and New Zealand. ANZSoilML is formalised as a UML domain model from which an XML schema is obtained, relying on the ComplexFeature abstraction that underlies the SOAP/XML web services specified by the OGC. A set of controlled vocabularies was developed for ANZSoilML, providing values for categorical soil properties and laboratory analysis methods. More recently, these vocabularies were transformed into RDF resources to be managed with modern Semantic Web technologies.
+
+Moreover, GloSIS and INSPIRE data models fully support only vector data. GloSIS has not developed a data model for gridded data yet, and several issues were reported to the INSPIRE data model for gridded data.
+
+GloSIS and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples objects in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/){target=_blank}. Soilwise can probably contribute to the migration of the soil models to the new OMS version.
+
+### Soil health vocabulary 
+
+Understand if Soil health codelists as developed in the Envasso and Landmark projects, can be adopted by the online soil community, for example, as part of the Glosis ontology, INSPIRE registry or EUSO. Research is needed to evaluate if a legislative body is available to confirm the definitions of the terms.
+
+## Storage of metadata
+
+- Metadata is best stored on a git versioning system to trace its history and facilitate community contributions.
+- Metadata is best stored in a graph database or triple store to validate interlinkage and facilitate harmonisation.
+- Metadata is best queried from a database or search engine. Search engines, by default, offer ranking and faceting capabilities, which are hard to reproduce on databases, but search engines come at a high cost in terms of maintenance and memory use.
+- All collected metadata will be archived once per year.
+- Besides raw metadata, the results of the metadata validation process will be stored along with override values.
+
+## Storage of knowledge
+
+-   Storage (or non-storage) of knowledge is highly dependent on the type of knowledge, how it is to be used and the available resources for storage. 
+-   As a minimum SWR stores metadata describing knowledge assets (unstructured content) – see section [storage of metadata](#storage-of-metadata).
+-   Knowledge that expresses links between data and knowledge assets is best stored in a graph DB or an RDF DB, depending also on the application requirements.
+-   Knowledge that expresses semantics is best stored as RDF in an RDF DB, to be able to reason over semantic relationships.
+-   When knowledge needs to be reasoned over using LLMs, it is preferably processed and stored in a vector DB, potentially linked to relevant text fragments (for explainable AI). 
+-   Querying knowledge is best done from an indexed DB or search engine (see section metadata) or from a vector DB (through chatbot / LLM applications).
+
+
+### Knowledge graph - Triple Store
+
+The knowledge graph is meant to add a formal semantics layer to the metadata collected at the SWR. It mirrors the XML-based metadata harnessed in the Catalogue Server but uses Semantic Web standards such as DCAT, Dublin Core, VCard or PROV. This metadata is augmented with links to domain web ontologies, in particular GloSIS. This semantically augmented metadata is the main pillar of knowledge extraction activities and components.
+
+Besides metadata on knowledge assets, the knowledge graph is also expected to host the results of knowledge extraction activities. This assumes knowledge to be semantically loaded, i.e. linking to relevant domain ontologies. The identification of appropriate ontologies and ontology mappings thus becomes an essential aspect of this project, bridging together various activities and assets.
+
+It is important to recognise the knowledge graph as an immaterial asset that cannot exist by itself. In order to be usable the knowledge graph must be stored in a triple store, thus highlighting the role of that component in the architecture. In its turn the triple store provides another important architectural component, the SPARQL end-point. That will be the main access gateway to the knowledge graph, particularly through other technological components and software.
+
+The [Natural Language Querying](natural_language_querying.md) functionality foreseen in this project will, amongst others, use the formal knowledge graph, e.g. as part of a Chatbot component of the user interface. The knowledge graph will further feed the facilities for machine-based access to the SWR: a knowledge extraction API and a SPARQL end-point.
+
+#### Technology
+- DCAT, Dublin Core, VCard, PROV, GloSIS
+
+
+## Storage of data
+
+### Processed data
+
+- Data that changes often (due to continuous ingested data feeds) are best stored in a database.
+- Snapshots of data feeds or data processing results are best stored as files on a repository or bucket, and the file location (in combination with an identification proxy, like DOI) provides a unique identification of the dataset.
+- API access to larger datasets best uses a scalable database or files in a cloud native (scalable) format. Data is exported to such formats before exposure via APIs (from git, triple stores, files, etc). in some cases, a search engine is the most relevant API backend.
+
+### High-value data
+
+- Full dataset download or Single band data (access by bbox, not by property) is best stored as files on a scalable file infrastructure using cloud native formats, where the file location provides the identification.
+- Data that is frequently filtered or aggregated on attribute value is best stored on a relational database or search engine.
+
+### Temporary store for uploaded data
+
+Temporary data storage may be necessary as a caching mechanism to achieve acceptable performance (e.g. response time and throughput), e.g. for derived and harmonised data sets. For any data that is supposed to be stored temporarily, there shall be a flag that indicates its validity until it shall be cleaned up. The monitoring system shall check whether any such flags are present that should have been cleaned up already.
+
+### Technology
+
+- **PostgreSQL** is a common open-source database platform with spatial support. A database dump of a Postgres database, as a backup or to publish FAIR versions at intervals, is not very user-friendly. A conversion to **SQLite/GeoPackage** (using GDAL/Hale) facilitates this case.
+- The most popular search engine is **Elastic Search** (also used by JRC in INSPIRE), but has some challenges in its license. Alternative is **SOLR**.
+- File repositories range from Amazon/Google to a local NFS with Webdav access.
+- Graph database **Neo4J**, **Triple store**, **Jena Fuseki** (Java) or **Virtuoso** (C) both have spatial support.
+- **GIT** is the most used versioning system these days, with the option to go for SAAS (Github, Bitbucket) or on-premise (Gitlab). GitHub seems the most suitable option, as other groups such as OGC and INSPIRE are already there, which means users already have an account, and we can cross-link issues between projects.
+
+## Backup and versioning
+
+For any data, there shall be at least two levels of backups. Volume snapshots shall be the preferred mode of backups. These volume snapshots should be stored in a different location and should enable fast recovery (i.e. in less than 4 hours during business hours) even if the location where the SWR is operated is entirely unavailable. These volume snapshots should be configured in such a way that at no point in time, more than 1 hour of new data/changed data would be lost. Volume backups should be retained for 30 days.
+
+A second level of backups can be more granular, e.g., storing all data and metadata assets, as well as configuration and system data as encrypted files in an object store such as AWS S3. This type of backup allows for a more specific or partial recovery for cases where data integrity was damaged, where there was a partial data loss or another incident which does not necessitate restoring the system. This could also include explicit backups (dumps) of the database systems that are part of the SWR. It is tolerable for these backups to be updated once per day.
+
+If there is data that requires full versioning or historisation, it is recommended to store it in a version control system.
+
+Finally, there should be a restore exercise at least once per year, where a fresh system is set up from both types of backups.
+
+-->
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2027 <a href="https://cordis.europa.eu/project/id/101112838">SoilWise Soil Mission Horizon Europe project No. 101112838</a>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/soilwise-project-eu/" target="_blank" rel="noopener" title="SoilWise on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.facebook.com/profile.php?id=61551552876700" target="_blank" rel="noopener" title="SoilWise on Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "content.action.edit", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

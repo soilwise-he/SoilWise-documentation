@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://soilwise-he.github.io/SoilWise-documentation/technical_components/metadata_augmentation/" rel="canonical"/>
+<link href="../transformation/" rel="prev"/>
+<link href="../knowledge_graph/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.46" name="generator"/>
+<title>Metadata Augmentation - Living Technical Documentation</title>
+<link href="../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../../css/print-site.css" rel="stylesheet"/>
+<link href="../../css/print-site-material.css" rel="stylesheet"/>
+<link href="../../extra.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="indigo" data-md-color-primary="brown" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#metadata-augmentation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Living Technical Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Living Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Living Technical Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Metadata Augmentation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="brown" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-hidden="true" class="md-option" data-md-color-accent="brown" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../technical_components/">
+          
+  
+    
+  
+  Technical Components
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/apis-intro/">
+          
+  
+    
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../infrastructure/infrastructure-intro/">
+          
+  
+    
+  
+  Infrastructure
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../glossary/">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../print_page/">
+        
+  
+    
+  
+  Printable version
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Living Technical Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Living Technical Documentation">
+<img alt="logo" src="../../_assets/images/SoilWise_logo.png"/>
+</a>
+    Living Technical Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/soilwise-he/SoilWise-documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Technical Components
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Technical Components
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technical_components/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ingestion/">
+<span class="md-ellipsis">
+    Harvester
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../storage/">
+<span class="md-ellipsis">
+    Repository Storage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../catalogue/">
+<span class="md-ellipsis">
+    Catalogue
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_validation/">
+<span class="md-ellipsis">
+    Metadata Validation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metadata_authoring/">
+<span class="md-ellipsis">
+    Metadata Authoring
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transformation/">
+<span class="md-ellipsis">
+    Transformation and Harmonisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Metadata Augmentation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Metadata Augmentation
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+<span class="md-ellipsis">
+      Functionality
+    </span>
+</a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#automatic-metadata-generation">
+<span class="md-ellipsis">
+      Automatic metadata generation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#translation-module">
+<span class="md-ellipsis">
+      Translation module
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foreseen-functionality">
+<span class="md-ellipsis">
+      Foreseen functionality
+    </span>
+</a>
+<nav aria-label="Foreseen functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keyword-matcher">
+<span class="md-ellipsis">
+      Keyword matcher
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spatial-locator">
+<span class="md-ellipsis">
+      Spatial Locator
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spatial-scope-analyser">
+<span class="md-ellipsis">
+      Spatial scope analyser
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#euso-high-value-dataset-tagging">
+<span class="md-ellipsis">
+      EUSO-high-value dataset tagging
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../knowledge_graph/">
+<span class="md-ellipsis">
+    Knowledge Graph
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../natural_language_querying/">
+<span class="md-ellipsis">
+    Natural Language Querying
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_management/">
+<span class="md-ellipsis">
+    User Management and Access Control
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/apis-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/infrastructure-intro/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/containerization/">
+<span class="md-ellipsis">
+    Containerization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../infrastructure/git/">
+<span class="md-ellipsis">
+    GIT versioning system
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../print_page/">
+<span class="md-ellipsis">
+    Printable version
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+<span class="md-ellipsis">
+      Functionality
+    </span>
+</a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#automatic-metadata-generation">
+<span class="md-ellipsis">
+      Automatic metadata generation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#translation-module">
+<span class="md-ellipsis">
+      Translation module
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#foreseen-functionality">
+<span class="md-ellipsis">
+      Foreseen functionality
+    </span>
+</a>
+<nav aria-label="Foreseen functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keyword-matcher">
+<span class="md-ellipsis">
+      Keyword matcher
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spatial-locator">
+<span class="md-ellipsis">
+      Spatial Locator
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spatial-scope-analyser">
+<span class="md-ellipsis">
+      Spatial scope analyser
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#euso-high-value-dataset-tagging">
+<span class="md-ellipsis">
+      EUSO-high-value dataset tagging
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/soilwise-he/SoilWise-documentation/edit/main/tech/docs/technical_components/metadata_augmentation.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<h1 id="metadata-augmentation">Metadata Augmentation</h1>
+<div class="admonition component-header">
+<p class="admonition-title">Info</p>
+<p><strong>Current version:</strong> 0.1.0</p>
+<p><strong>Project:</strong> <a href="https://github.com/soilwise-he/metadata-augmentation">Metadata augmentation</a></p>
+</div>
+<h2 id="functionality">Functionality</h2>
+<p>In this component scripting / NLP / LLM are used on a metadata record to augment metadata statements about the resource. Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.</p>
+<table>
+<thead>
+<tr>
+<th>metadata-uri</th>
+<th>metadata-element</th>
+<th>source</th>
+<th>value</th>
+<th>proces</th>
+<th>date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://geo.fi/data/ee44-aa22-33">https://geo.fi/data/ee44-aa22-33</a></td>
+<td>spatial-scope</td>
+<td>16.7,62.2,18,81.5</td>
+<td><a href="https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national">https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national</a></td>
+<td>spatial-scope-analyser</td>
+<td>2024-07-04</td>
+</tr>
+<tr>
+<td><a href="https://geo.fi/data/abc1-ba27-67">https://geo.fi/data/abc1-ba27-67</a></td>
+<td>soil-thread</td>
+<td>This dataset is used to evaluate Soil Compaction in Nuohous Sundström</td>
+<td><a href="http://aims.fao.org/aos/agrovoc/c_7163">http://aims.fao.org/aos/agrovoc/c_7163</a></td>
+<td>keyword-analyser</td>
+<td>2024-06-28</td>
+</tr>
+</tbody>
+</table>
+<p>For the first SoilWise prototype, the functionality of the Metadata Augmentation component comprises:</p>
+<ul>
+<li><a href="#automatic-metadata-generation">Automatic metadata generation</a></li>
+<li><a href="#translation-module">Translation module</a></li>
+</ul>
+<h3 id="automatic-metadata-generation">Automatic metadata generation</h3>
+<p>To generate metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process. The steps are described <a href="https://main.soilwise-documentation.pages.dev/technical_components/metadata_validation/#setting-up-a-transformation-process-in-haleconnect">here</a></p>
+<h3 id="translation-module">Translation module</h3>
+<p>Many records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.</p>
+<p>The translation module builds on the EU translation service (API documentation at <a href="https://language-tools.ec.europa.eu/">https://language-tools.ec.europa.eu/</a>). Translations are stored in a database for reuse by the SWR.
+The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.</p>
+<p>Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. </p>
+<h2 id="foreseen-functionality">Foreseen functionality</h2>
+<p>In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:</p>
+<ul>
+<li><a href="#keyword-matcher">Keyword matcher</a></li>
+<li><a href="#spatial-locator">Spatial Locator</a></li>
+<li><a href="#spatial-scope-analyser">Spatial scope analyser</a></li>
+<li><a href="#euso-high-value-dataset-tagging">EUSO-high-value dataset tagging</a></li>
+</ul>
+<h3 id="keyword-matcher">Keyword matcher</h3>
+<p>Keywords are an important mechanism to filter and cluster records. But similar keywords need to be equal to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. </p>
+<p>Analyses existing keywords on a metadata record. Two cases can be identified:</p>
+<ul>
+<li>If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. </li>
+<li>If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). Consider the risk of false positives.</li>
+</ul>
+<p>To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain with relations to alternative keywords, such as agrovoc, gemet, dpedia, iso. This knowledge graph is maintained at <a href="https://github.com/soilwise-he/soil-health-knowledge-graph">https://github.com/soilwise-he/soil-health-knowledge-graph</a>. Agrovoc is multilingual, facilitating the translation case.</p>
+<p>For metadata records which have not been analysed yet (in that iteration), the module extracts the records, for each keyword an analyses is made if it maches any of the prefered keywords, if so, the prefered keyword is added to the record. </p>
+<h3 id="spatial-locator">Spatial Locator</h3>
+<p>Analyses existing keywords to find a relevant geography for the record, it then uses the <a href="https://www.geonames.org/about.html" target="_blank">GeoNames</a> API to find spatial coordinates for the geography, which are inserted into the metadata record.</p>
+<h3 id="spatial-scope-analyser">Spatial scope analyser</h3>
+<p>A script that analyses the spatial scope of a resource</p>
+<p>The bounding box is matched to country bounding boxes</p>
+<p>To understand if the dataset has a global, continental, national or regional scope</p>
+<ul>
+<li>Retrieves all datasets (as iso19139 xml) from database (records table joined with augmentations) which:<ul>
+<li>have a bounding box </li>
+<li>no spatial scope</li>
+<li>in iso19139 format</li>
+</ul>
+</li>
+<li>For each record it compares the boundingbox to country bounding boxes: <ul>
+<li>if bigger then continents &gt; global</li>
+<li>If matches a continent &gt; continental</li>
+<li>if matches a country &gt; national</li>
+<li>if smaller &gt; regional</li>
+</ul>
+</li>
+<li>result is written to as an augmentation in a dedicated table</li>
+</ul>
+<h3 id="euso-high-value-dataset-tagging">EUSO-high-value dataset tagging</h3>
+<p>The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the <a href="https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/" target="_blank">EUSO dashboard</a>. This framework includes the concept of <a href="https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu" target="_blank">soil degradation indicator</a> metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope - under discussion) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. </p>
+<p>The EUSO soil degradation indicators employ specific <a href="https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources" target="_blank">methodologies and thresholds</a> to determine soil health status, see also the Table below. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.</p>
+<table>
+<tr>
+<th>Soil Degradation</th>
+<th>Soil Indicator</th>
+<th>Type of methodic for threshold</th>
+</tr>
+<tr>
+<td rowspan="5" style="text-align: center; vertical-align: middle; font-weight: bold;">Soil erosion</td>
+<td>Water erosion</td>
+<td>RUSLE2015</td>
+</tr>
+<tr>
+<td>Wind erosion</td>
+<td>GIS-RWEQ</td>
+</tr>
+<tr>
+<td>Tillage erosion</td>
+<td>SEDEM</td>
+</tr>
+<tr>
+<td>Harvest erosion</td>
+<td>Textural index</td>
+</tr>
+<tr>
+<td>Post-fire recovery</td>
+<td>USLE (Type of RUSLE)</td>
+</tr>
+<tr>
+<td rowspan="5" style="text-align: center; vertical-align: middle; font-weight: bold;">Soil pollution</td>
+<td>Arsenic excess</td>
+<td>GAMLSS-RF</td>
+</tr>
+<tr>
+<td>Copper excess</td>
+<td>GLM and GPR</td>
+</tr>
+<tr>
+<td>Mercury excess</td>
+<td>LUCAS topsoil database</td>
+</tr>
+<tr>
+<td>Zinc Excess</td>
+<td>LUCAS topsoil database</td>
+</tr>
+<tr>
+<td>Cadmium Excess</td>
+<td>GEMAS</td>
+</tr>
+<tr>
+<td rowspan="3" style="text-align: center; vertical-align: middle; font-weight: bold;">Soil nutrients</td>
+<td>Nitrogen surplus</td>
+<td>NNB</td>
+</tr>
+<tr>
+<td>Phosphorus deficiency</td>
+<td>LUCAS topsoil database</td>
+</tr>
+<tr>
+<td>Phosphorus excess</td>
+<td>LUCAS topsoil database</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle; font-weight: bold;">Loss of soil organic carbon</td>
+<td>Distance to maximum SOC level</td>
+<td>qGAM</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle; font-weight: bold;">Loss of soil biodiversity</td>
+<td>Potential threat to biological functions</td>
+<td>Expert Polling, Questionnaire, Data Collection, Normalization and Analysis</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle; font-weight: bold;">Soil compaction</td>
+<td>Packing density</td>
+<td>Calculation of Packing Density (PD)</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle; font-weight: bold;">Salinization</td>
+<td>Secondary salinization</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle; font-weight: bold;">Loss of organic soils</td>
+<td>Peatland degradation</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: middle; font-weight: bold;">Soil consumption</td>
+<td>Soil sealing</td>
+<td>Raster remote sense data</td>
+</tr>
+</table>
+<p>Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific <strong>values from the Soil Indicator and Soil Degradation Codelists</strong>, such as <code>Water erosion</code> or <code>Soil erosion</code> (see the Table above). If found, the <code>Soil Degradation Indicator Tag</code> (corresponding value from the Soil Degradation Codelist) will be displayed to indicate suitability of given dataset for soil indicator related analyses. Additionally, a search for corresponding <strong>methodology</strong> will be conducted to see if the dataset is compliant with the EUSO Soil Health indicators presented in the <a href="https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/" target="_blank">EUSO Dashboard</a>. If found, the tag <code>EUSO High-value dataset</code> will be added. In later phase we assume search for references to Scientific Methodology papers in metadata record's links. Next, the possibility of involving a more complex search using soil thesauri will also be explored.</p>
+<pre class="mermaid"><code>flowchart TD
+    subgraph ic[Indicators Search]
+        ti([Title Check]) ~~~ ai([Abstract Check])
+        ai ~~~ ki([Keywords Check])
+    end
+    subgraph Codelists
+        sd ~~~ si
+    end
+    subgraph M[Methodologies Search]
+        tiM([Title Check]) ~~~ aiM([Abstract Check])
+        kl([Links check]) ~~~ kM([Keywords Check])
+    end
+    m[(Metadata Record)] --&gt; ic
+    m --&gt; M
+    ic-- + ---M
+    sd[(Soil Degradation Codelist)] --&gt; ic
+    si[(Soil Indicator Codelist)] --&gt; ic
+    em[(EUSO Soil Methodologies list)] --&gt; M
+    M --&gt; et{{EUSO High-Value Dataset Tag}}
+    et --&gt; m
+    ic --&gt; es{{Soil Degradation Indicator Tag}}
+    es --&gt; m
+    th[(Thesauri)]-- synonyms ---Codelists
+</code></pre>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2024</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - 2027 <a href="https://cordis.europa.eu/project/id/101112838">SoilWise Soil Mission Horizon Europe project No. 101112838</a>
+</div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/soilwise-project-eu/" rel="noopener" target="_blank" title="SoilWise on LinkedIn">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/profile.php?id=61551552876700" rel="noopener" target="_blank" title="SoilWise on Facebook">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "content.action.edit", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="../../js/print-site.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
