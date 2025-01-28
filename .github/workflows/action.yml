@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'tech/**'
+      - 'knowledge-base/**'
 
 jobs:
   build:
@@ -15,19 +18,44 @@ jobs:
       - name: Set up Python 3 ⚙️ 🐍
         uses: actions/setup-python@v2
 
-      - name: Cache dependencies 💾
+      - name: Identify Changed Files
+        id: changes
+        run: |
+          # List files changed in the push
+          CHANGED_FILES=$(git diff-tree --quiet --no-commit-id --name-only -r ${{ github.event.after }})
+          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+          echo "Changed files: $CHANGED_FILES"
+
+      - name: Cache Dependencies for Tech
+        if: contains(env.CHANGED_FILES, 'tech/')
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('tech/requirements.txt') }}
+          key: ${{ runner.os }}-tech-pip-${{ hashFiles('tech/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
+            ${{ runner.os }}-tech-pip-
 
-      - name: Install dependencies 🔧
-        working-directory: tech
-        run: make install
+      - name: Install Dependencies for Tech
+        if: contains(env.CHANGED_FILES, 'tech/')
+        run: pip install -r tech/requirements.txt
 
-      - name: Build and deploy to GitHub Pages
-        working-directory: tech
-        run: make deploy
+      - name: Cache Dependencies for Knowledge-Base
+        if: contains(env.CHANGED_FILES, 'knowledge-base/')
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-kb-pip-${{ hashFiles('knowledge-base/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-kb-pip-
+
+      - name: Install Dependencies for Knowledge-Base
+        if: contains(env.CHANGED_FILES, 'knowledge-base/')
+        run: pip install -r knowledge-base/requirements.txt
+
+      - name: Deploy Tech Documentation
+        if: contains(env.CHANGED_FILES, 'tech/')
+        run: make deploy-tech
+
+      - name: Deploy Knowledge-Base Documentation
+        if: contains(env.CHANGED_FILES, 'knowledge-base/')
+        run: make deploy-kb
