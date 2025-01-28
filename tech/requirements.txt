@@ -10,4 +10,4 @@ mkdocs-render-swagger-plugin>=0.1.1
 mkdocs-glightbox>=0.3.7
 mkdocs-print-site-plugin>=2.3.6
 mkdocs-ezglossary-plugin>=1.5.8
-pip install mkdocs-multirepo-plugin>=0.8.3
+mkdocs-multirepo-plugin>=0.8.3
