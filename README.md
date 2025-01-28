@@ -11,7 +11,7 @@ A fixed **1st prototype version** (for delivery) is published at: https://protot
 
 The knowledge-base repository serves for merging documentation from all desired technical components and displaying it at one place.
 
-A **living preview** version is published at: 
+A **living preview** version is published at:  https://soilwise-documentation-kb.pages.dev/
 
 ### Contributions
 
