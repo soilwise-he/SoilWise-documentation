@@ -25,12 +25,12 @@ The Soilwise infrastructure uses components provided by Github. Github component
 
 During the iteration, the following components have been deployed:
 
-on infrastructure provided by **Wageningen University**:
+on infrastructure provided by **Wageningen University & Research**:
 
 - A PostGreSQL database on the PostGreSQL cluster.
-- A number of repositories at the university Gitlab instance, including CI/CD pipelines to run metadata harvesters.
-- A range of services deployed on the univerity k8s cluster, with their configuration stored on Gitlab. Container images are stored on the university Harbor repository.
-- Usage logs monitored through the university instance of Splunk.
+- A number of repositories at the WUR Gitlab instance, including CI/CD pipelines to run metadata harvesters.
+- A range of services deployed on the WUR k8s cluster, with their configuration stored on Gitlab. Container images are stored on the WUR Harbor repository.
+- Usage logs monitored through the WUR instance of Splunk.
 - Availability monitoring provided by Uptimerobot.com.
 
 
