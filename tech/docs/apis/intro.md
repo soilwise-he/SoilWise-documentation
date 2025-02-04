@@ -6,4 +6,7 @@ For such a system to be flexible and adaptable and to allow agile development, t
 
 This section focusses on interfaces for access, sharing, population and integration, particularly with EUSO. It describes the technical interfaces (APIs) that will be offered and how they could be exploited for integration. It also describes the user interfaces that are developed as part of SWR. While these are primarily developed to serve the various stakeholder groups of the SoilWise project, these UIs, or derived varsions, could in principle also become part of future systems like EUSO.
 
-Within the first development iteration, the following APIs are employed in the SoilWise repository:
+This section describes the following elements of SWR:
+
+1. [Application Programming Interfaces (APIs)](apis.md)
+2. [User Interface (UI) components](UIs.md)
