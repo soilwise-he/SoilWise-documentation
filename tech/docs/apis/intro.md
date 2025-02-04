@@ -9,4 +9,4 @@ This section focusses on interfaces for access, sharing, population and integrat
 This section describes the following elements of SWR:
 
 1. [Application Programming Interfaces (APIs)](apis.md)
-2. [User Interface (UI) components](UIs.md)
+2. [User Interface (UI) components](uis.md)
