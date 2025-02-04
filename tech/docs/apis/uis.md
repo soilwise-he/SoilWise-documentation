@@ -4,8 +4,10 @@ Within the first development iteration, the following User Interfaces are deploy
 
 - Interfaces for end users
     - **SWR Catalogue** <https://repository.soilwise-he.eu/>
+    - **Hale Studio** as a standalone desktop application, which can be downloaded here: <https://wetransform.to/halestudio/> 
 
 - Interfaces for administration and system management
+    - **Summary SWR Catalogue Dashboard** <https://dashboards.isric.org/superset/dashboard/43/>
 
 ## Future work
 
