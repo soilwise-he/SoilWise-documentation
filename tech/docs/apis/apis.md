@@ -3,8 +3,10 @@
 Within the first development iteration, the following APIs are employed in the SoilWise repository:
 
 - Discovery APIs
-    - **SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
+
+**SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
 The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases
+
     - **OGC API- Records:** <https://soilwise-he.containers.wur.nl/cat/openapi>
     - **Spatio Temporal Asset Catalog (STAC):** <https://soilwise-he.containers.wur.nl/cat/stac/openapi>
     - **Catalog service for the Web (CSW):** <https://soilwise-he.containers.wur.nl/cat/openapi>
