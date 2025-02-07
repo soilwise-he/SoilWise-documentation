@@ -6,7 +6,7 @@ These APIs allow discovery of (meta)data and knowledge. Most of them are mostly 
 
 **SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
 
-The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases
+The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases.
 
 **OGC API- Records:** <https://soilwise-he.containers.wur.nl/cat/openapi>
 
@@ -29,11 +29,11 @@ This API translates content between languages, and is used for metadata translat
 
 **Link Liveness Assessment API:** <https://api.soilwise-he.containers.wur.nl/linky/docs>
 
-The linkchecker component is designed to evaluate the validity and accuracy of links within metadata records in the a OGC API - Records based System.
+The linkchecker component is designed to evaluate the status, validity and accuracy of links within metadata records in the a OGC API - Records based System. It's responses provide input that is used to inform end users about the status of published links and to collect required data for quality control.
 
 **RDF to triplestore API:** <https://repo.soilwise-he.containers.wur.nl/swagger-ui/index.html>
 
-Allows the conversion of RDF to the SWR triple store
+Allows the conversion of RDF, e.g. as provided by the CORDIS API's to the SWR triple store.
 
 ## Future work
 
@@ -41,7 +41,7 @@ SoilWise will in the future use more APIs to interact between components as well
 
 **Solr CLient APIs:** <https://solr.apache.org/guide/8_5/client-apis.html>
 
-
+These APIs offers several standards to provide connections to the Solr search engine that is currently being integrated, allowing among others more advanced querying, faceted search and result ranking.  
 
 Other standardised APIs will be used if possible, such as:
 
