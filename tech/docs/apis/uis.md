@@ -4,22 +4,37 @@ The usabilty of the SoilWise repository will eventually not only be determined b
 
 Within the first development iteration, the following User Interfaces have been deployed as part the SoilWise repository:
 
-- Interfaces for end users
-    - **SWR Catalogue** <https://repository.soilwise-he.eu/>
-    - **Hale Studio** as a standalone desktop application, which can be downloaded here: <https://wetransform.to/halestudio/> 
+### Interfaces for end users
 
-- Interfaces for administration and system management
-    - **Summary SWR Catalogue Dashboard** <https://dashboards.isric.org/superset/dashboard/43/>
+**SWR Catalogue** <https://repository.soilwise-he.eu/>
+
+This UI, provided as part of the pycsw component, is currently the access point for end users of the SWR catalogue. It allows users to run search queries, spatial queries and faceted search.
+
+**Hale Studio** as a standalone desktop application, which can be downloaded here: <https://wetransform.to/halestudio/> 
+
+Hale studio supports the transformation and harmonisation of datasets over different standards, so users can easily harmonise their data, e.g. for complying with INSPIRE. 
+
+## Interfaces for administration and system management
+
+**Summary SWR Catalogue Dashboard** <https://dashboards.isric.org/superset/dashboard/43/>
+
+This UI, based on the superset BI tools, provides a multi-dimensional visual overview of the contents of the SWR,
 
 ## Future work
 
 SoilWise will in the future deploy adapted, and newly developed user interfaces to serve it's stakeholder groups, such as:
 
-- A chatbot interface, allowing users to perform natural language queries, using Large Language Models.
+## Chatbot interface
 
-- A monitoring dashboard showing the evolution of the SWR data and knowledge contents, quality indicators etc
+A chatbot UI will allow users to perform natural language queries, using Large Language Models. A chatbot implementation is currently under development and is interactively tested with SoilWise stakeholders. 
 
-- A new or adapted catalogue end user interface, that allows integration search engine queries and responses, including faceted search, ranking of results etc.
+## Monitoring dashboard 
+
+A dashboard that shows the evolution of the SWR data and knowledge contents, quality indicators etc
+
+## New or adapted catalogue end user interface
+
+The functions of the current end user interface of the catalogue will be extended, e.g. through the integration search engine queries and responses, including faceted search, ranking of results etc.
 
 
 
