@@ -4,4 +4,3 @@ nav:
   - apis
   - infrastructure
   - Glossary: glossary.md
-  - Link Liveliness Assessment: '!import https://github.com/soilwise-he/link-liveliness-assessment?branch=main&docs_dir=design'

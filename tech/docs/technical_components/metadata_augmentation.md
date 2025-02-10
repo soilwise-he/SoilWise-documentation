@@ -2,7 +2,7 @@
 
 !!! component-header "Info"
 
-    **Current version:** 0.1.0
+    **Current version:** 0.2.0
     
     **Project:** [Metadata augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
@@ -36,16 +36,6 @@ The EU translation returns asynchronous responses to translation requests, this 
 
 Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
 
-## Foreseen functionality
-
-In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
-
-- [Keyword matcher](#keyword-matcher)
-- [Spatial Locator](#spatial-locator)
-- [Spatial scope analyser](#spatial-scope-analyser)
-- [EUSO-high-value dataset tagging](#euso-high-value-dataset-tagging)
-
-
 ### Keyword matcher
 
 Keywords are an important mechanism to filter and cluster records. But similar keywords need to be equal to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
@@ -58,6 +48,19 @@ Analyses existing keywords on a metadata record. Two cases can be identified:
 To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain with relations to alternative keywords, such as agrovoc, gemet, dpedia, iso. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. Agrovoc is multilingual, facilitating the translation case.
 
 For metadata records which have not been analysed yet (in that iteration), the module extracts the records, for each keyword an analyses is made if it maches any of the prefered keywords, if so, the prefered keyword is added to the record. 
+
+### Duplicate source identification
+
+### Funding HE project identification
+
+## Foreseen functionality
+
+In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
+
+- [Spatial Locator](#spatial-locator)
+- [Spatial scope analyser](#spatial-scope-analyser)
+- [EUSO-high-value dataset tagging](#euso-high-value-dataset-tagging)
+
 
 ### Spatial Locator
 
