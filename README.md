@@ -80,6 +80,7 @@ pip install mkdocs-render-swagger-plugin
 pip3 install mkdocs-print-site-plugin
 pip install mkdocs-glightbox
 pip3 install mkdocs-ezglossary-plugin
+pip install mkdocs-multirepo-plugin
 ```
 
 3. clone git repository
