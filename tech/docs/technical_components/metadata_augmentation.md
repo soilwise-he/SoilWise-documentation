@@ -1,13 +1,5 @@
 # Metadata Augmentation
 
-!!! component-header "Info"
-
-    **Current version:** 0.2.0
-    
-    **Project:** [Metadata augmentation](https://github.com/soilwise-he/metadata-augmentation)
-
-
-## Functionality
 
 This set of components augments metadata statements using various techniques. 
 Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.
@@ -17,7 +9,7 @@ At the moment, the functionality of the Metadata Augmentation component comprise
 
 - [Keyword-matcher](#keyword-matcher)
 - [Translation module](#translation-module)
-- [Link livelyness assessment](#link-liveliness-assessment)
+- [Link liveliness assessment](#link-liveliness-assessment)
 
 Upcoming components
 
@@ -158,9 +150,9 @@ In the next iterations, Metadata augmentation component is foreseen to include t
 ### Spatial Locator
 
 !!! component-header "Info"
-  **Current version:** 0.2.0
+    **Current version:** 0.2.0
   
-  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-locator
+    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-locator
 
 The module analyses existing keywords to find a relevant geography for the record, it then uses a gazeteer to find spatial coordinates for the geography, which are inserted into the metadata record. Vice versa, if the record has a geography it will use reverse gazeteer to find a matching location keyword.
 
@@ -168,9 +160,9 @@ The module analyses existing keywords to find a relevant geography for the recor
 ### Spatial scope analyser
 
 !!! component-header "Info"
-  **Current version:** 0.2.0
+    **Current version:** 0.2.0
 
-  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-scope-analyser
+    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-scope-analyser
 
 A module that analyses the spatial scope of a resource.
 
@@ -320,9 +312,9 @@ flowchart TD
 ### Duplication identification
 
 !!! component-header "Info"
-  **Current version:** 0.2.0
+    **Current version:** 0.2.0
 
-  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/deduplication
+    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/deduplication
 
 Resources are often described in multiple data & knowledge hubs, not always using a unique identification. In that scenario
 multiple records may arrive in the system which describe the same resource. In the harvester module duplication is prevented based on common identification. Additional duplication identification is relevant in cases where resources use different identification.
@@ -333,9 +325,9 @@ This process uses NLP mechanisms to evaluate metadata records on similarities.
 ### Keyword extraction
 
 !!! component-header "Info"
-  **Current version:** 0.2.0
+    **Current version:** 0.2.0
 
-  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/NER%20augmentation
+    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/NER%20augmentation
 
 The value of relevant keywords is often underestimated by data producers. This module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology.
 

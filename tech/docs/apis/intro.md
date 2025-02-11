@@ -10,3 +10,6 @@ This section describes the following elements of SWR:
 
 1. [Application Programming Interfaces (APIs)](apis.md)
 2. [User Interface (UI) components](uis.md)
+
+![SWR Architecture - Interfaces View](../_assets/images/Interfaces_2nd_prototype.png)
+_Fig. 1: Overview of SoilWise Repository interfaces_
