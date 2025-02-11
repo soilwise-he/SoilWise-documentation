@@ -41,21 +41,27 @@ Fulltext search currently supports only nesting words with AND operator.
 
 #### Faceted search
 
-- filter by **physical soil parameters** (soil texture, WRB, soil structure, bulk density, porosity, water holding capacity, soil moisture),
-- filter by **chemical soil parameters** (ph, organic matter, cation exchange capacity, electrical conductivity, nutrient content, soil carbon, soil nitrogen, soil phosporus, heavy metals concentration),
-- filter by **biological soil parameters** (microbial biomass, soil enzyme activities, soil fauna, soil respiration),
-- filter by **soil functions** (soil fertility, water regulation, soil erosion control, carbon sequestration, soil health, supporting plant growth, contaminant filtration),
-- filter by **soil degradation indicators** (soil erosion, soil compaction, soil salinization, soil acidification, soil contamination),
-- filter by **environmental soil functions** (habitat for organisms, climate regulation, water filtration),
-- fitler by **long-term field experiments** (experimental treatments, temporal data, environmental covariates, soil productivity, soil management),
-- filter by **record's type** (dataset, document, publication, software, services, series).
+- filter by **record's type** (journalpaper, dataset, document, service, series, best practices and tools, ...)
+- filter by **contamination** (antibiotics)
+- filter by **soil chemical properties** (nitrogen, carbon, soc, soil organic matter, soil carbon stock, soil nutrient status, ...)
+- filter by **soil biological properties** (microbial biomass, respiration, plant residues, soil biological activity, crop yield response)
+- filter by **soil services** (plant health, animal health)
+- filter by **soil functions** (ecosystems, climate, plants, decomposition, food production, nutrients)
+- filter by **soil processes** (organic matter accumulation)
+- filter by **soil properties** (soil fertility, soil physical peoperties, instrinsic soil properties, soil chemical properties, soil biological properties)
+- filter by **soil threats** (soil pollution, desertification, soil erosion, compaction, soil degradation, risk assessment, soil organic carbon loss)
+- filter by **productivity** (soil productivity, land productivity, net biome productivity)
+- filter by **soil physical properties** (soil stability, soil structure, bulk density, aggregate stability, Soil sealing, ...)
+- filter by **soil classification** (lixisols, entisols, leptosols, alfisols, luvisols, ...)
 
+The faceted search is the outcome of keyword matcher in [metadata argumentation](./metadata_augmentation.md).
 
 #### Future work
 
+- optimize the terms and groups of faceted search
 - extend fulltext search; allow complex queries using exact match, OR,...
 - use Full Text Search ranking to sort by relevance.
-- filter by source repository.
+
 
 ### Display record's detail
 
