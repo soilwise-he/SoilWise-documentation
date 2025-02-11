@@ -33,13 +33,13 @@ The SoilWise Catalogue currently enables the following search options:
 
 50 results are displayed per page in alphabetical order, in the form of overview table comprising preview of title, abstract, contributor, type and date. Search items set through user interface is also reflected in the URL to facilitate sharing.
 
-### Fulltext search
+#### Fulltext search
 
 Fulltext search is currently enabled through the q= attribute. Other queryable parameters are title, keywords, abstract, contributor. Full list of queryables can be found at: <https://soilwise-he.containers.wur.nl/cat/collections/metadata:main/queryables>.
 
 Fulltext search currently supports only nesting words with AND operator.
 
-### Faceted search
+#### Faceted search
 
 - filter by **physical soil parameters** (soil texture, WRB, soil structure, bulk density, porosity, water holding capacity, soil moisture),
 - filter by **chemical soil parameters** (ph, organic matter, cation exchange capacity, electrical conductivity, nutrient content, soil carbon, soil nitrogen, soil phosporus, heavy metals concentration),
@@ -87,6 +87,10 @@ SoilWise Catalogue currently supports 3 types of preview:
 - Display resource geographical extent, which is available in the record's detail, as well in the search results list.
 - Display of a graphic preview (thumbnail) in case it is advertised in metadata.
 - Map preview of OGC:WMS services advertised in metadata enables standard simple user interaction (zoom, changing layers).
+
+### Display results of metadata augmentation and interlinking
+
+- _TO DO, e.g. information about sources, HE project fundings_
 
 ### Data download (AS IS)
 
