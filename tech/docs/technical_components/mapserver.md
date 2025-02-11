@@ -1,15 +1,15 @@
 # Map Server
 
 !!! component-header "Info"
-    **Current version:** 8.2.2
+    **Current version:** 8.4.0
 
     **Project:** [MapServer](https://github.com/soilwise-he/MapServer)
+
+At this moment mapserver is not added to the infrastructure. We're still evaluating the user need for a component like this. 
 
 ## Functionality
 
 [MapServer](https://mapserver.org){target=_blank} is an Open Source platform for publishing spatial data to the web with standardised APIs defined by Open Geospatial Consortium, such as WMS, WFS, WCS, OGC API-Features. Originally developed in the mid-1990s at the University of Minnesota, MapServer is released under an MIT-style license and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be. 
-
-In Soilwise mapserver will be used to share spatial data in a conveniant way to clients such as QGIS, ArcGIS, OpenLayers, Leaflet.
 
 Read more about MapServer at [EJPSoil wiki](https://ejpsoil.github.io/soildata-assimilation-guidance/cookbook/mapserver.html){target=_blank}.
 

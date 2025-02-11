@@ -46,10 +46,13 @@ In the next iteration of the SWR development, the currently deployed storage opt
 
 A vector database is foreseen as a foundation to use Large Language Models (LLM) and implement Natural Language Querying (NLQ), e.g. to allow chatbot functionality for end users. A vector DB allows storage of text embeddings that are a the basis for such NLQ functions.
 
-### Selecting a search engine
+Currently experimental setup using SOLR.
+
+### A Search engine
 
 A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It can also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. Additionally, search engines are also implementing the indexation of unstructured content and are moving to supporting text embeddings. Thus, they might be a starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software and offering easier migration pathways towards NLQ-like functions. 
 
+Currently experimental setup using SOLR.
 
 ## Technology & Integration
 
@@ -57,7 +60,7 @@ Components used:
 
 - Virtuoso (version 07.20.3239)
 - PostgreSQL (release 12.13)
-
+- SOLR (release 9.8.0)
 
 
 
