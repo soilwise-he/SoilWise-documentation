@@ -18,6 +18,7 @@ Upcoming components
 - [Duplication identification](#duplication-identification)
 - [Keyword extraction](#keyword-extraction)
 - [Automatic metadata generation](#automatic-metadata-generation)
+- [Metadata interlinker](#metadata-interlinker)
 
 Metadata augmentation results are stored in a augmentation table (unless mentioned otherwise).
 
@@ -335,3 +336,14 @@ The value of relevant keywords is often underestimated by data producers. This m
 
 In cases where metadata describes a document or supplemental documentation about a resource is provided, the system is able to download that textual content and keep it as part of the search index. See [Harvest component](./ingestion.md) about how the content is harvested.
 With that content available a LLM powered module is able to generate some aspects of a metadata record based on that content, in cases where the metadata record is poorly populated. Aspects to be populated by the module are: Title, abstract, keywords, organization, spatial and temporal extent, date.
+
+### Metadata interlinker
+
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
+
+We distinguish between explicit and implicit links:
+
+- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
+
+SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
