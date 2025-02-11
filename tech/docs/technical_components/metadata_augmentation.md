@@ -9,67 +9,172 @@
 
 ## Functionality
 
-In this component scripting / NLP / LLM are used on a metadata record to augment metadata statements about the resource. Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.
+This set of components augments metadata statements using various techniques. 
+Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.
+The statements are combined with the ingested content to offer users an optimal catalogue experience.
+
+At the moment, the functionality of the Metadata Augmentation component comprises these components:
+
+- [Keyword-matcher](#keyword-matcher)
+- [Translation module](#translation-module)
+- [Link livelyness assessment](#link-liveliness-assessment)
+
+Upcoming components
+
+- [Spatial locator](#spatial-locator)
+- [Spatial scope analyser](#spatial-scope-analyser)
+- [Duplication identification](#duplication-identification)
+- [Keyword extraction](#keyword-extraction)
+- [Automatic metadata generation](#automatic-metadata-generation)
+
+Metadata augmentation results are stored in a augmentation table (unless mentioned otherwise).
 
 | metadata-uri | metadata-element | source | value | proces | date |
 | --- | --- | --- | --- | --- | --- |
 | <https://geo.fi/data/ee44-aa22-33> | spatial-scope | 16.7,62.2,18,81.5 |  <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national> | spatial-scope-analyser | 2024-07-04 |
 | <https://geo.fi/data/abc1-ba27-67> | soil-thread | This dataset is used to evaluate Soil Compaction in Nuohous Sundström | <http://aims.fao.org/aos/agrovoc/c_7163> | keyword-analyser | 2024-06-28 |
 
-For the first SoilWise prototype, the functionality of the Metadata Augmentation component comprises:
-
-- [Automatic metadata generation](#automatic-metadata-generation)
-- [Translation module](#translation-module)
-
-
-### Automatic metadata generation
-
-To generate metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process. The steps are described [here](https://main.soilwise-documentation.pages.dev/technical_components/metadata_validation/#setting-up-a-transformation-process-in-haleconnect)
-
-
-### Translation module
-
-Many records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.
-
-The translation module builds on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). Translations are stored in a database for reuse by the SWR.
-The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
-
-Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
 
 ### Keyword matcher
 
-_TO DO update_
+!!! component-header "Info"
+    **Current version:** 0.2.0
 
-Keywords are an important mechanism to filter and cluster records. But similar keywords need to be equal to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
+    **Projects:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
+
+Keywords are an important mechanism to filter and cluster records. Similar keywords need to be clustered to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
 
 Analyses existing keywords on a metadata record. Two cases can be identified:
 
 - If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. 
-- If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). Consider the risk of false positives.
+- If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). 
 
-To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain with relations to alternative keywords, such as agrovoc, gemet, dpedia, iso. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. Agrovoc is multilingual, facilitating the translation case.
+To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain derived from agrovoc, gemet and iso11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
 
-For metadata records which have not been analysed yet (in that iteration), the module extracts the records, for each keyword an analyses is made if it maches any of the prefered keywords, if so, the prefered keyword is added to the record. 
+For metadata records which have not been analysed yet (in that iteration), the module extracts the keywords, for each keyword an analyses is made if it maches any of the prefered keywords, if so, the prefered keyword is added to the augmentation results for that record. For string matching a fuzzy match algorythm is used, requiring a 90% match (configurable). Translations are matched using the metadata language as indicated in the record.
+
+The process runs as a CI-CD pipeline at dayly intervals.
+
+#### Technology
+   * **Python**
+        Used for the keyword matching and database interactions
+   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
+        Primary database for storing and managing information
+   * **Docker** 
+        Used for containerizing the application, ensuring consistent deployment across environments
+   * **CI/CD**
+        Automated pipeline for continuous integration and deployment, with scheduled dayly runs
+
+
+### Translation module
+
+!!! component-header "Info"
+    **Current version:** 0.2.0
+
+    **Projects:** [Translation](https://github.com/soilwise-he/metadata-augmentation/tree/main/translation)
+
+Some records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.
+
+The translation module builds on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). Translations are stored in a database for reuse by the SWR.
+
+The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
+
+Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
+
+#### Technology
+   * **Python**
+        Used for the translation module, API development, and database interactions
+   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
+        Primary database for storing and managing information
+   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
+        Employed to create and expose REST API endpoints. 
+        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
+   * **Docker** 
+        Used for containerizing the application, ensuring consistent deployment across environments
+   * **CI/CD**
+        Automated pipeline for continuous integration and deployment, with scheduled dayly runs
+
+
+### Link liveliness assessment 
+
+!!! component-header "Info"
+    **Current version:** 0.2.0
+
+    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
+
+Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
+
+The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. 
+
+While evaluating the context of a link, the assessment tool may derive some contextual metadata, which can augment the metadata record. These results are stored in the metadata augmentation table. Metadata aspects derived are file size, file format.
+
+The link liveliness  privides the following functions:
+
+1. **OGC API Catalogue Integration**
+    - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank}
+    - Extracts and evaluates URLs from catalogue items 
+2. **Link Validation**
+    - Evaluates the validity of links to external sources and within the repository
+    - Checks if metadata accurately represents the source
+3. **Support for OGC service links**
+    - Identifies and properly handles OGC service links ([WMS](https://www.ogc.org/standard/wms/){target=_blank}, [WFS](https://www.ogc.org/standard/wfs/){target=_blank}, [CSW](https://www.ogc.org/standard/cat/){target=_blank}, [WCS](https://www.ogc.org/standard/wcs/){target=_blank} etc.) before assessing them
+4. **Health Status Tracking**
+    - Provides up-to-date status history for every assessed link
+    - Maintains a history of link health over time
+4. **Flexible Evaluation**
+    - Supports single resource evaluation on demand
+    - Performs periodic tests to provide availability history
+4. **Broken link management**
+    - Identifies and categorizes broken links based on their status code ( `401 Unauthorized`, `404 Not Found`, `500 Server Error`)
+    - Flags deprecated links after consecutive failed tests and excludes them from future check
+5. **Timeout management**
+    - Identifies resources exceeding specified timeout thresholds
+
+A javascript widget is further used to display the link status directly in the [SWR Catalogue](catalogue.md) record.
+
+The API can be used to identify which records have broken links.
+
+![Link liveliness indication](../_assets/images/link_liveliness.png)
+
+#### Technology
+   * **Python**
+        Used for the linkchecker integration, API development, and database interactions
+   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
+        Primary database for storing and managing link information
+   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
+        Employed to create and expose REST API endpoints. 
+        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
+   * **Docker** 
+        Used for containerizing the application, ensuring consistent deployment across environments
+   * **CI/CD**
+        Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
+
 
 ## Foreseen functionality
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
 
-- [Spatial Locator](#spatial-locator)
-- [Spatial scope analyser](#spatial-scope-analyser)
-- [EUSO-high-value dataset tagging](#euso-high-value-dataset-tagging)
-
 
 ### Spatial Locator
 
-Analyses existing keywords to find a relevant geography for the record, it then uses the [GeoNames](https://www.geonames.org/about.html){target=_blank} API to find spatial coordinates for the geography, which are inserted into the metadata record.
+!!! component-header "Info"
+  **Current version:** 0.2.0
+  
+  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-locator
+
+The module analyses existing keywords to find a relevant geography for the record, it then uses a gazeteer to find spatial coordinates for the geography, which are inserted into the metadata record. Vice versa, if the record has a geography it will use reverse gazeteer to find a matching location keyword.
 
 
 ### Spatial scope analyser
 
-A script that analyses the spatial scope of a resource
+!!! component-header "Info"
+  **Current version:** 0.2.0
 
-The bounding box is matched to country bounding boxes
+  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-scope-analyser
+
+A module that analyses the spatial scope of a resource.
+
+The bounding box is matched to country or continental bounding boxes using a gazeteer.
 
 To understand if the dataset has a global, continental, national or regional scope
 
@@ -212,7 +317,29 @@ flowchart TD
     th[(Thesauri)]-- synonyms ---Codelists
 ```
 
+### Duplication identification
+
+!!! component-header "Info"
+  **Current version:** 0.2.0
+
+  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/deduplication
+
+Resources are often described in multiple data & knowledge hubs, not always using a unique identification. In that scenario
+multiple records may arrive in the system which describe the same resource. In the harvester module duplication is prevented based on common identification. Additional duplication identification is relevant in cases where resources use different identification.
+
+This process uses NLP mechanisms to evaluate metadata records on similarities. 
 
 
+### Keyword extraction
 
+!!! component-header "Info"
+  **Current version:** 0.2.0
 
+  **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/NER%20augmentation
+
+The value of relevant keywords is often underestimated by data producers. This module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology.
+
+### Automatic metadata generation
+
+In cases where metadata describes a document or supplemental documentation about a resource is provided, the system is able to download that textual content and keep it as part of the search index. See [Harvest component](./ingestion.md) about how the content is harvested.
+With that content available a LLM powered module is able to generate some aspects of a metadata record based on that content, in cases where the metadata record is poorly populated. Aspects to be populated by the module are: Title, abstract, keywords, organization, spatial and temporal extent, date.
