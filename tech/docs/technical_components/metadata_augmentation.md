@@ -13,12 +13,21 @@ At the moment, the functionality of the Metadata Augmentation component comprise
 
 Upcoming components
 
-- [Spatial locator](#spatial-locator)
-- [Spatial scope analyser](#spatial-scope-analyser)
-- [Duplication identification](#duplication-identification)
-- [Keyword extraction](#keyword-extraction)
-- [Automatic metadata generation](#automatic-metadata-generation)
-- [Metadata interlinker](#metadata-interlinker)
+- [Metadata Augmentation](#metadata-augmentation)
+    - [Keyword matcher](#keyword-matcher)
+      - [Technology](#technology)
+    - [Translation module](#translation-module)
+      - [Technology](#technology-1)
+    - [Link liveliness assessment](#link-liveliness-assessment)
+      - [Technology](#technology-2)
+  - [Foreseen functionality](#foreseen-functionality)
+    - [Spatial Locator](#spatial-locator)
+    - [Spatial scope analyser](#spatial-scope-analyser)
+    - [EUSO-high-value dataset tagging](#euso-high-value-dataset-tagging)
+    - [Duplication identification](#duplication-identification)
+    - [Keyword extraction](#keyword-extraction)
+    - [Automatic metadata generation](#automatic-metadata-generation)
+    - [Metadata interlinker](#metadata-interlinker)
 
 Metadata augmentation results are stored in a augmentation table (unless mentioned otherwise).
 
@@ -44,9 +53,9 @@ Analyses existing keywords on a metadata record. Two cases can be identified:
 
 To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain derived from agrovoc, gemet and iso11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
 
-For metadata records which have not been analysed yet (in that iteration), the module extracts the keywords, for each keyword an analyses is made if it maches any of the prefered keywords, if so, the prefered keyword is added to the augmentation results for that record. For string matching a fuzzy match algorythm is used, requiring a 90% match (configurable). Translations are matched using the metadata language as indicated in the record.
+For metadata records which have not been analysed yet (in that iteration), the module extracts the keywords, for each keyword an analyses is made if it maches any of the prefered keywords, if so, the prefered keyword is added to the augmentation results for that record. For string matching a fuzzy match algorithm is used, requiring a 80% match (configurable). Translations are matched using the metadata language as indicated in the record.
 
-The process runs as a CI-CD pipeline at dayly intervals.
+The process runs as a CI-CD pipeline at daily intervals.
 
 #### Technology
    * **Python**
