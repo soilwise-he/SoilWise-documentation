@@ -88,86 +88,39 @@ Initial translation is triggered by a running harvester. The translations will t
         Automated pipeline for continuous integration and deployment, with scheduled dayly runs
 
 
-### Link liveliness assessment 
+## Keyword extraction
 
 !!! component-header "Info"
     **Current version:** 0.2.0
 
-    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
+    **Project:** [NER augmentation](https://github.com/soilwise-he/metadata-augmentation/tree/main/NER%20augmentation)
 
-Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
+The value of relevant keywords is often underestimated by data producers. This module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology.
 
-The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. 
+## Metadata interlinker
 
-While evaluating the context of a link, the assessment tool may derive some contextual metadata, which can augment the metadata record. These results are stored in the metadata augmentation table. Metadata aspects derived are file size, file format.
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](./storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph).
 
-The link liveliness  privides the following functions:
+We distinguish between explicit and implicit links:
 
-1. **OGC API Catalogue Integration**
-    - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank}
-    - Extracts and evaluates URLs from catalogue items 
-2. **Link Validation**
-    - Evaluates the validity of links to external sources and within the repository
-    - Checks if metadata accurately represents the source
-3. **Support for OGC service links**
-    - Identifies and properly handles OGC service links ([WMS](https://www.ogc.org/standard/wms/){target=_blank}, [WFS](https://www.ogc.org/standard/wfs/){target=_blank}, [CSW](https://www.ogc.org/standard/cat/){target=_blank}, [WCS](https://www.ogc.org/standard/wcs/){target=_blank} etc.) before assessing them
-4. **Health Status Tracking**
-    - Provides up-to-date status history for every assessed link
-    - Maintains a history of link health over time
-4. **Flexible Evaluation**
-    - Supports single resource evaluation on demand
-    - Performs periodic tests to provide availability history
-4. **Broken link management**
-    - Identifies and categorizes broken links based on their status code ( `401 Unauthorized`, `404 Not Found`, `500 Server Error`)
-    - Flags deprecated links after consecutive failed tests and excludes them from future check
-5. **Timeout management**
-    - Identifies resources exceeding specified timeout thresholds
+- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
 
-A javascript widget is further used to display the link status directly in the [SWR Catalogue](catalogue.md) record.
-
-The API can be used to identify which records have broken links.
-
-![Link liveliness indication](../_assets/images/link_liveliness.png)
-
-#### Technology
-   * **Python**
-        Used for the linkchecker integration, API development, and database interactions
-   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
-        Primary database for storing and managing link information
-   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
-        Employed to create and expose REST API endpoints. 
-        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
-   * **Docker** 
-        Used for containerizing the application, ensuring consistent deployment across environments
-   * **CI/CD**
-        Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
-
+SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
 
 ## Foreseen functionality
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
 
-
 ### Spatial Locator
 
-!!! component-header "Info"
-    **Current version:** 0.2.0
-  
-    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-locator
-
-The module analyses existing keywords to find a relevant geography for the record, it then uses a gazeteer to find spatial coordinates for the geography, which are inserted into the metadata record. Vice versa, if the record has a geography it will use reverse gazeteer to find a matching location keyword.
-
+The module is foreseen to analyse existing keywords to find a relevant geography for the record. It will then use a gazeteer to find spatial coordinates for the geography, which will be inserted into the metadata record. Vice versa, if the record has a geography it will use reverse gazeteer to find a matching location keyword.
 
 ### Spatial scope analyser
 
-!!! component-header "Info"
-    **Current version:** 0.2.0
+A module that is foreseen to analyse the spatial scope of a resource.
 
-    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/spatial-scope-analyser
-
-A module that analyses the spatial scope of a resource.
-
-The bounding box is matched to country or continental bounding boxes using a gazeteer.
+The bounding box will be matched to country or continental bounding boxes using a gazeteer.
 
 To understand if the dataset has a global, continental, national or regional scope
 
@@ -310,40 +263,4 @@ flowchart TD
     th[(Thesauri)]-- synonyms ---Codelists
 ```
 
-### Duplication identification
 
-!!! component-header "Info"
-    **Current version:** 0.2.0
-
-    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/deduplication
-
-Resources are often described in multiple data & knowledge hubs, not always using a unique identification. In that scenario
-multiple records may arrive in the system which describe the same resource. In the harvester module duplication is prevented based on common identification. Additional duplication identification is relevant in cases where resources use different identification.
-
-This process uses NLP mechanisms to evaluate metadata records on similarities. 
-
-
-### Keyword extraction
-
-!!! component-header "Info"
-    **Current version:** 0.2.0
-
-    **Project:** https://github.com/soilwise-he/metadata-augmentation/tree/main/NER%20augmentation
-
-The value of relevant keywords is often underestimated by data producers. This module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology.
-
-### Automatic metadata generation
-
-In cases where metadata describes a document or supplemental documentation about a resource is provided, the system is able to download that textual content and keep it as part of the search index. See [Harvest component](./ingestion.md) about how the content is harvested.
-With that content available a LLM powered module is able to generate some aspects of a metadata record based on that content, in cases where the metadata record is poorly populated. Aspects to be populated by the module are: Title, abstract, keywords, organization, spatial and temporal extent, date.
-
-### Metadata interlinker
-
-To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](storage.md#knowledge-graph-triple-store).
-
-We distinguish between explicit and implicit links:
-
-- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
-- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
-
-SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
