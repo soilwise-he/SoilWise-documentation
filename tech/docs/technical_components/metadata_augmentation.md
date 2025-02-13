@@ -9,16 +9,15 @@ At the moment, the functionality of the Metadata Augmentation component comprise
 
 - [Keyword-matcher](#keyword-matcher)
 - [Translation module](#translation-module)
-- [Link liveliness assessment](#link-liveliness-assessment)
+- [Metadata interlinker](#metadata-interlinker)
 
 Upcoming components
 
+- [Keyword extraction](#keyword-extraction)
 - [Spatial locator](#spatial-locator)
 - [Spatial scope analyser](#spatial-scope-analyser)
-- [Duplication identification](#duplication-identification)
-- [Keyword extraction](#keyword-extraction)
-- [Automatic metadata generation](#automatic-metadata-generation)
-- [Metadata interlinker](#metadata-interlinker)
+- [EUSO high-value dataset tagging](#euso-high-value-dataset-tagging)
+
 
 Metadata augmentation results are stored in a augmentation table (unless mentioned otherwise).
 
@@ -87,16 +86,6 @@ Initial translation is triggered by a running harvester. The translations will t
    * **CI/CD**
         Automated pipeline for continuous integration and deployment, with scheduled dayly runs
 
-
-## Keyword extraction
-
-!!! component-header "Info"
-    **Current version:** 0.2.0
-
-    **Project:** [NER augmentation](https://github.com/soilwise-he/metadata-augmentation/tree/main/NER%20augmentation)
-
-The value of relevant keywords is often underestimated by data producers. This module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology.
-
 ## Metadata interlinker
 
 To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](./storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph).
@@ -111,6 +100,10 @@ SWR-1 implements the interlinking of data and knowledge assets based on explicit
 ## Foreseen functionality
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
+
+## Keyword extraction
+
+The value of relevant keywords is often underestimated by data producers. This proof-of-concept module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology. Integration with the [catalogue](./catalogue.md) is foreseen.
 
 ### Spatial Locator
 
