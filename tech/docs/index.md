@@ -30,6 +30,10 @@ A full list of terms used within this Technical Documentation can be found in th
 
 |Date|Action|
 |----|-----------|
+|25. 8. 2025|**v3.0 Released:** For _D2.2 Developed & Integrated DM components, v2 D3.2 Developed & Integrated KM components, v2_ and _D4.2 Repository infrastructure, components and APIs, v2_ purposes|
+|14. 2. 2025|Metadata Validation updated|
+|13. 2. 2025|Metadata Augmentation updated|
+|7. 2. 2025|Interfaces description updated|
 |30. 9. 2024|**v2.0 Released:** For _D2.1 Developed & Integrated DM components, v1 D3.1 Developed & Integrated KM components, v1_ and _D4.1 Repository infrastructure, components and APIs, v1_ purposes|
 |30. 9. 2024|Technical Components functionality updated according to first SoilWise repository prototype|
 |27. 8. 2024|APIs section restructured|
