@@ -5,8 +5,29 @@
 
 In terms of metadata, SoilWise Repository aims for the approach to balance harvesting between quantity and quality. See for more information in the [Harvester Component](ingestion.md). Catalogues which capture metadata authored by various data communities typically have a wide range of metadata completion and accuracy. Therefore, the SoilWise Repository employs metadata validation mechanisms to provide additional information about metadata completeness, conformance and integrity. Information resulting from the validation process are stored together with each metadata record in a relation database and updated after registering a new metadata version. Within the first iteration, they are not displayed in the [SoilWise Catalogue](catalogue.md).
 
+On this topic 2 components are available which monitor aspects of metadata
 
-## Minimal metadata elements
+- [Metadata completeness](#metadata-completeness) calculates a score based on selected populated metadata properties
+- [Link liveliness assessment](#link-liveliness-assessment) validates the availability of resources described by the record 
+
+
+## Metadata completeness
+
+!!! component-header "Info"
+    **Current version:** 0.2.0
+
+    **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
+
+    **Access point:** Postgres database
+
+### Metadata structure validation
+
+Before validation, metadata is harmonized to a common model. If harmonization fails for some reason, the record is not ingested and validated.
+The error is logged, so an administrator is able to follow up.
+
+### Metadata completeness indication
+
+The indication calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.
 
 Completeness is evaluated against a set of metadata elements for each harmonized metadata record in the SWR platform. Records for which harmonisation fails are not evaluated (nor imported).
 
@@ -22,28 +43,7 @@ Completeness is evaluated against a set of metadata elements for each harmonized
 | Extent (geographic) | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) | 5 |
 | Extent (temporal) | Temporal coverage | 5 |
 
-
-## Functionality
-
-### Metadata validation
-
-!!! component-header "Info"
-    **Current version:** 0.2.0
-
-    **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
-
-    **Access point:** not available yet
-
-#### Metadata structure validation
-
-Before validation, metadata is harmonized to a common model. If harmonization fails for some reason, the record is not ingested and validated.
-The error is logged, so an administrator is able to follow up.
-
-#### Metadata completeness indication
-
-The indication calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.
-
-#### Metadata ETS/ATS checking
+### Metadata ETS/ATS checking
 
 The methodology of ETS/ATS has been suggested to develop validation tests.
 
@@ -62,16 +62,31 @@ The SWR ATS is under development at <https://github.com/soilwise-he/metadata-val
 
 ETS is implemented as a [python module](https://github.com/soilwise-he/metadata-validator/blob/main/src) which is triggered from a CI-CD pipeline. 
 
-#### Technology & Integration
+### Technology
 
-Results of metadata validation will be available via an API, which is under development. The API will require authorisation to access it.
+   * **Python**
+        Used for the linkchecker integration, API development, and database interactions
+   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
+        Primary database for storing and managing link information
+   * **CI/CD**
+        Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
+     
+Results of metadata validation are stored on PostGres database, table is called validation in a schema validation.
 
-#### Future work
+| identifier | Score | Date |
+| --- | --- | --- |
+| abc-123-cba | 60 | 2025-01-20T12:20:10Z
+
+Validation runs every week as a CI-CD pipeline on records which have not been validated for 2 weeks. This builds up a history to understand validation results over time (consider that both changes in records, as well as the ETS itself may cause differences in score).
+
+
+
+### Future work
 
 - Extend the ATS to JRC and user needs.
 - Extend ETS based on ATS
 
-### Link liveliness assessment 
+## Link liveliness assessment 
 
 !!! component-header "Info"
     **Current version:** 0.2.0
@@ -112,7 +127,7 @@ The API can be used to identify which records have broken links.
 
 ![Link liveliness indication](../_assets/images/link_liveliness.png)
 
-#### Technology
+### Technology
    * **Python**
         Used for the linkchecker integration, API development, and database interactions
    * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
