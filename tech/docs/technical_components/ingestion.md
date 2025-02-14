@@ -81,7 +81,7 @@ The Harvester component currently comprises of the following functions:
 
 ### Harvest records from metadata and knowledge resources
 
-Note, the first SoilWise Repository development iteration resulted in **9,0444** harvested metadata records (to date 12.09.20241).
+Note, the second SoilWise Repository prototype contained **19,324** harvested metadata records (to date 14.2.2025).
 
 #### CORDIS
 
@@ -92,9 +92,9 @@ Which projects to include is derived from 2 sources:
 - [ESDAC](https://esdac.jrc.ec.europa.eu/projects/Eufunded/Eufunded.html){target=_blank} maintains a list of historic EU funded research projects
 - [Mission soil platform](https://mission-soil-platform.ec.europa.eu/project-hub/funded-projects-under-mission-soil){target=_blank} maintains a list of current Mission soil projects
 
-A script fetches the content from these 2 sources and prepares for the CORDIS and OpenAire harvested to understand which content is relevant. The content in these pages is unstructured html. The content is scraped using a python library. This is not optimal, because the scraper expects a dedicated html structure, which is fragile.
+A script fetches the content from these 2 sources and prepares relevant content for the CORDIS and OpenAire harvesting. The content in these pages is unstructured html. The content is scraped using a python library. This is not optimal, because the scraper expects a dedicated html structure, which is fragile.
 
-Results of the scrape activity are stored in table `harvest.projects`. For each project a Record control number([RCN](https://www.wikidata.org/wiki/Property:P5755){target=_blank}) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. 
+Results of the scrape activity are stored in table `harvest.projects`. For each project a Record control number ([RCN](https://www.wikidata.org/wiki/Property:P5755){target=_blank}) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. 
 
 At this moment in time we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. 
 
@@ -123,11 +123,11 @@ The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/){target=_blank} is an inst
 
 #### Impact4Soil
 
-Impact4soil is build on a Strapi.io headless CMS. The CMS provides an API to retrieve datasets and scientific articles. The API provides minimal metadata, but fortunately in most cases a DOI is included. DOI is used to capture additional metadata from OpenAire.
+[Impact4Soil](https://www.impact4soil.com/datasets){target=_blank} is build on a Strapi.io headless CMS. The CMS provides an API to retrieve datasets and scientific articles. The API provides minimal metadata, but fortunately in most cases a DOI is included. DOI is used to capture additional metadata from OpenAire.
 
 #### Prepsoil portal
 
-Prep4soil is build on a headless CMS. The CMS at times provides an API to retrieve datasets, knowledge items, living labs, lighthouses and communities of practice. The API provides minimal metadata, incidentally a DOI is included. DOI is used to capture additional metadata from OpenAire.
+[Prepsoil](https://prepsoil.eu/knowledge-hub){target=_blank} is build on a headless CMS. The CMS at times provides an API to retrieve datasets, knowledge items, living labs, lighthouses and communities of practice. The API provides minimal metadata, incidentally a DOI is included. DOI is used to capture additional metadata from OpenAire.
 
 ### Metadata Harmonization
 
@@ -144,7 +144,7 @@ Table below indicates the various source models supported
 
 Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/){target=_blank} RDF representation.
 
-For metadata harmonization some supporting modules are used, [owslib](https://owslib.readthedocs.io/en/latest/){target=_blank} is a module to parse various source metadata models, including iso19139:2007. A transformation script from (semic-eu/iso19139-to-dcat-ap.xslt)[https://github.com/semic-eu/iso19139-to-dcat-ap/] in combination with lxml and rdflib is used to convert iso19139:2007 metadata to RDF, serialised as turtle.
+For metadata harmonization some supporting modules are used, [OWSlib](https://owslib.readthedocs.io/en/latest/){target=_blank} is a module to parse various source metadata models, including iso19139:2007. A transformation script from [semic-eu/iso19139-to-dcat-ap.xslt](https://github.com/semic-eu/iso19139-to-dcat-ap/){target=_blank} in combination with lxml and rdflib is used to convert iso19139:2007 metadata to RDF, serialised as turtle.
 
 Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software, used to power the [SoilWise Catalogue](catalogue.md), using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.
 
