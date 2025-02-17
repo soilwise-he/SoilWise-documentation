@@ -101,7 +101,7 @@ SWR-1 implements the interlinking of data and knowledge assets based on explicit
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
 
-## Keyword extraction
+### Keyword extraction
 
 The value of relevant keywords is often underestimated by data producers. This proof-of-concept module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology. Integration with the [catalogue](./catalogue.md) is foreseen.
 

@@ -32,7 +32,7 @@ As a preparation to extend the currently deployed metadata knowledge graph (KG) 
 
 The following aspects have been worked on and will  be furhter developed and integrated into future iterations of the SoilWise KG:
 
-- Applying various methods using AI/ML to derive a (soil health) knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report "Soil monitoring in Europe - Indicators and thresholds for soil quality assessments". It tests the effectiveness of various methods to generate knowledge in the form of KGs from documents, which could also benefit other AI/ML functions foreseen.
+- Applying various methods using AI/ML to derive a (soil health) knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report _"Soil monitoring in Europe - Indicators and thresholds for soil quality assessments"_. It tests the effectiveness of various methods to generate knowledge in the form of KGs from documents, which could also benefit other AI/ML functions foreseen.
 - Establishing links between the SoilWise KG and external taxonomies and ontologies (linked data). Concepts in the SoilWise KG that (closely) match with concepts in the AGROVOC thesaurus are linked. The implemented method is exemplary for the foreseen wider linking required to establish a soil health KG.
 - Testing AI/ML based methods to derive additional knowledge (e.g. keywords, geography) for data and knowledge assets. Such methods could for instance be used to further augment metadata or fill exisiting metadata gaps. Besides testing such methods, this includes establishing a model that allows to distinguish between genuine and generated metadata.
 
