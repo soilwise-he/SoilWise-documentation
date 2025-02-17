@@ -5,7 +5,7 @@
 
     **Project:** [pycsw](https://github.com/soilwise-he/pycsw)
 
-    **Access point:** <https://soilwise-he.containers.wur.nl/cat/>
+    **Access point:** <https://repository.soilwise-he.eu/>
     
 The metadata catalogue is a central piece of the architecture, 
 giving access to individual metadata records. In the catalogue domain,
@@ -19,7 +19,7 @@ The SoilWise prototype adopts a frontend, focusing on:
 
 - minimalistic User Interface, to prevent a technical feel,
 - paginated search results, sorted alphabetically, by date, see more information in Chapter [Query Catalogue](#query-catalogue),
-- option to filter by facets, see more information in Chapter [Query Catalogue](#query-catalogue),
+- option to filter by facets, see more information in Chapter [Faceted Search](#faceted-search),
 - preview of the dataset (if a thumbnail or OGC:Service is available), else display of its spatial extent, see more information in Chapter [Display record's detail](#display-records-detail),
 - option to provide feedback to publisher/author, see more information in Chapter [User Engagement](#user-engagement),
 - readable link in the browser bar, to facilitate link sharing.
@@ -54,7 +54,7 @@ Fulltext search currently supports only nesting words with AND operator.
 - filter by **soil physical properties** (soil stability, soil structure, bulk density, aggregate stability, Soil sealing, ...)
 - filter by **soil classification** (lixisols, entisols, leptosols, alfisols, luvisols, ...)
 
-The faceted search is the outcome of keyword matcher in [metadata argumentation](./metadata_augmentation.md).
+The faceted search is the outcome of Keyword matcher in [Metadata Augmentation](./metadata_augmentation.md).
 
 #### Future work
 
@@ -73,15 +73,15 @@ After clicking result's table item, a record's detail is displayed at unique URL
 - keywords' tags,
 - preview of record's geographical extent, see [Map preview](#map-preview),
 - record's preview image, if available,
+- information about relevant HE funding project,
+- list of source repositories,
+- indication of link availability, see [Link liveliness assessment](./metadata_validation.md#link-liveliness-assessment).
+- last update date,
 - all other record's items,
-- section enabling [User Engagement](#user-engagement),
-- last update date.
+- section enabling [User Engagement](#user-engagement).
 
 #### Future work
 
-- links section with links to original repository, _TBD_...,
-- indication of metadata augmentation, such as link liveliness assessment,
-- display metadata augmentation results,
 - display metadata validation results,
 - show relations to other records,
 - better distinguish link types; service/api, download, records, documentation, etc.
@@ -121,6 +121,12 @@ OGC is currently in the process of adopting a revised edition of its catalogue s
 #### Protocol for metadata harvesting
 
 The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.
+
+#### STAC
+_TO DO_
+
+#### OpenSearch
+_TO DO_
 
 #### Schema.org annotiations
 
