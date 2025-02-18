@@ -71,7 +71,7 @@ ETS is implemented as a [python module](https://github.com/soilwise-he/metadata-
    * **CI/CD**
         Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
      
-Results of metadata validation are stored on PostGres database, table is called validation in a schema validation.
+Results of metadata validation are stored on PostgreSQL database, table is called validation in a schema validation.
 
 | identifier | Score | Date |
 | --- | --- | --- |
