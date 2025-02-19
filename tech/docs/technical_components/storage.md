@@ -13,7 +13,7 @@ The SoilWise repository aims at merging and seamlessly providing different types
 
 ## Functionality
 
-### Postgress RDBMS: storage of raw and augmented metadata
+### PostgreSQL RDBMS: storage of raw and augmented metadata
 
 A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
 The catalogue also queries the Postgress database. 
@@ -42,17 +42,17 @@ The current setup of SWR, using the pycsw infrastructure, allows users to propos
 
 In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed in the first development cycle, but is not yet integrated into the deployment of iteration 2 include:
 
-### Apache Lucene Index: Search Index 
+### Apache Lucene for Lexical Search
 
-A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
+A search engine, ingesting data from the RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
 
 As part of the first develoment cycle of SWR, SoilWise has deployed an experimental setup that uses the Solr search platform. Apache Lucene is the search library under Solr facilitating the storage of SWR indexed content. 
 
-### Apache Solr vector store: Vector database for NLQ applications 
+### Apache Lucene for Semantic Search
 
-A vector database is foreseen as a foundation to use Large Language Models (LLM) and implement Natural Language Querying (NLQ), e.g. to allow chatbot functionality for end users. A vector DB allows storage of text embeddings that are a the basis for such NLQ functions. Search engines, like Solr, are also moving to supporting text embeddings. Thus, they can offer easier migration pathways towards NLQ-like functions. 
+Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the later focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
 
-SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where a for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
+Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where a for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
 
 ## Technology & Integration
 
@@ -60,7 +60,7 @@ Components used:
 
 - Virtuoso (version 07.20.3239)
 - PostgreSQL (release 12.13)
-- SOLR (release 9.8.0)
+- Solr (release 9.8.0)
 
 
 
