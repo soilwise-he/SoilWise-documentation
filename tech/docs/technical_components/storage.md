@@ -40,19 +40,19 @@ The current setup of SWR, using the pycsw infrastructure, allows users to propos
 
 ## Ongoing Developments
 
-In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed, but is not yet integrated into the deployment of iteration 1 include:
+In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed, but is not yet integrated into the deployment of iteration 2 include:
 
-### Establishing a vector database 
+### Apache Lucene Index: Search Index 
 
-A vector database is foreseen as a foundation to use Large Language Models (LLM) and implement Natural Language Querying (NLQ), e.g. to allow chatbot functionality for end users. A vector DB allows storage of text embeddings that are a the basis for such NLQ functions.
+A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
 
-Currently experimental setup using SOLR.
+In prototype 2, SoilWise deploys an experimental setup that uses the Solr search platform. Apache Lucene is the search library under Solr facilitating the storage of SWR indexed content. 
 
-### A Search engine
+### Apache Solr vector store: Vector database for NLQ applications 
 
-A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It can also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. Additionally, search engines are also implementing the indexation of unstructured content and are moving to supporting text embeddings. Thus, they might be a starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software and offering easier migration pathways towards NLQ-like functions. 
+A vector database is foreseen as a foundation to use Large Language Models (LLM) and implement Natural Language Querying (NLQ), e.g. to allow chatbot functionality for end users. A vector DB allows storage of text embeddings that are a the basis for such NLQ functions. Search engines, like Solr, are also moving to supporting text embeddings. Thus, they can offer easier migration pathways towards NLQ-like functions. 
 
-Currently experimental setup using SOLR.
+SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where a for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
 
 ## Technology & Integration
 
