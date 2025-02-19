@@ -24,7 +24,7 @@ The SoilWise prototype adopts a frontend, focusing on:
 - option to provide feedback to publisher/author, see more information in Chapter [User Engagement](#user-engagement),
 - readable link in the browser bar, to facilitate link sharing.
 
-### Query Catalogue
+## Query Catalogue
 
 The SoilWise Catalogue currently enables the following search options:
 
@@ -33,13 +33,13 @@ The SoilWise Catalogue currently enables the following search options:
 
 50 results are displayed per page in alphabetical order, in the form of overview table comprising preview of title, abstract, contributor, type and date. Search items set through user interface is also reflected in the URL to facilitate sharing.
 
-#### Fulltext search
+### Fulltext search
 
 Fulltext search is currently enabled through the q= attribute. Other queryable parameters are title, keywords, abstract, contributor. Full list of queryables can be found at: <https://soilwise-he.containers.wur.nl/cat/collections/metadata:main/queryables>.
 
 Fulltext search currently supports only nesting words with AND operator.
 
-#### Faceted search
+### Faceted search
 
 - filter by **record's type** (journalpaper, dataset, document, service, series, best practices and tools, ...)
 - filter by **contamination** (antibiotics)
@@ -56,14 +56,20 @@ Fulltext search currently supports only nesting words with AND operator.
 
 The faceted search is the outcome of Keyword matcher in [Metadata Augmentation](./metadata_augmentation.md).
 
-#### Future work
+### Future work
 
 - optimize the terms and groups of faceted search
 - extend fulltext search; allow complex queries using exact match, OR,...
 - use Full Text Search ranking to sort by relevance.
 
+#### Search engine querying
 
-### Display record's detail
+A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc.
+
+In the first development cycle, SoilWise has deployed an experimental setup that uses the Solr search platform. It consists of a backend deployment of the Solr platform, providing access to an (Apache Lucene) index of the currently harvested metadata. It is extended with a pilot user interface on top of Solr that allows experimentation with different search strategies. In the 2nd development cycle we intend to integrate the Solr search engine and deploy it as part of the next prototype.   
+
+
+## Display record's detail
 
 After clicking result's table item, a record's detail is displayed at unique URL address to facilitate sharing. Record's detail currently comprises:
 
@@ -80,13 +86,13 @@ After clicking result's table item, a record's detail is displayed at unique URL
 - all other record's items,
 - section enabling [User Engagement](#user-engagement).
 
-#### Future work
+### Future work
 
 - display metadata validation results,
 - show relations to other records,
 - better distinguish link types; service/api, download, records, documentation, etc.
 
-### Resource preview
+## Resource preview
 
 SoilWise Catalogue currently supports 3 types of preview:
 
@@ -94,49 +100,49 @@ SoilWise Catalogue currently supports 3 types of preview:
 - Display of a graphic preview (thumbnail) in case it is advertised in metadata.
 - Map preview of OGC:WMS services advertised in metadata enables standard simple user interaction (zoom, changing layers).
 
-### Display results of metadata augmentation and interlinking
+## Display results of metadata augmentation and interlinking
 
 - _TO DO, e.g. information about sources, HE project fundings_
 
-### Data download (AS IS)
+## Data download (AS IS)
 
 Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue.
 
-### Display link to knowledge
+## Display link to knowledge
 
 Download of knowledge source "as is" is currently supported through the links section from the harvested repository.
 
-### Support catalogue API's of various communities
+## Support catalogue API's of various communities
 
 In order to interact with the many relevant data communities, Soilwise aims to support a range of catalogue standards.
 
-#### Catalogue Service for the Web
+### Catalogue Service for the Web
 
 Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC. 
 
-#### OGC API - Records
+### OGC API - Records
 
 OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community. 
 
-#### Protocol for metadata harvesting
+### Protocol for metadata harvesting
 
 The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.
 
-#### STAC
+### STAC
 _TO DO_
 
-#### OpenSearch
+### OpenSearch
 _TO DO_
 
-#### Schema.org annotiations
+### Schema.org annotiations
 
 Annotiations using [schema.org/Dataset](https://schema.org/Dataset) ontology enable search engines to harvest metadata in a structured way.
 
-### User Engagement
+## User Engagement
 
 Collecting users feedback provides an important channel on the usability of described resources. Users can even support each other by sharing the feedback as 'questions and answers'. For this purpose every display of a record is concluded with a feedback section where users can interact about the resource. Users need to authenticate to provide feedback.
 
-#### Future work
+### Future work
 
 Notify the resource owners of incoming feedback, so they can answer any questions or even improve their resource.
 
