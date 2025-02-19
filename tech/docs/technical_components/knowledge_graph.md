@@ -43,7 +43,7 @@ Components used:
 - Virtuoso (version 07.20.3239)
 - Python notebooks
 
-Ontologies/Schemas imported
+Ontologies/Schemas imported:
 
 - [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html){target=_blank}
 - [Dublin Core](https://www.dublincore.org/specifications/dublin-core/){target=_blank}
@@ -59,7 +59,7 @@ Ontologies/Schemas imported
 - [SWEET ontology](http://sweetontology.net/){target=_blank}
 - [Allotrope Foundation Ontology](https://www.allotrope.org/ontologies){target=_blank}
 
-Vocabularies/Thesauri linked
+Vocabularies/Thesauri linked:
 
 - [AGROVOC](https://aims.fao.org/aos/agrovoc){target=_blank}
 - [ISO11074](https://data.geoscience.earth/ncl/ISO11074"){target=_blank}
