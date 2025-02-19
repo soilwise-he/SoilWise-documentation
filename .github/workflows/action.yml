@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python 3 ⚙️ 🐍
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
 
       - name: Identify Changed Files
         id: changes
@@ -28,7 +28,7 @@ jobs:
 
       - name: Cache Dependencies for Tech
         if: contains(env.GITHUB_EVENT_HEAD_COMMIT_MODIFIED, 'tech/')
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-tech-pip-${{ hashFiles('tech/requirements.txt') }}
@@ -41,7 +41,7 @@ jobs:
 
       - name: Cache Dependencies for Knowledge-Base
         if: contains(env.GITHUB_EVENT_HEAD_COMMIT_MODIFIED, 'knowledge-base/')
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-kb-pip-${{ hashFiles('knowledge-base/requirements.txt') }}
