@@ -43,12 +43,24 @@ Components used:
 - Virtuoso (version 07.20.3239)
 - Python notebooks
 
-Ontologies/Vocabularies/Schemas:
+Ontologies/Schemas imported
 
 - [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html){target=_blank}
 - [Dublin Core](https://www.dublincore.org/specifications/dublin-core/){target=_blank}
-- [AGROVOC](https://aims.fao.org/aos/agrovoc){target=_blank}
-- [GloSIS](https://glosis-ld.github.io/glosis/){target=_blank}
 - [Agrontology](https://aims.fao.org/aos/agrontology){target=_blank}
 - [QUDT](https://qudt.org/){target=_blank}
+- [PROV-O](https://www.w3.org/TR/prov-o/){target=_blank}
+- [EuroVoc](https://op.europa.eu/en/web/eu-vocabularies){target=_blank}
+- [Semanticscience Integrated Ontology](https://sio.semanticscience.org/){target=_blank}
+- [Open Biological and Biomedical Ontology](https://obofoundry.org/){target=_blank}
+- [Schema.org](https://schema.org/){target=_blank}
+- [Wikidata](https://www.wikidata.org/){target=_blank}
+- [Biolink](https://biolink.github.io/biolink-model/){target=_blank}
+- [SWEET ontology](http://sweetontology.net/){target=_blank}
+- [Allotrope Foundation Ontology](https://www.allotrope.org/ontologies){target=_blank}
 
+Vocabularies/Thesauri linked
+
+- [AGROVOC](https://aims.fao.org/aos/agrovoc){target=_blank}
+- [ISO11074](https://data.geoscience.earth/ncl/ISO11074"){target=_blank}
+- [GloSIS](https://glosis-ld.github.io/glosis/){target=_blank}
