@@ -26,15 +26,15 @@ SoilWise will in the future deploy adapted, and newly developed user interfaces 
 
 **Chatbot interface**
 
-A chatbot UI will allow users to perform natural language queries, using Large Language Models. A chatbot implementation is currently under development and is interactively tested with SoilWise stakeholders. 
+A chatbot UI will allow users to perform natural language queries, using Large Language Models. A chatbot implementation is currently under development and is interactively tested with SoilWise stakeholders. A first version is intended to be integrated during the second development cycle and deployed as part of prototype 3.
+
+**New or adapted catalogue query interface**
+
+The functions of the current end user interface of the catalogue will be extended, e.g. through the integration search engine queries and responses, including faceted search, ranking of results etc. As part of the first development cycle, experimental work on the integration of a (Solr) search engine is performed. This includes a pilot user interface that allows expemimentation with search strategies and testing with users. Integration of such search engine based queries into the catalogue user interface will be part of the efforts in the second development cucle.
 
 **Monitoring dashboard** 
 
 A dashboard that shows the evolution of the SWR data and knowledge contents, quality indicators etc
-
-**New or adapted catalogue end user interface**
-
-The functions of the current end user interface of the catalogue will be extended, e.g. through the integration search engine queries and responses, including faceted search, ranking of results etc.
 
 
 
