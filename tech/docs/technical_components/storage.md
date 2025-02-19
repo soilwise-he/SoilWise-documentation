@@ -40,13 +40,13 @@ The current setup of SWR, using the pycsw infrastructure, allows users to propos
 
 ## Ongoing Developments
 
-In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed, but is not yet integrated into the deployment of iteration 2 include:
+In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed in the first development cycle, but is not yet integrated into the deployment of iteration 2 include:
 
 ### Apache Lucene Index: Search Index 
 
 A search engine, deployed on top of the current RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
 
-In prototype 2, SoilWise deploys an experimental setup that uses the Solr search platform. Apache Lucene is the search library under Solr facilitating the storage of SWR indexed content. 
+As part of the first develoment cycle of SWR, SoilWise has deployed an experimental setup that uses the Solr search platform. Apache Lucene is the search library under Solr facilitating the storage of SWR indexed content. 
 
 ### Apache Solr vector store: Vector database for NLQ applications 
 
