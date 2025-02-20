@@ -11,7 +11,9 @@ SoilWise develops and implements a knowledge graph linking the knowledge capture
 
 The first iteration of the SWR knowledge graph is a graph representation of the (harmonized) metadata that is currently harvested, validated and augmented as part of the SWR catalogue database. It's RDF representation, stored in a triple store, and the SPARQL endpoint deployed on top of the triple store, allow users alternate access to the metadata, exploiting semantics and relations between different assets.
 
-At the same time, experiments have been performed to prepare for the linkage of this RDF metadata graph and existing and AI/ML generated graphs. In future iterations, the metadata graph will be linked/merged with a dedicated soil health knowledge graph also linking to external resources, establishing a broader interconnected soil health knowledge graph. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries and reasoning, e.g. supporting decision support and natural language quering.
+At the same time, preliminary experiments have been conducted to integrate this RDF metadata graph with a dedicated soil health knowledge graph, which is constructed with the assistance of AI/ML, using [keyword matching](../technical_components/metadata_augmentation/#keyword-matcher). During this process, unmatched terms from harvested metadata records were identified and cataloged. These terms, acting as candidate keywords, are currently under review by domain experts to assess their potential value for inclusion in the soil health knowledge graph. This analysis serves as a critical mechanism to identify gaps and prioritize new concepts for future enrichment of the graph.
+
+In future iterations, the metadata graph will be linked/merged with this soil health knowledge graph also linking to external resources, establishing a broader interconnected SWR knowledge graph. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries and reasoning, e.g. supporting decision support and natural language quering.
 
 ## Functionality
 
@@ -32,16 +34,16 @@ As a preparation to extend the currently deployed metadata knowledge graph with 
 
 The following aspects have been worked on and will be furhter developed and integrated into future iterations of the SoilWise knowledge graph:
 
-- Applying various methods using AI/ML to derive a (soil health) knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report _"[Soil monitoring in Europe – Indicators and thresholds for soil health assessments](https://www.eea.europa.eu/en/analysis/publications/soil-monitoring-in-europe)"_. It tests the effectiveness of various methods to generate knowledge in the form of knowledge graphs from documents, which could also benefit other AI/ML functions foreseen.
-- Establishing links between the SoilWise knowledge graph and external taxonomies and ontologies (linked data). Concepts in the SoilWise knowledge graph that (closely) match with concepts in the AGROVOC thesaurus are linked. The implemented method is exemplary for the foreseen wider linking required to establish a soil health knowledge graph.
+- Applying various methods using AI/ML to derive a soil health knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report _"[Soil monitoring in Europe – Indicators and thresholds for soil health assessments](https://www.eea.europa.eu/en/analysis/publications/soil-monitoring-in-europe)"_. It tests the effectiveness of various methods to generate knowledge in the form of knowledge graphs from documents, which could also benefit other AI/ML functions foreseen.
+- Establishing links between the SoilWise knowledge graph and external taxonomies and ontologies (linked data). Concepts in the SoilWise knowledge graph that (closely) match with concepts in the AGROVOC thesaurus are linked. Other candidate vocabularies in scope are ISO 11074 and GloSIS ontology. The implemented method is exemplary for the foreseen wider linking required to establish a soil health knowledge graph.
 - Testing AI/ML based methods to derive additional knowledge (e.g. keywords, geography) for data and knowledge assets. Such methods could for instance be used to further augment metadata or fill exisiting metadata gaps. Besides testing such methods, this includes establishing a model that allows to distinguish between genuine and generated metadata.
 
 ### Knowledge graph validation
 
-The validation of the knowledge graph will follow a structured two-phase methodology:
+The validation of the soil health knowledge graph will follow a structured two-phase methodology:
 
 #### Question Formulation
-A series of questions will be developed based on the content of the EEA soil monitoring report, which serves as the sole reference data source. The principle underpinning this step is that if the knowledge graph accurately encapsulates the report’s information, it should generate answers consistent with those derived directly from the source. These questions will undergo collaborative review to ensure their scientific validity and relevance within soil science.
+A series of questions will be developed based on the content of the EEA report. The principle underpinning this step is that if the knowledge graph accurately encapsulates the report’s information, it should generate answers consistent with those derived directly from the source. These questions will undergo collaborative review to ensure their scientific validity and relevance within soil science.
 
 #### SPARQL Query Execution and Result Verification
 Validated questions will be converted into SPARQL queries and executed against the knowledge graph. The retrieved results will be aggregated and systematically cross-referenced with the answers documented in the EEA report. To ensure domain accuracy, a domain expert will perform a rigorous evaluation of the knowledge graph’s outputs, verifying their technical correctness and adherence to soil science principles.
@@ -75,4 +77,4 @@ Vocabularies/Thesauri linked:
 
 - [AGROVOC](https://aims.fao.org/aos/agrovoc){target=_blank}
 - [ISO11074](https://data.geoscience.earth/ncl/ISO11074"){target=_blank}
-- [GloSIS](https://glosis-ld.github.io/glosis/){target=_blank}
+- [GloSIS ontology](https://glosis-ld.github.io/glosis/){target=_blank}
