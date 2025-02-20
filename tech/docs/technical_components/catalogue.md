@@ -35,7 +35,7 @@ The SoilWise Catalogue currently enables the following search options:
 
 ### Fulltext search
 
-Fulltext search is currently enabled through the q= attribute. Other queryable parameters are title, keywords, abstract, contributor. Full list of queryables can be found at: <https://soilwise-he.containers.wur.nl/cat/collections/metadata:main/queryables>.
+Fulltext search is currently enabled through the q= attribute. Other queryable parameters are title, keywords, abstract, contributor. Full list of queryables can be found at: <https://repository.soilwise-he.eu/cat/collections/metadata:main/queryables>.
 
 Fulltext search currently supports only nesting words with AND operator.
 

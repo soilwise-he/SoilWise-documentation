@@ -8,15 +8,15 @@ These APIs allow discovery of (meta)data and knowledge. Most of them are mostly 
 
 The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases.
 
-**OGC API- Records:** <https://soilwise-he.containers.wur.nl/cat/openapi>
+**OGC API- Records:** <https://repository.soilwise-he.eu/cat/openapi>
 
-**Spatio Temporal Asset Catalog (STAC):** <https://soilwise-he.containers.wur.nl/cat/stac/openapi>
+**Spatio Temporal Asset Catalog (STAC):** <https://repository.soilwise-he.eu/cat/stac/openapi>
 
-**Catalog service for the Web (CSW):** <https://soilwise-he.containers.wur.nl/cat/openapi>
+**Catalog service for the Web (CSW):** <https://repository.soilwise-he.eu/cat/openapi>
 
-**Protocol for Metadata Harvesting (OAI-PMH):** <https://soilwise-he.containers.wur.nl/cat/oaipmh>
+**Protocol for Metadata Harvesting (OAI-PMH):** <https://repository.soilwise-he.eu/cat/oaipmh>
 
-**OpenSearch:** <https://soilwise-he.containers.wur.nl/cat/opensearch>
+**OpenSearch:** <https://repository.soilwise-he.eu/cat/opensearch>
 
 
 ## Processing API's
