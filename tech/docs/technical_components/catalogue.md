@@ -150,7 +150,7 @@ Notify the resource owners of incoming feedback, so they can answer any question
 
 [pycsw](https://pycsw.org){target=_blank}  is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OpenSearch](https://opensearch.org/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, [SRU](https://developers.exlibrisgroup.com/rosetta/integrations/standards/sru/){target=_blank}), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
 
-pycsw is deployed as a docker container from the official docker hub repository. Its configuration is updated at deployment. Some layout templates are overwritten at deployment to facilitate a tailored HTML view.
+pycsw is deployed as a docker container from the [geopython/pycsw docker hub repository](https://hub.docker.com/r/geopython/pycsw){target=_blank}. A beta release of the upcoming v3.0 is used. Its configuration is updated at deployment. Some layout templates are overwritten at deployment to facilitate a tailored HTML view. The tailored html view is stored as part of the kuberneters deployment configuration.
 
 
 ## Integration
