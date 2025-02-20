@@ -40,10 +40,10 @@ The following aspects have been worked on and will be furhter developed and inte
 
 The validation of the knowledge graph will follow a structured two-phase methodology:
 
-# Question Formulation
+#### Question Formulation
 A series of questions will be developed based on the content of the EEA soil monitoring report, which serves as the sole reference data source. The principle underpinning this step is that if the knowledge graph accurately encapsulates the report’s information, it should generate answers consistent with those derived directly from the source. These questions will undergo collaborative review to ensure their scientific validity and relevance within soil science.
 
-# SPARQL Query Execution and Result Verification
+#### SPARQL Query Execution and Result Verification
 Validated questions will be converted into SPARQL queries and executed against the knowledge graph. The retrieved results will be aggregated and systematically cross-referenced with the answers documented in the EEA report. To ensure domain accuracy, a domain expert will perform a rigorous evaluation of the knowledge graph’s outputs, verifying their technical correctness and adherence to soil science principles.
 
 This process ensures the knowledge graph's fidelity to the source material and its capability to support domain-specific queries reliably.
