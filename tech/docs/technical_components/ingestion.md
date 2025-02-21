@@ -116,7 +116,7 @@ A script fetches the content from these 2 sources and prepares relevant content 
 
 Results of the scrape activity are stored in table `harvest.projects`. For each project a Record control number ([RCN](https://www.wikidata.org/wiki/Property:P5755){target=_blank}) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. 
 
-At this moment in time we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. 
+Currently we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. 
 
 #### OpenAire
 

@@ -32,7 +32,7 @@ Since we're importing resources from various data and knowledge repositories, we
 
 As a preparation to extend the currently deployed metadata knowledge graph with broader domain knowledge, experimental work has been performed to enrich the knowledge graph to link it with other knowledge graphs.
 
-The following aspects have been worked on and will be furhter developed and integrated into future iterations of the SoilWise knowledge graph:
+The following aspects have been worked on and will be further developed and integrated into future iterations of the SoilWise knowledge graph:
 
 - Applying various methods using AI/ML to derive a soil health knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report _"[Soil monitoring in Europe – Indicators and thresholds for soil health assessments](https://www.eea.europa.eu/en/analysis/publications/soil-monitoring-in-europe)"_. It tests the effectiveness of various methods to generate knowledge in the form of knowledge graphs from documents, which could also benefit other AI/ML functions foreseen.
 - Establishing links between the SoilWise knowledge graph and external taxonomies and ontologies (linked data). Concepts in the SoilWise knowledge graph that (closely) match with concepts in the AGROVOC thesaurus are linked. Other candidate vocabularies in scope are ISO 11074 and GloSIS ontology. The implemented method is exemplary for the foreseen wider linking required to establish a soil health knowledge graph.

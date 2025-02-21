@@ -36,7 +36,7 @@ on infrastructure provided by **Wageningen University & Research**:
 
 on **WeTransform cloud infrastructure**:
 
-- a k8s deployment of the hale connect stack as been installed and configured. This instance can provide user management and has been integrated with the GitHub repository <https://github.com/soilwise-he/Soilwise-credentials>. The stack provides [Transformation](../technical_components/transformation.md) and [Validation](../technical_components/metadata_validation.md) capabilities.
+- a k8s deployment of the Hale Connect stack has been installed and configured. This instance can provide user management and has been integrated with the GitHub repository <https://github.com/soilwise-he/Soilwise-credentials>. The stack provides [Transformation](../technical_components/transformation.md) and [Validation](../technical_components/metadata_validation.md) capabilities.
 
 
 ## Future work - Iteration 2
