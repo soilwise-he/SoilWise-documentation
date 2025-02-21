@@ -31,6 +31,10 @@ A full list of terms used within this Technical Documentation can be found in th
 |Date|Action|
 |----|-----------|
 |25. 8. 2025|**v3.0 Released:** For _D2.2 Developed & Integrated DM components, v2 D3.2 Developed & Integrated KM components, v2_ and _D4.2 Repository infrastructure, components and APIs, v2_ purposes|
+|20. 2. 2025|Knowledge Graph component updated|
+|19. 2. 2025|Apache Solr component added|
+|19. 2. 2025|Storage updated|
+|19. 2. 2025|Catalogue updated|
 |14. 2. 2025|Metadata Validation updated|
 |13. 2. 2025|Metadata Augmentation updated|
 |7. 2. 2025|Interfaces description updated|

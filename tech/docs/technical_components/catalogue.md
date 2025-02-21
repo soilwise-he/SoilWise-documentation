@@ -48,7 +48,7 @@ Fulltext search currently supports only nesting words with AND operator.
 - filter by **soil services** (plant health, animal health)
 - filter by **soil functions** (ecosystems, climate, plants, decomposition, food production, nutrients)
 - filter by **soil processes** (organic matter accumulation)
-- filter by **soil properties** (soil fertility, soil physical peoperties, instrinsic soil properties, soil chemical properties, soil biological properties)
+- filter by **soil properties** (soil fertility, soil physical properties, instrinsic soil properties, soil chemical properties, soil biological properties)
 - filter by **soil threats** (soil pollution, desertification, soil erosion, compaction, soil degradation, risk assessment, soil organic carbon loss)
 - filter by **productivity** (soil productivity, land productivity, net biome productivity)
 - filter by **soil physical properties** (soil stability, soil structure, bulk density, aggregate stability, Soil sealing, ...)

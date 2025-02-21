@@ -96,7 +96,7 @@ A script fetches the content from these 2 sources and prepares relevant content 
 
 Results of the scrape activity are stored in table `harvest.projects`. For each project a Record control number ([RCN](https://www.wikidata.org/wiki/Property:P5755){target=_blank}) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. 
 
-At this moment in time we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. 
+Currently we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. 
 
 #### OpenAire
 
@@ -120,10 +120,6 @@ Although [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/){target=_bl
 #### ESDAC
 
 The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/){target=_blank} is an instance of Drupal CMS. We have developed a dedicated harvester to scrape html elements to extract Dublin Core metadata from ESDAC html elements. Metadata is extracted for datasets, maps (EUDASM) and documents. Incidentally a DOI is mentioned as part of the HTML, this DOI is then used as identifier for the resource, else the resource url is used as identifier. If the DOI is not known to the system yet, OpenAire will be queried to capture additional metadata on the resource.
-
-#### Impact4Soil
-
-[Impact4Soil](https://www.impact4soil.com/datasets){target=_blank} is build on a Strapi.io headless CMS. The CMS provides an API to retrieve datasets and scientific articles. The API provides minimal metadata, but fortunately in most cases a DOI is included. DOI is used to capture additional metadata from OpenAire.
 
 #### Prepsoil portal
 

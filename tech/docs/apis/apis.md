@@ -41,7 +41,7 @@ SoilWise will in the future use more APIs to interact between components as well
 
 **Solr CLient APIs:** <https://solr.apache.org/guide/8_5/client-apis.html>
 
-These APIs offers several standards to provide connections to the Solr search engine that is currently being integrated, allowing among others more advanced querying, faceted search and result ranking.  
+These APIs offers several standards to provide connections to the Solr search engine that is currently being integrated, allowing among others more advanced querying, faceted search and results ranking.  
 
 Other standardised APIs will be used if possible, such as:
 

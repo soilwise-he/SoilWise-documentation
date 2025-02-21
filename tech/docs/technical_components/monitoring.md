@@ -20,4 +20,4 @@ The SWR catalogue does currently not includes a counter script. The usage can be
 
 ## Future work
 
-Feedback the popularity of resources from usage logs into the catalogue search ranking algorythm.
+Feedback the popularity of resources from usage logs into the catalogue search ranking algorithm.

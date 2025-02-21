@@ -18,4 +18,4 @@ The mapviewer is based on the [leaflet](https://leaflet.org) javascript library 
 
 ### Future work
 
-It will be interesting to provide preview functionality to those datasets which do not have a view service configured, for those formats which support direct consumption in a javascript slient (cloud Optimized GeoTiff, GeoJson, GeoParquet, ...)
+It will be interesting to provide preview functionality to those datasets which do not have a view service configured, for those formats which support direct consumption in a javascript client (cloud Optimized GeoTiff, GeoJson, GeoParquet, ...)
