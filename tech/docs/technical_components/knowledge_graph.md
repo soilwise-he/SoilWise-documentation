@@ -21,7 +21,7 @@ In future iterations, the metadata graph will be linked/merged with this soil he
 
 The SPARQL endpoint, deployed on top of the SWR triple store, allows end users to query the SWR knowledge graph using the SPARQL query language. It is the primary access point to the [knowledge graph](../technical_components/storage.md#knowledge-graph-triple-store), both for humans, as well as for machines. Many applications and end users will instead interact with specialised assets that use the SPARQL end-point, such as the Chatbot or the API. However, the SPARQL end-point is the main source for the development of further knowledge applications and provides bespoke search to humans.
 
-Since we're importing resources from various data and knowledge repositories, we expect many duplicities and conflicting statements. Implementation of rules should be permissive, not preventing inclusion, only flag potential inconsistencies.
+Since we are importing resources from various data and knowledge repositories, we expect many duplicities and conflicting statements. Implementation of rules should be permissive, not preventing inclusion, only flag potential inconsistencies.
 
 ## Ongoing Developments
 
@@ -43,7 +43,7 @@ The following aspects have been worked on and will be further developed and inte
 The validation of the soil health knowledge graph will follow a structured two-phase methodology:
 
 #### Question Formulation
-A series of questions will be developed based on the content of the EEA report. The principle underpinning this step is that if the knowledge graph accurately encapsulates the report’s information, it should generate answers consistent with those derived directly from the source. These questions will undergo collaborative review to ensure their scientific validity and relevance within soil science.
+A serie of questions will be developed based on the content of the EEA report. The principle underpinning this step is that if the knowledge graph accurately encapsulates the report’s information, it should generate answers consistent with those derived directly from the source. These questions will undergo collaborative review to ensure their scientific validity and relevance within soil science.
 
 #### SPARQL Query Execution and Result Verification
 Validated questions will be converted into SPARQL queries and executed against the knowledge graph. The retrieved results will be aggregated and systematically cross-referenced with the answers documented in the EEA report. To ensure domain accuracy, a domain expert will perform a rigorous evaluation of the knowledge graph’s outputs, verifying their technical correctness and adherence to soil science principles.

@@ -40,7 +40,7 @@ The current setup of SWR, using the pycsw infrastructure, allows users to propos
 
 ## Ongoing Developments
 
-In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better a integration to exploit their combined power. Exploratory work that was performed in the first development cycle, but is not yet integrated into the deployment of iteration 2 include:
+In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better integration to exploit their combined power. Exploratory work that was performed in the first development cycle, but is not yet integrated into the deployment of iteration 2 include:
 
 ### Apache Lucene for Lexical Search
 
@@ -52,7 +52,7 @@ As part of the first develoment cycle of SWR, SoilWise has deployed an experimen
 
 Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the later focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
 
-Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where a for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
+Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
 
 ## Technology & Integration
 
