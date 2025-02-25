@@ -11,7 +11,7 @@ On this topic 2 components are available which monitor aspects of metadata
 - [Link liveliness assessment](#link-liveliness-assessment) validates the availability of resources described by the record 
 
 
-## Metadata completeness
+## Metadata validator
 
 !!! component-header "Info"
     **Current version:** 0.2.0
@@ -60,17 +60,17 @@ The SWR ATS is under development at <https://github.com/soilwise-he/metadata-val
 5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
 6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
 
-ETS is implemented as a [python module](https://github.com/soilwise-he/metadata-validator/blob/main/src) which is triggered from a CI-CD pipeline. 
+ETS is currently implemented through Hale Connect instance and as a locally running prototype of GeoNetwork instance.
 
-### INSPIRE validation
+#### INSPIRE validation - current setup
 
-Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. For this case, the ![INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html) was used. Validator is based on INSPIRE Abstract and Executable Test Suites and is available as a validation service. For the initial validation, INSPIRE metadata were harvested to the local instance of GeoNetwork, which allows on the fly validation of metadata using external validation services (including INSPIRE Reference Validator). PyCSW does not allow the validation of metadata as well as it does not allow users to filter data based on their origin (INSPIRE Geoportal in this particular case), metadata were dowloaded from the database and uploaded to the local instance of GeoNetwork, where the XML validation and INSPIRE validation were executed.
+Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. In total 506 metadata records were harvested from the INSPIRE Geoportal. 
 
-Total count of 506 metadata records were harvested to pyCSW from INSPIRE Geoportal. Due to INSPIRE validationm they were extracted from the database and uploaded to the GeoNetwork instance. Two validation runs were executed -- one to check consistency of metadata using XSD and Schematron (using templates for ISO 19115 standard for spatial data sets and ISO 19119 standard for services), the second for validation of metadata records using INSPIRE ETS.
+For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html){target=_blank} was used. Validator is based on INSPIRE ATS and is available as a validation service. For the initial validation, INSPIRE metadata were harvested to the local instance of GeoNetwork, which allows on the fly validation of metadata using external validation services (including INSPIRE Reference Validator). Metadata were dowloaded from the PostgreSQL database and uploaded to the local instance of GeoNetwork, where the XML validation and INSPIRE validation were executed. Two validation runs were executed: one to check consistency of metadata using XSD and Schematron (using templates for ISO 19115 standard for spatial data sets and ISO 19119 standard for services), the second for validation of metadata records using INSPIRE ETS.
 
-The results of the validation based on XSD and Schematron consistency are:
+The results of the validation based on **XSD and Schematron consistency** are:
 
-| Records type| Records count |
+| Records type| Records count (24. 2. 2025) |
 | ---         | ---           |
 | Records to process | 509 |
 | Records processed | 509 |
@@ -82,16 +82,16 @@ The results of the validation based on XSD and Schematron consistency are:
 
 Most errors here are due to the Schematron validation.
 
-INSPIRE validation results are:
+**INSPIRE validation** results are:
 
-| Records type| Records count |
+| Records type| Records count (24. 2. 2025) |
 | ---         | ---           |
 | Valid records | 402 |
 | Invalid records | 98 |
 | No rule applies | 5 |
 | Unknown | 4 |
 
-Confusion in the number of records is caused by the need of creating templates for metadata in GeoNetwork (5 of the records in the catalogue are actually metadata templates -- one template for the feature catalogue, one template for vector data, one template for geographical data, one template for map and one template for service). Moreover, two of the records harvested have the same UUID, therefore they were unified into one record.
+Confusion in the number of records is caused by the need of creating templates for metadata in GeoNetwork, 5 records from the catalogue are actually metadata templates: (1) one template for the feature catalogue, (2) one template for vector data, (3) one template for geographical data, (4) one template for map and (5) one template for service. Moreover, two of the records harvested have the same UUID, therefore they were unified into one record.
 
 ### Technology
 
