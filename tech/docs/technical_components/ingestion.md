@@ -3,6 +3,8 @@
 !!! component-header "Info"
     **Current version:** 0.2.0
 
+    **Release:** <https://doi.org/10.5281/zenodo.14923563>
+
     **Project:** [Harvesters](https://github.com/soilwise-he/harvesters)
 
 The Harvester component is dedicated to automatically harvest sources to populate SWR with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).

@@ -32,6 +32,8 @@ Metadata augmentation results are stored in a augmentation table (unless mention
 !!! component-header "Info"
     **Current version:** 0.2.0
 
+    **Release:** <https://doi.org/10.5281/zenodo.14924181>
+
     **Projects:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
 
 Keywords are an important mechanism to filter and cluster records. Similar keywords need to be clustered to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
