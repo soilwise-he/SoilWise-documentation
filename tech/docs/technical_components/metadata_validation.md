@@ -91,7 +91,7 @@ Most errors here are due to the Schematron validation.
 | No rule applies | 5 |
 | Unknown | 4 |
 
-Confusion in the number of records is caused by the need of creating templates for metadata in GeoNetwork, 5 records from the catalogue are actually metadata templates: (1) one template for the feature catalogue, (2) one template for vector data, (3) one template for geographical data, (4) one template for map and (5) one template for service. Moreover, two of the records harvested have the same UUID, therefore they were unified into one record.
+Confusion in the number of records is caused by the need of creating templates for metadata in GeoNetwork, 5 records from the catalogue are actually metadata templates: (1) one template for the feature catalogue, (2) one template for vector data, (3) one template for geographical data, (4) one template for map and (5) one template for service. Moreover, in two cases, the harvested metadata records have duplicate UUID, therefore they were unified into two records (instead of four).
 
 ### Technology
 
