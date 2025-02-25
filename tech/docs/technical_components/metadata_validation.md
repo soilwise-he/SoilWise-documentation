@@ -127,6 +127,34 @@ The API can be used to identify which records have broken links.
 
 ![Link liveliness indication](../_assets/images/link_liveliness.png)
 
+### INSPIRE validation
+
+Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. For this case, the ![INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html) was used. Validator is based on INSPIRE Abstract and Executable Test Suites and is available as a validation service. For the initial validation, INSPIRE metadata were harvested to the local instance of GeoNetwork, which allows on the fly validation of metadata using external validation services (including INSPIRE Reference Validator). PyCSW does not allow the validation of metadata as well as it does not allow users to filter data based on their origin (INSPIRE Geoportal in this particular case), metadata were dowloaded from the database and uploaded to the local instance of GeoNetwork, where the XML validation and INSPIRE validation were executed.
+
+Total count of 506 metadata records were harvested to pyCSW from INSPIRE Geoportal. Due to INSPIRE validationm they were extracted from the database and uploaded to the GeoNetwork instance. Two validation runs were executed -- one to check consistency of metadata using XSD and Schematron (using templates for ISO 19115 standard for spatial data sets and ISO 19119 standard for services), the second for validation of metadata records using INSPIRE ETS.
+
+The results of the validation based on XSD and Schematron consistency are:
+
+| Records to process | 509 |
+| Records processed | 509 |
+| Records unchanged | 0 |
+| Records not found | 0 |
+| Records with errors(s) | 487 |
+| Records with process not defined in their standard |  |
+| Not editable records | |
+
+Most errors here are due to the Schematron validation.
+
+INSPIRE validation results are:
+
+| Valid records | 402 |
+| Invalid records | 98 |
+| No rule applies | 5 |
+| Unknown | 4 |
+
+Confusion in the number of records is caused by the need of creating templates for metadata in GeoNetwork (5 of the records in the catalogue are actually metadata templates -- one template for the feature catalogue, one template for vector data, one template for geographical data, one template for map and one template for service). Moreover, two of the records harvested have the same UUID, therefore they were unified into one record.
+
+
 ### Technology
    * **Python**
         Used for the linkchecker integration, API development, and database interactions
