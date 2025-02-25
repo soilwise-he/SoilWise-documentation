@@ -70,18 +70,22 @@ Total count of 506 metadata records were harvested to pyCSW from INSPIRE Geoport
 
 The results of the validation based on XSD and Schematron consistency are:
 
+| Records type| Records count |
+| ---         | ---           |
 | Records to process | 509 |
 | Records processed | 509 |
 | Records unchanged | 0 |
 | Records not found | 0 |
 | Records with errors(s) | 487 |
 | Records with process not defined in their standard |  |
-| Not editable records | |
+| Not editable records | 0 |
 
 Most errors here are due to the Schematron validation.
 
 INSPIRE validation results are:
 
+| Records type| Records count |
+| ---         | ---           |
 | Valid records | 402 |
 | Invalid records | 98 |
 | No rule applies | 5 |
