@@ -100,9 +100,9 @@ SoilWise Catalogue currently supports 3 types of preview:
 - Display of a graphic preview (thumbnail) in case it is advertised in metadata.
 - Map preview of OGC:WMS services advertised in metadata enables standard simple user interaction (zoom, changing layers).
 
-## Display results of metadata augmentation and interlinking
+## Display results of metadata augmentation 
 
-- _TO DO, e.g. information about sources, HE project fundings_
+Results of metadata augmentation are stored on a dedicated database table. The results are merged into the harvested content during publication to the catalogue. At the moment it is not possible to differentiate between original and augmented content. For next iterations we aim to make this distinction more clear.
 
 ## Data download (AS IS)
 
@@ -118,29 +118,24 @@ In order to interact with the many relevant data communities, Soilwise aims to s
 
 ### Catalogue Service for the Web
 
-Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC. 
+Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC. <https://repository.soilwise-he.eu/cat/csw>
 
 ### OGC API - Records
 
-OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community. 
+OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community. <https://repository.soilwise-he.eu/cat/openapi>
 
-### Protocol for metadata harvesting
+### Protocol for metadata harvesting (oai-pmh)
 
-The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.
+The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories. <https://repository.soilwise-he.eu/cat/oaipmh>
 
-### STAC
-_TO DO_
-
-### OpenSearch
-_TO DO_
-
-### Schema.org annotiations
+### Schema.org annotations
 
 Annotiations using [schema.org/Dataset](https://schema.org/Dataset) ontology enable search engines to harvest metadata in a structured way.
+<https://validator.schema.org/#url=https%3A%2F%2Frepository.soilwise-he.eu%2Fcat%2Fcollections%2Fmetadata%3Amain%2Fitems%2F00682004-c6b9-4c1d-8b40-3afff8bbec69>
 
 ## User Engagement
 
-Collecting users feedback provides an important channel on the usability of described resources. Users can even support each other by sharing the feedback as 'questions and answers'. For this purpose every display of a record is concluded with a feedback section where users can interact about the resource. Users need to authenticate to provide feedback.
+Collecting users feedback provides an important channel on the usability of described resources. Users can even support each other by sharing the feedback as 'questions and answers'. For this purpose every display of a record is concluded with a feedback section where users can interact about the resource. Users need to authenticate to provide feedback. This aspect has been implemented as [giscuss widget](https://giscus.app/), which used [github discussion](https://docs.github.com/en/discussions) as a backend.
 
 ### Future work
 
@@ -148,10 +143,9 @@ Notify the resource owners of incoming feedback, so they can answer any question
 
 ## Technology 
 
-[pycsw](https://pycsw.org){target=_blank}  is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OpenSearch](https://opensearch.org/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, [SRU](https://developers.exlibrisgroup.com/rosetta/integrations/standards/sru/){target=_blank}), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
+[pycsw](https://pycsw.org){target=_blank}  is a catalogue component offering an HTML frontend and query interface using various standardised catalogue APIs to serve multiple communities. Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
 
 pycsw is deployed as a docker container from the [geopython/pycsw docker hub repository](https://hub.docker.com/r/geopython/pycsw){target=_blank}. A beta release of the upcoming v3.0 is used. Its configuration is updated at deployment. Some layout templates are overwritten at deployment to facilitate a tailored HTML view. The tailored html view is stored as part of the kuberneters deployment configuration.
-
 
 ## Integration
 
