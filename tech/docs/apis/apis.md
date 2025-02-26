@@ -12,7 +12,7 @@ The API allows query access to the SoilWise knowledge graph, thus offering query
 
 **Spatio Temporal Asset Catalog (STAC):** <https://repository.soilwise-he.eu/cat/stac/openapi>
 
-**Catalog service for the Web (CSW):** <https://repository.soilwise-he.eu/cat/openapi>
+**Catalog service for the Web (CSW):** <https://repository.soilwise-he.eu/cat/csw>
 
 **Protocol for Metadata Harvesting (OAI-PMH):** <https://repository.soilwise-he.eu/cat/oaipmh>
 

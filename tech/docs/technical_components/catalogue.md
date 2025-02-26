@@ -3,7 +3,7 @@
 !!! component-header "Info"
     **Current version:** 0.2.0
 
-    **Project:** [pycsw](https://github.com/soilwise-he/pycsw)
+    **Project:** [Catalogue UI](https://github.com/soilwise-he/catalogue-ui); [pycsw](https://github.com/geopython/pycsw)
 
     **Access point:** <https://repository.soilwise-he.eu/>
     
