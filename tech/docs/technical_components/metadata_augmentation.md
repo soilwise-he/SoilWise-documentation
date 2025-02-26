@@ -43,7 +43,7 @@ Analyses existing keywords on a metadata record. Two cases can be identified:
 - If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. 
 - If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). 
 
-To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain derived from agrovoc, gemet and iso11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
+To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain derived from Agrovoc, Gemet and ISO11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
 
 For metadata records which have not been analysed yet (in that iteration), the module extracts the keywords, for each keyword an analyses is made if it matches any of the prefered keywords, the prefered keyword is added to the augmentation results for that record. For string matching a fuzzy match algorithm is used, requiring a 90% match (configurable). Translations are matched using the metadata language as indicated in the record.
 
