@@ -142,8 +142,8 @@ The link liveliness  privides the following functions:
     - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank}
     - Extracts and evaluates URLs from catalogue items 
 2. **Link Validation**
-    - Evaluates the validity of links to external sources and within the repository
-    - Checks if metadata accurately represents the source
+    - Returns HTTP status codes for each link, along with other important information such as the parent URL, any warnings, and the date and time of the test.
+    - Additionally, the tool enhances link analysis by identifying various metadata attributes, including file format type (e.g., image/jpeg, application/pdf, text/html), file size (in bytes), and last modification date. This provides users with valuable insights about the resource before accessing it.
 3. **Support for OGC service links**
     - Identifies and properly handles OGC service links ([WMS](https://www.ogc.org/standard/wms/){target=_blank}, [WFS](https://www.ogc.org/standard/wfs/){target=_blank}, [CSW](https://www.ogc.org/standard/cat/){target=_blank}, [WCS](https://www.ogc.org/standard/wcs/){target=_blank} etc.) before assessing them
 4. **Health Status Tracking**
