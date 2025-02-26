@@ -59,7 +59,7 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 Components used:
 
 - Virtuoso (version 07.20.3239)
-- PostgreSQL (release 12.13)
+- PostgreSQL (release 12.22)
 - Solr (release 9.8.0)
 
 
