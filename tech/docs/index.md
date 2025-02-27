@@ -30,7 +30,7 @@ A full list of terms used within this Technical Documentation can be found in th
 
 |Date|Action|
 |----|-----------|
-|27. 2. 2025|**v3.0 Released:** For _D2.2 Developed & Integrated DM components, v2 D3.2 Developed & Integrated KM components, v2_ and _D4.2 Repository infrastructure, components and APIs, v2_ purposes|
+|27. 2. 2025|**v2.1 Released:** For _D2.2 Developed & Integrated DM components, v2 D3.2 Developed & Integrated KM components, v2_ and _D4.2 Repository infrastructure, components and APIs, v2_ purposes|
 |26. 2. 2025|Link liveliness assessment tool updated|
 |25. 2. 2025|Metadata Validation updated|
 |20. 2. 2025|Knowledge Graph component updated|
