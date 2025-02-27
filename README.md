@@ -7,6 +7,9 @@ A fixed production version (for delivery) is published at: https://soilwise-docu
 
 A fixed **1st prototype version** (for delivery) is published at: https://prototype-1-0.soilwise-documentation.pages.dev/
 
+A fixed **2st prototype version** (for delivery) is published at: https://prototype-1-0.soilwise-documentation.pages.dev/
+
+
 ## Knowledge Base
 
 The knowledge-base repository serves for merging documentation from all desired technical components and displaying it at one place.
