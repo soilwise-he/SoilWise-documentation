@@ -5,7 +5,7 @@
 
     **Project:** [Soil health knowledge graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
 
-    **Access point:** SWR SPARQL endpoint: <https://sparql.soilwise-he.containers.wur.nl/sparql>
+    **Access point:** SWR SPARQL endpoint: <https://repository.soilwise-he.eu/sparql>
 
 SoilWise develops and implements a knowledge graph linking the knowledge captured in harvested and augmented metadata with various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are also implemented as RDF graphs. Linking such graphs into a harmonized SWR knowledge graph allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
 

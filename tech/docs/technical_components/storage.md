@@ -3,7 +3,7 @@
 !!! component-header "Info"
     **Current version:** Postgres release 12.2; Virtuoso release 07.20.3239
 
-    **Access point:** Triple Store (SWR SPARQL endpoint) <https://sparql.soilwise-he.containers.wur.nl/sparql>
+    **Access point:** Triple Store (SWR SPARQL endpoint) <https://repository.soilwise-he.eu/sparql>
 
 The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 

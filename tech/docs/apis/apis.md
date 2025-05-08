@@ -4,7 +4,7 @@
 
 These APIs allow discovery of (meta)data and knowledge. Most of them are mostly meant to be used as part of SWR back-end mechanisms to access or harvest remote data and knowledge resources or to process these resources internally. However, some of them are also relevant for end user discovery of content from SWR. Those user facing discovery APIs are used in user interface components developed by SoilWise, but could also be employed for integration with the EU Soil Observatory and other existing systems that want to make use of SWR.
 
-**SPARQL:** <https://sparql.soilwise-he.containers.wur.nl/sparql/>
+**SPARQL:** <https://repository.soilwise-he.eu/sparql/>
 
 The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases.
 
