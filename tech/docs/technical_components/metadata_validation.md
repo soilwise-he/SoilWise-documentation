@@ -16,6 +16,8 @@ On this topic 2 components are available which monitor aspects of metadata
 !!! component-header "Info"
     **Current version:** 0.2.0
 
+    **Technology**: [GeoNetwork](https://geonetwork-opensource.org/), Python
+
     **Release:** <https://doi.org/10.5281/zenodo.14924543>
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
@@ -125,6 +127,8 @@ Validation runs every week as a CI-CD pipeline on records which have not been va
 
 !!! component-header "Info"
     **Current version:** 1.1.4
+
+    **Technology:** Python, [FastAPI](https://fastapi.tiangolo.com/)
 
     **Release:** <https://doi.org/10.5281/zenodo.14923790>
 

@@ -4,6 +4,8 @@
 
     **Current version:** 5.3
 
+    **Technology:** [Hale Studio](https://wetransform.to/halestudio/)
+
     **Project:** [Hale Studio](https://github.com/halestudio/hale)
 
 These components make sure that data is interoperable, i.e. provided to agreed-upon formats, structures and semantics. They are used to ingest data and transform it into common standard data, e.g. in the central SWR format for soil.

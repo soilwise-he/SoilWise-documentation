@@ -3,6 +3,8 @@
 !!! component-header "Info"
     **Current version:** 0.2.0 
 
+    **Technology:** [RDF](https://www.w3.org/RDF/)
+
     **Project:** [Soil health knowledge graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
 
     **Access point:** SWR SPARQL endpoint: <https://repository.soilwise-he.eu/sparql>
@@ -29,6 +31,8 @@ Since we are importing resources from various data and knowledge repositories, w
 
 !!! component-header "Info"
     **Access point:** <https://raw.githubusercontent.com/soilwise-he/soil-health-knowledge-graph/refs/heads/main/soil_health_KG.ttl>
+
+    **Technology:** [RDF](https://www.w3.org/RDF/)
 
 As a preparation to extend the currently deployed metadata knowledge graph with broader domain knowledge, experimental work has been performed to enrich the knowledge graph to link it with other knowledge graphs.
 

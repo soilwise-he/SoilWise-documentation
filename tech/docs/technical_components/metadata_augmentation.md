@@ -32,6 +32,8 @@ Metadata augmentation results are stored in a augmentation table (unless mention
 !!! component-header "Info"
     **Current version:** 0.2.0
 
+    **Technology:** Python 
+
     **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
     **Projects:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
@@ -64,6 +66,8 @@ The process runs as a CI-CD pipeline at dayly intervals.
 
 !!! component-header "Info"
     **Current version:** 0.2.0
+
+    **Technology:** Python
 
     **Projects:** [Translation](https://github.com/soilwise-he/metadata-augmentation/tree/main/translation)
 

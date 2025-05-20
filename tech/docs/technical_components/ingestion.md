@@ -3,6 +3,8 @@
 !!! component-header "Info"
     **Current version:** 0.2.0
 
+    **Technology:** Git pipelines
+
     **Release:** <https://doi.org/10.5281/zenodo.14923563>
 
     **Project:** [Harvesters](https://github.com/soilwise-he/harvesters)
