@@ -12,3 +12,4 @@ nav:
     - knowledge_graph.md
     - natural_language_querying.md
     - user_management.md
+    - monitoring.md

@@ -16,6 +16,7 @@ This section lists technical components for building the SoilWise Repository as 
 8. [Knowledge Graph](knowledge_graph.md)
 9. [Natural Language Querying](natural_language_querying.md)
 11. [User Management and Access Control](user_management.md)
+12. [Monitoring System Usage](monitoring.md)
 
 ![SWR Architecture](../_assets/images/High-level overview.png)
 _Fig. 1: A high-level overview of SoilWise Repository architecture_

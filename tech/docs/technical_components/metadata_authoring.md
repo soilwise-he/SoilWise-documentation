@@ -2,7 +2,7 @@
 
 !!! component-header "Info"
     
-    **Project:** [Soilinfohub](https://github.com/soilwise-he/soilinfohub)\
+    **Project:** [Soilinfohub](https://github.com/soilwise-he/soilinfohub)
 
     **Technology:** Git
     
