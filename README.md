@@ -3,11 +3,11 @@
 ## Technical Documentation
 A **living preview** version is published at: https://main.soilwise-documentation.pages.dev/
 
-A fixed production version (for delivery) is published at: https://soilwise-documentation.pages.dev/
+A fixed production version (for D1.3 architecture delivery) is published at: https://soilwise-documentation.pages.dev/
 
-A fixed **1st prototype version** (for delivery) is published at: https://prototype-1-0.soilwise-documentation.pages.dev/
+A fixed **1st prototype version** (for SWR prototype delivery) is published at: https://prototype-1-0.soilwise-documentation.pages.dev/
 
-A fixed **2st prototype version** (for delivery) is published at: https://prototype-2-0.soilwise-documentation.pages.dev/
+A fixed **2st prototype version** (for SWR prototype delivery) is published at: https://prototype-2-0.soilwise-documentation.pages.dev/
 
 
 ## Knowledge Base
