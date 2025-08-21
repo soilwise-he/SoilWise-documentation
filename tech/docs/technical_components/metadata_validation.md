@@ -7,31 +7,24 @@ In terms of metadata, SoilWise Repository aims for the approach to balance harve
 
 On this topic 2 components are available which monitor aspects of metadata
 
+
 - [Metadata completeness](#metadata-completeness) calculates a score based on selected populated metadata properties
+- [Metadata INSPIRE complience](#metadata-complience)
 - [Link liveliness assessment](#link-liveliness-assessment) validates the availability of resources described by the record 
 
 
-## Metadata validator
+## Metadata completeness
 
 !!! component-header "Info"
     **Current version:** 0.2.0
 
-    **Technology**: [GeoNetwork](https://geonetwork-opensource.org/), Python
-
-    **Release:** <https://doi.org/10.5281/zenodo.14924543>
+    **Technology**: Python
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
 
     **Access point:** Postgres database
 
-### Metadata structure validation
-
-Before validation, metadata is harmonized to a common model. If harmonization fails for some reason, the record is not ingested and validated.
-The error is logged, so an administrator is able to follow up.
-
-### Metadata completeness indication
-
-The indication calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.
+The software calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.
 
 Completeness is evaluated against a set of metadata elements for each harmonized metadata record in the SWR platform. Records for which harmonisation fails are not evaluated (nor imported).
 
@@ -66,7 +59,18 @@ The SWR ATS is under development at <https://github.com/soilwise-he/metadata-val
 
 ETS is currently implemented through Hale Connect instance and as a locally running prototype of GeoNetwork instance.
 
-#### INSPIRE validation - current setup
+## Metadata INSPIRE complience
+
+!!! component-header "Info"
+    **Current version:** 0.2.0
+
+    **Technology**: [Esdin Test Framework (ETF)](https://etf-validator.net/), Python
+
+    **Project:** [Metadata validator](https://inspire.ec.europa.eu/validator/home/index.html)
+
+    **Access point:** Postgres database
+
+Complience to a given standard is an indicator for (meta)data quality. This indicator is measured on datasets claiming to confirm to the INSPIRE regulation. This validation is performed on non augmented, non harmonised metadata records. The observed indicator is stored on the augmentation table. The Esdin Test Framework is used combined with metadata validation rules from the INSPIRE community. 
 
 Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. In total 506 metadata records were harvested from the INSPIRE Geoportal. 
 
@@ -105,8 +109,8 @@ Confusion in the number of records is caused by the need of creating templates f
         Primary database for storing and managing link information
    * **CI/CD**
         Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
-   * **GeoNetwork**
-        Opensource Catalogue application to manage spatially referenced sources. It provides metadata editing and search, including validation of records.  
+   * **Esdin Test Framework**
+        Opensource validation framework, commonly used in INSPIRE.
      
 Results of metadata validation are stored on PostgreSQL database, table is called validation in a schema validation.
 
@@ -117,11 +121,6 @@ Results of metadata validation are stored on PostgreSQL database, table is calle
 Validation runs every week as a CI-CD pipeline on records which have not been validated for 2 weeks. This builds up a history to understand validation results over time (consider that both changes in records, as well as the ETS itself may cause differences in score).
 
 
-
-### Future work
-
-- Extend the ATS to JRC and user needs.
-- Extend ETS based on ATS
 
 ## Link liveliness assessment 
 

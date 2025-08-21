@@ -1,12 +1,5 @@
 # Repository Storage
 
-!!! component-header "Info"
-    **Current version:** Postgres release 12.2; Virtuoso release 07.20.3239
-
-    **Technology:** Postgres, Virtuoso
-
-    **Access point:** Triple Store (SWR SPARQL endpoint) <https://repository.soilwise-he.eu/sparql>
-
 The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 
 1. [A relational database management system](#postgress-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core metadata of both data and knowledge assets.
@@ -16,6 +9,13 @@ The SoilWise repository aims at merging and seamlessly providing different types
 ## Functionality
 
 ### PostgreSQL RDBMS: storage of raw and augmented metadata
+
+!!! component-header "Info"
+    **Current version:** Postgres release 12.2; 
+
+    **Technology:** Postgres
+
+    **Access point:** SQL
 
 A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
 The catalogue also queries the Postgress database. 
@@ -28,6 +28,14 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 
 ### Virtuoso Triple Store: storage of SWR knowledge graph
 
+!!! component-header "Info"
+    **Current version:** Virtuoso release 07.20.3239
+
+    **Technology:** Virtuoso
+
+    **Access point:** Triple Store (SWR SPARQL endpoint) <https://repository.soilwise-he.eu/sparql>
+
+
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
 A Triple Store is selected as a parallel storage because it offers several capabilites 
@@ -36,15 +44,22 @@ A Triple Store is selected as a parallel storage because it offers several capab
 - It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
 - Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge.
 
-### Git: User enhanced metadata
+### Git: storage of code and configuration
 
-The current setup of SWR, using the pycsw infrastructure, allows users to propose metadata enhancements. Such enhancements are managed in Git at: <https://github.com/soilwise-he/soilinfohub/discussions>.
+!!! component-header "Info"
+    **Technology:** Gitlab and GitHub
+
+    **Access point:** https://github.com/soilwise-he
+
+Git is used to store versions of Soilwise code, documentation and configuration. It is also used for issue and release management and automated pipelines for deployment, augmentation, validation and harvesting external sources.
+
+<!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
 
 ## Ongoing Developments
 
 In the next iteration of the SWR development, the currently deployed storage options will be extended to support new features and functions. Such extensions can improve performance and usability. Moreover, we expect that the integration of AI/ML based functions will require additional types of storage and better integration to exploit their combined power. Exploratory work that was performed in the first development cycle, but is not yet integrated into the deployment of iteration 2 include:
 
-### Apache Lucene for Lexical Search
+### Apache SOLR and Apache Lucene for Lexical Search
 
 A search engine, ingesting data from the RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
 
@@ -66,7 +81,7 @@ Components used:
 
 
 
-<!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
+
 
 The SoilWise Repository is expected to fulfil the following functions:
 
