@@ -66,11 +66,14 @@ documentation:Datacite
 documentation:Datacite metadata scheme
 :   [Datacite metadata schema](https://schema.datacite.org/){target=_blank} a datamodel for metadata for scientific resources
 
+documentation:Destination Earth (DestinE)
+:   [Destination Earth](https://destination-earth.eu/) is an initiative of the European Commission to develop a digital model of the Earth to model, monitor and simulate natural phenomena, hazards and the related human activities. The features assist users in designing accurate and actionable adaptation strategies and mitigation measures.
+
 documentation:Digital exchange of soil-related data
 :   Digital exchange of soil-related data (ISO 28258:2013) presents a conceptual model of a common understanding of what soil profile data are
 
 documentation:Digital soil mapping
-:   Digital soil mapping is the creation and the population of a geographically referenced soil databases generated at a given resolution by using field and laboratory observation methods coupled with environmental data through quantitative relationships (source: [wikipedia](https://en.wikipedia.org/wiki/Digital_soil_mapping){target=_blank})
+:   Digital soil mapping or pedometric mapping is the creation of soil maps by using field and laboratory observation methods coupled with environmental data through quantitative relationships (source: [wikipedia](https://en.wikipedia.org/wiki/Digital_soil_mapping){target=_blank})
 
 documentation:Discovery service
 :   Discovery service is a concept from [INSPIRE](https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/discovery){target=_blank} indicating a service type which enables discovery of resources (search and find). Typically implemented as CSW.
@@ -87,8 +90,13 @@ documentation:Encoding
 documentation:ESDAC
 :   [ESDAC](https://esdac.jrc.ec.europa.eu/){target=_blank} thematic centre for soil related data in Europe
 
-documentation:EUSO
-:   [EUSO](https://joint-research-centre.ec.europa.eu/eu-soil-observatory-euso_en){target=_blank} European Soil Observatory
+documentation:EU Login
+:   [EU Login](https://webgate.ec.europa.eu/ern/userguide/Content/A.HOW%20TO%20JOIN/Register%20on%20EU-Login.htm) is the European 
+Commission's user authentication service. It allows authorised users to access a wide range of Commission web services, using a 
+single email address and password 
+
+documentation:European Soil Observatory (EUSO)
+:   [European Soil Observatory](https://joint-research-centre.ec.europa.eu/eu-soil-observatory-euso_en){target=_blank} is a a dynamic and inclusive platform that aims to support policymaking, by facilitating soil knowledge and data flows, supporting EU Research & Innovation on soils and raising societal awareness of the value of soils
 
 documentation:GDAL OGR
 :   [GDAL and OGR](https://gdal.org){target=_blank} are software packages widely used to interact with a variety of spatial data formats
@@ -117,7 +125,13 @@ documentation:GLOSIS Codelists
 documentation:Glosolan
 :   [Glosolan](https://www.fao.org/global-soil-partnership/glosolan){target=_blank} network to strengthen the capacity of laboratories in soil analysis and to respond to the need for harmonizing soil analytical data
 
-documentation:HALE
+documentation:Green Deal
+:   A program of the European commission setting out a plan to transform Europe’s economy, energy, transport, and industries for a more sustainable future (source: [EC](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en)). 
+
+documentation:Green Deal DataSpace (GDDS)
+:   [Green Deal Dataspace](https://green-deal-dataspace.eu/) is a German association aiming to build an open ecosystem for resilience and sustainablility, towards the optimization of circular economy and transparency of supply chains.
+
+documentation:Humboldt Alignment Editor (HALE)
 :   [Humboldt Alignment Editor](https://github.com/halestudio/hale){target=_blank} (HALE) java based desktop software to compose and apply a data transformation to data
 
 documentation:Harmonization
@@ -165,6 +179,12 @@ documentation:Metadata record
 documentation:Metadata source
 :   Metadata source/provider is a provider of metadata.
 
+documentation:Mission soil
+:   Mission Soil is a research and innovation programme of the European Commision, with a strong social science component, putting in place an effective network of 100 living labs and lighthouses to co-create knowledge, test solutions and demonstrate their value in real-life conditions developing a harmonised framework for soil monitoring in Europe, and raising awareness on the vital importance of soils (source: [EC research and innovation](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/soil-deal-europe_en))
+
+documentation:Mission Soil implementation platform (MIP)
+:   Mission Implementation Platform is a tool to discover Mission Soil, progress, funded projects, activities and tools to promote cooperation between projects and Mission Soil communities, funding opportunities, news, and events
+
 documentation:NLP
 :   Natural Language Processing is an interdisciplinary subfield of computer science and artificial intelligence, primarily concerned with providing computers with the ability to process data encoded in natural language. It is closely related to information retrieval, knowledge representation and computational linguistics.
 
@@ -177,8 +197,8 @@ documentation:OGC API
 documentation:Ontology
 :   Ontology is a formal representation of the entities in a knowledge graph. Ontologies and knowledge graphs can be expressed in a similar manner and they are closely related. Ontologies can be seen as the (semantic) data model defining classes, relationships and attributes, while knowledge graphs contain the real data according to the (semantic) data model.
 
-documentation:Persistent identifier
-:   Persistent identifier is a long-lasting reference to a digital object.
+documentation:Persistent identifier (PID)
+:   Persistent identifier is a long-lasting reference to a (digital) object (source [wikipedia](https://en.wikipedia.org/wiki/Persistent_identifier){target=_blank}). In academia, various systems exist which facilitate the creation of PIDs, such as DOI (for publications), ORCID (for authors), and ROR (for organisations). 
 
 documentation:Product backlog
 :   Product backlog is the document where user stories/requirements are gathered with their acceptance criteria, and prioritized.
@@ -195,11 +215,14 @@ documentation:REA
 documentation:Relational model
 :   Relational model an approach to managing data using a structure and language consistent with first-order predicate logic (source: [wikipedia](https://en.wikipedia.org/wiki/Relational_model){target=_blank})
 
-documentation:RDF
-:   [Resource Description Framework](https://www.w3.org/RDF/){target=_blank} (RDF) a standard model for data interchange on the Web
+documentation:Resource Description Framework (RDF)
+:   [Resource Description Framework](https://www.w3.org/RDF/){target=_blank} (RDF) a standard model for data interchange on the Web. Common serialisations of RDF are turtle, xml/rdf and json-ld.
 
 documentation:Representational state transfer
 :   Representational state transfer (REST) a set of guidelines for creating stateless, reliable web APIs (source: [wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer){target=_blank})
+
+documentation:Reportnet
+:   [Reportnet](https://reportnet.europa.eu/) is the e-Reporting platform for reporting environmental and climate data to the European Environment Agency (EEA). The platform embraces the strategic goals of the European Commission's Green Deal and Digital Strategy and hosts reporting tasks on behalf of EEA and the Commission.
 
 documentation:Requirements
 :   Requirements are the capabilities of an envisioned component of the repository which are classified as ‘must have’, or ‘nice to have’.
@@ -207,11 +230,14 @@ documentation:Requirements
 documentation:Rolling plan
 :   Rolling plan is a methodology for considering the internal and external developments that may generate changes to the SoilWise Repository design and development. It keeps track of any developments and changes on a technical, stakeholder group level or at EUSO/JRC.
 
-documentation:SensorThings API
-:   [SensorThingsAPI](https://www.ogc.org/standard/sensorthings/){target=_blank} (STA) is a formalised protocol to exchange sensor data and tasks between IoT devices, maintained at Open Geospatial Consortium.
+documentation:SensorThings API (STA)
+:   [SensorThingsAPI](https://www.ogc.org/standard/sensorthings/){target=_blank} is a formalised protocol to exchange sensor data and tasks between IoT devices, maintained at Open Geospatial Consortium. The protocol can also be used to exchange field and laboratory observations on soils and soil samples. 
 
-documentation:Sensor Observation Service
-:   [Sensor Observation Service](https://www.ogc.org/standard/sos/){target=_blank} (SOS) is a formalised protocol to exchange sensor data between entities, maintained at Open Geospatial Consortium.
+documentation:Sensor Observation Service (SOS)
+:   [Sensor Observation Service](https://www.ogc.org/standard/sos/){target=_blank} is a formalised protocol to exchange sensor data between entities, maintained at Open Geospatial Consortium.
+
+documentation:Single Sign-On (SSO)
+:   Single Sign On is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems (source: [wikipedia](https://en.wikipedia.org/wiki/Single_sign-on)).
 
 documentation:Sprint
 :   Sprint is a small timeframe during which tasks have been defined.
@@ -222,14 +248,29 @@ documentation:Sprint backlog
 documentation:Soil classification
 :   Soil classification deals with the systematic categorization of soils based on distinguishing characteristics as well as criteria that dictate choices in use (source: [wikipedia](https://en.wikipedia.org/wiki/Soil_classification){target=_blank})
 
-documentation:Soilgrids
-:   [Soilgrids](https://www.isric.org/explore/soilgrids){target=_blank} a system for global digital soil mapping that uses many profile data and machine learning methods to predict the spatial distribution of soil properties across the globe
+documentation:Soil health
+:   Soil health is a state of a soil meeting its range of ecosystem functions as appropriate to its environment. In more colloquial terms, the health of soil arises from favorable interactions of all soil components (living and non-living) that belong together, as in microbiota, plants and animals. It is possible that a soil can be healthy in terms of ecosystem functioning but not necessarily serve crop production or human nutrition directly, hence the scientific debate on terms and measurements.(source: [wikipedia](https://en.wikipedia.org/wiki/Soil_health))
 
-documentation: SoilWise Use cases
+documentation:Observed property
+:   An observed property identifies the phenomenon or characteristic that is being measured or observed in a dataset, such as "sea surface height" or "temperature" (source: [OGC](https://docs.ogc.org/is/15-078r6/15-078r6.html#30))
+
+documentation:Soil health indicator
+:   Single characteristic that represents a sustainability effect, whether benefit or negative impact, which may be compared across alternative remediation strategies, comprising one or more remediation (3.380) techniques and/or institutional controls, to evaluate their relative performance (source: [iso11074](https://www.iso.org/obp/ui#iso:std:iso:11074:ed-3:v1:en:term:3.219))
+
+documentation:Soil map
+:   Soil maps are geographical representations showing diversity of soil types or soil properties (soil pH, textures, organic matter, depths of horizons etc.) in an area of interest. It is typically the result of a soil survey inventory, i.e. soil survey. (source: [wikipedia](https://en.wikipedia.org/wiki/Soil_map){target=_blank})
+
+documentation:Soil physical property
+:   The physical properties of soil, such as texture, structure, bulk density, porosity, consistency, temperature, colour and resistivity. (source: [wikipedia](https://en.wikipedia.org/wiki/Physical_properties_of_soil))
+
+documentation:SoilWise Use cases
 :   The SoilWise use cases are described in the Grant Agreement to understand the needs from the stakeholder groups (users). Each use case provides user stories epics.
 
 documentation:Task
 :   Task is the smallest segment of work that must be done to complete a user story/requirement.
+
+documentation:Traditional soil mapping
+:   Traditional soil mapping is the creation of soil maps of spatial distribution of soil properties and soil bodies, by inferring from mental models, leading to manual delineations (source: [wikipedia](https://en.wikipedia.org/wiki/Pedometric_mapping))
 
 documentation:UML
 :   Unified Modeling Language (UML) a general-purpose modeling language that is intended to provide a standard way to visualize the design of a system (source: [wikipedia](https://en.wikipedia.org/wiki/Unified_Modeling_Language){target=_blank})
@@ -252,17 +293,14 @@ documentation:View service
 documentation:Web service
 :   Web service a service offered by a device to another device, communicating with each other via the Internet (source: [wikipedia](https://en.wikipedia.org/wiki/Web_service){target=_blank})
 
-documentation:WOSIS
-:   [WOSIS](https://www.isric.org/explore/wosis){target=_blank} is a global dataset, maintained at ISRIC, aiming to serve the user with a selection of standardised and ultimately harmonised soil profile data
+documentation:Web Map service (WMS)
+:   [Web Map service](https://www.ogc.org/standard/wms/){target=_blank} is a formalised protocol to exchange geospatial data represented as images
 
-documentation:WMS
-:   Web Map service ([WMS](https://www.ogc.org/standard/wms/){target=_blank}) is a formalised protocol to exchange geospatial data represented as images
+documentation:Web Feature Service (WFS)
+:   [Web Feature Service](https://www.ogc.org/standard/wfs/){target=_blank} is a formalised protocol to exchange geospatial vector data
 
-documentation:WFS
-:   Web Feature Service ([WFS](https://www.ogc.org/standard/wfs/){target=_blank}) is a formalised protocol to exchange geospatial vector data
+documentation:Web Coverage Service (WCS)
+:   [Web Coverage Service](https://www.ogc.org/standard/wcs/){target=_blank}  is a formalised protocol to exchange geospatial grid data
 
-documentation:WCS
-:   Web Coverage Service ([WCS](https://www.ogc.org/standard/wcs/){target=_blank})  is a formalised protocol to exchange geospatial grid data
-
-documentation:XSD
-:   XML Schema Definition (XSD) recommendation how to formally describe the elements in an Extensible Markup Language (XML) document (source: [wikipedia](https://en.wikipedia.org/wiki/XML_Schema_(W3C)){target=_blank})
+documentation:XML Schema Definition (XSD)
+:   XML Schema Definition recommendation how to formally describe the elements in an Extensible Markup Language (XML) document (source: [wikipedia](https://en.wikipedia.org/wiki/XML_Schema_(W3C)){target=_blank})
