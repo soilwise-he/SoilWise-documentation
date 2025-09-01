@@ -78,28 +78,28 @@ For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/va
 
 The results of the validation based on **XSD and Schematron consistency** are:
 
-| Records type| Records count (24. 2. 2025) |
-| ---         | ---           |
-| Records to process | 509 |
-| Records processed | 509 |
-| Records unchanged | 0 |
-| Records not found | 0 |
-| Records with errors(s) | 487 |
-| Records with process not defined in their standard |  |
-| Not editable records | 0 |
+| Records type| Records count (24. 2. 2025) | Records count (31. 8. 2025)|
+| ---         | ---           | ---           
+| Records to process | 509 | 1016 |
+| Records processed | 509 | 1016 |
+| Records unchanged | 0 | 0 |
+| Records not found | 0 | 0 |
+| Records with errors(s) | 487 | 969 |
+| Records with process not defined in their standard |  |  |
+| Not editable records | 0 | 0 |
 
 Most errors here are due to the Schematron validation.
 
 **INSPIRE validation** results are:
 
-| Records type| Records count (24. 2. 2025) |
-| ---         | ---           |
-| Valid records | 402 |
-| Invalid records | 98 |
-| No rule applies | 5 |
-| Unknown | 4 |
+| Records type| Records count (24. 2. 2025) | Records count (31. 8. 2025)|
+| ---         | ---           | ---          
+| Valid records | 402 | 832 |
+| Invalid records | 98 | 175 |
+| No rule applies | 5 | 0 |
+| Unknown | 4 | 9 |
 
-Confusion in the number of records is caused by the need of creating templates for metadata in GeoNetwork, 5 records from the catalogue are actually metadata templates: (1) one template for the feature catalogue, (2) one template for vector data, (3) one template for geographical data, (4) one template for map and (5) one template for service. Moreover, in two cases, the harvested metadata records have duplicate UUID, therefore they were unified into two records (instead of four).
+Confusion in the number of records in february 2025 is caused by the need of creating templates for metadata in GeoNetwork, 5 records from the catalogue are actually metadata templates: (1) one template for the feature catalogue, (2) one template for vector data, (3) one template for geographical data, (4) one template for map and (5) one template for service. Moreover, in two cases, the harvested metadata records have duplicate UUID, therefore they were unified into two records (instead of four).
 
 ### Technology
 
