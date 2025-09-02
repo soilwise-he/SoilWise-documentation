@@ -1,7 +1,7 @@
 # Glossary
 
-documentation:Abstracting and indexing service
-:   Abstracting and indexing service is a service, e.g. a search engine, that abstracts and indexes digital objects or metadata records, and provides matching and ranking functionality in support of information retrieval.
+documentation:Abstracting and indexing service (A&I)
+:   Abstracting and indexing service is a service, e.g. a search engine, that abstracts and indexes documents, and provides matching and ranking functionality in support of information retrieval (source: [wikipedia](https://en.wikipedia.org/wiki/Indexing_and_abstracting_service){target=_blank).
 
 documentation:Acceptance Criteria
 :   Acceptance Criteria can be used to judge if the resulting software satisfies the user's needs. A single user story/requirement can have multiple acceptance criteria.
@@ -12,8 +12,8 @@ documentation:API
 documentation:Application profile
 :   Application profile is a specification for data exchange for applications that fulfil a certain use case. In addition to shared semantics, it also allows for the imposition of additional restrictions, such as the definition of cardinalities or the use of certain code lists (source: [purl.eu](https://purl.eu){target=_blank}).
 
-documentation:Artificial Intelligence
-:   Artificial Intelligence (AI) is a field of study that develops and studies intelligent machines. It includes the fields rule based reasoning, machine learning and natural language processing (NLP). (source: [wikipedia](https://en.wikipedia.org/wiki/Artificial_intelligence){target=_blank})
+documentation:Artificial Intelligence (AI)
+:   Artificial Intelligence is a field of study that develops and studies intelligent machines. It includes the fields rule based reasoning, machine learning and natural language processing (NLP). (source: [wikipedia](https://en.wikipedia.org/wiki/Artificial_intelligence){target=_blank})
 
 documentation:Assimilation
 :   Assimilation is a term indicating the processes involved to combine multiple datasets with different origin into a common dataset, the term is somewhat similarly used in psychology as `incorporation of new concepts into existing schemes` (source: [wikipedia](https://en.wikipedia.org/wiki/Assimilation){target=_blank}). But is not well aligned with its usage in the data science community: ` updating a numerical model with observed data` (source: [wikipedia](https://en.wikipedia.org/wiki/Assimilation){target=_blank})
@@ -42,8 +42,8 @@ documentation:Cordis
 documentation:Corpus
 :   Corpus (plural: Corpora) is a repository of text documents (knowledge resources); a body of works. Typically the input for information retrieval.
 
-documentation:CSW
-:   [CSW](https://www.ogc.org/standard/csw){target=_blank} Catalogue Service for the Web
+documentation:Catalogue Service for the Web (CSW)
+:   [Catalogue Service for the Web](https://www.ogc.org/standard/csw){target=_blank} is a standardised protocol from the Open Geospatial Consortium to filter and exchange metadata records. The standard is endorsed by the INSPIRE regulation for discovery services.
 
 documentation:Data
 :   Data is a collection of discrete or continuous values that convey information, describing the quantity, quality, fact, statistics, other basic units of meaning, or simply sequences of symbols that may be further interpreted formally ([Wikipedia](https://en.wikipedia.org/wiki/Data)).
@@ -72,7 +72,7 @@ documentation:Destination Earth (DestinE)
 documentation:Digital exchange of soil-related data
 :   Digital exchange of soil-related data (ISO 28258:2013) presents a conceptual model of a common understanding of what soil profile data are
 
-documentation:Digital soil mapping
+documentation:Digital soil mapping (DSM)
 :   Digital soil mapping or pedometric mapping is the creation of soil maps by using field and laboratory observation methods coupled with environmental data through quantitative relationships (source: [wikipedia](https://en.wikipedia.org/wiki/Digital_soil_mapping){target=_blank})
 
 documentation:Discovery service
@@ -81,14 +81,14 @@ documentation:Discovery service
 documentation:Download service
 :   Download service is a concept from [INSPIRE](https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download){target=_blank} indicating a service type which enables download of a (subset of a) dataset. Typically implemented as WFS, WCS, SOS or Atom.
 
-documentation:DOI
-:   [DOI](https://www.doi.org/){target=_blank} a digital identifier of an object, any object — physical, digital, or abstract
+documentation:Digital Object Identifier (DOI)
+:   [Digital Object Identifier](https://www.doi.org/){target=_blank} a digital identifier of an object, any object — physical, digital, or abstract
 
 documentation:Encoding
 :   Encoding is the format used to [serialise](https://en.wikipedia.org/wiki/Serialization){target=_blank} a resource to a file, common encodings are xml, json, turtle
 
-documentation:ESDAC
-:   [ESDAC](https://esdac.jrc.ec.europa.eu/){target=_blank} thematic centre for soil related data in Europe
+documentation:Europian soil data centre (ESDAC)
+:   [Europian soil data centre](https://esdac.jrc.ec.europa.eu/){target=_blank} is the thematic centre for soil related data in Europe at the Joint Research Centre
 
 documentation:EU Login
 :   [EU Login](https://webgate.ec.europa.eu/ern/userguide/Content/A.HOW%20TO%20JOIN/Register%20on%20EU-Login.htm) is the European 
@@ -101,8 +101,8 @@ documentation:European Soil Observatory (EUSO)
 documentation:GDAL OGR
 :   [GDAL and OGR](https://gdal.org){target=_blank} are software packages widely used to interact with a variety of spatial data formats
 
-documentation:GML
-:   Geography Markup Language (GML) is an xml based standardised encoding for spatial data.
+documentation:Geography Markup Language (GML)
+:   [Geography Markup Language](https://www.ogc.org/standards/gml/) is a standardised encoding for spatial data.
 
 documentation:GeoPackage
 :   [GeoPackage](https://www.ogc.org/standard/geopackage/){target=_blank} a set of conventions for storing spatial data a [SQLite](https://www.sqlite.org/){target=_blank} database
@@ -110,7 +110,7 @@ documentation:GeoPackage
 documentation:Geoserver
 :   [Geoserver](https://geoserver.org){target=_blank} java based software package providing access to remote data through OGC services
 
-documentation:Global Soil Information System
+documentation:Global Soil Information System (GloSIS)
 :   Global Soil Information System ([GLOSIS](https://www.fao.org/global-soil-partnership/areas-of-work/soil-information-and-data/en/){target=_blank}) is an activity of FAO Global Soil Partnership enabling a federation of soil information systems and interoperable data sets 
 
 documentation:GLOSIS domain model
@@ -120,7 +120,7 @@ documentation:GLOSIS Web Ontology
 :   [GLOSIS Web Ontology](https://github.com/rapw3k/glosis){target=_blank} is an implementation of the GLOSIS domain model using semantic technology
 
 documentation:GLOSIS Codelists
-:   [GLOSIS Codelists](https://github.com/rapw3k/glosis/blob/master/glosis_cl.ttl){target=_blank} is a series of codelists supporting the GLOSIS web ontology. Including the codelists as published in the FAO Guidelines for Soil Description (v2007), soil properties as collected by FAO GfSD and procedures as initally collected by Johan Leenaars.
+:   [GLOSIS Codelists](https://github.com/rapw3k/glosis/blob/master/glosis_cl.ttl){target=_blank} is a series of codelists supporting the GLOSIS web ontology. Including the codelists as published in the FAO Guidelines for Soil Description (v2007), soil properties as collected by FAO GfSD and procedures.
 
 documentation:Glosolan
 :   [Glosolan](https://www.fao.org/global-soil-partnership/glosolan){target=_blank} network to strengthen the capacity of laboratories in soil analysis and to respond to the need for harmonizing soil analytical data
@@ -143,8 +143,8 @@ documentation:Information retreival
 documentation:Iteration
 :   An iteration is each development cycle (three foreseen within the SoilWise project) in the project. Each iteration can have phases. There are four phases per iteration focussing on co-design, development, integration and validation, demonstration.
 
-documentation:JRC
-:   JRC Joint Research Centre of the European Commission, its Directorate General. The JRC provides independent, evidence-based science and knowledge, supporting EU policies to positively impact society. Relevant policy areas within JRC are [JRC Soil](https://joint-research-centre.ec.europa.eu/scientific-activities-z/soil_en){target=_blank} and [JRC INSPIRE](https://inspire.ec.europa.eu/whos-who-inspire/57734){target=_blank}
+documentation:Joint Research Centre (JRC)
+:   Joint Research Centre is a part of the European Commission Directorate General. The JRC provides independent, evidence-based science and knowledge, supporting EU policies to positively impact society. Relevant policy areas within JRC are [JRC Soil](https://joint-research-centre.ec.europa.eu/scientific-activities-z/soil_en){target=_blank} and [JRC INSPIRE](https://inspire.ec.europa.eu/whos-who-inspire/57734){target=_blank}
 
 documentation:Knowledge
 :   Knowledge is facts, information, and skills acquired through experience or education; the theoretical or practical understanding of a subject. SoilWise mainly considers explicit knowledge -- Information that is easily articulated, codified, stored, and accessed. E.g. via books, web sites, or databases. It does not include implicit knowledge (information transferable via skills) nor tacit knowledge (gained via personal experiences and individual contexts). Explicit knowledge can be further divided into semantic and structural knowledge.
@@ -164,7 +164,7 @@ documentation:Knowledge source
 documentation:Knowledge management
 :   Knowledge managmenet is the practice of collecting, organising, managing, and accessing knowledge (for some purpose, such as as decision-making).
 
-documentation:LLM
+documentation:Large Language Model (LLM)
 :   Large Language Model is typically a deep learning model based on the transformer architecture that has been trained on vast amounts of text data, usually from know collections scraped from the Internet.
 
 documentation:Mapserver
@@ -185,11 +185,11 @@ documentation:Mission soil
 documentation:Mission Soil implementation platform (MIP)
 :   Mission Implementation Platform is a tool to discover Mission Soil, progress, funded projects, activities and tools to promote cooperation between projects and Mission Soil communities, funding opportunities, news, and events
 
-documentation:NLP
+documentation:Natural Language Processing (NLP)
 :   Natural Language Processing is an interdisciplinary subfield of computer science and artificial intelligence, primarily concerned with providing computers with the ability to process data encoded in natural language. It is closely related to information retrieval, knowledge representation and computational linguistics.
 
-documentation:Observations and Measurements
-:   A conceptual model for [Observations and Measurements](https://www.ogc.org/standard/om/){target=_blank} (O&M), also known as ISO19156
+documentation:Observations, Measurements and Samples (OMS)
+:   A conceptual model for [Observations, Measurements and Samples](https://www.ogc.org/standard/om/){target=_blank} (OMS), certified as [ISO19156:2023](https://www.iso.org/standard/82463.html)
 
 documentation:OGC API
 :   [OGC API](https://ogcapi.ogc.org/){target=_blank} building blocks that can be used to assemble novel APIs for web access to geospatial content
@@ -206,11 +206,11 @@ documentation:Product backlog
 documentation:QGIS
 :   [QGIS](https://qgis.org){target=_blank} desktop software package to create spatial vizualisations of various types of data
 
-documentation:RAG
+documentation:Retrieval Augmented Generation (RAG)
 :   Retrieval Augmented Generation is a framework for retrieving facts from an external knowledge base to ground large language models on the most accurate, up-to-date information and enhancing the (pre)trained parameteric (semantic) knowledge with non-parameteric knowledge to avoid hallucinations and get better responses.
 
-documentation:REA
-:   REA is the European Research Executive Agency, it's mandate is to manage several EU programmes and support services.
+documentation:Research Executive Agency (REA)
+:   The European Research Executive Agency has a mandate is to manage several EU programmes and support services.
 
 documentation:Relational model
 :   Relational model an approach to managing data using a structure and language consistent with first-order predicate logic (source: [wikipedia](https://en.wikipedia.org/wiki/Relational_model){target=_blank})
@@ -218,8 +218,8 @@ documentation:Relational model
 documentation:Resource Description Framework (RDF)
 :   [Resource Description Framework](https://www.w3.org/RDF/){target=_blank} (RDF) a standard model for data interchange on the Web. Common serialisations of RDF are turtle, xml/rdf and json-ld.
 
-documentation:Representational state transfer
-:   Representational state transfer (REST) a set of guidelines for creating stateless, reliable web APIs (source: [wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer){target=_blank})
+documentation:Representational state transfer (REST)
+:   Representational state transfer a set of guidelines for creating stateless, reliable web APIs (source: [wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer){target=_blank})
 
 documentation:Reportnet
 :   [Reportnet](https://reportnet.europa.eu/) is the e-Reporting platform for reporting environmental and climate data to the European Environment Agency (EEA). The platform embraces the strategic goals of the European Commission's Green Deal and Digital Strategy and hosts reporting tasks on behalf of EEA and the Commission.
@@ -253,6 +253,12 @@ documentation:Soil health
 
 documentation:Observed property
 :   An observed property identifies the phenomenon or characteristic that is being measured or observed in a dataset, such as "sea surface height" or "temperature" (source: [OGC](https://docs.ogc.org/is/15-078r6/15-078r6.html#30))
+
+documentation:Soil biological property
+:   The biological properties refer to the soil biological components in the soil, including microbial life such as bacterial and fungal colonies, which are affected by changes in soil chemical and physical properties, such as acidity and organic matter content (source: [Annals of Agricultural Sciences, 2020](https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/soil-biological-properties))
+
+documentation:Soil chemical property
+:   Soil chemical properties refer to the chemical attributes of soil that influence its ability to supply nutrients to plants, retain harmful elements, and affect plant growth and microbial populations. These properties include nutrient concentrations, pH levels, and the presence of elements such as nitrogen, phosphorus, and potassium, which are critical for soil quality assessment and agricultural productivity. (source: [Ecological Indicators, 2022](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/soil-chemical-property))
 
 documentation:Soil health indicator
 :   Single characteristic that represents a sustainability effect, whether benefit or negative impact, which may be compared across alternative remediation strategies, comprising one or more remediation (3.380) techniques and/or institutional controls, to evaluate their relative performance (source: [iso11074](https://www.iso.org/obp/ui#iso:std:iso:11074:ed-3:v1:en:term:3.219))
