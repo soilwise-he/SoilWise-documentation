@@ -144,7 +144,7 @@ Short sentence describing it… [Open] [Save] [Share]
 **Microcopy for CTA:**
 `Access resource — external site (opens in new tab)`
 
-### 4.4 Additional features (recommended)
+### 4.4 Additional features 
 
 * **Citable record**: provide citation text in common citation styles (APA, BibTeX) and a `Copy citation` button.
 * **Provenance / lineage**: short timeline of the dataset’s creation/updates.
@@ -154,7 +154,7 @@ Short sentence describing it… [Open] [Save] [Share]
 
 
 
-## 5. Example workflows (copy-ready)
+## 5. Example workflows
 
 ### A. Find open datasets about soil organic carbon in Spain
 
@@ -171,29 +171,7 @@ Short sentence describing it… [Open] [Save] [Share]
 3. Results will increase; refine by date or provider.
 
 
-
-## 6. Suggested microcopy & tooltips (copy-ready)
-
-* Search box placeholder: `Search the catalogue (title, author, keyword...)`
-* Filter panel header: `Refine results`
-* Explode tooltip: `Include narrower/related terms (e.g., indicators under "soil health")`
-* Sort control tooltip: `Choose how results are ordered`
-* Access badge hover: `Open — data is directly available` / `Restricted — request access from provider`
-* Detail page CTA: `Access resource (opens in new tab)`
-* Error message example: `No results found. Try different keywords, fewer filters, or enable "Explode" to broaden the search.`
-
-
-
-## 7. Accessibility & UX suggestions
-
-* Ensure keyboard navigation for filters and results (tab order, ARIA attributes).
-* Provide sufficient contrast for badges and CTA buttons.
-* Offer a screen-reader-friendly list view (ARIA labels for resource type, date, access).
-* Mobile: keep filters collapsible and sticky header for sorting/pagination.
-
-
-
-## 8. Troubleshooting & FAQ (short)
+## 6. Troubleshooting & FAQ (short)
 
 **Q: I clicked “Access resource” and it fails.**
 A: Check if the link opened in a new tab (pop-ups blocked?), verify your network. If the resource is restricted, follow the `Request access` instructions on the detail page. Use `Report issue` to notify us.
