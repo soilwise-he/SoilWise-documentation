@@ -14,8 +14,6 @@ The Soil Companion is an AI chatbot developed in the SoilWise project. It provid
 
 The chatbot uses an **agentic tool-calling** approach: a large language model (LLM) autonomously decides which external data sources to consult for each question, executes the relevant tool calls, and synthesizes the results into a coherent response. Answers are enriched with auto-generated links to SoilWise vocabulary terms and Wikipedia articles. A sidebar **Insight** panel displays related SKOS vocabulary concepts and clickable chips that allow users to explore connected topics.
 
-The application is built as a full-stack **Scala / Scala.js** application — sharing domain models across a JVM backend and a browser-based frontend — and is containerized with Docker for deployment.
-
 ## Users
 
 The Soil Companion targets the following user groups:
