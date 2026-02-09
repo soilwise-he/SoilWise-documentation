@@ -1,12 +1,18 @@
 # Soil Companion (Natural Language Querying)
 
-**Current version:** 1.2.x
+!!! component-header "Info"
+    **Current version:** 1.2.x
 
-**Project:** [Soil Companion](https://github.com/soilwise-he/UC1-C2-chatbot)
+    **Technology:** Retrieval Augmented Generative Artificial Intelligence
+
+    **Release:** <https://soil-companion.containers.wur.nl/app/index.html>
+
+    **Project:** [Soil Companion](https://github.com/soilwise-he/UC1-C2-chatbot)
+
 
 ## Introduction
 
-<img width="1547" height="1045" alt="Screenshot 2026-01-19 at 12 44 57" src="https://github.com/user-attachments/assets/72b5a7a4-9683-41b0-90a4-fddb59559c36" />
+<img width="80%" alt="Screenshot 2026-01-19 at 12 44 57" src="https://github.com/user-attachments/assets/72b5a7a4-9683-41b0-90a4-fddb59559c36" />
 
 ### Component Overview and Scope
 
