@@ -1,4 +1,4 @@
-# Soil Companion (Natural Language Querying)
+# Soil Companion (chatbot)
 
 !!! component-header "Info"
     **Current version:** 1.2.x
