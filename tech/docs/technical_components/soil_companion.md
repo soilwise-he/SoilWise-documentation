@@ -96,7 +96,6 @@ The Soil Companion currently provides the following capabilities:
 | Component | Technology |
 |-----------|-----------|
 | **Language** | Scala.js (compiled to JavaScript) |
-| **Sanitization** | DOMPurify 3.x |
 | **Maps** | Leaflet 1.9.x |
 | **Communication** | WebSocket (real-time streaming) |
 
