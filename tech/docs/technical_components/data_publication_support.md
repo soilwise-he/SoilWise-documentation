@@ -1,4 +1,10 @@
-# Transformation and Harmonisation
+# Data publication support
+
+CSVW
+Transformation and Harmonization
+DOI Resolution Widget
+
+## Transformation and Harmonization
 
 !!! component-header "Info"
 
@@ -30,7 +36,7 @@ The specific requirements these components have to fulfil are:
 - It should be possible to share transformation processes.
 - Transformation processes should be fully documented or self-documented.
 
-## Technology & Integration
+### Technology & Integration
 
 We have deployed the following components to the SWR infrastructure:
 
@@ -39,7 +45,7 @@ We have deployed the following components to the SWR infrastructure:
 
 Another part of the deployed system, [GDAL](https://gdal.org/index.html){target=_blank}, a very robust conversion library used in most FOSS and commercial GIS software, can be used for  a wealth of format conversions and can handle reprojection. In cases where no structural or semantic transformation is needed, a GDAL-based conversion service would make sense. 
 
-### Setting up a transformation process in hale»connect
+**Setting up a transformation process in hale»connect**
 
 Complete the following steps to set up soil data transformation, validation and publication processes:
 
@@ -50,7 +56,7 @@ Complete the following steps to set up soil data transformation, validation and 
 5. Add a new transformation configuration. Note: Metadata generation can be configured in this step.
 6. A validation process can be set up to check against conformance classes.
 
-### Executing a transformation process
+**Executing a transformation process**
 
 1. Create a new dataset and select the theme of the current source data, and provide the source data file.
 2. Execute the transformation process. ETF validation processes are also performed. If successful, a target dataset and the validation reports will be created.

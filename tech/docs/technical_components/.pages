@@ -5,11 +5,11 @@ nav:
     - ingestion.md
     - storage.md
     - catalogue.md
+    - soil_companion.md
+    - data_publication_support.md
     - metadata_validation.md
-    - metadata_authoring.md
-    - transformation.md
     - metadata_augmentation.md
     - knowledge_graph.md
-    - natural_language_querying.md
+    - admin_console.md
     - user_management.md
     - monitoring.md
