@@ -78,14 +78,10 @@ The Soil Companion currently provides the following capabilities:
 |-----------|-----------|
 | **Language** | Scala 3.8.1 on JDK 17+ (tested 17–25) |
 | **Build** | SBT 1.11.x / 1.12.x (cross-build JS/JVM) |
-| **HTTP Server** | Cask 0.11.x (lightweight HTTP/WebSocket) |
 | **LLM Framework** | LangChain4j 1.10.x (OpenAI integration, agentic tool calling, embeddings, RAG) |
 | **LLM Provider** | OpenAI (gpt-4o-mini for chat, gpt-4o for reasoning, text-embedding-3-small for embeddings) |
 | **Local Embeddings** | AllMiniLmL6V2 (offline, ~33 MB model for RAG document retrieval) |
 | **Vector Store** | In-memory embedding store (with experimental Chroma support) |
-| **Configuration** | PureConfig 0.17.9 (HOCON with environment variable overrides) |
-| **HTTP Client** | requests 0.9.x |
-| **JSON** | upickle 4.4.x |
 | **Logging** | SLF4J 3.0.x + Logback 1.5.x (daily rotation, 30-day retention) |
 | **Document Parsing** | Apache Tika (PDF, text, Markdown) |
 
@@ -94,13 +90,8 @@ The Soil Companion currently provides the following capabilities:
 | Component | Technology |
 |-----------|-----------|
 | **Language** | Scala.js (compiled to JavaScript) |
-| **DOM Access** | scalajs-dom 2.8.0 |
-| **HTML Generation** | Scalatags 0.13.x |
-| **Markdown** | marked.js 17.x |
 | **Sanitization** | DOMPurify 3.x |
-| **Syntax Highlighting** | highlight.js 11.x |
 | **Maps** | Leaflet 1.9.x |
-| **Icons** | Font Awesome 7.x |
 | **Communication** | WebSocket (real-time streaming) |
 
 **Infrastructure**
