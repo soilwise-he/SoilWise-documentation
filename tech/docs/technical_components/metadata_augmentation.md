@@ -103,6 +103,65 @@ We distinguish between explicit and implicit links:
 
 SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
 
+## Link liveliness assessment 
+
+!!! component-header "Info"
+    **Current version:** 1.1.4
+
+    **Technology:** Python, [FastAPI](https://fastapi.tiangolo.com/)
+
+    **Release:** <https://doi.org/10.5281/zenodo.14923790>
+
+    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
+
+Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
+
+The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. 
+
+While evaluating the context of a link, the assessment tool may derive some contextual metadata, which can augment the metadata record. These results are stored in the metadata augmentation table. Metadata aspects derived are file size, file format.
+
+The link liveliness  privides the following functions:
+
+1. **OGC API Catalogue Integration**
+    - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank}
+    - Extracts and evaluates URLs from catalogue items 
+2. **Link Validation**
+    - Returns HTTP status codes for each link, along with other important information such as the parent URL, any warnings, and the date and time of the test.
+    - Additionally, the tool enhances link analysis by identifying various metadata attributes, including file format type (e.g., image/jpeg, application/pdf, text/html), file size (in bytes), and last modification date. This provides users with valuable insights about the resource before accessing it.
+3. **Support for OGC service links**
+    - Identifies and properly handles OGC service links ([WMS](https://www.ogc.org/standard/wms/){target=_blank}, [WFS](https://www.ogc.org/standard/wfs/){target=_blank}, [CSW](https://www.ogc.org/standard/cat/){target=_blank}, [WCS](https://www.ogc.org/standard/wcs/){target=_blank} etc.) before assessing them
+4. **Health Status Tracking**
+    - Provides up-to-date status history for every assessed link
+    - Maintains a history of link health over time
+4. **Flexible Evaluation**
+    - Supports single resource evaluation on demand
+    - Performs periodic tests to provide availability history
+4. **Broken link management**
+    - Identifies and categorizes broken links based on their status code ( `401 Unauthorized`, `404 Not Found`, `500 Server Error`)
+    - Flags deprecated links after consecutive failed tests and excludes them from future check
+5. **Timeout management**
+    - Identifies resources exceeding specified timeout thresholds
+
+A javascript widget is further used to display the link status directly in the [SWR Catalogue](catalogue.md) record.
+
+The API can be used to identify which records have broken links.
+
+![Link liveliness indication](../_assets/images/link_liveliness2.png)
+
+
+### Technology
+   * **Python**
+        Used for the linkchecker integration, API development, and database interactions
+   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
+        Primary database for storing and managing link information
+   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
+        Employed to create and expose REST API endpoints. 
+        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
+   * **Docker** 
+        Used for containerizing the application, ensuring consistent deployment across environments
+   * **CI/CD**
+        Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
+
 ## Foreseen functionality
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
