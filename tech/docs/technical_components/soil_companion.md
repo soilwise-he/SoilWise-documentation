@@ -22,19 +22,7 @@ The Soil Companion is an AI chatbot developed in the SoilWise project. It provid
 The chatbot uses an **agentic tool-calling** approach: a large language model (LLM) autonomously decides which external data sources to consult for each question, executes the relevant tool calls, and synthesizes the results into a coherent response. Answers are enriched with auto-generated links to SoilWise vocabulary terms and Wikipedia articles. A sidebar **Insight** panel displays related SKOS vocabulary concepts and clickable chips that allow users to explore connected topics.
 
 
-### Key Features
-
-The chatbot combines **agentic LLM tool calling** with **retrieval-augmented generation** and **post-response enrichment** to deliver grounded, linked answers. The key features are:
-
-1. **Agentic tool calling** — The LLM autonomously decides which of the available tool integrations to invoke (catalog search, SoilGrids, AgroDataCube, Wikipedia, vocabulary SPARQL), executing up to 10 sequential tool-call iterations per query.
-2. **RAG from local core knowledge** — Documents (PDF, text, Markdown) are split into chunks, embedded with a local model (AllMiniLmL6V2), and stored in memory. Relevant chunks are retrieved by cosine similarity and injected into the prompt.
-3. **Response enrichment** — After the LLM generates a response, auto-linkers scan for vocabulary terms and Wikipedia article titles, inserting navigable links into the rendered output.
-4. **Insight panel** — The frontend extracts SoilWise and Wikipedia links from responses and displays broader/narrower/related vocabulary concepts with definitions in a sidebar panel.
-5. **Token streaming** — Responses are streamed token-by-token over WebSocket, giving users immediate visual feedback.
-6. **Feedback loop** — Thumbs up/down ratings are logged to daily JSONL files; evaluation tools compute quality metrics (like rate, NSAT, Wilson lower bound).
-
-
-### Users
+### Intended Audience
 
 The Soil Companion targets the following user groups:
 
@@ -42,6 +30,18 @@ The Soil Companion targets the following user groups:
 - **Agricultural experts and extension officers** looking for soil property data, field-level KPIs, and crop information to inform land management decisions.
 - **Students and educators** exploring soil science concepts through a conversational interface that provides definitions, vocabulary hierarchies, and links to authoritative sources.
 - **Farmers and land managers** (in selected regions) who want accessible field-level agricultural data such as crop history, soil physical properties, and greenness indices.
+
+
+### Key Features
+
+The chatbot combines agentic LLM tool calling with retrieval-augmented generation and post-response enrichment to deliver grounded, linked answers. The key features are:
+
+1. **Agentic tool calling** — The LLM autonomously decides which of the available tool integrations to invoke (catalog search, SoilGrids, AgroDataCube, Wikipedia, vocabulary SPARQL), executing up to 10 sequential tool-call iterations per query.
+2. **RAG from local core knowledge** — Documents (PDF, text, Markdown) are split into chunks, embedded with a local model (AllMiniLmL6V2), and stored in memory. Relevant chunks are retrieved by cosine similarity and injected into the prompt.
+3. **Response enrichment** — After the LLM generates a response, auto-linkers scan for vocabulary terms and Wikipedia article titles, inserting navigable links into the rendered output.
+4. **Insight panel** — The frontend extracts SoilWise and Wikipedia links from responses and displays broader/narrower/related vocabulary concepts with definitions in a sidebar panel.
+5. **Token streaming** — Responses are streamed token-by-token over WebSocket, giving users immediate visual feedback.
+6. **Feedback loop** — Thumbs up/down ratings are logged to daily JSONL files; evaluation tools compute quality metrics (like rate, NSAT, Wilson lower bound).
 
 
 ## Architecture
