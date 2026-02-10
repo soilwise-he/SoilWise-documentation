@@ -82,7 +82,7 @@ The Soil Companion currently provides the following capabilities:
 
 | Component | Technology |
 |-----------|-----------|
-| **Language** | Scala 3.8.1 on JDK 17+ (tested 17–25) |
+| **Language** | Scala 3.8.x on JDK 17+ (tested 17–25) |
 | **Build** | SBT 1.11.x / 1.12.x (cross-build JS/JVM) |
 | **LLM Framework** | LangChain4j 1.10.x (OpenAI integration, agentic tool calling, embeddings, RAG) |
 | **LLM Provider** | OpenAI (gpt-4o-mini for chat, gpt-4o for reasoning, text-embedding-3-small for embeddings) |
