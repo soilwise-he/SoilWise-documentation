@@ -226,7 +226,7 @@ Documents from the `data/knowledge/` directory are loaded, split into 500-charac
 | Vocabulary | `data/vocab/soilvoc_concepts_*.csv` | CSV (loaded at startup for auto-linking) |
 
 
-### Integrations & Interfaces
+## Integrations & Interfaces
 
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
