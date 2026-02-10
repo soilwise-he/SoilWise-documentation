@@ -77,7 +77,7 @@ The Soil Companion targets the following user groups:
 | **CI/CD** | GitLab CI with semantic release (conventional commits) |
 | **Orchestration** | Kubernetes (liveness/readiness probes) |
 
-### Component Diagrams
+### Main Components Diagram
 
 **High-level component overview:**
 
@@ -136,7 +136,7 @@ The Soil Companion targets the following user groups:
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Sequence Diagram
+### Main Sequence Diagram
 
 **User query to response flow:**
 
@@ -191,21 +191,6 @@ The Soil Companion targets the following user groups:
         │     { questionId, vote }         │                                  │
 ```
 
-**WebSocket event types:**
-
-| Event | Direction | Purpose |
-|-------|-----------|---------|
-| `received` | Server → Client | Query acknowledged, questionId assigned |
-| `thinking` | Server → Client | LLM is analysing the question |
-| `retrieving_context` | Server → Client | RAG retrieval in progress |
-| `generating` | Server → Client | LLM is generating the answer |
-| `links_added` | Server → Client | Auto-linked response replacing the streamed version |
-| `done` | Server → Client | Response complete |
-| `error` | Server → Client | An error occurred |
-| `heartbeat` | Server → Client | Keep-alive (every 15 seconds) |
-| `session_expired` | Server → Client | Session timed out due to inactivity |
-| `prompt_truncated` | Server → Client | Input was truncated to stay within limits |
-| `QueryPartialResponse` | Server → Client | Single streamed token |
 
 ### Database Design
 
@@ -240,13 +225,8 @@ Documents from the `data/knowledge/` directory are loaded, split into 500-charac
 | Knowledge documents | `data/knowledge/` | PDF, text, Markdown (read-only at startup) |
 | Vocabulary | `data/vocab/soilvoc_concepts_*.csv` | CSV (loaded at startup for auto-linking) |
 
-**Shared domain models (Scala, cross-compiled for JVM and JS):**
 
-- `QueryRequest(sessionId: String, content: String)` — client-to-server query message
-- `QueryPartialResponse(content: String)` — streamed token from server
-- `QueryEvent(event: String, detail: Option[String], questionId: Option[String])` — lifecycle event
-
-## Integrations & Interfaces
+### Integrations & Interfaces
 
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
@@ -276,6 +256,23 @@ All external service credentials and endpoints are configured through HOCON (`ap
 | `POST` | `/location` | Set geographic context |
 | `POST` | `/vocab` | Batch vocabulary concept lookup |
 | `GET` | `/app/*` | Static frontend assets |
+
+**WebSocket event types:**
+
+| Event | Direction | Purpose |
+|-------|-----------|---------|
+| `received` | Server → Client | Query acknowledged, questionId assigned |
+| `thinking` | Server → Client | LLM is analysing the question |
+| `retrieving_context` | Server → Client | RAG retrieval in progress |
+| `generating` | Server → Client | LLM is generating the answer |
+| `links_added` | Server → Client | Auto-linked response replacing the streamed version |
+| `done` | Server → Client | Response complete |
+| `error` | Server → Client | An error occurred |
+| `heartbeat` | Server → Client | Keep-alive (every 15 seconds) |
+| `session_expired` | Server → Client | Session timed out due to inactivity |
+| `prompt_truncated` | Server → Client | Input was truncated to stay within limits |
+| `QueryPartialResponse` | Server → Client | Single streamed token |
+
 
 ## Key Architectural Decisions
 
