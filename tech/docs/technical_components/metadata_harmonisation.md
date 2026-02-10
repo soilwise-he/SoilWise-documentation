@@ -1,4 +1,4 @@
-# md-harmonisation
+# Metadata harmonisation
 
 The component harmonizes the content as imported by the [ingestion component](./ingestion.md).
 A database is populated with the harmonised metadata content
@@ -12,7 +12,7 @@ identified schema, the source data needs to be converted to a known schema befor
 | Supported schemas | |
 | --- | --- |
 | iso19115-2003 | |  
-| iso19115-2012 | |
+| iso19115-1-2014 | |
 | Dublin Core | |
 | schema.org | |
 | DCAT | |
