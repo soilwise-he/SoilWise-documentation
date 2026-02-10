@@ -14,13 +14,27 @@
 
 <img width="80%" alt="Screenshot 2026-01-19 at 12 44 57" src="https://github.com/user-attachments/assets/72b5a7a4-9683-41b0-90a4-fddb59559c36" />
 
-### Component Overview and Scope
+
+### Overview and Scope
 
 The Soil Companion is an AI chatbot developed in the SoilWise project. It provides an intelligent conversational interface through which users can explore European soil metadata, query global and country-specific soil data services, and receive answers grounded in the SoilWise knowledge repository.
 
 The chatbot uses an **agentic tool-calling** approach: a large language model (LLM) autonomously decides which external data sources to consult for each question, executes the relevant tool calls, and synthesizes the results into a coherent response. Answers are enriched with auto-generated links to SoilWise vocabulary terms and Wikipedia articles. A sidebar **Insight** panel displays related SKOS vocabulary concepts and clickable chips that allow users to explore connected topics.
 
-## Users
+
+### Key Features
+
+The chatbot combines **agentic LLM tool calling** with **retrieval-augmented generation** and **post-response enrichment** to deliver grounded, linked answers. The key features are:
+
+1. **Agentic tool calling** — The LLM autonomously decides which of the available tool integrations to invoke (catalog search, SoilGrids, AgroDataCube, Wikipedia, vocabulary SPARQL), executing up to 10 sequential tool-call iterations per query.
+2. **RAG from local core knowledge** — Documents (PDF, text, Markdown) are split into chunks, embedded with a local model (AllMiniLmL6V2), and stored in memory. Relevant chunks are retrieved by cosine similarity and injected into the prompt.
+3. **Response enrichment** — After the LLM generates a response, auto-linkers scan for vocabulary terms and Wikipedia article titles, inserting navigable links into the rendered output.
+4. **Insight panel** — The frontend extracts SoilWise and Wikipedia links from responses and displays broader/narrower/related vocabulary concepts with definitions in a sidebar panel.
+5. **Token streaming** — Responses are streamed token-by-token over WebSocket, giving users immediate visual feedback.
+6. **Feedback loop** — Thumbs up/down ratings are logged to daily JSONL files; evaluation tools compute quality metrics (like rate, NSAT, Wilson lower bound).
+
+
+### Users
 
 The Soil Companion targets the following user groups:
 
@@ -29,50 +43,6 @@ The Soil Companion targets the following user groups:
 - **Students and educators** exploring soil science concepts through a conversational interface that provides definitions, vocabulary hierarchies, and links to authoritative sources.
 - **Farmers and land managers** (in selected regions) who want accessible field-level agricultural data such as crop history, soil physical properties, and greenness indices.
 
-Authentication is currently limited to a configurable demo mode (single account) suitable for development and demonstration purposes.
-
-## Requirements
-
-### Functional Requirements
-
-The Soil Companion currently provides the following capabilities:
-
-- **SoilWise Catalog Search** — Searches datasets and knowledge/publications in the SoilWise catalog via Solr, using boosted field relevance ranking. Optionally includes full-text snippets from harvested PDF content. Creates verified back-links to catalog items by identifier.
-- **ISRIC SoilGrids** — Queries the ISRIC SoilGrids v2.0 REST API for indicative soil property estimates (bulk density, organic carbon, clay, sand, silt, pH) at a given location, at multiple depth intervals.
-- **AgroDataCube (Netherlands)** — Integrates with the WUR AgroDataCube v2 API for Dutch agricultural field parcels, crop history, and soil/crop KPIs. Maintains session memory of the last looked-up field for follow-up questions.
-- **Vocabulary Lookup** — Queries the SoilWise SPARQL endpoint to retrieve SKOS concept hierarchies (broader, narrower, related, exact match terms with definitions) for soil science terminology.
-- **Wikipedia** — Searches and retrieves Wikipedia articles in multiple languages (English, Dutch, French, Spanish, Italian, Czech) for general concepts and background information.
-- **Auto-Linking** — Automatically links soil vocabulary terms and Wikipedia articles appearing in responses, making terms navigable to the SoilWise vocabulary browser and Wikipedia.
-- **Insight Panel** — A sidebar panel that extracts SoilWise and Wikipedia links from the latest response and displays related vocabulary concepts with definitions, organized by broader/narrower/related relationships. Clickable vocabulary chips allow quick exploration of connected topics.
-- **Location Context** — An interactive Leaflet map in the sidebar allows users to set a geographic context (with country search autocomplete), which is then used by location-aware tools.
-- **File Upload** — Users can upload text or Markdown files (max 200 KB) as temporary context for the conversation.
-- **RAG (Retrieval-Augmented Generation)** — Local core SoilWise knowledge documents (PDF, text, Markdown) are embedded on startup and used as supplementary context for answers, retrieved by semantic similarity.
-- **Real-Time Streaming** — Responses are streamed token-by-token over WebSocket for low-latency feedback.
-- **Feedback Collection** — Thumbs up/down feedback per response, logged in daily JSONL files for quality analysis. Evaluation tools can merge logs with feedback and compute quality metrics.
-- **Initial Question via URL** — An initial question can be passed as a URL parameter, enabling deep-linking into the chatbot with a pre-filled query.
-- **Health Endpoints** — Kubernetes-compatible liveness (`/healthz`) and readiness (`/readyz`) probes, including version and uptime reporting.
-- **Auto-Update Detection** — The frontend polls the health endpoint to detect server version changes and notifies the user when an update is available.
-
-### Non-functional Requirements
-
-| Aspect | Constraint |
-|--------|-----------|
-| **Chat memory** | 50 messages per session (configurable) |
-| **Max sequential tool calls** | 10 per query (configurable) |
-| **Max LLM retries** | 3 (configurable) |
-| **Session idle timeout** | 10 minutes (configurable) |
-| **Max prompt size** | 120,000 characters (safety limit) |
-| **Max upload size** | 200,000 characters |
-| **RAG chunk size** | 500 characters with 100-character overlap |
-| **RAG retrieval** | Top 5 results, minimum similarity score 0.6 |
-| **Catalog search results** | Max 10 per query |
-| **External API timeout** | 15,000 ms (Solr, SoilGrids, AgroDataCube, Wikipedia) |
-| **SPARQL timeout** | 5,000 ms connection + 10,000 ms read |
-| **WebSocket heartbeat** | Every 15 seconds |
-| **Log retention** | 30 days (daily rotation, gzip compressed) |
-| **HTML sanitization** | DOMPurify on all rendered markdown output |
-| **Link safety** | All external links open with `noopener noreferrer` |
-| **Accessibility** | ARIA labels, roles, live regions; keyboard navigation |
 
 ## Architecture
 
@@ -106,18 +76,6 @@ The Soil Companion currently provides the following capabilities:
 | **Container** | Docker (multi-stage build, Eclipse Temurin JDK 21) |
 | **CI/CD** | GitLab CI with semantic release (conventional commits) |
 | **Orchestration** | Kubernetes (liveness/readiness probes) |
-
-
-### Overview of Key Features
-
-The chatbot combines **agentic LLM tool calling** with **retrieval-augmented generation** and **post-response enrichment** to deliver grounded, linked answers. The key features are:
-
-1. **Agentic tool calling** — The LLM autonomously decides which of the available tool integrations to invoke (catalog search, SoilGrids, AgroDataCube, Wikipedia, vocabulary SPARQL), executing up to 10 sequential tool-call iterations per query.
-2. **RAG from local core knowledge** — Documents (PDF, text, Markdown) are split into chunks, embedded with a local model (AllMiniLmL6V2), and stored in memory. Relevant chunks are retrieved by cosine similarity and injected into the prompt.
-3. **Response enrichment** — After the LLM generates a response, auto-linkers scan for vocabulary terms and Wikipedia article titles, inserting navigable links into the rendered output.
-4. **Insight panel** — The frontend extracts SoilWise and Wikipedia links from responses and displays broader/narrower/related vocabulary concepts with definitions in a sidebar panel.
-5. **Token streaming** — Responses are streamed token-by-token over WebSocket, giving users immediate visual feedback.
-6. **Feedback loop** — Thumbs up/down ratings are logged to daily JSONL files; evaluation tools compute quality metrics (like rate, NSAT, Wilson lower bound).
 
 ### Component Diagrams
 
@@ -288,7 +246,7 @@ Documents from the `data/knowledge/` directory are loaded, split into 500-charac
 - `QueryPartialResponse(content: String)` — streamed token from server
 - `QueryEvent(event: String, detail: Option[String], questionId: Option[String])` — lifecycle event
 
-### Integrations & Interfaces
+## Integrations & Interfaces
 
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
@@ -319,7 +277,7 @@ All external service credentials and endpoints are configured through HOCON (`ap
 | `POST` | `/vocab` | Batch vocabulary concept lookup |
 | `GET` | `/app/*` | Static frontend assets |
 
-### Key Architectural Decisions
+## Key Architectural Decisions
 
 | Decision | Rationale |
 |----------|-----------|
@@ -348,3 +306,8 @@ All external service credentials and endpoints are configured through HOCON (`ap
 | **LLM hallucination** | Despite RAG grounding and tool results, the LLM may still generate inaccurate statements. | System prompts instruct the model to include disclaimers and prefer tool-grounded answers. User feedback collection enables ongoing quality monitoring. |
 | **Prompt injection via uploads** | Uploaded files and location contexts could contain adversarial content. | Input sanitization is applied; prompt size is capped at 120,000 characters; file uploads are limited to 200 KB. |
 | **CORS policy** | The file upload endpoint uses a permissive `Access-Control-Allow-Origin: *` header. | Acceptable for demo deployment; should be tightened for production. |
+
+
+
+
+
