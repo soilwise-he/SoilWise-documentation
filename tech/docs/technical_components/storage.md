@@ -2,9 +2,9 @@
 
 The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 
-1. [A relational database management system](#postgress-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core metadata of both data and knowledge assets.
+1. [A relational database management system](#postgresql-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core metadata of both data and knowledge assets.
 2. [A Triple Store](#virtuoso-triple-store-storage-of-swr-knowledge-graph) to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph.
-3. [Git](#git-user-enhanced-metadata) for storage of user-enhanced metadata.
+3. [Git](#git-storage-of-code-and-configuration) for storage of user-enhanced metadata.
 
 ## Functionality
 

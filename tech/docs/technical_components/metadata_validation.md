@@ -9,8 +9,8 @@ On this topic 2 components are available which monitor aspects of metadata
 
 
 - [Metadata completeness](#metadata-completeness) calculates a score based on selected populated metadata properties
-- [Metadata INSPIRE compliance](#metadata-compliance)
-- [Link liveliness assessment](../metadata_augmentation/#link-liveliness-assessment) part of Metadata Augmentation components, validates the availability of resources described by the record 
+- [Metadata INSPIRE compliance](#metadata-inspire-compliance)
+- [Link Liveliness Assessment](../metadata_augmentation/#link-liveliness-assessment) part of Metadata Augmentation components, validates the availability of resources described by the record 
 
 
 ## Metadata completeness
