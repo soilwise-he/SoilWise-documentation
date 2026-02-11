@@ -10,6 +10,7 @@ The statements are combined with the ingested content to offer users an optimal 
 At the moment, Metadata Augmentation functionality is covered by the following components:
 
 - [Keyword Matcher](#keyword-matcher)
+- [Element Matcher](#element-matcher)
 - [Translation Module](#translation-module)
 - [Link Liveliness Assessment](#link-liveliness-assessment)
 - [Spatial Locator](#spatial-locator)
@@ -66,8 +67,20 @@ For metadata records which have not been analysed yet (in that iteration), the m
 #### Database Design
 ### Integrations & Interfaces
 ### Key Architectural Decisions
-* The process runs as a CI-CD pipeline at dayly intervals.
+* The process runs as a CI-CD pipeline at daily intervals.
 
+### Risks & Limitations
+
+## Element Matcher
+
+### Overview and Scope
+### Key Features
+### Architecture
+#### Technological Stack
+#### Main Sequence Diagram
+#### Database Design
+### Integrations & Interfaces
+### Key Architectural Decisions
 ### Risks & Limitations
 
 ## Translation module
