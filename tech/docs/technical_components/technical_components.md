@@ -8,7 +8,7 @@ This section lists technical components for building the SoilWise Catalogue as f
 
 1. [Harvester](ingestion.md)
 2. [Repository Storage](storage.md)
-3. [Catalogue](catalogue.md)
+3. [Metadata Catalogue](catalogue.md)
 4. [Soil Companion (Chatbot)](soil_companion.md)
 5. [Data publication support](data_publication_support.md)
 6. [Metadata Validation](metadata_validation.md)

@@ -1,33 +1,33 @@
 # Metadata Augmentation
 
+## Introduction
 
+### Overview and Scope
 This set of components augments metadata statements using various techniques. 
 Augmentations are stored on a dedicated augmentation table, indicating the process which produced it.
 The statements are combined with the ingested content to offer users an optimal catalogue experience.
 
-At the moment, the functionality of the Metadata Augmentation component comprises these components:
+At the moment, Metadata Augmentation functionality is covered by the following components:
 
-- [Keyword-matcher](#keyword-matcher)
-- [Translation module](#translation-module)
-- [Metadata interlinker](#metadata-interlinker)
+- [Keyword Matcher](#keyword-matcher)
+- [Translation Module](#translation-module)
+- [Link Liveliness Assessment](#link-liveliness-assessment)
+- [Spatial Locator](#spatial-locator)
+- [Metadata Interlinker](#metadata-interlinker)
 
 Upcoming components
 
 - [Keyword extraction](#keyword-extraction)
-- [Spatial locator](#spatial-locator)
 - [Spatial scope analyser](#spatial-scope-analyser)
 - [EUSO high-value dataset tagging](#euso-high-value-dataset-tagging)
 
+### Intended Audience
 
-Metadata augmentation results are stored in a augmentation table (unless mentioned otherwise).
+Metadata Augmentation is a backend component providing outputs, which users can see displayed in the [Metadata Catalogue](catalogue.md). Therefore the Intended Audience corresponds to the one of the [Metadata Catalogue](../catalogue/#intended-audience). Additionally we expect a maintenance role:
 
-| metadata-uri | metadata-element | source | value | proces | date |
-| --- | --- | --- | --- | --- | --- |
-| <https://geo.fi/data/ee44-aa22-33> | spatial-scope | 16.7,62.2,18,81.5 |  <https://inspire.ec.europa.eu/metadata-codelist/SpatialScope/national> | spatial-scope-analyser | 2024-07-04 |
-| <https://geo.fi/data/abc1-ba27-67> | soil-thread | This dataset is used to evaluate Soil Compaction in Nuohous Sundström | <http://aims.fao.org/aos/agrovoc/c_7163> | keyword-analyser | 2024-06-28 |
+* **SWC Administrator** monitoring the augmentation processes, access to history, logs and statistics. Administrators can manually start a specific augmentation process.
 
-
-### Keyword matcher
+## Keyword matcher
 
 !!! component-header "Info"
     **Current version:** 0.2.0
@@ -38,6 +38,7 @@ Metadata augmentation results are stored in a augmentation table (unless mention
 
     **Projects:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
 
+### Overview and Scope
 Keywords are an important mechanism to filter and cluster records. Similar keywords need to be clustered to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
 
 Analyses existing keywords on a metadata record. Two cases can be identified:
@@ -45,24 +46,31 @@ Analyses existing keywords on a metadata record. Two cases can be identified:
 - If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. 
 - If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). 
 
-To facilitate this use case the SWR contains a knowledge graph of prefered keywords in the soil domain derived from Agrovoc, Gemet and ISO11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
+To facilitate this use case the SWR contains a [Knowledge graph](knowledge_graph.md) of prefered keywords in the soil domain derived from Agrovoc, Gemet and ISO11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
 
 For metadata records which have not been analysed yet (in that iteration), the module extracts the keywords, for each keyword an analyses is made if it matches any of the prefered keywords, the prefered keyword is added to the augmentation results for that record. For string matching a fuzzy match algorithm is used, requiring a 90% match (configurable). Translations are matched using the metadata language as indicated in the record.
 
-The process runs as a CI-CD pipeline at dayly intervals.
+### Key Features
 
-#### Technology
-   * **Python**
-        Used for the keyword matching and database interactions
-   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
-        Primary database for storing and managing information
-   * **Docker** 
-        Used for containerizing the application, ensuring consistent deployment across environments
-   * **CI/CD**
-        Automated pipeline for continuous integration and deployment, with scheduled dayly runs
+### Architecture
+#### Technological Stack
 
+|Technology|Description|
+|----------|-----------|
+|**Python**|Used for the keyword matching and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing information.|
+|**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
+|* **CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
 
-### Translation module
+#### Main Sequence Diagram
+#### Database Design
+### Integrations & Interfaces
+### Key Architectural Decisions
+* The process runs as a CI-CD pipeline at dayly intervals.
+
+### Risks & Limitations
+
+## Translation module
 
 !!! component-header "Info"
     **Current version:** 0.2.0
@@ -71,6 +79,7 @@ The process runs as a CI-CD pipeline at dayly intervals.
 
     **Projects:** [Translation](https://github.com/soilwise-he/metadata-augmentation/tree/main/translation)
 
+### Overview and Scope
 Some records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.
 
 The translation module builds on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). Translations are stored in a database for reuse by the SWR.
@@ -79,31 +88,25 @@ The EU translation returns asynchronous responses to translation requests, this 
 
 Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
 
-#### Technology
-   * **Python**
-        Used for the translation module, API development, and database interactions
-   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
-        Primary database for storing and managing information
-   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
-        Employed to create and expose REST API endpoints. 
-        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
-   * **Docker** 
-        Used for containerizing the application, ensuring consistent deployment across environments
-   * **CI/CD**
-        Automated pipeline for continuous integration and deployment, with scheduled dayly runs
+### Key Features
 
-## Metadata interlinker
+### Architecture
+#### Technological Stack
+|Technology|Description|
+|----------|-----------|
+|**Python**|Used for the translation module, API development, and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing information.|
+|**[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation.|
+|**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
+|**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
 
-To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](./storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph).
+#### Main Sequence Diagram
+#### Database Design
+### Integrations & Interfaces
+### Key Architectural Decisions
+### Risks & Limitations
 
-We distinguish between explicit and implicit links:
-
-- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
-- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
-
-SWR-1 implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWR-1 have been extended with this function to detect such linkages and store them in the repository and add them to the SWR knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
-
-## Link liveliness assessment 
+## Link Liveliness Assessment 
 
 !!! component-header "Info"
     **Current version:** 1.1.4
@@ -114,53 +117,187 @@ SWR-1 implements the interlinking of data and knowledge assets based on explicit
 
     **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 
-Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWR. 
+### Overview and Scope
+Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWC. 
 
-The link liveliness assessment subcomponent runs over the available links stored with the SWR assets and checks their status. The function is foreseen to run frequently over the URIs in the SWR repository, assessing and storing the status of the link. 
+The Link Liveliness Assessment (LLA) component runs over the available links stored with the SWC assets and checks their status. The function is foreseen to run frequently over the URIs in the SWC, assessing and storing the status of the link. 
 
-While evaluating the context of a link, the assessment tool may derive some contextual metadata, which can augment the metadata record. These results are stored in the metadata augmentation table. Metadata aspects derived are file size, file format.
+A link in metadata record either points to:
 
-The link liveliness  privides the following functions:
+-	another metadata record
+-	a downloadable instance (pdf/zip/sqlite/mp4/pptx) of the resource
+    - the resource itself
+    - documentation about the resource
+    - identifier of the resource (DOI)	   
+-	a webservice or API (sparql, openapi, graphql, ogc-api)
 
-1. **OGC API Catalogue Integration**
-    - Designed to work specifically with [OGC API - Records](https://ogcapi.ogc.org/records/){target=_blank}
-    - Extracts and evaluates URLs from catalogue items 
-2. **Link Validation**
-    - Returns HTTP status codes for each link, along with other important information such as the parent URL, any warnings, and the date and time of the test.
-    - Additionally, the tool enhances link analysis by identifying various metadata attributes, including file format type (e.g., image/jpeg, application/pdf, text/html), file size (in bytes), and last modification date. This provides users with valuable insights about the resource before accessing it.
-3. **Support for OGC service links**
-    - Identifies and properly handles OGC service links ([WMS](https://www.ogc.org/standard/wms/){target=_blank}, [WFS](https://www.ogc.org/standard/wfs/){target=_blank}, [CSW](https://www.ogc.org/standard/cat/){target=_blank}, [WCS](https://www.ogc.org/standard/wcs/){target=_blank} etc.) before assessing them
-4. **Health Status Tracking**
-    - Provides up-to-date status history for every assessed link
-    - Maintains a history of link health over time
-4. **Flexible Evaluation**
-    - Supports single resource evaluation on demand
-    - Performs periodic tests to provide availability history
-4. **Broken link management**
-    - Identifies and categorizes broken links based on their status code ( `401 Unauthorized`, `404 Not Found`, `500 Server Error`)
-    - Flags deprecated links after consecutive failed tests and excludes them from future check
-5. **Timeout management**
-    - Identifies resources exceeding specified timeout thresholds
+Linkchecker evaluates for a set of metadata records, if:
 
-A javascript widget is further used to display the link status directly in the [SWR Catalogue](catalogue.md) record.
+-	the links to external sources are valid
+-	the links within the repository are valid
+-	link metadata represents accurately the resource (mime type, size, data model, access constraints)
+
+While evaluating the context of a link, the LLA component may derive some contextual metadata, which can augment the metadata record. These results are stored in the metadata augmentation table. Metadata aspects derived are file size, file format.
+
+### Key Features
+The LLA component privides the following functions:
+
+11.	**Link validation:** Returns HTTP status codes for each link, along with other important information such as the parent URL, any warnings, and the date and time of the test.
+Additionally, the tool enhances link analysis by identifying various metadata attributes, including file format type (e.g., image/jpeg, application/pdf, text/html), file size (in bytes), and last modification date. This provides users with valuable insights about the resource before accessing it. 
+2.	**Broken link categorization:** Identifies and categorizes broken links based on status codes, including Redirection Errors, Client Errors, and Server Errors. 
+3.	**Deprecated links identification:** Flags links as deprecated if they have failed for X consecutive tests, in our case X equals to 10. Deprecated links are excluded from future tests to optimize performance. 
+4.	**Timeout management:** Allows the identification of URLs that exceed a timeout threshold which can be set manually as a parameter in linkchecker's properties. 
+5.	**Availability monitoring:** When run periodically, the tool builds a history of availability for each URL, enabling users to view the status of links over time. 
+6.	OWS services (WMS, WFS, WCS, CSW) typically return a HTTP 500 error when called without the necessary parameters. A handling for these services has been applied in order to detect and include the necessary parameters before being checked.
+
+A javascript widget is further used to display the link status directly in the SoilWise [Metadata Catalogue](catalogue.md) record.
 
 The API can be used to identify which records have broken links.
 
 ![Link liveliness indication](../_assets/images/link_liveliness2.png)
 
+### Architecture
+#### Technological Stack
 
-### Technology
-   * **Python**
-        Used for the linkchecker integration, API development, and database interactions
-   * **[PostgreSQL](https://www.postgresql.org/){target=_blank}**
-        Primary database for storing and managing link information
-   * **[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**
-        Employed to create and expose REST API endpoints. 
-        Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation
-   * **Docker** 
-        Used for containerizing the application, ensuring consistent deployment across environments
-   * **CI/CD**
-        Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment
+|Technology|Description|
+|----------|-----------|
+|**Python**|Used for the linkchecker integration, API development, and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing link information.|
+|**[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation.|
+|**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
+|**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment.|
+
+#### Main Component Diagram
+
+```mermaid
+flowchart LR
+    H["Harvester"]-- "writes" -->MR[("Record Table")]
+    MR-- "reads" -->LAA["Link Liveliness Assessment"]
+    MR-- "reads" -->CA["Catalogue"]
+    LAA-- "writes" -->LLAL[("Links Table")]
+    LAA-- "writes" -->LLAVH[("Validation History Table")]
+    CA-- "reads" -->API["**API**"]
+    LLAL-- "writes" -->API
+    LLAVH-- "writes" -->API
+```
+
+#### Main Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant Linkchecker
+    participant DB
+    participant Catalogue
+    
+    Linkchecker->>DB: Establish Database Connection
+    Linkchecker->>Catalogue: Extract Relevant URLs
+    
+    loop URL Processing
+        Linkchecker->DB: Check URL Existence
+        Linkchecker->DB: Check Deprecation Status
+        
+        alt URL Not Deprecated
+            Linkchecker-->DB: Insert/Update Records
+            Linkchecker-->DB: Insert/Update Links with file format type, size, last_modified
+            Linkchecker-->DB: Update Validation History
+        else URL Deprecated
+            Linkchecker-->DB: Skip Processing
+        end
+    end
+    
+    Linkchecker->>DB: Close Database Connection
+
+```
+
+#### Database Design
+
+```mermaid
+classDiagram
+    Links <|-- Validation_history
+    Links <|-- Records
+    Links : +Int ID
+    Links : +Int fk_records
+    Links : +String Urlname
+    Links : +String deprecated
+    Links : +String link_type
+    Links : +Int link_size
+    Links : +DateTime last_modified
+    Links : +String Consecutive_failures
+    class Records{
+    +Int ID
+    +String Records
+    }
+    class Validation_history{
+      +Int ID
+      +Int fk_link
+      +String Statuscode
+     +String isRedirect
+     +String Errormessage
+     +Date Timestamp
+    }
+```
+
+### Integrations & Interfaces
+
+-	Visualisation of evaluation in Metadata Catalogue, the assessment report is retrieved using ajax from the each record page
+-   FastAPI now incorporates additional metadata for links, including file format type, size, and last modified date.
+
+### Key Architectural Decisions
+
+Initially we started with [linkchecker](https://pypi.org/project/LinkChecker/) library, but performance was really slow, because it tested the same links for each page again and again.
+We decided to only test the links section of ogc-api:records, it means that links within for example metadata abstract are no longer tested.
+OGC OWS services are a substantial portion of links, these services return error 500, if called without parameters. For this scenario we created a dedicated script.
+If tests for a resource fail a number of times, the resource is no longer tested, and the resource tagged as `deprecated`.
+Links via a facade, such as DOI, are followed to the page they are referring to. It means the LLA tool can understand the relation between DOI and the page it refers to.
+For each link it is known on which record(s) it is mentioned, so if a broken link occurs, we can find a contact to notify in the record.
+
+For the second release we have enhanced the link liveliness assement tool to collect more information about the resources:
+
+  - **File type format** (media type) to help users understand what format they'll be accessing (e.g., image/jpeg, application/pdf, text/html)
+  - **File size** to inform users about download expectations
+  - **Last modification date** to indicate how recent the resource is
+
+**API Updates:**
+The API has been extended to include the newly tracked metadata fields:
+
+- **link_type**: Shows the file format type of the resource (e.g., image/jpeg, application/pdf)
+- **link_size**: Indicates the size of the resource in bytes
+- **last_modified**: Provides the timestamp when the resource was modified
+
+### Risks & Limitations
+
+## Spatial Locator
+
+### Overview and Scope
+### Key Features
+### Architecture
+#### Technological Stack
+#### Main Sequence Diagram
+#### Database Design
+### Integrations & Interfaces
+### Key Architectural Decisions
+### Risks & Limitations
+
+## Metadata Interlinker
+
+### Overview and Scope
+To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](./storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph).
+
+We distinguish between explicit and implicit links:
+
+- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
+- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
+
+SWC implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWC have been extended with this function to detect such linkages and store them in the repository and add them to the SWC knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
+
+### Key Features
+### Architecture
+#### Technological Stack
+#### Main Sequence Diagram
+#### Database Design
+### Integrations & Interfaces
+### Key Architectural Decisions
+### Risks & Limitations
 
 ## Foreseen functionality
 
@@ -169,10 +306,6 @@ In the next iterations, Metadata augmentation component is foreseen to include t
 ### Keyword extraction
 
 The value of relevant keywords is often underestimated by data producers. This proof-of-concept module evaluates the metadata title/abstract to identify relevant keywords using NLP/NER technology. Integration with the [catalogue](./catalogue.md) is foreseen.
-
-### Spatial Locator
-
-The module is foreseen to analyse existing keywords to find a relevant geography for the record. It will then use a gazeteer to find spatial coordinates for the geography, which will be inserted into the metadata record. Vice versa, if the record has a geography it will use reverse gazeteer to find a matching location keyword.
 
 ### Spatial scope analyser
 
@@ -320,5 +453,3 @@ flowchart TD
     es --> m
     th[(Thesauri)]-- synonyms ---Codelists
 ```
-
-
