@@ -81,114 +81,113 @@ The chatbot combines agentic LLM tool calling with retrieval-augmented generatio
 
 **High-level component overview:**
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        Browser (Scala.js)                           │
-│  ┌───────────────────────────────────────────────────────────────┐  │
-│  │  SoilCompanionApp                                             │  │
-│  │  - WebSocket client (real-time chat streaming)                │  │
-│  │  - Authentication & session management                        │  │
-│  │  - Location picker (Leaflet map)                              │  │
-│  │  - Insight panel (vocabulary concepts, Wikipedia links)       │  │
-│  │  - File upload, feedback, theme toggle                        │  │
-│  └───────────────────────────────────────────────────────────────┘  │
-└──────────────────────────────┬──────────────────────────────────────┘
-                               │ WebSocket + HTTP
-┌──────────────────────────────▼──────────────────────────────────────┐
-│                   SoilCompanionServer (Cask, JVM)                   │
-│                                                                     │
-│   Routes: /healthz, /readyz, /login, /logout, /session,             │
-│           /subscribe/:id (WS), /query, /clear, /upload,             │
-│           /feedback, /location, /vocab, /app/*                      │
-│                                                                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌───────────────────────────┐  │
-│  │   Config     │  │  Feedback    │  │   Session Management      │  │
-│  │ (PureConfig) │  │  Logger      │  │   (ConcurrentHashMaps)    │  │
-│  └──────────────┘  └──────────────┘  └───────────────────────────┘  │
-│                                                                     │
-│  ┌──────────────────────────────────────────────────────────────┐   │
-│  │  Assistant (per session)                                     │   │
-│  │  ┌────────────────────────────────────────────────────────┐  │   │
-│  │  │  LangChain4j AiServices                                │  │   │
-│  │  │  - StreamingChatModel (OpenAI)                         │  │   │
-│  │  │  - ChatMemory (50 messages)                            │  │   │
-│  │  │  - RAG ContentRetriever (embeddings + local docs)      │  │   │
-│  │  │  - Tool methods (5 integrations)                       │  │   │
-│  │  └────────────────────────────────────────────────────────┘  │   │
-│  └──────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌───────────────┐  ┌────────────────┐                              │
-│  │  VocabLinker  │  │WikipediaLinker │   (post-response linking)    │
-│  └───────────────┘  └────────────────┘                              │
-└──────────────────────────────┬──────────────────────────────────────┘
-                               │ HTTP calls
-┌──────────────────────────────▼──────────────────────────────────────┐
-│                       External Services                             │
-│                                                                     │
-│  ┌──────────────┐ ┌──────────────┐ ┌────────────────────────────┐   │
-│  │ OpenAI API   │ │  Solr        │ │  ISRIC SoilGrids v2.0      │   │
-│  │ (LLM, embed) │ │  (catalog)   │ │  (global soil properties)  │   │
-│  └──────────────┘ └──────────────┘ └────────────────────────────┘   │
-│  ┌──────────────┐ ┌──────────────┐ ┌────────────────────────────┐   │
-│  │  SoilWise    │ │  Wikipedia   │ │  WUR AgroDataCube v2       │   │
-│  │  SPARQL      │ │  (6 langs)   │ │  (NL field data)           │   │
-│  └──────────────┘ └──────────────┘ └────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Browser ["Browser (Scala.js)"]
+        App["SoilCompanionApp<br/>- WebSocket client (real-time chat streaming)<br/>- Authentication & session management<br/>- Location picker (Leaflet map)<br/>- Insight panel (vocabulary concepts, Wikipedia links)<br/>- File upload, feedback, theme toggle"]
+    end
+
+    Browser -- "WebSocket + HTTP" --> Server
+
+    subgraph Server ["SoilCompanionServer (Cask, JVM)"]
+        direction TB
+        Routes["Routes: /healthz, /readyz, /login, /logout, /session,<br/>/subscribe/:id (WS), /query, /clear, /upload,<br/>/feedback, /location, /vocab, /app/*"]
+        
+        subgraph Internal_Modules [" "]
+            direction LR
+            Config["Config<br/>(PureConfig)"]
+            Logger["Feedback<br/>Logger"]
+            SessMgmt["Session Management<br/>(ConcurrentHashMaps)"]
+        end
+
+        subgraph Assistant ["Assistant (per session)"]
+            AIServices["LangChain4j AiServices<br/>- StreamingChatModel (OpenAI)<br/>- ChatMemory (50 messages)<br/>- RAG ContentRetriever (embeddings + local docs)<br/>- Tool methods (5 integrations)"]
+        end
+
+        subgraph PostLinking ["(post-response linking)"]
+            direction LR
+            VL[VocabLinker]
+            WL[WikipediaLinker]
+        end
+    end
+
+    Server -- "HTTP calls" --> External
+
+    subgraph External ["External Services"]
+        direction TB
+        E1["OpenAI API<br/>(LLM, embed)"]
+        E2["Solr<br/>(catalog)"]
+        E3["ISRIC SoilGrids v2.0<br/>(global soil properties)"]
+        E4["SoilWise<br/>SPARQL"]
+        E5["Wikipedia<br/>(6 langs)"]
+        E6["WUR AgroDataCube v2<br/>(NL field data)"]
+    end
+
+    %% Styling
+    style Browser fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style Server fill:#fff,stroke:#333,stroke-width:2px
+    style External fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style Assistant fill:#fff,stroke:#333,stroke-dasharray: 5 5
+    style Internal_Modules fill:none,stroke:none
+    style PostLinking fill:none,stroke:none
 ```
 
 ### Main Sequence Diagram
 
 **User query to response flow:**
 
-```
-  Client (Browser)                    Server (JVM)                      External APIs
-  ─────────────────                   ────────────                      ──────────────
-        │                                  │                                  │
-        │──── GET /session ───────────────▶│                                  │
-        │◀─── { sessionId: UUID } ─────────│                                  │
-        │                                  │                                  │
-        │──── WS /subscribe/:sessionId ───▶│  (store connection)              │
-        │◀─── connection established ──────│                                  │
-        │                                  │                                  │
-        │──── POST /login ────────────────▶│  (validate credentials)          │
-        │◀─── { ok: true } ────────────────│                                  │
-        │                                  │                                  │
-        │──── POST /query ────────────────▶│                                  │
-        │     { sessionId, content }       │                                  │
-        │                                  │                                  │
-        │◀─── QueryEvent("received") ──────│  (generate questionId)           │
-        │◀─── QueryEvent("thinking") ──────│                                  │
-        │◀─── QueryEvent("retrieving_      │                                  │
-        │      context") ──────────────────│                                  │
-        │                                  │──── RAG: embed query ───────────▶│
-        │                                  │◀─── top-5 document chunks ───────│
-        │                                  │                                  │
-        │                                  │──── LLM: evaluate tools ────────▶│ OpenAI
-        │                                  │◀─── tool call decision ──────────│
-        │                                  │                                  │
-        │                                  │──── Tool: e.g. Solr search ─────▶│ Solr
-        │                                  │◀─── search results ──────────────│
-        │                                  │                                  │
-        │                                  │──── LLM: synthesize answer ─────▶│ OpenAI
-        │                                  │◀─── token stream begins ─────────│
-        │                                  │                                  │
-        │◀─ QueryPartialResponse(token) ───│  (repeated per token)            │
-        │◀─ QueryPartialResponse(token) ───│                                  │
-        │◀─ ...                            │                                  │
-        │                                  │                                  │
-        │                                  │  (stream complete)               │
-        │                                  │  Apply VocabLinker               │
-        │                                  │  Apply WikipediaLinker           │
-        │                                  │                                  │
-        │◀─ QueryEvent("links_added",      │                                  │
-        │    linkedResponse) ──────────────│                                  │
-        │◀─ QueryEvent("done") ────────────│                                  │
-        │                                  │                                  │
-        │  (render markdown, show          │                                  │
-        │   feedback buttons)              │                                  │
-        │                                  │                                  │
-        │──── POST /feedback ─────────────▶│  (log to JSONL)                  │
-        │     { questionId, vote }         │                                  │
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client (Browser)
+    participant S as Server (JVM)
+    participant E as External APIs
+
+    Note over C, S: Session Initialization
+    C->>S: GET /session
+    S-->>C: { sessionId: UUID }
+
+    C->>S: WS /subscribe/:sessionId
+    Note right of S: store connection
+    S-->>C: connection established
+
+    C->>S: POST /login
+    Note right of S: validate credentials
+    S-->>C: { ok: true }
+
+    Note over C, S: Chat Interaction
+    C->>S: POST /query<br/>{ sessionId, content }
+    
+    S-->>C: QueryEvent("received")
+    Note right of S: generate questionId
+    S-->>C: QueryEvent("thinking")
+    S-->>C: QueryEvent("retrieving_context")
+
+    S->>E: RAG: embed query
+    E-->>S: top-5 document chunks
+
+    S->>E: LLM: evaluate tools (OpenAI)
+    E-->>S: tool call decision
+
+    S->>E: Tool: e.g. Solr search (Solr)
+    E-->>S: search results
+
+    S->>E: LLM: synthesize answer (OpenAI)
+    E-->>S: token stream begins
+
+    loop Token Streaming
+        S-->>C: QueryPartialResponse(token)
+    end
+
+    Note right of S: stream complete<br/>Apply VocabLinker<br/>Apply WikipediaLinker
+
+    S-->>C: QueryEvent("links_added", linkedResponse)
+    S-->>C: QueryEvent("done")
+
+    Note left of C: render markdown,<br/>show feedback buttons
+
+    C->>S: POST /feedback<br/>{ questionId, vote }
+    Note right of S: log to JSONL
 ```
 
 
