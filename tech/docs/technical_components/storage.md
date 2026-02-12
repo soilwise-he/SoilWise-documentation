@@ -42,7 +42,6 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 
     **Access point:** Triple Store (SWR SPARQL endpoint) <https://repository.soilwise-he.eu/sparql>
 
-
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
 A Triple Store is selected as a parallel storage because it offers several capabilites 
@@ -59,6 +58,8 @@ A Triple Store is selected as a parallel storage because it offers several capab
     **Access point:** https://github.com/soilwise-he
 
 Git is used to store versions of Soilwise code, documentation and configuration. It is also used for issue and release management and automated pipelines for deployment, augmentation, validation and harvesting external sources.
+
+## Integrations & Interfaces
 
 <!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
 
