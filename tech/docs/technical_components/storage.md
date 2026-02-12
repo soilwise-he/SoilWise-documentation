@@ -1,14 +1,21 @@
 # Repository Storage
 
+## Introduction
+
+### Overview and Scope
 The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 
 1. [A relational database management system](#postgresql-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core metadata of both data and knowledge assets.
 2. [A Triple Store](#virtuoso-triple-store-storage-of-swr-knowledge-graph) to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph.
 3. [Git](#git-storage-of-code-and-configuration) for storage of user-enhanced metadata.
 
-## Functionality
+### Intended Audience
 
-### PostgreSQL RDBMS: storage of raw and augmented metadata
+Storage is a backend component, therefore we only expect a maintenance role:
+
+* **SWC Administrator** monitoring the health status, logs...
+
+## PostgreSQL RDBMS: storage of raw and augmented metadata
 
 !!! component-header "Info"
     **Current version:** Postgres release 12.2; 
@@ -26,7 +33,7 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 - An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid.
 - Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users.
 
-### Virtuoso Triple Store: storage of SWR knowledge graph
+## Virtuoso Triple Store: storage of SWR knowledge graph
 
 !!! component-header "Info"
     **Current version:** Virtuoso release 07.20.3239
@@ -44,7 +51,7 @@ A Triple Store is selected as a parallel storage because it offers several capab
 - It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
 - Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge.
 
-### Git: storage of code and configuration
+## Git: storage of code and configuration
 
 !!! component-header "Info"
     **Technology:** Gitlab and GitHub
