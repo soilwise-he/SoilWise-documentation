@@ -11,8 +11,9 @@
 
 The Harvester component is dedicated to automatically harvest sources to populate SWR with metadata on [datasets](#datasets) and [knowledge sources](#knowledge-sources).
 
-## Metadata harvesting concept
+## Introduction
 
+### Overview and Scope
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components where available.
 
 The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Discussion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
@@ -45,7 +46,13 @@ Typical tasks of a harvester:
     - mint identifier if missing ( https://example.com/data/{uuid} )
     - a model transformation before ingestion ( example-transform.xsl / do-something.py )
 
-## Resource Types
+### Intended Audience
+
+Harvester is a backend component, therefore we only expect a maintenance role:
+
+* **SWC Administrator** monitoring the health status, logs... Administrators can manually start a specific harvesting pipelines.
+
+### Resource Types
 
 Metadata for following resource types are foreseen to be harvested:
 
@@ -65,17 +72,17 @@ flowchart LR
     p -->|part-of| fs[Fundingscheme]
 ```
 
-### Datasets
+#### Datasets
 
 Metadata records of datasets are, for the first iteration, primarily imported from the **ESDAC**, **INSPIRE GeoPortal**, **BonaRes**, **Cordis**/**OpenAire**, **ISRIC**, **FAO**, and **EEA**. In later iterations SoilWise aims to include other projects and portals, such as **national** or **thematic portals**. These repositories contain large number of datasets. Selection of key datasets concerning the SoilWise scope is a subject of know-how to be developed within SoilWise.
 
-### Knowledge sources
+#### Knowledge sources
 
 Compared to datasets, knowledge sources are typically very heterogeneous (reports, articles, websites, video's) and collected in a variety of repositories. Soilwise endorses projects to use persistent repositories, with sufficient options for metadata capture. For the acadmic community for example, inclusion in OpenAire is a prerequisite to be included in SWR. This allows SWR to use the OpenAire functionalities to collect evidence about the resources. 
 
 The SoilWise project team is still exploring which knowledge resources to include. As an example, an important cluster of knowledge sources may be seen academic articles and report deliverables from Mission Soil Horizon Europe projects. These resources are accessible from **Cordis** and **OpenAire**, filteres by the grantnumber of the projects. Extracting content from Cordis and OpenAire can be achieved using a harvesting task (using the Cordis schema, extended with post processing). For the first iteration, SoilWise aims to achieve this goal. In future iterations new knowledge sources may become relevant, we will investigate at that moment what is the best approach to harvest them.
 
-### Projects and organisations
+#### Projects and organisations
 
 Project details are extracted from Cordis. Discussion is ongoing how to improve this process, for example to understand 
 if projects should be included which do not have European funding.
@@ -84,7 +91,7 @@ Indivicuals and organisations are typically mentioned as contact, author or owne
 
 A challenge for SWR is to understand the alignment between those individuals and organisations, to enable users to understand the relations between projects, organisations and resources.
 
-### News items
+#### News items
 
 A need has been expressed to be informed about ongoing Soil Mission projects. For that reason a harvesting mechanism has been set up which extracts and aggregates from the various Soil Mission Project websites the news items published in their websites. A common protocol, RSS/Atom feeds, implemented by most of the project websites is used to extract that information. At the moment we are investigating if we can also extract anounced upcoming events, for example via the iCalendar protocol, but we already noticed that this protocol has vert little adoption.
 
@@ -93,15 +100,15 @@ A need has been expressed to be informed about ongoing Soil Mission projects. Fo
 With respect to harvesting, it is important to note that a wide range of levels of adoption of standards is implemented by repositories. 
 Both for metadata models, identification, as well as access protocols. This will, in some cases, make it necessary to develop customized harvesting and metadata extraction processes. It also means that informed decisions need to be made on which resources to include, based on priority, required efforts and available capacity.
 
-## Functionality
+## Key features
 
 The Harvester component currently comprises of the following functions:
 
 - [Harvest records from metadata and knowledge resources](#harvest-records-from-metadata-and-knowledge-resources)
-- [Metadata harmonization](#metadata-harmonization)
-- [Metadata RDF turtle serialization](#metadata-rdf-turtle-serialization)
+- [Metadata Harmonization](#metadata-harmonization)
+- [Metadata RDF Turtle Serialization](#metadata-rdf-turtle-serialization)
 - [RDF to Triple Store](#rdf-to-triple-store)
-- [Duplication identification](#duplication-indentification)
+- [Duplication Identification](#duplication-indentification)
 
 ### Harvest records from metadata and knowledge resources
 
@@ -192,11 +199,15 @@ A resource can be described in multiple Catalogues, identified by a common ident
 
 Visualization of source repositories is in the first development iteration available as a dedicated section in the [SoilWise Catalogue](catalogue.md).
 
-## Technology
+## Architecture
 
-### Git actions/pipelines to run harvest tasks
+### Technological Stack
 
-Git actions (github) or pipelines (gitlab) are automated processes which run at intervals or events. Git platforms typically offer this functionality including extended logging, queueing, and manual job monitoring and interaction (start/stop).
+|Technology|Description|
+|----------|-----------|
+|Git actions/pipelines| Automated processes which run at intervals or events. Git platforms typically offer this functionality including extended logging, queueing, and manual job monitoring and interaction (start/stop).|
+
+### Main Sequence Diagram
 
 Each harvester runs in a dedicated container. The result of the harvester is ingested into a (temporary) storage.
 Follow up processes (harmonization, augmentation, validation) pick up the results from the temporary storage. 
@@ -211,11 +222,17 @@ flowchart LR
 ```
 Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/actions){target=_blank}, Git provides options to cancel and trigger tasks and review CI-CD logs to check errors
 
-#### OGC-CSW
+## Integrations & Interfaces
+
+The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](catalogue.md), (2) [Metadata authoring](metadata_authoring.md) and (3) [ETS/ATS](metadata_validation.md#metadata-etsats-checking), i.e. test suites.
+
+## Key Architectural Decisions - Harvesting Strategy
+
+### OGC-CSW
 
 Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank} standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
 
-#### CORDIS - OpenAire
+### CORDIS - OpenAire
 
 Cordis does not capture many metadata properties. We harvest the title of a project publication and, if available, the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
 
@@ -224,10 +241,8 @@ A second mechanism is available to link from Cordis to OpenAire, the RCN number.
 Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
 Detailed technical information can be found in the [technical description](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme){target=_blank}.
 
-#### OpenAire and other sources
+### OpenAire and other sources
 
 The software used to query OpenAire by DOI or by RCN is not limited to be used by DOIs or RCNs that come from Cordis. Any list of DOIs or list of RCNs can be handled by the software.
 
-## Integration opportunities
-
-The Automatic metadata harvesting component will show its full potential when being in the SWR tightly connected to (1) [SWR Catalogue](catalogue.md), (2) [Metadata authoring](metadata_authoring.md) and (3) [ETS/ATS](metadata_validation.md#metadata-etsats-checking), i.e. test suites.
+## Risks & Limitations
