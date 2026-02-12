@@ -76,6 +76,8 @@ At the moment, SoilWise supports data publishers with the following tools:
 
 ## Other recommended tools acknowledged by SoilWise community
 
+The following components are not a product of SoilWise project, and not an integral part of the SoilWise Catalogue, but are recommended by the SoilWise community.
+
 ### Hale Studio
 
 A proven ETL tool optimised for working with complex structured data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While Hale Studio exists as a multi-platform interactive application, its capabilities can be provided through a web service with an OpenAPI.
