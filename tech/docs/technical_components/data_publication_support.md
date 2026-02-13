@@ -68,7 +68,7 @@ The LLM layer is optional—users can skip automated generation and manually pro
 | **Optional LLM Assistance** | OpenAI/Apertus integration | Auto-extract descriptions from docs |
 | **Semantic Vocabulary Matching** | FAISS vector search | Link descriptions to standard vocabularies |
 | **Context Awareness** | PDF/DOCX import + prompting | Extract domain-specific info when available |
-| **Multi-format Export** | Excel/JSON/CSV output | Integration with downstream tools |
+| **Multi-format Export** | flat csv/TableSchema/CSVW | Integration with downstream tools |
 
 ### Architecture
 #### Technological Stack
