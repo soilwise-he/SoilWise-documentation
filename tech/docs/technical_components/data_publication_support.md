@@ -43,7 +43,7 @@ At the moment, SoilWise supports data publishers with the following tools:
 
     **Technology:** [Streamlit](https://streamlit.io/), Python, [OpenAI API](https://openai.com/)
 
-    **Project:** 
+    **Project:** [Tabular Data Annotator](https://github.com/soilwise-he/TabularDataAnnotator-streamlit)
 
     **Access Point:** <https://dataannotator-swr.streamlit.app/>
 
