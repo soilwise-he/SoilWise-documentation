@@ -9,63 +9,6 @@ A fixed **1st prototype version** (for SWR prototype delivery) is published at: 
 
 A fixed **2st prototype version** (for SWR prototype delivery) is published at: https://prototype-2-0.soilwise-documentation.pages.dev/
 
-
-## Knowledge Base
-
-The knowledge-base repository serves for merging documentation from all desired technical components and displaying it at one place.
-
-A **living preview** version is published at:  https://soilwise-documentation-kb.pages.dev/
-
-### Contributions
-
-#### Documentation content updates
-
-New contributions to the documentation content should be added directly to the corresponding Git repositories. Please, primarily follow a predefined structure of the documents, however custom adjustments are possible.
-
-#### Documentation of a new component
-
-1. Set up `/docs` folder in the corresponding component repository
-2. Set up `design.md` file with the following structure:
-
-```
-# Design Document: NER Augmentation
-
-## Introduction
-
-### Component Overview and Scope
-
-### Users
-
-### References
-
-## Requirements
-
-### Functional Requirements
-
-### Non-functional Requirements
-
-## Architecture
-
-### Technological Stack
-
-### Overview of Key Features
-
-### Component Diagrams
-
-### Sequence Diagram
-
-### Database Design
-
-### Integrations & Interfaces
-
-### Key Architectural Decisions
-
-## Risks & Limitations
-```
-
-3. Set up all other needed files
-4. Add linkage to the source repository in the `mkdocs.yml` file under `multirepo` plugin (the file is located in this repository)
-
 # Mkdocs
 
 ## How to start collaborating
