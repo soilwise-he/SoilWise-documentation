@@ -116,17 +116,17 @@ Various storage options exist, dedicated usage scenarios usually have an optimal
 
 ‘To which data model shall I align?’ is the central question of data harmonisation efforts and data interoperability in general. SoilWise is aware of the fragmentation of soil data and the lack of harmonisation. As such, the SWR will, in the first project iteration cycle, focus on two major pan-European/global data modelling efforts within the soil domain. 
 
--  **GloSIS** (Global Soil Information System) is the name for the system and the soil data model, also named the GloSIS domain model. The GloSIS domain model published as a UML class diagram is not publicly available, being in the FAO repositories under the CC <by-nc-sa/3.0/igo> license. Nevertheless, the [GloSIS web ontology](https://www.semantic-web-journal.net/system/files/swj3589.pdf){target=_blank} is publicly available implementation with the Web Ontology Language (OWL). The GloSIS web ontology employs a host of Semantic Web standards (SOSA, SKOS, GeoSPARQL, QUDT); GloSIS lays out not only a soil data ontology but also an extensive set of ready-to-use code lists for soil description and physio-chemical analysis. Various examples are provided on the provision and use of GloSIS-compliant linked data, showcasing the contribution of this ontology to the discovery, exploration, integration and access of soil data.
-- **INSPIRE** (INfrastructure for SPatial InfoRmation in Europe) aiming to create a spatial environmental data infrastructure for the European Union. A detailed [data specification for the soil theme](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so){target=_blank} was published by the European Commission in 2013, supported by a detailed domain model documented as a [UML class diagram](https://inspire-mif.github.io/uml-models/approved/ea+xmi/EAXMI.zip){target=_blank}.
+-  **GloSIS** (Global Soil Information System) is the name for the system and the soil data model, also named the GloSIS domain model. The GloSIS domain model published as a UML class diagram is not publicly available, being in the FAO repositories under the CC <by-nc-sa/3.0/igo> license. Nevertheless, the [GloSIS web ontology](https://www.semantic-web-journal.net/system/files/swj3589.pdf) is publicly available implementation with the Web Ontology Language (OWL). The GloSIS web ontology employs a host of Semantic Web standards (SOSA, SKOS, GeoSPARQL, QUDT); GloSIS lays out not only a soil data ontology but also an extensive set of ready-to-use code lists for soil description and physio-chemical analysis. Various examples are provided on the provision and use of GloSIS-compliant linked data, showcasing the contribution of this ontology to the discovery, exploration, integration and access of soil data.
+- **INSPIRE** (INfrastructure for SPatial InfoRmation in Europe) aiming to create a spatial environmental data infrastructure for the European Union. A detailed [data specification for the soil theme](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) was published by the European Commission in 2013, supported by a detailed domain model documented as a [UML class diagram](https://inspire-mif.github.io/uml-models/approved/ea+xmi/EAXMI.zip).
 
 
 Other (potentially) relevant data models are:
 
-- [World Reference base (WRB)](https://wrb.isric.org/){target=_blank} maintains the code lists, which are the source of GLOSIS codelists, but the WRB online presence is currently limited.
-- [Landuse](https://inspire.ec.europa.eu/theme/lu){target=_blank}
-- [Land management practices](https://qcat.wocat.net/en/wocat/){target=_blank}
-- [monitoring facilities](https://inspire.ec.europa.eu/theme/ef){target=_blank}
-- [Landcover](https://inspire.ec.europa.eu/theme/lc){target=_blank}
+- [World Reference base (WRB)](https://wrb.isric.org/) maintains the code lists, which are the source of GLOSIS codelists, but the WRB online presence is currently limited.
+- [Landuse](https://inspire.ec.europa.eu/theme/lu)
+- [Land management practices](https://qcat.wocat.net/en/wocat/)
+- [monitoring facilities](https://inspire.ec.europa.eu/theme/ef)
+- [Landcover](https://inspire.ec.europa.eu/theme/lc)
 
 #### Open issues
 
@@ -139,7 +139,7 @@ the institutional soil survey handbooks used in Australia and New Zealand. ANZSo
 
 Moreover, GloSIS and INSPIRE data models fully support only vector data. GloSIS has not developed a data model for gridded data yet, and several issues were reported to the INSPIRE data model for gridded data.
 
-GloSIS and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples objects in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/){target=_blank}. Soilwise can probably contribute to the migration of the soil models to the new OMS version.
+GloSIS and INSPIRE soil are oriented to Observations and Measurements of OGC, with the arrival of the samples objects in the new version of O&M, now named [Observations Measurements & Samples](https://www.ogc.org/standard/om/). Soilwise can probably contribute to the migration of the soil models to the new OMS version.
 
 ### Soil health vocabulary 
 

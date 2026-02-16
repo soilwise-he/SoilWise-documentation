@@ -27,21 +27,21 @@ any conflicts that may arise.
 The governance framework will be designed by integrating relevant EU legislation concerning governance within data 
 ecosystems, alongside insights from ongoing Digital Europe CSA projects focused on constructing the Common European 
 Data Spaces. The formulation of this governance framework will rely mainly on the Data Spaces Support Centre 
-([DSSC](https://dssc.eu/){target=_blank}) 
+([DSSC](https://dssc.eu/)) 
 results which are:
 
-1. [Starter Kit](https://dssc.eu/space/SK/29523973/Starter+Kit+for+Data+Space+Designers+%7C+Version+1.0+%7C+March+2023){target=_blank}, 
+1. [Starter Kit](https://dssc.eu/space/SK/29523973/Starter+Kit+for+Data+Space+Designers+%7C+Version+1.0+%7C+March+2023), 
 a document that helps organizations and individuals understand the requirements for creating a data space by providing. 
 a multifaceted view of data spaces, highlighting business, legal and governance, operational, functional, 
 and technical aspects to consider
-2. [Glossary](https://dssc.eu/space/Glossary/55443460/DSSC+Glossary+%7C+Version+1.0+%7C+March+2023){target=_blank} 
-3. [Blueprint](https://confluence.external-share.com/content/80889/dssc_blueprintv05_public_consultation?sortChildren=tree){target=_blank}, 
+2. [Glossary](https://dssc.eu/space/Glossary/55443460/DSSC+Glossary+%7C+Version+1.0+%7C+March+2023) 
+3. [Blueprint](https://confluence.external-share.com/content/80889/dssc_blueprintv05_public_consultation?sortChildren=tree), 
 a consistent and comprehensive set of guidelines to support the development cycle of data spaces.
  
 Additionally, the DSSC proposes the utilization of the Building Blocks Taxonomy, which serves as a classification scheme. 
 This taxonomy aids in describing, analyzing, and organizing data space initiatives based on predefined characteristics, 
-thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider the [openDEI design principles for data spaces](https://design-principles-for-data-spaces.org/){target=_blank}, the requirements of [ISO 30401 for KM](https://iso-docs.com/blogs/iso-concepts/knowledge-management-system-iso-30401){target=_blank} and rely on the results of the preparatory 
-action for the data space for Agriculture ([AgriDataSpace](https://agridataspace-csa.eu/){target=_blank}).
+thus promoting a structured approach to governance implementation (_Figure 1_). We will equally consider the [openDEI design principles for data spaces](https://design-principles-for-data-spaces.org/), the requirements of [ISO 30401 for KM](https://iso-docs.com/blogs/iso-concepts/knowledge-management-system-iso-30401) and rely on the results of the preparatory 
+action for the data space for Agriculture ([AgriDataSpace](https://agridataspace-csa.eu/)).
 
 <br>
 
@@ -50,8 +50,8 @@ action for the data space for Agriculture ([AgriDataSpace](https://agridataspace
 
 Following the introduction of the GDPR, the European Commission has put forward several legislative proposals, 
 such as the Digital Services Act, the Digital Markets Act, the Data Act, and the Data Governance Act. 
-SoilWise places particular emphasis on the [Data Governance Act](https://www.european-data-governance-act.com/){target=_blank} 
-and the [Data Act](https://www.eu-data-act.com/){target=_blank}, as their primary goals 
+SoilWise places particular emphasis on the [Data Governance Act](https://www.european-data-governance-act.com/) 
+and the [Data Act](https://www.eu-data-act.com/), as their primary goals 
 align closely with the project's aims to enhance data sharing and facilitate product development. 
 These legislations are designed to:
 
@@ -107,7 +107,7 @@ Vocabulary providers manage and offer vocabularies and ontologies, reference dat
 
 **Metadata broker**
 
-According to IDSA, the Metadata Broker forms the reference implementation for registration and search functionality compliant with International Data Spaces. As such, it follows the generic connector architecture described in the reference [architecture model](https://www.dataspaces.fraunhofer.de/en/software/broker.html#:~:text=The%20Metadata%20Broker%20constitutes%20the,in%20the%20reference%20architecture%20model){target=_blank}.
+According to IDSA, the Metadata Broker forms the reference implementation for registration and search functionality compliant with International Data Spaces. As such, it follows the generic connector architecture described in the reference [architecture model](https://www.dataspaces.fraunhofer.de/en/software/broker.html#:~:text=The%20Metadata%20Broker%20constitutes%20the,in%20the%20reference%20architecture%20model).
 
 **Identity providers**
 

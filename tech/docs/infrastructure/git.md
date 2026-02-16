@@ -1,11 +1,11 @@
 # GIT versioning system
 
-All aspects of the SoilWise repository can be managed through the [SoilWise GitHub](https://github.com/soilwise-he){target=_blank} repository. 
+All aspects of the SoilWise repository can be managed through the [SoilWise GitHub](https://github.com/soilwise-he) repository. 
 This allows all members of the Mission Soil and EUSO community to provide feedback or contribute to any of the aspects.
 
 ## Documentation
 
-Documentation is maintained in the markdown format using [McDocs](https://www.mkdocs.org/){target=_blank} and deployed as html or pdf using GitHub Pages.
+Documentation is maintained in the markdown format using [McDocs](https://www.mkdocs.org/) and deployed as html or pdf using GitHub Pages.
 
 An interactive preview of architecture diagrams is also maintained and published using GitHub Pages.
 

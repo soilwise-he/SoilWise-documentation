@@ -59,7 +59,7 @@ For metadata records which have not been analysed yet (in that iteration), the m
 |Technology|Description|
 |----------|-----------|
 |**Python**|Used for the keyword matching and database interactions.|
-|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing information.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
 |**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
 |* **CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
 
@@ -108,8 +108,8 @@ Initial translation is triggered by a running harvester. The translations will t
 |Technology|Description|
 |----------|-----------|
 |**Python**|Used for the translation module, API development, and database interactions.|
-|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing information.|
-|**[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
+|**[FastAPI](https://fastapi.tiangolo.com/)**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/) documentation.|
 |**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
 |**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
 
@@ -175,8 +175,8 @@ The API can be used to identify which records have broken links.
 |Technology|Description|
 |----------|-----------|
 |**Python**|Used for the linkchecker integration, API development, and database interactions.|
-|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing link information.|
-|**[FastAPI](https://fastapi.tiangolo.com/){target=_blank}**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/){target=_blank} documentation.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing link information.|
+|**[FastAPI](https://fastapi.tiangolo.com/)**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/) documentation.|
 |**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
 |**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment.|
 
@@ -341,9 +341,9 @@ To understand if the dataset has a global, continental, national or regional sco
 
 ### EUSO-high-value dataset tagging
 
-The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/){target=_blank}. This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu){target=_blank} metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope - under discussion) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
+The EUSO high-value datasets are those with substantial potential to assess soil health status, as detailed on the [EUSO dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/). This framework includes the concept of [soil degradation indicator](https://esdac.jrc.ec.europa.eu/content/soil-degradation-indicators-eu) metadata-based identification and tagging. Each dataset (possibly only those with the supra-national spatial scope - under discussion) will be annotated with a potential soil degradation indicator for which it might be utilised. Users can then filter these datasets according to their specific needs. 
 
-The EUSO soil degradation indicators employ specific [methodologies and thresholds](https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources){target=_blank} to determine soil health status, see also the Table below. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.
+The EUSO soil degradation indicators employ specific [methodologies and thresholds](https://esdac.jrc.ec.europa.eu/euso/euso-dashboard-sources) to determine soil health status, see also the Table below. These methodologies will also be considered, as they may have an impact on the defined thresholds. This issue will be examined in greater detail in the future.
 
 <table>
   <tr>
@@ -438,7 +438,7 @@ The EUSO soil degradation indicators employ specific [methodologies and threshol
   </tr>
 </table>
 
-Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific **values from the Soil Indicator and Soil Degradation Codelists**, such as `Water erosion` or `Soil erosion` (see the Table above). If found, the `Soil Degradation Indicator Tag` (corresponding value from the Soil Degradation Codelist) will be displayed to indicate suitability of given dataset for soil indicator related analyses. Additionally, a search for corresponding **methodology** will be conducted to see if the dataset is compliant with the EUSO Soil Health indicators presented in the [EUSO Dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/){target=_blank}. If found, the tag `EUSO High-value dataset` will be added. In later phase we assume search for references to Scientific Methodology papers in metadata record's links. Next, the possibility of involving a more complex search using soil thesauri will also be explored.
+Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific **values from the Soil Indicator and Soil Degradation Codelists**, such as `Water erosion` or `Soil erosion` (see the Table above). If found, the `Soil Degradation Indicator Tag` (corresponding value from the Soil Degradation Codelist) will be displayed to indicate suitability of given dataset for soil indicator related analyses. Additionally, a search for corresponding **methodology** will be conducted to see if the dataset is compliant with the EUSO Soil Health indicators presented in the [EUSO Dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/). If found, the tag `EUSO High-value dataset` will be added. In later phase we assume search for references to Scientific Methodology papers in metadata record's links. Next, the possibility of involving a more complex search using soil thesauri will also be explored.
 
 
 ``` mermaid

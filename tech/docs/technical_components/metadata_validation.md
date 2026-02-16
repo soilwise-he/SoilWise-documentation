@@ -85,7 +85,7 @@ Compliance to a given standard is an indicator for (meta)data quality. This indi
 
 Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. In total 506 metadata records were harvested from the INSPIRE Geoportal. 
 
-For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html){target=_blank} was used. Validator is based on INSPIRE ATS and is available as a validation service. For the initial validation, INSPIRE metadata were harvested to the local instance of GeoNetwork, which allows on the fly validation of metadata using external validation services (including INSPIRE Reference Validator). Metadata were dowloaded from the PostgreSQL database and uploaded to the local instance of GeoNetwork, where the XML validation and INSPIRE validation were executed. Two validation runs were executed: one to check consistency of metadata using XSD and Schematron (using templates for ISO 19115 standard for spatial data sets and ISO 19119 standard for services), the second for validation of metadata records using INSPIRE ETS.
+For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html) was used. Validator is based on INSPIRE ATS and is available as a validation service. For the initial validation, INSPIRE metadata were harvested to the local instance of GeoNetwork, which allows on the fly validation of metadata using external validation services (including INSPIRE Reference Validator). Metadata were dowloaded from the PostgreSQL database and uploaded to the local instance of GeoNetwork, where the XML validation and INSPIRE validation were executed. Two validation runs were executed: one to check consistency of metadata using XSD and Schematron (using templates for ISO 19115 standard for spatial data sets and ISO 19119 standard for services), the second for validation of metadata records using INSPIRE ETS.
 
 ### Architecture
 #### Technologies Stack
@@ -93,7 +93,7 @@ For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/va
 |Technology|Description|
 |----------|-----------|
 |**Python**|Used for the linkchecker integration, API development, and database interactions.|
-|**[PostgreSQL](https://www.postgresql.org/){target=_blank}**|Primary database for storing and managing link information.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing link information.|
 |**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled weekly runs for link liveliness assessment.|
 |**Esdin Test Framework**|Opensource validation framework, commonly used in INSPIRE.|
 

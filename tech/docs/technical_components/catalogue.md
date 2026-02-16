@@ -13,7 +13,7 @@
 
 ### Overview and Scope
 
-The Metadata Catalogue is a central piece of the architecture, giving access to individual metadata records. In the catalogue domain, various effective metadata catalogues are developed around the standards issued by the OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank} (CSW) and the [OGC API Records](https://ogcapi.ogc.org/records/){target=_blank}, Open Archives Initiative (OAI-PMH), W3C (DCAT), FAIR science (Datacite) and Search Engine community (schema.org). For our first project iteration we've selected the pycsw software, which supports most of these standards. In the second iteration pycsw continues to provide standardized APIs, however to improve search performance and user experience, it was supplemented by [Apache Solr](https://solr.apache.org/) and [React](https://react.dev/) frontend. 
+The Metadata Catalogue is a central piece of the architecture, giving access to individual metadata records. In the catalogue domain, various effective metadata catalogues are developed around the standards issued by the OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/) (CSW) and the [OGC API Records](https://ogcapi.ogc.org/records/), Open Archives Initiative (OAI-PMH), W3C (DCAT), FAIR science (Datacite) and Search Engine community (schema.org). For our first project iteration we've selected the pycsw software, which supports most of these standards. In the second iteration pycsw continues to provide standardized APIs, however to improve search performance and user experience, it was supplemented by [Apache Solr](https://solr.apache.org/) and [React](https://react.dev/) frontend. 
 
 ### Intended Audience
 
@@ -63,16 +63,16 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 
 |Technology|Description|
 |----------|-----------|
-|**[pycsw](https://pycsw.org){target=_blank} v3.0**| Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/){target=_blank}, [OAI-PMH](https://www.openarchives.org/pmh/){target=_blank}, providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/){target=_blank}, released under an [MIT license](https://docs.pycsw.org/en/latest/license.html){target=_blank}, and runs on all major platforms (Windows, Linux, Mac OS X).
-|**[Apache Solr](https://solr.apache.org/){target=_blank}**| |
-|**[OpenStreetMaps API](){target=_blank}**| |
+|**[pycsw](https://pycsw.org) v3.0**| Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/), [OAI-PMH](https://www.openarchives.org/pmh/), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/), released under an [MIT license](https://docs.pycsw.org/en/latest/license.html), and runs on all major platforms (Windows, Linux, Mac OS X).
+|**[Apache Solr](https://solr.apache.org/)**| |
+|**[OpenStreetMaps API]()**| |
 
 **Frontend**
 
 |Technology|Description|
 |----------|-----------|
-|**[React](https://react.dev/){target=_blank}**| |
-|**[pycsw](https://pycsw.org){target=_blank} v3.0**| Pycsw also offers User interface, which was used as a default in previous SoilWise prototype.|
+|**[React](https://react.dev/)**| |
+|**[pycsw](https://pycsw.org) v3.0**| Pycsw also offers User interface, which was used as a default in previous SoilWise prototype.|
 
 
 **Inrastructure**

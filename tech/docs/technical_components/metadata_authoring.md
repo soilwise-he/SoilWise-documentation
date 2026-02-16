@@ -25,7 +25,7 @@ Users are enabled to create and maintain metadata records within the SWR, in cas
 The authoring workflow uses a GIT backend, additions to the catalogue are entered by members of the GIT repository directly or via pull request (review).
 Records are stored in [iso19139:2007](https://www.iso.org/standard/32557.html) XML or MCF. [MCF](https://geopython.github.io/pygeometa/reference/mcf/) is a subset of iso19139:2007 in a YAML encoding, defined by the pygeometa community. The [pygeometa library](https://geopython.github.io/pygeometa) is used to convert the MCF to any requested metadata format.
 
-The pygeometa community provides a [webbased form](https://osgeo.github.io/mdme){target=_blank} for users uncomfortable with editing an MCF file directly. The tool can be hosted within SWR, to faciliate a dedicated metadata profile (for example preselect relevant codelists).
+The pygeometa community provides a [webbased form](https://osgeo.github.io/mdme) for users uncomfortable with editing an MCF file directly. The tool can be hosted within SWR, to faciliate a dedicated metadata profile (for example preselect relevant codelists).
 
 Users can also submit metadata using a CSV (excel) format, which is converted to MCF in a CI-CD workflow.
 

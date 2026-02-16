@@ -116,16 +116,16 @@ Note, the second SoilWise Repository prototype contained **19,324** harvested me
 
 #### CORDIS
 
-European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/){target=_blank}. This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. The scope of projects, from which to include project deliverables is still under discussion. 
+European Research projects typically advertise their research outputs via [Cordis](https://cordis.europa.eu/). This makes Cordis a likely candidate to discover research outputs, such as reports, articles and datasets. Cordis does not capture many metadata properties. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/), additional metadata can be found in OpenAire via the DOI. The scope of projects, from which to include project deliverables is still under discussion. 
 
 Which projects to include is derived from 2 sources:
 
-- [ESDAC](https://esdac.jrc.ec.europa.eu/projects/Eufunded/Eufunded.html){target=_blank} maintains a list of historic EU funded research projects
-- [Mission soil platform](https://mission-soil-platform.ec.europa.eu/project-hub/funded-projects-under-mission-soil){target=_blank} maintains a list of current Mission soil projects
+- [ESDAC](https://esdac.jrc.ec.europa.eu/projects/Eufunded/Eufunded.html) maintains a list of historic EU funded research projects
+- [Mission soil platform](https://mission-soil-platform.ec.europa.eu/project-hub/funded-projects-under-mission-soil) maintains a list of current Mission soil projects
 
 A script fetches the content from these 2 sources and prepares relevant content for the CORDIS and OpenAire harvesting. The content in these pages is unstructured html. The content is scraped using a python library. This is not optimal, because the scraper expects a dedicated html structure, which is fragile.
 
-Results of the scrape activity are stored in table `harvest.projects`. For each project a Record control number ([RCN](https://www.wikidata.org/wiki/Property:P5755){target=_blank}) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. 
+Results of the scrape activity are stored in table `harvest.projects`. For each project a Record control number ([RCN](https://www.wikidata.org/wiki/Property:P5755)) is retrieved from the Cordis knowledge graph. This RCN could be used to filter OpenAire, however OpenAire can also be filtered using project grant number. At this moment in time the Cordis Knowledge graph does not contain the Mission Soil projects yet. 
 
 Currently we do not harvest resources from Cordis which do not have a DOI. This includes mainly progress reports of the projects. 
 
@@ -135,26 +135,26 @@ For those resources, discovered via Cordis/ESDAC, and identified by a DOI, a har
 
 Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
 
-Records in OpenAire are stored in the Open Aire Research Graph ([OAF](https://www.openaire.eu/schema/1.0/doc/oaf-1.0.html){target=_blank}) format, which is transformed to a metadata set based on Dublin Core.
+Records in OpenAire are stored in the Open Aire Research Graph ([OAF](https://www.openaire.eu/schema/1.0/doc/oaf-1.0.html)) format, which is transformed to a metadata set based on Dublin Core.
 
 #### OGC-CSW
 
-Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank} standard, such as INSPIRE GeoPortal, Bonares, ISRIC. The [OWSLib](https://github.com/geopython/owslib){target=_blank} library is used to query records from CSW endpoints. A filter can be configured to retrieve subsets of the catalogue.
+Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/) standard, such as INSPIRE GeoPortal, Bonares, ISRIC. The [OWSLib](https://github.com/geopython/owslib) library is used to query records from CSW endpoints. A filter can be configured to retrieve subsets of the catalogue.
 
 Incidentally, records advertised as CSW also include a DOI reference (Bonares/ISRIC). Additional metadata for these DOI's is extracted from OpenAire/Crossref.
 
 
 #### INSPIRE
 
-Although [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/){target=_blank} does offer a CSW endpoint, due to a technical reasons, we have not been able to harvest from it. Instead we have developed a dedicated harvester via the Elastic Search API endpoint of the Geoportal. If at some point the technical issue has been resolved, use of the CSW harvest endpoint is favourable.
+Although [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/) does offer a CSW endpoint, due to a technical reasons, we have not been able to harvest from it. Instead we have developed a dedicated harvester via the Elastic Search API endpoint of the Geoportal. If at some point the technical issue has been resolved, use of the CSW harvest endpoint is favourable.
 
 #### ESDAC
 
-The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/){target=_blank} is an instance of Drupal CMS. We have developed a dedicated harvester to scrape html elements to extract Dublin Core metadata from ESDAC html elements. Metadata is extracted for datasets, maps (EUDASM) and documents. Incidentally a DOI is mentioned as part of the HTML, this DOI is then used as identifier for the resource, else the resource url is used as identifier. If the DOI is not known to the system yet, OpenAire will be queried to capture additional metadata on the resource.
+The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/) is an instance of Drupal CMS. We have developed a dedicated harvester to scrape html elements to extract Dublin Core metadata from ESDAC html elements. Metadata is extracted for datasets, maps (EUDASM) and documents. Incidentally a DOI is mentioned as part of the HTML, this DOI is then used as identifier for the resource, else the resource url is used as identifier. If the DOI is not known to the system yet, OpenAire will be queried to capture additional metadata on the resource.
 
 #### Prepsoil portal
 
-[Prepsoil](https://prepsoil.eu/knowledge-hub){target=_blank} is build on a headless CMS. The CMS at times provides an API to retrieve datasets, knowledge items, living labs, lighthouses and communities of practice. The API provides minimal metadata, incidentally a DOI is included. DOI is used to capture additional metadata from OpenAire.
+[Prepsoil](https://prepsoil.eu/knowledge-hub) is build on a headless CMS. The CMS at times provides an API to retrieve datasets, knowledge items, living labs, lighthouses and communities of practice. The API provides minimal metadata, incidentally a DOI is included. DOI is used to capture additional metadata from OpenAire.
 
 #### News feeds
 
@@ -173,9 +173,9 @@ Table below indicates the various source models supported
 | Datacite | OpenAire, Zenodo, DOI |
 | ISO19115:2005 | Bonares, INSPIRE |
 
-Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/){target=_blank} RDF representation.
+Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/) RDF representation.
 
-For metadata harmonization some supporting modules are used, [OWSlib](https://owslib.readthedocs.io/en/latest/){target=_blank} is a module to parse various source metadata models, including iso19139:2007. A transformation script from [semic-eu/iso19139-to-dcat-ap.xslt](https://github.com/semic-eu/iso19139-to-dcat-ap/){target=_blank} in combination with lxml and rdflib is used to convert iso19139:2007 metadata to RDF, serialised as turtle.
+For metadata harmonization some supporting modules are used, [OWSlib](https://owslib.readthedocs.io/en/latest/) is a module to parse various source metadata models, including iso19139:2007. A transformation script from [semic-eu/iso19139-to-dcat-ap.xslt](https://github.com/semic-eu/iso19139-to-dcat-ap/) in combination with lxml and rdflib is used to convert iso19139:2007 metadata to RDF, serialised as turtle.
 
 Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software, used to power the [SoilWise Catalogue](catalogue.md), using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.
 
@@ -220,7 +220,7 @@ flowchart LR
     hc -->|harvests| db[(temporary storage)]
     hc -->|data cleaning| db[(temporary storage)]
 ```
-Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/actions){target=_blank}, Git provides options to cancel and trigger tasks and review CI-CD logs to check errors
+Harvester tasks are triggered from [**Git CI-CD**](https://github.com/features/actions), Git provides options to cancel and trigger tasks and review CI-CD logs to check errors
 
 ## Integrations & Interfaces
 
@@ -230,16 +230,16 @@ The Automatic metadata harvesting component will show its full potential when be
 
 ### OGC-CSW
 
-Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/){target=_blank} standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
+Many (spatial) catalogues advertise their metadata via the [catalogue Service for the Web](https://www.ogc.org/standard/cat/) standard, such as INSPIRE GeoPortal, Bonares, ISRIC.
 
 ### CORDIS - OpenAire
 
-Cordis does not capture many metadata properties. We harvest the title of a project publication and, if available, the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/){target=_blank}, additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
+Cordis does not capture many metadata properties. We harvest the title of a project publication and, if available, the DOI. In those cases where a resource is identified by a [DOI](https://www.doi.org/the-identifier/what-is-a-doi/), additional metadata can be found in OpenAire via the DOI. For those resources a harvester fetches additional metadata from OpenAire. 
 
 A second mechanism is available to link from Cordis to OpenAire, the RCN number. The OpenAire catalogue can be queried using an RCN filter to retrieve only resources relevant to a project. This work is still in preparation.
 
 Not all DOI's registered in Cordis are available in OpenAire. OpenAire only lists resources with an open access license. Other DOI's can be fetched from the DOI registry directly or via Crossref.org. This work is still in preparation.
-Detailed technical information can be found in the [technical description](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme){target=_blank}.
+Detailed technical information can be found in the [technical description](https://github.com/soilwise-he/harvesters/tree/main/cordis#readme).
 
 ### OpenAire and other sources
 
