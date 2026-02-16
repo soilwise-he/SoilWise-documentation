@@ -12,7 +12,7 @@
 
 ## Introduction
 
-<img width="80%" alt="Screenshot 2026-01-19 at 12 44 57" src="https://github.com/user-attachments/assets/72b5a7a4-9683-41b0-90a4-fddb59559c36" />
+<img width="90%" alt="Soil Companion - Cycle 2 - Diagram" src="https://github.com/user-attachments/assets/030c6d9b-c18d-4fe7-8105-514f5804a047" />
 
 
 ### Overview and Scope
