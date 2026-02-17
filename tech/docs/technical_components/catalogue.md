@@ -97,3 +97,10 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 ## Key Architectural Decisions
 
 ## Risks & Limitations
+
+| Risk / Limitation | Description | Mitigation |
+|-------------------|-------------|------------|
+| **Transferability** | The differences in technology stack between the implementing consortium and the final owner (JRC) might lead to transferability and integration issues | Use of broadly adopted open source products. Alignment with JRC technical team |
+| **Metadata quality** | The performance of the search functionality is highly dependent on the completeness and quality of the harvested metadata which is out of scope for SoilWise. | Metadata augmnentation will allow to partly mitigate |
+| **Transparency and explainability** | The dependency on metadata completeness and quality in combination with the large amount of interdependent options for (fuzzy) search strategies and the different combinations of UI search features will make it hard to understand the logic behind search results. | Documentation of metadata augmentation, search strategies etc. |
+| **Usability** | The diversity of user groups and their requirements and expectations make it difficult to find balance between functionality/complexity/user-friendliness. | Iterative appraoch and validation/testing with user groups to align. |
