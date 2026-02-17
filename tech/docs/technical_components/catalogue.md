@@ -28,20 +28,23 @@ The SoilWise Metadata Catalogue targets the following user groups:
 
 The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
-1. **Paginated search results** - 10 results are displayed per page in alphabetical order, in the form of overview table comprising preview of resource type, title, abstract, date and preview.
+1. **Paginated search results** - Search results are displayed per page in ranked order, in the form of overview table comprising preview of resource type, title, abstract, date and preview.
 2. **Fulltext search** - + autocomplete
 3. **Resource type filter** - enabling to filter out certain types of resources, e.g. journal articles, datasets, reports, software.
 4. **Term filter** - enabling to filter out resources containing certain keywords, resources published by specific projects, etc.
 5. **Date filter** - enabling to filter out resources based on their creation, or revision date
 6. **Spatial filter** - enabling to filter out resources based on their spatial extent using countries or regions, drawn bounding box, vicinity of user's location, or by searching for geographical names.
-7. **Display records' detail** - After clicking result's table item, a record's detail is displayed at unique URL address to facilitate sharing. Record's detail currently comprises: record's type tag,full title, full abstract, keywords' tags, preview of record's geographical extent, record's preview image, if available, information about relevant HE funding project, list of source repositories,- indication of link availability, see [Link liveliness assessment](./metadata_augmentation.md#link-liveliness-assessment), last update date, all other record's items...
+7. **Record detail view** - After clicking result's table item, a record's detail is displayed at unique URL address to facilitate sharing. Record's detail currently comprises: record's type tag,full title, full abstract, keywords' tags, preview of record's geographical extent, record's preview image, if available, information about relevant HE funding project, list of source repositories,- indication of link availability, see [Link liveliness assessment](./metadata_augmentation.md#link-liveliness-assessment), last update date, all other record's items...
 8. **Resource preview** - 3 types of preview are currently supported: (1) Display resource geographical extent, which is available in the record's detail, as well in the search results list. (2) Display of a graphic preview (thumbnail) in case it is advertised in metadata. (3) Map preview of OGC:WMS services advertised in metadata enables standard simple user interaction (zoom, changing layers).
 9. **Display results of metadata augmentation** - Results of metadata augmentation are stored on a dedicated database table. The results are merged into the harvested content during publication to the catalogue. At the moment it is not possible to differentiate between original and augmented content. For next iterations we aim to make this distinction more clear.
 10. **Display links of related information** - Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue. Download of knowledge source "as is" is currently supported through the links section from the harvested repository.
 
 The SoilWise Metadata Catalogue adopts a **Apache Solr backend**, focusing on:
 
-1. 
+1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view
+2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents
+3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, feceted etc.
+4. **Solr API** - Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index
 
 
 In order to interact with the many relevant data communities, SoilWise aims to support a range of catalogue standards through **pycsw backend**:
@@ -64,15 +67,17 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |Technology|Description|
 |----------|-----------|
 |**[pycsw](https://pycsw.org) v3.0**| Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs ([CSW 2/CSW 3](https://www.ogc.org/standard/cat/), [OAI-PMH](https://www.openarchives.org/pmh/), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/), released under an [MIT license](https://docs.pycsw.org/en/latest/license.html), and runs on all major platforms (Windows, Linux, Mac OS X).
-|**[Apache Solr](https://solr.apache.org/)**| |
+|**[Apache Lucene](https://lucene.apache.org/) v11.x**| Apache Lucene is a open source high-performance Java-based search engine library.|
+|**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
+|**[Java](https://solr.apache.org/) vx.x**| |
 |**[OpenStreetMaps API]()**| |
 
 **Frontend**
 
 |Technology|Description|
 |----------|-----------|
-|**[React](https://react.dev/)**| |
-|**[pycsw](https://pycsw.org) v3.0**| Pycsw also offers User interface, which was used as a default in previous SoilWise prototype.|
+|**[React](https://react.dev/)**| Javascript framework that implements the search interface and access to Solr API|
+|**[pycsw](https://pycsw.org) v3.0**| (depricated) Pycsw also offers its own User interface, which was used as a default in previous SoilWise prototype.|
 
 
 **Inrastructure**
