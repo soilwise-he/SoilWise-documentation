@@ -39,12 +39,12 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 9. **Display results of metadata augmentation** - Results of metadata augmentation are stored on a dedicated database table. The results are merged into the harvested content during publication to the catalogue. At the moment it is not possible to differentiate between original and augmented content. For next iterations we aim to make this distinction more clear.
 10. **Display links of related information** - Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue. Download of knowledge source "as is" is currently supported through the links section from the harvested repository.
 
-The SoilWise Metadata Catalogue adopts a **Apache Solr backend**, focusing on:
+The SoilWise Metadata Catalogue implements back-end index and search functions based on **Apache Solr**, focusing on:
 
 1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view
 2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents
 3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, feceted etc.
-4. **Solr API** - Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index
+4. **Search API** - The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index
 
 
 In order to interact with the many relevant data communities, SoilWise aims to support a range of catalogue standards through **pycsw backend**:
@@ -80,7 +80,7 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |**[pycsw](https://pycsw.org) v3.0**| (depricated) Pycsw also offers its own User interface, which was used as a default in previous SoilWise prototype.|
 
 
-**Inrastructure**
+**Infrastructure**
 
 | Component | Technology |
 |-----------|-----------|
