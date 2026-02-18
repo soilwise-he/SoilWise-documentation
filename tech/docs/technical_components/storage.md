@@ -13,7 +13,8 @@ The SoilWise repository aims at merging and seamlessly providing different types
 
 Storage is a backend component, therefore we only expect a maintenance role:
 
-* **SWC Administrator** monitoring the health status, logs...
+* **SWC Administrator** monitoring the health status, logs, signaling maintenance issues etc 
+* **SWC Maintenance** performing corrective / adaptive maintenance tasks that require database access and updates
 
 ## PostgreSQL RDBMS: storage of raw and augmented metadata
 
@@ -24,14 +25,21 @@ Storage is a backend component, therefore we only expect a maintenance role:
 
     **Access point:** SQL
 
-A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected. Various metadata augmentation jobs use it as input and write their input to this data store.
-The catalogue also queries the Postgress database. 
-
-There are several reasons for choosing an RDBMS as the main source for metadata storage and metadata querying
+A "conventional" RDBMS is used to store the (augmented) metadata of data and knowledge assets. There are several reasons for choosing an RDBMS as the main source for metadata storage and metadata querying:
 
 - An RDBMS provides good options to efficiently structure and index its contents, thus allowing performant access for both internal processes and end user interface querying.
 - An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid.
 - Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users.
+
+### Key Features
+
+The Postgres database serves as a the destination and/or source for many of the backend processes of the SoilWise Catalogie. Its key features are:
+
+1. **Raw metadata storage** — The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected.
+2. **Storage of Augmented metadata** — Various metadata augmentation jobs use it as input and write their input to this data store.
+3. **Source for Search Index processing** — This database is also the source for denormalisation, processing and indexing metadata through the Solr framework.
+4. **Source for UI querying** — While Solr is the main resource for end user querying through the catalogue UI, the catalogue also queries the Postgress database..
+
 
 ## Virtuoso Triple Store: storage of SWR knowledge graph
 
@@ -44,11 +52,14 @@ There are several reasons for choosing an RDBMS as the main source for metadata 
 
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
-A Triple Store is selected as a parallel storage because it offers several capabilites 
+### Key Features
 
-- It allows the linking of different knowledge models, e.g. to connect the SWR metadata model with existing and new knowledge structures on soil health and related domains.
-- It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
-- Through the SPARQL interface, it allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge.
+A Triple Store, implemented in Virtuoso, is integrated for parallel storage of metadata because it offers several capabilites:
+
+1. **Semantic linkage** — It allows the linking of different knowledge models, e.g. to connect the SWR metadata model with existing and new knowledge structures on soil health and related domains.
+2. **Cross-domain reasoning** — It allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
+3. **Semantic querying** — The SPARQL interface offered on top of the Triple Store allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge.
+
 
 ## Git: storage of code and configuration
 
