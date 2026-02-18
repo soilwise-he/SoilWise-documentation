@@ -281,6 +281,16 @@ The API has been extended to include the newly tracked metadata fields:
 
 ## Spatial Locator
 
+!!! component-header "Info"
+    **Current version:** 
+
+    **Technology:** Python 
+
+    **Release:** 
+
+    **Projects:** [NER augmentation](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/NER%20augmentation)
+
+
 ### Overview and Scope
 
 The Spatial Locator component identifies and extracts location information from metadata records using multiple approaches:
@@ -291,7 +301,7 @@ The Spatial Locator component identifies and extracts location information from 
 The component leverages a trained spaCy model specifically configured to recognize location entities labeled as `Location_positive`, ensuring high precision in spatial metadata extraction via the NER approach.
 
 ### Key Features
-The Spatial Locatorcomponent privides the following functions:
+The Spatial Locator component privides the following functions:
 
 1. **Detection of OGC service:** When making use a standardised service like OGC, a location of the 
 2. **Location Entity Extraction:** Automatically identifies location mentions in metadata titles and abstracts using a trained spaCy NER model.
@@ -368,14 +378,14 @@ The Spatial Locator uses the following database structure:
 
 - **metadata.records:** Source table containing identifier, title, and abstract fields
 - **metadata.augments:** Stores extracted location entities with fields:
-  - `record_id`: Link to the source record
-  - `property`: Metadata field (e.g., 'title', 'abstract')
-  - `value`: JSON-formatted location data containing text, start_char, and end_char
-  - `process`: Set to 'NER-augmentation'
+    - `record_id`: Link to the source record
+    - `property`: Metadata field (e.g., 'title', 'abstract')
+    - `value`: JSON-formatted location data containing text, start_char, and end_char
+    - `process`: Set to 'NER-augmentation'
 - **metadata.augment_status:** Tracks processing status with fields:
-  - `record_id`: Link to the source record
-  - `status`: Processing status (e.g., 'processed')
-  - `process`: Set to 'NER-augmentation'
+    - `record_id`: Link to the source record
+    - `status`: Processing status (e.g., 'processed')
+    - `process`: Set to 'NER-augmentation'
 
 Example augmentation value:
 ```json
