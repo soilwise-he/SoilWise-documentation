@@ -303,7 +303,7 @@ The component leverages a trained spaCy model specifically configured to recogni
 ### Key Features
 The Spatial Locator component privides the following functions:
 
-1. **Detection of OGC service:** When making use a standardised service like OGC, a location of the 
+1. **Detection of OGC service:** Automatically identifies if there are URL's present in the metadata that refers an OGC service and, if so, extracts the bounding box from the metadata of this service.
 2. **Location Entity Extraction:** Automatically identifies location mentions in metadata titles and abstracts using a trained spaCy NER model.
 
 
