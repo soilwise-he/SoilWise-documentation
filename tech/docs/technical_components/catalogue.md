@@ -26,6 +26,8 @@ The SoilWise Metadata Catalogue targets the following user groups:
 
 ### Key Features
 
+#### User interface
+
 The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
 1. **Paginated search results** - Search results are displayed per page in ranked order, in the form of overview table comprising preview of resource type, title, abstract, date and preview.
@@ -39,6 +41,8 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 9. **Display results of metadata augmentation** - Results of metadata augmentation are stored on a dedicated database table. The results are merged into the harvested content during publication to the catalogue. At the moment it is not possible to differentiate between original and augmented content. For next iterations we aim to make this distinction more clear.
 10. **Display links of related information** - Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue. Download of knowledge source "as is" is currently supported through the links section from the harvested repository.
 
+#### Index and search strategies
+
 The SoilWise Metadata Catalogue implements back-end index and search functions based on **Apache Solr**, focusing on:
 
 1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view
@@ -46,15 +50,13 @@ The SoilWise Metadata Catalogue implements back-end index and search functions b
 3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, feceted etc.
 4. **Search API** - The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index
 
+#### Supported standards
 
 In order to interact with the many relevant data communities, SoilWise aims to support a range of catalogue standards through **pycsw backend**:
 
 1. **Catalogue Service for the Web** - Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC. <https://repository.soilwise-he.eu/cat/csw>
-
 2. **OGC API - Records** - OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community. <https://repository.soilwise-he.eu/cat/openapi>
-
 3. **Protocol for metadata harvesting (oai-pmh)** - The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories. <https://repository.soilwise-he.eu/cat/oaipmh>
-
 4. **Schema.org annotations** - Annotiations using [schema.org/Dataset](https://schema.org/Dataset) ontology enable search engines to harvest metadata in a structured way. [Example](https://validator.schema.org/#url=https%3A%2F%2Frepository.soilwise-he.eu%2Fcat%2Fcollections%2Fmetadata%3Amain%2Fitems%2F00682004-c6b9-4c1d-8b40-3afff8bbec69)
 
 
