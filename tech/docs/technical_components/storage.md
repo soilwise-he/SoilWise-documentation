@@ -68,9 +68,22 @@ A Triple Store, implemented in Virtuoso, is integrated for parallel storage of m
 
     **Access point:** https://github.com/soilwise-he
 
-Git is used to store versions of Soilwise code, documentation and configuration. It is also used for issue and release management and automated pipelines for deployment, augmentation, validation and harvesting external sources.
+Git is a multi purpose environment for storing and managing software and documentation, versioning and configuration that also offers various functions the support the management and monitoring of the software development process. 
+
+### Key Features
+
+Git is an acknowledged platform to store, version, configure and docuemnt software, with additional features for software and software development management. The key features used in SoilWise are:
+
+1. **Code storage, version and configuration management** — Git is used to deposit and manage versions of Soilwise code, documentation and configurations.
+2. **Issue and release management** — SoilWIse uses the issue and release management to document, monitor and track the development of software conponents and their integration.
+3. **Process automation** — Git defines and runs automated pipelines for deployment, augmentation, validation and harvesting external sources.
 
 ## Integrations & Interfaces
+
+## Key Architectural Decisions
+
+## Risks & Limitations
+
 
 <!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
 
