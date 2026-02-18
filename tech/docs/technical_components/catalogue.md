@@ -96,6 +96,8 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 
 ## Integrations & Interfaces
 
+Q: Is this where also the section on standards above should go?
+
 ## Key Architectural Decisions
 
 ## Risks & Limitations
