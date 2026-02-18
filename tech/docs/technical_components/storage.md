@@ -111,10 +111,6 @@ Components used:
 - PostgreSQL (release 12.22)
 - Solr (release 9.8.0)
 
-
-
-
-
 The SoilWise Repository is expected to fulfil the following functions:
 
 1. [Storage of artefacts](#storage-of-artefacts)
