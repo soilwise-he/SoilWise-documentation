@@ -282,14 +282,123 @@ The API has been extended to include the newly tracked metadata fields:
 ## Spatial Locator
 
 ### Overview and Scope
+
+The Spatial Locator component identifies and extracts location information from metadata records using multiple approaches:
+
+1. **OGC Services Spatial Metadata:** Queries OGC services (WMS, WFS, WCS, CSW) if present in metadata links to extract spatial extent and coverage information, providing a robust method for spatial metadata augmentation.
+
+2. **Named Entity Recognition (NER):** Extracts location entities from metadata titles and abstracts using a trained spaCy model. The component identifies location references in plain text present in the title and abstract, which are then stored as augmentations in the database. This enables spatial discovery and filtering of datasets within the SWC catalogue.
+The component leverages a trained spaCy model specifically configured to recognize location entities labeled as `Location_positive`, ensuring high precision in spatial metadata extraction via the NER approach.
+
 ### Key Features
+The Spatial Locatorcomponent privides the following functions:
+
+1. **Detection of OGC service:** When making use a standardised service like OGC, a location of the 
+2. **Location Entity Extraction:** Automatically identifies location mentions in metadata titles and abstracts using a trained spaCy NER model.
+
+
 ### Architecture
+
 #### Technological Stack
+
+|Technology|Description|
+|----------|-----------|
+|**Python**|Core language for NER pipeline implementation and database interactions.|
+|**[spaCy](https://spacy.io/)**|Industrial-strength NLP library used for the trained NER model and entity extraction.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
+| **[GDAL](https://gdal.org/)** | Geospatial data abstraction library used for OGC standards augmentation, enabling renabling extraction of bounding box of online geospatial data across formats and services (e.g. WMS, WFS, GML, GeoJSON). 
+
 #### Main Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant Pipeline as Spatial Locator Pipeline
+    participant DB as Database
+    participant LinkDet as Link Detector
+    participant OGCCheck as OGC Service Checker
+    participant OGC as OGC Endpoint (GetCapabilities)
+    participant GDAL as GDAL
+    participant Model as trained spaCy Model
+
+    Pipeline->>DB: Query unprocessed records
+    DB-->>Pipeline: Return records (title, abstract, metadata)
+
+    loop For each record
+        %% --- OGC extraction (first) ---
+        Pipeline->>LinkDet: Detect links in metadata
+        LinkDet-->>Pipeline: Return candidate URLs
+
+        alt URLs found
+            loop For each URL
+                Pipeline->>OGCCheck: Check if URL is an OGC service (WMS/WFS/WMTS/WCS/OGC API)
+                OGCCheck-->>Pipeline: Service type / Not OGC
+
+                alt Is OGC service
+                    Pipeline->>OGC: Request GetCapabilities (or equivalent)
+                    OGC-->>Pipeline: Capabilities response (layers + extents)
+                    Pipeline->>GDAL: Parse service metadata and extract bounding box
+                    GDAL-->>Pipeline: Bounding box (minx, miny, maxx, maxy) + CRS
+                else Not an OGC service
+                    Pipeline-->>Pipeline: Skip OGC extraction for this URL
+                end
+            end
+        else No URLs found
+            Pipeline-->>Pipeline: Continue without OGC augmentation
+        end
+
+        %% --- NER extraction (second) ---
+        Pipeline->>Model: Extract locations from title
+        Model-->>Pipeline: Return location entities
+        Pipeline->>Model: Extract locations from abstract
+        Model-->>Pipeline: Return location entities
+
+        %% --- persistence ---
+        Pipeline->>DB: Prepare augmentation rows (OGC bbox + NER entities)
+        Pipeline->>DB: Prepare status rows
+    end
+
+    Pipeline->>DB: Batch insert augmentations
+    Pipeline->>DB: Batch insert processing status
+    DB-->>Pipeline: Confirm insertion
+```
+
 #### Database Design
+
+The Spatial Locator uses the following database structure:
+
+- **metadata.records:** Source table containing identifier, title, and abstract fields
+- **metadata.augments:** Stores extracted location entities with fields:
+  - `record_id`: Link to the source record
+  - `property`: Metadata field (e.g., 'title', 'abstract')
+  - `value`: JSON-formatted location data containing text, start_char, and end_char
+  - `process`: Set to 'NER-augmentation'
+- **metadata.augment_status:** Tracks processing status with fields:
+  - `record_id`: Link to the source record
+  - `status`: Processing status (e.g., 'processed')
+  - `process`: Set to 'NER-augmentation'
+
+Example augmentation value:
+```json
+[
+  {"text": "Rostock", "start_char": 45, "end_char": 52},
+  {"text": "Germany", "start_char": 120, "end_char": 127}
+]
+```
+
 ### Integrations & Interfaces
 ### Key Architectural Decisions
+
+- **Batch Processing:** Records are processed in batches to balance memory usage and database load. Unprocessed records are identified via a LEFT JOIN against the augment_status table.
+- **Character-Level Offsets:** Location entities include start and end character positions to possible enable precise highlighting and linking in the catalogue interface.
+- **JSON Storage:** Extracted locations are stored as JSON arrays to maintain structured data while allowing flexible querying and display options.
+- **Configurable Model Path:** The model path can be specified via environment variable (`MODEL_PATH`) or command-line argument, allowing flexibility for different updates of the trained models.
+
 ### Risks & Limitations
+
+- **Model Dependency:** Performance and accuracy depend entirely on the quality and training data of the spaCy NER model.
+- **Entity Label Specificity:** the model is trained on a set of entity keywords and then finetuned based on location data already present in the catalogue.
+- **Abstract And Title Processing:** Extraction may fail on malformed abstracts/titles, with errors logged and processing continuing to the next record.
+- **Database Performance:** Large batch operations may impact database performance; batch size may need tuning based on system capacity.
 
 ## Metadata Interlinker
 
