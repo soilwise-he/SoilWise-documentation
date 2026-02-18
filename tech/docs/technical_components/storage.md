@@ -13,8 +13,8 @@ The SoilWise repository aims at merging and seamlessly providing different types
 
 Storage is a backend component, therefore we only expect a maintenance role:
 
-* **SWC Administrator** monitoring the health status, logs, signaling maintenance issues etc 
-* **SWC Maintenance** performing corrective / adaptive maintenance tasks that require database access and updates
+* **SWC Administrator** monitoring the health status, logs, signaling maintenance issues etc .
+* **SWC Maintainer** performing corrective / adaptive maintenance tasks that require database access and updates.
 
 ## PostgreSQL RDBMS: storage of raw and augmented metadata
 
