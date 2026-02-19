@@ -52,13 +52,7 @@ The SoilWise Metadata Catalogue implements back-end index and search functions b
 
 #### Supported standards
 
-In order to interact with the many relevant data communities, SoilWise aims to support a range of catalogue standards through **pycsw backend**:
-
-1. **Catalogue Service for the Web** - Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC. <https://repository.soilwise-he.eu/cat/csw>
-2. **OGC API - Records** - OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community. <https://repository.soilwise-he.eu/cat/openapi>
-3. **Protocol for metadata harvesting (oai-pmh)** - The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories. <https://repository.soilwise-he.eu/cat/oaipmh>
-4. **Schema.org annotations** - Annotiations using [schema.org/Dataset](https://schema.org/Dataset) ontology enable search engines to harvest metadata in a structured way. [Example](https://validator.schema.org/#url=https%3A%2F%2Frepository.soilwise-he.eu%2Fcat%2Fcollections%2Fmetadata%3Amain%2Fitems%2F00682004-c6b9-4c1d-8b40-3afff8bbec69)
-
+In order to interact with the many relevant data communities, SoilWise aims to support a range of catalogue standards through **pycsw backend**, for more info see [Integrations & Interfaces](#integrations--interfaces).
 
 ## Architecture
 
@@ -96,7 +90,11 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 
 ## Integrations & Interfaces
 
-Q: Is this where also the section on standards above should go?
+| Service | Auth | Endpoint | Purpose |
+|---------|------|----------|---------|
+|**Catalogue Service for the Web**||<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC.|
+|**OGC API - Records**||<https://repository.soilwise-he.eu/cat/openapi>|OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community.|
+|**Protocol for metadata harvesting (oai-pmh)**||<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
 
 ## Key Architectural Decisions
 
