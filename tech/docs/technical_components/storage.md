@@ -118,8 +118,6 @@ Git is an acknowledged platform to store, version, configure and docuemnt softwa
 | **Integration issues for process automation** | Currently implemented process automation through Git might not fit JRC | Continuous alignment with JRC technical team |
 | **To be further extended** | ... |
 
-## Questions for next version
-- Does it make sense to also mention Apache Lucene index under storage?
 
 
 <!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
