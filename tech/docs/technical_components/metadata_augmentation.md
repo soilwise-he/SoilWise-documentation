@@ -13,6 +13,7 @@ At the moment, Metadata Augmentation functionality is covered by the following c
 - [Element Matcher](#element-matcher)
 - [Translation Module](#translation-module)
 - [Link Liveliness Assessment](#link-liveliness-assessment)
+- [Spatial Metadata Extractor](#spatial-metadata-extractor)
 - [Spatial Locator](#spatial-locator)
 - [Metadata Interlinker](#metadata-interlinker)
 
@@ -162,6 +163,7 @@ Additionally, the tool enhances link analysis by identifying various metadata at
 4.	**Timeout management:** Allows the identification of URLs that exceed a timeout threshold which can be set manually as a parameter in linkchecker's properties. 
 5.	**Availability monitoring:** When run periodically, the tool builds a history of availability for each URL, enabling users to view the status of links over time. 
 6.	OWS services (WMS, WFS, WCS, CSW) typically return a HTTP 500 error when called without the necessary parameters. A handling for these services has been applied in order to detect and include the necessary parameters before being checked.
+7. **On demand URL validation** Enables real-time checking of individual URLs without storing results in the database. Returns immediate feedback including status, content metadata, redirect information and diagnostic messages explaining link issues. Particularly useful for pre-validating links before processing in other tools, avoiding unnecessary operations on broken URLs. Utilized in [Spatial Metadata Extractor](#spatial-metadata-extractor) to skip processing broken URLs
 
 A javascript widget is further used to display the link status directly in the SoilWise [Metadata Catalogue](catalogue.md) record.
 
@@ -277,9 +279,13 @@ The API has been extended to include the newly tracked metadata fields:
 - **link_size**: Indicates the size of the resource in bytes
 - **last_modified**: Provides the timestamp when the resource was modified
 
+**New Endpoint:**
+- POST **/check-url**: On-demand URL validation endpoint that accepts a URL and optional check_ogc_capabilities parameter.
+  Returns real-time validation results without database storage, including diagnostic messages to help users understand link issues.
+
 ### Risks & Limitations
 
-## Spatial Locator
+## Spatial Metadata Extractor
 
 !!! component-header "Info"
     **Current version:** 
@@ -288,12 +294,12 @@ The API has been extended to include the newly tracked metadata fields:
 
     **Release:** 
 
-    **Projects:** [NER augmentation](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/NER%20augmentation)
+    **Projects:** [Spatial Metadata Extractor](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-metadata-extractor)
 
 
 ### Overview and Scope
 
-The Spatial Locator component identifies and extracts location information from metadata records using multiple approaches:
+The Spatial Metadata Extractor component identifies and extracts location information from metadata records using multiple approaches:
 
 1. **OGC Services Spatial Metadata:** Queries OGC services (WMS, WFS, WCS, CSW) if present in metadata links to extract spatial extent and coverage information, providing a robust method for spatial metadata augmentation.
 
@@ -301,7 +307,7 @@ The Spatial Locator component identifies and extracts location information from 
 The component leverages a trained spaCy model specifically configured to recognize location entities labeled as `Location_positive`, ensuring high precision in spatial metadata extraction via the NER approach.
 
 ### Key Features
-The Spatial Locator component privides the following functions:
+The Spatial Metadata Extractor component privides the following functions:
 
 1. **Detection of OGC service:** Automatically identifies if there are URL's present in the metadata that refers an OGC service and, if so, extracts the bounding box from the metadata of this service.
 2. **Location Entity Extraction:** Automatically identifies location mentions in metadata titles and abstracts using a trained spaCy NER model.
@@ -322,7 +328,7 @@ The Spatial Locator component privides the following functions:
 
 ```mermaid
 sequenceDiagram
-    participant Pipeline as Spatial Locator Pipeline
+    participant Pipeline as Spatial Metadata Extractor Pipeline
     participant DB as Database
     participant LinkDet as Link Detector
     participant OGCCheck as OGC Service Checker
@@ -374,7 +380,7 @@ sequenceDiagram
 
 #### Database Design
 
-The Spatial Locator uses the following database structure:
+The Spatial Metadata Extractor uses the following database structure:
 
 - **metadata.records:** Source table containing identifier, title, and abstract fields
 - **metadata.augments:** Stores extracted location entities with fields:
@@ -410,23 +416,22 @@ Example augmentation value:
 - **Abstract And Title Processing:** Extraction may fail on malformed abstracts/titles, with errors logged and processing continuing to the next record.
 - **Database Performance:** Large batch operations may impact database performance; batch size may need tuning based on system capacity.
 
-## Metadata Interlinker
+## Spatial Locator
+
+!!! component-header "Info"
+    **Current version:** 
+
+    **Technology:**  
+
+    **Release:** 
+
+    **Projects:** [Spatial Locator](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-locator)
 
 ### Overview and Scope
-To be able to provide interlinked data and knowledge assets (e.g. a dataset, the project in which it was generated and the operating procedure used) links between metadata must be identified and registered ideally as part of the [SWR Triple Store](./storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph).
-
-We distinguish between explicit and implicit links:
-
-- **Explicit links** can be directly derived from the data and/or metadata. E.g. projects in CORDIS are explicitly linked to documents and datasets. 
-- **Implicit links** can not be directly derived from the (meta)data. They may be derived by spatial or temporal extent, keyword usage, or shared author/publisher. 
-
-SWC implements the interlinking of data and knowledge assets based on explicit links that are found in the harvested metadata. The harvesting processes implemented in SWC have been extended with this function to detect such linkages and store them in the repository and add them to the SWC knowledge graph. This allows e.g. exposing this additional information to the UI for displaying and linkage the  and other functions. 
-
 ### Key Features
 ### Architecture
 #### Technological Stack
 #### Main Sequence Diagram
-#### Database Design
 ### Integrations & Interfaces
 ### Key Architectural Decisions
 ### Risks & Limitations
