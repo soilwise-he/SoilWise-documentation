@@ -61,7 +61,7 @@ A Triple Store, implemented in Virtuoso, is integrated for parallel storage of m
 3. **Semantic querying** — The SPARQL interface offered on top of the Triple Store allows users and processes to use such reasoning and exploit previously unconnected sets of knowledge.
 
 
-## Apache Lucene: 
+## Apache Lucene: Open-source search engine software library
 
 !!! component-header "Info"
     **Current version:** Apache Lucene release x.x.x
@@ -74,12 +74,12 @@ The SoilWise Catalogie uses a dedicated index (Apache Lucene) to efficiently ind
 
 ### Key Features
 
-Apache Lucene offers a range of options that support increasing the search performance and the quality of search results. It also allows to implement strategies for result ranking, faceted search that can increase end user experience :
+Apache Lucene offers a range of options that support increasing the search performance and the quality of search results. It also allows to implement strategies for result ranking, faceted search etc. that can increase end user experience :
 
-1. **Search performance** — Apache Lucene is a broadly adopted and well maintaned index that can dramatically speed up and inprove the precision of search results
-2. **Integration** — Integration with Apache Solr provides tools and programatic access to configure, manage, optimize and query the indexed content.
-3. **Lexical Search** — Combined with the Apache Solr framework, Lucene offers support for lexical search (based on matching the literals of words and their variants, faceted search and ranking. 
-3. **Semantic Search** — Combined with the Apache Solr framework, Lucene offers support for storing embeddings that support semantic search (based on the meaning of data).
+1. **Search performance** — Apache Lucene is a broadly adopted and well maintaned search index that can dramatically speed up and improve the precision of search results
+2. **Integration** — Integration with Apache Solr provides tools and programmatic access to configure, manage, optimize and query the indexed content.
+3. **Lexical Search** — Combined with the Apache Solr framework, Lucene offers support for lexical search (based on matching the literals of words and their variants), faceted search and ranking. 
+3. **Semantic Search** — Combined with the Apache Solr framework, Lucene offers support for generating and storing embeddings that support semantic search (based on the meaning of data) and associated AI functions.
 
 
 ## Git: storage of code and configuration
