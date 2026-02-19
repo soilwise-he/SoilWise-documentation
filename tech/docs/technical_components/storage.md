@@ -38,7 +38,7 @@ The Postgres database serves as a the destination and/or source for many of the 
 1. **Raw metadata storage** — The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected.
 2. **Storage of Augmented metadata** — Various metadata augmentation jobs use it as input and write their input to this data store.
 3. **Source for Search Index processing** — This database is also the source for denormalisation, processing and indexing metadata through the Solr framework.
-4. **Source for UI querying** — While Solr is the main resource for end user querying through the catalogue UI, the catalogue also queries the Postgress database..
+4. **Source for UI querying** — While Solr is the main resource for end user querying through the catalogue UI, the catalogue also queries the Postgress database.
 
 
 ## Virtuoso Triple Store: storage of SWR knowledge graph

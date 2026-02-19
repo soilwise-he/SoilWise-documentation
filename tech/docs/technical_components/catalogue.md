@@ -45,10 +45,10 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
 The SoilWise Metadata Catalogue implements back-end index and search functions based on **Apache Solr**, focusing on:
 
-1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view
-2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents
+1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view.
+2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents.
 3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, feceted etc.
-4. **Search API** - The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index
+4. **Search API** - The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index.
 
 #### Supported standards
 
@@ -92,9 +92,11 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
-|**Catalogue Service for the Web**||<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC.|
+|**Catalogue Service for the Web (CSW)**||<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC.|
 |**OGC API - Records**||<https://repository.soilwise-he.eu/cat/openapi>|OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community.|
-|**Protocol for metadata harvesting (oai-pmh)**||<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
+|**Protocol for metadata harvesting (OAI-PMH)**||<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
+|**Spatio Temporal Asset Catalog (STAC)**|| <https://repository.soilwise-he.eu/cat/stac/openapi>||
+|**OpenSearch**|| <https://repository.soilwise-he.eu/cat/opensearch> ||
 
 ## Key Architectural Decisions
 
