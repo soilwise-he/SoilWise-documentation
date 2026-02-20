@@ -378,6 +378,73 @@ sequenceDiagram
     DB-->>Pipeline: Confirm insertion
 ```
 
+### Sequence diagram (Updated)
+```mermaid
+sequenceDiagram
+    participant Pipeline as Spatial Metadata Extractor Pipeline
+    participant DB as Database
+    participant LinkDet as Link Detector
+    participant LinkCheck as Link Checker
+    participant OGCCheck as OGC Service Checker
+    participant OGC as OGC Endpoint (GetCapabilities)
+    participant GDAL as GDAL
+    participant Model as trained spaCy Model
+
+    Pipeline->>DB: Query unprocessed records
+    DB-->>Pipeline: Return records (title, abstract, links, mediatype, geometry cols)
+
+    loop For each CSV row
+        %% --- GATE 1: geometry check ---
+        alt geometry IS populated (wkb_geometry / wkt_geometry)
+            Pipeline-->>Pipeline: skip — continue to next row
+        else geometry IS NULL
+            Pipeline->>LinkDet: Parse links JSON array cell
+            LinkDet-->>Pipeline: Return URL list + row mediatype column
+
+            loop For each URL in row
+                %% --- GATE 2: link validity (HEAD → GET fallback) ---
+                Pipeline->>LinkCheck: Check URL (HEAD first, fallback GET if 400+)
+                alt Invalid / unreachable
+                    LinkCheck-->>Pipeline: Log invalid URL — continue to next URL
+                else Valid
+                    LinkCheck-->>Pipeline: URL valid + content_type, size, last_modified
+
+                    %% --- GATE 3: OGC detection ---
+                    Pipeline->>OGCCheck: Detect service type from URL pattern
+                    alt Is OGC service (WMS/WMTS/WFS/WCS/OGC API)
+                        Pipeline->>OGC: Request GetCapabilities (or /collections)
+                        OGC-->>Pipeline: Capabilities response (layers + extents)
+                        Pipeline->>GDAL: Parse service metadata and extract bounding box
+                        GDAL-->>Pipeline: Bounding box (minx, miny, maxx, maxy) + CRS
+                    else Not OGC — check mediatype col + URL extension
+                        alt Spatial format (.shp .gpkg .geojson .kml .gml .tif .tiff .nc …)
+                            Pipeline->>GDAL: Extract metadata (raster/vector two-pass, /vsizip/ for .zip)
+                            GDAL-->>Pipeline: Bounding box + CRS + file metadata
+                        else Not spatial
+                            Pipeline-->>Pipeline: Log non-spatial URL — skip
+                        end
+                    end
+                end
+            end
+
+            %% --- NER extraction (after URL loop) ---
+            Pipeline->>Model: Extract locations from title
+            Model-->>Pipeline: Return location entities
+            Pipeline->>Model: Extract locations from abstract
+            Model-->>Pipeline: Return location entities
+
+            %% --- prepare batch rows ---
+            Pipeline->>DB: Prepare augmentation rows (OGC/GDAL bbox + NER entities)
+            Pipeline->>DB: Prepare status rows
+        end
+    end
+
+    Pipeline->>DB: Batch insert augmentations
+    Pipeline->>DB: Batch insert processing status
+    DB-->>Pipeline: Confirm insertion
+```
+
+
 #### Database Design
 
 The Spatial Metadata Extractor uses the following database structure:
@@ -400,6 +467,21 @@ Example augmentation value:
   {"text": "Germany", "start_char": 120, "end_char": 127}
 ]
 ```
+### Spatial metadata extractor (Database Design)
+The output is written to a JSONL file where each record consists of the following properties:
+
+- `identifier`: Link to the source record
+- `url`: The URL that was processed
+- `process`: Set to `'spatial-extractor'`
+- `date`: Processing timestamp
+- `error`: Error message if extraction failed, otherwise `null`
+- `metadata`: Extracted spatial data, structure depends on source type:
+
+    | Source | Fields |
+    |--------|--------|
+    | **Vector** | `type` `driver` `layer_count` `layers[bbox, epsg, geometry_type, attributes]` `features[GeoJSON geometries only]` |
+    | **Raster** | `type` `driver` `width` `height` `band_count` `bbox` `pixel_size` `projection` `bands` |
+    | **OGC service** | `service_type` `layer_name` `layer_all` `title` `abstract` `bbox` `crs` |
 
 ### Integrations & Interfaces
 ### Key Architectural Decisions
