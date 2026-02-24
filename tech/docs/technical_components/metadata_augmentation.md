@@ -328,126 +328,181 @@ The Spatial Metadata Extractor component privides the following functions:
 
 ```mermaid
 sequenceDiagram
-    participant Pipeline as Spatial Metadata Extractor Pipeline
+    participant Pipeline as Spatial Metadata  <br>  Extractor Pipeline
     participant DB as Database
-    participant LinkDet as Link Detector
-    participant OGCCheck as OGC Service Checker
-    participant OGC as OGC Endpoint (GetCapabilities)
+    participant LD as Link Detector
+    participant LC as Link Checker
+    participant OC as OGC Checker
+    participant OGC as OGC Endpoint
     participant GDAL as GDAL
-    participant Model as trained spaCy Model
+    participant NER as trained spaCy <br> NER Model
 
-    Pipeline->>DB: Query unprocessed records
-    DB-->>Pipeline: Return records (title, abstract, metadata)
+    %% ===== Ingest =====
+    Pipeline->>DB: Fetch unprocessed records
+    DB-->>Pipeline: Records (title, abstract, links, mediatype, geometry)
 
     loop For each record
-        %% --- OGC extraction (first) ---
-        Pipeline->>LinkDet: Detect links in metadata
-        LinkDet-->>Pipeline: Return candidate URLs
 
-        alt URLs found
+        %% ===== Gate 1: Geometry presence =====
+        alt Geometry present
+            Pipeline->>Pipeline: Skip record
+        else Geometry missing
+
+            %% ===== Link parsing =====
+            Pipeline->>LD: Parse links cell
+            LD-->>Pipeline: URL list + mediatype
+
             loop For each URL
-                Pipeline->>OGCCheck: Check if URL is an OGC service (WMS/WFS/WMTS/WCS/OGC API)
-                OGCCheck-->>Pipeline: Service type / Not OGC
 
-                alt Is OGC service
-                    Pipeline->>OGC: Request GetCapabilities (or equivalent)
-                    OGC-->>Pipeline: Capabilities response (layers + extents)
-                    Pipeline->>GDAL: Parse service metadata and extract bounding box
-                    GDAL-->>Pipeline: Bounding box (minx, miny, maxx, maxy) + CRS
-                else Not an OGC service
-                    Pipeline-->>Pipeline: Skip OGC extraction for this URL
-                end
-            end
-        else No URLs found
-            Pipeline-->>Pipeline: Continue without OGC augmentation
-        end
+                %% ===== Gate 2: URL validity =====
+                Pipeline->>LC: Validate URL (HEAD → GET)
+                alt URL invalid
+                    LC-->>Pipeline: Invalid → log & skip
+                else URL valid
+                    LC-->>Pipeline: Metadata (content_type, size, last_modified)
 
-        %% --- NER extraction (second) ---
-        Pipeline->>Model: Extract locations from title
-        Model-->>Pipeline: Return location entities
-        Pipeline->>Model: Extract locations from abstract
-        Model-->>Pipeline: Return location entities
-
-        %% --- persistence ---
-        Pipeline->>DB: Prepare augmentation rows (OGC bbox + NER entities)
-        Pipeline->>DB: Prepare status rows
-    end
-
-    Pipeline->>DB: Batch insert augmentations
-    Pipeline->>DB: Batch insert processing status
-    DB-->>Pipeline: Confirm insertion
-```
-
-### Sequence diagram (Updated)
-```mermaid
-sequenceDiagram
-    participant Pipeline as Spatial Metadata Extractor Pipeline
-    participant DB as Database
-    participant LinkDet as Link Detector
-    participant LinkCheck as Link Checker
-    participant OGCCheck as OGC Service Checker
-    participant OGC as OGC Endpoint (GetCapabilities)
-    participant GDAL as GDAL
-    participant Model as trained spaCy Model
-
-    Pipeline->>DB: Query unprocessed records
-    DB-->>Pipeline: Return records (title, abstract, links, mediatype, geometry cols)
-
-    loop For each CSV row
-        %% --- GATE 1: geometry check ---
-        alt geometry IS populated (wkb_geometry / wkt_geometry)
-            Pipeline-->>Pipeline: skip — continue to next row
-        else geometry IS NULL
-            Pipeline->>LinkDet: Parse links JSON array cell
-            LinkDet-->>Pipeline: Return URL list + row mediatype column
-
-            loop For each URL in row
-                %% --- GATE 2: link validity (HEAD → GET fallback) ---
-                Pipeline->>LinkCheck: Check URL (HEAD first, fallback GET if 400+)
-                alt Invalid / unreachable
-                    LinkCheck-->>Pipeline: Log invalid URL — continue to next URL
-                else Valid
-                    LinkCheck-->>Pipeline: URL valid + content_type, size, last_modified
-
-                    %% --- GATE 3: OGC detection ---
-                    Pipeline->>OGCCheck: Detect service type from URL pattern
-                    alt Is OGC service (WMS/WMTS/WFS/WCS/OGC API)
+                    %% ===== Gate 3: OGC detection =====
+                    Pipeline->>OC: Detect OGC service
+                    alt OGC service <br> - WMS/WMTS/WFS/WCS/OGC API -
                         Pipeline->>OGC: Request GetCapabilities (or /collections)
-                        OGC-->>Pipeline: Capabilities response (layers + extents)
-                        Pipeline->>GDAL: Parse service metadata and extract bounding box
-                        GDAL-->>Pipeline: Bounding box (minx, miny, maxx, maxy) + CRS
-                    else Not OGC — check mediatype col + URL extension
-                        alt Spatial format (.shp .gpkg .geojson .kml .gml .tif .tiff .nc …)
-                            Pipeline->>GDAL: Extract metadata (raster/vector two-pass, /vsizip/ for .zip)
-                            GDAL-->>Pipeline: Bounding box + CRS + file metadata
-                        else Not spatial
-                            Pipeline-->>Pipeline: Log non-spatial URL — skip
+                        OGC-->>Pipeline: Service metadata
+                        Pipeline->>GDAL: Extract bbox + CRS
+                        GDAL-->>Pipeline: Bounding box
+                    else Non-OGC
+                        alt Spatial file format <br> (.shp .gpkg .geojson .kml .gml .tif .tiff .nc …)
+                            Pipeline->>GDAL: Extract file metadata
+                            GDAL-->>Pipeline: Bounding box + CRS
+                        else Non-spatial
+                            Pipeline->>Pipeline: Log non-spatial URL
                         end
                     end
                 end
             end
 
-            %% --- NER extraction (after URL loop) ---
-            Pipeline->>Model: Extract locations from title
-            Model-->>Pipeline: Return location entities
-            Pipeline->>Model: Extract locations from abstract
-            Model-->>Pipeline: Return location entities
+            %% ===== Textual enrichment =====
+            Pipeline->>NER: Extract locations (title)
+            NER-->>Pipeline: Location entities
+            Pipeline->>NER: Extract locations (abstract)
+            NER-->>Pipeline: Location entities
 
-            %% --- prepare batch rows ---
-            Pipeline->>DB: Prepare augmentation rows (OGC/GDAL bbox + NER entities)
-            Pipeline->>DB: Prepare status rows
+            %% ===== Persistence prep =====
+            Pipeline->>DB: Stage augmentation rows
+            Pipeline->>DB: Stage processing status
         end
     end
 
+    %% ===== Commit =====
     Pipeline->>DB: Batch insert augmentations
-    Pipeline->>DB: Batch insert processing status
-    DB-->>Pipeline: Confirm insertion
+    Pipeline->>DB: Batch insert statuses
+    DB-->>Pipeline: Insert confirmed
 ```
 
+#### Flowchart
+```mermaid
+flowchart LR
 
+    %% =====================================================
+    %% Swimlane: Record Intake
+    %% =====================================================
+    subgraph L1[Record Intake]
+        A([Start: Unprocessed Record])
+        D1{D1: Geometry present?}
+        S1([Next record])
+    end
+
+    N((No))
+
+    %% =====================================================
+    %% Swimlane: URL Iteration & Validation
+    %% =====================================================
+    subgraph L0[URL Iteration]
+        subgraph L2[URL Validation]
+            B[Parse links cell]
+            C([For each URL])
+            D2{D2: URL reachable?}
+            E[Collect URL metadata]
+        end
+
+        %% =====================================================
+        %% Swimlane: Spatial Detection & Extraction
+        %% =====================================================
+        subgraph L3[Spatial Detection & Extraction]
+            D3{D3: OGC service?}
+            F[Request GetCapabilities / collections]
+            G["Extract bbox + CRS (OGC via GDAL)"]
+            D4{D4: Spatial file? <br> .shp .gpkg .geojson .kml .gml .tif .tiff .nc …}
+            H["Extract bbox + CRS (File via GDAL)"]
+        end
+    
+
+
+        %% =====================================================
+        %% Swimlane: Logging & Control
+        %% =====================================================
+        subgraph L5[Logging & Control]
+            L21[Log invalid URL]
+            L22[Log non-spatial resource]
+        end
+    end
+    %% =====================================================
+    %% Swimlane: NER Enrichment (Parallel)
+    %% =====================================================
+    subgraph L4["NER Enrichment <br> (named entity recognition)"]
+        N1([Title])
+        N2([Abstract])
+        N3[trained spaCy NER Model]
+        N4[Extract locations from title]
+        N5[Extract locations from abstract]
+    end
+    %% =====================================================
+    %% Swimlane: Persistence
+    %% =====================================================
+    subgraph L6[Persistence]
+        K[Stage augmentation rows]
+        L[Stage processing status]
+        M([Next record])
+    end
+
+    %% =====================================================
+    %% Main control flow
+    %% =====================================================
+    A --> D1
+    D1 -- Yes --> S1
+    D1 -- No --> N --> B
+
+    %% ---- Fork: URL processing || NER enrichment ----
+    B --> C
+
+    %% =====================================================
+    %% URL loop
+    %% =====================================================
+    C --> D2
+    D2 -- No --> L21 --> C
+    D2 -- Yes --> E --> D3
+
+    D3 -- Yes --> F --> G --> K
+    D3 -- No --> D4
+    D4 -- Yes --> H --> K
+    D4 -- No --> L22 --> C
+
+    %% =====================================================
+    %% NER parallel branch
+    %% =====================================================
+    N --> N1 --> N3 --> N4
+    N --> N2 --> N3 --> N5
+
+    %% =====================================================
+    %% Join point after URL loop + NER
+    %% =====================================================
+
+    N4 --> K
+    N5 --> K
+
+    K --> L --> M
+```
 #### Database Design
 
-The Spatial Metadata Extractor uses the following database structure:
+The Spatial Metadata Extractor uses the following database structure in the NER pipeline:
 
 - **metadata.records:** Source table containing identifier, title, and abstract fields
 - **metadata.augments:** Stores extracted location entities with fields:
@@ -460,15 +515,17 @@ The Spatial Metadata Extractor uses the following database structure:
     - `status`: Processing status (e.g., 'processed')
     - `process`: Set to 'NER-augmentation'
 
-Example augmentation value:
-```json
-[
-  {"text": "Rostock", "start_char": 45, "end_char": 52},
-  {"text": "Germany", "start_char": 120, "end_char": 127}
-]
-```
-### Spatial metadata extractor (Database Design)
-The output is written to a JSONL file where each record consists of the following properties:
+    Example augmentation value:
+    ```json
+    [
+    {"text": "Rostock", "start_char": 45, "end_char": 52},
+    {"text": "Germany", "start_char": 120, "end_char": 127}
+    ]
+    ```
+
+The Spatial Metadata Extractor uses the following database structure in the spatial dataset pipeline:
+
+-> The output is written to a JSONL file where each record consists of the following properties:
 
 - `identifier`: Link to the source record
 - `url`: The URL that was processed
