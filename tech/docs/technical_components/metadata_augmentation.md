@@ -500,6 +500,102 @@ flowchart LR
 
     K --> L --> M
 ```
+
+#### Flowchart Updated
+```mermaid
+flowchart LR
+
+    %% =====================================================
+    %% Swimlane: Record Intake
+    %% =====================================================
+    subgraph L1[Record Intake]
+        A([Start: Unprocessed Record])
+        D1{D1: Geometry present?}
+        S1([Skip record])
+    end
+
+    N((No))
+
+    %% =====================================================
+    %% Swimlane: URL Iteration
+    %% =====================================================
+    subgraph L0[URL Iteration]
+
+        subgraph L2[URL Validation]
+            B[Parse links cell]
+            C([For each URL])
+            LL[Link Liveliness Assessment\ncheck_url: HEAD/GET + OGC]
+            D2{D2: URL valid?}
+        end
+
+        subgraph L3[Spatial Detection & Extraction]
+            D3{D3: OGC service\ndetected?}
+            GC[Request GetCapabilities]
+            EOGC["Extract bbox + CRS\n(OGC · via owslib)"]
+            D4{D4: Spatial file?\n.shp .gpkg .geojson\n.kml .gml .tif .nc}
+            EGDAL["Extract bbox + CRS\n(File · via GDAL)"]
+        end
+
+        subgraph L5[Logging & Control]
+            L21[Log invalid URL]
+            L22[Log non-spatial resource]
+        end
+
+    end
+
+    %% =====================================================
+    %% Swimlane: NER Enrichment (Parallel)
+    %% =====================================================
+    subgraph L4["NER Enrichment (named entity recognition)"]
+        N1([Title])
+        N2([Abstract])
+        N3[trained spaCy NER Model]
+        N4[Extract locations from title]
+        N5[Extract locations from abstract]
+    end
+
+    %% =====================================================
+    %% Swimlane: Persistence
+    %% =====================================================
+    subgraph L6[Persistence]
+        K[Stage augmentation rows]
+        L[Stage processing status]
+        M([Next record])
+    end
+
+    %% =====================================================
+    %% Main control flow
+    %% =====================================================
+    A --> D1
+    D1 -- Yes --> S1
+    D1 -- No --> N --> B
+
+    %% =====================================================
+    %% URL loop
+    %% =====================================================
+    B --> C --> LL --> D2
+    D2 -- No --> L21 --> C
+    D2 -- Yes --> D3
+
+    D3 -- Yes --> GC --> EOGC --> K
+    D3 -- No --> D4
+    D4 -- Yes --> EGDAL --> K
+    D4 -- No --> L22 --> C
+
+    %% =====================================================
+    %% NER parallel branch
+    %% =====================================================
+    N --> N1 --> N3 --> N4
+    N --> N2 --> N3 --> N5
+
+    %% =====================================================
+    %% Join point after URL loop + NER
+    %% =====================================================
+    N4 --> K
+    N5 --> K
+
+    K --> L --> M
+
 #### Database Design
 
 The Spatial Metadata Extractor uses the following database structure in the NER pipeline:
