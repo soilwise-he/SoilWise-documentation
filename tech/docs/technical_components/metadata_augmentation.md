@@ -399,8 +399,7 @@ sequenceDiagram
 
 #### Flowchart
 ```mermaid
-flowchart LR
-
+sequenceDiagram
     %% =====================================================
     %% Swimlane: Record Intake
     %% =====================================================
@@ -595,6 +594,7 @@ flowchart LR
     N5 --> K
 
     K --> L --> M
+```
 
 #### Database Design
 
