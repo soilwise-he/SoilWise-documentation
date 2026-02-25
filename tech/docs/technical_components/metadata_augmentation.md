@@ -399,7 +399,7 @@ sequenceDiagram
 
 #### Flowchart
 ```mermaid
-sequenceDiagram
+flowchart LR
     %% =====================================================
     %% Swimlane: Record Intake
     %% =====================================================
