@@ -4,7 +4,7 @@
 !!! component-header "Info"
     **Current version:** 0.2.6
 
-    **Technology:** [https://www.w3.org/RDF/](https://www.w3.org/RDF/)
+    **Technology:** [RDF](https://www.w3.org/RDF/)
    
     **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
    
@@ -26,7 +26,7 @@ The SHKG is implemented as an **RDF knowledge graph** and built to be ​**ontol
 
 ## 2. What the SHKG Contains (Scope & Structure)
 
-![Soil Health KG overview](https://github.com/soilwise-he/soil-health-knowledge-graph/blob/main/imgs/soil_health_KG.svg)
+![Soil Health KG overview](../_assets/images/soil_health_KG.svg)
 
 At a high level, the SHKG models:
 
@@ -46,7 +46,7 @@ SHKG construction follows a **semi-automated, human-in-the-loop pipeline** that 
 
 ### 3.1 Knowledge sources
 
-![Conceptual Model (EEA 2023 report Figure 1.1)](https://github.com/soilwise-he/soil-health-knowledge-graph/blob/main/imgs/conceptual_model_EEA.jpg)
+![Conceptual Model (EEA 2023 report Figure 1.1)](../_assets/images/conceptual_model_EEA.jpg)
 
 The initial SHKG is derived primarily from key soil-health literature, including:
 
