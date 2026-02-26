@@ -26,6 +26,8 @@ The SHKG is implemented as an **RDF knowledge graph** and built to be ​**ontol
 
 ## 2. What the SHKG Contains (Scope & Structure)
 
+![Soil Health KG overview](https://github.com/soilwise-he/soil-health-knowledge-graph/blob/main/imgs/soil_health_KG.svg)
+
 At a high level, the SHKG models:
 
 * **Core soil health concepts** (soil, properties, functions, ecosystem services),
@@ -43,6 +45,8 @@ The current SHKG integrates **11,719 RDF triples** describing ​**2,017 entitie
 SHKG construction follows a **semi-automated, human-in-the-loop pipeline** that combines LLM-based extraction with expert oversight to ensure ontological compliance and scientific quality.
 
 ### 3.1 Knowledge sources
+
+![Conceptual Model (EEA 2023 report Figure 1.1)](https://github.com/soilwise-he/soil-health-knowledge-graph/blob/main/imgs/conceptual_model_EEA.jpg)
 
 The initial SHKG is derived primarily from key soil-health literature, including:
 
@@ -101,7 +105,7 @@ This ensures the SHKG’s fidelity to its source material and its reliability fo
 
 ## 5. Linking to External Ontologies / Thesauri
 
-A key goal of the SHKG is interoperability with broader semantic resources. The SHKG already includes mappings to established vocabularies and thesauri, enabling cross-resource navigation and reuse of standardized identifiers.
+A key goal of the SHKG is interoperability with broader semantic resources. The SHKG already includes mappings to established vocabularies and thesauri, enabling cross-resource navigation and reuse of standardized identifiers. A total of 493 concepts were found matching in the following ontologies and thesauri.
 
 **Currently linked resources include:**
 
@@ -118,9 +122,9 @@ Linking is implemented using SKOS mapping properties (primarily `skos:exactMatch
 ## 6. SHKG as the Semantic Backbone of the SoilWise Data & Knowledge Hub
 
 !!! component-header "Info"
-   **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://voc.soilwise-he.containers.wur.nl/)
+    **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://voc.soilwise-he.containers.wur.nl/)
    
-   **Technology:** [VocView](https://github.com/ternaustralia/vocview)
+    **Technology:** [VocView](https://github.com/ternaustralia/vocview)
 
 The SHKG is designed to act as the **semantic anchor** that connects SoilWise resources and external assets into one coherent discovery experience.
 
