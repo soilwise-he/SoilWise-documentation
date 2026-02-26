@@ -2,13 +2,13 @@
 
 
 !!! component-header "Info"
-   **Current version:** 0.2.6
+    **Current version:** 0.2.6
 
-   **Technology:** [https://www.w3.org/RDF/](https://www.w3.org/RDF/)
+    **Technology:** [https://www.w3.org/RDF/](https://www.w3.org/RDF/)
    
-   **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
+    **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
    
-   **Primary access point:** SWR SPARQL endpoint: [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
+    **Primary access point:** SWR SPARQL endpoint: [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
 
 ---
 
@@ -150,15 +150,15 @@ The integration also supports iterative improvement of the SHKG:
 Depending on your needs (human exploration, application integration, bulk reuse), there are multiple ways to access the SHKG:
 
 1. **SPARQL endpoint (query access)**
-   * [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
+    * [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
 2. **GitHub repository (pipeline + sources + releases)**
-   * [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
+    * [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
 3. **Ontology/portal publication (browsing & reuse)**
-   * AgroPortal entry (SHKG) is available and provides a browsing-oriented interface [https://agroportal.lirmm.fr/ontologies/SHKG](https://agroportal.lirmm.fr/ontologies/SHKG).
+    * AgroPortal entry (SHKG) is available and provides a browsing-oriented interface [https://agroportal.lirmm.fr/ontologies/SHKG](https://agroportal.lirmm.fr/ontologies/SHKG).
 4. **Resolved URI documentation (human-readable URI resolution)**
-   * WIDOCO HTML site resolves SHKG URIs for documentation and exploration [https://soilwise-he.github.io/soil-health](https://soilwise-he.github.io/soil-health).
+    * WIDOCO HTML site resolves SHKG URIs for documentation and exploration [https://soilwise-he.github.io/soil-health](https://soilwise-he.github.io/soil-health).
 5. **Archived release / DOI (citation & reproducibility)**
-   * Zenodo DOI provides a citable snapshot including KG, ontology schema, and validation assets [https://doi.org/10.5281/zenodo.14936019](https://doi.org/10.5281/zenodo.14936019)
+    * Zenodo DOI provides a citable snapshot including KG, ontology schema, and validation assets [https://doi.org/10.5281/zenodo.14936019](https://doi.org/10.5281/zenodo.14936019)
 
 ---
 
@@ -167,9 +167,9 @@ Depending on your needs (human exploration, application integration, bulk reuse)
 ### SoilVoc (in development)
 
 !!! component-header "Info"
-   **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://soilwise-he.github.io/soil-vocabs/)
+    **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://soilwise-he.github.io/soil-vocabs/)
 
-   **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
+    **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
 
 SoilVoc is a **SKOS-based soil science thesaurus** designed to **connect soil knowledge with soil data**. Today, knowledge-centric resources (like SHKG) and data-centric resources (used for describing and annotating soil observations) often evolve in parallel and remain poorly connected, limiting discovery and interoperability.
 
