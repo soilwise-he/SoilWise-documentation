@@ -1,84 +1,176 @@
 # Knowledge Graph
 
-!!! component-header "Info"
-    **Current version:** 0.2.0 
-
-    **Technology:** [RDF](https://www.w3.org/RDF/)
-
-    **Project:** [Soil health knowledge graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
-
-    **Access point:** SWR SPARQL endpoint: <https://repository.soilwise-he.eu/sparql>
-
-SoilWise develops and implements a knowledge graph linking the knowledge captured in harvested and augmented metadata with various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are also implemented as RDF graphs. Linking such graphs into a harmonized SWR knowledge graph allows reasoning over the relations in the stored graph, and thus allows connecting and smartly combining knowledge from those domains.
-
-The first iteration of the SWR knowledge graph is a graph representation of the (harmonized) metadata that is currently harvested, validated and augmented as part of the SWR catalogue database. It's RDF representation, stored in a triple store, and the SPARQL endpoint deployed on top of the triple store, allow users alternate access to the metadata, exploiting semantics and relations between different assets.
-
-At the same time, preliminary experiments have been conducted to integrate this RDF metadata graph with a dedicated soil health knowledge graph, which is constructed with the assistance of AI/ML, using [keyword matching](../metadata_augmentation/#keyword-matcher). During this process, unmatched terms from harvested metadata records were identified and cataloged. These terms, acting as candidate keywords, are currently under review by domain experts to assess their potential value for inclusion in the soil health knowledge graph. This analysis serves as a critical mechanism to identify gaps and prioritize new concepts for future enrichment of the graph.
-
-In future iterations, the metadata graph will be linked/merged with this soil health knowledge graph also linking to external resources, establishing a broader interconnected SWR knowledge graph. Consequently, it will evolve into a knowledge network that allows much more powerful and impactful queries and reasoning, e.g. supporting decision support and natural language quering.
-
-## Functionality
-
-### Knowledge graph querying (SPARQL endpoint) 
-
-The SPARQL endpoint, deployed on top of the SWR triple store, allows end users to query the SWR knowledge graph using the SPARQL query language. It is the primary access point to the [knowledge graph](../technical_components/storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph), both for humans, as well as for machines. Many applications and end users will instead interact with specialised assets that use the SPARQL end-point, such as the Chatbot or the API. However, the SPARQL end-point is the main source for the development of further knowledge applications and provides bespoke search to humans.
-
-Since we are importing resources from various data and knowledge repositories, we expect many duplicities and conflicting statements. Implementation of rules should be permissive, not preventing inclusion, only flag potential inconsistencies.
-
-## Ongoing Developments
-
-### Knowledge graph enrichment and linking 
 
 !!! component-header "Info"
-    **Access point:** <https://raw.githubusercontent.com/soilwise-he/soil-health-knowledge-graph/refs/heads/main/soil_health_KG.ttl>
+   **Current version:** 0.2.6
 
-    **Technology:** [RDF](https://www.w3.org/RDF/)
+   **Technology:** [https://www.w3.org/RDF/](https://www.w3.org/RDF/)
+   
+   **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
+   
+   **Primary access point:** SWR SPARQL endpoint: [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
 
-As a preparation to extend the currently deployed metadata knowledge graph with broader domain knowledge, experimental work has been performed to enrich the knowledge graph to link it with other knowledge graphs.
+---
 
-The following aspects have been worked on and will be further developed and integrated into future iterations of the SoilWise knowledge graph:
+## 1. Introduction
 
-- Applying various methods using AI/ML to derive a soil health knowledge graph from unstructured content. This is piloted by using (parts of) the EEA report _"[Soil monitoring in Europe – Indicators and thresholds for soil health assessments](https://www.eea.europa.eu/en/analysis/publications/soil-monitoring-in-europe)"_. It tests the effectiveness of various methods to generate knowledge in the form of knowledge graphs from documents, which could also benefit other AI/ML functions foreseen.
-- Establishing links between the SoilWise knowledge graph and external taxonomies and ontologies (linked data). Concepts in the SoilWise knowledge graph that (closely) match with concepts in the AGROVOC thesaurus are linked. Other candidate vocabularies in scope are ISO 11074 and GloSIS ontology. The implemented method is exemplary for the foreseen wider linking required to establish a soil health knowledge graph.
-- Testing AI/ML based methods to derive additional knowledge (e.g. keywords, geography) for data and knowledge assets. Such methods could for instance be used to further augment metadata or fill exisiting metadata gaps. Besides testing such methods, this includes establishing a model that allows to distinguish between genuine and generated metadata.
+SoilWise develops a **Soil Health Knowledge Graph (SHKG)** to capture and interlink soil-health concepts (e.g., soil functions, threats, indicators, thresholds) in a machine-readable and semantically consistent way. The SHKG is designed to become the **semantic backbone** of the SoilWise data & knowledge hub: it provides shared terminology, concept relationships, and mappings to external vocabularies that make SoilWise assets easier to discover, connect, and reuse.
 
-### Knowledge graph validation
+The SHKG is implemented as an **RDF knowledge graph** and built to be ​**ontology-compliant**​, combining:
 
-The validation of the soil health knowledge graph will follow a structured two-phase methodology:
+* a concept-centric representation (SKOS-driven),
+* domain-specific relationships for soil science,
+* and explicit links to established soil-related thesauri/ontologies to strengthen interoperability.
 
-#### Question Formulation
-A serie of questions will be developed based on the content of the EEA report. The principle underpinning this step is that if the knowledge graph accurately encapsulates the report’s information, it should generate answers consistent with those derived directly from the source. These questions will undergo collaborative review to ensure their scientific validity and relevance within soil science.
+---
 
-#### SPARQL Query Execution and Result Verification
-Validated questions will be converted into SPARQL queries and executed against the knowledge graph. The retrieved results will be aggregated and systematically cross-referenced with the answers documented in the EEA report. To ensure domain accuracy, a domain expert will perform a rigorous evaluation of the knowledge graph’s outputs, verifying their technical correctness and adherence to soil science principles.
+## 2. What the SHKG Contains (Scope & Structure)
 
-This process ensures the knowledge graph's fidelity to the source material and its capability to support domain-specific queries reliably.
+At a high level, the SHKG models:
 
-## Technology & Integration
+* **Core soil health concepts** (soil, properties, functions, ecosystem services),
+* **Soil threats/degradation processes** and their relationships,
+* **Indicators** (general and specific) used for assessment,
+* **Thresholds / critical ranges** (including contextualization such as soil type),
+* **References and supporting entities** (e.g., bibliographic resources, policies, standards).
 
-Components used:
+The current SHKG integrates **11,719 RDF triples** describing ​**2,017 entities**​, including ​**1,785 soil-related concepts**​.
 
-- Virtuoso (version 07.20.3239)
-- Python notebooks
+---
 
-Ontologies/Schemas imported:
+## 3. How We Construct the SHKG
 
-- [SKOS Core](https://www.w3.org/2009/08/skos-reference/skos.html)
-- [Dublin Core](https://www.dublincore.org/specifications/dublin-core/)
-- [Agrontology](https://aims.fao.org/aos/agrontology)
-- [QUDT](https://qudt.org/)
-- [PROV-O](https://www.w3.org/TR/prov-o/)
-- [EuroVoc](https://op.europa.eu/en/web/eu-vocabularies)
-- [Semanticscience Integrated Ontology](https://sio.semanticscience.org/)
-- [Open Biological and Biomedical Ontology](https://obofoundry.org/)
-- [Schema.org](https://schema.org/)
-- [Wikidata](https://www.wikidata.org/)
-- [Biolink](https://biolink.github.io/biolink-model/)
-- [SWEET ontology](http://sweetontology.net/)
-- [Allotrope Foundation Ontology](https://www.allotrope.org/ontologies)
+SHKG construction follows a **semi-automated, human-in-the-loop pipeline** that combines LLM-based extraction with expert oversight to ensure ontological compliance and scientific quality.
 
-Vocabularies/Thesauri linked:
+### 3.1 Knowledge sources
 
-- [AGROVOC](https://aims.fao.org/aos/agrovoc)
-- [ISO11074](https://data.geoscience.earth/ncl/ISO11074")
-- [GloSIS ontology](https://glosis-ld.github.io/glosis/)
+The initial SHKG is derived primarily from key soil-health literature, including:
+
+* the EEA report **[*Soil monitoring in Europe – Indicators and thresholds for soil health assessments*](https://data.europa.eu/doi/10.2800/956606)** (selected as a primary source in consultation with soil scientists),
+* complemented where needed by additional sources to cover gaps.
+
+This approach is intentionally extensible: no single report can cover the full scope of soil health, so the SHKG is designed to grow by iteratively incorporating additional sources and concepts.
+
+### 3.2 Ontology-compliant conceptual modeling
+
+The SHKG uses a **concept-centric design** where most domain entities are represented as `skos:Concept`. This supports the primary use cases (annotation and discovery) by maximizing concept coverage and flexible linking.
+
+To ensure semantic interoperability and consistent modeling:
+
+* we reuse terms from established schemas/ontologies wherever possible,
+* and define a controlled set of **soil-health-specific properties** when existing standards do not sufficiently express domain relationships (an explicit extension approach).
+
+### 3.3 LLM-assisted extraction + post-processing (human-in-the-loop)
+
+The pipeline includes:
+
+1. **LLM-based RDF triple generation** from selected text segments, producing Turtle-serialized RDF.
+2. **Syntax validation/repair** (automated checking and correction for Turtle validity).
+3. **Manual review & ontology alignment** to ensure entities/relations map to appropriate ontology terms and follow modeling conventions.
+4. **Entity normalization** (preferred labels and alternative labels) and **relationship disambiguation** to reduce duplication and flag inconsistencies for expert review.
+
+This workflow accelerates knowledge extraction while keeping the graph scientifically reliable through expert oversight.
+
+### 3.4 Knowledge graph enrichment (linking + reversible relations)
+
+The SHKG is enriched by:
+
+* **materializing invertible relationships** (adding inverse triples where appropriate),
+* and **interlinking to external controlled vocabularies and thesauri** via SKOS mapping relations (`skos:exactMatch`, `skos:closeMatch`) to align SoilWise concepts with standardized terminologies.
+
+---
+
+## 4. How We Validate the SHKG
+
+Validation follows a structured methodology based on **competency questions (CQs)** and **SPARQL verification** with domain-expert review.
+
+### 4.1 Competency question formulation
+
+* For each selected knowledge segment, we define a corresponding **competency question** that captures the intended knowledge to be represented.
+* CQs are reviewed by soil scientists to ensure scientific validity and clarity.
+
+### 4.2 SPARQL execution and expert verification
+
+* Each CQ is translated into a **SPARQL query** executed against the SHKG.
+* Retrieved results are compared against the original source content to check coverage and correctness.
+* Soil scientists review outputs to ensure the SHKG answers are technically correct and consistent with soil science principles.
+
+This ensures the SHKG’s fidelity to its source material and its reliability for domain-specific querying.
+
+---
+
+## 5. Linking to External Ontologies / Thesauri
+
+A key goal of the SHKG is interoperability with broader semantic resources. The SHKG already includes mappings to established vocabularies and thesauri, enabling cross-resource navigation and reuse of standardized identifiers.
+
+**Currently linked resources include:**
+
+* [AGROVOC](http://aims.fao.org/aos/agrovoc)
+* [ISO 11074:2025](https://data.geoscience.earth/ncl/ISO11074v2025)
+* [GloSIS ontology](https://glosis-ld.github.io/glosis/)
+* [INRAE Thesaurus](http://opendata.inrae.fr/thesaurusINRAE/)
+* [GEMET Thesaurus](https://www.eionet.europa.eu/gemet/)
+
+Linking is implemented using SKOS mapping properties (primarily `skos:exactMatch` and `skos:closeMatch`) based on label matching rules.
+
+---
+
+## 6. SHKG as the Semantic Backbone of the SoilWise Data & Knowledge Hub
+
+!!! component-header "Info"
+   **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://voc.soilwise-he.containers.wur.nl/)
+   
+   **Technology:** [VocView](https://github.com/ternaustralia/vocview)
+
+The SHKG is designed to act as the **semantic anchor** that connects SoilWise resources and external assets into one coherent discovery experience.
+
+### 6.1 Integration with SoilWise metadata
+
+SoilWise also maintains an RDF representation of harvested metadata (a “metadata knowledge graph”). The SHKG connects to this metadata graph primarily via ​**[keyword matching](../metadata_augmentation/#keyword-matcher)**​, where SHKG concepts serve as controlled keywords that are matched to keywords in harvested metadata records, creating bidirectional links between the two graphs.
+
+### 6.2 What this enables
+
+By using the SHKG as backbone, the SoilWise hub can:
+
+* provide a **soil health thesaurus-like entry point** to concepts and their relationships,
+* act as a **gateway to multiple external vocabularies** through SHKG mappings,
+* and connect concepts directly to relevant SoilWise knowledge assets (papers, datasets, outputs) that mention or use these concepts.
+
+### 6.3 Feedback loop for enrichment
+
+The integration also supports iterative improvement of the SHKG:
+
+* unmatched metadata terms can be cataloged as candidate concepts,
+* domain experts can review and prioritize them for future inclusion—helping identify coverage gaps and guide enrichment.
+
+---
+
+## 7. Accessing the Soil Health Knowledge Graph
+
+Depending on your needs (human exploration, application integration, bulk reuse), there are multiple ways to access the SHKG:
+
+1. **SPARQL endpoint (query access)**
+   * [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
+2. **GitHub repository (pipeline + sources + releases)**
+   * [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
+3. **Ontology/portal publication (browsing & reuse)**
+   * AgroPortal entry (SHKG) is available and provides a browsing-oriented interface [https://agroportal.lirmm.fr/ontologies/SHKG](https://agroportal.lirmm.fr/ontologies/SHKG).
+4. **Resolved URI documentation (human-readable URI resolution)**
+   * WIDOCO HTML site resolves SHKG URIs for documentation and exploration [https://soilwise-he.github.io/soil-health](https://soilwise-he.github.io/soil-health).
+5. **Archived release / DOI (citation & reproducibility)**
+   * Zenodo DOI provides a citable snapshot including KG, ontology schema, and validation assets [https://doi.org/10.5281/zenodo.14936019](https://doi.org/10.5281/zenodo.14936019)
+
+---
+
+## 8. Ongoing Developments
+
+### SoilVoc (in development)
+
+!!! component-header "Info"
+   **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://soilwise-he.github.io/soil-vocabs/)
+
+   **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
+
+SoilVoc is a **SKOS-based soil science thesaurus** designed to **connect soil knowledge with soil data**. Today, knowledge-centric resources (like SHKG) and data-centric resources (used for describing and annotating soil observations) often evolve in parallel and remain poorly connected, limiting discovery and interoperability.
+
+SoilVoc bridges this gap by **linking soil properties with the procedures underlying those properties**, and by enforcing a **rigorous, transparent hierarchy** that enables controllable navigation from abstract concepts to concrete properties and their procedures. This will strengthen SoilWise’s semantic backbone and improves end-to-end discovery from concepts to data and outputs.
