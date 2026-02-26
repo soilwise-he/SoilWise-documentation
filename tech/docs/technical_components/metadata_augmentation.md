@@ -322,12 +322,12 @@ The Spatial Metadata Extractor component privides the following functions:
 |**Python**|Core language for NER pipeline implementation and database interactions.|
 |**[spaCy](https://spacy.io/)**|Industrial-strength NLP library used for the trained NER model and entity extraction.|
 |**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
-| **[GDAL](https://gdal.org/)** | Geospatial data abstraction library used for OGC standards augmentation, enabling renabling extraction of bounding box of online geospatial data across formats and services (e.g. WMS, WFS, GML, GeoJSON). 
+| **[GDAL](https://gdal.org/)** | Geospatial data abstraction library used for OGC standards augmentation, enabling extraction of bounding box of online geospatial data across formats and services (e.g. WMS, WFS, GML, GeoJSON). 
 
 #### Main Sequence Diagram
 
 ```mermaid
-flowchart LR
+flowchart TD
 
     %% =====================================================
     %% Swimlane: Record Intake
@@ -348,16 +348,22 @@ flowchart LR
         subgraph L2[URL Validation]
             B[Parse links cell]
             C([For each URL])
-            LL[Link Liveliness Assessment\ncheck_url: HEAD/GET + OGC]
+            LL[Link Liveliness Assessment
+            check_url: HEAD/GET + OGC]
             D2{D2: URL valid?}
         end
 
         subgraph L3[Spatial Detection & Extraction]
-            D3{D3: OGC service\ndetected?}
+            D3{D3: OGC service
+            detected?}
             GC[Request GetCapabilities]
-            EOGC["Extract bbox + CRS\n(OGC · via owslib)"]
-            D4{D4: Spatial file?\n.shp .gpkg .geojson\n.kml .gml .tif .nc}
-            EGDAL["Extract bbox + CRS\n(File · via GDAL)"]
+            EOGC["Extract bbox + CRS
+            (OGC · via owslib)"]
+            D4{D4: Spatial file?
+            .shp .gpkg .geojson
+            .kml .gml .tif .nc}
+            EGDAL["Extract bbox + CRS
+            File · via GDAL)"]
         end
 
         subgraph L5[Logging & Control]
