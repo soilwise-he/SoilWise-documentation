@@ -50,7 +50,7 @@ SHKG construction follows a **semi-automated, human-in-the-loop pipeline** that 
 
 The initial SHKG is derived primarily from key soil-health literature, including:
 
-* the EEA report **[*Soil monitoring in Europe – Indicators and thresholds for soil health assessments*](https://data.europa.eu/doi/10.2800/956606)** (selected as a primary source in consultation with soil scientists),
+* the EEA report **[*Soil monitoring in Europe – Indicators and thresholds for soil health assessments*](https://data.europa.eu/doi/10.2800/956606)** (selected as the primary source and provided the conceptual model shown in Figure 1.1),
 * complemented where needed by additional sources to cover gaps.
 
 This approach is intentionally extensible: no single report can cover the full scope of soil health, so the SHKG is designed to grow by iteratively incorporating additional sources and concepts.
@@ -162,7 +162,7 @@ Depending on your needs (human exploration, application integration, bulk reuse)
 4. **Resolved URI documentation (human-readable URI resolution)**
     * WIDOCO HTML site resolves SHKG URIs for documentation and exploration [https://soilwise-he.github.io/soil-health](https://soilwise-he.github.io/soil-health).
 5. **Archived release / DOI (citation & reproducibility)**
-    * Zenodo DOI provides a citable snapshot including KG, ontology schema, and validation assets [https://doi.org/10.5281/zenodo.14936019](https://doi.org/10.5281/zenodo.14936019)
+    * Zenodo DOI provides a citable snapshot including KG, ontology schema, and validation assets [https://doi.org/10.5281/zenodo.14936019](https://doi.org/10.5281/zenodo.14936019).
 
 ---
 
@@ -171,7 +171,7 @@ Depending on your needs (human exploration, application integration, bulk reuse)
 ### SoilVoc (in development)
 
 !!! component-header "Info"
-    **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://soilwise-he.github.io/soil-vocabs/)
+    **Access point:** [https://soilwise-he.github.io/soil-vocabs/](https://soilwise-he.github.io/soil-vocabs/)
 
     **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
 
