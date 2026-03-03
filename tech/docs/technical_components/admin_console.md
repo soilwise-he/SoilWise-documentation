@@ -42,7 +42,7 @@ The Data and Knowledge Administration Console is compiled of several dashboard p
 
 ### Main Components Diagram
 ```mermaid
-flowchart LR
+flowchart TD
 
     %% =====================================================
     %% Swimlane: Browser

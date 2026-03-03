@@ -25,5 +25,6 @@ SWC processing APIs are mostly interfaces to components that have been developed
 |**Translate API**|<https://api.soilwise-he.containers.wur.nl/tolk/docs>|This API translates content between languages, and is used for metadata translation. It makes use of the EU translation service <https://language-tools.ec.europa.eu/>|
 |**Link Liveness Assessment API**|<https://api.soilwise-he.containers.wur.nl/linky/docs>|The linkchecker component is designed to evaluate the status, validity and accuracy of links within metadata records in the a OGC API - Records based System. It's responses provide input that is used to inform end users about the status of published links and to collect required data for quality control.|
 |**RDF to triplestore API**|<https://repo.soilwise-he.containers.wur.nl/swagger-ui/index.html>|Allows the conversion of RDF, e.g. as provided by the CORDIS API's to the SWR triple store.|
+|**Grobid API**|TBD|TBD|
 |**DOI resolution API**|TBD|TBD|
 |**Soil Mission news feed API**|TBD|TBD|
