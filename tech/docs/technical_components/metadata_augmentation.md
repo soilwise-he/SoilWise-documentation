@@ -301,7 +301,7 @@ The API has been extended to include the newly tracked metadata fields:
 
 The Spatial Metadata Extractor component identifies and extracts location information from metadata records using multiple approaches:
 
-1. **OGC Services Spatial Metadata:** Queries OGC services (WMS, WFS, WCS, CSW) if present in metadata links to extract spatial extent and coverage information, providing a robust method for spatial metadata augmentation.
+1. **OGC Services Spatial Metadata:** Queries OGC services (WMS, WFS, WCS, CSW) if present in metadata links to extract spatial extent and coverage information, providing a robust method for spatial metadata augmentation. This is done in the [Link Liveliness Assessment component](#link-liveliness-assessment).
 
 2. **Named Entity Recognition (NER):** Extracts location entities from metadata titles and abstracts using a trained spaCy model. The component identifies location references in plain text present in the title and abstract, which are then stored as augmentations in the database. This enables spatial discovery and filtering of datasets within the SWC catalogue.
 The component leverages a trained spaCy model specifically configured to recognize location entities labeled as `Location_positive`, ensuring high precision in spatial metadata extraction via the NER approach.
