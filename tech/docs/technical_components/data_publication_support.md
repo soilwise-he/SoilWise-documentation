@@ -3,6 +3,10 @@
 ## Introduction
 ### Overview and Scope
 
+This suite of tools is designed to support soil data and knowledge publishers, targeting selected challenges, and ensuring that the published data adheres to FAIR principles (Findable, Accessible, Interoperable, Reusable).
+
+The design of these components reflects an understanding of the practical limits and needs of FAIRification of soil data. We recognise the specific challenges in soil data findability and interoperability, including open formats, standardisation, and annotation of soil properties in metadata. 
+
 At the moment, SoilWise supports data publishers with the following tools:
 
 - [DOI Resolution Widget](#doi-resolution-widget)
@@ -12,6 +16,8 @@ At the moment, SoilWise supports data publishers with the following tools:
 
 ## Intended Audience
 
+The Data Publication Support tools and documentation are designed for the following user groups:
+- **Soil Data Providers & Stewards** publishing soil data in line with FAIR principles, annotating datasets with metadata in the repositories, and supporting the findability of their resources through SoilWise. 
 
 ## DOI Resolution Widget
 
