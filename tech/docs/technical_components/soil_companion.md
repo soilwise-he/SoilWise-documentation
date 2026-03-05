@@ -5,7 +5,7 @@
 
     **Technology:** Retrieval Augmented Generative Artificial Intelligence
 
-    **Project:** [Soil Companion](https://github.com/soilwise-he/UC1-C2-chatbot)
+    **Project:** [Soil Companion](https://github.com/soilwise-he/soilwise-soil-companion)
 
     **Access point:** <https://soil-companion.containers.wur.nl/app/index.html>
 
