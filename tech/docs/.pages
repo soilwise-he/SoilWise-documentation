@@ -1,6 +1,6 @@
 nav:
   - Home: index.md
   - technical_components
-  - apis
+  - interfaces
   - infrastructure
   - Glossary: glossary.md
