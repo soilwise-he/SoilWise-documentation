@@ -157,16 +157,13 @@ Depending on your needs (human exploration, application integration, bulk reuse)
 5. **Archived release / DOI (citation & reproducibility)**
     * Zenodo DOI provides a citable snapshot including KG, ontology schema, and validation assets [https://doi.org/10.5281/zenodo.14936019](https://doi.org/10.5281/zenodo.14936019).
 
-
-## Ongoing Developments
-
-### SoilVoc (in development)
+## SoilVoc
 
 !!! component-header "Info"
     **Access point:** [https://soilwise-he.github.io/soil-vocabs/](https://soilwise-he.github.io/soil-vocabs/)
 
     **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
 
-SoilVoc (SoilWise Vocabulary Viewer) is a **SKOS-based soil science thesaurus** designed to **connect soil knowledge with soil data**. Today, knowledge-centric resources (like SHKG) and data-centric resources (used for describing and annotating soil observations) often evolve in parallel and remain poorly connected, limiting discovery and interoperability.
+SoilVoc (SoilWise Vocabulary Browser) is a **SKOS-based soil science thesaurus** designed to **connect soil knowledge with soil data**. Today, knowledge-centric resources (like SHKG) and data-centric resources (used for describing and annotating soil observations) often evolve in parallel and remain poorly connected, limiting discovery and interoperability.
 
 SoilVoc bridges this gap by **linking soil properties with the procedures underlying those properties**, and by enforcing a **rigorous, transparent hierarchy** that enables controllable navigation from abstract concepts to concrete properties and their procedures. This will strengthen SoilWise’s semantic backbone and improves end-to-end discovery from concepts to data and outputs.

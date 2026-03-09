@@ -30,7 +30,7 @@ Publishers are invited to deposit the metadata file with their dataset, so it ca
 The metadata file can also be distributed separately, for example if a data consumer aims to enrich an existing dataset with relevant metadata.
 More information is available in [Tabular Metadata annotation](../technical_components/data_publication_support/#tabular-soil-data-annotation)
 
-### Soil Vocabulary and vocabulary browser
+### SoilVoc
 
 **Access points:** 
 
@@ -40,15 +40,15 @@ More information is available in [Tabular Metadata annotation](../technical_comp
 A User Interface providing a hierarchical overview of soil terms, soil properties and corresponding observation procedures with a link to related terms in other vocabularies. Users can use the search option to locate a term, or browse the hierarchy. 
 The terms are maintained in a CSV format in [Github](https://github.com/soilwise-he/soil-vocabs/blob/main/SoilVoc_concepts.csv). From the CSV a html edition for human consumption and a semantic web edition (for machines) are generated.
 The soil vocabulary is used as source for the catalogue filters in the catalogue sidebar and the keyword matcher.
-More information is available in [Knowledge graph](../technical_components/knowledge_graph.md).
+More information is available in [Knowledge graph](../technical_components/knowledge_graph#soilvoc).
 
-### Soil Health Knowledge graph and graph browser
+### Soil Health Knowledge graph
 
 **Access points:** 
 
 - Namespace: <https://soilwise-he.github.io/soil-health>
 - Browser: <https://voc.soilwise-he.containers.wur.nl/>
-- Knowledge graph: <https://github.com/soilwise-he/soil-health-knowledge-graph>
+- Knowledge graph (.ttl): <https://github.com/soilwise-he/soil-health-knowledge-graph>
 
 The soil health knowledge graph aims to describe relevant terms around Soil Health and relations between the terms. The knowledge graph is maintained in [github](https://github.com/soilwise-he/soil-health-knowledge-graph).
 Selected terms of the Soil Health Knowledge graph are used in the Soil Vocabulary. The Soil Health Knowledge graph can be used by devices aiming to increase the knowledge status around soil health (chatbots, aggregators, catalogues).
