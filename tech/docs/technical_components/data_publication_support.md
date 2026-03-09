@@ -263,28 +263,46 @@ graph TB
 4. **Batch Processing**: Process multiple columns in single LLM call
 
 
-## INSPIRE Geopackage Transformation
+## SoilWise GeoPackage
 
 !!! component-header "Info"
 
-    **Current version:** 
+    **Current version:** TBD
 
-    **Technology:** 
+    **Technology:** SQLite container
 
-    **Project:** 
-
-    **Access Point:** 
+    **Project:** [Geopackage-so](https://github.com/soilwise-he/Geopackage-so)
 
 ### Overview and Scope
+
+The Soilwise GeoPackage is the relational (SQLite‑based) container to enable exchange, storage, and GIS‑native use of soil data, with the explicit goal of making them FAIR and reusable across European policies, research, and land‑management workflows.
+
+GeoPackage is an OGC open, portable, self‑contained standard for geospatial data. Being an SQLite container, it allows direct use of vector features, rasters/tiles and attribute data in a single file, without intermediate format translations. This makes it ideal for GIS environments and for constrained connectivity scenarios.
+
+**Continuity with INSPIRE**
+This GeoPackage implements a relational schema that is a faithful transposition of the INSPIRE Soil conceptual model (UML) and its classes/associations, as described in the [INSPIRE Soil Technical Guidelines](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) and Feature Catalogue. It also integrates the [OGC SensorThings API 2.0](https://hylkevds.github.io/23-019/23-019.html) (STA2) model for the management and exposure of observations (time‑series and observation metadata).
+
+The Soilwise database builds upon—and updates—the work carried out around INSPIRE, including the [EJP SOIL GeoPackage template for the Soil (SO) theme](https://github.com/ejpsoil/inspire_soil_gpkg_template). That template focused on semantic harmonisation, code‑list management, and repeatable transformations, and is a relevant baseline for Soilwise’s relational modelling approach. This direction aligns with community guidance on publishing INSPIRE data as a relational database (GeoPackage as a specialisation of SQLite), including recipes and patterns for harmonisation and publication.
+
 ### Key Features
-### User Manual
-### Architecture
-#### Technological Stack
-#### Main Sequence Diagram
-#### Database Design
-### Integrations & Interfaces
-### Key Architectural Decisions
-### Risks & Limitations
+
+1. **Unified Data Storage:** Acts as a relational, SQLite-based container that allows for the direct, single-file storage of vector features, rasters, and attribute data without the need for intermediate format translations.
+
+2. **Standardized Conceptual Mapping:** Translates the INSPIRE Soil conceptual model (UML) into a functional relational schema, mapping features like SoilSite, SoilPlot, SoilProfile, and ProfileElement into dedicated database tables.
+
+3. **Semantic Harmonization & Interoperability:** Uses reference tables to manage controlled vocabularies and code-lists (keeping URI, notation, label, authority, and version), ensuring that data is functionally interoperable and semantically harmonized.
+
+4. **Relational Integrity Management:** Enforces data relationships using foreign keys and link tables, and manages cascade behaviors to automatically handle the consequences of data updates or deletions across linked parent/child tables.
+
+5. **Time-Series and Sensor Integration:** Integrates the OGC SensorThings API 2.0 (STA2) to manage and expose sensor metadata and observational time-series data via HTTP and MQTT, serving as a "data-in-motion" layer alongside static geographic data.
+
+6. **Native GIS Support:** Natively integrates with QGIS for immediate editing, styling, and map production.
+
+7. **Guided Data Entry via Custom Forms:** Provides pre-configured, custom QGIS attribute forms featuring drop-down menus, default values, contextual help, and automated validation checks to ensure data entry is fast, standardized, and error-free.
+
+8. **Structured Data Loading:** Includes a defined workflow for data loading that enforces necessary dependencies, loading orders, and pre/post-loading verification constraints.
+
+A more detailed technical documentation, including some tutorials for using SoilWise GeoPackage in QGIS can be found at: <https://soilwise-he.github.io/Geopackage-so/>.
 
 ## Other recommended tools acknowledged by SoilWise community
 
