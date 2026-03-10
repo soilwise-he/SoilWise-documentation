@@ -13,7 +13,7 @@
 
 ## Introduction
 
-SoilWise develops a **Soil Health Knowledge Graph (SHKG)** to capture and interlink soil-health concepts (e.g., soil functions, threats, indicators, thresholds) in a machine-readable and semantically consistent way. The SHKG is designed to become the **semantic backbone** of the SoilWise data & knowledge hub: it provides shared terminology, concept relationships, and mappings to external vocabularies that make SoilWise assets easier to discover, connect, and reuse.
+SoilWise develops a **Soil Health Knowledge Graph (SHKG)** to capture and interlink soil-health concepts (e.g., soil functions, threats, indicators, thresholds) in a machine-readable and semantically consistent way. The SHKG is designed to in the future become part of the **semantic backbone** of the SoilWise data & knowledge hub: it provides shared terminology, concept relationships, and mappings to external vocabularies that can make SoilWise assets easier to discover, connect, and reuse.
 
 The SHKG is implemented as an **RDF knowledge graph** and built to be ​**ontology-compliant**​, combining:
 
