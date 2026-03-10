@@ -64,11 +64,11 @@ A Triple Store, implemented in Virtuoso, is integrated for parallel storage of m
 ## Apache Lucene: Open-source search engine software library
 
 !!! component-header "Info"
-    **Current version:** Apache Lucene release x.x.x
+    **Current version:** Apache Lucene release 9.11.1
 
     **Technology:** Apache Lucene
 
-    **Access point:** Via the Apache Solr API <https://>
+    **Access point:** Via the Apache Solr API 
 
 The SoilWise Catalogie uses a dedicated index (Apache Lucene) to efficiently index and store the harvested and augmented metadata, as well as the knowledge extracted from documents referred to through the metadata records (currently only supporting PDF format). Access to the index (both indexing and querying) is provided through the Apache Solr search framework.
 
