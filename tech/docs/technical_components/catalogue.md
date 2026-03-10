@@ -63,7 +63,7 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |Technology|Description|
 |----------|-----------|
 |**[pycsw](https://pycsw.org) v3.0**| Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs [CSW 2/CSW 3](https://www.ogc.org/standard/cat/), [OAI-PMH](https://www.openarchives.org/pmh/), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/), released under an [MIT license](https://docs.pycsw.org/en/latest/license.html), and runs on all major platforms (Windows, Linux, Mac OS X).
-|**[Apache Lucene](https://lucene.apache.org/) v11.x**| Apache Lucene is a open source high-performance Java-based search engine library.|
+|**[Apache Lucene](https://lucene.apache.org/) v9.11.1**| Apache Lucene is a open source high-performance Java-based search engine library.|
 |**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
 |**[Java]() vx.x**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
 |**[OpenStreetMaps API]()**| |
