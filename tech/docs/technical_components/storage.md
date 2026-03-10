@@ -5,13 +5,13 @@
 ### Overview and Scope
 The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 
-1. [A relational database management system](#postgresql-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core metadata of both data and knowledge assets.
-2. [A Triple Store](#virtuoso-triple-store-storage-of-swr-knowledge-graph) to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked data graph.
-3. [Git](#git-storage-of-code-and-configuration) for storage of user-enhanced metadata.
+1. [A relational database management system](#postgresql-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core (raw and augmented) metadata of both data and knowledge assets.
+2. [A Triple Store](#virtuoso-triple-store-storage-of-swr-knowledge-graph) to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked knowledge graph.
+3. [Git](#git-storage-of-code-and-configuration) for storing, versioning of software components, configurations and documentation.
 
 ### Intended Audience
 
-Storage is a backend component, therefore we only expect a maintenance role:
+Storage components are all backend components, therefore we only expect management / maintenance tasks:
 
 * **SWC Administrator** monitoring the health status, logs, signaling maintenance issues etc .
 * **SWC Maintainer** performing corrective / adaptive maintenance tasks that require database access and updates.
@@ -19,9 +19,9 @@ Storage is a backend component, therefore we only expect a maintenance role:
 ## PostgreSQL RDBMS: storage of raw and augmented metadata
 
 !!! component-header "Info"
-    **Current version:** Postgres release 12.2; 
+    **Current version:** Postgres release 16.11; 
 
-    **Technology:** Postgres
+    **Technology:** Postgres RDBMS
 
     **Access point:** SQL
 
@@ -29,7 +29,7 @@ A "conventional" RDBMS is used to store the (augmented) metadata of data and kno
 
 - An RDBMS provides good options to efficiently structure and index its contents, thus allowing performant access for both internal processes and end user interface querying.
 - An RDBMS easily allows implementing constraints and checks to keep data and relations consistent and valid.
-- Various extensions, e.g. search engines, are available to make querying, aggregations even more performant and fitted for end users.
+- Various extensions, e.g. search engines, are available to make indexing, querying, aggregations etc. even more performant and fitted for end users.
 
 ### Key Features
 
@@ -93,7 +93,7 @@ Git is a multi purpose environment for storing and managing software and documen
 
 ### Key Features
 
-Git is an acknowledged platform to store, version, configure and docuemnt software, with additional features for software and software development management. The key features used in SoilWise are:
+Git is an acknowledged platform to store, version, configure and document software, with additional features for software and software development management. The key features used in SoilWise are:
 
 1. **Code storage, version and configuration management** — Git is used to deposit and manage versions of Soilwise code, documentation and configurations.
 2. **Issue and release management** — SoilWIse uses the issue and release management to document, monitor and track the development of software conponents and their integration.
