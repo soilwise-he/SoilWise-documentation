@@ -13,7 +13,7 @@
 
 ### Overview and Scope
 
-The Metadata Catalogue is a central piece of the architecture, giving access to individual metadata records. In the catalogue domain, various effective metadata catalogues are developed around the standards issued by the OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/) (CSW) and the [OGC API Records](https://ogcapi.ogc.org/records/), Open Archives Initiative (OAI-PMH), W3C (DCAT), FAIR science (Datacite) and Search Engine community (schema.org). For our first project iteration we've selected the pycsw software, which supports most of these standards. In the second iteration pycsw continues to provide standardized APIs, however to improve search performance and user experience, it was supplemented by [Apache Solr](https://solr.apache.org/) and [React](https://react.dev/) frontend. 
+The Metadata Catalogue is a central piece of the architecture, providing search & discovery functions for end users and giving access to individual metadata records. In the catalogue domain, various effective metadata catalogues are developed around the standards issued by the OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/) (CSW) and the [OGC API Records](https://ogcapi.ogc.org/records/), Open Archives Initiative (OAI-PMH), W3C (DCAT), FAIR science (Datacite) and Search Engine community (schema.org). For our first project iteration we've selected the pycsw software, which supports most of these standards. In this first iteration, pycsw was the core component facilitating the catalogue functionality from harvesting to UI. In the second iteration pycsw continues to provide standardized APIs, however to improve search performance and user experience, it was supplemented by [Apache Solr](https://solr.apache.org/) and [React](https://react.dev/) frontend. 
 
 ### Intended Audience
 
@@ -31,7 +31,7 @@ The SoilWise Metadata Catalogue targets the following user groups:
 The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
 1. **Paginated search results** - Search results are displayed per page in ranked order, in the form of overview table comprising preview of resource type, title, abstract, date and preview.
-2. **Fulltext search** - + autocomplete
+2. **Fulltext search** - including an autocomplete option.
 3. **Resource type filter** - enabling to filter out certain types of resources, e.g. journal articles, datasets, reports, software.
 4. **Term filter** - enabling to filter out resources containing certain keywords, resources published by specific projects, etc.
 5. **Date filter** - enabling to filter out resources based on their creation, or revision date
@@ -45,9 +45,9 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
 The SoilWise Metadata Catalogue implements back-end index and search functions based on **Apache Solr**, focusing on:
 
-1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view.
-2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents.
-3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, feceted etc.
+1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view.
+2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents that are fed to the Solr infrastructure.
+3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc.
 4. **Search API** - The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index.
 
 #### Supported standards
@@ -65,7 +65,7 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |**[pycsw](https://pycsw.org) v3.0**| Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs [CSW 2/CSW 3](https://www.ogc.org/standard/cat/), [OAI-PMH](https://www.openarchives.org/pmh/), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/), released under an [MIT license](https://docs.pycsw.org/en/latest/license.html), and runs on all major platforms (Windows, Linux, Mac OS X).
 |**[Apache Lucene](https://lucene.apache.org/) v11.x**| Apache Lucene is a open source high-performance Java-based search engine library.|
 |**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
-|**[Java](https://solr.apache.org/) vx.x**| |
+|**[Java]() vx.x**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
 |**[OpenStreetMaps API]()**| |
 
 **Frontend**
@@ -73,7 +73,7 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |Technology|Description|
 |----------|-----------|
 |**[React](https://react.dev/)**| Javascript framework that implements the search interface and access to Solr API|
-|**[pycsw](https://pycsw.org) v3.0**| (depricated) Pycsw also offers its own User interface, which was used as a default in previous SoilWise prototype.|
+<!-- |**[pycsw](https://pycsw.org) v3.0**| (depricated) Pycsw also offers its own User interface, which was used as a default in previous SoilWise prototype.|-->
 
 
 **Infrastructure**
