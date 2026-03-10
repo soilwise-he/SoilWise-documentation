@@ -66,7 +66,7 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |**[Apache Lucene](https://lucene.apache.org/) v9.11.1**| Apache Lucene is a open source high-performance Java-based search engine library.|
 |**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
 |**[Java]() v17**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
-|**[OpenStreetMaps API]()**| |
+|**[OpenStreetMap API]()**| |
 
 **Frontend**
 
