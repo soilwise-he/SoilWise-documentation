@@ -267,7 +267,7 @@ graph TB
 
 !!! component-header "Info"
 
-    **Current version:** TBD
+    **Current version:** 1.0.0
 
     **Technology:** SQLite container
 
@@ -298,7 +298,7 @@ The Soilwise database builds upon—and updates—the work carried out around IN
 
 6. **Native GIS Support:** Natively integrates with QGIS for immediate editing, styling, and map production.
 
-7. **Guided Data Entry via Custom Forms:** Provides pre-configured, custom QGIS attribute forms featuring drop-down menus, default values, contextual help, and automated validation checks to ensure data entry is fast, standardized, and error-free.
+7. **Guided Data Entry via Custom Forms:** Provides pre-configured, custom QGIS attribute forms featuring drop-down menus, default values, tooltips, and automated validation checks to ensure data entry is fast, standardized, and error-free.
 
 8. **Structured Data Loading:** Includes a defined workflow for data loading that enforces necessary dependencies, loading orders, and pre/post-loading verification constraints.
 
