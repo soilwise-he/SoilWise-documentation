@@ -19,7 +19,7 @@ Storage components are all backend components, therefore we only expect manageme
 ## PostgreSQL RDBMS: storage of raw and augmented metadata
 
 !!! component-header "Info"
-    **Current version:** Postgres release 16.11; 
+    **Current version:** Postgres release 16.11 
 
     **Technology:** Postgres RDBMS
 
@@ -114,9 +114,8 @@ Git is an acknowledged platform to store, version, configure and document softwa
 | Risk / Limitation | Description | Mitigation |
 |-------------------|-------------|------------|
 | **Inconsistency between RDBMS and Triple Store** | Parallel sources and query results might deviate if processes are not aligned. | Monitoring procedures and corrective actions to be documented for maintenance |
-| **Integration issues for Triple store** | Lack of infrastructure and/or technical knowledge might hinder integration. | Continuous alignment with JRC technical team |
+| **Integration issues for Triple store** | Lack of infrastructure and/or technical knowledge might hinder integration. | Continuous alignment with JRC technical team, component is loosely coupled and can be removed without loosing core catalogue functionality |
 | **Integration issues for process automation** | Currently implemented process automation through Git might not fit JRC | Continuous alignment with JRC technical team |
-| **To be further extended** | ... |
 
 
 
