@@ -83,9 +83,16 @@ ETS is currently implemented through Hale Connect instance and as a locally runn
 
 Compliance to a given standard is an indicator for (meta)data quality. This indicator is measured on datasets claiming to confirm to the INSPIRE regulation. This validation is performed on non augmented, non harmonised metadata records. The observed indicator is stored on the augmentation table. The Esdin Test Framework is used combined with metadata validation rules from the INSPIRE community. 
 
-Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. In total 506 metadata records were harvested from the INSPIRE Geoportal. 
+Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. Metadata are stored in the PostgreSQL database.
 
-For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html) was used. Validator is based on INSPIRE ATS and is available as a validation service. For the initial validation, INSPIRE metadata were harvested to the local instance of GeoNetwork, which allows on the fly validation of metadata using external validation services (including INSPIRE Reference Validator). Metadata were dowloaded from the PostgreSQL database and uploaded to the local instance of GeoNetwork, where the XML validation and INSPIRE validation were executed. Two validation runs were executed: one to check consistency of metadata using XSD and Schematron (using templates for ISO 19115 standard for spatial data sets and ISO 19119 standard for services), the second for validation of metadata records using INSPIRE ETS.
+For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html) is used. Validator is based on INSPIRE ATS and is available as a validation service. INSPIRE Metadata validator in the dockerized form is deployed at the server using the `docker-compose.yml` file. User must be logged in before running `docker-compose up -d`. All desired INSPIRE  Executable Test Suited shall be part of the container and are extracted to the ~/etf folder.
+
+With INSPIRE ETF Validator set up and running and the database updated with script that adds two new tables for validation outputs and two columns into `items` table to determine if and when was each record validated, the variables were set up in the validation script. It contains credentials to connect to the database and selection of test suites for datasets and services metadata records. The script validates only those records, that have been updated since last validation (this makes it faster for recurrent validation). The first run validates all records. 
+
+The validation output contains timestamp of the validation and its result (true or false). Then, for each validated metadata recors, there is a new record inserted into the table `validation_runs` with run id, metadata record identifier, status of validation, timestamp, report in json and report in html. Results of each individual test suite are stored in the table `validation_suite_results`. For every metadata record, there is validation result of each test suite that was ran.
+
+In January 2026, altogether 969 records were validated, as 256 of them were completele valid against all test suites.
+
 
 ### Architecture
 #### Technologies Stack
