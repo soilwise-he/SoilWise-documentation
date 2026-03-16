@@ -31,19 +31,26 @@ The SoilWise Metadata Validation targets the following user groups:
 
     **Access point:** Postgres database
 
-Compliance to a given standard is an indicator for (meta)data quality. This indicator is measured on datasets claiming to confirm to the INSPIRE regulation. This validation is performed on non augmented, non harmonised metadata records. The observed indicator is stored on the augmentation table. 
+### Overview and Scope
+Compliance to a given standard is an indicator for (meta)data quality. This indicator is measured on datasets claiming to confirm to the INSPIRE regulation. 
 
-Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. Metadata are stored in the PostgreSQL database.
+This component employs [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html), which is based on INSPIRE ATS and is available as a validation service. 
 
-For this case, the [INSPIRE Reference Validator](https://inspire.ec.europa.eu/validator/home/index.html) is used. Validator is based on INSPIRE ATS and is available as a validation service. INSPIRE Metadata validator in the dockerized form is deployed at the server using the `docker-compose.yml` file. All desired INSPIRE  Executable Test Suited shall be part of the container and are extracted to the ~/etf folder.
+Regarding the INSPIRE validation, all metadata records with the source property value equal to INSPIRE are validated against INSPIRE validation. Metadata are stored in the PostgreSQL database. This validation is performed on non augmented, non harmonised metadata records. The observed indicator is stored on the augmentation table. In January 2026, altogether 969 records were validated, as 256 of them were completele valid against all test suites.
+
+### Key Features
+
+- automatic run of standardized validation tests for all INSPIRE resources
+- generation of detailed structured validation reports
+
+### Architecture
+
+For this case, the INSPIRE Metadata validator in the dockerized form is deployed at the server using the `docker-compose.yml` file. All desired INSPIRE  Executable Test Suited shall be part of the container and are extracted to the ~/etf folder.
 
 The Esdin Test Framework (ETF) is used combined with metadata validation rules from the INSPIRE community. With INSPIRE ETF Validator set up and running and the database updated with script that adds two new tables for validation outputs and two columns into `items` table to determine if and when was each record validated, the variables were set up in the validation script. It contains credentials to connect to the database and selection of test suites for datasets and services metadata records. The script validates only those records, that have been updated since last validation (this makes it faster for recurrent validation). The first run validates all records. 
 
 The validation output contains timestamp of the validation and its result (true or false). Then, for each validated metadata recors, there is a new record inserted into the table `validation_runs` with run id, metadata record identifier, status of validation, timestamp, report in json and report in html. Results of each individual test suite are stored in the table `validation_suite_results`. For every metadata record, there is validation result of each test suite that was ran.
 
-In January 2026, altogether 969 records were validated, as 256 of them were completele valid against all test suites.
-
-### Architecture
 #### Technologies Stack
 
 The methodology of ETS/ATS is used to develop validation tests.
@@ -76,6 +83,7 @@ Validation runs every week as a CI-CD pipeline on records which have not been va
 
     **Access point:** Postgres database
 
+### Overview and Scope
 The software calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.
 
 Completeness is evaluated against a set of metadata elements for each harmonized metadata record in the SWR platform. Records for which harmonisation fails are not evaluated (nor imported).
@@ -92,6 +100,7 @@ Completeness is evaluated against a set of metadata elements for each harmonized
 | Extent (geographic) | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) | 5 |
 | Extent (temporal) | Temporal coverage | 5 |
 
+### Key Features
 ### Architecture
 #### Technologies Stack
 
