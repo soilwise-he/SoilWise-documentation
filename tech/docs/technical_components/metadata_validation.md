@@ -63,10 +63,6 @@ The methodology of ETS/ATS is used to develop validation tests.
 ### Database Design
 Results of metadata validation are stored on PostgreSQL database, table is called validation in a schema validation.
 
-| identifier | Score | Date |
-| --- | --- | --- |
-| abc-123-cba | 60 | 2025-01-20T12:20:10Z|
-
 Validation runs every week as a CI-CD pipeline on records which have not been validated for 2 weeks. This builds up a history to understand validation results over time (consider that both changes in records, as well as the ETS itself may cause differences in score).
 
 ## Metadata completeness
