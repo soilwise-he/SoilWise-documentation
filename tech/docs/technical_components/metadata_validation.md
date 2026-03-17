@@ -45,7 +45,7 @@ Regarding the INSPIRE validation, all metadata records with the source property 
 
 ### Architecture
 
-For this case, the INSPIRE Metadata validator in the dockerized form is deployed at the server using the `docker-compose.yml` file. All desired INSPIRE  Executable Test Suited shall be part of the container and are extracted to the ~/etf folder.
+For this case, the INSPIRE Metadata validator in the dockerized form is deployed at the server using the `docker-compose.yml` file. All desired INSPIRE Executable Test Suites shall be part of the container and are extracted to the ~/etf folder.
 
 The Esdin Test Framework (ETF) is used combined with metadata validation rules from the INSPIRE community. With INSPIRE ETF Validator set up and running and the database updated with script that adds two new tables for validation outputs and two columns into `items` table to determine if and when was each record validated, the variables were set up in the validation script. It contains credentials to connect to the database and selection of test suites for datasets and services metadata records. The script validates only those records, that have been updated since last validation (this makes it faster for recurrent validation). The first run validates all records. 
 
@@ -53,11 +53,23 @@ The validation output contains timestamp of the validation and its result (true 
 
 #### Technologies Stack
 
-The methodology of ETS/ATS is used to develop validation tests.
+The methodology of INSPIRE ATS/ETS is used in the case of INSPIRE validation.
 
-**Abstract Executable Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behaviour of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation and provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviours of the metadata under various conditions.
+**INSPIRE Abstract Test Suites (ATS)** provides  the conceptual, non-executable test requirements to verify that spatial data sets and network services conform to the INSPIRE technical guidelines. They define test cases for data interoperability and services, often implemented alongside Executable Test Suites (ETS) in the Inspire validator, focusing on data structure and metadata requirements.
 
-**Executable Test Suites (ETS)** are sets of tests designed according to ATS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata.
+**Executable Test Suites (ETS)** are sets of tests designed according to ATS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata. The python scripts defines which tests are ran for datasets and series metadata. Default test ran are listed in the next table.
+
+|Test Name|Dataset Metadata|Series Metadata|
+|----------|----------|----------|
+|Common Requirements for ISO/TC 19139:2007 based INSPIRE metadata records.|&check;|&check;|
+|Conformance Class 1: INSPIRE data sets and data set series baseline metadata.|&check;||
+|Conformance Class 2: INSPIRE data sets and data set series interoperability metadata.|&check;||
+|Conformance Class 2b: INSPIRE data sets and data set series metadata for Monitoring.|&check;||
+|Conformance Class 3: INSPIRE Spatial Data Service baseline metadata.||&check;|
+|Conformance Class 4: INSPIRE Network Services metadata.||&check;|
+|Conformance Class 4b: INSPIRE Network Services metadata for Monitoring.||&check;|
+|Conformance Class 8: INSPIRE data sets and data set series linked service metadata.|&check;||
+
 
 **Executable Test Framework (ETF)** is the software platform that runs ETS tests.
 
@@ -67,10 +79,6 @@ The methodology of ETS/ATS is used to develop validation tests.
 |**Esdin Test Framework**|Opensource validation framework, commonly used in INSPIRE.|
 |**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing validation results.|
 
-### Database Design
-Results of metadata validation are stored on PostgreSQL database, table is called validation in a schema validation.
-
-Validation runs every week as a CI-CD pipeline on records which have not been validated for 2 weeks. This builds up a history to understand validation results over time (consider that both changes in records, as well as the ETS itself may cause differences in score).
 
 ## Metadata completeness
 
@@ -100,9 +108,27 @@ Completeness is evaluated against a set of metadata elements for each harmonized
 | Extent (geographic) | Geographical coverage (e.g. EU, EU & Balkan, France, Wallonia, Berlin) | 5 |
 | Extent (temporal) | Temporal coverage | 5 |
 
-### Key Features
-### Architecture
-#### Technologies Stack
+### Technological stacks
+
+**Abstract Test Suites (ATS)** define a set of abstract test cases or scenarios that describe the expected behaviour of metadata without specifying the implementation details. These test suites focus on the logical aspects of metadata validation and provide a high-level view of metadata validation requirements, enabling stakeholders to understand validation objectives and constraints without getting bogged down in technical details. They serve as a valuable communication and documentation tool, facilitating collaboration between metadata producers, consumers, and validators. ATS are often documented using natural language descriptions, diagrams, or formal specifications. They outline the expected inputs, outputs, and behaviours of the metadata under various conditions.
+
+The SWR ATS is under development at <https://github.com/soilwise-he/metadata-validator/blob/main/docs/abstract_test_suite.md>
+
+**Executable Test Suites (ETS)** are sets of tests designed according to ATS to perform the metadata validation. These tests are typically automated and can be run repeatedly to ensure consistent validation results. Executable test suites consist of scripts, programs, or software tools that perform various validation checks on metadata. These checks can include:
+
+1. **Data Integrity:** Checking for inconsistencies or errors within the metadata. This includes identifying missing values, conflicting information, or data that does not align with predefined constraints.
+2. **Standard Compliance:** Assessing whether the metadata complies with relevant industry standards, such as Dublin Core, MARC, or specific domain standards like those for scientific data or library cataloguing.
+3. **Interoperability:** Evaluating the metadata's ability to interoperate with other systems or datasets. This involves ensuring that metadata elements are mapped correctly to facilitate data exchange and integration across different platforms.
+4. **Versioning and Evolution:** Considering the evolution of metadata over time and ensuring that the validation process accommodates versioning requirements. This may involve tracking changes, backward compatibility, and migration strategies.
+5. **Quality Assurance:** Assessing the overall quality of the metadata, including its accuracy, consistency, completeness, and relevance to the underlying data or information resources.
+6. **Documentation:** Documenting the validation process itself, including any errors encountered, corrective actions taken, and recommendations for improving metadata quality in the future.
+
+ETS is currently implemented through Hale Connect instance and as a locally running prototype of GeoNetwork instance.
+
+### Database Design
+Results of metadata validation are stored on PostgreSQL database, table is called validation in a schema validation.
+
+Validation runs every week as a CI-CD pipeline on records which have not been validated for 2 weeks. This builds up a history to understand validation results over time (consider that both changes in records, as well as the ETS itself may cause differences in score).
 
 
 ## Integrations & Interfaces
