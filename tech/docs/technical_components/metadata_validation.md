@@ -23,13 +23,13 @@ The SoilWise Metadata Validation targets the following user groups:
 ## Metadata INSPIRE compliance
 
 !!! component-header "Info"
-    **Current version:** 0.2.0
+    **Current version:** 1.0.0
 
     **Technology**: [Esdin Test Framework (ETF)](https://etf-validator.net/), Python
 
     **Project:** [Metadata validator](https://inspire.ec.europa.eu/validator/home/index.html)
 
-    **Access point:** Postgres database
+    **Access point:** PostgreSQL database, [Data and Knowledge Administration Console](admin_console.md)
 
 ### Overview and Scope
 Compliance to a given standard is an indicator for (meta)data quality. This indicator is measured on datasets claiming to confirm to the INSPIRE regulation. 
@@ -90,7 +90,7 @@ The methodology of INSPIRE ATS/ETS is used in the case of INSPIRE validation.
 
     **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
 
-    **Access point:** Postgres database
+    **Access point:** PostgreSQL database
 
 ### Overview and Scope
 The software calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.
@@ -134,4 +134,4 @@ Validation runs every week as a CI-CD pipeline on records which have not been va
 
 ## Integrations & Interfaces
 
-Metadata validation results are displayed in the [Data & Knowledge Administration Console](admin_console.md).
+Metadata validation results are displayed in the [Data and Knowledge Administration Console](admin_console.md).
