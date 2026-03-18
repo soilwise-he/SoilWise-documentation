@@ -49,6 +49,7 @@ For this case, the INSPIRE Metadata validator in the dockerized form is deployed
 
 The Esdin Test Framework (ETF) is used combined with metadata validation rules from the INSPIRE community. With INSPIRE ETF Validator set up and running and the database updated with script that adds two new tables for validation outputs and two columns into `items` table to determine if and when was each record validated, the variables were set up in the validation script. It contains credentials to connect to the database and selection of test suites for datasets and services metadata records. The script validates only those records, that have been updated since last validation (this makes it faster for recurrent validation). The first run validates all records. 
 
+### Database Design
 The validation output contains timestamp of the validation and its result (true or false). Then, for each validated metadata recors, there is a new record inserted into the table `validation_runs` with run id, metadata record identifier, status of validation, timestamp, report in json and report in html. Results of each individual test suite are stored in the table `validation_suite_results`. For every metadata record, there is validation result of each test suite that was ran.
 
 #### Technologies Stack
