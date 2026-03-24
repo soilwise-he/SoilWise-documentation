@@ -14,7 +14,7 @@ These APIs allow discovery of (meta)data and knowledge. Most of them are mostly 
 |**Spatio Temporal Asset Catalog (STAC)**| <https://repository.soilwise-he.eu/cat/stac/openapi>|TBD|
 |**OpenSearch**|<https://repository.soilwise-he.eu/cat/opensearch> |TBD|
 |**SPARQL**|<https://repository.soilwise-he.eu/sparql/>|The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases.|
-|**Solr Search API**|TBD|The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index.|
+|**Search-API (Solr search)**|TBD|The Solr search API allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index.|
 
 ## Processing API's
 
@@ -25,6 +25,7 @@ SWC processing APIs are mostly interfaces to components that have been developed
 |**Translate API**|<https://api.soilwise-he.containers.wur.nl/tolk/docs>|This API translates content between languages, and is used for metadata translation. It makes use of the EU translation service <https://language-tools.ec.europa.eu/>|
 |**Link Liveness Assessment API**|<https://api.soilwise-he.containers.wur.nl/linky/docs>|The linkchecker component is designed to evaluate the status, validity and accuracy of links within metadata records in the a OGC API - Records based System. It's responses provide input that is used to inform end users about the status of published links and to collect required data for quality control.|
 |**RDF to triplestore API**|<https://repo.soilwise-he.containers.wur.nl/swagger-ui/index.html>|Allows the conversion of RDF, e.g. as provided by the CORDIS API's to the SWR triple store.|
+|**Search-API (Solr Indexing)**|TBD|The Solr search API processes the (augmented) metadata stored in the catalogue database to the Solr index.|
 |**Grobid API**|TBD|TBD|
 |**DOI resolution API**|TBD|TBD|
 |**Soil Mission news feed API**|TBD|TBD|
