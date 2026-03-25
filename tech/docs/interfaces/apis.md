@@ -2,19 +2,19 @@
 
 This page presents an overview of all APIs that are served by the SoilWise Catalogue for (1) internal processing, (2) reuse of SoilWise data and functionality and (3) to enable future integration with other systems, particularly with EUSO. Information on interfaces is also available in a dedicated subchapter per each Technical Component.
 
-## Discovery APIs
+## Data Preview & Publication APIs
 
 These APIs allow discovery of (meta)data and knowledge. Most of them are mostly meant to be used as part of SWC backend mechanisms to access or harvest remote data and knowledge resources or to process these resources internally. However, some of them are also relevant for end user discovery of content from SWC. Those user facing discovery APIs are used in user interface components developed by SoilWise, but could also be employed for integration with the EU Soil Observatory and other existing systems that want to make use of SWR.
 
 | Service | Documentation | Purpose |
 |---------|----------|---------|
-|**Catalogue Service for the Web (CSW)**|<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC.|
-|**OGC API - Records**|<https://repository.soilwise-he.eu/cat/openapi>|OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community.|
-|**Protocol for metadata harvesting (OAI-PMH)**|<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
-|**Spatio Temporal Asset Catalog (STAC)**| <https://repository.soilwise-he.eu/cat/stac/openapi>|TBD|
-|**OpenSearch**|<https://repository.soilwise-he.eu/cat/opensearch> |TBD|
-|**SPARQL**|<https://repository.soilwise-he.eu/sparql/>|The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases.|
-|**Search-API (Solr search)**|TBD|The Solr search API allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index.|
+|**Catalogue Service for the Web (CSW)**|<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC. This API is provided by pycsw.|
+|**OGC API - Records**|<https://repository.soilwise-he.eu/cat/openapi>|OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community. This API is provided by pycsw.|
+|**Protocol for metadata harvesting (OAI-PMH)**|<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories. This API is provided by pycsw.|
+|**Spatio Temporal Asset Catalog (STAC)**| <https://repository.soilwise-he.eu/cat/stac/openapi>|A modern, JSON-based standard for describing and discovering geospatial assets. It is widely used in the Earth Observation community to expose datasets (e.g., satellite imagery, raster data) along with their spatial and temporal metadata. The STAC API enables clients to search, filter, and retrieve collections and items using a RESTful interface. This API is provided by pycsw.|
+|**OpenSearch**|<https://repository.soilwise-he.eu/cat/opensearch> |OpenSearch provides a lightweight, URL-based search interface for querying metadata in the catalogue. It allows clients to perform simple searches using query parameters such as free text (q), spatial filters (bbox), and temporal constraints (time). Responses are typically returned in Atom or JSON formats, making it easy to integrate with web browsers, GIS tools, and other clients. OpenSearch serves as a simpler alternative to more complex catalogue interfaces like CSW. This API is provided by pycsw.|
+|**SPARQL**|<https://repository.soilwise-he.eu/sparql/>|The API allows query access to the SoilWise knowledge graph, thus offering querying on linked data, traversing relationships between entities that are relevant and cannot be represented in conventional relational databases. This API is provided by [Soil-health Knowledge Graph](../technical_components/knowledge_graph.md) and [Virtuoso Tripple Store](../technical_components/storage.md#virtuoso-triple-store-storage-of-swr-knowledge-graph).|
+|**Solr Search API (Solr search)**|TBD|The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index. This API is provided by [Metadata Catalogue](../technical_components/catalogue.md) backend.|
 
 ## Processing API's
 
