@@ -3,7 +3,7 @@
 !!! component-header "Info"
     **Current version:** 
 
-    **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/))
+    **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/)
 
     **Project:** [Catalogue UI](TBD); [Solr](TBD)
 
