@@ -1,11 +1,11 @@
-# Metadata Catalogue
+# Metadata Catalogue User Interface
 
 !!! component-header "Info"
     **Current version:** 
 
-    **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/), [pycsw](https://pycsw.org/)
+    **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/))
 
-    **Project:** [Catalogue UI](TBD); [Solr](TBD); [pycsw](https://github.com/geopython/pycsw)
+    **Project:** [Catalogue UI](TBD); [Solr](TBD)
 
     **Access point:** <https://client.soilwise-he.containers.wur.nl/catalogue/search>
 
@@ -13,11 +13,11 @@
 
 ### Overview and Scope
 
-The Metadata Catalogue is a central piece of the architecture, providing search & discovery functions for end users and giving access to individual metadata records. In the catalogue domain, various effective metadata catalogues are developed around the standards issued by the OGC, the [Catalogue Service for the Web](https://www.ogc.org/standard/cat/) (CSW) and the [OGC API Records](https://ogcapi.ogc.org/records/), Open Archives Initiative (OAI-PMH), W3C (DCAT), FAIR science (Datacite) and Search Engine community (schema.org). For our first project iteration we've selected the pycsw software, which supports most of these standards. In this first iteration, pycsw was the core component facilitating the catalogue functionality from harvesting to UI. In the second iteration pycsw continues to provide standardized APIs, however to improve search performance and user experience, it was supplemented by [Apache Solr](https://solr.apache.org/) and [React](https://react.dev/) frontend. 
+The Metadata Catalogue User Interface is a central piece of the SoilWise Catalogue architecture, providing search & discovery functions for end users and giving access to individual metadata records and knowledge content. For our first project iteration selected the pycsw software, which supports most of these standards and also provided a user interface. In subsequent iterations, to improve both the user experience and the search performance, a UI based on [React](https://react.dev/), backed by the [Apache Solr](https://solr.apache.org/) search engine has been developed. 
 
 ### Intended Audience
 
-The SoilWise Metadata Catalogue targets the following user groups:
+The SoilWise Metadata Catalogue User Interface targets the following user groups:
 
 - **Soil scientists and researchers** working with European soil health data and seeking catalogued knowledge, publications, and datasets.
 - **Living Labs' data scientists** working with European soil health data and seeking catalogued knowledge, publications, and datasets.
@@ -41,18 +41,14 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 9. **Display results of metadata augmentation** - Results of metadata augmentation are stored on a dedicated database table. The results are merged into the harvested content during publication to the catalogue. At the moment it is not possible to differentiate between original and augmented content. For next iterations we aim to make this distinction more clear.
 10. **Display links of related information** - Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue. Download of knowledge source "as is" is currently supported through the links section from the harvested repository.
 
-#### Index and search strategies
+#### Search Engine - Index and search strategies
 
-The SoilWise Metadata Catalogue implements back-end index and search functions based on **Apache Solr**, focusing on:
+The SoilWise Metadata Catalogue implements back-end indexing strategies and search functions based on **Apache Solr**, focusing on:
 
 1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view.
-2. **Composing Solr documents** - From the denormalised view, the individual metadata records are processed into Solr.documents that are fed to the Solr infrastructure.
-3. **Transforming/Indexing** - Solr uses transformers to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc.
-4. **Search API** - The Solr search API Allows query access to the Solr index, so the UI (and other clients) can search the metadata through the index.
-
-#### Supported standards
-
-In order to interact with the many relevant data communities, SoilWise aims to support a range of catalogue standards through **pycsw backend**, for more info see [Integrations & Interfaces](#integrations--interfaces).
+2. **Composing Solr documents** - From the denormalised view, content of individual metadata records and textual content from documents are processed into Solr.documents that are fed to the Solr infrastructure.
+3. **Transforming/Indexing** - Solr uses Natural Language Processing technologies (tranformers), to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc. SoilWise implements a processing API that controls these transformations.
+4. **Search API** - A search API, built on top of the native Solr API, allows query access to the Solr index, so the UI (and potentially other clients) can search the metadata through the index.
 
 ## Architecture
 
@@ -62,7 +58,6 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 
 |Technology|Description|
 |----------|-----------|
-|**[pycsw](https://pycsw.org) v3.0**| Pycsw, written in python, allows for the publishing and discovery of geospatial metadata via numerous APIs [CSW 2/CSW 3](https://www.ogc.org/standard/cat/), [OAI-PMH](https://www.openarchives.org/pmh/), providing a standards-based metadata and catalogue component of spatial data infrastructures. pycsw is [Open Source](https://opensource.org/), released under an [MIT license](https://docs.pycsw.org/en/latest/license.html), and runs on all major platforms (Windows, Linux, Mac OS X).
 |**[Apache Lucene](https://lucene.apache.org/) v9.11.1**| Apache Lucene is a open source high-performance Java-based search engine library.|
 |**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
 |**[Java]() v17**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
@@ -73,7 +68,6 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 |Technology|Description|
 |----------|-----------|
 |**[React](https://react.dev/)**| Javascript framework that implements the search interface and access to Solr API|
-<!-- |**[pycsw](https://pycsw.org) v3.0**| (depricated) Pycsw also offers its own User interface, which was used as a default in previous SoilWise prototype.|-->
 
 
 **Infrastructure**
@@ -89,14 +83,6 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 ### Main Sequence Diagram
 
 ## Integrations & Interfaces
-
-| Service | Auth | Endpoint | Purpose |
-|---------|------|----------|---------|
-|**Catalogue Service for the Web (CSW)**||<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC.|
-|**OGC API - Records**||<https://repository.soilwise-he.eu/cat/openapi>|OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community.|
-|**Protocol for metadata harvesting (OAI-PMH)**||<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
-|**Spatio Temporal Asset Catalog (STAC)**|| <https://repository.soilwise-he.eu/cat/stac/openapi>||
-|**OpenSearch**|| <https://repository.soilwise-he.eu/cat/opensearch> ||
 
 ## Key Architectural Decisions
 
@@ -119,6 +105,7 @@ In order to interact with the many relevant data communities, SoilWise aims to s
 
 <!-- HERE'S FOR REFERENCE, PREVIOUS CONTENT ON SOLR. might be useful for later integration
 
+
 ### Apache SOLR and Apache Lucene for Lexical Search
 
 A search engine, ingesting data from the RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
@@ -130,6 +117,17 @@ As part of the first develoment cycle of SWR, SoilWise has deployed an experimen
 Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the later focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
 
 Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
+
+
+| Service | Auth | Endpoint | Purpose |
+|---------|------|----------|---------|
+|**Catalogue Service for the Web (CSW)**||<https://repository.soilwise-he.eu/cat/csw>|Catalogue service for the web (CSW) is a standardised pattern to interact with (spatial) catalogues, maintained by OGC.|
+|**OGC API - Records**||<https://repository.soilwise-he.eu/cat/openapi>|OGC is currently in the process of adopting a revised edition of its catalogue standards. The new standard is called OGC API - Records. OGC API - Records is closely related to Spatio Temporal Asset Catalogue (STAC), a community standard in the Earth Observation community.|
+|**Protocol for metadata harvesting (OAI-PMH)**||<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
+|**Spatio Temporal Asset Catalog (STAC)**|| <https://repository.soilwise-he.eu/cat/stac/openapi>||
+|**OpenSearch**|| <https://repository.soilwise-he.eu/cat/opensearch> ||
+
+
 
 -->
 
