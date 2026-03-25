@@ -50,6 +50,16 @@ The SoilWise Metadata Catalogue implements back-end indexing strategies and sear
 3. **Transforming/Indexing** - Solr uses Natural Language Processing technologies (tranformers), to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc. SoilWise implements a processing API that controls these transformations.
 4. **Search API** - A search API, built on top of the native Solr API, allows query access to the Solr index, so the UI (and potentially other clients) can search the metadata through the index.
 
+### Apache SOLR and Apache Lucene for Lexical Search
+
+Solr as a search engine, ingesting data from the catalogue RDBMS, can dramatically increase the perfomance of end user queries. It suports (approximate, similarity based) lexical / full text search search. Solr also supports the indexation of unstructured content, thus allows smart searches on unstructured text and extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. It also offers better usability, e.g. through aggregation functions for faceted search and ranking of search results. 
+
+### Apache Lucene for Semantic Search
+
+Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the later focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
+
+Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
+
 ## Architecture
 
 ### Technological Stack
@@ -80,10 +90,6 @@ The SoilWise Metadata Catalogue implements back-end indexing strategies and sear
 
 ### Main Component Diagram
 
-### Main Sequence Diagram
-
-## Integrations & Interfaces
-
 ## Key Architectural Decisions
 
 | Decision | Rationale |
@@ -103,20 +109,8 @@ The SoilWise Metadata Catalogue implements back-end indexing strategies and sear
 | **Usability** | The diversity of user groups and their requirements and expectations make it difficult to find balance between functionality/complexity/user-friendliness. | Iterative appraoch and validation/testing with user groups to align. |
 
 
-<!-- HERE'S FOR REFERENCE, PREVIOUS CONTENT ON SOLR. might be useful for later integration
+<!-- HERE'S FOR REFERENCE, SOME PREVIOUS CONTENT . might be useful for later integration
 
-
-### Apache SOLR and Apache Lucene for Lexical Search
-
-A search engine, ingesting data from the RDBMS, will increase the perfomance of end user queries. It will also offer better usability, e.g. by offering aggregation functions for faceted search and ranking of search results. They are also implementing the indexation of unstructured content, and are therefore a good starting point (or alternative?) to offer smart searches on unstructured text, using more conventional and broadly adopted software. It will support SoilWise extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. 
-
-As part of the first develoment cycle of SWR, SoilWise has deployed an experimental setup that uses the Solr search platform. Apache Lucene is the search library under Solr facilitating the storage of SWR indexed content. 
-
-### Apache Lucene for Semantic Search
-
-Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the later focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
-
-Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
 
 
 | Service | Auth | Endpoint | Purpose |
