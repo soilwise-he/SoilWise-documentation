@@ -1,7 +1,7 @@
 # Metadata Catalogue User Interface
 
 !!! component-header "Info"
-    **Current version: 2.0.0 
+    **Current version:** 2.0.0 
 
     **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/)
 
@@ -69,14 +69,15 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 |----------|-----------|
 |**[Apache Lucene](https://lucene.apache.org/) v9.11.1**| Apache Lucene is a open source high-performance Java-based search engine library.|
 |**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
-|**[Java]() v17**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
-|**[OpenStreetMap API]()**| |
+|**[Java SE](https://www.oracle.com/java/technologies/java-se-glance.html) v17**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
+|**[OpenStreetMap API]()**| TBD - is this still the case? |
 
 **Frontend**
 
 |Technology|Description|
 |----------|-----------|
 |**[React](https://react.dev/)**| Javascript framework that implements the search interface and access to Solr API|
+|**[TBD]()**| TBD: front end map component? |
 
 
 **Infrastructure**
