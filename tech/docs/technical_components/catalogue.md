@@ -45,10 +45,9 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
 The SoilWise Metadata Catalogue implements back-end indexing strategies and search functions based on **Apache Solr**, focusing on:
 
-1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view.
-2. **Composing Solr documents** - From the denormalised view, content of individual metadata records and textual content from documents are processed into Solr.documents that are fed to the Solr infrastructure.
-3. **Transforming/Indexing** - Solr uses Natural Language Processing technologies (tranformers), to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc. SoilWise implements a processing API that controls these transformations.
-4. **Search API** - A search API, built on top of the native Solr API, allows query access to the Solr index, so the UI (and potentially other clients) can search the metadata through the index.
+1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view (vw_records) in the Postgres metadata schema.
+2. **Solr ingestion** - From the denormalised view, content of individual metadata records and textual content from documents are processed into Solr.documents that are ingested into the Solr infrastructure. Solr uses Natural Language Processing technologies (tranformers), to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc. The SoilWise search-API component implements a processing API that controls these transformations.
+4. **Solr search** - The Search-API component, developed on top of the native Solr API, allows query access to the Solr index, so the UI (and potentially other clients) can search the metadata through the index.
 
 **Apache SOLR and Apache Lucene for Lexical Search**
 
