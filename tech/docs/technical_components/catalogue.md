@@ -1,13 +1,13 @@
 # Metadata Catalogue User Interface
 
 !!! component-header "Info"
-    **Current version:** 
+    **Current version: 2.0.0 
 
     **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/)
 
-    **Project:** [Catalogue UI](TBD); [Solr](TBD)
+    **Project:** [Catalogue UI](TBD)
 
-    **Access point:** <https://client.soilwise-he.containers.wur.nl/catalogue/search>
+    **Access point:** <TBD, previously https://client.soilwise-he.containers.wur.nl/catalogue/search>
 
 ## Introduction
 
