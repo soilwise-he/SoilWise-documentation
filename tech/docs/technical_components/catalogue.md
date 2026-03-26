@@ -97,15 +97,15 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 |----------|-----------|
 | **Replace pycsw front-end with React** | pycsw user interface has limited functionality, which is also hard to adapt and extend. React is an broadly used JS library offering the required flexibility and adaptability |
 | **Solr as search engine** | Solr was chosen as open source search engine because of support for storing vector embeddings (AI/ML support) |
-| **Java Query API** | A Java query layer is setup between the Solr native API and the React UI to abstract complexity of logic in the UI  |
+| **Java Search-API** | A Java query layer is setup as an interface between the Solr native API and the React UI to delegate much of the complexity of query logic from the UI  |
 
 
 ## Risks & Limitations
 
 | Risk / Limitation | Description | Mitigation |
 |-------------------|-------------|------------|
-| **Transferability** | The differences in technology stack between the implementing consortium and the final owner (JRC) might lead to transferability and integration issues | Use of broadly adopted open source products. Alignment with JRC technical team |
-| **Metadata quality** | The performance of the search functionality is highly dependent on the completeness and quality of the harvested metadata which is out of scope for SoilWise. | Metadata augmnentation will allow to partly mitigate |
+| **Transferability** | The differences in technology stack between the SoilWise implementing consortium and the final owner (JRC) might lead to transferability and integration issues | Use of broadly adopted open source products. Alignment with JRC technical team |
+| **Metadata quality** | The performance of the search functionality is highly dependent on the completeness and quality of the harvested metadata which is out of scope for SoilWise. | The Soil Mission will define guidelines for metadata creation. Metadata augmnentation will allow to partly mitigate. |
 | **Transparency and explainability** | The dependency on metadata completeness and quality in combination with the large amount of interdependent options for (fuzzy) search strategies and the different combinations of UI search features will make it hard to understand the logic behind search results. | Documentation of metadata augmentation, search strategies etc. |
 | **Usability** | The diversity of user groups and their requirements and expectations make it difficult to find balance between functionality/complexity/user-friendliness. | Iterative appraoch and validation/testing with user groups to align. |
 
