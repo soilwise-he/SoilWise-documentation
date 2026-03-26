@@ -94,8 +94,8 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 
 | Decision | Rationale |
 |----------|-----------|
-| **Replace pycsw front-end with React** | PyCSW interface has limited functionality, which is hard to adapt and extend. React is an broadly used JS library offering the required flexibility and adaptability |
-| **Solr as search engine** | Solr was chosen as open source search engine because of better support for storing vector embeddings (AI/ML support) |
+| **Replace pycsw front-end with React** | pycsw user interface has limited functionality, which is also hard to adapt and extend. React is an broadly used JS library offering the required flexibility and adaptability |
+| **Solr as search engine** | Solr was chosen as open source search engine because of support for storing vector embeddings (AI/ML support) |
 | **Java Query API** | A Java query layer is setup between the Solr native API and the React UI to abstract complexity of logic in the UI  |
 
 
