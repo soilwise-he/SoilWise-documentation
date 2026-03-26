@@ -90,6 +90,8 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 
 ### Main Component Diagram
 
+<img width="908" height="510" alt="image" src="https://github.com/user-attachments/assets/3451ce98-3069-43c1-8b65-258c1a216b9c" />
+
 ## Key Architectural Decisions
 
 | Decision | Rationale |
