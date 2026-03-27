@@ -92,13 +92,13 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 
 ``` mermaid
 flowchart LR
-    A[(denormalised metadata vw_records (Postgres))]
+    A[(denormalised metadata vw_records: Postgres)]
 
-    B[pdf-parsing (GROBID)]
-    C[Solr ingestion (search-API)]
+    B[pdf-parsing: GROBID]
+    C[Solr ingestion: search-API]
     D[(Apache Solr / Lucene)]
-    E[solr search (search-API)]
-    F[Catalogue UI (Search-UI)]
+    E[solr search: search-API]
+    F[Catalogue UI: Search-UI]
 
     A -- SQL --> B
     A -- SQL --> C
