@@ -1,7 +1,7 @@
 # Soil Companion (chatbot)
 
 !!! component-header "Info"
-    **Current version:** 1.2.x
+    **Current version:** 1.0.0
 
     **Technology:** Retrieval Augmented Generative Artificial Intelligence
 
