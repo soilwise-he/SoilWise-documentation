@@ -1,6 +1,6 @@
 # Metadata harmonisation
 
-The component harmonizes the content as imported by the [ingestion component](./ingestion.md).
+The component harmonizes the content as imported by the [Harvester and Harmonization component](./ingestion.md).
 A database is populated with the harmonised metadata content
 
 Ingested records are retrieved from harvest.items table and processed. If the processing is successfull, 

@@ -6,7 +6,7 @@ The presented architecture represents an outlook and a framework for ongoing Soi
 
 This section lists technical components for building the SoilWise Catalogue as forseen in the architecture design:
 
-1. [Harvester](ingestion.md)
+1. [Harvester & Harmonization](ingestion.md)
 2. [Repository Storage](storage.md)
 3. [Metadata Catalogue User Interface](catalogue.md)
 4. [Soil Companion (Chatbot)](soil_companion.md)

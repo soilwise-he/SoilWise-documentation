@@ -1,4 +1,4 @@
-#  Harvester
+#  Harvester & Harmonization
 
 !!! component-header "Info"
     **Current version:** 0.2.0
