@@ -160,9 +160,14 @@ Depending on your needs (human exploration, application integration, bulk reuse)
 ## SoilVoc
 
 !!! component-header "Info"
-    **Access point:** [https://soilwise-he.github.io/soil-vocabs/](https://soilwise-he.github.io/soil-vocabs/)
+    **Current version:** 0.2.0
 
     **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
+   
+    **Project repository:** [https://github.com/soilwise-he/soil-vocabs](https://github.com/soilwise-he/soil-vocabs)
+   
+    **Access point:** [https://w3id.org/eusoilvoc](https://w3id.org/eusoilvoc)
+
 
 SoilVoc (SoilWise Vocabulary Browser) is a **SKOS-based soil science thesaurus** designed to **connect soil knowledge with soil data**. Today, knowledge-centric resources (like SHKG) and data-centric resources (used for describing and annotating soil observations) often evolve in parallel and remain poorly connected, limiting discovery and interoperability.
 
