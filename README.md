@@ -35,3 +35,16 @@ pip install mkdocs-multirepo-plugin
 4. run `mkdocs serve` from .\tech\ to run a local (127.0.0.1:8000) instance of documentation
 5. push changes to main branch
 6. changes will be promoted after automatic deploy
+
+## License
+
+This project is licensed under the CC-BY-4.0 — see the [LICENSE](LICENSE) file for details.
+
+---
+## SoilWise-he project
+
+This work has been initiated as part of the [SoilWise-he](https://soilwise-he.eu) project. The project
+receives funding from the European Union's HORIZON Innovation Actions 2022 under grant agreement No.
+101112838. Views and opinions expressed are however those of the author(s) only and do not necessarily
+reflect those of the European Union or Research Executive Agency. Neither the European Union nor the
+granting authority can be help responsible for them.
