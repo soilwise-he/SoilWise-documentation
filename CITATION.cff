@@ -35,7 +35,7 @@ authors:
     affiliation: "VLAAMSE GEWEST"
   - family-names: "Gkoles"
     given-names: "Vassilis"
-    affiliation: "WNeuropublic S.A."
+    affiliation: "Neuropublic S.A."
     email: "v_gkoles@neuropublic.gr"
 repository-code: "https://github.com/soilwise-he/SoilWise-documentation"
 url: "https://soilwise-he.eu"
@@ -45,6 +45,8 @@ keywords:
   - architecture
   - components
   - interfaces
+  - documentation
+  - functionality
 license: CC-BY-4.0
 version: "3.0.0"
 date-released: "2026-04-27"
