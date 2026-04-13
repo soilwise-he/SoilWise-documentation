@@ -1,4 +1,4 @@
-# Metadata Catalogue User Interface
+# SoilWise Finder (Metadata Catalogue)
 
 !!! component-header "Info"
     **Current version:** 2.0.0 
@@ -13,11 +13,11 @@
 
 ### Overview and Scope
 
-The Metadata Catalogue User Interface is a central piece of the SoilWise Catalogue architecture, providing search & discovery functions for end users and giving access to individual metadata records and knowledge content. For our first project iteration selected the pycsw software, which supports most of these standards and also provided a user interface. In subsequent iterations, to improve both the user experience and the search performance, a UI based on [React](https://react.dev/), backed by the [Apache Solr](https://solr.apache.org/) search engine has been developed. 
+The SoilWise Finder is a central piece of the SoilWise Catalogue architecture, providing search & discovery functions for end users and giving access to individual metadata records and knowledge content. For our first project iteration selected the pycsw software, which supports most of these standards and also provided a user interface. In subsequent iterations, to improve both the user experience and the search performance, a UI based on [React](https://react.dev/), backed by the [Apache Solr](https://solr.apache.org/) search engine has been developed. 
 
 ### Intended Audience
 
-The SoilWise Metadata Catalogue User Interface targets the following user groups:
+The SoilWise Finder targets the following user groups:
 
 - **Soil scientists and researchers** working with European soil health data and seeking catalogued knowledge, publications, and datasets.
 - **Living Labs' data scientists** working with European soil health data and seeking catalogued knowledge, publications, and datasets.
@@ -28,7 +28,7 @@ The SoilWise Metadata Catalogue User Interface targets the following user groups
 
 #### User interface
 
-The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
+The SoilWise Finder adopts a **React frontend**, focusing on:
 
 1. **Paginated search results** - Search results are displayed per page in ranked order, in the form of overview table comprising preview of resource type, title, abstract, date and preview.
 2. **Fulltext search** - including an autocomplete option.
@@ -44,7 +44,7 @@ The SoilWise Metadata Catalogue adopts a **React frontend**, focusing on:
 
 #### Search Engine - Index and search strategies
 
-The SoilWise Metadata Catalogue implements back-end indexing strategies and search functions based on **Apache Solr**, focusing on:
+The SoilWise Finder implements back-end indexing strategies and search functions based on **Apache Solr**, focusing on:
 
 1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view (vw_records) in the Postgres metadata schema.
 2. **Solr ingestion** - From the denormalised view, content of individual metadata records and textual content from documents are processed into Solr.documents that are ingested into the Solr infrastructure. Solr uses Natural Language Processing technologies (tranformers), to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc. The SoilWise search-API component implements a processing API that controls these transformations.

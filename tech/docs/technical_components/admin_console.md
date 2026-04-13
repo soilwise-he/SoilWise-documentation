@@ -13,7 +13,7 @@
 
 ### Overview & Scope
 
-The Data and Knowledge Administration Console is compiled of several dashboard pages implemented using Apache Superset technology. Apache Superset is an open-source data exploration and visualization platform that enables to create interactive, web-based dashboards with minimal coding. In SoilWise it is used to present statistics from the [Metadata Catalogue](catalogue.md), results of the [Metadata Validation](metadata_validation.md) and to provide more insights into the results published by Mission Soil projects. The console is available only for authorised users.
+The Data and Knowledge Administration Console is compiled of several dashboard pages implemented using Apache Superset technology. Apache Superset is an open-source data exploration and visualization platform that enables to create interactive, web-based dashboards with minimal coding. In SoilWise it is used to present statistics from the [SoilWise Finder](catalogue.md), results of the [Metadata Validation](metadata_validation.md) and to provide more insights into the results published by Mission Soil projects. The console is available only for authorised users.
 
 ### Intended Audience
 

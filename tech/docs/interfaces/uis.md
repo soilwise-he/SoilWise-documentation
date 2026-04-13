@@ -6,11 +6,11 @@ Within the first and second development iteration, the following User Interfaces
 
 ## Interfaces for end users
 
-### SoilWise Metadata Catalogue
+### SoilWise Finder (Metadata Catalogue)
 
 **Access point:** <https://repository.soilwise-he.eu/>
 
-This UI is currently the main access point for end users searching for resources harvested by SoilWise. It allows users to run term search queries, spatial queries and fulltext search. More information is available in [Metadata Catalogue](../technical_components/catalogue.md).
+This UI is currently the main access point for end users searching for resources harvested by SoilWise. It allows users to run term search queries, spatial queries and fulltext search. More information is available in [SoilWise Finder](../technical_components/catalogue.md).
 
 ### Soil Companion
 

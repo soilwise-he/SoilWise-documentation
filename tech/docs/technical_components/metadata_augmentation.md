@@ -25,7 +25,7 @@ Upcoming components
 
 ### Intended Audience
 
-Metadata Augmentation is a backend component providing outputs, which users can see displayed in the [Metadata Catalogue](catalogue.md). Therefore the Intended Audience corresponds to the one of the [Metadata Catalogue](../catalogue/#intended-audience). Additionally we expect a maintenance role:
+Metadata Augmentation is a backend component providing outputs, which users can see displayed in the [SoilWise Finder](catalogue.md). Therefore the Intended Audience corresponds to the one of the [Metadata Catalogue](../catalogue/#intended-audience). Additionally we expect a maintenance role:
 
 * **SWC Administrator** monitoring the augmentation processes, access to history, logs and statistics. Administrators can manually start a specific augmentation process.
 
@@ -165,7 +165,7 @@ Additionally, the tool enhances link analysis by identifying various metadata at
 6.	OWS services (WMS, WFS, WCS, CSW) typically return a HTTP 500 error when called without the necessary parameters. A handling for these services has been applied in order to detect and include the necessary parameters before being checked.
 7. **On demand URL validation** Enables real-time checking of individual URLs without storing results in the database. Returns immediate feedback including status, content metadata, redirect information and diagnostic messages explaining link issues. Particularly useful for pre-validating links before processing in other tools, avoiding unnecessary operations on broken URLs. Utilized in [Spatial Metadata Extractor](#spatial-metadata-extractor) to skip processing broken URLs
 
-A javascript widget is further used to display the link status directly in the SoilWise [Metadata Catalogue](catalogue.md) record.
+A javascript widget is further used to display the link status directly in the SoilWise [SoilWise Finder](catalogue.md) record.
 
 The API can be used to identify which records have broken links.
 
@@ -254,8 +254,8 @@ classDiagram
 
 ### Integrations & Interfaces
 
--	Visualisation of evaluation in Metadata Catalogue, the assessment report is retrieved using ajax from the each record page
--   FastAPI now incorporates additional metadata for links, including file format type, size, and last modified date.
+-	Visualisation of evaluation in the [SoilWise Finder](catalogue.md), the assessment report is retrieved using ajax from the each record page
+- FastAPI now incorporates additional metadata for links, including file format type, size, and last modified date.
 
 ### Key Architectural Decisions
 
