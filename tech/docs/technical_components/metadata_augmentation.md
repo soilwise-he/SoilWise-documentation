@@ -58,10 +58,10 @@ The Keyword Matcher provides the following functions:
 1. **Multi-vocabulary thesaurus enrichment:** SoilVoc concepts are extended with `skos:exactMatch` and `skos:closeMatch` links to AgroVoc (via remote SPARQL) and ISO 11074 (via local TTL), producing a unified set of URIs per concept.
 2. **Multilingual concept labels:** Each concept collects labels in English, French, German, Italian, Spanish, and Dutch from all linked vocabularies, enabling matching against non-English keyword subjects.
 3. **URI-based exact match (priority):** If a subject carries a URI, the matcher looks it up against the combined URI set of each concept — a deterministic match that bypasses the fuzzy path.
-4. **Label-based fuzzy match (fallback):** If a subject has no URI, its label is compared case-insensitively against every concept label in every language using `thefuzz.fuzz.ratio`, with a threshold of 80. The best-scoring concept above the threshold wins.
-5. **Fuzzy score persisted:** Each fuzzy match stores its score in `metadata.keyword_match.fuzzymatch_score`, so reviewers can filter or audit low-confidence matches.
+4. **Label-based fuzzy match (fallback):** If a subject has no URI, its label is compared case-insensitively against every concept label in every language with a threshold of 80. The best-scoring concept above the threshold wins.
+5. **Fuzzy score persisted:** Each fuzzy match stores its score in the database, so reviewers can filter or audit low-confidence matches.
 6. **Prefix-number cleanup:** Labels prefixed with numbers (e.g. from hierarchical thesaurus codes) are stripped before matching.
-7. **Incremental processing:** Only subjects not yet present in `metadata.keyword_match` are queried and matched on each daily run.
+7. **Incremental processing:** Only subjects not yet processed are queried and matched on each daily run.
 8. **Planned — LLM/NLP review of borderline matches:** A future layer will re-evaluate fuzzy matches with scores between 80 and 100 using an LLM or NLP model, to separate true matches from near-misses that happen to score high on string similarity alone.
 
 ### Architecture
@@ -72,7 +72,6 @@ The Keyword Matcher provides the following functions:
 |----------|-----------|
 |**Python**|Core implementation language for both the thesaurus build and the matcher.|
 |**[rdflib](https://rdflib.readthedocs.io/)**|Parses local SKOS TTL files (SoilVoc, ISO 11074) and executes SPARQL queries over them.|
-|**SPARQL**|Queries the AgroVoc public endpoint (`https://agrovoc.fao.org/sparql`) for multilingual labels.|
 |**[thefuzz](https://github.com/seatgeek/thefuzz)**|Provides `fuzz.ratio` used for label-based fuzzy matching.|
 |**[PostgreSQL](https://www.postgresql.org/)**|Source of harvested subjects (`metadata.subjects`) and sink for matched concepts (`metadata.keyword_match`).|
 |**GitLab CI/CD**|Runs `match.py` daily against the production database.|
@@ -89,15 +88,15 @@ flowchart LR
     end
 
     subgraph Daily["Daily Matching (GitLab CI/CD)"]
-        H["Harvester"]-- "writes" -->SUB[("metadata.subjects")]
-        H-- "writes" -->RS[("metadata.record_subjects")]
-        H-- "writes" -->REC[("metadata.records")]
+        H["Harvester"]-- "writes" -->SUB[("subjects")]
+        H-- "writes" -->RS[("record_subjects")]
+        H-- "writes" -->REC[("records")]
         SUB-- "reads" -->MM["match.py"]
         CJ-- "reads" -->MM
-        MM-- "writes" -->KM[("metadata.keyword_match")]
+        MM-- "writes" -->KM[("keyword_match")]
     end
 
-    REC-- "joined in" -->MV[["metadata.mv_records<br/>(view)"]]
+    REC-- "joined in" -->MV[["mv_records<br/>(view)"]]
     RS-- "joined in" -->MV
     SUB-- "joined in" -->MV
     KM-- "joined in" -->MV
@@ -160,10 +159,10 @@ sequenceDiagram
         MM->>MM: Record vocab_id, vocab_label, fuzzymatch_score (if any)
     end
 
-    MM->>DB: Bulk insert into metadata.keyword_match
+    MM->>DB: Bulk insert into keyword_match
 
-    Note over DB: metadata.mv_records joins records,<br/>record_subjects, subjects, keyword_match
-    CA->>DB: Query metadata.mv_records (filtering/faceting)
+    Note over DB: mv_records joins records,<br/>record_subjects, subjects, keyword_match
+    CA->>DB: Query mv_records (filtering/faceting)
     DB-->>CA: Records with normalized concept values
 ```
 
