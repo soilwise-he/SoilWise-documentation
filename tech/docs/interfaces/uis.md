@@ -16,7 +16,7 @@ This UI is currently the main access point for end users searching for resources
 
 **Access point:** <https://soil-companion.containers.wur.nl/app/index.html>
 
-UI providing users the option to query Metadata Catalogue using natural language. Through Chatbot-like user interface, users can ask soil-related question. More information is available in [Soil Companion](../technical_components/soil_companion.md).
+UI providing users the option to query Metadata Catalogue using natural language. After loging in, users can ask soil-related questions through Chatbot-like user interface. More information is available in [Soil Companion](../technical_components/soil_companion.md).
 
 ### Tabular Soil Data Annotation
 
@@ -34,7 +34,7 @@ More information is available in [Tabular Metadata annotation](../technical_comp
 
 **Access points:** 
 
-- Browser: <https://soilwise-he.github.io/soil-vocabs/>
+- Browser: <https://w3id.org/eusoilvoc >
 - Vocabulary: <https://github.com/soilwise-he/soil-vocabs>
 
 A User Interface providing a hierarchical overview of soil terms, soil properties and corresponding observation procedures with a link to related terms in other vocabularies. Users can use the search option to locate a term, or browse the hierarchy. 
@@ -48,6 +48,7 @@ More information is available in [Knowledge graph](../technical_components/knowl
 
 - Namespace: <https://soilwise-he.github.io/soil-health>
 - Browser: <https://voc.soilwise-he.containers.wur.nl/>
+- Agroportal: <https://agroportal.eu/ontologies/SHKG/>
 - Knowledge graph (.ttl): <https://github.com/soilwise-he/soil-health-knowledge-graph>
 
 The soil health knowledge graph aims to describe relevant terms around Soil Health and relations between the terms. The knowledge graph is maintained in [github](https://github.com/soilwise-he/soil-health-knowledge-graph).
@@ -57,7 +58,7 @@ Selected terms of the Soil Health Knowledge graph are used in the Soil Vocabular
 
 ### Data & Knowledge Administration Console
 
-**Access point:** <https://dashboards.isric.org/superset/dashboard/43/>
+**Access point:** <https://superset.soilwise.wetransform.eu/superset/dashboard/p/P52OgRVBGo9/>
 
 This UI, based on the superset BI tools, provides a multi-dimensional visual overview of the contents of the SWC together with a dedicated page focusing on Mission Soil outputs. Additionally, results from metadata validations are displayed. More information is available in [Data & Knowledge Administration Console](../technical_components/admin_console.md).
 
