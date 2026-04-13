@@ -9,13 +9,13 @@
 
     **Project repository:** [Catalogue UI](https://github.com/soilwise-he/SoilWiseFinder)
 
-    **Access point:** <TBD, previously https://client.soilwise-he.containers.wur.nl/catalogue/search>
+    **Access point:** https://www.soilwise.wetransform.eu/search
 
 ## Introduction
 
 ### Overview and Scope
 
-The SoilWise Finder is a central piece of the SoilWise Catalogue architecture, providing search & discovery functions for end users and giving access to individual metadata records and knowledge content. For our first project iteration selected the pycsw software, which supports most of these standards and also provided a user interface. In subsequent iterations, to improve both the user experience and the search performance, a UI based on [React](https://react.dev/), backed by the [Apache Solr](https://solr.apache.org/) search engine has been developed. 
+The SoilWise Finder is a central piece of the SoilWise Catalogue architecture, providing search & discovery functions for end users and giving access to individual metadata records and knowledge content. For our first project iteration we selected the pycsw software, which supports most of these standards and also provided a user interface. In subsequent iterations, to improve both the user experience and the search performance, a UI based on [React](https://react.dev/), backed by the [Apache Solr](https://solr.apache.org/) search engine has been developed. 
 
 ### Intended Audience
 
@@ -32,33 +32,33 @@ The SoilWise Finder targets the following user groups:
 
 The SoilWise Finder adopts a **React frontend**, focusing on:
 
-1. **Paginated search results** - Search results are displayed per page in ranked order, in the form of overview table comprising preview of resource type, title, abstract, date and preview.
+1. **Paginated search results** - Search results are displayed per page in ranked order, in the form of a table comprising a summary of resource type, title, abstract, date and preview.
 2. **Fulltext search** - including an autocomplete option.
 3. **Resource type filter** - enabling to filter out certain types of resources, e.g. journal articles, datasets, reports, software.
 4. **Thematic filters** - enabling to filter out resources containing certain keywords, language, source, resources published by specific projects, Mission Soil program, etc.
 5. **Temporal filters** - enabling to filter out resources based on their creation date and temporal coverage.
 6. **Spatial filters** - enabling to filter out resources based on their spatial extent using countries or regions, drawn bounding box, drawn free-form, vicinity of user's location, or by searching for geographical names.
-7. **Record detail view** - After clicking result's table item, a record's detail is displayed at unique URL address to facilitate sharing. Record's detail currently comprises: record's type tag,full title, full abstract, keywords' tags, preview of record's geographical extent, record's preview image, if available, information about relevant HE funding project, list of source repositories,- indication of link availability, see [Link liveliness assessment](./metadata_augmentation.md#link-liveliness-assessment), last update date, all other record's items...
-8. **Resource preview** - 3 types of preview are currently supported: (1) Display resource geographical extent, which is available in the record's detail, as well in the search results list. (2) Display of a graphic preview (thumbnail) in case it is advertised in metadata. (3) Map preview of OGC:WMS services advertised in metadata enables standard simple user interaction (zoom, changing layers).
+7. **Record detail view** - After clicking a result's table item, a resource's detail page is displayed at a unique URL address to facilitate sharing. Resource's details currently comprise: resource's type tag, full title, full abstract, keywords' tags, preview of record's geographical extent, record's preview image, if available, information about relevant HE funding project, list of source repositories, last update date, all other resource's items...
+8. **Resource preview** - 2 types of preview are currently supported: (1) Display resource geographical extent, which is available in the resource's detail, as well as in the search results list. (2) Display of a graphic preview (thumbnail) in case it is advertised in the metadata.
 9. **Display results of metadata augmentation** - Results of metadata augmentation are stored on a dedicated database table. The results are merged into the harvested content during publication to the catalogue. At the moment it is not possible to differentiate between original and augmented content. For next iterations we aim to make this distinction more clear.
-10. **TBD - Display links of related information** - Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue. Download of knowledge source "as is" is currently supported through the links section from the harvested repository.
+10. **Display links of related information** - Download of data "as is" is currently supported through the links section from the harvested repository. Note, "interoperable data download" has been only a proof-of-concept in the first iteration phase, i.e. is not integrated into the SoilWise Catalogue.
 11. **Download search results** - Option to download current search results to .csv.
 
 #### Search Engine - Index and search strategies
 
 The SoilWise Finder implements back-end indexing strategies and search functions based on **Apache Solr**, focusing on:
 
-1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view (vw_records) in the Postgres metadata schema.
+1. **Denormalising metadata** - Solr is set up as a document indexing infrastructure, working on rather "flat" textual formats (documents) instead of normalised database models. The first step is therefore a conversion to a denormalised structure, currently implemented as a (single) database view (mv_records) in the Postgres metadata schema.
 2. **Solr ingestion** - From the denormalised view, content of individual metadata records and textual content from documents are processed into Solr.documents that are ingested into the Solr infrastructure. Solr uses Natural Language Processing technologies (tranformers), to process and index Solr.documents. This is a combination of sequential sub processes (e.g. tokenizers) and configurations that determine how the documents are indexed and how they can be searched, ranked, faceted etc. The SoilWise search-API component implements a processing API that controls these transformations.
 4. **Solr search** - The Search-API component, developed on top of the native Solr API, allows query access to the Solr index, so the UI (and potentially other clients) can search the metadata through the index.
 
 **Apache SOLR and Apache Lucene for Lexical Search**
 
-Solr as a search engine, ingesting data from the catalogue RDBMS, can dramatically increase the perfomance of end user queries. It suports (approximate, similarity based) lexical / full text search search. Solr also supports the indexation of unstructured content, thus allows smart searches on unstructured text and extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. It also offers better usability, e.g. through aggregation functions for faceted search and ranking of search results. 
+Solr as a search engine, ingesting data from the catalogue RDBMS, can dramatically increase the perfomance of end user queries. It suports (approximate, similarity based) lexical / full text search. Solr also supports the indexation of unstructured content, thus allows smart searches on unstructured text and extending the indexation from (meta)data to knowledge, e.g. unstructured content for documents, websites etc. It also offers better usability, e.g. through aggregation functions for faceted search and ranking of search results. 
 
 **Apache Lucene for Semantic Search**
 
-Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the later focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
+Besides for lexical search it is also possible to use Apache Lucene for semantic search. The first tries to match on the literals of words or their variants, the latter focusses on the intent or meaning of the data. To that end the data (usually text) is translated by a model into a multi-dimensional vector representation (called an embedding), which is then used with a proximity search algorithm. Tyically deep learning models are used to create the embeddings and they are trained so that the embeddings of semantically similar pieces of data are close to another. Semantic search capabilities can be used for many applications, amongst other LLM-driven systems like chatbots or RAG systems to provide them with content (pieces of text data) relevant to a question.
 
 Although dedicated vector stores are available, SoilWise foresees the use of the Solr extension for storage of text embeddings. There are several advantages in using Solr to implement the SWR vector database. First of all it is an open source product. Second, as it is an extension to the Solr search engine platform, it allows adding vector embeddings, without introducing dependencies on additional components. Third, although part of the Solr platform, it allows maintaining a modular setup, where for a final deployment at EC-JRC it keeps the option open to include or exclude the foreseen SWR NLQ components. 
 
@@ -80,7 +80,9 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 |Technology|Description|
 |----------|-----------|
 |**[React](https://react.dev/)**| Javascript framework that implements the search interface and access to Solr API|
-|**[TBD]()**| TBD: front end map component? |
+|**[MUI](https://mui.com/)**| MUI offers a comprehensive suite of free UI tools for Javascript applications|
+|**[OpenLayers](https://openlayers.org/)**| OpenLayers is a JavaScript library for displaying map data in web browsers as slippy maps.|
+|**[Nivo](https://github.com/plouc/nivo/)**| Nivo provides supercharged React components to easily build dataviz apps, it's built on top of d3.|
 
 
 **Infrastructure**
@@ -95,7 +97,7 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 
 ``` mermaid
 flowchart LR
-    A[(denormalised metadata vw_records: Postgres)]
+    A[(denormalised metadata mv_records: Postgres)]
 
     B[pdf-parsing: GROBID]
     C[Solr ingestion: search-API]
@@ -117,7 +119,7 @@ flowchart LR
 
 | Decision | Rationale |
 |----------|-----------|
-| **Replace pycsw front-end with React** | pycsw user interface has limited functionality, which is also hard to adapt and extend. React is an broadly used JS library offering the required flexibility and adaptability |
+| **Replace pycsw front-end with React** | pycsw user interface has limited functionality, which is also hard to adapt and extend. React is a broadly used JS library offering the required flexibility and adaptability |
 | **Solr as search engine** | Solr was chosen as open source search engine because of support for storing vector embeddings (AI/ML support) |
 | **Java Search-API** | A Java query layer is setup as an interface between the Solr native API and the React UI to delegate much of the complexity of query logic from the UI  |
 
