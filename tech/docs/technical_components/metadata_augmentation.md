@@ -74,15 +74,123 @@ For metadata records which have not been analysed yet (in that iteration), the m
 
 ## Element Matcher
 
+!!! component-header "Info"
+    **Current version:** 0.3.0
+
+    **Technology:** Python
+
+    **Release:** TBD
+
+    **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
+
 ### Overview and Scope
+
+Harvested metadata records arrive with element values drawn from many different vocabularies, schemas, and free-text conventions. For example, the `type` element may appear as `Article`, `Journal Article`, `text/journal`, or `publication`, and the `language` element may be encoded as `eng`, `en`, `english`, or `en-GB`. This heterogeneity makes it difficult to filter records in the SoilWise Catalogue by elements.
+
+The Element Matcher component normalizes selected metadata elements against controlled mapping files, producing a consistent set of values. It reads records from the `metadata.records` table, maps each element value against a curated CSV mapping, and writes the normalized value to the `metadata.augments` table alongside the element name and a processing timestamp.
+
+The component currently normalizes the following elements:
+
+- **`type`** — record resource type (e.g. `Journal Article`, `Dataset`, `Software`)
+- **`language`** — ISO 639-1 language code (e.g. `en`, `nl`, `fr`)
+
+Planned:
+
+- **`license`** — normalized license identifier (e.g. `cc-by`, `cc-by-sa`, `cc-0`).
+
 ### Key Features
+
+The Element Matcher provides the following functions:
+
+1. **CSV-driven value mapping:** Each element has its own mapping file under `element-matcher/mapping/` (`type.csv`, `lang.csv`, `license.csv`), defining a `source_label` → `target_label` relation. Mappings are case-insensitive on the source side.
+2. **Incremental processing:** Only records that have not yet been processed by the Element Matcher are queried and matched, keeping daily runs cheap as the catalogue grows.
+3. **Per-element matchers:** Matching is implemented as a separate function per element (`match_types`, `match_langs`, …), so new elements can be added without affecting existing ones.
+4. **Unmapped-value logging:** When a source value is not present in the mapping file, the record identifier and the unmatched value are logged, and a summary of all unmapped values is emitted at the end of each run. These logs drive curation of the mapping files.
+5. **Open mapping files:** Mapping CSVs live in the repository and are open for review and contribution by users, so the normalization rules are transparent and versioned alongside the code.
+6. **Bulk insert:** Matched values are written to `metadata.augments` in a single bulk insert per element, rather than row-by-row.
+
+
 ### Architecture
+
 #### Technological Stack
+
+|Technology|Description|
+|----------|-----------|
+|**Python**|Core implementation language for the matcher and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Source of metadata records (`metadata.records`) and sink for augmented values (`metadata.augments`).|
+|**CSV**|Human-readable, git-versioned mapping files (`source_label` → `target_label`) per element.|
+|**GitLab CI/CD**|Automated pipeline that runs the Element Matcher daily against the production database.|
+
+#### Main Component Diagram
+
+```mermaid
+flowchart LR
+    H["Harvester"]-- "writes" -->MR[("metadata.records")]
+    MR-- "reads" -->EM["Element Matcher"]
+    MAP[/"Mapping CSVs<br/>(type, lang, license)"/]-- "reads" -->EM
+    EM-- "writes" -->AUG[("metadata.augments")]
+    MR-- "joined in" -->MV[["metadata.mv_records<br/>(view)"]]
+    AUG-- "joined in" -->MV
+    MV-- "reads" -->CA["Catalogue<br/>(filtering/faceting)"]
+```
+
 #### Main Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant CI as GitLab CI/CD (daily)
+    participant EM as Element Matcher
+    participant DB as PostgreSQL
+    participant MAP as Mapping CSVs
+    participant CA as Catalogue
+
+    CI->>EM: Trigger daily run
+    EM->>DB: Query unprocessed records from metadata.records
+    DB-->>EM: Records (identifier, type, language, license)
+    EM->>EM: Deduplicate by identifier
+
+    loop For each element (type, language, ...)
+        EM->>MAP: Load element mapping CSV
+        EM->>EM: Match source value to target value (case-insensitive)
+        alt Source value in mapping
+            EM->>EM: Use target value
+        else Not in mapping
+            EM->>EM: Set value to NULL and log unmapped source
+        end
+        EM->>DB: Bulk insert into metadata.augments
+    end
+
+    EM->>CI: Emit summary of unmapped values
+
+    Note over DB: metadata.mv_records joins<br/>metadata.records with metadata.augments
+    CA->>DB: Query metadata.mv_records (filtering/faceting)
+    DB-->>CA: Records with normalized element values
+```
+
 #### Database Design
+
+The Element Matcher reuses `metadata.augments` table described in [Spatial Metadata Extractor - Database Design](#sme-database-design).
+
 ### Integrations & Interfaces
+
+- **Harvester → Element Matcher:** consumes `metadata.records` rows produced by the harvester component.
+- **Element Matcher → Catalogue:** writes normalized values to `metadata.augments`. The Catalogue uses element values from a view, which joined with `metadata.augments` for the filtering.
+- **Mapping files:** CSV mapping files are the public integration point for curators; edits are reviewed via pull request and take effect on the next daily run.
+
+
 ### Key Architectural Decisions
+
+1. **CSV-based mapping files over SKOS/ontology lookups**: simple, human-editable, versionable in git, and diffable in code review. Mapping files are open for user review for transparency. Avoid False Positives for mapping.
+2. **Unmapped values stored as `NULL`**: forces curation of the mapping file rather than introducing noisy or inconsistent values into the catalogue.
+3. **Incremental processing**: daily runs stay cheap as the catalogue grows.
+4. **Per-element matcher functions**: new elements (e.g. license) can be added independently without touching existing logic.
+
+
 ### Risks & Limitations
+
+- **Exact match only:** the matcher does not handle typos, near-matches, or compound values. Each variant must be listed explicitly in the mapping file.
+- **License matching:**: license values are difficult to be harmonalized.
+- **Manual mapping maintenance:**: as new data sources are harvested, new unmapped values will appear and require human review before the catalogue reflects them.
 
 ## Translation module
 
@@ -427,7 +535,7 @@ flowchart TD
     K --> L --> M
 ```
 
-#### Database Design
+#### Database Design {#sme-database-design}
 
 The Spatial Metadata Extractor uses the following database structure in the NER pipeline:
 
