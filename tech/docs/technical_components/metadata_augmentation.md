@@ -29,60 +29,321 @@ Metadata Augmentation is a backend component providing outputs, which users can 
 
 * **SWC Administrator** monitoring the augmentation processes, access to history, logs and statistics. Administrators can manually start a specific augmentation process.
 
-## Keyword matcher
+## Keyword Matcher
 
 !!! component-header "Info"
-    **Current version:** 0.2.0
+    **Current version:** TBD
 
-    **Technology:** Python 
+    **Technology:** Python
 
-    **Release:** <https://doi.org/10.5281/zenodo.14924181>
+    **Release:** <https://zenodo.org/records/14924182>
 
-    **Project repository:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
+    **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
 ### Overview and Scope
-Keywords are an important mechanism to filter and cluster records. Similar keywords need to be clustered to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
 
-Analyses existing keywords on a metadata record. Two cases can be identified:
+Harvested metadata records carry keyword subjects drawn from a wide range of vocabularies, thesauri, and free-text conventions. The same concept may appear as a URI from one thesaurus, a free-text label in another, or a localized term in a third. This heterogeneity makes it difficult to search or filter the SoilWise Catalogue by topic.
 
-- If a keyword, having a skos identifier, has a closeMatch or sameAs relation to a prefered keyword, the prefered keyword is used. 
-- If an existing keyword, without skos identifier, matches a prefered keyword by (translated) string or synonym, then append the matched keyword (including skos identifier). 
+The Keyword Matcher component normalizes keyword subjects against the SoilVoc, enriched with links to external vocabularies (AgroVoc, ISO 11074) and their multilingual labels. Each harvested subject is matched to a SoilVoc concept — by URI when possible, or by fuzzy label match when not — and the result is written to the database from which the Catalogue reads normalized concept values for filtering and faceting.
 
-To facilitate this use case the SWR contains a [Knowledge graph](knowledge_graph.md) of prefered keywords in the soil domain derived from Agrovoc, Gemet and ISO11074. This knowledge graph is maintained at <https://github.com/soilwise-he/soil-health-knowledge-graph>. These vocabularies are multilingual, facilitating the translation case.
+The component is organized as a two-stage pipeline:
 
-For metadata records which have not been analysed yet (in that iteration), the module extracts the keywords, for each keyword an analyses is made if it matches any of the prefered keywords, the prefered keyword is added to the augmentation results for that record. For string matching a fuzzy match algorithm is used, requiring a 90% match (configurable). Translations are matched using the metadata language as indicated in the record.
+- **Thesaurus build (`get_thesaurus.py`)** — compiles a single `concepts.json` artefact that merges SoilVoc concepts with URIs and multilingual labels gathered from AgroVoc and ISO 11074. Run manually, only when SoilVoc changes.
+- **Daily matching (`match.py`)** — reads unprocessed subjects from the database, matches each against `concepts.json`, and writes the result to `metadata.keyword_match`. Run on a daily GitLab CI/CD pipeline.
 
 ### Key Features
 
+The Keyword Matcher provides the following functions:
+
+1. **Multi-vocabulary thesaurus enrichment:** SoilVoc concepts are extended with `skos:exactMatch` and `skos:closeMatch` links to AgroVoc (via remote SPARQL) and ISO 11074 (via local TTL), producing a unified set of URIs per concept.
+2. **Multilingual concept labels:** Each concept collects labels in English, French, German, Italian, Spanish, and Dutch from all linked vocabularies, enabling matching against non-English keyword subjects.
+3. **URI-based exact match (priority):** If a subject carries a URI, the matcher looks it up against the combined URI set of each concept — a deterministic match that bypasses the fuzzy path.
+4. **Label-based fuzzy match (fallback):** If a subject has no URI, its label is compared case-insensitively against every concept label in every language with a threshold of 80. The best-scoring concept above the threshold wins.
+5. **Fuzzy score persisted:** Each fuzzy match stores its score in the database, so reviewers can filter or audit low-confidence matches.
+6. **Prefix-number cleanup:** Labels prefixed with numbers (e.g. from hierarchical thesaurus codes) are stripped before matching.
+7. **Incremental processing:** Only subjects not yet processed are queried and matched on each daily run.
+8. **Planned — LLM/NLP review of borderline matches:** A future layer will re-evaluate fuzzy matches with scores between 80 and 100 using an LLM or NLP model, to separate true matches from near-misses that happen to score high on string similarity alone.
+
 ### Architecture
+
 #### Technological Stack
 
 |Technology|Description|
 |----------|-----------|
-|**Python**|Used for the keyword matching and database interactions.|
-|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
-|**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
-|* **CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
+|**Python**|Core implementation language for both the thesaurus build and the matcher.|
+|**[rdflib](https://rdflib.readthedocs.io/)**|Parses local SKOS TTL files (SoilVoc, ISO 11074) and executes SPARQL queries over them.|
+|**[thefuzz](https://github.com/seatgeek/thefuzz)**|Provides `fuzz.ratio` used for label-based fuzzy matching.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Source of harvested subjects (`metadata.subjects`) and sink for matched concepts (`metadata.keyword_match`).|
+|**GitLab CI/CD**|Runs `match.py` daily against the production database.|
+
+#### Main Component Diagram
+
+```mermaid
+flowchart LR
+    subgraph Build["Thesaurus Build (manual, on SoilVoc change)"]
+        SV[/"SoilVoc.ttl"/]-- "reads" -->GT["get_thesaurus.py"]
+        AG[("AgroVoc<br/>remote SPARQL")]-- "reads" -->GT
+        ISO[/"ISO11074.ttl"/]-- "reads" -->GT
+        GT-- "writes" -->CJ[/"concepts.json"/]
+    end
+
+    subgraph Daily["Daily Matching (GitLab CI/CD)"]
+        H["Harvester"]-- "writes" -->SUB[("subjects")]
+        H-- "writes" -->RS[("record_subjects")]
+        H-- "writes" -->REC[("records")]
+        SUB-- "reads" -->MM["match.py"]
+        CJ-- "reads" -->MM
+        MM-- "writes" -->KM[("keyword_match")]
+    end
+
+    REC-- "joined in" -->MV[["mv_records<br/>(view)"]]
+    RS-- "joined in" -->MV
+    SUB-- "joined in" -->MV
+    KM-- "joined in" -->MV
+    MV-- "reads" -->CA["Catalogue<br/>(filtering/faceting)"]
+```
 
 #### Main Sequence Diagram
+
+**Thesaurus build (manual):**
+
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant GT as get_thesaurus.py
+    participant SV as SoilVoc.ttl
+    participant AG as AgroVoc SPARQL
+    participant ISO as ISO11074.ttl
+    participant CJ as concepts.json
+
+    Dev->>GT: Run manually after SoilVoc update
+    GT->>SV: Query all skos:Concept with labels and exact/closeMatch
+    SV-->>GT: Concepts + match URIs
+
+    loop For each match URI
+        alt URI is AgroVoc
+            GT->>AG: Query prefLabel + altLabel (multilingual)
+            AG-->>GT: Labels (en, fr, de, it, es, nl)
+        else URI is ISO 11074
+            GT->>ISO: Query prefLabel + altLabel (multilingual)
+            ISO-->>GT: Labels (en, fr, de, it, es, nl)
+        end
+        GT->>GT: Merge labels into concept
+    end
+
+    GT->>GT: Deduplicate concepts by identifier
+    GT->>CJ: Write concepts.json
+```
+
+**Daily matching:**
+
+```mermaid
+sequenceDiagram
+    participant CI as GitLab CI/CD (daily)
+    participant MM as match.py
+    participant DB as PostgreSQL
+    participant CJ as concepts.json
+    participant CA as Catalogue
+
+    CI->>MM: Trigger daily run
+    MM->>DB: Query unprocessed subjects from metadata.subjects
+    DB-->>MM: Subjects (id, uri, label)
+    MM->>CJ: Load concepts
+
+    loop For each subject
+        alt Subject has URI
+            MM->>MM: URI exact match against concept URIs
+        else Subject has only label
+            MM->>MM: Fuzzy match label against all concept labels (threshold 80)
+        end
+        MM->>MM: Record vocab_id, vocab_label, fuzzymatch_score (if any)
+    end
+
+    MM->>DB: Bulk insert into keyword_match
+
+    Note over DB: mv_records joins records,<br/>record_subjects, subjects, keyword_match
+    CA->>DB: Query mv_records (filtering/faceting)
+    DB-->>CA: Records with normalized concept values
+```
+
 #### Database Design
+
+```mermaid
+classDiagram
+    Records "1" -- "*" Record_Subjects
+    Subjects "1" -- "*" Record_Subjects
+    Subjects "1" -- "*" Keyword_Match
+
+    class Records {
+        +String id
+        ...
+    }
+    class Subjects {
+        +Int id
+        +String uri
+        +String label
+    }
+    class Record_Subjects {
+        +String record_id
+        +Int subject_id
+    }
+    class Keyword_Match {
+        +Int id
+        +Int subject_id
+        +String vocab_id
+        +String vocab_label
+        +Int fuzzymatch_score
+        +DateTime process_time
+    }
+```
+
+- `records` harvested records.
+- `subjects`  distinct keyword subjects, each with optional `uri` and `label`.
+- `record_subjects`  many-to-many link between records and subjects.
+- `keyword_match`  output of the Keyword Matcher; one row per processed subject, linked back to `subjects` via `subject_id`. `fuzzymatch_score` is `NULL` for URI matches and set to the `fuzz.ratio` score for label matches.
+
 ### Integrations & Interfaces
+
+- **Harvester → Keyword Matcher** consumes original keywords populated by the harvester.
+- **Vocabularies → Keyword Matcher** reads SoilVoc, AgroVoc, and ISO 11074.
+- **Keyword Matcher → Catalogue:** the Catalogue frontend reads normalized concept values from the database.
+
 ### Key Architectural Decisions
-* The process runs as a CI-CD pipeline at daily intervals.
+
+1. **Two-stage pipeline (thesaurus build vs. daily matching):** decouples the expensive, network-dependent thesaurus enrichment from the daily matching job, so daily runs are fast and independent of AgroVoc endpoint availability.
+2. **SoilVoc as the anchor vocabulary:** all concepts are identified by a SoilVoc URI. AgroVoc and ISO 11074 contribute additional URIs and multilingual labels via SKOS `exactMatch` / `closeMatch`, but do not introduce new concepts.
+3. **Fuzzy threshold 80:** balances precision and recall for domain terms. Scores below 80 are discarded; scores above 80 are persisted and (planned) reviewed by an LLM/NLP layer.
+4. **Fuzzy score persisted:** stored alongside each match so low-confidence matches can be audited, filtered, or re-reviewed without rerunning the matcher.
+5. **`concepts.json` as a versioned build artefact:** the thesaurus is a file in the repo, not a live query. It is rebuilt only when SoilVoc changes, so the daily matcher sees a stable, inspectable snapshot.
+6. **Incremental processing:** only subjects not yet processed are matched on each run, keeping daily jobs cheap.
 
 ### Risks & Limitations
+
+- **Fuzzy match result need review:** string similarity alone can produce false positives for short or generic terms.
+- **Short keywords score poorly:** fuzzy match can report low scores for short but semantically identical terms, so some true matches fall below the threshold.
+- **Multilingual coverage:** non-English matching only works for languages that have labels in the source vocabularies. Only 5 languages are supported. Concepts without AgroVoc/ISO 11074 links are English-only.
+- **Concept hierachy not invloved:** the hierachy of concepts exsist in the SoilVoc but is not introduced this component. To enable a grouped facet search in the front-end a source of structure is needed.
+
 
 ## Element Matcher
 
+!!! component-header "Info"
+    **Current version:** TBD
+
+    **Technology:** Python
+
+    **Release:** <https://zenodo.org/records/14924182>
+
+    **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
+
 ### Overview and Scope
+
+Harvested metadata records arrive with element values drawn from many different vocabularies, schemas, and free-text conventions. For example, the `type` element may appear as `Article`, `Journal Article`, `text/journal`, or `publication`, and the `language` element may be encoded as `eng`, `en`, `english`, or `en-GB`. This heterogeneity makes it difficult to filter records in the SoilWise Catalogue by elements.
+
+The Element Matcher component normalizes selected metadata elements against controlled mapping files, producing a consistent set of values. It reads records from the `metadata.records` table, maps each element value against a curated CSV mapping, and writes the normalized value to the `metadata.augments` table alongside the element name and a processing timestamp.
+
+The component currently normalizes the following elements:
+
+- **`type`** — record resource type (e.g. `Journal Article`, `Dataset`, `Software`)
+- **`language`** — ISO 639-1 language code (e.g. `en`, `nl`, `fr`)
+
+Planned:
+
+- **`license`** — normalized license identifier (e.g. `cc-by`, `cc-by-sa`, `cc-0`).
+
 ### Key Features
+
+The Element Matcher provides the following functions:
+
+1. **CSV-driven value mapping:** Each element has its own mapping file under `element-matcher/mapping/` (`type.csv`, `lang.csv`, `license.csv`), defining a `source_label` → `target_label` relation. Mappings are case-insensitive on the source side.
+2. **Incremental processing:** Only records that have not yet been processed by the Element Matcher are queried and matched, keeping daily runs cheap as the catalogue grows.
+3. **Per-element matchers:** Matching is implemented as a separate function per element (`match_types`, `match_langs`, …), so new elements can be added without affecting existing ones.
+4. **Unmapped-value logging:** When a source value is not present in the mapping file, the record identifier and the unmatched value are logged, and a summary of all unmapped values is emitted at the end of each run. These logs drive curation of the mapping files.
+5. **Open mapping files:** Mapping CSVs live in the repository and are open for review and contribution by users, so the normalization rules are transparent and versioned alongside the code.
+6. **Bulk insert:** Matched values are written to `metadata.augments` in a single bulk insert per element, rather than row-by-row.
+
+
 ### Architecture
+
 #### Technological Stack
+
+|Technology|Description|
+|----------|-----------|
+|**Python**|Core implementation language for the matcher and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Source of metadata records (`metadata.records`) and sink for augmented values (`metadata.augments`).|
+|**CSV**|Human-readable, git-versioned mapping files (`source_label` → `target_label`) per element.|
+|**GitLab CI/CD**|Automated pipeline that runs the Element Matcher daily against the production database.|
+
+#### Main Component Diagram
+
+```mermaid
+flowchart LR
+    H["Harvester"]-- "writes" -->MR[("metadata.records")]
+    MR-- "reads" -->EM["Element Matcher"]
+    MAP[/"Mapping CSVs<br/>(type, lang, license)"/]-- "reads" -->EM
+    EM-- "writes" -->AUG[("metadata.augments")]
+    MR-- "joined in" -->MV[["metadata.mv_records<br/>(view)"]]
+    AUG-- "joined in" -->MV
+    MV-- "reads" -->CA["Catalogue<br/>(filtering/faceting)"]
+```
+
 #### Main Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant CI as GitLab CI/CD (daily)
+    participant EM as Element Matcher
+    participant DB as PostgreSQL
+    participant MAP as Mapping CSVs
+    participant CA as Catalogue
+
+    CI->>EM: Trigger daily run
+    EM->>DB: Query unprocessed records from metadata.records
+    DB-->>EM: Records (identifier, type, language, license)
+    EM->>EM: Deduplicate by identifier
+
+    loop For each element (type, language, ...)
+        EM->>MAP: Load element mapping CSV
+        EM->>EM: Match source value to target value (case-insensitive)
+        alt Source value in mapping
+            EM->>EM: Use target value
+        else Not in mapping
+            EM->>EM: Set value to NULL and log unmapped source
+        end
+        EM->>DB: Bulk insert into metadata.augments
+    end
+
+    EM->>CI: Emit summary of unmapped values
+
+    Note over DB: metadata.mv_records joins<br/>metadata.records with metadata.augments
+    CA->>DB: Query metadata.mv_records (filtering/faceting)
+    DB-->>CA: Records with normalized element values
+```
+
 #### Database Design
+
+The Element Matcher reuses `metadata.augments` table described in [Spatial Metadata Extractor - Database Design](#sme-database-design).
+
 ### Integrations & Interfaces
+
+- **Harvester → Element Matcher:** consumes `metadata.records` rows produced by the harvester component.
+- **Element Matcher → Catalogue:** writes normalized values to `metadata.augments`. The Catalogue uses element values from a view, which joined with `metadata.augments` for the filtering.
+- **Mapping files:** CSV mapping files are the public integration point for curators; edits are reviewed via pull request and take effect on the next daily run.
+
+
 ### Key Architectural Decisions
+
+1. **CSV-based mapping files over SKOS/ontology lookups**: simple, human-editable, versionable in git, and diffable in code review. Mapping files are open for user review for transparency. Avoid False Positives for mapping.
+2. **Unmapped values stored as `NULL`**: forces curation of the mapping file rather than introducing noisy or inconsistent values into the catalogue.
+3. **Incremental processing**: daily runs stay cheap as the catalogue grows.
+4. **Per-element matcher functions**: new elements (e.g. license) can be added independently without touching existing logic.
+
+
 ### Risks & Limitations
+
+- **Exact match only:** the matcher does not handle typos, near-matches, or compound values. Each variant must be listed explicitly in the mapping file.
+- **License matching:**: license values are difficult to be harmonalized.
+- **Manual mapping maintenance:**: as new data sources are harvested, new unmapped values will appear and require human review before the catalogue reflects them.
 
 ## Translation module
 
@@ -427,7 +688,7 @@ flowchart TD
     K --> L --> M
 ```
 
-#### Database Design
+#### Database Design {#sme-database-design}
 
 The Spatial Metadata Extractor uses the following database structure in the NER pipeline:
 
