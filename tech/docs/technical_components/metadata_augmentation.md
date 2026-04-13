@@ -38,7 +38,7 @@ Metadata Augmentation is a backend component providing outputs, which users can 
 
     **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
-    **Projects:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
+    **Project repository:** [Keyword matcher](https://github.com/soilwise-he/metadata-augmentation/tree/main/keyword-matcher)
 
 ### Overview and Scope
 Keywords are an important mechanism to filter and cluster records. Similar keywords need to be clustered to be able to match them. This module evaluates keywords of existing records to make them equal in case of high similarity. 
@@ -91,7 +91,7 @@ For metadata records which have not been analysed yet (in that iteration), the m
 
     **Technology:** Python
 
-    **Projects:** [Translation](https://github.com/soilwise-he/metadata-augmentation/tree/main/translation)
+    **Project repository:** [Translation](https://github.com/soilwise-he/metadata-augmentation/tree/main/translation)
 
 ### Overview and Scope
 Some records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.
@@ -129,7 +129,7 @@ Initial translation is triggered by a running harvester. The translations will t
 
     **Release:** <https://doi.org/10.5281/zenodo.14923790>
 
-    **Projects:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
+    **Project repository:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 
 ### Overview and Scope
 Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWC. 
@@ -292,9 +292,9 @@ The API has been extended to include the newly tracked metadata fields:
 
     **Technology:** Python 
 
-    **Release:** 
+    **Release:** TBD
 
-    **Projects:** [Spatial Metadata Extractor](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-metadata-extractor)
+    **Project repository:** [Spatial Metadata Extractor](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-metadata-extractor)
 
 
 ### Overview and Scope
@@ -485,13 +485,13 @@ The Spatial Metadata Extractor uses the following database structure in the spat
 ## Spatial Locator
 
 !!! component-header "Info"
-    **Current version:** 
+    **Current version:** TBD
 
-    **Technology:**  
+    **Technology:**  TBD
 
-    **Release:** 
+    **Release:** TBD
 
-    **Projects:** [Spatial Locator](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-locator)
+    **Project repository:** [Spatial Locator](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-locator)
 
 ### Overview and Scope
 ### Key Features

@@ -23,13 +23,15 @@ The Data Publication Support tools and documentation are designed for the follow
 
 !!! component-header "Info"
 
-    **Current version:** 
+    **Current version:** TBD
 
-    **Technology:** 
+    **Technology:** TBD
 
-    **Project:** 
+    **Release:** TBD
 
-    **Access Point:** 
+    **Project repository:** TBD
+
+    **Access Point:** TBD
 
 ### Overview and Scope
 ### Key Features
@@ -45,11 +47,13 @@ The Data Publication Support tools and documentation are designed for the follow
 
 !!! component-header "Info"
 
-    **Current version:** 
+    **Current version:** TBD
 
     **Technology:** [Streamlit](https://streamlit.io/), Python, [OpenAI API](https://openai.com/)
 
-    **Project:** [Tabular Data Annotator](https://github.com/soilwise-he/TabularDataAnnotator-streamlit)
+    **Release:** TBD
+
+    **Project repository:** [Tabular Data Annotator](https://github.com/soilwise-he/TabularDataAnnotator-streamlit)
 
     **Access Point:** <https://dataannotator-swr.streamlit.app/>
 
@@ -271,7 +275,9 @@ graph TB
 
     **Technology:** SQLite container
 
-    **Project:** [Geopackage-so](https://github.com/soilwise-he/Geopackage-so)
+    **Release:** TBD
+
+    **Project repository:** [Geopackage-so](https://github.com/soilwise-he/Geopackage-so)
 
 ### Overview and Scope
 

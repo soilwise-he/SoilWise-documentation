@@ -25,11 +25,13 @@ The SoilWise Metadata Validation targets the following user groups:
 !!! component-header "Info"
     **Current version:** 1.0.0
 
-    **Technology**: [Esdin Test Framework (ETF)](https://etf-validator.net/), Python
+    **Technology:** [Esdin Test Framework (ETF)](https://etf-validator.net/), Python
 
-    **Project:** [Metadata validator](https://inspire.ec.europa.eu/validator/home/index.html)
+    **Release:** TBD
 
-    **Access point:** PostgreSQL database, [Data and Knowledge Administration Console](admin_console.md)
+    **Project repository:** [Metadata validator](https://inspire.ec.europa.eu/validator/home/index.html)
+
+    **Access point:** [Data and Knowledge Administration Console](admin_console.md)
 
 ### Overview and Scope
 Compliance to a given standard is an indicator for (meta)data quality. This indicator is measured on datasets claiming to confirm to the INSPIRE regulation. 
@@ -88,9 +90,7 @@ The methodology of INSPIRE ATS/ETS is used in the case of INSPIRE validation.
 
     **Technology**: Python
 
-    **Project:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
-
-    **Access point:** PostgreSQL database
+    **Project repository:** [Metadata validator](https://github.com/soilwise-he/metadata-validator)
 
 ### Overview and Scope
 The software calculates a level of completeness of a record, indicated in % of 100 for endorsed properties, considering that some properties are conditional based on selected values in other properties.

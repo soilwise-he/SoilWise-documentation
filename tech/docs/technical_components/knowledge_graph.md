@@ -5,6 +5,8 @@
     **Current version:** 0.2.6
 
     **Technology:** [RDF](https://www.w3.org/RDF/)
+
+    **Release:** <https://doi.org/10.5281/zenodo.14936019>
    
     **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
    
@@ -116,9 +118,11 @@ Linking is implemented using SKOS mapping properties (primarily `skos:exactMatch
 ## SHKG as the Semantic Backbone of the SoilWise Data & Knowledge Hub
 
 !!! component-header "Info"
+
+    **Technology:** [VocView](https://github.com/ternaustralia/vocview)
+
     **Access point:** [https://voc.soilwise-he.containers.wur.nl/](https://voc.soilwise-he.containers.wur.nl/)
    
-    **Technology:** [VocView](https://github.com/ternaustralia/vocview)
 
 The SHKG is designed to act as the **semantic anchor** that connects SoilWise resources and external assets into one coherent discovery experience.
 

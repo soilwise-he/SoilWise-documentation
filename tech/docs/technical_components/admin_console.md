@@ -5,9 +5,9 @@
 
     **Technology:** Apache Superset
 
-    **Project:** [Summary Dashboard](https://github.com/soilwise-he/summary-dashboard)
+    **Project repository:** [Summary Dashboard](https://github.com/soilwise-he/summary-dashboard)
 
-    **Access point:** 
+    **Access point:** <https://superset.soilwise.wetransform.eu/superset/dashboard/p/P52OgRVBGo9/>
 
 ## Introduction
 

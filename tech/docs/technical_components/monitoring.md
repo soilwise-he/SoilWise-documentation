@@ -3,7 +3,11 @@
 !!! component-header "Info"
     **Current version:** 1.0
 
-    **Project:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
+    **Technology:** Grafana, Hotjar
+
+    **Project repository:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
+
+    **Access point:** TBD
 
 All components and services of the SWR are monitored at different levels to ensure robust operations and security of the system. There will be a central monitoring service for all components that are part of the SWR.
 
