@@ -9,7 +9,7 @@
 
 ## Overview
 
-User and organisation management, authorisation and authentication are cross-cutting concerns of the SoilWise Repository. Authentication and authorisation are handled through a [Keycloak](https://www.keycloak.org/) instance operated by weTransform, which acts as the central OpenID Connect (OIDC) identity provider for SWC components. Keycloak maps provider roles to internal application roles (e.g. Keycloak role `Redakteur` → hale-connect role `themeManager`) and manages user-to-organisation assignments.
+User and organisation management, authorisation and authentication are cross-cutting concerns of the SoilWise Catalogue. Authentication and authorisation are handled through a [Keycloak](https://www.keycloak.org/) instance operated by weTransform, which acts as the central OpenID Connect (OIDC) identity provider for SWC components. Keycloak maps provider roles to internal application roles (e.g. Keycloak role `Redakteur` → hale-connect role `themeManager`) and manages user-to-organisation assignments.
 
 The **general model** is that:
 

@@ -3,7 +3,7 @@
 ## Introduction
 
 ### Overview and Scope
-The SoilWise repository aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
+The SoilWise aims at merging and seamlessly providing different types of content. To host this content and to be able to efficiently drive internal processes and to offer performant end user functionality, different storage options are implemented.
 
 1. [A relational database management system](#postgresql-rdbms-storage-of-raw-and-augmented-metadata) for the storage of the core (raw and augmented) metadata of both data and knowledge assets.
 2. [A Triple Store](#virtuoso-triple-store-storage-of-swr-knowledge-graph) to store the metadata of data and knowledge assets as a graph, linked to soil health and related knowledge as a linked knowledge graph.
@@ -33,7 +33,7 @@ A "conventional" RDBMS is used to store the (augmented) metadata of data and kno
 
 ### Key Features
 
-The Postgres database serves as a the destination and/or source for many of the backend processes of the SoilWise Catalogie. Its key features are:
+The Postgres database serves as a the destination and/or source for many of the backend processes of the SoilWise Catalogue. Its key features are:
 
 1. **Raw metadata storage** — The harvester process uses it to store the raw results of the metadata harvesting of the different resources that are currently connected.
 2. **Storage of Augmented metadata** — Various metadata augmentation jobs use it as input and write their input to this data store.
@@ -70,7 +70,7 @@ A Triple Store, implemented in Virtuoso, is integrated for parallel storage of m
 
     **Access point:** Via the Apache Solr API 
 
-The SoilWise Catalogie uses a dedicated index (Apache Lucene) to efficiently index and store the harvested and augmented metadata, as well as the knowledge extracted from documents referred to through the metadata records (currently only supporting PDF format). Access to the index (both indexing and querying) is provided through the Apache Solr search framework.
+The SoilWise Catalogue uses a dedicated index (Apache Lucene) to efficiently index and store the harvested and augmented metadata, as well as the knowledge extracted from documents referred to through the metadata records (currently only supporting PDF format). Access to the index (both indexing and querying) is provided through the Apache Solr search framework.
 
 ### Key Features
 

@@ -1,8 +1,8 @@
 # User Interfaces (UIs)
 
-The usability of the SoilWise Repository will eventually not only be determined by its back-end functionality and the (meta)data and knowledge it exposes. Users, whether they are data & knowledge providers, consumers or SWC administrators, will operate the system through various user interfaces.
+The usability of the SoilWise Catalogue will eventually not only be determined by its back-end functionality and the (meta)data and knowledge it exposes. Users, whether they are data & knowledge providers, consumers or SWC administrators, will operate the system through various user interfaces.
 
-Within the first and second development iterations, the following User Interfaces have been deployed as part of the SoilWise Repository:
+Within the first and second development iterations, the following User Interfaces have been deployed as part of the SoilWise Catalogue:
 
 ## Interfaces for end users
 

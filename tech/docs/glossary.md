@@ -228,7 +228,7 @@ documentation:Requirements
 :   Requirements are the capabilities of an envisioned component of the repository which are classified as ‘must have’, or ‘nice to have’.
 
 documentation:Rolling plan
-:   Rolling plan is a methodology for considering the internal and external developments that may generate changes to the SoilWise Repository design and development. It keeps track of any developments and changes on a technical, stakeholder group level or at EUSO/JRC.
+:   Rolling plan is a methodology for considering the internal and external developments that may generate changes to the SoilWise Catalogue design and development. It keeps track of any developments and changes on a technical, stakeholder group level or at EUSO/JRC.
 
 documentation:SensorThings API (STA)
 :   [SensorThingsAPI](https://www.ogc.org/standard/sensorthings/) is a formalised protocol to exchange sensor data and tasks between IoT devices, maintained at Open Geospatial Consortium. The protocol can also be used to exchange field and laboratory observations on soils and soil samples. 
@@ -285,7 +285,7 @@ documentation: Usage scenarios
 :   Usage scenarios describe how (groups of) users might use the software product. These usage scenarios can originate or be updated from the SoilWise use cases, user story epic or user stories/requirements.
 
 documentation:User story
-:   A User story is a statement, written from the point of view of the user, that describes the functionality needed by the user from the SoilWise Repository. 
+:   A User story is a statement, written from the point of view of the user, that describes the functionality needed by the user from the SoilWise Catalogue. 
 
 documentation:User story epic
 :   A User story epic is a narrative of stakeholders needs that can be narrowed down into smaller specific needs (user stories/requirements).

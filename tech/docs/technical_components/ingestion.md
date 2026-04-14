@@ -16,7 +16,7 @@ The Harvester component is dedicated to automatically harvest sources to populat
 ### Overview and Scope
 Metadata harvesting is the process of ingesting metadata, i.e. evidence on data and knowledge, from remote sources and storing it locally in the catalogue for fast searching. It is a scheduled process, so local copy and remote metadata are kept aligned. Various components exist which are able to harvest metadata from various (standardised) API's. SoilWise aims to use existing components where available.
 
-The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Repository can only derive that fact by harvesting the full remote content. Discussion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
+The harvesting mechanism relies on the concept of a _universally unique identifier (UUID)_ or _unique resource identifier (URI)_ that is being assigned commonly by metadata creator or publisher. Another important concept behind the harvesting is the _last change date_. Every time a metadata record is changed, the last change date is updated. Just storing this parameter and comparing it with a new one allows any system to find out if the metadata record has been modified since last update. An exception is if metadata is removed remotely. SoilWise Catalogue can only derive that fact by harvesting the full remote content. Discussion is needed to understand if SWR should keep a copy of the remote source anyway, for archiving purposes. All metadata with an update date newer then _last-identified successfull harvester run_ are extracted from remote location. 
 
 A harvesting task typically extracts records with update-date later then the _last-identified successfull harvester run_. In case the remote system supports such a filter, else the full set is harvested.
 
@@ -112,7 +112,7 @@ The Harvester component currently comprises of the following functions:
 
 ### Harvest records from metadata and knowledge resources
 
-Note, the second SoilWise Repository prototype contained **19,324** harvested metadata records (to date 14.2.2025).
+Note, the second SoilWise prototype contained **19,324** harvested metadata records (to date 14.2.2025).
 
 #### CORDIS
 
@@ -195,7 +195,7 @@ This is a component which on request can dump the content of the harmonised data
 
 ### Duplication indentification
 
-A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise Repository aims to persist a copy of the harvested content (also to identify if the remote source has changed). For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. An aim of this exercise is also to understand in which repositories a certain resource is advertised.
+A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise aims to persist a copy of the harvested content (also to identify if the remote source has changed). For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. An aim of this exercise is also to understand in which repositories a certain resource is advertised.
 
 Visualization of source repositories is in the first development iteration available as a dedicated section in the [SoilWise Catalogue](catalogue.md).
 

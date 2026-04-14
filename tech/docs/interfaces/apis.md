@@ -1,6 +1,6 @@
 # Application Programming Interfaces (APIs)
 
-This page presents an overview of all APIs that are served by the SoilWise Repository for (1) internal processing, (2) reuse of SoilWise data and functionality and (3) to enable future integration with other systems, particularly with EUSO. Information on interfaces is also available in a dedicated subchapter per each Technical Component.
+This page presents an overview of all APIs that are served by the SoilWise Catalogue for (1) internal processing, (2) reuse of SoilWise data and functionality and (3) to enable future integration with other systems, particularly with EUSO. Information on interfaces is also available in a dedicated subchapter per each Technical Component.
 
 ## Data Preview & Publication APIs
 

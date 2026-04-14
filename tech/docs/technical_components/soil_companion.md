@@ -28,7 +28,7 @@ The chatbot uses an **agentic tool-calling** approach: a large language model (L
 
 The Soil Companion targets the following user groups:
 
-- **Soil scientists and researchers** working with European soil health data and seeking catalogued knowledge, publications, and datasets from the SoilWise repository.
+- **Soil scientists and researchers** working with European soil health data and seeking catalogued knowledge, publications, and datasets from the SoilWise Catalogue.
 - **Agricultural experts and extension officers** looking for soil property data, field-level KPIs, and crop information to inform land management decisions.
 - **Students and educators** exploring soil science concepts through a conversational interface that provides definitions, vocabulary hierarchies, and links to authoritative sources.
 - **Farmers and land managers** (in selected regions) who want accessible field-level agricultural data such as crop history, soil physical properties, and greenness indices.
@@ -232,7 +232,7 @@ Documents from the `data/knowledge/` directory are loaded, split into 500-charac
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
 | **OpenAI API** | Bearer token (`OPENAI_API_KEY`) | via LangChain4j | Chat completion (gpt-4o-mini), reasoning (gpt-4o), embeddings (text-embedding-3-small) |
-| **Solr (SoilWise Catalog)** | Basic Auth (`SOLR_USERNAME` / `SOLR_PASSWORD`) | `SOLR_BASE_URL` | Search datasets and publications; full-text content retrieval |
+| **Solr (SoilWise Finder)** | Basic Auth (`SOLR_USERNAME` / `SOLR_PASSWORD`) | `SOLR_BASE_URL` | Search datasets and publications; full-text content retrieval |
 | **ISRIC SoilGrids v2.0** | None (public) | `SOILGRIDS_BASE_URL` | Soil property estimates at lat/lon (~250 m resolution) |
 | **SoilWise SPARQL** | None | `VOCAB_SPARQL_ENDPOINT` | SKOS concept hierarchies (broader, narrower, related terms) |
 | **Wikipedia** | None (public) | `WIKIPEDIA_BASE_URL` (per language) | Article search and content retrieval (6 languages) |

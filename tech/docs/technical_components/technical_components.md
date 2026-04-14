@@ -19,6 +19,6 @@ This section lists technical components for building the SoilWise Catalogue as f
 11. [System & Usage Monitoring](monitoring.md)
 
 ![SWR Architecture](../_assets/images/High-level overview.png)
-_Fig. 1: A high-level overview of SoilWise Repository architecture_
+_Fig. 1: A high-level overview of SoilWise Catalogue architecture_
 
 A full version of architecture diagram is available at: <https://soilwise-he.github.io/soilwise-architecture/>{:target="_blank"}.
