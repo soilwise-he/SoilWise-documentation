@@ -99,15 +99,11 @@ Git is an acknowledged platform to store, version, configure and document softwa
 2. **Issue and release management** — SoilWIse uses the issue and release management to document, monitor and track the development of software conponents and their integration.
 3. **Process automation** — Git defines and runs automated pipelines for deployment, augmentation, validation and harvesting external sources.
 
-## Integrations & Interfaces
-
 ## Key Architectural Decisions
 
 | Decision | Rationale |
 |----------|-----------|
 | **RDF/Triple Store for semantics** | Allows definition of advanced semantic structures and cross-domain interlnkage. Allows semantic reasoning, both internal and by external clients |
-| **To be further extended** | ... |
-
 
 ## Risks & Limitations
 
