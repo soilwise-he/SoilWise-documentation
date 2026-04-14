@@ -25,7 +25,7 @@ Upcoming components
 
 ### Intended Audience
 
-Metadata Augmentation is a backend component providing outputs, which users can see displayed in the [SoilWise Finder](catalogue.md). Therefore the Intended Audience corresponds to the one of the [Metadata Catalogue](../catalogue/#intended-audience). Additionally we expect a maintenance role:
+Metadata Augmentation is a backend component providing outputs, which users can see displayed in the [SoilWise Finder](catalogue.md). Therefore the Intended Audience corresponds to the one of the [SoilWise Finder](../catalogue/#intended-audience). Additionally we expect a maintenance role:
 
 * **SWC Administrator** monitoring the augmentation processes, access to history, logs and statistics. Administrators can manually start a specific augmentation process.
 
@@ -342,8 +342,8 @@ The Element Matcher reuses `metadata.augments` table described in [Spatial Metad
 ### Risks & Limitations
 
 - **Exact match only:** the matcher does not handle typos, near-matches, or compound values. Each variant must be listed explicitly in the mapping file.
-- **License matching:**: license values are difficult to be harmonalized.
-- **Manual mapping maintenance:**: as new data sources are harvested, new unmapped values will appear and require human review before the catalogue reflects them.
+- **License matching:** license values are difficult to be harmonalized.
+- **Manual mapping maintenance:** as new data sources are harvested, new unmapped values will appear and require human review before the catalogue reflects them.
 
 ## Translation module
 
