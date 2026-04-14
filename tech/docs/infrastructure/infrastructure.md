@@ -1,6 +1,6 @@
 # Infrastructure
 
-!!! info
+!!! component-header "Info"
 
     **IaC tooling:** [OpenTofu](https://opentofu.org/) (Terraform-compatible)
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-The SoilWise Repository (SWC) runs on a Kubernetes cluster hosted on Hetzner Cloud. All SWC components are deployed as containers, with infrastructure managed as code using OpenTofu. Two environments are maintained: **test** and **production**, both deployed from the same repository with environment-specific variable files.
+The SoilWise Catalogue (SWC) runs on a Kubernetes cluster hosted on Hetzner Cloud. All SWC components are deployed as containers, with infrastructure managed as code using OpenTofu. Two environments are maintained: **test** and **production**, both deployed from the same repository with environment-specific variable files.
 
 
 ## Environments
@@ -26,7 +26,9 @@ The SWC maintains two Kubernetes environments deployed from a single OpenTofu co
 
 Both environments use the same container images and OpenTofu modules. Environment-specific configuration (hostnames, secrets, feature flags) is managed through separate `.tfvars` files. State is stored remotely in an S3 backend (`soilwise-tf-state-soilwise-apps`, AWS `eu-central-1`).
 
+<!--
 The hale-connect production environment is hosted separately at `data.soilwise.wetransform.eu`.
+-->
 
 ## Containerization
 
@@ -73,7 +75,10 @@ The following components are part of the SWC but are deployed and managed outsid
 | Monitoring stack (Grafana, Prometheus, Loki) | weTransform | Separate Docker-based stack |
 | pycsw (Catalogue backend) | WUR | Deployed on WUR k8s cluster |
 | Soil Companion | WUR | Deployed on WUR k8s cluster |
+| Knowledge Graph | WUR | Deployed on WUR k8s cluster |
+| Metadata augmentation components | WUR | Deployed on WUR k8s cluster |
 | Harvester CI/CD pipelines | WUR | GitLab runners at WUR |
+| Tabular soil data annotation | DOMG - VL O | Hosted on Streamlit Cloud |
 | Translation service, VocView | Separate repos | Not in k8s-soilwise |
 
 ### Operational Notes
