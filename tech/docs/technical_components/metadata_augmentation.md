@@ -11,17 +11,15 @@ At the moment, Metadata Augmentation functionality is covered by the following c
 
 - [Keyword Matcher](#keyword-matcher)
 - [Element Matcher](#element-matcher)
-- [Translation Module](#translation-module)
 - [Link Liveliness Assessment](#link-liveliness-assessment)
 - [Spatial Metadata Extractor](#spatial-metadata-extractor)
-- [Spatial Locator](#spatial-locator)
-- [Metadata Interlinker](#metadata-interlinker)
 
 Upcoming components
 
 - [Keyword extraction](#keyword-extraction)
 - [Spatial scope analyser](#spatial-scope-analyser)
 - [EUSO high-value dataset tagging](#euso-high-value-dataset-tagging)
+- [Translation Module](#translation-module)
 
 ### Intended Audience
 
@@ -32,7 +30,7 @@ Metadata Augmentation is a backend component providing outputs, which users can 
 ## Keyword Matcher
 
 !!! component-header "Info"
-    **Current version:** TBD
+    **Current version:** 0.3.0
 
     **Technology:** Python
 
@@ -228,7 +226,7 @@ classDiagram
 ## Element Matcher
 
 !!! component-header "Info"
-    **Current version:** TBD
+    **Current version:** 0.3.0
 
     **Technology:** Python
 
@@ -344,42 +342,6 @@ The Element Matcher reuses `metadata.augments` table described in [Spatial Metad
 - **Exact match only:** the matcher does not handle typos, near-matches, or compound values. Each variant must be listed explicitly in the mapping file.
 - **License matching:** license values are difficult to be harmonalized.
 - **Manual mapping maintenance:** as new data sources are harvested, new unmapped values will appear and require human review before the catalogue reflects them.
-
-## Translation module
-
-!!! component-header "Info"
-    **Current version:** 0.2.0
-
-    **Technology:** Python
-
-    **Project repository:** [Translation](https://github.com/soilwise-he/metadata-augmentation/tree/main/translation)
-
-### Overview and Scope
-Some records arrive in a local language, SWR translates the main properties for the record: title and abstract into English, to offer a single language user experience. The translations are used in filtering and display of records.
-
-The translation module builds on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). Translations are stored in a database for reuse by the SWR.
-
-The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
-
-Initial translation is triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
-
-### Key Features
-
-### Architecture
-#### Technological Stack
-|Technology|Description|
-|----------|-----------|
-|**Python**|Used for the translation module, API development, and database interactions.|
-|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
-|**[FastAPI](https://fastapi.tiangolo.com/)**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/) documentation.|
-|**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
-|**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
-
-#### Main Sequence Diagram
-#### Database Design
-### Integrations & Interfaces
-### Key Architectural Decisions
-### Risks & Limitations
 
 ## Link Liveliness Assessment 
 
@@ -549,7 +511,7 @@ The API has been extended to include the newly tracked metadata fields:
 ## Spatial Metadata Extractor
 
 !!! component-header "Info"
-    **Current version:** 
+    **Current version:** 0.3.0
 
     **Technology:** Python 
 
@@ -743,26 +705,6 @@ The Spatial Metadata Extractor uses the following database structure in the spat
 - **Abstract And Title Processing:** Extraction may fail on malformed abstracts/titles, with errors logged and processing continuing to the next record.
 - **Database Performance:** Large batch operations may impact database performance; batch size may need tuning based on system capacity.
 
-## Spatial Locator
-
-!!! component-header "Info"
-    **Current version:** TBD
-
-    **Technology:**  TBD
-
-    **Release:** TBD
-
-    **Project repository:** [Spatial Locator](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-locator)
-
-### Overview and Scope
-### Key Features
-### Architecture
-#### Technological Stack
-#### Main Sequence Diagram
-### Integrations & Interfaces
-### Key Architectural Decisions
-### Risks & Limitations
-
 ## Foreseen functionality
 
 In the next iterations, Metadata augmentation component is foreseen to include the following additional functions:
@@ -917,3 +859,25 @@ flowchart TD
     es --> m
     th[(Thesauri)]-- synonyms ---Codelists
 ```
+
+### Translation module
+
+Some records arrive in a local language, SWR will translate the main properties for the record: title and abstract into English, to offer a single language user experience. 
+
+The translation module will build on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). 
+
+The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
+
+Initial translation will be triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
+
+<!-- 
+### Architecture
+#### Technological Stack
+|Technology|Description|
+|----------|-----------|
+|**Python**|Used for the translation module, API development, and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing and managing information.|
+|**[FastAPI](https://fastapi.tiangolo.com/)**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/) documentation.|
+|**Docker**|Used for containerizing the application, ensuring consistent deployment across environments.|
+|**CI/CD**|Automated pipeline for continuous integration and deployment, with scheduled dayly runs.|
+-->
