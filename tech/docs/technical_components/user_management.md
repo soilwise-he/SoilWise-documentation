@@ -1,12 +1,11 @@
 # User Management and Access Control
 
-!!! info
 
-    **Identity Provider:** [Keycloak](https://www.keycloak.org/)
+ **Identity Provider:** [Keycloak](https://www.keycloak.org/)
 
-    **Access point:** `id.soilwise.wetransform.eu`
+ **Access point:** `id.soilwise.wetransform.eu`
 
-    **Admin console:** `id-admin.soilwise.wetransform.eu`
+ **Admin console:** `id-admin.soilwise.wetransform.eu`
 
 ## Overview
 
