@@ -1,45 +1,78 @@
-# System & Usage Monitoring 
+# System & Usage Monitoring
 
-!!! component-header "Info"
-    **Current version:** 1.0
+!!! info
 
-    **Technology:** Grafana, Hotjar
+    **Current version:** Grafana 12.1.1 / Prometheus v2.55.1 / Prometheus LTS v2.18.1
 
-    **Project repository:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
+    **Project:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
 
-    **Access point:** TBD
+## Introduction
 
-All components and services of the SWR are monitored at different levels to ensure robust operations and security of the system. There will be a central monitoring service for all components that are part of the SWR.
+### Overview and Scope
 
-In particular, monitoring needs to fulfill the following requirements:
+All components and services of the SWC are monitored at different levels to ensure robust operations and security of the system. A central monitoring service based on Prometheus and Grafana is deployed to the SoilWise Kubernetes cluster alongside the SWC services.
 
-- For each node, its general state and resource utilisation (RAM, CPU, Volumes) shall be monitored.
-- For each container, its general state, e.g. resource consumption (RAM, CPU, Volumes, Transfer, Uptime) shall be monitored.
-- For each service, there shall be a health check that can be used to test if the service is responsive and functional, e.g. after a restart.
-- If issues that cannot be recovered from automatically occur or which lead to a longer-term degradation of services, messages shall be sent to the operators via channels such as Slack, PagerDuty, or Jira.
-- The monitoring system shall provide availability statistics.
-- The monitoring system should provide usage statistics.
-- The monitoring system may provide a UI element that can be embedded into other components to make usage transparent.
-- The monitoring system should provide a dashboard to help system operators with understanding the state of the SWR and to debug incidents, including possible security incidents.
-- The monitoring system shall collect warning and error logs to provide guidance for system administrators.
-- The monitoring system shall offer the possibility to filter logged interactions based on the https status code, e.g. to identify 404's or 500's.
+Monitoring covers:
 
-## Technologies
+- Node and container resource utilisation (RAM, CPU, volumes, transfer, uptime)
+- Service health checks (liveness and readiness probes)
+- Operational alerting via Slack and PagerDuty
+- Availability statistics and trend analysis
+- Usage statistics for SWC services and the public website
+- Log aggregation and filtering by HTTP status code to identify errors (4xx, 5xx)
 
-- Grafana
-- Portainer
-- Prometheus
+## Architecture
 
-## External integrations
+### System Health Monitoring
 
-- Jira, Slack, PagerDuty
+Infrastructure and application monitoring is implemented using a Prometheus + Grafana stack.
 
-## Usage statistics monitoring
+**Prometheus** (v2.55.1) scrapes metrics from all services, the Kubernetes cluster, and host nodes via Node Exporter (v1.9.1) and kube-state-metrics. A second **Prometheus LTS** instance (v2.18.1) retains metrics for longer periods (currently configured at 4 GB / ~30 days) to support trend analysis and availability reporting.
 
-The Soilwise website is using Google Analytics, which uses the first approach.
+**Grafana** (v12.1.1) provides the dashboarding layer. User sign-up is disabled, dashboards are provisioned via code (no UI edits), and the admin password is stored in vault. 67 dashboards are provisioned covering:
 
-The SWR catalogue does currently not includes a counter script. The usage can be monitored via the usage logs, which are indexed in an instance of [splunk](https://www.splunk.com/), which provides dashboards on the underlying data.
+- Kubernetes cluster health (nodes, volumes, autoscaler)
+- Service performance and request metrics (OWS, nginx, Java/Vert.x services)
+- Container and pod resource consumption
+- Log analysis via Loki (HTTP status codes, error rates, OWS access patterns)
+- AWS infrastructure (billing, EFS, S3, ELB)
+- Long-term OWS availability statistics
 
-## Future work
+**Alertmanager** (v0.28.1) is configured with Slack notifications for operational alerts. PagerDuty integration is available for critical environments.
 
-Feedback the popularity of resources from usage logs into the catalogue search ranking algorithm.
+**Loki** (v3.4.1) with Promtail (v3.0.0) handles log aggregation. It is enabled optionally per environment and feeds structured log dashboards in Grafana, including filtering by HTTP status code to identify 4xx/5xx errors.
+
+### Usage Monitoring
+
+Usage of the SWC services is tracked at two levels:
+
+**Infrastructure-level usage** is captured through nginx access logs, which record per-request timing, upstream response times, HTTP status codes, and user agent information. These logs are ingested into Loki and visualised in Grafana through dedicated OWS log analysis dashboards. Detailed per-publication, per-service-type OWS metrics are enabled for the SoilWise deployment (`nginx_detailed_ows: true`).
+
+**Website-level usage** of the SoilWise public website is tracked via [Hotjar](https://www.hotjar.com/) and Google Analytics. These are managed separately from the infrastructure monitoring stack and are configured at the website/CMS level.
+
+The hale-connect platform includes built-in usage reporting features (CSV usage reports per organisation, WMS/WFS usage statistics) that can be enabled as feature toggles.
+
+## Technological Stack
+
+| Component | Version | Purpose |
+|---|---|---|
+| Grafana | 12.1.1 | Dashboards and visualisation |
+| Prometheus | v2.55.1 | Metrics collection |
+| Prometheus LTS | v2.18.1 | Long-term metric retention (~30 days) |
+| Alertmanager | v0.28.1 | Alert routing (Slack, PagerDuty) |
+| Loki | 3.4.1 | Log aggregation |
+| Promtail | 3.0.0 | Log shipping |
+| Node Exporter | v1.9.1 | Host metrics |
+| kube-state-metrics | — | Kubernetes cluster metrics |
+| Hotjar | — | Website usage analytics (frontend) |
+| Google Analytics | — | Website traffic statistics (frontend) |
+
+Grafana data sources configured: Prometheus (default), Prometheus LTS, Loki, CloudWatch.
+
+## Integrations & Interfaces
+
+- **Slack** — Operational alerts via Alertmanager (configured for the SoilWise setup)
+- **PagerDuty** — Critical alerts (available, optional per environment)
+- **Loki** — Structured log queries accessible from Grafana dashboards
+- **nginx** — Access logs feed into Loki for OWS log analysis and HTTP status code filtering
+- **Kubernetes** — Liveness probes configured on service deployments (e.g. Solr API) for automated health checking; resource limits/requests (CPU, memory) defined per deployment feed into cluster-level monitoring
