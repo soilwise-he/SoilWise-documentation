@@ -11,7 +11,7 @@
 
 ## Overview and Scope
 
-The component harmonizes the content as imported by the [Harvester and Harmonization component](./ingestion.md).
+The component harmonizes the content as imported by the [Harvester component](./ingestion.md).
 A database is populated with the harmonised metadata content.
 
 ## Key Features
