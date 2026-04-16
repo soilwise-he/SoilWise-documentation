@@ -1,5 +1,14 @@
 # Metadata harmonisation
 
+!!! component-header "Info"
+    **Current version:** 0.1.0
+
+    **Technology:** Python
+
+    **Release:** 0.1.0
+
+    **Project repository:** [md-harmonization](https://github.com/soilwise-he/md-harmonization)
+
 ## Overview and Scope
 
 The component harmonizes the content as imported by the [Harvester and Harmonization component](./ingestion.md).
