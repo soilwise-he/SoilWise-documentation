@@ -1,4 +1,4 @@
-#  Harvester & Harmonization
+#  Harvester 
 
 !!! component-header "Info"
     **Current version:** 0.2.0
@@ -160,44 +160,6 @@ The [ESDAC catalogue](https://esdac.jrc.ec.europa.eu/) is an instance of Drupal 
 
 From the project websites mentioned at <https://mission-soil-platform.ec.europa.eu/project-hub/funded-projects-under-mission-soil> a harvester algorythm fetches the contents of the RSS feed, if the website provides one. The harvested entries are stored on a database.
 
-### Metadata Harmonization
-
-Once stored in the harvest sources database, a second process is triggered which harmonizes the sources to the desired metadata profile. These processes are split by design, to prevent that any failure in metadata processing would require to fetch remote content again.
-
-Table below indicates the various source models supported
-
-| source | platform |
-| --- | --- |
-| Dublin Core | Cordis |
-| Extended Dublin core | ESDAC |
-| Datacite | OpenAire, Zenodo, DOI |
-| ISO19115:2005 | Bonares, INSPIRE |
-
-Metadata is harmonised to a [DCAT](https://www.w3.org/TR/vocab-dcat-3/) RDF representation.
-
-For metadata harmonization some supporting modules are used, [OWSlib](https://owslib.readthedocs.io/en/latest/) is a module to parse various source metadata models, including iso19139:2007. A transformation script from [semic-eu/iso19139-to-dcat-ap.xslt](https://github.com/semic-eu/iso19139-to-dcat-ap/) in combination with lxml and rdflib is used to convert iso19139:2007 metadata to RDF, serialised as turtle.
-
-Harmonised metadata is either transformed to iso19139:2007 or Dublin Core and then ingested by the pycsw software, used to power the [SoilWise Catalogue](catalogue.md), using an automated process running at intervals. At this moment the pycsw catalogue software requires a dedicated database structure. This step converts the harmonised metadata database to that model. In next iterations we aim to remove this step and enable the catalogue to query the harmnised model directly.
-
-#### Metadata Augmentation
-
-The metadata augmentation processes are described [elsewhere](metadata_augmentation.md), what is relevant here is that the output of these processes is integrated in the harmonised metadata database.
-
-### Metadata RDF turtle serialization
-
-The harmonised metadata model is based on the DCAT ontology. In this step the content of the database is written to RDF.
-
-Harmonized metadata is transformed to RDF in preparation of being loaded into the triple store (see also [Knowledge Graph](./knowledge_graph.md)).
-
-### RDF to Triple store
-
-This is a component which on request can dump the content of the harmonised database as an RDF quad store. This service is requested at intervals by the triple store component. In a next iteration we aim to push the content to the triple store at intervals.
-
-### Duplication indentification
-
-A resource can be described in multiple Catalogues, identified by a common identifier. Each of the harvested instances may contain duplicate, alternative or conflicting statements about the resource. SoilWise aims to persist a copy of the harvested content (also to identify if the remote source has changed). For this iteration we store the first copy, and capture on what other platforms the record has been discovered. OpenAire already has a mechanism to indicate in which platforms a record has been discovered, this information is ingested as part of the harvest. An aim of this exercise is also to understand in which repositories a certain resource is advertised.
-
-Visualization of source repositories is in the first development iteration available as a dedicated section in the [SoilWise Catalogue](catalogue.md).
 
 ## Architecture
 
