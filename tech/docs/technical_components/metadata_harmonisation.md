@@ -1,4 +1,4 @@
-# Metadata harmonisation
+# Metadata Harmonisation
 
 !!! component-header "Info"
     **Current version:** 0.1.0
@@ -11,12 +11,12 @@
 
 ## Overview and Scope
 
-The component harmonizes the content as imported by the [Harvester component](./ingestion.md).
+The component harmonises the content as imported by the [Harvester component](./ingestion.md).
 A database is populated with the harmonised metadata content.
 
 ## Key Features
 
-- harmonizes metadata to a common model
+- harmonises metadata to a common model
 - merges multiple instances of a record to a single entity
 
 ## Architecture
@@ -28,8 +28,8 @@ can be viewed from the container logs (in grafana).
 Container is build at commits in a Github build pipeline and placed in Github container registry.
 The repository contains a set of unit tests which run when the container builds.
 
-The core of the module is the [pygeometa library](https://github.com/geopython/pygeometa), which offers harmonization for a number of metadata models.
-The harmonized metadata is stored in the pygeometa [MCF model](https://geopython.github.io/pygeometa/reference/mcf/). From the MCF model, relevant 
+The core of the module is the [pygeometa library](https://github.com/geopython/pygeometa), which offers harmonisation for a number of metadata models.
+The harmonsed metadata is stored in the pygeometa [MCF model](https://geopython.github.io/pygeometa/reference/mcf/). From the MCF model, relevant 
 properties are exported to a relational database model.
 
 | Supported schemas | 
@@ -45,7 +45,7 @@ properties are exported to a relational database model.
 
 ## Integrations & Interfaces
 
-Read and write access to the PostGres database.
+Read and write access to the PostgreSQL database.
 
 ## Key Architectural Decisions
 

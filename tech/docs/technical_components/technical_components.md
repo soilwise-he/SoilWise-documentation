@@ -6,17 +6,18 @@ The presented architecture represents an outlook and a framework for ongoing Soi
 
 This section lists technical components for building the SoilWise Catalogue as forseen in the architecture design:
 
-1. [Harvester & Harmonization](ingestion.md)
-2. [Repository Storage](storage.md)
-3. [SoilWise Finder](catalogue.md)
-4. [Soil Companion (Chatbot)](soil_companion.md)
-5. [Data publication support](data_publication_support.md)
-6. [Metadata Validation](metadata_validation.md)
-7. [Metadata Augmentation](metadata_augmentation.md)
-8. [Knowledge Graph](knowledge_graph.md)
-9. [Data & Knowledge Administration Console](admin_console.md)
-10. [User Management and Access Control](user_management.md)
-11. [System & Usage Monitoring](monitoring.md)
+1. [Harvester](ingestion.md)
+2. [Metadata Harmonisation](metada_harmonisation.md)
+3. [Repository Storage](storage.md)
+4. [SoilWise Finder](catalogue.md)
+5. [Soil Companion (Chatbot)](soil_companion.md)
+6. [Data publication support](data_publication_support.md)
+7. [Metadata Validation](metadata_validation.md)
+8. [Metadata Augmentation](metadata_augmentation.md)
+9. [Knowledge Graph](knowledge_graph.md)
+10. [Data & Knowledge Administration Console](admin_console.md)
+11. [User Management and Access Control](user_management.md)
+12. [System & Usage Monitoring](monitoring.md)
 
 ![SWR Architecture](../_assets/images/High-level overview.png)
 _Fig. 1: A high-level overview of SoilWise Catalogue architecture_

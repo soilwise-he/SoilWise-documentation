@@ -296,7 +296,7 @@ The Soilwise database builds upon—and updates—the work carried out around IN
 
 2. **Standardized Conceptual Mapping:** Translates the INSPIRE Soil conceptual model (UML) into a functional relational schema, mapping features like SoilSite, SoilPlot, SoilProfile, and ProfileElement into dedicated database tables.
 
-3. **Semantic Harmonization & Interoperability:** Uses reference tables to manage controlled vocabularies and code-lists (keeping URI, notation, label, authority, and version), ensuring that data is functionally interoperable and semantically harmonized.
+3. **Semantic Harmonisation & Interoperability:** Uses reference tables to manage controlled vocabularies and code-lists (keeping URI, notation, label, authority, and version), ensuring that data is functionally interoperable and semantically harmonised.
 
 4. **Relational Integrity Management:** Enforces data relationships using foreign keys and link tables, and manages cascade behaviors to automatically handle the consequences of data updates or deletions across linked parent/child tables.
 
@@ -341,7 +341,7 @@ Complete the following steps to set up soil data transformation, validation and 
 To create metadata (data set and service metadata), activate the corresponding button(s) when setting up the theme for the transformation process.
 
 <!-- HERE'S FOR REFERENCE, THE PREVIOUS CONTENT
-## Transformation and Harmonization
+## Transformation and Harmonisation
 
 ### Overview and Scope
 These components make sure that data is interoperable, i.e. provided to agreed-upon formats, structures and semantics. They are used to ingest data and transform it into common standard data, e.g. in the central SWR format for soil.

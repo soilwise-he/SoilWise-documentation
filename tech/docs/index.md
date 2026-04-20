@@ -31,9 +31,10 @@ A full list of terms used within this Technical Documentation can be found in th
 |Date|Action|
 |----|-----------|
 |30. 4. 2026|**v3.0 Released:** For _D2.3 Developed & Integrated DM components, v3 D3.3 Developed & Integrated KM components, v3_ and _D4.3 Repository infrastructure, components and APIs, v3_ purposes|
+|20. 4. 2026|Separate chapter for Metadata harmonisation added|
 |17. 4. 2026|Infrastructure, interfaces updated|
 |16. 4. 2026|User Management and Access Control, System & Usage Monitoring updated|
-|16. 4. 2026|Harvester & Harmonization updated|
+|16. 4. 2026|Harvester updated|
 |13. 4. 2026|SoilWise Metadata Catalogue updated and renamed to SoilWise Finder|
 |13. 4. 2026|Metadata augmentation - Spatial Metadata Extractor added, Link Liveliness Assessment updated|
 |3. 4. 2026|Knowledge graph, SoilVoc updated|

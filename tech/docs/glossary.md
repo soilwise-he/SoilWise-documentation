@@ -123,7 +123,7 @@ documentation:GLOSIS Codelists
 :   [GLOSIS Codelists](https://github.com/rapw3k/glosis/blob/master/glosis_cl.ttl) is a series of codelists supporting the GLOSIS web ontology. Including the codelists as published in the FAO Guidelines for Soil Description (v2007), soil properties as collected by FAO GfSD and procedures.
 
 documentation:Glosolan
-:   [Glosolan](https://www.fao.org/global-soil-partnership/glosolan) network to strengthen the capacity of laboratories in soil analysis and to respond to the need for harmonizing soil analytical data
+:   [Glosolan](https://www.fao.org/global-soil-partnership/glosolan) network to strengthen the capacity of laboratories in soil analysis and to respond to the need for harmonising soil analytical data
 
 documentation:Green Deal
 :   A program of the European commission setting out a plan to transform Europe’s economy, energy, transport, and industries for a more sustainable future (source: [EC](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en)). 
@@ -134,8 +134,8 @@ documentation:Green Deal DataSpace (GDDS)
 documentation:Humboldt Alignment Editor (HALE)
 :   [Humboldt Alignment Editor](https://github.com/halestudio/hale) (HALE) java based desktop software to compose and apply a data transformation to data
 
-documentation:Harmonization
-:   Harmonization is the process of transforming two datasets to a common model, a common projection, usage of common domain values and align their geometries
+documentation:Harmonisation
+:   Harmonisation is the process of transforming two datasets to a common model, a common projection, usage of common domain values and align their geometries
 
 documentation:Information retreival
 :   Information retreival (IR) is the task of identifying and retrieving information system resources (e.g. digital objects or metadata records) that are relevant to a search query. It includes searching for the information in a document, searching for the documents themselves, as well as searching for metadata describing the documents.

@@ -105,7 +105,6 @@ Both for metadata models, identification, as well as access protocols. This will
 The Harvester component currently comprises of the following functions:
 
 - [Harvest records from metadata and knowledge resources](#harvest-records-from-metadata-and-knowledge-resources)
-- [Metadata Harmonization](#metadata-harmonization)
 - [Metadata RDF Turtle Serialization](#metadata-rdf-turtle-serialization)
 - [RDF to Triple Store](#rdf-to-triple-store)
 - [Duplication Identification](#duplication-indentification)
@@ -172,7 +171,7 @@ From the project websites mentioned at <https://mission-soil-platform.ec.europa.
 ### Main Sequence Diagram
 
 Each harvester runs in a dedicated container. The result of the harvester is ingested into a (temporary) storage.
-Follow up processes (harmonization, augmentation, validation) pick up the results from the temporary storage. 
+Follow up processes (harmonisation, augmentation, validation) pick up the results from the temporary storage. 
 
 ``` mermaid
 flowchart LR

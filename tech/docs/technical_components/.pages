@@ -3,6 +3,7 @@ order_by: title
 nav:
     - technical_components.md
     - ingestion.md
+    - metadata_harmonisation.md
     - storage.md
     - catalogue.md
     - soil_companion.md
