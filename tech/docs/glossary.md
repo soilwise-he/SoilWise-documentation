@@ -105,7 +105,7 @@ documentation:Geography Markup Language (GML)
 :   [Geography Markup Language](https://www.ogc.org/standards/gml/) is a standardised encoding for spatial data.
 
 documentation:GeoPackage
-:   [GeoPackage](https://www.ogc.org/standard/geopackage/) a set of conventions for storing spatial data a [SQLite](https://www.sqlite.org/) database
+:   [GeoPackage](https://www.ogc.org/standard/geopackage/) a single [SQLite](https://www.sqlite.org/) database file that can hold different kinds of geographic information in a compact, portable way. 
 
 documentation:Geoserver
 :   [Geoserver](https://geoserver.org) java based software package providing access to remote data through OGC services

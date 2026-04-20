@@ -275,7 +275,7 @@ graph TB
 
     **Technology:** SQLite container
 
-    **Release:** TBD
+    **Release:** <https://zenodo.org/records/19465867>
 
     **Project repository:** [Geopackage-so](https://github.com/soilwise-he/Geopackage-so)
 
