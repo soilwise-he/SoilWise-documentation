@@ -1,11 +1,11 @@
 # User Management and Access Control
 
+!!! component-header "Info"
+    **Identity Provider:** [Keycloak](https://www.keycloak.org/)
 
- **Identity Provider:** [Keycloak](https://www.keycloak.org/)
+    **Access point:** <https://wwww.id.soilwise.wetransform.eu>
 
- **Access point:** `id.soilwise.wetransform.eu`
-
- **Admin console:** `id-admin.soilwise.wetransform.eu`
+    **Admin console:** <https://wwww.id-admin.soilwise.wetransform.eu>
 
 ## Overview
 

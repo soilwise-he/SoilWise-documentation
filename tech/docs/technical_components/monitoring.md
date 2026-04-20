@@ -1,10 +1,12 @@
 # System & Usage Monitoring
 
-!!! info
+!!! component-header "Info"
 
-    **Current version:** Grafana 12.1.1 / Prometheus v2.55.1 / Prometheus LTS v2.18.1
+    **Current version & Technology:** Grafana 12.1.1 / Prometheus v2.55.1 / Prometheus LTS v2.18.1
 
-    **Project:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
+    **Project repository:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
+
+    **Access point:** <https://wwww.id.soilwise.wetransform.eu>
 
 ## Introduction
 
