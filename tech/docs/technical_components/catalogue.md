@@ -134,9 +134,9 @@ flowchart LR
 | **Usability** | The diversity of user groups and their requirements and expectations make it difficult to find balance between functionality/complexity/user-friendliness. | Iterative appraoch and validation/testing with user groups to align. |
 
 
-<!-- HERE'S FOR REFERENCE, SOME PREVIOUS CONTENT . might be useful for later integration
+## Integrations & Interfaces
 
-
+[Pycsw](https://pycsw.org/) is still used to provide standardised APIs for catalogue harvesting and filtering.
 
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
@@ -145,9 +145,3 @@ flowchart LR
 |**Protocol for metadata harvesting (OAI-PMH)**||<https://repository.soilwise-he.eu/cat/oaipmh>|The open archives initiative has defined a common protocol for metadata harvesting (oai-pmh), which is adopted by many catalogue solutions, such as Zenodo, OpenAire, CKAN. The oai-pmh endpoint of Soilwise can be harvested by these repositories.|
 |**Spatio Temporal Asset Catalog (STAC)**|| <https://repository.soilwise-he.eu/cat/stac/openapi>||
 |**OpenSearch**|| <https://repository.soilwise-he.eu/cat/opensearch> ||
-
-
-
--->
-
-
