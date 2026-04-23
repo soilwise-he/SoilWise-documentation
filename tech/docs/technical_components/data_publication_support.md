@@ -9,6 +9,7 @@ The design of these components reflects an understanding of the practical limits
 
 At the moment, SoilWise supports data publishers with the following tools:
 
+- [DOI Resolution Widget](#doi-resolution-widget)
 - [Tabular Soil Data Annotation](#tabular-soil-data-annotation) to help users create semantic metadata for tabular datasets.
 - [SoilWise Geopackage Transformation](#soilwise-geopackage)
 - [Soil Vocabulary Browser](../knowledge_graph/#soilvoc), part of the Knowledge Graph component, visualizes and links different soil-domain vocabularies and terms.
@@ -17,6 +18,30 @@ At the moment, SoilWise supports data publishers with the following tools:
 
 The Data Publication Support tools and documentation are designed for the following user groups:
 - **Soil Data Providers & Stewards** publishing soil data in line with FAIR principles, annotating datasets with metadata in the repositories, and supporting the findability of their resources through SoilWise. 
+
+## DOI Resolution Widget
+
+!!! component-header "Info"
+
+    **Current version:** TBD
+
+    **Technology:** TBD
+
+    **Release:** TBD
+
+    **Project repository:** TBD
+
+    **Access Point:** TBD
+
+### Overview and Scope
+### Key Features
+### Architecture
+#### Technological Stack
+#### Main Sequence Diagram
+### Integrations & Interfaces
+### Key Architectural Decisions
+### Risks & Limitations
+
 
 ## Tabular Soil Data Annotation
 
