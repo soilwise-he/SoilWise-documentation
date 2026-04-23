@@ -73,7 +73,6 @@ Although dedicated vector stores are available, SoilWise foresees the use of the
 |**[Apache Lucene](https://lucene.apache.org/) v9.11.1**| Apache Lucene is a open source high-performance Java-based search engine library.|
 |**[Apache Solr](https://solr.apache.org/) v9.7.0**| Open source full text, vector and geo-spatial search framework on top of the Apache Lucene Index.|
 |**[Java SE](https://www.oracle.com/java/technologies/java-se-glance.html) v17**| Programming language / set of libraries for enterprise software development used to implement the metadata to Solr conversion and interfacing layer between Solr and the UI |
-|**[OpenStreetMap API]()**| TBD - is this still the case? |
 
 **Frontend**
 
@@ -129,7 +128,7 @@ flowchart LR
 | Risk / Limitation | Description | Mitigation |
 |-------------------|-------------|------------|
 | **Transferability** | The differences in technology stack between the SoilWise implementing consortium and the final owner (JRC) might lead to transferability and integration issues | Use of broadly adopted open source products. Alignment with JRC technical team |
-| **Metadata quality** | The performance of the search functionality is highly dependent on the completeness and quality of the harvested metadata which is out of scope for SoilWise. | The Soil Mission will define guidelines for metadata creation. Metadata augmnentation will allow to partly mitigate. |
+| **Metadata quality** | The performance of the search functionality is highly dependent on the completeness and quality of the harvested metadata which is out of scope for SoilWise. | The Soil Mission will define guidelines for metadata creation. Metadata augmentation will allow to partly mitigate. |
 | **Transparency and explainability** | The dependency on metadata completeness and quality in combination with the large amount of interdependent options for (fuzzy) search strategies and the different combinations of UI search features will make it hard to understand the logic behind search results. | Documentation of metadata augmentation, search strategies etc. |
 | **Usability** | The diversity of user groups and their requirements and expectations make it difficult to find balance between functionality/complexity/user-friendliness. | Iterative appraoch and validation/testing with user groups to align. |
 

@@ -385,8 +385,8 @@ Additionally, the tool enhances link analysis by identifying various metadata at
 3.	**Deprecated links identification:** Flags links as deprecated if they have failed for X consecutive tests, in our case X equals to 10. Deprecated links are excluded from future tests to optimize performance. 
 4.	**Timeout management:** Allows the identification of URLs that exceed a timeout threshold which can be set manually as a parameter in linkchecker's properties. 
 5.	**Availability monitoring:** When run periodically, the tool builds a history of availability for each URL, enabling users to view the status of links over time. 
-6.	OWS services (WMS, WFS, WCS, CSW) typically return a HTTP 500 error when called without the necessary parameters. A handling for these services has been applied in order to detect and include the necessary parameters before being checked.
-7. **On demand URL validation** Enables real-time checking of individual URLs without storing results in the database. Returns immediate feedback including status, content metadata, redirect information and diagnostic messages explaining link issues. Particularly useful for pre-validating links before processing in other tools, avoiding unnecessary operations on broken URLs. Utilized in [Spatial Metadata Extractor](#spatial-metadata-extractor) to skip processing broken URLs
+6.	OWS services (WMS, WFS, WCS, CSW) typically return a `HTTP 500 error` when called without the necessary parameters. A handling for these services has been applied in order to detect and include the necessary parameters before being checked.
+7. **On demand URL validation** Enables real-time checking of individual URLs without storing results in the database. Returns immediate feedback including status, content metadata, redirect information and diagnostic messages explaining link issues. Particularly useful for pre-validating links before processing in other tools, avoiding unnecessary operations on broken URLs. Utilized in [Spatial Metadata Extractor](#spatial-metadata-extractor) to skip processing broken URLs.
 
 A javascript widget is further used to display the link status directly in the SoilWise [SoilWise Finder](catalogue.md) record.
 
@@ -505,8 +505,6 @@ The API has been extended to include the newly tracked metadata fields:
 **New Endpoint:**
 - POST **/check-url**: On-demand URL validation endpoint that accepts a URL and optional check_ogc_capabilities parameter.
   Returns real-time validation results without database storage, including diagnostic messages to help users understand link issues.
-
-### Risks & Limitations
 
 ## Spatial Metadata Extractor
 
@@ -690,7 +688,6 @@ The Spatial Metadata Extractor uses the following database structure in the spat
     | **Raster** | `type` `driver` `width` `height` `band_count` `bbox` `pixel_size` `projection` `bands` |
     | **OGC service** | `service_type` `layer_name` `layer_all` `title` `abstract` `bbox` `crs` |
 
-### Integrations & Interfaces
 ### Key Architectural Decisions
 
 - **Batch Processing:** Records are processed in batches to balance memory usage and database load. Unprocessed records are identified via a LEFT JOIN against the augment_status table.
@@ -831,7 +828,7 @@ The EUSO soil degradation indicators employ specific [methodologies and threshol
   </tr>
 </table>
 
-Technically, we forsee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific **values from the Soil Indicator and Soil Degradation Codelists**, such as `Water erosion` or `Soil erosion` (see the Table above). If found, the `Soil Degradation Indicator Tag` (corresponding value from the Soil Degradation Codelist) will be displayed to indicate suitability of given dataset for soil indicator related analyses. Additionally, a search for corresponding **methodology** will be conducted to see if the dataset is compliant with the EUSO Soil Health indicators presented in the [EUSO Dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/). If found, the tag `EUSO High-value dataset` will be added. In later phase we assume search for references to Scientific Methodology papers in metadata record's links. Next, the possibility of involving a more complex search using soil thesauri will also be explored.
+Technically, we foresee the metadata tagging process as illustrated below. At first, metadata record's title, abstract and keywords will be checked for the occurence of specific **values from the Soil Indicator and Soil Degradation Codelists**, such as `Water erosion` or `Soil erosion` (see the Table above). If found, the `Soil Degradation Indicator Tag` (corresponding value from the Soil Degradation Codelist) will be displayed to indicate suitability of given dataset for soil indicator related analyses. Additionally, a search for corresponding **methodology** will be conducted to see if the dataset is compliant with the EUSO Soil Health indicators presented in the [EUSO Dashboard](https://esdac.jrc.ec.europa.eu/esdacviewer/euso-dashboard/). If found, the tag `EUSO High-value dataset` will be added. In later phase we assume search for references to Scientific Methodology papers in metadata record's links. Next, the possibility of involving a more complex search using soil thesauri will also be explored.
 
 
 ``` mermaid
