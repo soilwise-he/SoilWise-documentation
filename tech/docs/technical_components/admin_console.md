@@ -1,13 +1,13 @@
 # Data and Knowledge Administration Console
 
 !!! component-header "Info"
-    **Current version:** 1.0.1
+    **Current version:** 1.0.2
 
     **Technology:** Apache Superset
 
     **Project repository:** [SoilWise Superset](https://github.com/soilwise-he/soilwise-superset)
 
-    **Release:** TBD
+    **Release:** <https://doi.org/10.5281/zenodo.19567030>
 
     **Access point:** <https://superset.soilwise.wetransform.eu/superset/dashboard/p/P52OgRVBGo9/>
 

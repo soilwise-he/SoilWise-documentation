@@ -5,7 +5,7 @@
 
     **Technology:** Python
 
-    **Release:** 0.1.0
+    **Release:** <https://doi.org/10.5281/zenodo.19692781>
 
     **Project repository:** [md-harmonization](https://github.com/soilwise-he/md-harmonization)
 

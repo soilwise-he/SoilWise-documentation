@@ -5,7 +5,7 @@
 
     **Technology:** [Apache Solr](https://solr.apache.org/), [React](https://react.dev/, Java SE)
 
-    **Release:** TBD
+    **Release:** <https://doi.org/10.5281/zenodo.19691525>
 
     **Project repository:** [Catalogue UI](https://github.com/soilwise-he/SoilWiseFinder)
 

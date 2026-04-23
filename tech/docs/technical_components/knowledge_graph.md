@@ -6,7 +6,7 @@
 
     **Technology:** [RDF](https://www.w3.org/RDF/)
 
-    **Release:** <https://doi.org/10.5281/zenodo.14936019>
+    **Release:** <https://doi.org/10.5281/zenodo.15596414>
    
     **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
    

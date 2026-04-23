@@ -10,7 +10,7 @@ The design of these components reflects an understanding of the practical limits
 At the moment, SoilWise supports data publishers with the following tools:
 
 - [Tabular Soil Data Annotation](#tabular-soil-data-annotation) to help users create semantic metadata for tabular datasets.
-- [INSPIRE Geopackage Transformation](#inspire-geopackage-transformation)
+- [SoilWise Geopackage Transformation](#soilwise-geopackage)
 - [Soil Vocabulary Browser](../knowledge_graph/#soilvoc), part of the Knowledge Graph component, visualizes and links different soil-domain vocabularies and terms.
 
 ## Intended Audience
@@ -22,11 +22,11 @@ The Data Publication Support tools and documentation are designed for the follow
 
 !!! component-header "Info"
 
-    **Current version:** TBD
+    **Current version:** 1.0.1
 
     **Technology:** [Streamlit](https://streamlit.io/), Python, [OpenAI API](https://openai.com/)
 
-    **Release:** TBD
+    **Release:** <https://doi.org/10.5281/zenodo.19569572>
 
     **Project repository:** [Tabular Data Annotator](https://github.com/soilwise-he/TabularDataAnnotator-streamlit)
 

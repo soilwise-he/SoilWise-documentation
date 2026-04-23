@@ -103,7 +103,7 @@ Git is an acknowledged platform to store, version, configure and document softwa
 
 | Decision | Rationale |
 |----------|-----------|
-| **RDF/Triple Store for semantics** | Allows definition of advanced semantic structures and cross-domain interlnkage. Allows semantic reasoning, both internal and by external clients |
+| **RDF/Triple Store for semantics** | Allows definition of advanced semantic structures and cross-domain interlinkage. Allows semantic reasoning, both internal and by external clients |
 
 ## Risks & Limitations
 
