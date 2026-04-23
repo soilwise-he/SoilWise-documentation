@@ -35,7 +35,7 @@ The Data Publication Support tools and documentation are designed for the follow
 
 ### Overview and Scope
 
-DOI Resolution Widget component is a set of APIs facilitating verification of existence of a specific DOI inside SoilWise Catalogue, or suggesting a new DOI to be harvested. A simple user interface for these APIs is implemented as a part of the [SoilWise Catalogue homepage](https://soilwise-he.eu/repository/).
+DOI Resolution Widget component is a set of APIs facilitating verification of existence of a specific DOI inside SoilWise Catalogue, or suggesting a new DOI to be harvested. A simple user interface for DOI validation API is implemented as a part of the [SoilWise Catalogue homepage](https://soilwise-he.eu/repository/). User interface for DOI suggestion is foreseen.
 
 ### Key Features
 
