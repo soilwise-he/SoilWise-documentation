@@ -48,7 +48,7 @@ The Postgres database serves as a the destination and/or source for many of the 
 
     **Technology:** Virtuoso
 
-    **Access point:** Triple Store (SWR SPARQL endpoint) <https://repository.soilwise-he.eu/sparql>
+    **Access point:** Triple Store (SWR SPARQL endpoint) <https://sparql.soilwise.wetransform.eu/sparql>
 
 A Triple Store is implemented as part of the SWR infrastructure to allow a more flexible linkage between the knowledge captured as metadata and various sources of internal and external knowledge sources, particularly taxonomies, vocabularies and ontologies that are implemented as RDF graphs. Results of the harvesting and metadata augmentation that are stored in the RDBMS are converted to RDF and stored in the Triple Store. 
 
@@ -68,7 +68,7 @@ A Triple Store, implemented in Virtuoso, is integrated for parallel storage of m
 
     **Technology:** Apache Lucene
 
-    **Access point:** Via the Apache Solr API 
+    **Access point:** <https://solr.soilwise.wetransform.eu/>
 
 The SoilWise Catalogue uses a dedicated index (Apache Lucene) to efficiently index and store the harvested and augmented metadata, as well as the knowledge extracted from documents referred to through the metadata records (currently only supporting PDF format). Access to the index (both indexing and querying) is provided through the Apache Solr search framework.
 

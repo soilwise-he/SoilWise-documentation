@@ -9,7 +9,7 @@
 
     **Project repository:** [Catalogue UI](https://github.com/soilwise-he/SoilWiseFinder)
 
-    **Access point:** <https://www.soilwise.wetransform.eu/search>
+    **Access point:** <https://www.catalogue.soilwise-he.eu>
 
 ## Introduction
 

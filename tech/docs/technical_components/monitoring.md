@@ -6,7 +6,7 @@
 
     **Project repository:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
 
-    **Access point:** <https://wwww.id.soilwise.wetransform.eu>
+    **Access point:** <https://grafana.soilwise.wetransform.eu/>
 
 ## Introduction
 
