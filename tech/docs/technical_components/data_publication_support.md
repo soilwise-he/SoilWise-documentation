@@ -25,23 +25,38 @@ The Data Publication Support tools and documentation are designed for the follow
 
     **Current version:** TBD
 
-    **Technology:** TBD
+    **Technology:** Python, [FastAPI](https://fastapi.tiangolo.com/)
 
     **Release:** TBD
 
-    **Project repository:** TBD
+    **Project repository:** [SoilWise Util](https://github.com/soilwise-he/soilwise-util)
 
-    **Access Point:** TBD
+    **Access Point:** <https://soilwise-he.eu/repository/>
 
 ### Overview and Scope
+
+DOI Resolution Widget component is a set of APIs facilitating verification of existence of a specific DOI inside SoilWise Catalogue, or suggesting a new DOI to be harvested. A simple user interface for these APIs is implemented as a part of the [SoilWise Catalogue homepage](https://soilwise-he.eu/repository/).
+
 ### Key Features
+
+- `GET /pid/status/{item:path}`
+    - Checks the status and validity of given Persistent identifier (PID) across various platforms (Soilwise Catalogue, OpenAire, DataCite).
+    - Returns a list of status strings (HTML formatted) explaining where the DOI was found and any potential issues (e.g., missing soil-related project tags).
+- `POST /pid/suggest`
+    - Submits a suggestion to add a specific DOI to the Soilwise Catalogue. Validates the DOI upstream before recording the suggestion in the database.
+    - parameters:
+        - `name` (string, required): Submitter's name.
+        - `email` (string, required): Submitter's email address.
+        - `doi` (string, required): The suggested Digital Object Identifier.
+
 ### Architecture
 #### Technological Stack
-#### Main Sequence Diagram
-### Integrations & Interfaces
-### Key Architectural Decisions
-### Risks & Limitations
 
+|Technology|Description|
+|----------|-----------|
+|**Python**|Used for the integration, API development, and database interactions.|
+|**[PostgreSQL](https://www.postgresql.org/)**|Primary database for storing doi suggestions.|
+|**[FastAPI](https://fastapi.tiangolo.com/)**|Employed to create and expose REST API endpoints. Utilizes FastAPI's efficiency and auto-generated [Swagger](https://swagger.io/docs/specification/2-0/what-is-swagger/) documentation.|
 
 ## Tabular Soil Data Annotation
 
@@ -318,7 +333,7 @@ The following components are not a product of SoilWise project, and not an integ
 
 A proven ETL tool optimised for working with complex structured data, such as XML, relational databases, or a wide range of tabular formats. It supports all required procedures for semantic and structural transformation. It can also handle reprojection. While Hale Studio exists as a multi-platform interactive application, its capabilities can be provided through a web service with an OpenAPI.
 
-### User Manual
+#### User Manual
 A comprehensive tutorial video on [soil data harmonisation with hale studio can be found here](https://www.youtube.com/watch?v=U1lxzlUquE8&list=PLoyBfgUelhNOwA_GGkd4hSwDnwNhxGC87&index=3).
 
 **Setting up a transformation process in hale»connect**
