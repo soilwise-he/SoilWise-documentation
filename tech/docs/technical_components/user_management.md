@@ -96,7 +96,7 @@ The [hale connect user service](https://haleconnect.com/swagger/) provides centr
 
 ### EU Login Integration
 
-[EU Login](https://ecas.ec.europa.eu/) (the European Commission's authentication service, formerly ECAS) is planned as a replacement or additional identity provider alongside Keycloak in a future iteration. This would lower the barrier for European public sector users and align with eIDAS-based identity verification. No implementation has been started yet.
+[EU Login](https://ecas.ec.europa.eu/) (the European Commission's authentication service, formerly ECAS) is planned as a replacement or additional identity provider alongside Keycloak in a future iteration. This would lower the barrier for European public sector users and align with eIDAS-based identity verification. Implementation scope and SoilWise role in this process is under discussions with the JRC.
 
 ### Further Iteration Goals
 
