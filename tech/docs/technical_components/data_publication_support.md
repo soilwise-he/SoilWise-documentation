@@ -70,7 +70,7 @@ DOI Resolution Widget component is a set of APIs facilitating verification of ex
 
     **Project repository:** [Tabular Data Annotator](https://github.com/soilwise-he/TabularDataAnnotator-streamlit)
 
-    **Access Point:** <https://dataannotator-swr.streamlit.app/>
+    **Access Point:** <https://dataannotator-SWC.streamlit.app/>
 
 ### Overview and Scope
 

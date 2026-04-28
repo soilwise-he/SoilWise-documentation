@@ -10,7 +10,7 @@
    
     **Project repository:** [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
    
-    **Primary access point:** SWR SPARQL endpoint: [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
+    **Primary access point:** SWR SPARQL endpoint: [https://sparql.soilwise.wetransform.eu/sparql](https://sparql.soilwise.wetransform.eu/sparql)
 
 
 ## Introduction
@@ -151,7 +151,7 @@ The integration also supports iterative improvement of the SHKG:
 Depending on your needs (human exploration, application integration, bulk reuse), there are multiple ways to access the SHKG:
 
 1. **SPARQL endpoint (query access)**
-    * [https://repository.soilwise-he.eu/sparql/](https://repository.soilwise-he.eu/sparql/)
+    * [https://sparql.soilwise.wetransform.eu/sparql](https://sparql.soilwise.wetransform.eu/sparql)
 2. **GitHub repository (pipeline + sources + releases)**
     * [https://github.com/soilwise-he/soil-health-knowledge-graph](https://github.com/soilwise-he/soil-health-knowledge-graph)
 3. **Ontology/portal publication (browsing & reuse)**
