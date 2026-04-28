@@ -1,4 +1,4 @@
-# SoilWise Finder (Metadata Catalogue)
+# Metadata Catalogue (SoilWise Finder)
 
 !!! component-header "Info"
     **Current version:** 2.0.0 

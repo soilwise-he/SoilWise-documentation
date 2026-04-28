@@ -232,7 +232,7 @@ Documents from the `data/knowledge/` directory are loaded, split into 500-charac
 | Service | Auth | Endpoint | Purpose |
 |---------|------|----------|---------|
 | **OpenAI API** | Bearer token (`OPENAI_API_KEY`) | via LangChain4j | Chat completion (gpt-4o-mini), reasoning (gpt-4o), embeddings (text-embedding-3-small) |
-| **Solr (SoilWise Finder)** | Basic Auth (`SOLR_USERNAME` / `SOLR_PASSWORD`) | `SOLR_BASE_URL` | Search datasets and publications; full-text content retrieval |
+| **Solr** | Basic Auth (`SOLR_USERNAME` / `SOLR_PASSWORD`) | `SOLR_BASE_URL` | Search datasets and publications; full-text content retrieval |
 | **ISRIC SoilGrids v2.0** | None (public) | `SOILGRIDS_BASE_URL` | Soil property estimates at lat/lon (~250 m resolution) |
 | **SoilWise SPARQL** | None | `VOCAB_SPARQL_ENDPOINT` | SKOS concept hierarchies (broader, narrower, related terms) |
 | **Wikipedia** | None (public) | `WIKIPEDIA_BASE_URL` (per language) | Article search and content retrieval (6 languages) |
