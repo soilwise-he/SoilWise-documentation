@@ -1,11 +1,11 @@
 #  Harvester 
 
 !!! component-header "Info"
-    **Current version:** 0.2.0
+    **Current version:** 0.3.0
 
     **Technology:** Git pipelines
 
-    **Release:** <https://doi.org/10.5281/zenodo.14923563>
+    **Release:** <https://doi.org/10.5281/zenodo.14923562>
 
     **Project repository:** [Harvesters](https://github.com/soilwise-he/harvesters)
 
