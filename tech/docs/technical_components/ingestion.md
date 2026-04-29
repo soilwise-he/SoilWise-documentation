@@ -59,8 +59,6 @@ The Harvester component currently comprises of the following functions:
 - RDF to Triple Store
 - Duplication Identification
 
-Note, the third SoilWise prototype contained **13,989** harvested metadata records (to date 23.4.2026).
-
 ### Resource Types
 
 Metadata for following resource types are foreseen to be harvested:
