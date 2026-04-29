@@ -23,11 +23,11 @@ The Data Publication Support tools and documentation are designed for the follow
 
 !!! component-header "Info"
 
-    **Current version:** TBD
+    **Current version:** 1.2.0
 
     **Technology:** Python, [FastAPI](https://fastapi.tiangolo.com/)
 
-    **Release:** TBD
+    **Release:** <https://doi.org/10.5281/zenodo.19708262>
 
     **Project repository:** [SoilWise Util](https://github.com/soilwise-he/soilwise-util)
 

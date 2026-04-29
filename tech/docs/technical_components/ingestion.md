@@ -1,11 +1,11 @@
 #  Harvester 
 
 !!! component-header "Info"
-    **Current version:** 0.2.0
+    **Current version:** 0.3.0
 
     **Technology:** Git pipelines
 
-    **Release:** <https://doi.org/10.5281/zenodo.14923563>
+    **Release:** <https://doi.org/10.5281/zenodo.14923562>
 
     **Project repository:** [Harvesters](https://github.com/soilwise-he/harvesters)
 
@@ -58,8 +58,6 @@ The Harvester component currently comprises of the following functions:
 - Metadata RDF Turtle Serialization
 - RDF to Triple Store
 - Duplication Identification
-
-Note, the third SoilWise prototype contained **13,989** harvested metadata records (to date 23.4.2026).
 
 ### Resource Types
 

@@ -34,7 +34,7 @@ Metadata Augmentation is a backend component providing outputs, which users can 
 
     **Technology:** Python
 
-    **Release:** <https://zenodo.org/records/14924182>
+    **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
     **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
@@ -230,7 +230,7 @@ classDiagram
 
     **Technology:** Python
 
-    **Release:** <https://zenodo.org/records/14924182>
+    **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
     **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
@@ -513,7 +513,7 @@ The API has been extended to include the newly tracked metadata fields:
 
     **Technology:** Python 
 
-    **Release:** TBD
+    **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
     **Project repository:** [Spatial Metadata Extractor](https://github.com/soilwise-he/metadata-augmentation/tree/spatial-metadata-extractor/spatial-metadata-extractor)
 

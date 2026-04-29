@@ -164,10 +164,12 @@ Depending on your needs (human exploration, application integration, bulk reuse)
 ## SoilVoc
 
 !!! component-header "Info"
-    **Current version:** 0.2.0
+    **Current version:** 0.2.6
 
     **Technology:** [SKOS](https://www.w3.org/2004/02/skos/)
    
+    **Release:** <https://doi.org/10.5281/zenodo.15596414>
+
     **Project repository:** [https://github.com/soilwise-he/soil-vocabs](https://github.com/soilwise-he/soil-vocabs)
    
     **Access point:** [https://w3id.org/eusoilvoc](https://w3id.org/eusoilvoc)

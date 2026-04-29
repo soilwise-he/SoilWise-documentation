@@ -27,7 +27,7 @@ The SWC maintains two Kubernetes environments deployed from a single OpenTofu co
 Both environments use the same container images and OpenTofu modules. Environment-specific configuration (hostnames, secrets, feature flags) is managed through separate `.tfvars` files. State is stored remotely in an S3 backend (`soilwise-tf-state-soilwise-apps`, AWS `eu-central-1`).
 
 <!--
-The hale-connect production environment is hosted separately at `data.soilwise.wetransform.eu`.
+The data-portal production environment is hosted separately at `data.soilwise.wetransform.eu`.
 -->
 
 ## Containerization
@@ -41,8 +41,8 @@ All services run as single-replica Kubernetes deployments. No autoscaling is con
 | Service | Image | Version | Update Strategy |
 |---|---|---|---|
 | PostGIS | `postgis/postgis` | 16-3.5 | Recreate |
-| Virtuoso | `openlink/virtuoso-opensource-7` | 7.2.12 | RollingUpdate |
-| SOLR | `ghcr.io/soilwise-he/soilwise-solr` | 1.0.17 | Recreate |
+| Virtuoso | `openlink/virtuoso-opensource-7` | 07.20.3239 | RollingUpdate |
+| SOLR | `ghcr.io/soilwise-he/soilwise-solr` | 9.7.0 | Recreate |
 | Search API | `ghcr.io/soilwise-he/search-api` | 1.1.71 | Recreate |
 | Search UI | `ghcr.io/soilwise-he/search-ui` | variable (per tfvars) | Recreate |
 | Linky (LLA) | `ghcr.io/soilwise-he/link-liveliness-assessment` | 1.1.6 | RollingUpdate |
@@ -65,13 +65,13 @@ All services run as single-replica Kubernetes deployments. No autoscaling is con
 
 Services without explicit CPU/memory requests rely on Kubernetes namespace defaults. All persistent volumes use the `hcloud-volumes` storage class.
 
-### Components to migrate (*update after migration!*)
+### Components to migrate
 
 The following components are part of the SWC but are deployed and managed outside the k8s-soilwise repository:
 
 | Component | Managed by | Notes |
 |---|---|---|
-| hale-connect (data portal, user-service, kelvin-auth, resources-admin) | weTransform | Separate Kubernetes deployment |
+| data portal (user-service, kelvin-auth, resources-admin) | weTransform | Separate Kubernetes deployment |
 | Monitoring stack (Grafana, Prometheus, Loki) | weTransform | Separate Docker-based stack |
 | pycsw (Catalogue backend) | WUR | Deployed on WUR k8s cluster |
 | Soil Companion | WUR | Deployed on WUR k8s cluster |
@@ -101,7 +101,7 @@ The pipeline uses OpenTofu with the S3 remote backend for state management. Depl
 
 ## Harvest Scheduling
 
-Metadata harvesting is managed through 17 Argo CronWorkflows, all scheduled on Sundays with staggered start times to avoid resource contention. All workflows use the `harvesters:latest` image (see warning above about unpinned tags).
+Metadata harvesting is managed through 17 Argo CronWorkflows, all scheduled on Sundays with staggered start times to avoid resource contention. All workflows use the `harvesters:v0.3.0` image (see warning above about unpinned tags).
 
 Harvester tasks are configured in the k8s-soilwise repository. Separate harvester CI/CD pipelines also run on the WUR GitLab instance for additional sources.
 
