@@ -3,9 +3,9 @@
 !!! component-header "Info"
     **Identity Provider:** [Keycloak](https://www.keycloak.org/)
 
-    **Access point:** <https://wwww.id.soilwise.wetransform.eu>
+    **Access point:** <https://wwww.id.soilwise.wetransform.eu/>
 
-    **Admin console:** <https://wwww.id-admin.soilwise.wetransform.eu>
+    **Admin console:** <https://wwww.id-admin.soilwise.wetransform.eu/>
 
 ## Overview
 
@@ -66,7 +66,7 @@ The Admin Console (resources-admin) at [`data.soilwise.wetransform.eu`](https://
 
 The Soil Companion currently uses a single-user demo authentication mechanism internal to its own service (session-based, via a `/login` endpoint). Integration with the central Keycloak instance is not yet implemented. This is a known limitation and a candidate for a future iteration.
 
-### Other Components (*update after migration!*)
+### Other Components
 
 The following components handle authentication outside of the central Keycloak integration:
 
