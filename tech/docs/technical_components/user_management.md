@@ -3,9 +3,9 @@
 !!! component-header "Info"
     **Identity Provider:** [Keycloak](https://www.keycloak.org/)
 
-    **Access point:** <https://wwww.id.soilwise.wetransform.eu/>
+    **Access point:** <https://id.soilwise.wetransform.eu/>
 
-    **Admin console:** <https://wwww.id-admin.soilwise.wetransform.eu/>
+    **Admin console:** <https://id-admin.soilwise.wetransform.eu/>
 
 ## Overview
 
