@@ -31,7 +31,7 @@ Infrastructure and application monitoring is implemented using a Prometheus + Gr
 
 **Prometheus** (v2.55.1) scrapes metrics from all services, the Kubernetes cluster, and host nodes via Node Exporter (v1.9.1) and kube-state-metrics. A second **Prometheus LTS** instance (v2.18.1) retains metrics for longer periods (currently configured at 4 GB / ~30 days) to support trend analysis and availability reporting.
 
-**Grafana** (v12.1.1) provides the dashboarding layer. User sign-up is disabled, dashboards are provisioned via code (no UI edits), and the admin password is stored in vault. 67 dashboards are provisioned covering:
+**Grafana** (v12.1.1) provides the dashboarding layer. User sign-up is disabled, dashboards are provisioned via code (no UI edits), and the admin password is stored in vault. 29 dashboards are provisioned covering:
 
 - Kubernetes cluster health (nodes, volumes, autoscaler)
 - Service performance and request metrics (OWS, nginx, Java/Vert.x services)
@@ -52,7 +52,7 @@ Usage of the SWC services is tracked at two levels:
 
 **Website-level usage** of the SoilWise public website is tracked via [Hotjar](https://www.hotjar.com/) and Google Analytics. These are managed separately from the infrastructure monitoring stack and are configured at the website/CMS level.
 
-The hale-connect platform includes built-in usage reporting features (CSV usage reports per organisation, WMS/WFS usage statistics) that can be enabled as feature toggles.
+The data-portal platform includes built-in usage reporting features (CSV usage reports per organisation, WMS/WFS usage statistics) that can be enabled as feature toggles.
 
 ## Technological Stack
 
@@ -68,6 +68,7 @@ The hale-connect platform includes built-in usage reporting features (CSV usage 
 | kube-state-metrics | — | Kubernetes cluster metrics |
 | Hotjar | — | Website usage analytics (frontend) |
 | Google Analytics | — | Website traffic statistics (frontend) |
+| nginx | 1.0.2 | monitoring |
 
 Grafana data sources configured: Prometheus (default), Prometheus LTS, Loki, CloudWatch.
 
