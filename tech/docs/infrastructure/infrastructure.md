@@ -24,7 +24,7 @@ The SWC maintains two Kubernetes environments deployed from a single OpenTofu co
 | **Purpose** | Integration testing, development | Live service |
 | **Configuration** | `config/test.tfvars` | `config/prod.tfvars` |
 
-Both environments use the same container images and OpenTofu modules. Environment-specific configuration (hostnames, secrets, feature flags) is managed through separate `.tfvars` files. State is stored remotely in an S3 backend (`soilwise-tf-state-soilwise-apps`, AWS `eu-central-1`).
+Both environments use the same container images and OpenTofu modules. Environment-specific configuration (hostnames, secrets, feature flags) is managed through separate `.tfvars` files. State is stored remotely in an S3 backend.
 
 <!--
 The data-portal production environment is hosted separately at `data.soilwise.wetransform.eu`.
@@ -36,20 +36,18 @@ All SWC components are compiled into container images and deployed to the Kubern
 
 ### Container Inventory
 
-All services run as single-replica Kubernetes deployments. No autoscaling is configured (Keycloak has autoscaling defined but disabled, with a maximum of 4 replicas).
-
-| Service | Image | Version | Update Strategy |
-|---|---|---|---|
-| PostGIS | `postgis/postgis` | 16-3.5 | Recreate |
-| Virtuoso | `openlink/virtuoso-opensource-7` | 07.20.3239 | RollingUpdate |
-| SOLR | `ghcr.io/soilwise-he/soilwise-solr` | 9.7.0 | Recreate |
-| Search API | `ghcr.io/soilwise-he/search-api` | 1.1.71 | Recreate |
-| Search UI | `ghcr.io/soilwise-he/search-ui` | variable (per tfvars) | Recreate |
-| Linky (LLA) | `ghcr.io/soilwise-he/link-liveliness-assessment` | 1.1.6 | RollingUpdate |
-| Harvesters | `ghcr.io/soilwise-he/harvesters` | `latest` (unpinned) | — (CronWorkflow) |
-| Keycloak | `keycloakx` Helm chart | 7.1.9 | Recreate |
-| Superset | variable (`superset_image` per tfvars) | variable | Recreate |
-| Redis (Superset) | `redis` | 7-alpine | Recreate |
+| Service | Image |
+|---|---|
+| PostGIS | `postgis/postgis` |
+| Virtuoso | `openlink/virtuoso-opensource-7` |
+| SOLR | `ghcr.io/soilwise-he/soilwise-solr` |
+| Search API | `ghcr.io/soilwise-he/search-api` |
+| Search UI | `ghcr.io/soilwise-he/search-ui` |
+| Linky (LLA) | `ghcr.io/soilwise-he/link-liveliness-assessment` |
+| Harvesters | `ghcr.io/soilwise-he/harvesters` |
+| Keycloak | `keycloakx` Helm chart |
+| Superset | variable (`superset_image` per tfvars) |
+| Redis (Superset) | `redis` |
 
 ### Resource Sizing
 
@@ -72,19 +70,17 @@ The following components are part of the SWC but are deployed and managed outsid
 | Component | Managed by | Notes |
 |---|---|---|
 | data portal (user-service, kelvin-auth, resources-admin) | weTransform | Separate Kubernetes deployment |
-| Monitoring stack (Grafana, Prometheus, Loki) | weTransform | Separate Docker-based stack |
+| Monitoring stack (Grafana, Prometheus, Loki) | weTransform | Separate setup based on helm charts |
 | pycsw (Catalogue backend) | WUR | Deployed on WUR k8s cluster |
 | Soil Companion | WUR | Deployed on WUR k8s cluster |
 | Knowledge Graph | WUR | Deployed on WUR k8s cluster |
 | Metadata augmentation components | WUR | Deployed on WUR k8s cluster |
-| Harvester CI/CD pipelines | WUR | GitLab runners at WUR |
 | Tabular soil data annotation | DOMG - VL O | Hosted on Streamlit Cloud |
 | Translation service, VocView | Separate repos | Not in k8s-soilwise |
 
 ### Operational Notes
 
-- **Single replica** — All services run with 1 replica. There is no high-availability configuration for any component.
-- **Update strategy** — Most services use `Recreate`, meaning brief downtime occurs during redeployment. Only Linky and Virtuoso use `RollingUpdate` for zero-downtime updates.
+- **Update strategy** — Most services use `Recreate`, meaning brief downtime occurs during redeployment. This is related to that the default storage class volume cannot be mounted to multiple nodes and could otherwise block updates. Only Linky and Virtuoso use `RollingUpdate` for zero-downtime updates.
 - **Health checks** — Kubernetes liveness probes are configured on service deployments (e.g. Solr API) for automated health checking. Resource limits and requests feed into cluster-level monitoring.
 
 ## CI/CD Pipeline
@@ -101,9 +97,11 @@ The pipeline uses OpenTofu with the S3 remote backend for state management. Depl
 
 ## Harvest Scheduling
 
-Metadata harvesting is managed through 17 Argo CronWorkflows, all scheduled on Sundays with staggered start times to avoid resource contention. All workflows use the `harvesters:v0.3.0` image (see warning above about unpinned tags).
+Metadata harvesting is managed through Argo CronWorkflows, all scheduled on Sundays with staggered start times to avoid resource contention.
 
-Harvester tasks are configured in the k8s-soilwise repository. Separate harvester CI/CD pipelines also run on the WUR GitLab instance for additional sources.
+Harvester tasks are configured in the k8s-soilwise repository.
+
+INSPIRE metadata validation for INSPIRE related metadata entries is managed similary to the harvester tasks and publishes results directly to the database.
 
 ## Git & Source Code Management
 
@@ -121,4 +119,3 @@ All aspects of the SoilWise project are managed through the [SoilWise GitHub org
 - **Release management** — Automated releases through CI/CD pipelines with semantic versioning
 
 Architecture diagrams are maintained and published interactively via GitHub Pages at the [SoilWise architecture](https://gh-pages.soilwise-architecture.pages.dev/) site.
-
