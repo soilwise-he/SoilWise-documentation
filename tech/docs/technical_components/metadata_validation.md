@@ -20,7 +20,7 @@ The SoilWise Metadata Validation targets the following user groups:
 ## Metadata INSPIRE compliance
 
 !!! component-header "Info"
-    **Current version:** 0.4.0
+    **Current version:** 0.4.1
 
     **Technology:** [Esdin Test Framework (ETF)](https://etf-validator.net/), Python
 
