@@ -1,7 +1,7 @@
 # Data and Knowledge Administration Console
 
 !!! component-header "Info"
-    **Current version:** 1.0.2
+    **Current version:** 1.0.1
 
     **Technology:** Apache Superset
 
