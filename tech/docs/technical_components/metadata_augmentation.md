@@ -346,11 +346,11 @@ The Element Matcher reuses `metadata.augments` table described in [Spatial Metad
 ## Link Liveliness Assessment 
 
 !!! component-header "Info"
-    **Current version:** 1.1.4
+    **Current version:** 1.1.8
 
     **Technology:** Python, [FastAPI](https://fastapi.tiangolo.com/)
 
-    **Release:** <https://doi.org/10.5281/zenodo.14923790>
+    **Release:** <https://doi.org/10.5281/zenodo.14923789>
 
     **Project repository:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 
