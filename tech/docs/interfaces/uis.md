@@ -69,4 +69,4 @@ This UI, based on the [Apache Superset](https://superset.apache.org/) BI tool, p
 
 *Authentication required.*
 
-Grafana-based monitoring dashboard covering service health, resource utilisation, OWS availability, and log analysis. 29 dashboards are provisioned covering Kubernetes cluster health, service performance, container resource consumption, and AWS infrastructure metrics. More information is available in [System & Usage Monitoring](../technical_components/monitoring.md).
+Grafana-based monitoring dashboard covering service health, resource utilisation, service availability, and log analysis. Includes pre-defiuned dashboards for Kubernetes cluster health, service performance and container resource consumption. More information is available in [System & Usage Monitoring](../technical_components/monitoring.md).
