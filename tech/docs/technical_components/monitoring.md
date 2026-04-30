@@ -2,7 +2,7 @@
 
 !!! component-header "Info"
 
-    **Current version & Technology:** Grafana 12.1.1 / Prometheus v2.55.1 / Prometheus LTS v2.18.1
+    **Technology:** Grafana / Prometheus / Loki
 
     **Project repository:** [Usage statistics](https://github.com/soilwise-he/usage-statistics)
 
@@ -27,11 +27,11 @@ Monitoring covers:
 
 ### System Health Monitoring
 
-Infrastructure and application monitoring is implemented using a Prometheus + Grafana stack.
+Infrastructure and application monitoring is implemented using a Prometheus + Grafana stack, deployed via the `kube-prometheus-stack` Helm chart. Log aggregation is deployed via the `loki` and `promtail` Helm charts.
 
-**Prometheus** (v2.55.1) scrapes metrics from all services, the Kubernetes cluster, and host nodes via Node Exporter (v1.9.1) and kube-state-metrics. A second **Prometheus LTS** instance (v2.18.1) retains metrics for longer periods (currently configured at 4 GB / ~30 days) to support trend analysis and availability reporting.
+**Prometheus** scrapes metrics from all services, the Kubernetes cluster, and host nodes via Node Exporter and kube-state-metrics. Retention is configured to support trend analysis and availability reporting.
 
-**Grafana** (v12.1.1) provides the dashboarding layer. User sign-up is disabled, dashboards are provisioned via code (no UI edits), and the admin password is stored in vault. 29 dashboards are provisioned covering:
+**Grafana** provides the dashboarding layer. User sign-up is disabled, dashboards are provisioned via code (no UI edits), and the admin password is stored in vault. 29 dashboards are provisioned covering:
 
 - Kubernetes cluster health (nodes, volumes, autoscaler)
 - Service performance and request metrics (OWS, nginx, Java/Vert.x services)
@@ -40,9 +40,9 @@ Infrastructure and application monitoring is implemented using a Prometheus + Gr
 - AWS infrastructure (billing, EFS, S3, ELB)
 - Long-term OWS availability statistics
 
-**Alertmanager** (v0.28.1) is configured with Slack notifications for operational alerts. PagerDuty integration is available for critical environments.
+**Alertmanager** is configured with Slack notifications for operational alerts. PagerDuty integration is available for critical environments.
 
-**Loki** (v3.4.1) with Promtail (v3.0.0) handles log aggregation. It is enabled optionally per environment and feeds structured log dashboards in Grafana, including filtering by HTTP status code to identify 4xx/5xx errors.
+**Loki** with Promtail handles log aggregation. It is enabled optionally per environment and feeds structured log dashboards in Grafana, including filtering by HTTP status code to identify 4xx/5xx errors.
 
 ### Usage Monitoring
 
@@ -56,21 +56,22 @@ The data-portal platform includes built-in usage reporting features (CSV usage r
 
 ## Technological Stack
 
-| Component | Version | Purpose |
-|---|---|---|
-| Grafana | 12.1.1 | Dashboards and visualisation |
-| Prometheus | v2.55.1 | Metrics collection |
-| Prometheus LTS | v2.18.1 | Long-term metric retention (~30 days) |
-| Alertmanager | v0.28.1 | Alert routing (Slack, PagerDuty) |
-| Loki | 3.4.1 | Log aggregation |
-| Promtail | 3.0.0 | Log shipping |
-| Node Exporter | v1.9.1 | Host metrics |
-| kube-state-metrics | — | Kubernetes cluster metrics |
-| Hotjar | — | Website usage analytics (frontend) |
-| Google Analytics | — | Website traffic statistics (frontend) |
-| nginx | 1.0.2 | monitoring |
+| Component | Purpose |
+|---|---|
+| Grafana | Dashboards and visualisation |
+| Prometheus | Metrics collection and retention |
+| Alertmanager | Alert routing (Slack, PagerDuty) |
+| Loki | Log aggregation |
+| Promtail | Log shipping |
+| Node Exporter | Host metrics |
+| kube-state-metrics | Kubernetes cluster metrics |
+| Hotjar | Website usage analytics (frontend) |
+| Google Analytics | Website traffic statistics (frontend) |
+| nginx | monitoring |
 
-Grafana data sources configured: Prometheus (default), Prometheus LTS, Loki, CloudWatch.
+Deployed via the `kube-prometheus-stack`, `loki`, and `promtail` Helm charts.
+
+Grafana data sources configured: Prometheus (default), Loki, CloudWatch.
 
 ## Integrations & Interfaces
 
