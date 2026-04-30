@@ -36,7 +36,7 @@ Metadata Augmentation is a backend component providing outputs, which users can 
 
     **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
-    **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
+    **Project Repository:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
 ### Overview and Scope
 
@@ -232,7 +232,7 @@ classDiagram
 
     **Release:** <https://doi.org/10.5281/zenodo.14924181>
 
-    **Projects:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
+    **Project Repository:** [Metadata Augmentation](https://github.com/soilwise-he/metadata-augmentation)
 
 ### Overview and Scope
 
@@ -355,7 +355,7 @@ The Element Matcher reuses `metadata.augments` table described in [Spatial Metad
     **Project repository:** [Link liveliness assessment](https://github.com/soilwise-he/link-liveliness-assessment)
 
 ### Overview and Scope
-Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWR, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWC. 
+Metadata (and data and knowledge sources) tend to contain links to other resources. Not all of these URIs are persistent, so over time they can degrade. In practice, many non-persistent knowledge sources and assets exist that could be relevant for SWC, e.g. on project websites, in online databases, on the computers of researchers, etc. Links pointing to such assets might however be part of harvested metadata records or data and content that is stored in the SWC. 
 
 The Link Liveliness Assessment (LLA) component runs over the available links stored with the SWC assets and checks their status. The function is foreseen to run frequently over the URIs in the SWC, assessing and storing the status of the link. 
 
@@ -859,11 +859,11 @@ flowchart TD
 
 ### Translation module
 
-Some records arrive in a local language, SWR will translate the main properties for the record: title and abstract into English, to offer a single language user experience. 
+Some records arrive in a local language, SWC will translate the main properties for the record: title and abstract into English, to offer a single language user experience. 
 
 The translation module will build on the EU translation service (API documentation at <https://language-tools.ec.europa.eu/>). 
 
-The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWR. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
+The EU translation returns asynchronous responses to translation requests, this means that translations may not yet be available after initial load of new data. A callback operation populates the database, from that moment a translation is available to SWC. The translation service uses 2-letter language codes, it means a translation from a 3-letter iso code (as used in for example iso19139:2007) to 2-letter code is required. The EU translation service has a limited set of translations from a certain to alternative language available, else returns an error.
 
 Initial translation will be triggered by a running harvester. The translations will then be available once the record is ingested to the triplestore and catalogue database in a followup step of the harvester. 
 
