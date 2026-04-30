@@ -28,6 +28,7 @@ SWC processing APIs are mostly interfaces to components that have been developed
 | **Soil Mission news feed API** |  [Swagger UI](https://api.soilwise.wetransform.eu/util/docs) | Retrieves a paginated list of feed items, optionally filtered by keywords and associated projects. |
 | **History API** |  [Swagger UI](https://api.soilwise.wetransform.eu/util/docs) | Retrieves the harvesting and version history of a specific record by its identifier. |
 | **SoilVoc API** | [Browser](https://api.soilwise.wetransform.eu/vocab/docs) | The SoilVoc vocabulary is accessible as a browsable HTML interface (GitHub Pages) and in machine-readable form via the SPARQL endpoint. The vocabulary terms are maintained in CSV format in [GitHub](https://github.com/soilwise-he/soil-vocabs/blob/main/SoilVoc_concepts.csv) and published as SKOS RDF. |
+| **CSVW API** | [Swagger UI](https://api.soilwise.wetransform.eu/csvw/docs) | API for converting soil observation data into RDF and SQLite formats. |
 
 <!--| **RDF to triplestore API** | <https://repo.soilwise-he.containers.wur.nl/swagger-ui/index.html> | Allows the conversion of RDF, e.g. as provided by the CORDIS APIs, to the SWC triple store. *update after migration!* |-->
 <!--| **Translate API** | <https://api.soilwise-he.containers.wur.nl/tolk/docs> | This API translates content between languages, and is used for metadata translation. It makes use of the EU translation service <https://language-tools.ec.europa.eu/>. *update after migration!* |-->
