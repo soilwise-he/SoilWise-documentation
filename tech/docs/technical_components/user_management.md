@@ -3,20 +3,13 @@
 !!! component-header "Info"
     **Identity Provider:** [Keycloak](https://www.keycloak.org/)
 
-    **Access point:** <https://id.soilwise.wetransform.eu/>
+    **Access point (Test system):** <https://id.soilwise.wetransform.eu/>
 
-    **Admin console:** <https://id-admin.soilwise.wetransform.eu/>
+    **Admin console (Test system):** <https://id-admin.soilwise.wetransform.eu/>
 
 ## Overview
 
-User and organisation management, authorisation and authentication are cross-cutting concerns of the SoilWise Catalogue. Authentication and authorisation are handled through a [Keycloak](https://www.keycloak.org/) instance operated by weTransform, which acts as the central OpenID Connect (OIDC) identity provider for SWC components. Keycloak maps provider roles to internal application roles (e.g. Keycloak role `Redakteur` → internal role `themeManager`) and manages user-to-organisation assignments.
-
-The **general model** is that:
-
-- a user shall be a member of at least one organisation.
-- a user may have at least one role in every organisation that they are a member of.
-- a user always acts in the context of one of their roles in one organisation (similar to GitHub contexts).
-- organisations can be hierarchical, and user roles may be inherited from a parent organisation.
+User and organisation management, authorisation and authentication are cross-cutting concerns of the SoilWise Catalogue. Authentication and authorisation are handled through a [Keycloak](https://www.keycloak.org/) instance operated by weTransform, which acts as the central OpenID Connect (OIDC) identity provider for SWC components. Keycloak manages roles and user-to-organisation assignments.
 
 ## Functionality
 
@@ -30,7 +23,7 @@ User self-registration is disabled. Accounts are provisioned by administrators. 
 
 ### Authentication
 
-Certain functionalities of the SWC are available to anonymous users, but functions that edit any system state (data, configuration, metadata) require an authenticated user. Keycloak serves as the central OIDC provider, issuing tokens that are validated by downstream services. The Keycloak client ID used is `hale-connect` (named for historical reasons), using the implicit OIDC flow. Users are assigned to the root organisation (ID `3`, "Datenportal"). Auto-login is disabled; users must explicitly log in.
+Certain functionalities of the SWC are available to anonymous users, but functions that edit any system state (data, configuration, metadata) require an authenticated user. Keycloak serves as the central OIDC provider, issuing tokens that are validated by downstream services. Clients can be configured in Keycloak to facilitate the authentication in the different applications.
 
 Other supported authentication mechanisms include OAuth, SAML 2.0, and Active Directory via Keycloak identity brokering.
 
@@ -38,7 +31,7 @@ Other supported authentication mechanisms include OAuth, SAML 2.0, and Active Di
 
 Every component checks whether an authenticated user may invoke a desired action based on that user's roles in their organisation. The user interface also performs authorisation to avoid offering actions a given user may not invoke.
 
-The internal role model follows a five-tier structure:
+As an example, the internal role model for the `hale-connect` application follows a five-tier structure:
 
 | Role | Description |
 | --- | --- |
@@ -53,10 +46,6 @@ Roles are defined using privileges: a role may `read`, `edit`, or `delete` certa
 ## Components Requiring Authentication
 
 The following SWC components require user authentication:
-
-### Admin Console (resources-admin)
-
-The Admin Console (resources-admin) at [`data.soilwise.wetransform.eu`](https://data.soilwise.wetransform.eu/#/home) is a resource management admin dashboard. Access is restricted to authenticated users with appropriate roles, backed by the same user-service and Keycloak integration as the data portal.
 
 ### Soil Companion
 
